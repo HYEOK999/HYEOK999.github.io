@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+
+    
+
+    
+    <title>백준 TEST05_함수 사용하기 | HYEOK999&#39;s Blog</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="hexo,git,Web,coding,developer,algorism">
+    
+    <meta name="description" content="##﻿ 필요 패키지 및 외부 클래스  123456import java.io.BufferedReader;import java.io.BufferedWriter;import java.io.IOException;import java.io.InputStreamReader;import java.io.OutputStreamWriter;import java.util">
+<meta name="keywords" content="hexo,git,Web,coding,developer,algorism">
+<meta property="og:type" content="article">
+<meta property="og:title" content="백준 TEST05_함수 사용하기">
+<meta property="og:url" content="http://yoursite.com/2019/09/04/Algorism-for-java05/index.html">
+<meta property="og:site_name" content="HYEOK999&#39;s Blog">
+<meta property="og:description" content="##﻿ 필요 패키지 및 외부 클래스  123456import java.io.BufferedReader;import java.io.BufferedWriter;import java.io.IOException;import java.io.InputStreamReader;import java.io.OutputStreamWriter;import java.util">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://user-images.githubusercontent.com/31315644/64248313-bfdded00-cf4b-11e9-8d3d-23395528568d.png">
+<meta property="og:updated_time" content="2019-09-04T11:01:07.377Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="백준 TEST05_함수 사용하기">
+<meta name="twitter:description" content="##﻿ 필요 패키지 및 외부 클래스  123456import java.io.BufferedReader;import java.io.BufferedWriter;import java.io.IOException;import java.io.InputStreamReader;import java.io.OutputStreamWriter;import java.util">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/31315644/64248313-bfdded00-cf4b-11e9-8d3d-23395528568d.png">
+    
+
+    
+
+    
+        <link rel="icon" href="/images/favicon_io/favicon.ico">
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">HYEOK999&#39;s Daily Develop</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/categories/Algorism/">Algorism</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/categories/Develop/">Develop</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/categories/TIL/">TIL</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/categories/Etc/">Etc</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Algorism/">Algorism</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-Algorism-for-java05" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        백준 TEST05_함수 사용하기
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/09/04/Algorism-for-java05/" class="article-date">
+            <time datetime="2019-09-04T10:26:48.000Z" itemprop="datePublished">2019-09-04</time>
+        </a>
+    </div>
+
+		
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Web/">Web</a>, <a class="tag-link" href="/tags/algorism/">algorism</a>, <a class="tag-link" href="/tags/coding/">coding</a>, <a class="tag-link" href="/tags/developer/">developer</a>, <a class="tag-link" href="/tags/git/">git</a>, <a class="tag-link" href="/tags/hexo/">hexo</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p><img src="https://user-images.githubusercontent.com/31315644/64248313-bfdded00-cf4b-11e9-8d3d-23395528568d.png" alt="baekjoon_java"></p>
+<p>﻿</p>
+<p>##﻿ 필요 패키지 및 외부 클래스 </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.BufferedReader;</span><br><span class="line"><span class="keyword">import</span> java.io.BufferedWriter;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.InputStreamReader;</span><br><span class="line"><span class="keyword">import</span> java.io.OutputStreamWriter;</span><br><span class="line"><span class="keyword">import</span> java.util.*;</span><br></pre></td></tr></table></figure>
+
+<h3 id="셀프넘버"><a href="#셀프넘버" class="headerlink" title="셀프넘버"></a>셀프넘버</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">hamsu</span></span>&#123;</span><br><span class="line">	public int d(int num)&#123;</span><br><span class="line">		int xxxx = num/<span class="number">1000</span>;</span><br><span class="line">		int xxx = (num/<span class="number">100</span>)%<span class="number">10</span>;</span><br><span class="line">		int xx = (num/<span class="number">10</span>)%<span class="number">10</span>;</span><br><span class="line">		int x = num%<span class="number">10</span>;</span><br><span class="line">		num = num + xxxx + xxx + xx + x;</span><br><span class="line">		<span class="keyword">return</span> num;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TEST05_01</span> <span class="keyword">extends</span> <span class="title">hamsu</span></span>&#123;</span><br><span class="line">	public TEST05_01()&#123;</span><br><span class="line"><span class="comment">//		ArrayList array = new ArrayList();</span></span><br><span class="line">		int i = <span class="number">0</span>;</span><br><span class="line">		int[] fin = <span class="keyword">new</span> int[<span class="number">10000</span>]; <span class="comment">//배열 10000개 선언 알아서 0으로 초기화함.</span></span><br><span class="line">		</span><br><span class="line">		<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">10000</span>;i++)&#123;</span><br><span class="line">			<span class="keyword">if</span>(d(i)&lt;<span class="number">10000</span>)&#123;</span><br><span class="line">				fin[d(i)] = <span class="number">1</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">if</span>(fin[i] == <span class="number">0</span>)&#123;</span><br><span class="line">				System.out.println(i);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">public <span class="class"><span class="keyword">class</span> <span class="title">TEST05</span></span>&#123;</span><br><span class="line">	public <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="built_in">String</span>[] args) throws IOException&#123;</span><br><span class="line">		TEST05_01 test05_01 = <span class="keyword">new</span> TEST05_01();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="한수"><a href="#한수" class="headerlink" title="한수"></a>한수</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TEST05_02</span> </span>&#123;</span><br><span class="line">	public TEST05_02() throws IOException&#123;</span><br><span class="line">		BufferedReader br = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(System.in));</span><br><span class="line">		BufferedWriter bw = <span class="keyword">new</span> BufferedWriter(<span class="keyword">new</span> OutputStreamWriter(System.out));</span><br><span class="line">		int n = <span class="number">0</span>;</span><br><span class="line">		int count = <span class="number">0</span>;</span><br><span class="line">		int xxxx,xxx,xx,x = <span class="number">0</span>;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">			n = Integer.parseInt(br.readLine());</span><br><span class="line">			<span class="keyword">if</span>(n&lt;=<span class="number">1000</span>)&#123;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">for</span>(int i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">			<span class="keyword">if</span>(i&lt;<span class="number">100</span>)&#123;</span><br><span class="line">				count++;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span>(i&gt;=<span class="number">100</span>)&#123;</span><br><span class="line">				xxx = i/<span class="number">100</span>;</span><br><span class="line">				xx = (i/<span class="number">10</span>)%<span class="number">10</span>;</span><br><span class="line">				x = i%<span class="number">10</span>;</span><br><span class="line">				<span class="keyword">if</span>(xx-x==xxx-xx)&#123;</span><br><span class="line">					count++;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span>(i&gt;=<span class="number">1000</span>)&#123;</span><br><span class="line">				xxxx = i/<span class="number">1000</span>;</span><br><span class="line">				xxx = (i/<span class="number">100</span>)%<span class="number">10</span>;</span><br><span class="line">				xx = (i/<span class="number">10</span>)%<span class="number">10</span>;</span><br><span class="line">				x = i%<span class="number">10</span>;</span><br><span class="line">				<span class="keyword">if</span>(xxxx-xxx == xxx-xx)</span><br><span class="line">					<span class="keyword">if</span>(xx-x == xxx-xx)&#123;</span><br><span class="line">						count++;</span><br><span class="line">					&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		bw.write(count+<span class="string">"\n"</span>);</span><br><span class="line">		bw.flush();</span><br><span class="line">		bw.close();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public <span class="class"><span class="keyword">class</span> <span class="title">TEST05</span></span>&#123;</span><br><span class="line">	public <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="built_in">String</span>[] args) throws IOException&#123;</span><br><span class="line">		TEST05_02 test05_02 = <span class="keyword">new</span> TEST05_02();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="별찍기-11"><a href="#별찍기-11" class="headerlink" title="별찍기 - 11"></a>별찍기 - 11</h3><blockquote>
+<p>별찍기에 대해서 초반에 어떻게 문제를 풀어야하는지 감이 너무 오질 않았다.</p>
+<p>따라서 강의를 보면서 이해하는 형식으로 진행하였다.</p>
+<p>해당 강의는 C를 기반으로 진행하였으므로 나는 자바의 형식에 맞게 수정을 해주었다.</p>
+</blockquote>
+<p><img src="https://dthumb-phinf.pstatic.net/?src=%22https://i.ytimg.com/vi/WjmEVp-Lgns/maxresdefault.jpg%22&type=ff500_300&service=" alt="[C언어] 백준 - 별찍기 (2448) ★밤비와 코딩"></p>
+<blockquote>
+<p><a href="https://youtu.be/WjmEVp-Lgns" target="_blank" rel="noopener">https://youtu.be/WjmEVp-Lgns</a></p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TEST05_03</span> </span>&#123;</span><br><span class="line">	<span class="keyword">static</span> char[][] arr;</span><br><span class="line">	public TEST05_03() throws IOException&#123;</span><br><span class="line">		BufferedWriter bw = <span class="keyword">new</span> BufferedWriter(<span class="keyword">new</span> OutputStreamWriter(System.out));</span><br><span class="line">		int n = input_num();</span><br><span class="line">		</span><br><span class="line">		arr = <span class="keyword">new</span> char[n][<span class="number">2</span>*n<span class="number">-1</span>]; <span class="comment">//예제 y축 24칸, x축 47칸임(맨 아래 밑변).</span></span><br><span class="line">		<span class="comment">//배열 선언은 while문 아래가 될 수 없다.</span></span><br><span class="line">		</span><br><span class="line">		<span class="keyword">for</span>(int i=<span class="number">0</span>; i&lt;n; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span>(int j=<span class="number">0</span>; j&lt;<span class="number">2</span>*n<span class="number">-1</span>; j++) &#123;</span><br><span class="line">                arr[i][j] = <span class="string">' '</span>;</span><br><span class="line">            &#125;    </span><br><span class="line">        &#125;<span class="comment">//초기화 구문, 자바에서 미선언시 char은 널값으로 초기화됨. 따라서 모두 공백으로 미리 초기화.</span></span><br><span class="line">		</span><br><span class="line">		solution(n,n<span class="number">-1</span>,<span class="number">0</span>);<span class="comment">// n은 몇층까지 를 의미, n-1은 첫 시작의 별 위치 -&gt; x축, 0은 첫줄을 의미한다.	 -&gt;y축</span></span><br><span class="line"></span><br><span class="line">		<span class="keyword">for</span>(int i=<span class="number">0</span>; i&lt;n; i++) &#123;</span><br><span class="line">            bw.write(arr[i]);</span><br><span class="line">            bw.write(<span class="string">'\n'</span>);</span><br><span class="line">        &#125; </span><br><span class="line">		<span class="comment">//이차원배열로 선언되었기 때문에 a[i]번째 줄에 저장된 모든 값을 출력.</span></span><br><span class="line">		bw.flush();</span><br><span class="line">		bw.close();</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public int input_num() throws IOException&#123;</span><br><span class="line">		BufferedReader br = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(System.in));</span><br><span class="line">		int n = <span class="number">0</span>;</span><br><span class="line">		int count = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">			n = Integer.parseInt(br.readLine());</span><br><span class="line">			<span class="keyword">for</span>(int k=<span class="number">0</span>;k&lt;=<span class="number">10</span>;k++)&#123;</span><br><span class="line">				<span class="keyword">if</span>(n==<span class="number">3</span>*(<span class="built_in">Math</span>.pow(<span class="number">2</span>, k)))&#123;</span><br><span class="line">					count = <span class="number">1</span>;</span><br><span class="line">				&#125;</span><br><span class="line">			<span class="comment">//제대로 된 수를 입력할 때 까지 무한반복 N은 3*2^k승.</span></span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">if</span>(count == <span class="number">1</span>)</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> n;</span><br><span class="line">	&#125; <span class="comment">// 제대로된 n값을 입력하였느지 확인. 제대로된 값이 아니라면 무한반복.</span></span><br><span class="line">	</span><br><span class="line">	public <span class="keyword">void</span> solution(int n,int x,int y)&#123;</span><br><span class="line">		<span class="keyword">if</span> (n == <span class="number">3</span>) &#123;</span><br><span class="line">			arr[y][x] = <span class="string">'*'</span>;                   <span class="comment">//첫 별                     *</span></span><br><span class="line">			arr[y + <span class="number">1</span>][x - <span class="number">1</span>] = <span class="string">'*'</span>;           <span class="comment">//두번 째 별 1       * * </span></span><br><span class="line">			arr[y + <span class="number">1</span>][x + <span class="number">1</span>] = <span class="string">'*'</span>;           <span class="comment">//두번째 별 2      </span></span><br><span class="line">			arr[y + <span class="number">2</span>][x - <span class="number">2</span>] = <span class="string">'*'</span>;           <span class="comment">//세번째 별 1       *****</span></span><br><span class="line">			arr[y + <span class="number">2</span>][x - <span class="number">1</span>] = <span class="string">'*'</span>;           <span class="comment">//세번째 별 2       *****           </span></span><br><span class="line">			arr[y + <span class="number">2</span>][x] = <span class="string">'*'</span>;               <span class="comment">//세번째 별 3       *****</span></span><br><span class="line">			arr[y + <span class="number">2</span>][x + <span class="number">1</span>] = <span class="string">'*'</span>;           <span class="comment">//세번째 별 4       *****</span></span><br><span class="line">			arr[y + <span class="number">2</span>][x + <span class="number">2</span>] = <span class="string">'*'</span>;           <span class="comment">//세번째 별 5       *****</span></span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">		&#125; <span class="comment">//n이 3일때 별을 그려주는 로직 시작. // n이 3이 최소임.</span></span><br><span class="line">		</span><br><span class="line">		solution(n/<span class="number">2</span>, x, y); <span class="comment">// 첫 큰 삼각형</span></span><br><span class="line">		solution(n/<span class="number">2</span>, x-(n/<span class="number">2</span>) , y+(n/<span class="number">2</span>)); <span class="comment">// 왼쪽 큰 삼각형</span></span><br><span class="line">		solution(n/<span class="number">2</span>, x+(n/<span class="number">2</span>) , y+(n/<span class="number">2</span>)); <span class="comment">// 오른쪽 큰 삼각형</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">public <span class="class"><span class="keyword">class</span> <span class="title">TEST05</span></span>&#123;</span><br><span class="line">	public <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="built_in">String</span>[] args) throws IOException&#123;</span><br><span class="line">		TEST05_03 test05_03 = <span class="keyword">new</span> TEST05_03();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>﻿</p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://yoursite.com/2019/09/04/Algorism-for-java05/" data-id="ck055r39v00092mz0m37vqulp" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Jun Hyeok Kim"
+        },
+        "headline": "백준 TEST05_함수 사용하기",
+        "image": "http://yoursite.comhttps://user-images.githubusercontent.com/31315644/64248313-bfdded00-cf4b-11e9-8d3d-23395528568d.png",
+        "keywords": "hexo git Web coding developer algorism",
+        "genre": "Algorism",
+        "datePublished": "2019-09-04",
+        "dateCreated": "2019-09-04",
+        "dateModified": "2019-09-04",
+        "url": "http://yoursite.com/2019/09/04/Algorism-for-java05/",
+        "description": "
+﻿
+##﻿ 필요 패키지 및 외부 클래스 
+123456import java.io.BufferedReader;import java.io.BufferedWriter;import java.io.IOException;import java.io.InputStreamReader;import java.io.OutputStreamWriter;import java.util",
+        "wordCount": 1202
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="https://www.facebook.com/profile.php?id=100003801986180" target="_blank" rel="noopener">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/HYEOK999" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="youtube" href="https://www.youtube.com" target="_blank" rel="noopener">
+                        <i class="icon fa fa-youtube"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2019/09/04/Algorism-for-java06/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            백준 TEST06_1차원 배열 사용하기
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2019/09/04/Algorism-for-java04/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">백준 TEST04_if문 사용해보기</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/09/04/Algorism-for-java07/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/64248313-bfdded00-cf4b-11e9-8d3d-23395528568d.png)" alt="백준 TEST07_문자열 사용하기" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Algorism/">Algorism</a></p>
+                            <p class="item-title"><a href="/2019/09/04/Algorism-for-java07/" class="title">백준 TEST07_문자열 사용하기</a></p>
+                            <p class="item-date"><time datetime="2019-09-04T10:26:52.000Z" itemprop="datePublished">2019-09-04</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/09/04/Algorism-for-java06/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/64248313-bfdded00-cf4b-11e9-8d3d-23395528568d.png)" alt="백준 TEST06_1차원 배열 사용하기" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Algorism/">Algorism</a></p>
+                            <p class="item-title"><a href="/2019/09/04/Algorism-for-java06/" class="title">백준 TEST06_1차원 배열 사용하기</a></p>
+                            <p class="item-date"><time datetime="2019-09-04T10:26:50.000Z" itemprop="datePublished">2019-09-04</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/09/04/Algorism-for-java05/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/64248313-bfdded00-cf4b-11e9-8d3d-23395528568d.png)" alt="백준 TEST05_함수 사용하기" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Algorism/">Algorism</a></p>
+                            <p class="item-title"><a href="/2019/09/04/Algorism-for-java05/" class="title">백준 TEST05_함수 사용하기</a></p>
+                            <p class="item-date"><time datetime="2019-09-04T10:26:48.000Z" itemprop="datePublished">2019-09-04</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/09/04/Algorism-for-java04/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/64248313-bfdded00-cf4b-11e9-8d3d-23395528568d.png)" alt="백준 TEST04_if문 사용해보기" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Algorism/">Algorism</a></p>
+                            <p class="item-title"><a href="/2019/09/04/Algorism-for-java04/" class="title">백준 TEST04_if문 사용해보기</a></p>
+                            <p class="item-date"><time datetime="2019-09-04T10:26:47.000Z" itemprop="datePublished">2019-09-04</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/09/04/Algorism-for-java03/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/64248313-bfdded00-cf4b-11e9-8d3d-23395528568d.png)" alt="백준 TEST03_for문 사용해보기" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Algorism/">Algorism</a></p>
+                            <p class="item-title"><a href="/2019/09/04/Algorism-for-java03/" class="title">백준 TEST03_for문 사용해보기</a></p>
+                            <p class="item-date"><time datetime="2019-09-04T10:26:45.000Z" itemprop="datePublished">2019-09-04</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a><span class="archive-list-count">13</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorism/">algorism</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/coding/">coding</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/developer/">developer</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">12</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Web/" style="font-size: 20px;">Web</a> <a href="/tags/algorism/" style="font-size: 10px;">algorism</a> <a href="/tags/coding/" style="font-size: 20px;">coding</a> <a href="/tags/developer/" style="font-size: 20px;">developer</a> <a href="/tags/git/" style="font-size: 20px;">git</a> <a href="/tags/hexo/" style="font-size: 20px;">hexo</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.naver.com">Naver</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2019 Jun Hyeok Kim</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'http://yoursite.com/2019/09/04/Algorism-for-java05/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

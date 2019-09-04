@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+
+    
+
+    
+    <title>백준 TEST06_1차원 배열 사용하기 | HYEOK999&#39;s Blog</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="hexo,git,Web,coding,developer,algorism">
+    
+    <meta name="description" content="백준 TEST06_1차원 배열 사용하기﻿ 필요한 패키지 및 외부 클래스1234567package test_java;import java.io.BufferedReader;import java.io.BufferedWriter;import java.io.IOException;import java.io.InputStreamReader;import java.io.">
+<meta name="keywords" content="hexo,git,Web,coding,developer,algorism">
+<meta property="og:type" content="article">
+<meta property="og:title" content="백준 TEST06_1차원 배열 사용하기">
+<meta property="og:url" content="http://yoursite.com/2019/09/04/Algorism-for-java06/index.html">
+<meta property="og:site_name" content="HYEOK999&#39;s Blog">
+<meta property="og:description" content="백준 TEST06_1차원 배열 사용하기﻿ 필요한 패키지 및 외부 클래스1234567package test_java;import java.io.BufferedReader;import java.io.BufferedWriter;import java.io.IOException;import java.io.InputStreamReader;import java.io.">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://user-images.githubusercontent.com/31315644/64248313-bfdded00-cf4b-11e9-8d3d-23395528568d.png">
+<meta property="og:updated_time" content="2019-09-04T11:05:10.989Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="백준 TEST06_1차원 배열 사용하기">
+<meta name="twitter:description" content="백준 TEST06_1차원 배열 사용하기﻿ 필요한 패키지 및 외부 클래스1234567package test_java;import java.io.BufferedReader;import java.io.BufferedWriter;import java.io.IOException;import java.io.InputStreamReader;import java.io.">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/31315644/64248313-bfdded00-cf4b-11e9-8d3d-23395528568d.png">
+    
+
+    
+
+    
+        <link rel="icon" href="/images/favicon_io/favicon.ico">
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">HYEOK999&#39;s Daily Develop</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/categories/Algorism/">Algorism</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/categories/Develop/">Develop</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/categories/TIL/">TIL</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/categories/Etc/">Etc</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Algorism/">Algorism</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-Algorism-for-java06" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        백준 TEST06_1차원 배열 사용하기
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/09/04/Algorism-for-java06/" class="article-date">
+            <time datetime="2019-09-04T10:26:50.000Z" itemprop="datePublished">2019-09-04</time>
+        </a>
+    </div>
+
+		
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Web/">Web</a>, <a class="tag-link" href="/tags/algorism/">algorism</a>, <a class="tag-link" href="/tags/coding/">coding</a>, <a class="tag-link" href="/tags/developer/">developer</a>, <a class="tag-link" href="/tags/git/">git</a>, <a class="tag-link" href="/tags/hexo/">hexo</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p><img src="https://user-images.githubusercontent.com/31315644/64248313-bfdded00-cf4b-11e9-8d3d-23395528568d.png" alt="baekjoon_java"></p>
+<h1 id="백준-TEST06-1차원-배열-사용하기"><a href="#백준-TEST06-1차원-배열-사용하기" class="headerlink" title="백준 TEST06_1차원 배열 사용하기"></a>백준 TEST06_1차원 배열 사용하기</h1><p>﻿</p>
+<h2 id="필요한-패키지-및-외부-클래스"><a href="#필요한-패키지-및-외부-클래스" class="headerlink" title="필요한 패키지 및 외부 클래스"></a>필요한 패키지 및 외부 클래스</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">package test_java;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.BufferedReader;</span><br><span class="line"><span class="keyword">import</span> java.io.BufferedWriter;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.InputStreamReader;</span><br><span class="line"><span class="keyword">import</span> java.io.OutputStreamWriter;</span><br></pre></td></tr></table></figure>
+
+<h3 id="단어의개수"><a href="#단어의개수" class="headerlink" title="단어의개수"></a>단어의개수</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TEST06_01</span> </span>&#123;</span><br><span class="line">	public TEST06_01() throws IOException&#123;</span><br><span class="line">		BufferedReader br = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(System.in));</span><br><span class="line">		BufferedWriter bw = <span class="keyword">new</span> BufferedWriter(<span class="keyword">new</span> OutputStreamWriter(System.out));</span><br><span class="line">		<span class="built_in">String</span> n = br.readLine(); </span><br><span class="line">		int count=<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">for</span>(int i=<span class="number">0</span>;i&lt;n.length();i++)&#123;</span><br><span class="line">			char chrInput = n.charAt(i);</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">if</span>(n.charAt(i) ==<span class="string">' '</span>)&#123;</span><br><span class="line">				count++;</span><br><span class="line">				&#125;</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">if</span> (chrInput &lt; <span class="number">0x61</span> &amp;&amp; chrInput &gt; <span class="number">0x7A</span>) &#123; <span class="keyword">break</span>; &#125; </span><br><span class="line">			    <span class="comment">// 영문(소문자)가 아닐경우 무한 반복!</span></span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span> (chrInput &lt; <span class="number">0x41</span> &amp;&amp; chrInput &gt; <span class="number">0x5A</span>) &#123; <span class="keyword">break</span>; &#125;</span><br><span class="line">                <span class="comment">// 영문(대문자)가 아닐 경우 무한 반복!</span></span><br><span class="line">		&#125;<span class="comment">// for end</span></span><br><span class="line"></span><br><span class="line">		<span class="comment">//count++;</span></span><br><span class="line">		<span class="keyword">if</span>(n.charAt(<span class="number">0</span>)==<span class="string">' '</span> &amp;&amp; n.charAt(n.length()<span class="number">-1</span>)==<span class="string">' '</span>)&#123;</span><br><span class="line">			count--;</span><br><span class="line">			count--;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(n.charAt(<span class="number">0</span>)==<span class="string">' '</span> || n.charAt(n.length()<span class="number">-1</span>)==<span class="string">' '</span>)&#123;</span><br><span class="line">			count--;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		bw.write(count+<span class="string">"\n"</span>);</span><br><span class="line">		bw.flush();</span><br><span class="line">		bw.close();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="숫자의-개수"><a href="#숫자의-개수" class="headerlink" title="숫자의 개수"></a>숫자의 개수</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TEST06_02</span></span>&#123;</span><br><span class="line">	public TEST06_02() throws IOException&#123;</span><br><span class="line">		BufferedReader br = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(System.in));</span><br><span class="line">		BufferedWriter bw = <span class="keyword">new</span> BufferedWriter(<span class="keyword">new</span> OutputStreamWriter(System.out));</span><br><span class="line">		int[] num = <span class="keyword">new</span> int[<span class="number">10</span>];</span><br><span class="line">		int A = Integer.parseInt(br.readLine());</span><br><span class="line">		int B = Integer.parseInt(br.readLine());</span><br><span class="line">		int C = Integer.parseInt(br.readLine());</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//bw.write( A * B * C +"\n");</span></span><br><span class="line">		</span><br><span class="line">		<span class="built_in">String</span> sum = A * B * C +<span class="string">""</span>;</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//bw.write(sum);</span></span><br><span class="line">		char[] a = sum.toCharArray();</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">for</span>(int i=<span class="number">0</span>;i&lt;a.length;i++)&#123;</span><br><span class="line">			<span class="keyword">switch</span>(a[i])&#123;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">'0'</span> : num[<span class="number">0</span>]++;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">'1'</span> : num[<span class="number">1</span>]++;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">'2'</span> : num[<span class="number">2</span>]++;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">'3'</span> : num[<span class="number">3</span>]++;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">'4'</span> : num[<span class="number">4</span>]++;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">'5'</span> : num[<span class="number">5</span>]++;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">'6'</span> : num[<span class="number">6</span>]++;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">'7'</span> : num[<span class="number">7</span>]++;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">'8'</span> : num[<span class="number">8</span>]++;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">'9'</span> : num[<span class="number">9</span>]++;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">for</span>(int i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)&#123;</span><br><span class="line">		bw.write(num[i]+<span class="string">"\n"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		bw.flush();</span><br><span class="line">		bw.close();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="OX퀴즈"><a href="#OX퀴즈" class="headerlink" title="OX퀴즈"></a>OX퀴즈</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TEST06_03</span></span>&#123;</span><br><span class="line">	public TEST06_03() throws IOException&#123;</span><br><span class="line">		BufferedReader br = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(System.in));</span><br><span class="line">		BufferedWriter bw = <span class="keyword">new</span> BufferedWriter(<span class="keyword">new</span> OutputStreamWriter(System.out));</span><br><span class="line">		</span><br><span class="line">		int t_case = Integer.parseInt(br.readLine());</span><br><span class="line">		int[] num = <span class="keyword">new</span> int[t_case];</span><br><span class="line">		<span class="built_in">String</span>[] ox = <span class="keyword">new</span> <span class="built_in">String</span>[t_case]; </span><br><span class="line">		<span class="comment">// O- 0x4F X-0x58</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">		int i = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;t_case;i++)&#123;</span><br><span class="line">			int j = <span class="number">0</span>;</span><br><span class="line">			ox[i] = br.readLine();</span><br><span class="line">			char[] chrInput= ox[i].toCharArray();</span><br><span class="line">			<span class="keyword">if</span>(ox[i].length() &gt; <span class="number">80</span> || ox[i].length() &lt; <span class="number">0</span>)&#123;</span><br><span class="line">				<span class="keyword">break</span>; <span class="comment">//MAIN FOR BREAK</span></span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;ox[i].length();j++)&#123;</span><br><span class="line">				<span class="keyword">if</span>(chrInput[j] == <span class="string">'O'</span> ||chrInput[j] == <span class="string">'X'</span>) <span class="keyword">continue</span>; </span><br><span class="line">				<span class="keyword">else</span> <span class="keyword">break</span>;	<span class="comment">//SUB FOR BREAK</span></span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span>(j!=ox[i].length()) <span class="keyword">break</span>; <span class="comment">//MAIN FOR BREAK</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(i==t_case) <span class="keyword">break</span>; <span class="comment">//O혹은 X가 아닐경우 처음 부터 다시 </span></span><br><span class="line">		&#125;<span class="comment">//while end</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(int i=<span class="number">0</span>;i&lt;t_case;i++)&#123;</span><br><span class="line">		char[] sub = ox[i].toCharArray();</span><br><span class="line">		</span><br><span class="line">		int score = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(int j=<span class="number">0</span>;j&lt;ox[i].length();j++)&#123;</span><br><span class="line">			<span class="keyword">if</span>(sub[j] == <span class="string">'O'</span>)&#123;</span><br><span class="line">				score++;</span><br><span class="line">				num[i] += score;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">				score = <span class="number">0</span>;</span><br><span class="line">		&#125;<span class="comment">// for - j end</span></span><br><span class="line">		</span><br><span class="line">		bw.write(num[i] + <span class="string">"\n"</span>);</span><br><span class="line">	&#125;<span class="comment">//for - i end</span></span><br><span class="line">	</span><br><span class="line">	bw.flush();</span><br><span class="line">	bw.close();</span><br><span class="line">	</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="음계"><a href="#음계" class="headerlink" title="음계"></a>음계</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TEST06_04</span></span>&#123;</span><br><span class="line">	public TEST06_04() throws IOException&#123;</span><br><span class="line">		BufferedReader br = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(System.in));</span><br><span class="line">		BufferedWriter bw = <span class="keyword">new</span> BufferedWriter(<span class="keyword">new</span> OutputStreamWriter(System.out));</span><br><span class="line">		</span><br><span class="line">		<span class="built_in">String</span>[] m = br.readLine().split(<span class="string">" "</span>);</span><br><span class="line">		<span class="built_in">String</span>[] x = <span class="keyword">new</span> <span class="built_in">String</span>[<span class="number">8</span>];</span><br><span class="line">		<span class="built_in">String</span>[] y = <span class="keyword">new</span> <span class="built_in">String</span>[<span class="number">8</span>];</span><br><span class="line">		int count = <span class="number">0</span> ;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">for</span>(int i=<span class="number">0</span>;i&lt;m.length;i++)&#123;</span><br><span class="line">			x[i] = <span class="built_in">String</span>.valueOf(i+<span class="number">1</span>);</span><br><span class="line">			y[i] = <span class="built_in">String</span>.valueOf(<span class="number">8</span>-i);</span><br><span class="line">			<span class="keyword">if</span>(x[i].equals(m[i]))&#123;</span><br><span class="line">				count++;</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">if</span>(y[i].equals(m[i]))&#123;</span><br><span class="line">				count--;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	<span class="comment">//	bw.write(m.length+"\n");</span></span><br><span class="line">	<span class="comment">//	bw.write(x[3]+"\n");</span></span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span>(m[<span class="number">0</span>].equals(<span class="string">"1"</span>) &amp;&amp; count == <span class="number">8</span>)&#123;</span><br><span class="line">			bw.write(<span class="string">"ascending"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(m[<span class="number">0</span>].equals(<span class="string">"8"</span>) &amp;&amp; count == <span class="number">-8</span>)&#123;</span><br><span class="line">			bw.write(<span class="string">"descending"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span>&#123;</span><br><span class="line">			bw.write(<span class="string">"mixed"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		bw.flush();</span><br><span class="line">		bw.close();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="평균-점수"><a href="#평균-점수" class="headerlink" title="평균 점수"></a>평균 점수</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TEST06_05</span></span>&#123;</span><br><span class="line">	public TEST06_05() throws IOException&#123;</span><br><span class="line">		BufferedReader br = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(System.in));</span><br><span class="line">		BufferedWriter bw = <span class="keyword">new</span> BufferedWriter(<span class="keyword">new</span> OutputStreamWriter(System.out));</span><br><span class="line"></span><br><span class="line">		int sum = <span class="number">0</span>;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">			int i=<span class="number">0</span>;</span><br><span class="line">			<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">5</span>;i++)&#123;</span><br><span class="line">				int n = Integer.parseInt(br.readLine());</span><br><span class="line">				</span><br><span class="line">				<span class="keyword">if</span>(n&lt;<span class="number">0</span> || n%<span class="number">5</span>!=<span class="number">0</span>)&#123; <span class="keyword">break</span>; &#125;</span><br><span class="line">			</span><br><span class="line">				<span class="keyword">if</span>(n&lt;<span class="number">40</span>) n=<span class="number">40</span>;</span><br><span class="line">				</span><br><span class="line">				sum += n;</span><br><span class="line">			&#125;<span class="comment">//main for end</span></span><br><span class="line">			</span><br><span class="line">			<span class="keyword">if</span>(i==<span class="number">5</span>)&#123; <span class="keyword">break</span>; &#125;</span><br><span class="line">		&#125;<span class="comment">//while end</span></span><br><span class="line">		</span><br><span class="line">		bw.write(sum/<span class="number">5</span> +<span class="string">"\n"</span>);</span><br><span class="line">		</span><br><span class="line">		bw.flush();</span><br><span class="line">		bw.close();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Main"><a href="#Main" class="headerlink" title="Main"></a>Main</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public <span class="class"><span class="keyword">class</span> <span class="title">TEST06</span> </span>&#123;</span><br><span class="line">	public <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="built_in">String</span>[] args) throws IOException&#123;</span><br><span class="line">	<span class="comment">//	TEST06_01 test06_01 = new TEST06_01();</span></span><br><span class="line">	<span class="comment">//	TEST06_02 test06_02 = new TEST06_02();</span></span><br><span class="line">	<span class="comment">//	TEST06_03 test06_03 = new TEST06_03();</span></span><br><span class="line">	<span class="comment">//	TEST06_04 test06_04 = new TEST06_04();</span></span><br><span class="line">		TEST06_05 test06_05 = <span class="keyword">new</span> TEST06_05();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://yoursite.com/2019/09/04/Algorism-for-java06/" data-id="ck055r39t00062mz0bsniyhgq" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Jun Hyeok Kim"
+        },
+        "headline": "백준 TEST06_1차원 배열 사용하기",
+        "image": "http://yoursite.comhttps://user-images.githubusercontent.com/31315644/64248313-bfdded00-cf4b-11e9-8d3d-23395528568d.png",
+        "keywords": "hexo git Web coding developer algorism",
+        "genre": "Algorism",
+        "datePublished": "2019-09-04",
+        "dateCreated": "2019-09-04",
+        "dateModified": "2019-09-04",
+        "url": "http://yoursite.com/2019/09/04/Algorism-for-java06/",
+        "description": "
+백준 TEST06_1차원 배열 사용하기﻿
+필요한 패키지 및 외부 클래스1234567package test_java;import java.io.BufferedReader;import java.io.BufferedWriter;import java.io.IOException;import java.io.InputStreamReader;import java.io.",
+        "wordCount": 1111
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="https://www.facebook.com/profile.php?id=100003801986180" target="_blank" rel="noopener">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/HYEOK999" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="youtube" href="https://www.youtube.com" target="_blank" rel="noopener">
+                        <i class="icon fa fa-youtube"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2019/09/04/Algorism-for-java07/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            백준 TEST07_문자열 사용하기
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2019/09/04/Algorism-for-java05/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">백준 TEST05_함수 사용하기</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/09/04/Algorism-for-java07/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/64248313-bfdded00-cf4b-11e9-8d3d-23395528568d.png)" alt="백준 TEST07_문자열 사용하기" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Algorism/">Algorism</a></p>
+                            <p class="item-title"><a href="/2019/09/04/Algorism-for-java07/" class="title">백준 TEST07_문자열 사용하기</a></p>
+                            <p class="item-date"><time datetime="2019-09-04T10:26:52.000Z" itemprop="datePublished">2019-09-04</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/09/04/Algorism-for-java06/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/64248313-bfdded00-cf4b-11e9-8d3d-23395528568d.png)" alt="백준 TEST06_1차원 배열 사용하기" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Algorism/">Algorism</a></p>
+                            <p class="item-title"><a href="/2019/09/04/Algorism-for-java06/" class="title">백준 TEST06_1차원 배열 사용하기</a></p>
+                            <p class="item-date"><time datetime="2019-09-04T10:26:50.000Z" itemprop="datePublished">2019-09-04</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/09/04/Algorism-for-java05/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/64248313-bfdded00-cf4b-11e9-8d3d-23395528568d.png)" alt="백준 TEST05_함수 사용하기" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Algorism/">Algorism</a></p>
+                            <p class="item-title"><a href="/2019/09/04/Algorism-for-java05/" class="title">백준 TEST05_함수 사용하기</a></p>
+                            <p class="item-date"><time datetime="2019-09-04T10:26:48.000Z" itemprop="datePublished">2019-09-04</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/09/04/Algorism-for-java04/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/64248313-bfdded00-cf4b-11e9-8d3d-23395528568d.png)" alt="백준 TEST04_if문 사용해보기" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Algorism/">Algorism</a></p>
+                            <p class="item-title"><a href="/2019/09/04/Algorism-for-java04/" class="title">백준 TEST04_if문 사용해보기</a></p>
+                            <p class="item-date"><time datetime="2019-09-04T10:26:47.000Z" itemprop="datePublished">2019-09-04</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/09/04/Algorism-for-java03/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/64248313-bfdded00-cf4b-11e9-8d3d-23395528568d.png)" alt="백준 TEST03_for문 사용해보기" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Algorism/">Algorism</a></p>
+                            <p class="item-title"><a href="/2019/09/04/Algorism-for-java03/" class="title">백준 TEST03_for문 사용해보기</a></p>
+                            <p class="item-date"><time datetime="2019-09-04T10:26:45.000Z" itemprop="datePublished">2019-09-04</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a><span class="archive-list-count">13</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorism/">algorism</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/coding/">coding</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/developer/">developer</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">12</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Web/" style="font-size: 20px;">Web</a> <a href="/tags/algorism/" style="font-size: 10px;">algorism</a> <a href="/tags/coding/" style="font-size: 20px;">coding</a> <a href="/tags/developer/" style="font-size: 20px;">developer</a> <a href="/tags/git/" style="font-size: 20px;">git</a> <a href="/tags/hexo/" style="font-size: 20px;">hexo</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.naver.com">Naver</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2019 Jun Hyeok Kim</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'http://yoursite.com/2019/09/04/Algorism-for-java06/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
