@@ -21,7 +21,7 @@
 <meta property="og:description" content="HTML Study 06 MarkUp 짤 때 고민해야하는 점. fieldset 태그의 버그 button태그의 버그 (왜? button 대신 a role=”button” 을 이용하는가?) vertical-align / text-align time 태그 block 태그 안에서 여백을 주는 여러가지 방법들. 글자 수 숨기기 (… 처리하기) fontello ar">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://user-images.githubusercontent.com/31315644/64251759-3252cb00-cf54-11e9-88f9-922505f9789e.jpeg">
-<meta property="og:updated_time" content="2019-09-12T13:19:49.648Z">
+<meta property="og:updated_time" content="2019-09-13T16:03:08.519Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="html-css-study-06">
 <meta name="twitter:description" content="HTML Study 06 MarkUp 짤 때 고민해야하는 점. fieldset 태그의 버그 button태그의 버그 (왜? button 대신 a role=”button” 을 이용하는가?) vertical-align / text-align time 태그 block 태그 안에서 여백을 주는 여러가지 방법들. 글자 수 숨기기 (… 처리하기) fontello ar">
@@ -286,13 +286,36 @@
 
 <p> 위 a링크는 aria-labelledby=”notice” 로 인해  id가 “notice”인것을 연결해준다.</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span> <span class="attr">class</span>=<span class="string">"tab"</span> <span class="attr">role</span>=<span class="string">"button"</span> <span class="attr">id</span>=<span class="string">"notice"</span>&gt;</span>공지사항<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="JavaScript-맛보기"><a href="#JavaScript-맛보기" class="headerlink" title="JavaScript 맛보기"></a>JavaScript 맛보기</h3><p>[defer 및 async] <a href="https://blog.asamaru.net/2017/05/04/script-async-defer/" target="_blank" rel="noopener">https://blog.asamaru.net/2017/05/04/script-async-defer/</a></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"./js/jquery.min.js"</span> <span class="attr">defer</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"./js/webcafe.js"</span> <span class="attr">defer</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> section = $(<span class="string">'.board section'</span>); <span class="comment">//jqeury lib에서 지원하는 선택 객체</span></span><br><span class="line"><span class="keyword">var</span> tab = $(<span class="string">'.tab'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// .on('이벤트명')</span></span><br><span class="line"><span class="comment">// tab.on('click keyup',function(e)&#123;</span></span><br><span class="line">tab.on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">  e.preventDefault();<span class="comment">// 기본 이벤트를 취소함. 예를들면 a의 속성 href의 이벤트를 취소함.</span></span><br><span class="line">  <span class="comment">// if((e.type === 'keyup' &amp;&amp; e.keyCode === 13) || e.type === 'click')&#123;</span></span><br><span class="line">  section.removeClass(<span class="string">'tab-act'</span>);</span><br><span class="line">  $(<span class="keyword">this</span>).parent().parent().addClass(<span class="string">'tab-act'</span>);</span><br><span class="line">&#125;)<span class="comment">//멀티 이벤트 바인딩 예-&gt; 클릭, 마우스온 등 다양한 환경 대응</span></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><p>board라는 이름을 가진 클래스의 section태그의 내용을 section이라는 이름의 변수로 선언.</p>
+</li>
+<li><p>tab이라는 이름을 가진 클래스의 정보를 tab이라는 이름의 변수로 선언.</p>
+</li>
+<li><p>tab이  클릭 되었을 때, 다음과 같은 기능을 수행한다.</p>
+<ol>
+<li><p>tab이라는 이름을 가진 클래스의 태그가 가진 기본적인 이벤트 기능을 모두 취소(제거) 한다.</p>
+</li>
+<li><p>board라는 이름을 가진 클래스의 section태그 내부에서 tab-act라고 불리는 클래스를 제거한다.</p>
+</li>
+<li><p>tab이라는 이름을 가진 클래스의 태그의 부모의 부모에게  tab-act라는 클래스네임을 붙여준다.</p>
+</li>
+</ol>
+</li>
+</ol>
+
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="http://yoursite.com/2019/09/12/html-css-study-06/" data-id="ck0gwqrji001glsz0r7y84623" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2019/09/12/html-css-study-06/" data-id="ck0ib9sut0016u5z0ywefnh6a" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -368,7 +391,7 @@
         "genre": "TIL",
         "datePublished": "2019-09-12",
         "dateCreated": "2019-09-12",
-        "dateModified": "2019-09-12",
+        "dateModified": "2019-09-14",
         "url": "http://yoursite.com/2019/09/12/html-css-study-06/",
         "description": "
 HTML Study 06
@@ -381,7 +404,7 @@ block 태그 안에서 여백을 주는 여러가지 방법들.
 글자 수 숨기기 (… 처리하기)
 fontello
 ar",
-        "wordCount": 638
+        "wordCount": 827
     }
 </script>
 
