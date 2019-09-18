@@ -1,66 +1,205 @@
 <!DOCTYPE html>
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>html-css-study-01 | HYEOK999&#39;s Blog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="author" content="Jun Hyeok Kim">
-  <meta name="keywords" content>
-  <meta name="description" content>
-  <script id="hexo-configurations">
-  var CONFIG = {
-    root: '/',
-    theme: 'lx',
-    version: '1.4.5',
-    localsearch:{
-      "enable": false,
-      "trigger": "auto",
-      "top_n_per_article": 1,
-      "unescape": false,
-      "preload": false
-      },
-    path: '-'
-  };
-</script>
+    <meta charset="utf-8">
 
-  <link rel="shortcut icon" href="/images/favicon_io/favicon.ico">
-  <link rel="stylesheet" href="/css/main.css">
-  <script src="/js/jquery.min.js"></script>
-  <script src="/js/jquery.jside.menu.js"></script>
-	<script>
-	$(document).ready(function(){
-	$(".menu-container").jSideMenu({
-	    jSidePosition: "position-right",
-	    jSideSticky: true,
-	    jSideSkin: "endless-river",
-	     });
-	}); 
-	</script>
-  
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300|Noto+Serif+SC&amp;display=swap">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css">
+    
+
+    
+    <title>html-css-study-01 | HYEOK999&#39;s Blog</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="hexo,git,Web,coding,developer,CSS,HTML,TIL">
+    
+    <meta name="description" content="HTML Study 01 DTD 소개 및 사용 방법 html 영역의 언어 선택 head 영역 안 인코딩 선언 타이틀 요소를 이용한 좋은 제목을 만드는 방법 HTML의 구조 설계  CSS 레이아웃 박스 모델  WEB은 디자인관점이 아닌 콘텐츠 관점으로 보아야 한다.SEO 관점으로 페이지를 작성해야만 한다.문서와 구조와 표현을 분리 해놓는 것이 중요하다.DT">
+<meta name="keywords" content="hexo,git,Web,coding,developer,CSS,HTML,TIL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="html-css-study-01">
+<meta property="og:url" content="http://yoursite.com/2019/09/04/html-css-study-01/index.html">
+<meta property="og:site_name" content="HYEOK999&#39;s Blog">
+<meta property="og:description" content="HTML Study 01 DTD 소개 및 사용 방법 html 영역의 언어 선택 head 영역 안 인코딩 선언 타이틀 요소를 이용한 좋은 제목을 만드는 방법 HTML의 구조 설계  CSS 레이아웃 박스 모델  WEB은 디자인관점이 아닌 콘텐츠 관점으로 보아야 한다.SEO 관점으로 페이지를 작성해야만 한다.문서와 구조와 표현을 분리 해놓는 것이 중요하다.DT">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://user-images.githubusercontent.com/31315644/64251759-3252cb00-cf54-11e9-88f9-922505f9789e.jpeg">
+<meta property="og:updated_time" content="2019-09-05T12:40:33.967Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="html-css-study-01">
+<meta name="twitter:description" content="HTML Study 01 DTD 소개 및 사용 방법 html 영역의 언어 선택 head 영역 안 인코딩 선언 타이틀 요소를 이용한 좋은 제목을 만드는 방법 HTML의 구조 설계  CSS 레이아웃 박스 모델  WEB은 디자인관점이 아닌 콘텐츠 관점으로 보아야 한다.SEO 관점으로 페이지를 작성해야만 한다.문서와 구조와 표현을 분리 해놓는 것이 중요하다.DT">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/31315644/64251759-3252cb00-cf54-11e9-88f9-922505f9789e.jpeg">
+    
+
+    
+
+    
+        <link rel="icon" href="/images/favicon_io/favicon.ico">
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
 </head>
+</html>
 <body>
-<div class="single">
-<div id="page">
-<div id="lx-aside" style="background-image: url(/images/post-cover.jpeg)" data-stellar-background-ratio="0.5">
-  <div class="overlay">
-  <div class="page-title">
-    <div class="avatar"><a href="/"><img src="/images/HYEOK999.png"></a></div>
-    <span>2019-09-04</span>
-    <h2>html-css-study-01</h2>
-    <div class="tags"><i class="fa fa-tag"></i><a class="tag-link" href="/tags/CSS/">CSS</a> <i class="fa fa-tag"></i><a class="tag-link" href="/tags/HTML/">HTML</a> <i class="fa fa-tag"></i><a class="tag-link" href="/tags/TIL/">TIL</a> <i class="fa fa-tag"></i><a class="tag-link" href="/tags/Web/">Web</a> <i class="fa fa-tag"></i><a class="tag-link" href="/tags/coding/">coding</a> <i class="fa fa-tag"></i><a class="tag-link" href="/tags/developer/">developer</a> <i class="fa fa-tag"></i><a class="tag-link" href="/tags/git/">git</a> <i class="fa fa-tag"></i><a class="tag-link" href="/tags/hexo/">hexo</a></div>
-    <div class="social-links">
-<a href="https://github.com/HYEOK999" target="_blank"><i class="fa fa-github fa-fw"></i></a><a href="mailto:iasg2004@naver.com"><i class="fa fa-envelope fa-fw"></i></a><a href="https://www.facebook.com/profile.php?id=100003801986180" target="_blank"><i class="fa fa-facebook fa-fw"></i></a><a href="https://youtube.com" target="_blank"></a><i class="fa fa-youtube-play fa-fw"></i>
-</div></div>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">HYEOK999&#39;s Daily Develop</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/categories/Algorism/">Algorism</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/categories/Develop/">Develop</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/categories/HTML/">HTML</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/categories/CSS/">CSS</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/categories/TIL/">TIL</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/categories/JAVA/">JAVA</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/categories/Etc/">Etc</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
 </div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
 </div>
-<div id="lx-main-content">
-  <div class="lx-post">
-    <div class="lx-entry padding">
-      <div>
-        <p><img src="https://user-images.githubusercontent.com/31315644/64251759-3252cb00-cf54-11e9-88f9-922505f9789e.jpeg" alt="html-css"></p>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/TIL/">TIL</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-html-css-study-01" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        html-css-study-01
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/09/04/html-css-study-01/" class="article-date">
+            <time datetime="2019-09-04T12:47:07.000Z" itemprop="datePublished">2019-09-04</time>
+        </a>
+    </div>
+
+		
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/CSS/">CSS</a>, <a class="tag-link" href="/tags/HTML/">HTML</a>, <a class="tag-link" href="/tags/TIL/">TIL</a>, <a class="tag-link" href="/tags/Web/">Web</a>, <a class="tag-link" href="/tags/coding/">coding</a>, <a class="tag-link" href="/tags/developer/">developer</a>, <a class="tag-link" href="/tags/git/">git</a>, <a class="tag-link" href="/tags/hexo/">hexo</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p><img src="https://user-images.githubusercontent.com/31315644/64251759-3252cb00-cf54-11e9-88f9-922505f9789e.jpeg" alt="html-css"></p>
 <h2 id="HTML-Study-01"><a href="#HTML-Study-01" class="headerlink" title="HTML Study 01"></a>HTML Study 01</h2><ul>
 <li>DTD 소개 및 사용 방법</li>
 <li>html 영역의 언어 선택</li>
@@ -99,88 +238,415 @@
 <p>​<br>​    ###<br>​<br>​<br>​<br>​    ### HTML의 구조 설계<br>​<br>​<br>​<br>​    ## 웹페이지 분석 -&gt; Mark Up -&gt; Naming<br>​<br>​    #### 분석 : 웹페이지는 주로 삼단 구조를 가진다.<br>​<br>​    &gt; 머리말(헤더)<br>​    &gt;<br>​    &gt; 본문(콘텐츠)<br>​    &gt;<br>​    &gt; 꼬리말(푸터)<br>​<br>​<br>​<br>​    #### Web. Cafe. 페이지 분석(삼단 ++)<br>​<br>​    &gt;머리말(헤더)<br>​    &gt;<br>​    &gt;+비주얼(광고등으로 활용가능성)<br>​    &gt;<br>​    &gt;본문(콘텐츠)<br>​    &gt;<br>​    &gt;+슬로건 (커피잔 , 명언)<br>​    &gt;<br>​    &gt;꼬리말(푸터)<br>​<br>​<br>​<br>​    #### Mark Up 단계<br>​<br>​    &gt; body 태그 안<br>​    &gt;<br>​    &gt; ​    header - 머리말<br>​    &gt;<br>​    &gt; ​    div - 비주얼<br>​    &gt;<br>​    &gt; ​    main - 본문<br>​    &gt;<br>​    &gt; ​    article - RSS, 슬로건<br>​    &gt;<br>​    &gt; ​    footer - 꼬리말<br>​<br>​<br>​<br>​    #### Naming 단계 ( Naming : 컴퓨터가 이해할 수 있도록 이름을 지어준다. )<br>​<br>​    &gt; ### { top , bottom 같은 위치 기반 이름은 정말로 안좋음!!! }<br>​    &gt;<br>​    &gt; 이름 주는 방법<br>​    &gt;<br>​    &gt; class : 여러번 사용가능.<br>​    &gt;<br>​    &gt; id : 고유하게 정할 때 사용.<br>​<br>​<br>​<br>​    ### CSS 레이아웃<br>​<br>​    &gt; 정통방식 : float , position, display:inline, display:inline-block<br>​    &gt;<br>​    &gt; 모던방식 : display:inline, display:inline-block, flex, glid<br>​<br>​    ### 박스 모델<br>​<br>​    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">​    box-sizing: content-box | border-box | initial | inherit</span><br><span class="line">​</span><br></pre></td></tr></table></figure></p>
 <p>​<br>​    - content-box : 콘텐트 영역을 기준으로 크기를 정합니다.<br>​    - border-box : 테두리를 기준으로 크기를 정합니다.</p>
 
-      </div>
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://yoursite.com/2019/09/04/html-css-study-01/" data-id="ck0pmezrc000y90z0x1l9uidt" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
     </div>
-  </div>
-</div>
-<div class="lx-navigation">
-	<div class="lx-cover prev lx-cover-sm" style="background-image: url(/images/footer_1.jpg)">
-		<div class="overlay"></div>
-		<a class="copy" href="/2019/09/06/html-css-study-02/">
-			<div class="display-t">
-				<div class="display-tc">
-					<div>
-						<span>Next</span>
-						<h3>html-css-study-02</h3>
-					</div>
-				</div>
-			</div>
-		</a>
-	</div>
-        <div class="lx-cover next lx-cover-sm" style="background-image: url(/images/footer_2.jpg)">
-		<div class="overlay"></div>
-		<a class="copy" href="/2019/09/04/Algorism-for-java07/">
-			<div class="display-t">
-				<div class="display-tc">
-					<div>
-						<span>Prev</span>
-						<h3>백준 TEST07_문자열 사용하기</h3>
-					</div>
-				</div>
-			</div>
-		</a>
-	</div>
-</div>
-</div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Jun Hyeok Kim"
+        },
+        "headline": "html-css-study-01",
+        "image": "http://yoursite.comhttps://user-images.githubusercontent.com/31315644/64251759-3252cb00-cf54-11e9-88f9-922505f9789e.jpeg",
+        "keywords": "hexo git Web coding developer CSS HTML TIL",
+        "genre": "TIL",
+        "datePublished": "2019-09-04",
+        "dateCreated": "2019-09-04",
+        "dateModified": "2019-09-05",
+        "url": "http://yoursite.com/2019/09/04/html-css-study-01/",
+        "description": "
+HTML Study 01
+DTD 소개 및 사용 방법
+html 영역의 언어 선택
+head 영역 안 인코딩 선언
+타이틀 요소를 이용한 좋은 제목을 만드는 방법
+HTML의 구조 설계 
+CSS 레이아웃
+박스 모델
 
-<footer>
-  <div>
-  Copyright &copy; 2019.<a href="/">HYEOK999's Blog</a><br>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme <a href="https://lx.blleng.cn" target="_blank">Lx</a><br>
-  </div>
-</footer>
-</div>
+WEB은 디자인관점이 아닌 콘텐츠 관점으로 보아야 한다.SEO 관점으로 페이지를 작성해야만 한다.문서와 구조와 표현을 분리 해놓는 것이 중요하다.DT",
+        "wordCount": 648
+    }
+</script>
 
-<button class="menu-trigger"></button>
-<div class="menu">
-  <div class="menu-head">
-    <span class="layer">
-      <div class="col">
-        <div class="row for-pic">
-          <div class="profile-pic">
-            <a href="/"><img src="/images/HYEOK999.png" alt="Jun Hyeok Kim"></a>
-          </div>
-        </div>
-        <div class="row for-name">
-          <p>Jun Hyeok Kim</p>
-          <span class="tagline">Welcome, My Blog</span>
-        </div>
-      </div>
-    </span>
-  </div>
-  <nav class="menu-container">
-  <ul class="menu-items">
-    <li><a href="/"><i class="fa fa-home fa-fw"></i>首页</a></li>
-    <li><a href="/archives/"><i class="fa fa-archive fa-fw"></i>归档</a></li>
-    <li class="has-sub"><span class="dropdown-heading">
-      <i class="fa fa-bookmark fa-fw"></i>页面</span>
-        <ul>
-          <li><a href="/guestbook">留言</a></li>
-        <li><a href="/about">关于</a></li>
-        </ul>
-    </li>
+</article>
+
+    <section id="comments">
     
-  </ul>
-  </nav>
-</div>
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
 
-<div class="gototop js-top">
-  <a href="#" class="js-gotop"><i class="fa fa-arrow-up"></i></a>
-</div>
-<script src="/js/jquery.easing.min.js"></script>
-<script src="/js/jquery.waypoints.min.js"></script>
-<script src="/js/jquery.stellar.min.js"></script>
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="https://www.facebook.com/profile.php?id=100003801986180" target="_blank" rel="noopener">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/HYEOK999" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="youtube" href="https://www.youtube.com" target="_blank" rel="noopener">
+                        <i class="icon fa fa-youtube"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2019/09/06/html-css-study-02/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            html-css-study-02
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2019/09/04/Algorism-for-java07/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">백준 TEST07_문자열 사용하기</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/09/19/html-css-study-08/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/64251759-3252cb00-cf54-11e9-88f9-922505f9789e.jpeg)" alt="html-css-study-08" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a></p>
+                            <p class="item-title"><a href="/2019/09/19/html-css-study-08/" class="title">html-css-study-08</a></p>
+                            <p class="item-date"><time datetime="2019-09-18T17:58:58.000Z" itemprop="datePublished">2019-09-19</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/09/17/html-css-study-07/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/64251759-3252cb00-cf54-11e9-88f9-922505f9789e.jpeg)" alt="html-css-study-07" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a></p>
+                            <p class="item-title"><a href="/2019/09/17/html-css-study-07/" class="title">html-css-study-07</a></p>
+                            <p class="item-date"><time datetime="2019-09-16T18:12:39.000Z" itemprop="datePublished">2019-09-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/09/14/java-tips02/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/64877376-40a79200-d68c-11e9-9d7d-6909717cffc9.jpeg)" alt="java-tips02" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/JAVA/">JAVA</a></p>
+                            <p class="item-title"><a href="/2019/09/14/java-tips02/" class="title">java-tips02</a></p>
+                            <p class="item-date"><time datetime="2019-09-13T16:12:50.000Z" itemprop="datePublished">2019-09-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/09/14/java-tips01/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/64877376-40a79200-d68c-11e9-9d7d-6909717cffc9.jpeg)" alt="java-tips01" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/JAVA/">JAVA</a></p>
+                            <p class="item-title"><a href="/2019/09/14/java-tips01/" class="title">java-tips01</a></p>
+                            <p class="item-date"><time datetime="2019-09-13T16:06:51.000Z" itemprop="datePublished">2019-09-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/09/13/html-markup01/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/64801438-7cc2f000-d5c3-11e9-95ae-d60a2ec6d649.jpeg)" alt="html-markup" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a></p>
+                            <p class="item-title"><a href="/2019/09/13/html-markup01/" class="title">html-markup</a></p>
+                            <p class="item-date"><time datetime="2019-09-12T16:01:04.000Z" itemprop="datePublished">2019-09-13</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a><span class="archive-list-count">26</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/">JAVA</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MarkUP/">MarkUP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TIL/">TIL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a><span class="tag-list-count">25</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorism/">algorism</a><span class="tag-list-count">19</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/coding/">coding</a><span class="tag-list-count">25</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/developer/">developer</a><span class="tag-list-count">25</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">25</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">25</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://github.com">github</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.naver.com">Naver</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://google.com">Google</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://www.youtube.com/">Youtube</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2019 Jun Hyeok Kim</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'http://yoursite.com/2019/09/04/html-css-study-01/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
 <script src="/js/main.js"></script>
 
-
+    </div>
 </body>
 </html>
