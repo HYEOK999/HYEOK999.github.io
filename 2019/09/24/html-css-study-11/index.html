@@ -12,19 +12,19 @@
     
         <meta name="keywords" content="hexo,git,Web,coding,developer,algorism,CSS,HTML">
     
-    <meta name="description" content="HTML Study 11 webfont letter, word spacing transition 사용 주의점 프로젝트 하면서 느낀점 9월 23일">
+    <meta name="description" content="HTML Study 11 fontello 사용법 letter, word spacing transition 사용 주의점 프로젝트 하면서 느낀점 9월 23일   fontello 사용법 fontello 사용법  fontello 접속 마음에 드는 fontello 아이콘들 선택(라이센스 주의) 다운로드 다운로드 된 압출파일을 해제 해제된 폴더를 프로젝트에 붙여넣는">
 <meta name="keywords" content="hexo,git,Web,coding,developer,algorism,CSS,HTML">
 <meta property="og:type" content="article">
 <meta property="og:title" content="html-css-study-11">
 <meta property="og:url" content="http://yoursite.com/2019/09/24/html-css-study-11/index.html">
 <meta property="og:site_name" content="HYEOK999&#39;s Blog">
-<meta property="og:description" content="HTML Study 11 webfont letter, word spacing transition 사용 주의점 프로젝트 하면서 느낀점 9월 23일">
+<meta property="og:description" content="HTML Study 11 fontello 사용법 letter, word spacing transition 사용 주의점 프로젝트 하면서 느낀점 9월 23일   fontello 사용법 fontello 사용법  fontello 접속 마음에 드는 fontello 아이콘들 선택(라이센스 주의) 다운로드 다운로드 된 압출파일을 해제 해제된 폴더를 프로젝트에 붙여넣는">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://user-images.githubusercontent.com/31315644/64251759-3252cb00-cf54-11e9-88f9-922505f9789e.jpeg">
-<meta property="og:updated_time" content="2019-09-23T17:26:12.994Z">
+<meta property="og:updated_time" content="2019-09-23T17:37:53.432Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="html-css-study-11">
-<meta name="twitter:description" content="HTML Study 11 webfont letter, word spacing transition 사용 주의점 프로젝트 하면서 느낀점 9월 23일">
+<meta name="twitter:description" content="HTML Study 11 fontello 사용법 letter, word spacing transition 사용 주의점 프로젝트 하면서 느낀점 9월 23일   fontello 사용법 fontello 사용법  fontello 접속 마음에 드는 fontello 아이콘들 선택(라이센스 주의) 다운로드 다운로드 된 압출파일을 해제 해제된 폴더를 프로젝트에 붙여넣는">
 <meta name="twitter:image" content="https://user-images.githubusercontent.com/31315644/64251759-3252cb00-cf54-11e9-88f9-922505f9789e.jpeg">
     
 
@@ -201,12 +201,57 @@
         <div class="article-entry" itemprop="articleBody">
             <p><img src="https://user-images.githubusercontent.com/31315644/64251759-3252cb00-cf54-11e9-88f9-922505f9789e.jpeg" alt="html-css"></p>
 <h2 id="HTML-Study-11"><a href="#HTML-Study-11" class="headerlink" title="HTML Study 11"></a>HTML Study 11</h2><ul>
-<li>webfont</li>
+<li>fontello 사용법</li>
 <li>letter, word spacing</li>
 <li>transition 사용 주의점</li>
 <li>프로젝트 하면서 느낀점 9월 23일</li>
 </ul>
 <hr>
+<h3 id="fontello-사용법"><a href="#fontello-사용법" class="headerlink" title="fontello 사용법"></a>fontello 사용법</h3><ol>
+<li>fontello 사용법 </li>
+<li>fontello 접속 마음에 드는 fontello 아이콘들 선택(라이센스 주의)</li>
+<li>다운로드</li>
+<li>다운로드 된 압출파일을 해제</li>
+<li>해제된 폴더를 프로젝트에 붙여넣는다.(가급적이면 폴더 네임수정 - 지저분함)</li>
+<li>CSS파일에 다음과 같이 넣어준다.</li>
+</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">import</span> url(<span class="string">'./fontello/css/fontello.css'</span>); <span class="comment">/*import*/</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/*사용 방법*/</span></span><br><span class="line"><span class="selector-class">.header</span><span class="selector-pseudo">::after</span>&#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">'\e805'</span>;</span><br><span class="line">    <span class="attribute">font-family</span>: <span class="string">"fontello"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+
+
+<h3 id="letter-word-spacing"><a href="#letter-word-spacing" class="headerlink" title="letter , word spacing"></a>letter , word spacing</h3><ul>
+<li><p>글자 사이의 간격은 letter-spacing으로, 단어 사이의 간격은 word-spacing으로 정한다.</p>
+</li>
+<li><p>값이 커지면 간격이 커진다.</p>
+</li>
+<li><p>값에는 음수를 넣을 수 있다.</p>
+<p>( 마이크로소프트 엣지나 인터넷 익스플로러에서는 단어 사이의 간격을 음수로 정해도 글자가 겹치지 않을 정도로만 간격이 줄어든다.)</p>
+</li>
+<li><p>음수를 값으로 하는 경우 글자가 겹칠 수 있다.</p>
+</li>
+<li><p>글자 사이의 간격을 변화시키면 단어 사이의 간격도 변한다.</p>
+</li>
+<li><p>단어 사이의 간격을 변화시켜도 글자 사이의 간격은 변하지 않는다.</p>
+</li>
+</ul>
+<br>
+
+
+
+<h3 id="transition-사용-주의점"><a href="#transition-사용-주의점" class="headerlink" title="transition 사용 주의점"></a>transition 사용 주의점</h3><p>​    transition 사용시 초(s) 단위를 붙일 경우, 0일떄 s를 생략하면 작동을 안한다.</p>
+<p>​    꼭 유의 하고 사용할 것.</p>
+<br>
+
+<h3 id="프로젝트-하면서-느낀점"><a href="#프로젝트-하면서-느낀점" class="headerlink" title="프로젝트 하면서 느낀점"></a>프로젝트 하면서 느낀점</h3><ul>
+<li>막히면 차분히 무엇이 문제인지 돌아보고 꼭 구조적으로 해결하기 보다는 작은부분부터 수정해 나가기.</li>
+<li>개발 도중 정적이니 동적이니 반응형이니 고정형이니 생각하지 말고 현재 주어진 디자인만 생각하기.</li>
+<li>레이아웃 설계는 가능한 그리면서 진행하기. (나중에 레이아웃을 뒤엎는 경우가 생긴다.)</li>
+<li>flex , float , absolute , grid 특성에 대해서 다시 한번 공부하기</li>
+</ul>
+<br>
+
 
         </div>
         <footer class="article-footer">
@@ -214,7 +259,7 @@
 
 
 
-    <a data-url="http://yoursite.com/2019/09/24/html-css-study-11/" data-id="ck0wonc20001rvkz0ct7g5wk0" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2019/09/24/html-css-study-11/" data-id="ck0wp3nq2001xrvz0hiznh8qc" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -294,14 +339,19 @@
         "url": "http://yoursite.com/2019/09/24/html-css-study-11/",
         "description": "
 HTML Study 11
-webfont
+fontello 사용법
 letter, word spacing
 transition 사용 주의점
 프로젝트 하면서 느낀점 9월 23일
 
 
-",
-        "wordCount": 19
+fontello 사용법
+fontello 사용법 
+fontello 접속 마음에 드는 fontello 아이콘들 선택(라이센스 주의)
+다운로드
+다운로드 된 압출파일을 해제
+해제된 폴더를 프로젝트에 붙여넣는",
+        "wordCount": 233
     }
 </script>
 
