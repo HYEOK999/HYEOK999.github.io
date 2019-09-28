@@ -10,17 +10,22 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="hexo,git,Web,coding,developer,algorism">
+        <meta name="keywords" content="hexo,git,Web,coding,developer,algorism,CSS,HTML">
     
-    <meta name="keywords" content="hexo,git,Web,coding,developer,algorism">
+    <meta name="description" content="HTML Study 13 css : filter ( 흑백처리 , blur 효과 등등 ) tab-index margin 겹침 현상 background size 중앙 정렬 처리하는 방법 (수직 정렬등) aria-label , aria-labelby ( vs title ) aria-expended , aria-haspopup iframe 사용시 주의점 fr 단">
+<meta name="keywords" content="hexo,git,Web,coding,developer,algorism,CSS,HTML">
 <meta property="og:type" content="article">
 <meta property="og:title" content="html-css-study-13">
 <meta property="og:url" content="http://yoursite.com/2019/09/28/html-css-study-13/index.html">
 <meta property="og:site_name" content="HYEOK999&#39;s Blog">
+<meta property="og:description" content="HTML Study 13 css : filter ( 흑백처리 , blur 효과 등등 ) tab-index margin 겹침 현상 background size 중앙 정렬 처리하는 방법 (수직 정렬등) aria-label , aria-labelby ( vs title ) aria-expended , aria-haspopup iframe 사용시 주의점 fr 단">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-09-28T08:01:51.626Z">
+<meta property="og:image" content="https://user-images.githubusercontent.com/31315644/64251759-3252cb00-cf54-11e9-88f9-922505f9789e.jpeg">
+<meta property="og:updated_time" content="2019-09-28T12:40:57.038Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="html-css-study-13">
+<meta name="twitter:description" content="HTML Study 13 css : filter ( 흑백처리 , blur 효과 등등 ) tab-index margin 겹침 현상 background size 중앙 정렬 처리하는 방법 (수직 정렬등) aria-label , aria-labelby ( vs title ) aria-expended , aria-haspopup iframe 사용시 주의점 fr 단">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/31315644/64251759-3252cb00-cf54-11e9-88f9-922505f9789e.jpeg">
     
 
     
@@ -155,7 +160,7 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/Develop/">Develop</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Develop/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Develop/TIL/Algorism/">Algorism</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Develop/TIL/Algorism/HTML/">HTML</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Develop/TIL/Algorism/HTML/CSS/">CSS</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Develop/TIL/Algorism/HTML/CSS/Javascript/">Javascript</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Develop/TIL/Algorism/HTML/CSS/Javascript/Etc/">Etc</a>
+    <a class="page-title-link" href="/categories/TIL/">TIL</a>
     </h1>
 </div>
 
@@ -187,21 +192,126 @@
                 
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Web/">Web</a>, <a class="tag-link" href="/tags/algorism/">algorism</a>, <a class="tag-link" href="/tags/coding/">coding</a>, <a class="tag-link" href="/tags/developer/">developer</a>, <a class="tag-link" href="/tags/git/">git</a>, <a class="tag-link" href="/tags/hexo/">hexo</a>
+        <a class="tag-link" href="/tags/CSS/">CSS</a>, <a class="tag-link" href="/tags/HTML/">HTML</a>, <a class="tag-link" href="/tags/Web/">Web</a>, <a class="tag-link" href="/tags/algorism/">algorism</a>, <a class="tag-link" href="/tags/coding/">coding</a>, <a class="tag-link" href="/tags/developer/">developer</a>, <a class="tag-link" href="/tags/git/">git</a>, <a class="tag-link" href="/tags/hexo/">hexo</a>
     </div>
 
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <p><img src="https://user-images.githubusercontent.com/31315644/64251759-3252cb00-cf54-11e9-88f9-922505f9789e.jpeg" alt="html-css"></p>
+<h2 id="HTML-Study-13"><a href="#HTML-Study-13" class="headerlink" title="HTML Study 13"></a>HTML Study 13</h2><ul>
+<li>css : filter ( 흑백처리 , blur 효과 등등 )</li>
+<li>tab-index</li>
+<li>margin 겹침 현상</li>
+<li>background size</li>
+<li>중앙 정렬 처리하는 방법 (수직 정렬등)</li>
+<li>aria-label , aria-labelby ( vs title )</li>
+<li>aria-expended , aria-haspopup</li>
+<li>iframe 사용시 주의점</li>
+<li>fr 단위</li>
+</ul>
+<hr>
+<ol>
+<li>반응형 디자인을 할때는 px보다는 em, rem같은 단위를 써야 유연해지기에 좋다.</li>
+<li>grid에서는 fr단위로 쉽게 조절이 가능하다.</li>
+<li>수직중앙정렬시 translateY : -50%를 이용한다.</li>
+<li>iframe은 퍼올때부터 대부분 사이즈가 지정이 되어있으므로 유동적인 사이즈를 맞추려면 div로 한번더 감싼다.</li>
+</ol>
+<hr>
+<h3 id="css-filter-흑백처리-blur-효과-등등"><a href="#css-filter-흑백처리-blur-효과-등등" class="headerlink" title="css : filter ( 흑백처리 , blur 효과 등등 )"></a>css : filter ( 흑백처리 , blur 효과 등등 )</h3><p> filter 기능은 이미지를 흑백처리하거나 blur, 반전, 밝기 조절등의 효과를 넣는 것을 말한다.</p>
+<p>포토샵만큼 디테일하게 효과를 줄 수는 없으나, CSS로 간단한 효과정도는 줄 수 있다.</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 사용 방법 : 선택자 &#123;filter:효과이름(값)&#125; */</span></span><br><span class="line"></span><br><span class="line"> <span class="selector-class">.blur</span> &#123;<span class="attribute">filter</span>:<span class="built_in">blur</span>(20px);<span class="attribute">-webkit-filter</span>:<span class="built_in">blur</span>(20px);&#125;</span><br><span class="line"> <span class="selector-class">.grayscale</span> &#123;<span class="attribute">filter</span>:<span class="built_in">grayscale</span>(100%);<span class="attribute">-webkit-filter</span>:<span class="built_in">grayscale</span>(100%);&#125;</span><br><span class="line"> <span class="selector-class">.sepia</span> &#123;<span class="attribute">filter</span>:<span class="built_in">sepia</span>(100%);<span class="attribute">-webkit-filter</span>:<span class="built_in">sepia</span>(100%);&#125;</span><br><span class="line"> <span class="selector-class">.saturate</span> &#123;<span class="attribute">filter</span>:<span class="built_in">saturate</span>(10);<span class="attribute">-webkit-filter</span>:<span class="built_in">saturate</span>(10);&#125;</span><br><span class="line"> <span class="selector-class">.hue-rotate</span> &#123;<span class="attribute">filter</span>:<span class="built_in">hue-rotate</span>(100deg);<span class="attribute">-webkit-filter</span>:<span class="built_in">hue-rotate</span>(100deg);&#125;</span><br><span class="line"> <span class="selector-class">.invert</span> &#123;<span class="attribute">filter</span>:<span class="built_in">invert</span>(10);<span class="attribute">-webkit-filter</span>:<span class="built_in">invert</span>(10);&#125;</span><br><span class="line"> <span class="selector-class">.opacity</span> &#123;<span class="attribute">filter</span>:<span class="built_in">opacity</span>(0.5);<span class="attribute">-webkit-filter</span>:<span class="built_in">opacity</span>(0.5);&#125;</span><br><span class="line"> <span class="selector-class">.brightness</span> &#123;<span class="attribute">filter</span>:<span class="built_in">brightness</span>(5);<span class="attribute">-webkit-filter</span>:<span class="built_in">brightness</span>(5);&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<br>
+
+<h3 id="tab-index-처리"><a href="#tab-index-처리" class="headerlink" title="tab-index 처리"></a>tab-index 처리</h3><p>  div, span 와 같은 focus 초점을 받지 못하는 요소나 혹은 foucs를 받는 요소에게 fouc를 빼앗는 역할을 부여 할 수 있다.</p>
+<ul>
+<li>tabindex=”1” : 문서 안에서 가장 먼저 초점을 받게 할 수 있다. (주의점 : 마크업 순서를 거스르기 때문에, autofocusr가 더 적합)</li>
+<li>tabindex=”0” : 키보드 초점을 받지 못하는 요소들( div, span 등등) 도 초점을 받도록 해준다.</li>
+<li>tabindex=”-1” : 키보드 초점을 받는 요소에게서 초점을 받지 못하도록 만든다.</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class="test" tabindex="0"&gt;</span><br><span class="line">	초점을 받을 수 있게 된다.</span><br><span class="line">&lt;/div</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<br>
+
+<h3 id="margin-겹침-현상"><a href="#margin-겹침-현상" class="headerlink" title="margin 겹침 현상"></a>margin 겹침 현상</h3><ol>
+<li><p>기본적으로 형제 사이에서 일어난다. (<em>이 현상은 오직 세로 margin값에서 일어난다.</em>)</p>
+</li>
+<li><p>부모 ~ 자식 간에서도 겹침 현상이 발생한다. (둘 중 하나 이상 inline block일때는 겹치지 않는다.)</p>
+<p>이를 가장 쉽게 해결하는 방법은 <strong>부모에게 글자추가, border 혹은 padding,와 같은 시각적효과를 적용하면 해결된다.</strong> </p>
+</li>
+<li><p>position:absolute / float / grid 와 같은 레이아웃 작업은 margin이 발생하지 않는다.</p>
+</li>
+</ol>
+<br>
+
+<br>
+
+<h3 id="background-size"><a href="#background-size" class="headerlink" title="background-size"></a>background-size</h3><p>​    background에 url 형태로 이미지를 불러들였을 경우, 만약 이미지 크기가 맞지 않다면 </p>
+<p>background-size를 상자 크기에 맞게 조절하면 된다. ( 보통 100% 로 조절. )</p>
+<br>
+
+<br>
+
+<h3 id="중앙-정렬-처리하는-방법"><a href="#중앙-정렬-처리하는-방법" class="headerlink" title="중앙 정렬 처리하는 방법"></a>중앙 정렬 처리하는 <strong>방법</strong></h3><p>가로 정렬은 보통 text-align , vertical-align 등을 통해 쉽게 배치가 가능하다. </p>
+<p>하지만 가운데 정렬은 배치를 하기 위해서는 padding 값이나 margin값을 정적으로  계산해야만 한다. </p>
+<p>하지만 위와 같은 방법을 이용한다면 쉽게 배치가 가능하다. 보통 absolute를 이용하여 많이 배치한다.</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.header</span>&#123;</span><br><span class="line">					 	<span class="attribute">position</span>: absolute;</span><br><span class="line">            <span class="attribute">top</span>: <span class="number">50%</span>;</span><br><span class="line">            <span class="attribute">transform</span>: <span class="built_in">translateY</span>(-50%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<br>
+
+<h3 id="aria-label-aria-labelledby"><a href="#aria-label-aria-labelledby" class="headerlink" title="aria-label / aria-labelledby"></a>aria-label / aria-labelledby</h3><p><code>aria-label</code> 속성은 값에 ‘간결한’ 설명(string)을 직접 제공한다. 마치 해당 태그가 무슨 역할을 하는지 설명하듯 설명문을 적어주는것과 같다. 예를들면 다음과 같다.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- O: 참조할 설명이 없는 경우 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"search"</span> <span class="attr">aria-label</span>=<span class="string">"웹툰 검색"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span>&gt;</span>검색<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p><code>aria-labelledby</code> 속성은 <code>ID(s)</code> 값을 이용하여 ‘간결한’ 내용을 참조(연결)하는 방식으로 설명한다. 보통 <code>h1</code>, <code>h2</code>, <code>h3</code>, <code>h4</code>, <code>h5</code>, <code>h6</code>, <code>a</code>, <code>button</code> 요소를 참조하면 적절하다. <code>aria-label</code> 속성과 함께 선언하는 경우 <code>aria-labelledby</code> 속성이 우선순위가 높기 때문에 보조기기는 <code>aria-labelledby</code> 속성을 설명한다. 예를들면 다음과 같다.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- O: 설명 참조 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">section</span> <span class="attr">aria-labelledby</span>=<span class="string">"LZ-PATH"</span> <span class="attr">hidden</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h2</span> <span class="attr">id</span>=<span class="string">"LZ-PATH"</span>&gt;</span>레진패스란?<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>이 작품의 유료 에피소드 열람 시 자동으로 구매합니다.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- O: 잘못된 참조 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">id</span>=<span class="string">"LZ-PATH"</span> <span class="attr">href</span>=<span class="string">"#LZ-PATH-TEXT"</span>&gt;</span>레진패스란?<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 숨긴처리된 설명은 참조해서는 안된다. --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"LZ-PATH-TEXT"</span> <span class="attr">aria-labelledby</span>=<span class="string">"LZ-PATH"</span> <span class="attr">hidden</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>이 작품의 유료 에피소드 열람 시 자동으로 구매합니다.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><code>aria-labelledby</code> 속성으로 숨김 처리한 설명을 참조하면 안 됩니다. 참조가 불가능한 설명은 <code>aria-label</code> 속성을 사용한다. 자세한 설명을 참조하면 안 된다다. 자세한 설명은 <code>aria-descibedby</code> 속성을 사용.</p>
+<br>
+
+<h3 id="aria-expanded"><a href="#aria-expanded" class="headerlink" title="aria-expanded"></a>aria-expanded</h3><p> 애플리케이션에서 제공되는 메뉴가 하위 메뉴를 포함하고 있 을 경우 현재 하위 메뉴가 접힌 상태인지 펼쳐진 상태인지 스크린리더 사용자에게 정보를 제공 해야 할 경우가 있다. 이때 aria-expanded 속성을 사용하여 접힌 상태라면 false 값을 펼쳐진 상태라면 true 값을 지정할 수 있다.</p>
+<br>
+
+<h3 id="aria-haspopup"><a href="#aria-haspopup" class="headerlink" title="aria-haspopup"></a>aria-haspopup</h3><p><a href="https://github.com/lezhin/accessibility/blob/master/aria/README.md#aria-haspopup" target="_blank" rel="noopener">레진 블로그 설명</a></p>
+<p><code>aria-haspopup</code> 속성은 요소에 연결되어 있는 팝업(메뉴, 대화상자 등) 정보를 제공한다. </p>
+<p>팝업은 다른 내용 위에 표시하는 블럭을 의미한다.</p>
+<br>
+
+<br>
+
+<h3 id="iframe-사용시-주의점"><a href="#iframe-사용시-주의점" class="headerlink" title="iframe 사용시 주의점"></a>iframe 사용시 주의점</h3><p> iframe 태그는 하나의 html 로 생각해야만 한다. 따라서 iframe 태그 자체를 width, height등을 이용해 유연한 배치를 할 수 없다.</p>
+<p>만약에 iframe 의 크기를 조절하고 싶다면 div태그로 1번더 감싸야만 한다. 그리고서 해당 div에 absolute를 거는 방식을 이용한다.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">	<span class="selector-class">.responsive-container</span>&#123;</span></span><br><span class="line">    position: relative;</span><br><span class="line">    width: 100%;</span><br><span class="line">    height: 0 !important;</span><br><span class="line">  &#125;</span><br><span class="line"><span class="css">  <span class="selector-class">.responsive-iframe</span>&#123;</span></span><br><span class="line">    position: absolute;</span><br><span class="line"><span class="css">    <span class="selector-tag">top</span><span class="selector-pseudo">:0</span>;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">left</span><span class="selector-pseudo">:0</span>;</span></span><br><span class="line">     width: 100%;</span><br><span class="line">    height: 100%; </span><br><span class="line">    border: 0 none;</span><br><span class="line">  &#125;</span><br><span class="line"><span class="css">  <span class="selector-class">.responsive-iframe-43</span>&#123;</span></span><br><span class="line">    padding-top: 75%;</span><br><span class="line">  &#125;</span><br><span class="line"><span class="css">  <span class="selector-class">.responsive-iframe-169</span>&#123;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">padding-top</span>: 56<span class="selector-class">.25</span>%;</span></span><br><span class="line">  &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"responsive-container responsive-iframe-169"</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">iframe</span> <span class="attr">aria-labelledby</span>=<span class="string">"video-subject"</span> <span class="attr">class</span>=<span class="string">"responsive-iframe"</span> <span class="attr">src</span>=<span class="string">"https://www.youtube.com/embed/umfaXctbqOs"</span><span class="attr">allowfullscreen</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><br><br></p>
+<h3 id="fr-단위"><a href="#fr-단위" class="headerlink" title="fr 단위"></a>fr 단위</h3><p>fr이란 유연한 크기를 갖는 단위이다.<br>grid 컨테이너 내의 공간 비율을 분수(fraction)로 나타낸다.</p>
+<p><em>다만, 지원 브라우저가 낮다.</em></p>
+<p>사용자가 계산해야 할 부분을 fr을 통해서 쉽고 유연하게 사용할 수 있다.</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.grid</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: grid;</span><br><span class="line">    <span class="attribute">grid-template-columns</span>: auto <span class="number">100px</span> <span class="number">1</span>fr <span class="number">2</span>fr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>1번 열은 auto를 사용한다. 해당 Element 내부 콘텐츠에 맞게 사이즈가 조정된다.</li>
+<li>2번 열은 100px을 할당한다. 100픽셀 크기만큼의 폭을 차지한다.</li>
+<li>3번 열은 1fr 크기를 할당한다. 1fr이란 남은 자유 공간의 1/3(총fr)만큼의 크기를 할당한다.</li>
+<li>4번 열은 2fr 크기를 할당한다. 2fr이란 남은 자유 공간의 2/3(총fr)만큼의 크기를 할당한다.</li>
+</ul>
+
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="http://yoursite.com/2019/09/28/html-css-study-13/" data-id="ck139od0h004oyez0o7hc2r2n" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2019/09/28/html-css-study-13/" data-id="ck13jpqgp001zumz0m919pfbo" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -272,15 +382,25 @@
             "name": "Jun Hyeok Kim"
         },
         "headline": "html-css-study-13",
-        "image": "http://yoursite.com",
-        "keywords": "hexo git Web coding developer algorism",
-        "genre": "Develop TIL Algorism HTML CSS Javascript Etc",
+        "image": "http://yoursite.comhttps://user-images.githubusercontent.com/31315644/64251759-3252cb00-cf54-11e9-88f9-922505f9789e.jpeg",
+        "keywords": "hexo git Web coding developer algorism CSS HTML",
+        "genre": "TIL",
         "datePublished": "2019-09-28",
         "dateCreated": "2019-09-28",
         "dateModified": "2019-09-28",
         "url": "http://yoursite.com/2019/09/28/html-css-study-13/",
-        "description": "",
-        "wordCount": 1
+        "description": "
+HTML Study 13
+css : filter ( 흑백처리 , blur 효과 등등 )
+tab-index
+margin 겹침 현상
+background size
+중앙 정렬 처리하는 방법 (수직 정렬등)
+aria-label , aria-labelby ( vs title )
+aria-expended , aria-haspopup
+iframe 사용시 주의점
+fr 단",
+        "wordCount": 1094
     }
 </script>
 
@@ -364,7 +484,7 @@
                             <a href="/2019/09/28/html-css-study-13/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/64251759-3252cb00-cf54-11e9-88f9-922505f9789e.jpeg)" alt="html-css-study-13" class="thumbnail-image"></span>
     
     
 </a>
@@ -372,7 +492,7 @@
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Develop/">Develop</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Develop/TIL/">TIL</a></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a></p>
                             <p class="item-title"><a href="/2019/09/28/html-css-study-13/" class="title">html-css-study-13</a></p>
                             <p class="item-date"><time datetime="2019-09-28T08:01:51.000Z" itemprop="datePublished">2019-09-28</time></p>
                         </div>
@@ -477,7 +597,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/">JAVA</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MarkUP/">MarkUP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Selector/">Selector</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TIL/">TIL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a><span class="tag-list-count">31</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorism/">algorism</a><span class="tag-list-count">25</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/coding/">coding</a><span class="tag-list-count">31</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/developer/">developer</a><span class="tag-list-count">31</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">31</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">31</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">15</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/">JAVA</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MarkUP/">MarkUP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Selector/">Selector</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TIL/">TIL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a><span class="tag-list-count">31</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorism/">algorism</a><span class="tag-list-count">25</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/coding/">coding</a><span class="tag-list-count">31</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/developer/">developer</a><span class="tag-list-count">31</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">31</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">31</span></li></ul>
         </div>
     </div>
 
