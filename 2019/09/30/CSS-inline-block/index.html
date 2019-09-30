@@ -10,17 +10,22 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="hexo,git,Web,coding,developer,algorism,CSS,HTML,javascript">
+        <meta name="keywords" content="hexo,git,Web,coding,developer,algorism,CSS,HTML,inline-block">
     
-    <meta name="keywords" content="hexo,git,Web,coding,developer,algorism,CSS,HTML,javascript">
+    <meta name="description" content="inline-block 특징 inline-block 끼리 나열할 경우 문제가 없다. 또한 inline-block은 서로간에 약간의 틈이 존재한다. 1234567891011121314151617&amp;lt;style&amp;gt;      .test1&amp;#123;            display: inline-block;            background: go">
+<meta name="keywords" content="hexo,git,Web,coding,developer,algorism,CSS,HTML,inline-block">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CSS-inline-block">
 <meta property="og:url" content="http://yoursite.com/2019/09/30/CSS-inline-block/index.html">
 <meta property="og:site_name" content="HYEOK999&#39;s Blog">
+<meta property="og:description" content="inline-block 특징 inline-block 끼리 나열할 경우 문제가 없다. 또한 inline-block은 서로간에 약간의 틈이 존재한다. 1234567891011121314151617&amp;lt;style&amp;gt;      .test1&amp;#123;            display: inline-block;            background: go">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-09-30T06:43:15.357Z">
+<meta property="og:image" content="https://miro.medium.com/max/600/1*OFsc0SD55jhi8cjo7aCA4w.jpeg">
+<meta property="og:updated_time" content="2019-09-30T10:23:11.964Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS-inline-block">
+<meta name="twitter:description" content="inline-block 특징 inline-block 끼리 나열할 경우 문제가 없다. 또한 inline-block은 서로간에 약간의 틈이 존재한다. 1234567891011121314151617&amp;lt;style&amp;gt;      .test1&amp;#123;            display: inline-block;            background: go">
+<meta name="twitter:image" content="https://miro.medium.com/max/600/1*OFsc0SD55jhi8cjo7aCA4w.jpeg">
     
 
     
@@ -159,7 +164,7 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/Develop/">Develop</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Develop/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Develop/TIL/Algorism/">Algorism</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Develop/TIL/Algorism/HTML/">HTML</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Develop/TIL/Algorism/HTML/CSS/">CSS</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Develop/TIL/Algorism/HTML/CSS/Javascript/">Javascript</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Develop/TIL/Algorism/HTML/CSS/Javascript/Etc/">Etc</a>
+    <a class="page-title-link" href="/categories/CSS/">CSS</a>
     </h1>
 </div>
 
@@ -191,21 +196,44 @@
                 
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/CSS/">CSS</a>, <a class="tag-link" href="/tags/HTML/">HTML</a>, <a class="tag-link" href="/tags/Web/">Web</a>, <a class="tag-link" href="/tags/algorism/">algorism</a>, <a class="tag-link" href="/tags/coding/">coding</a>, <a class="tag-link" href="/tags/developer/">developer</a>, <a class="tag-link" href="/tags/git/">git</a>, <a class="tag-link" href="/tags/hexo/">hexo</a>, <a class="tag-link" href="/tags/javascript/">javascript</a>
+        <a class="tag-link" href="/tags/CSS/">CSS</a>, <a class="tag-link" href="/tags/HTML/">HTML</a>, <a class="tag-link" href="/tags/Web/">Web</a>, <a class="tag-link" href="/tags/algorism/">algorism</a>, <a class="tag-link" href="/tags/coding/">coding</a>, <a class="tag-link" href="/tags/developer/">developer</a>, <a class="tag-link" href="/tags/git/">git</a>, <a class="tag-link" href="/tags/hexo/">hexo</a>, <a class="tag-link" href="/tags/inline-block/">inline-block</a>
     </div>
 
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <p><img src="https://miro.medium.com/max/600/1*OFsc0SD55jhi8cjo7aCA4w.jpeg" alt></p>
+<hr>
+<h3 id="inline-block-특징"><a href="#inline-block-특징" class="headerlink" title="inline-block 특징"></a>inline-block 특징</h3><ol>
+<li><p>inline-block 끼리 나열할 경우 문제가 없다. 또한 inline-block은 서로간에 약간의 틈이 존재한다.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">      <span class="selector-class">.test1</span>&#123;</span></span><br><span class="line">            display: inline-block;</span><br><span class="line">            background: gold;</span><br><span class="line">            width: 300px;</span><br><span class="line">            height: 300px;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="css">        <span class="selector-class">.test2</span>&#123;</span></span><br><span class="line">            display: inline-block;</span><br><span class="line">            background: silver;</span><br><span class="line">            width: 300px;</span><br><span class="line">            height: 300px;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"test1"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"test2"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://user-images.githubusercontent.com/31315644/65870463-4228c800-e3b7-11e9-9274-ece5fef150da.jpeg" alt="inline-snap1"></p>
+<br>
+</li>
+<li><p>inline-block 끼리 나열 중 한 요소안에 또 다른 inline-block 요소가 나오면 레이아웃이 깨져버린다.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span>   		</span><br><span class="line">				.test1&#123;</span><br><span class="line">            display: inline-block;</span><br><span class="line">            background: gold;</span><br><span class="line">            width: 300px;</span><br><span class="line">            height: 300px;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        .test2&#123;</span><br><span class="line">            display: inline-block;</span><br><span class="line">            background: silver;</span><br><span class="line">            width: 300px;</span><br><span class="line">            height: 300px;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        .test2-test&#123;</span><br><span class="line">            display: inline-block;</span><br><span class="line">            background:lime;</span><br><span class="line">            width: 20px;</span><br><span class="line">            height: 100px;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"test1"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"test2"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'test2-test'</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'test2-test'</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'test2-test'</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://user-images.githubusercontent.com/31315644/65870465-448b2200-e3b7-11e9-9f07-b37bac46e2a8.jpeg" alt="inline-snap2"></p>
+</li>
+</ol>
+   <br>
+
+<ol start="3">
+<li>이럴 경우 각 부모 div에게 vertical-align 속성을 주어야 해결이 가능하다.</li>
+</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.test1</span>, <span class="selector-class">.test2</span> &#123;</span><br><span class="line">            <span class="attribute">vertical-align</span>: top;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://user-images.githubusercontent.com/31315644/65870469-45bc4f00-e3b7-11e9-9044-728a0a6d057d.jpeg" alt="inline-snap3"></p>
+<br>
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="http://yoursite.com/2019/09/30/CSS-inline-block/" data-id="ck1690x7v000osbz0ng63l8hn" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2019/09/30/CSS-inline-block/" data-id="ck169oe6k000o8yz0y799q8s8" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -276,15 +304,19 @@
             "name": "Jun Hyeok Kim"
         },
         "headline": "CSS-inline-block",
-        "image": "http://yoursite.com",
-        "keywords": "hexo git Web coding developer algorism CSS HTML javascript",
-        "genre": "Develop TIL Algorism HTML CSS Javascript Etc",
+        "image": "http://yoursite.comhttps://miro.medium.com/max/600/1*OFsc0SD55jhi8cjo7aCA4w.jpeg",
+        "keywords": "hexo git Web coding developer algorism CSS HTML inline-block",
+        "genre": "CSS",
         "datePublished": "2019-09-30",
         "dateCreated": "2019-09-30",
         "dateModified": "2019-09-30",
         "url": "http://yoursite.com/2019/09/30/CSS-inline-block/",
-        "description": "",
-        "wordCount": 1
+        "description": "
+
+inline-block 특징
+inline-block 끼리 나열할 경우 문제가 없다. 또한 inline-block은 서로간에 약간의 틈이 존재한다.
+1234567891011121314151617&lt;style&gt;      .test1&#123;            display: inline-block;            background: go",
+        "wordCount": 640
     }
 </script>
 
@@ -438,7 +470,7 @@
                             <a href="/2019/09/30/CSS-inline-block/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(https://miro.medium.com/max/600/1*OFsc0SD55jhi8cjo7aCA4w.jpeg)" alt="CSS-inline-block" class="thumbnail-image"></span>
     
     
 </a>
@@ -446,7 +478,7 @@
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Develop/">Develop</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Develop/TIL/">TIL</a></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/CSS/">CSS</a></p>
                             <p class="item-title"><a href="/2019/09/30/CSS-inline-block/" class="title">CSS-inline-block</a></p>
                             <p class="item-date"><time datetime="2019-09-30T06:43:15.000Z" itemprop="datePublished">2019-09-30</time></p>
                         </div>
@@ -491,7 +523,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">18</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a><span class="tag-list-count">17</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/">JAVA</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MarkUP/">MarkUP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Selector/">Selector</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TIL/">TIL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a><span class="tag-list-count">35</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorism/">algorism</a><span class="tag-list-count">28</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/coding/">coding</a><span class="tag-list-count">35</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/developer/">developer</a><span class="tag-list-count">35</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">35</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">35</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">2</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">18</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a><span class="tag-list-count">17</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/">JAVA</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MarkUP/">MarkUP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Selector/">Selector</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TIL/">TIL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a><span class="tag-list-count">35</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorism/">algorism</a><span class="tag-list-count">28</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/coding/">coding</a><span class="tag-list-count">35</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/developer/">developer</a><span class="tag-list-count">35</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">35</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">35</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/inline-block/">inline-block</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">2</span></li></ul>
         </div>
     </div>
 
