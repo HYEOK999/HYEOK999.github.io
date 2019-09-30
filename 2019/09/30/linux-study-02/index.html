@@ -6,17 +6,26 @@
     
 
     
-    <title>HYEOK999&#39;s Blog</title>
+    <title>linux-study-02 | HYEOK999&#39;s Blog</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta property="og:type" content="website">
-<meta property="og:title" content="HYEOK999&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+        <meta name="keywords" content="hexo,git,Web,coding,developer,algorism,CSS,HTML,linux">
+    
+    <meta name="description" content="[Input/Output] IO Redirection  Output : 출력 redirection -&amp;gt; 출력위치를 변경할 수 있다. (보통은 모니터)​    예) ls -l &amp;gt; result.txt  = ls -l의 결과(Standard Output)를 result.txt에 저장한다. ​    총 2가지의 Output 이 존재한다.  Succe">
+<meta name="keywords" content="hexo,git,Web,coding,developer,algorism,CSS,HTML,linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux-study-02">
+<meta property="og:url" content="http://yoursite.com/2019/09/30/linux-study-02/index.html">
 <meta property="og:site_name" content="HYEOK999&#39;s Blog">
+<meta property="og:description" content="[Input/Output] IO Redirection  Output : 출력 redirection -&amp;gt; 출력위치를 변경할 수 있다. (보통은 모니터)​    예) ls -l &amp;gt; result.txt  = ls -l의 결과(Standard Output)를 result.txt에 저장한다. ​    총 2가지의 Output 이 존재한다.  Succe">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="https://t1.daumcdn.net/cfile/tistory/9923B0495D66434618">
+<meta property="og:updated_time" content="2019-09-30T08:23:55.744Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HYEOK999&#39;s Blog">
+<meta name="twitter:title" content="linux-study-02">
+<meta name="twitter:description" content="[Input/Output] IO Redirection  Output : 출력 redirection -&amp;gt; 출력위치를 변경할 수 있다. (보통은 모니터)​    예) ls -l &amp;gt; result.txt  = ls -l의 결과(Standard Output)를 result.txt에 저장한다. ​    총 2가지의 Output 이 존재한다.  Succe">
+<meta name="twitter:image" content="https://t1.daumcdn.net/cfile/tistory/9923B0495D66434618">
     
 
     
@@ -155,594 +164,185 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <em class="page-title-link" data-url="home">Home</em>
+    <a class="page-title-link" href="/categories/TIL/">TIL</a>
     </h1>
 </div>
 
                         <div class="main-body-content">
-                            
-
-    
-    
+                            <article id="post-linux-study-02" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-        
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2019" class="archive-year"><i class="icon fa fa-calendar-o"></i>2019</a>
-            </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2019/09/30/linux-study-02/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://t1.daumcdn.net/cfile/tistory/9923B0495D66434618)" alt="linux-study-02" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://yoursite.com/2019/09/30/linux-study-02/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/TIL/">TIL</a>
-            </div>
-            <div class="date"><time datetime="2019-09-30T08:23:37.000Z" itemprop="datePublished">2019-09-30</time></div>
-        </div>
-        
+            <header class="article-header">
+                
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/09/30/linux-study-02/">linux-study-02</a>
+        linux-study-02
         </h1>
     
 
-        <p class="article-excerpt">
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/09/30/linux-study-02/" class="article-date">
+            <time datetime="2019-09-30T08:23:37.000Z" itemprop="datePublished">2019-09-30</time>
+        </a>
+    </div>
+
+		
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/CSS/">CSS</a>, <a class="tag-link" href="/tags/HTML/">HTML</a>, <a class="tag-link" href="/tags/Web/">Web</a>, <a class="tag-link" href="/tags/algorism/">algorism</a>, <a class="tag-link" href="/tags/coding/">coding</a>, <a class="tag-link" href="/tags/developer/">developer</a>, <a class="tag-link" href="/tags/git/">git</a>, <a class="tag-link" href="/tags/hexo/">hexo</a>, <a class="tag-link" href="/tags/linux/">linux</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p><img src="https://t1.daumcdn.net/cfile/tistory/9923B0495D66434618" alt="리눅스"></p>
+<hr>
+<h2 id="Input-Output-IO-Redirection"><a href="#Input-Output-IO-Redirection" class="headerlink" title="[Input/Output] IO Redirection"></a>[Input/Output] IO Redirection</h2><br>
+
+<h3 id="Output-출력-redirection-gt-출력위치를-변경할-수-있다-보통은-모니터"><a href="#Output-출력-redirection-gt-출력위치를-변경할-수-있다-보통은-모니터" class="headerlink" title="Output : 출력 redirection -&gt; 출력위치를 변경할 수 있다. (보통은 모니터)"></a>Output : 출력 redirection -&gt; 출력위치를 변경할 수 있다. (보통은 모니터)</h3><p>​    예) ls -l &gt; result.txt  = ls -l의 결과(Standard Output)를 result.txt에 저장한다.</p>
+<p>​    총 2가지의 Output 이 존재한다.</p>
+<ul>
+<li>Success : 성공했을 경우의 Output </li>
+<li>Error : 실패했을 경우의 Output</li>
+</ul>
+<blockquote>
+<p>Standard Output으로 redirection 하는 방법 : 1&gt; </p>
+<p>Error Output으로 redirection 하는 방법 : 2&gt; </p>
+</blockquote>
+<p>ex) rm rename2.tex 1&gt;result.txt 2&gt;result.txt</p>
+<br>
+
+<h3 id="Input-입력-redirection"><a href="#Input-입력-redirection" class="headerlink" title="Input : 입력 redirection"></a>Input : 입력 redirection</h3><p>Standard Input : keyboard</p>
+<p>예) hello.txt 안에는 hello 라는 텍스트가 저장되어있다. 만약에 hello.txt파일 안의 내용을 cat으로 출력하고 싶다면 다음과 같이 작성한다.</p>
+<ol>
+<li>cat &lt; hello.txt</li>
+<li>cat hello.txt</li>
+</ol>
+<br>
+
+<h3 id="IO-Redirection-Ouput-Append"><a href="#IO-Redirection-Ouput-Append" class="headerlink" title="IO Redirection Ouput Append"></a>IO Redirection Ouput Append</h3><p>ls -al &gt; result.txt 할 경우 result.txt로 결과가 저장된다.</p>
+<p>그 후 ls -a &gt; result.txt할 경우 result.txt로 결과가 <strong>덮어씌우게 된다</strong></p>
+<p>만약 추가를 하고 싶다면 다음과 같이 사용해야만 한다.</p>
+<blockquote>
+<p>ls -al &gt;&gt; result.txt</p>
+</blockquote>
+
+        </div>
+        <footer class="article-footer">
             
+
+
+
+    <a data-url="http://yoursite.com/2019/09/30/linux-study-02/" data-id="ck165crig002trez04xspon2q" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Jun Hyeok Kim"
+        },
+        "headline": "linux-study-02",
+        "image": "http://yoursite.comhttps://t1.daumcdn.net/cfile/tistory/9923B0495D66434618",
+        "keywords": "hexo git Web coding developer algorism CSS HTML linux",
+        "genre": "TIL",
+        "datePublished": "2019-09-30",
+        "dateCreated": "2019-09-30",
+        "dateModified": "2019-09-30",
+        "url": "http://yoursite.com/2019/09/30/linux-study-02/",
+        "description": "
 
 [Input/Output] IO Redirection
 
 Output : 출력 redirection -&gt; 출력위치를 변경할 수 있다. (보통은 모니터)​    예) ls -l &gt; result.txt  = ls -l의 결과(Standard Output)를 result.txt에 저장한다.
 ​    총 2가지의 Output 이 존재한다.
 
-Succe
-        </p>
-    </div>
+Succe",
+        "wordCount": 156
+    }
+</script>
+
 </article>
-    
 
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2019/09/30/linux-study-01/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://t1.daumcdn.net/cfile/tistory/9923B0495D66434618)" alt="linux-study-01" class="thumbnail-image"></span>
-    
+    <section id="comments">
     
         
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://yoursite.com/2019/09/30/linux-study-01/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/TIL/">TIL</a>
-            </div>
-            <div class="date"><time datetime="2019-09-30T06:44:47.000Z" itemprop="datePublished">2019-09-30</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/09/30/linux-study-01/">linux-study-01</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            
-
-리눅스 명령어 리눅스의 특징 : command line interface 
-ls : 파일보기
-​    옵션 -l : 파일권한, 소유자,생성시간등의 자세한 정보를 추가로 나열해준다.
-pwd : 현재 놓여있는 디렉토리를 파악한다.
-mkdir : 폴더생성
-touch [파일명] : 파일생성
-cd [디렉토리명] : 현재 디렉토리 위치 변경
-​    디렉토리 변경
-        </p>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </div>
-</article>
-    
-        </div>
-    
 
     
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2019/09/30/VSCode-hotkey/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://yoursite.com/2019/09/30/VSCode-hotkey/">0</span>
-    
-</span>
+    </section>
 
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Develop/">Develop</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Develop/TIL/">TIL</a>
-            </div>
-            <div class="date"><time datetime="2019-09-30T06:44:10.000Z" itemprop="datePublished">2019-09-30</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/09/30/VSCode-hotkey/">VSCode-hotkey</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2019/09/30/CSS-inline-block/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://yoursite.com/2019/09/30/CSS-inline-block/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Develop/">Develop</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Develop/TIL/">TIL</a>
-            </div>
-            <div class="date"><time datetime="2019-09-30T06:43:15.000Z" itemprop="datePublished">2019-09-30</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/09/30/CSS-inline-block/">CSS-inline-block</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2019/09/28/html-css-study-13/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/64251759-3252cb00-cf54-11e9-88f9-922505f9789e.jpeg)" alt="html-css-study-13" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://yoursite.com/2019/09/28/html-css-study-13/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/TIL/">TIL</a>
-            </div>
-            <div class="date"><time datetime="2019-09-28T08:01:51.000Z" itemprop="datePublished">2019-09-28</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/09/28/html-css-study-13/">html-css-study-13</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            
-HTML Study 13
-css : filter ( 흑백처리 , blur 효과 등등 )
-tab-index
-margin 겹침 현상
-background size
-중앙 정렬 처리하는 방법 (수직 정렬등)
-aria-label , aria-labelby ( vs title )
-aria-expended , aria-haspopup
-iframe 사용시 주의점
-fr 단
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2019/09/25/html-css-study-12/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/64251759-3252cb00-cf54-11e9-88f9-922505f9789e.jpeg)" alt="html-css-study-12" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://yoursite.com/2019/09/25/html-css-study-12/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/TIL/">TIL</a>
-            </div>
-            <div class="date"><time datetime="2019-09-24T16:56:09.000Z" itemprop="datePublished">2019-09-25</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/09/25/html-css-study-12/">html-css-study-12</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            
-HTML Study 12
-webfont 정리
-flex 재정리
-white-space 속성 - pre , pre-wrap, pre-line
-프로젝트 하면서 느낀점 9월 24일
-
-
-webfont 정리 웹폰트를 사용하기 위해서는 다음과 같은 코드들이 일부 필요하다.
-123456789101112131415@font-face &#123;  font-family: N
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2019/09/24/html-css-study-11/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/64251759-3252cb00-cf54-11e9-88f9-922505f9789e.jpeg)" alt="html-css-study-11" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://yoursite.com/2019/09/24/html-css-study-11/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/TIL/">TIL</a>
-            </div>
-            <div class="date"><time datetime="2019-09-23T17:25:10.000Z" itemprop="datePublished">2019-09-24</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/09/24/html-css-study-11/">html-css-study-11</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            
-HTML Study 11
-fontello 사용법
-letter, word spacing
-transition 사용 주의점
-프로젝트 하면서 느낀점 9월 23일
-
-
-fontello 사용법
-fontello 사용법 
-fontello 접속 마음에 드는 fontello 아이콘들 선택(라이센스 주의)
-다운로드
-다운로드 된 압출파일을 해제
-해제된 폴더를 프로젝트에 붙여넣는
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2019/09/23/CSS-Selector-Organize/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://miro.medium.com/max/600/1*OFsc0SD55jhi8cjo7aCA4w.jpeg)" alt="CSS-Selector-Organize" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://yoursite.com/2019/09/23/CSS-Selector-Organize/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/CSS/">CSS</a>
-            </div>
-            <div class="date"><time datetime="2019-09-22T16:12:32.000Z" itemprop="datePublished">2019-09-23</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/09/23/CSS-Selector-Organize/">CSS-Selector-Organize</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            CSS 선택자 정리
-
-
-
-
-
-
-
-Etc 참고 : CSS 선택자 총 정리 사이트
-
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2019/09/21/html-css-study-10/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/64251759-3252cb00-cf54-11e9-88f9-922505f9789e.jpeg)" alt="html-css-study-10" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://yoursite.com/2019/09/21/html-css-study-10/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/TIL/">TIL</a>
-            </div>
-            <div class="date"><time datetime="2019-09-21T10:58:02.000Z" itemprop="datePublished">2019-09-21</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/09/21/html-css-study-10/">html-css-study-10</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            
-HTML Study 10
-viewport  VS %
-calc
-flex-basis
-반응형 웹페이지
-flex 이용
-반응형 콘텐츠 -&gt; 이미지&amp;비디오 , iframe
-grid 이용
-
-
-오늘의 학습 깨달음
-레이아웃 구성 시 여라가지 flex 나 grid시스템을 사용할 수 있지만, 브라우저의 지원 유형을 잘 생각해보아야 한다.
-
-padding의 %는 
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2019/09/20/html-css-study-09/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/64251759-3252cb00-cf54-11e9-88f9-922505f9789e.jpeg)" alt="html-css-study-09" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://yoursite.com/2019/09/20/html-css-study-09/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/TIL/">TIL</a>
-            </div>
-            <div class="date"><time datetime="2019-09-19T17:38:10.000Z" itemprop="datePublished">2019-09-20</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/09/20/html-css-study-09/">html-css-study-09</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            
-HTML Study 09
-q , blockqueto 태그 + cite 속성
-small 태그
-address 태그
-flex 속기법 + order, grow , shrink
-flex-basis
-aside 태그
-CSS animation : transition
-background 속기법
-태그들이 공통으로 사용가능한 속성
-
-
-오늘의 학습 깨달음
-의미없는 구분자들은 
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-
-    </div></section>
-
-
-    <nav id="page-nav">
-        <span class="pages">Page 1 of 4</span>
-        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">&raquo;</a>
-    </nav>
 
 
                         </div>
@@ -779,6 +379,19 @@ background 속기법
             
         </ul>
     </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2019/09/30/linux-study-01/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">linux-study-01</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
     
     <div class="widgets-container">
         
@@ -983,11 +596,13 @@ background 속기법
     var disqus_shortname = 'hexo-theme-hueman';
     
     
+    var disqus_url = 'http://yoursite.com/2019/09/30/linux-study-02/';
+    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>
