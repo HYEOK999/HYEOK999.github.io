@@ -12,19 +12,19 @@
     
         <meta name="keywords" content="hexo,git,Web,coding,developer,algorism,CSS,HTML,javascript,linux">
     
-    <meta name="description" content="##">
+    <meta name="description" content="프로세스 cpu - processor (process X)  ram - memory  hdd, sdd - storage   *각 특징 : *  Storage : 가격이 싸고, 용량이 크다. 속도가 느리다   Memory : 가격이 비싸고 , 용량이 작다. 속도가 빠르다   processor : 기격이 매우비싸고, 용량이 매우작고, 속도가 매우빠르다">
 <meta name="keywords" content="hexo,git,Web,coding,developer,algorism,CSS,HTML,javascript,linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="linux-study-03">
 <meta property="og:url" content="http://yoursite.com/2019/09/30/linux-study-03/index.html">
 <meta property="og:site_name" content="HYEOK999&#39;s Blog">
-<meta property="og:description" content="##">
+<meta property="og:description" content="프로세스 cpu - processor (process X)  ram - memory  hdd, sdd - storage   *각 특징 : *  Storage : 가격이 싸고, 용량이 크다. 속도가 느리다   Memory : 가격이 비싸고 , 용량이 작다. 속도가 빠르다   processor : 기격이 매우비싸고, 용량이 매우작고, 속도가 매우빠르다">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://t1.daumcdn.net/cfile/tistory/9923B0495D66434618">
-<meta property="og:updated_time" content="2019-09-30T10:29:24.617Z">
+<meta property="og:updated_time" content="2019-10-01T10:07:41.180Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux-study-03">
-<meta name="twitter:description" content="##">
+<meta name="twitter:description" content="프로세스 cpu - processor (process X)  ram - memory  hdd, sdd - storage   *각 특징 : *  Storage : 가격이 싸고, 용량이 크다. 속도가 느리다   Memory : 가격이 비싸고 , 용량이 작다. 속도가 빠르다   processor : 기격이 매우비싸고, 용량이 매우작고, 속도가 매우빠르다">
 <meta name="twitter:image" content="https://t1.daumcdn.net/cfile/tistory/9923B0495D66434618">
     
 
@@ -205,7 +205,133 @@
         <div class="article-entry" itemprop="articleBody">
             <p><img src="https://t1.daumcdn.net/cfile/tistory/9923B0495D66434618" alt="리눅스"></p>
 <hr>
-<p>## </p>
+<h3 id="프로세스"><a href="#프로세스" class="headerlink" title="프로세스"></a>프로세스</h3><ul>
+<li><p>cpu - processor (process X)</p>
+</li>
+<li><p>ram - memory</p>
+</li>
+<li><p>hdd, sdd - storage</p>
+</li>
+</ul>
+<p>*<em>각 특징 : *</em></p>
+<ol>
+<li><p>Storage : 가격이 싸고, 용량이 크다. 속도가 느리다 </p>
+</li>
+<li><p>Memory : 가격이 비싸고 , 용량이 작다. 속도가 빠르다 </p>
+</li>
+<li><p>processor : 기격이 매우비싸고, 용량이 매우작고, 속도가 매우빠르다</p>
+<br>
+
+</li>
+</ol>
+<p><strong>프로세스 관련 명령어</strong></p>
+<ul>
+<li><p>프로세스 리스트를 확인하는 명령어 : ps</p>
+</li>
+<li><p>백그라운드에서도 돌아가는 ps까지 확인하는 방법 : ps aux</p>
+</li>
+<li><p>이 중 특정 이름의 프로그램을 찾고싶다 -&gt; : ps aux | grep apache</p>
+<br>
+
+</li>
+</ul>
+<p><strong>프로세스를 끄는 방법</strong></p>
+<ul>
+<li>sudo kill [process-ID]</li>
+</ul>
+<p><strong>프로세스 리스트를 확인하는 명령어1</strong> : top</p>
+<p><strong>프로세스 리스트를 확인하는 명령어2</strong> : htop (별도 설치해야됨) </p>
+<br>
+
+<h3 id="그-외-명령어-및-개념"><a href="#그-외-명령어-및-개념" class="headerlink" title="그 외 명령어 및 개념"></a>그 외 명령어 및 개념</h3><p>멀티 태스킹 : 여러개의 일을 하나의 화면에서 할 수 있다.</p>
+<p>백그라운드로 멈추어서 보내는법 : ctrl + z </p>
+<p>백그라운드에 실행되는 상태로 보내는법 : 명령어 맨뒤에 &amp;를 넣어준다.</p>
+<p>ex) ls -la &amp;</p>
+<p>포그라운드로 가져오는법 : fg</p>
+<p>jobs : 백그라운드에서 실행 중인 프로그램 확인.</p>
+<p>+표시 : 백그라운드로 물러나있다가 포그라운드로 들어오는 프로그램</p>
+<p>-표시 : +로 된 백그라운드가 끝나고나서 실행될 프로그램</p>
+<p>백그라운드 종료 : kill %[번호]</p>
+<p>백그라운드 강제 종료 : kill -9 %[번호]</p>
+ <br>
+
+<h4 id="항상-실행-Demon"><a href="#항상-실행-Demon" class="headerlink" title="항상 실행 - Demon"></a>항상 실행 - Demon</h4><p>Web server = Demon</p>
+<p>데몬은 /etc/init.d에 위치해 있다.</p>
+<p>데몬을 키는방법은 <code>sudo service [파일명] start</code></p>
+<p>ex) sudo service apache2 start</p>
+<p>데몬을 끄는방법은 <code>sudo service [파일명] stop</code></p>
+<p>ex) sudo service apache2 stop</p>
+ <br>
+
+<p><strong>데몬이 자동으로 실행되는 경우를 확인하는방법</strong></p>
+<p>아래 위치의 폴더에서 확인 가능하다.</p>
+<p>/etc/rc3.d -&gt; CLI방식</p>
+<p>/etc/rc5.d -&gt; GUI방식</p>
+ <br>
+
+<p>rc3.d로 <code>cd</code> S02apache2 </p>
+<ul>
+<li><p>S는 리눅스가 실행되면 실행된다. 는 것을 의미.</p>
+</li>
+<li><p>02는 우선순위</p>
+<br>
+
+</li>
+</ul>
+<p>자동 데몬을 만들려면 실행시키고 싶은 프로그램을 rc3.d 혹은 rc5.d 폴더에 규칙대로 파일명을 생성하고 링크를 걸어준다.</p>
+ <br>
+
+
+
+<h3 id="CRON"><a href="#CRON" class="headerlink" title="CRON"></a>CRON</h3><p><code>CRON</code> : 정기적으로 실행시키는 도구</p>
+<p><code>crontab -e</code>: 하고자 하는 일을 정의.</p>
+<blockquote>
+<p>[실행되는 분의주기 */1 = 1분에 한번 ] [실행되는 시간 *=상관없음] [실행되는 일] [실행되는 월] [실행되는 요일] [실행될 명령어] </p>
+</blockquote>
+<p>date &gt;&gt; date.log = 현재시각을 게속 저장함</p>
+<p><code>crontab -e</code></p>
+<p><code>*/1 * * * * date &gt;&gt; date.log 2&gt;&amp;</code></p>
+<p>의미 :  1분마다 date라는 명령어의 결과를 date.log에 저장하는데  만약 에러가 나면 표준출력으로 redirection나게한다. </p>
+ <br>
+
+<p>쉘이 실행될때  /bin/bash/.bashrc라는 파일을 실행되도록 설정되어있음.</p>
+<p>따라서 쉘이 시작할때 무언가를 하고싶다면 .bashrc 안에서 설정해주면됨.</p>
+ <br>
+
+<h3 id="다중사용자"><a href="#다중사용자" class="headerlink" title="다중사용자"></a>다중사용자</h3><p><code>명령어 id</code> -&gt; 나는 누구인가?</p>
+<p><code>명령어 who</code> -&gt; 현재 시스템에 누가 접속해있는가?</p>
+<h4 id="유닉스의-계열의-2가지형태의-사용자"><a href="#유닉스의-계열의-2가지형태의-사용자" class="headerlink" title="유닉스의 계열의 2가지형태의 사용자"></a>유닉스의 계열의 2가지형태의 사용자</h4><ol>
+<li><p>super(root) user</p>
+</li>
+<li><p>일반 user</p>
+</li>
+</ol>
+<h4 id="super-root-user"><a href="#super-root-user" class="headerlink" title="super(root) user"></a>super(root) user</h4><ul>
+<li><p>sudo는 슈퍼유저의 권한을 빌려오는것</p>
+</li>
+<li><p>$표시 현재 사용자가 일반유저라는것을 의미, 슈퍼유저는 #</p>
+</li>
+</ul>
+<p>*<em>명령어 su *</em></p>
+<p><code>su - root</code> : 슈퍼 유저로 사용자 변경</p>
+<p>슈퍼유저에서 빠져나가는법 exit.</p>
+<p><code>sudo passwd -u root</code> : root에 대해 lock을 풀어버림.</p>
+<p><code>sudo passwd -l root</code> :  root에 대해 lock을 걸어버림.</p>
+<p><code>cd</code>  : 최상위 디렉토리</p>
+<p><code>cd /root</code> : 최상위 디렉토리 안에 있는 root디렉토리</p>
+<h4 id="사용자-추가"><a href="#사용자-추가" class="headerlink" title="사용자 추가"></a>사용자 추가</h4><p><code>useradd -m 사용자명</code> : 처음, 사용자를 추가하면 passwd를 설정해야함.</p>
+<p><code>sudo passwd 사용자명</code></p>
+<p><code>sudo usermod -a -G sudo 사용자명</code></p>
+<h4 id="권한-변경하는법"><a href="#권한-변경하는법" class="headerlink" title="권한 변경하는법"></a>권한 변경하는법</h4><p><code>chmod o-r 파일명</code> : other에 대한 파일권한중 읽기를 뼴</p>
+<p><code>chmod o+r 파일명</code> : other에 대한 파일권한중 읽기를 추가해줌.</p>
+<p><code>chmod o+w 파일명</code> : other에 대한 파일권한 쓰기를 추가해줌.</p>
+<p><code>chmod u-r 파일명</code> : 소유자에 대한 읽기권한을 뺴버림.</p>
+<h4 id="directory-권한"><a href="#directory-권한" class="headerlink" title="directory 권한"></a>directory 권한</h4><p><code>r</code> = 해당 폴더의 내용을 확인</p>
+<p><code>w</code> = 해당 폴더의 내용물에 파일생성등등</p>
+<p><code>x</code> = 해당 폴더의 접근.(cd)</p>
+<p><code>chmod -R o+w [폴더명]</code> : 해당 폴더와 폴더내에잇는 모든 파일들 권한을 변경함.</p>
+<h4 id="숫자-변경법"><a href="#숫자-변경법" class="headerlink" title="숫자 변경법"></a>숫자 변경법</h4><p><code>chmod 444 perm.txt</code> : perm.txt에 대한 권한을 모두 read로 변경</p>
+<h4 id="사칙연산법"><a href="#사칙연산법" class="headerlink" title="사칙연산법"></a>사칙연산법</h4><p><code>chmod a=rwx perm.txt</code> : perm.txt에 대한 모든 사용권한을 오픈함.</p>
 
         </div>
         <footer class="article-footer">
@@ -213,7 +339,7 @@
 
 
 
-    <a data-url="http://yoursite.com/2019/09/30/linux-study-03/" data-id="ck17n7es50036v3z0qiwh0wfl" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2019/09/30/linux-study-03/" data-id="ck17oijvq003bn3z0dn092v7l" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -289,13 +415,29 @@
         "genre": "TIL",
         "datePublished": "2019-09-30",
         "dateCreated": "2019-09-30",
-        "dateModified": "2019-09-30",
+        "dateModified": "2019-10-01",
         "url": "http://yoursite.com/2019/09/30/linux-study-03/",
         "description": "
 
-## 
+프로세스
+cpu - processor (process X)
+
+ram - memory
+
+hdd, sdd - storage
+
+
+*각 특징 : *
+
+Storage : 가격이 싸고, 용량이 크다. 속도가 느리다 
+
+Memory : 가격이 비싸고 , 용량이 작다. 속도가 빠르다 
+
+processor : 기격이 매우비싸고, 용량이 매우작고, 속도가 매우빠르다
+
+
 ",
-        "wordCount": 4
+        "wordCount": 503
     }
 </script>
 
