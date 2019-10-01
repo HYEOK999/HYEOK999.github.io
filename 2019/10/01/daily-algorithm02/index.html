@@ -10,17 +10,22 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="hexo,git,Web,coding,developer,CSS,algorithm,HTML,javascript">
+        <meta name="keywords" content="hexo,git,Web,coding,developer,CSS,HTML,javascript,algorithm">
     
-    <meta name="keywords" content="hexo,git,Web,coding,developer,CSS,algorithm,HTML,javascript">
+    <meta name="description" content="문제 출저 : 프로그래머스 서울에서 김서방 찾기문제 설명String형 배열 seoul의 element중 Kim의 위치 x를 찾아, 김서방은 x에 있다는 String을 반환하는 함수, solution을 완성하세요. seoul에 Kim은 오직 한 번만 나타나며 잘못된 값이 입력되는 경우는 없습니다. 제한 사항 seoul은 길이 1 이상, 1000 이하인 배">
+<meta name="keywords" content="hexo,git,Web,coding,developer,CSS,HTML,javascript,algorithm">
 <meta property="og:type" content="article">
 <meta property="og:title" content="daily_algorithm02">
 <meta property="og:url" content="http://yoursite.com/2019/10/01/daily-algorithm02/index.html">
 <meta property="og:site_name" content="HYEOK999&#39;s Blog">
+<meta property="og:description" content="문제 출저 : 프로그래머스 서울에서 김서방 찾기문제 설명String형 배열 seoul의 element중 Kim의 위치 x를 찾아, 김서방은 x에 있다는 String을 반환하는 함수, solution을 완성하세요. seoul에 Kim은 오직 한 번만 나타나며 잘못된 값이 입력되는 경우는 없습니다. 제한 사항 seoul은 길이 1 이상, 1000 이하인 배">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-01T05:56:06.359Z">
+<meta property="og:image" content="https://images.velog.io/post-images/leejh3224/619516b0-e892-11e8-98f5-997ef3c38110/what-is-an-algorithm-featured.png">
+<meta property="og:updated_time" content="2019-10-01T05:59:17.765Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="daily_algorithm02">
+<meta name="twitter:description" content="문제 출저 : 프로그래머스 서울에서 김서방 찾기문제 설명String형 배열 seoul의 element중 Kim의 위치 x를 찾아, 김서방은 x에 있다는 String을 반환하는 함수, solution을 완성하세요. seoul에 Kim은 오직 한 번만 나타나며 잘못된 값이 입력되는 경우는 없습니다. 제한 사항 seoul은 길이 1 이상, 1000 이하인 배">
+<meta name="twitter:image" content="https://images.velog.io/post-images/leejh3224/619516b0-e892-11e8-98f5-997ef3c38110/what-is-an-algorithm-featured.png">
     
 
     
@@ -159,7 +164,7 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/Develop/">Develop</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Develop/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Develop/TIL/Algorithm/">Algorithm</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Develop/TIL/Algorithm/HTML/">HTML</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Develop/TIL/Algorithm/HTML/CSS/">CSS</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Develop/TIL/Algorithm/HTML/CSS/Javascript/">Javascript</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Develop/TIL/Algorithm/HTML/CSS/Javascript/Etc/">Etc</a>
+    <a class="page-title-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/TIL/Algorithm/">Algorithm</a>
     </h1>
 </div>
 
@@ -198,14 +203,37 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <p><img src="https://images.velog.io/post-images/leejh3224/619516b0-e892-11e8-98f5-997ef3c38110/what-is-an-algorithm-featured.png" alt></p>
+<hr>
+<p>문제 출저 : 프로그래머스</p>
+<h3 id="서울에서-김서방-찾기"><a href="#서울에서-김서방-찾기" class="headerlink" title="서울에서 김서방 찾기"></a>서울에서 김서방 찾기</h3><h6 id="문제-설명"><a href="#문제-설명" class="headerlink" title="문제 설명"></a>문제 설명</h6><p>String형 배열 seoul의 element중 Kim의 위치 x를 찾아, 김서방은 x에 있다는 String을 반환하는 함수, solution을 완성하세요. seoul에 Kim은 오직 한 번만 나타나며 잘못된 값이 입력되는 경우는 없습니다.</p>
+<h5 id="제한-사항"><a href="#제한-사항" class="headerlink" title="제한 사항"></a>제한 사항</h5><ul>
+<li>seoul은 길이 1 이상, 1000 이하인 배열입니다.</li>
+<li>seoul의 원소는 길이 1 이상, 20 이하인 문자열입니다.</li>
+<li>Kim은 반드시 seoul 안에 포함되어 있습니다.</li>
+</ul>
+<h5 id="입출력-예"><a href="#입출력-예" class="headerlink" title="입출력 예"></a>입출력 예</h5><table>
+<thead>
+<tr>
+<th>seoul</th>
+<th>return</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>[Jane, Kim]</td>
+<td></td>
+</tr>
+</tbody></table>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">solution</span>(<span class="params">seoul</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> answer = <span class="string">''</span>;</span><br><span class="line">    <span class="keyword">var</span> seoul_array_num = <span class="number">0</span>;</span><br><span class="line">      </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;seoul.length;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(seoul[i] == <span class="string">"Kim"</span>)&#123;</span><br><span class="line">            seoul_array_num = i;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    answer = <span class="string">"김서방은 "</span> + seoul_array_num + <span class="string">"에 있다"</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> answer;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="http://yoursite.com/2019/10/01/daily-algorithm02/" data-id="ck17fiy0p000jp1z0amwo6tcg" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2019/10/01/daily-algorithm02/" data-id="ck17fmixb0012ulz0omp4fpi4" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -276,15 +304,20 @@
             "name": "Jun Hyeok Kim"
         },
         "headline": "daily_algorithm02",
-        "image": "http://yoursite.com",
-        "keywords": "hexo git Web coding developer CSS algorithm HTML javascript",
-        "genre": "Develop TIL Algorithm HTML CSS Javascript Etc",
+        "image": "http://yoursite.comhttps://images.velog.io/post-images/leejh3224/619516b0-e892-11e8-98f5-997ef3c38110/what-is-an-algorithm-featured.png",
+        "keywords": "hexo git Web coding developer CSS HTML javascript algorithm",
+        "genre": "TIL Algorithm",
         "datePublished": "2019-10-01",
         "dateCreated": "2019-10-01",
         "dateModified": "2019-10-01",
         "url": "http://yoursite.com/2019/10/01/daily-algorithm02/",
-        "description": "",
-        "wordCount": 1
+        "description": "
+
+문제 출저 : 프로그래머스
+서울에서 김서방 찾기문제 설명String형 배열 seoul의 element중 Kim의 위치 x를 찾아, 김서방은 x에 있다는 String을 반환하는 함수, solution을 완성하세요. seoul에 Kim은 오직 한 번만 나타나며 잘못된 값이 입력되는 경우는 없습니다.
+제한 사항
+seoul은 길이 1 이상, 1000 이하인 배",
+        "wordCount": 222
     }
 </script>
 
@@ -398,7 +431,7 @@
                             <a href="/2019/10/01/daily-algorithm02/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(https://images.velog.io/post-images/leejh3224/619516b0-e892-11e8-98f5-997ef3c38110/what-is-an-algorithm-featured.png)" alt="daily_algorithm02" class="thumbnail-image"></span>
     
     
 </a>
@@ -406,7 +439,7 @@
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Develop/">Develop</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Develop/TIL/">TIL</a></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/Algorithm/">Algorithm</a></p>
                             <p class="item-title"><a href="/2019/10/01/daily-algorithm02/" class="title">daily_algorithm02</a></p>
                             <p class="item-date"><time datetime="2019-10-01T05:56:06.000Z" itemprop="datePublished">2019-10-01</time></p>
                         </div>
