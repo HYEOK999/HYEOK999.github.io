@@ -10,17 +10,22 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="hexo,git,Web,coding,developer,CSS,algorithm,HTML,javascript">
+        <meta name="keywords" content="hexo,git,Web,coding,developer,CSS,HTML,javascript,algorithm">
     
-    <meta name="keywords" content="hexo,git,Web,coding,developer,CSS,algorithm,HTML,javascript">
+    <meta name="description" content="JavaScript Study 03 용어 변수 식별자란? 평가란? 할당 참조 변수 선언 호이스팅 변수와 메모리의 관계       용어 - ( 러버덕 ) 키워드 식별자 변수 메모리와 메모리 주소 할당 호이스팅     변수 값을 저장하는 메커니즘. 메모리에 접근하기 위해 메모리의 주소에 이름을 부여하는 것. 메모리 공간 그 자체.  메모리 공간에 부여한 이">
+<meta name="keywords" content="hexo,git,Web,coding,developer,CSS,HTML,javascript,algorithm">
 <meta property="og:type" content="article">
 <meta property="og:title" content="javascript-study-03">
 <meta property="og:url" content="http://yoursite.com/2019/10/04/javascript-study-03/index.html">
 <meta property="og:site_name" content="HYEOK999&#39;s Blog">
+<meta property="og:description" content="JavaScript Study 03 용어 변수 식별자란? 평가란? 할당 참조 변수 선언 호이스팅 변수와 메모리의 관계       용어 - ( 러버덕 ) 키워드 식별자 변수 메모리와 메모리 주소 할당 호이스팅     변수 값을 저장하는 메커니즘. 메모리에 접근하기 위해 메모리의 주소에 이름을 부여하는 것. 메모리 공간 그 자체.  메모리 공간에 부여한 이">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-04T13:49:35.078Z">
+<meta property="og:image" content="https://user-images.githubusercontent.com/31315644/65933403-536fe400-e44c-11e9-981d-c4e8c1f86998.png">
+<meta property="og:updated_time" content="2019-10-04T13:50:30.257Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javascript-study-03">
+<meta name="twitter:description" content="JavaScript Study 03 용어 변수 식별자란? 평가란? 할당 참조 변수 선언 호이스팅 변수와 메모리의 관계       용어 - ( 러버덕 ) 키워드 식별자 변수 메모리와 메모리 주소 할당 호이스팅     변수 값을 저장하는 메커니즘. 메모리에 접근하기 위해 메모리의 주소에 이름을 부여하는 것. 메모리 공간 그 자체.  메모리 공간에 부여한 이">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/31315644/65933403-536fe400-e44c-11e9-981d-c4e8c1f86998.png">
     
 
     
@@ -74,7 +79,7 @@
                                     <a class="main-nav-list-link" href="/">Home</a>
                                 </li>
                             
-                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/">Develop</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/CSS/">CSS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/GIT/">GIT</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/TIL/">TIL</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Tips/">Tips</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/">TIL</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Algorithm/">Algorithm</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/GIT/">GIT</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/linux/">linux</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/etc/">etc</a></li></ul>
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/">Develop</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/CSS/">CSS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/GIT/">GIT</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Tips/">Tips</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/">TIL</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Algorithm/">Algorithm</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/GIT/">GIT</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/linux/">linux</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/etc/">etc</a></li></ul>
                                     
                         </ul>
                         <nav id="sub-nav">
@@ -129,7 +134,7 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/Develop/">Develop</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Develop/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Develop/TIL/Algorithm/">Algorithm</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Develop/TIL/Algorithm/HTML/">HTML</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Develop/TIL/Algorithm/HTML/CSS/">CSS</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Develop/TIL/Algorithm/HTML/CSS/HTML-CSS/">HTML&CSS</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Develop/TIL/Algorithm/HTML/CSS/HTML-CSS/Javascript/">Javascript</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Develop/TIL/Algorithm/HTML/CSS/HTML-CSS/Javascript/Javascript-Preview/">Javascript-Preview</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Develop/TIL/Algorithm/HTML/CSS/HTML-CSS/Javascript/Javascript-Preview/etc/">etc</a>
+    <a class="page-title-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/TIL/Javascript/">Javascript</a>
     </h1>
 </div>
 
@@ -168,14 +173,158 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <p><img src="https://user-images.githubusercontent.com/31315644/65933403-536fe400-e44c-11e9-981d-c4e8c1f86998.png" alt="JavaScriptBanner"></p>
+<hr>
+<h2 id="JavaScript-Study-03"><a href="#JavaScript-Study-03" class="headerlink" title="JavaScript Study 03"></a>JavaScript Study 03</h2><ul>
+<li>용어</li>
+<li>변수</li>
+<li>식별자란?</li>
+<li>평가란?</li>
+<li>할당</li>
+<li>참조</li>
+<li>변수 선언</li>
+<li>호이스팅</li>
+<li>변수와 메모리의 관계</li>
+</ul>
+<br>
+
+<hr>
+<br>
+
+<h3 id="용어-러버덕"><a href="#용어-러버덕" class="headerlink" title="용어 - ( 러버덕 )"></a>용어 - ( 러버덕 )</h3><ul>
+<li>키워드</li>
+<li>식별자</li>
+<li>변수</li>
+<li>메모리와 메모리 주소</li>
+<li>할당</li>
+<li>호이스팅</li>
+</ul>
+<br>
+
+<hr>
+<h3 id="변수"><a href="#변수" class="headerlink" title="변수"></a>변수</h3><blockquote>
+<p>값을 저장하는 메커니즘.</p>
+<p>메모리에 접근하기 위해 메모리의 주소에 이름을 부여하는 것.</p>
+<p>메모리 공간 그 자체. </p>
+<p>메모리 공간에 부여한 이름.</p>
+</blockquote>
+<h4 id="메모리-기억하는-영역"><a href="#메모리-기억하는-영역" class="headerlink" title="메모리 : 기억하는 영역"></a>메모리 : 기억하는 영역</h4><h4 id="메모리-셀-메모리를-이루는-공간-1byte-8bit-크기로-이루어져있음-각-셀마다-주소를-가지고-있다"><a href="#메모리-셀-메모리를-이루는-공간-1byte-8bit-크기로-이루어져있음-각-셀마다-주소를-가지고-있다" class="headerlink" title="메모리 셀 : 메모리를 이루는 공간. 1byte (8bit) 크기로 이루어져있음. 각 셀마다 주소를 가지고 있다."></a>메모리 셀 : 메모리를 이루는 공간. 1byte (8bit) 크기로 이루어져있음. 각 셀마다 주소를 가지고 있다.</h4><p><em>자바스크립트는 메모리의 주소를 알려주지않는다.</em></p>
+<p><strong>이유</strong> : 각 메모리의 주소가 어디서 쓰고있는지 모르기에 변경을 했다거나 지웠다거나 하는 일이 생길 경우 큰 에러를 발생시킬수 있기 떄문이다. 따라서 각 메모리의 주소를 기억하게 하는 매커니즘(변수)을 사용한다.</p>
+<br>
+
+<p><strong>변수의 이름</strong> : 메모리 공간의 주소 위치를 별칭으로 참조한 것.</p>
+<p>변수는 하나의 값만을 저장할 수 있다. (예외, 배열 / 객체)</p>
+<p><strong>변수의 명명은 1번 명명하면 해당 주소의 이름은 바꿀 수 없기 때문에, 변수의 이름을 지을때는 항상 고민하고 고민해야한다.</strong> </p>
+<br>
+
+<p><strong>값이란?</strong> : 컴퓨터가 인식할 수 있는 데이터의 종류. 메모리에 들어가는 대상.</p>
+<p>자바스크립트 엔진은</p>
+<ol>
+<li>변수를 찾아갈 수 있다.</li>
+<li>변수를 이용할 수 있다.</li>
+</ol>
+<br>
+
+<h4 id="변수가-여러-값을-저장하기-위한-방법"><a href="#변수가-여러-값을-저장하기-위한-방법" class="headerlink" title="변수가 여러 값을 저장하기 위한 방법"></a>변수가 여러 값을 저장하기 위한 방법</h4><ul>
+<li>자료구조 이용<ul>
+<li>객체 </li>
+<li>배열</li>
+</ul>
+</li>
+</ul>
+<br>
+
+<h3 id="식별자란"><a href="#식별자란" class="headerlink" title="식별자란?"></a>식별자란?</h3><blockquote>
+<p>메모리 주소를 가리키는 고유한 변수 이름.</p>
+<p><strong>메모리에 들어간 값을 구별해낼수 있는 고유한 이름을 식별자라 칭한다.</strong></p>
+<p>( 변수한정이 아니다. 함수도, 클래스도 식별자가 될 수 있다. )</p>
+</blockquote>
+<br>
+
+<h3 id="평가란"><a href="#평가란" class="headerlink" title="평가란?"></a>평가란?</h3><blockquote>
+<p>값을 연산하는 과정</p>
+</blockquote>
+<p><code>var</code>는  자바스크립트엔진에게 내리는 키워드이며,<code>var</code> 뒤에 변수이름을 적어야한다.</p>
+<p><code>CPU</code> : 계산(연산)하는 영역.</p>
+<p>메모리는 한정된 영역이기 떄문에 자바스크린트 엔진에 내장된 Garbage Collector가 해당 메모리 주소가 사용이 되는지 안되는지를 게속 감시한다. 만약 해당 메모리 주소가 사용되지 않고 있다면 주소를 비워준다.</p>
+<br>
+
+<h3 id="할당"><a href="#할당" class="headerlink" title="할당"></a>할당</h3><blockquote>
+<p>변수에 값을 저장하는 행위 (=대입 , =저장)</p>
+</blockquote>
+<br>
+
+<h3 id="참조"><a href="#참조" class="headerlink" title="참조"></a>참조</h3><blockquote>
+<p>변수에 저장된 값을 읽어드리는 행위</p>
+</blockquote>
+<br>
+
+<h3 id="변수선언"><a href="#변수선언" class="headerlink" title="변수선언"></a>변수선언</h3><blockquote>
+<p>값을 할당하기 위한 메모리 공간을 확보하여 값을 저장하기 위한 준비를 하는 것.</p>
+<p>변수를 선언하기 위해서는 var / let / const 키워드를 이용한다.</p>
+</blockquote>
+<p><strong>선언문 : 식별자를 만드는 것.</strong></p>
+<p><strong>변수를 사용할 때는 반드시 <em>선언</em>을 하고 <em>할당</em>을 해야만 한다.</strong></p>
+<p><strong>변수 이름의 등록처 : 실행컨텍스트</strong></p>
+<h4 id="var키워드-변수선언시-최초로-undefined가-할당된다"><a href="#var키워드-변수선언시-최초로-undefined가-할당된다" class="headerlink" title="var키워드 변수선언시 최초로 undefined가 할당된다."></a><code>var</code>키워드 변수선언시 최초로 undefined가 할당된다.</h4><br>
+
+<p>자바스크립트 엔진은 변수 선언을 아래의 2단계를 거쳐 수행한다.</p>
+<ul>
+<li>선언 단계(Declaration phase) : 변수 이름을 등록하여 자바스크립트 엔진에 변수의 존재를 알린다.</li>
+<li>초기화 단계(Initialization phase) : 값을 저장하기 위한 메모리 공간을 확보하고 암묵적으로 <code>undefined</code>를 할당한다.</li>
+</ul>
+<p><code>undefined</code>는 원시타입이며, 원시타입은 메모리에 등록된 순간 변경이 불가능하다.</p>
+<p>​    만약, 변수에 재할당을 해서 변경했다면 그것은 걸려있던 메모리 주소를 옮긴 것이지 undefined를 지운것이 아니다.</p>
+<br>
+
+<h3 id="호이스팅"><a href="#호이스팅" class="headerlink" title="호이스팅"></a>호이스팅</h3><p> 자바스크립트 코드는 인터프리터가 한줄한줄 실행하기 앞서, 먼저 <strong>선언문들만 골라내서 먼저 실행한다.</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(score); <span class="comment">// undefined</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> score; <span class="comment">// 변수 선언(문)</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(score); <span class="comment">// undefined</span></span><br><span class="line"></span><br><span class="line">score = <span class="number">80</span>; <span class="comment">// 값의 할당</span></span><br><span class="line"><span class="keyword">var</span> score;  <span class="comment">// 변수 선언</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(score); <span class="comment">// 80</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// var score은 호이스팅 되어 처음에 undefined가 할당이 되었고</span></span><br><span class="line"><span class="comment">// score는 다시 80값으로 재할당되었다. 그 뒤에 나오는 var score; 구문은 이미 호이스팅하여 읽었으므로 다시 읽지 않고 넘어간다.</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p><strong>값의 교환</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">var</span> y = <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> temp = x;</span><br><span class="line">x = y;</span><br><span class="line">y = temp;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(x, y); <span class="comment">// 2 1</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+
+
+<h3 id="변수와-메모리의-관계"><a href="#변수와-메모리의-관계" class="headerlink" title="변수와 메모리의 관계"></a>변수와 메모리의 관계</h3><p><img src="https://user-images.githubusercontent.com/31315644/66211295-b4224980-e6f6-11e9-8401-2cb6722d2c2c.jpeg" alt="Memory"></p>
+<ol>
+<li><p>var result 로 특정 메모리 공간에 변수 선언 및 초기화를 한다. ( 메모리에는 undefined가 생성됨. )</p>
+</li>
+<li><p>result 변수에 100이라는 숫자 타입의 값을 재할당한다.  </p>
+<p>( 따라서 undefined라고 적힌 메모리에 걸려있는 링크를 끊고 새 메모리에 100값과 함께 링크를 건다.)</p>
+<p>( undefined는 안쓰기때문에 가비지컬렉터에 의해 관리된다. )</p>
+</li>
+<li><p>result 변수에 200이라는 숫자 타입의 값을 재할당한다</p>
+<p>( 따라서 100 이라고 적힌 메모리에 걸려있는 링크를 끊고 새 메모리에 200값과 함께 링크를 건다. )</p>
+<p>( 100이 적힌 메모리 공간은 안쓰기때문에 가비지컬렉터에 의해 관리된다. )</p>
+</li>
+</ol>
+<br>
+
+<p><strong>VS CODE에서 자바스크립트 즉석 실행하기</strong></p>
+<hr>
+<ul>
+<li><p>Code.Runner : 브라우저 나 노드에서 굳이 사용하지 않고 js파일을 실행할수있다.  <code>ctrl + option + n</code></p>
+<p>(단, 코드러너는 노드환경에서 실행되기 때문에 DOMAPI등은 못읽는다.) </p>
+</li>
+<li><p>quokka.js 시작 : <code>cmd + shift + p - quokka.js : start on current file</code> </p>
+<p> quokka.js 종료 : <code>stop all (current)</code></p>
+</li>
+</ul>
+<hr>
+
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="http://yoursite.com/2019/10/04/javascript-study-03/" data-id="ck1c6qo5i003m70z0n7eeag7h" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2019/10/04/javascript-study-03/" data-id="ck1c6rysx003ncjz0ybshz39p" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -246,15 +395,48 @@
             "name": "Jun Hyeok Kim"
         },
         "headline": "javascript-study-03",
-        "image": "http://yoursite.com",
-        "keywords": "hexo git Web coding developer CSS algorithm HTML javascript",
-        "genre": "Develop TIL Algorithm HTML CSS HTML&CSS Javascript Javascript-Preview etc",
+        "image": "http://yoursite.comhttps://user-images.githubusercontent.com/31315644/65933403-536fe400-e44c-11e9-981d-c4e8c1f86998.png",
+        "keywords": "hexo git Web coding developer CSS HTML javascript algorithm",
+        "genre": "TIL Javascript",
         "datePublished": "2019-10-04",
         "dateCreated": "2019-10-04",
         "dateModified": "2019-10-04",
         "url": "http://yoursite.com/2019/10/04/javascript-study-03/",
-        "description": "",
-        "wordCount": 1
+        "description": "
+
+JavaScript Study 03
+용어
+변수
+식별자란?
+평가란?
+할당
+참조
+변수 선언
+호이스팅
+변수와 메모리의 관계
+
+
+
+
+
+
+용어 - ( 러버덕 )
+키워드
+식별자
+변수
+메모리와 메모리 주소
+할당
+호이스팅
+
+
+
+
+변수
+값을 저장하는 메커니즘.
+메모리에 접근하기 위해 메모리의 주소에 이름을 부여하는 것.
+메모리 공간 그 자체. 
+메모리 공간에 부여한 이",
+        "wordCount": 659
     }
 </script>
 
@@ -338,7 +520,7 @@
                             <a href="/2019/10/04/javascript-study-03/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/65933403-536fe400-e44c-11e9-981d-c4e8c1f86998.png)" alt="javascript-study-03" class="thumbnail-image"></span>
     
     
 </a>
@@ -346,7 +528,7 @@
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Develop/">Develop</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Develop/TIL/">TIL</a></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/Javascript/">Javascript</a></p>
                             <p class="item-title"><a href="/2019/10/04/javascript-study-03/" class="title">javascript-study-03</a></p>
                             <p class="item-date"><time datetime="2019-10-04T13:49:35.000Z" itemprop="datePublished">2019-10-04</time></p>
                         </div>
@@ -441,7 +623,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/">Develop</a><span class="category-list-count">10</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/CSS/">CSS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/GIT/">GIT</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Java/">Java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Javascript/">Javascript</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/TIL/">TIL</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/TIL/Algorithm/">Algorithm</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/TIL/Algorithm/HTML/">HTML</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/TIL/Algorithm/HTML/CSS/">CSS</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/TIL/Algorithm/HTML/CSS/HTML-CSS/">HTML&CSS</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/TIL/Algorithm/HTML/CSS/HTML-CSS/Javascript/">Javascript</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/TIL/Algorithm/HTML/CSS/HTML-CSS/Javascript/Javascript-Preview/">Javascript-Preview</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/TIL/Algorithm/HTML/CSS/HTML-CSS/Javascript/Javascript-Preview/etc/">etc</a><span class="category-list-count">1</span></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Tips/">Tips</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/">TIL</a><span class="category-list-count">35</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Algorithm/">Algorithm</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/GIT/">GIT</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript/">Javascript</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/linux/">linux</a><span class="category-list-count">4</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/etc/">etc</a><span class="category-list-count">2</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/">Develop</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/CSS/">CSS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/GIT/">GIT</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Java/">Java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Javascript/">Javascript</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Tips/">Tips</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/">TIL</a><span class="category-list-count">36</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Algorithm/">Algorithm</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/GIT/">GIT</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript/">Javascript</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/linux/">linux</a><span class="category-list-count">4</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/etc/">etc</a><span class="category-list-count">2</span></li></ul>
         </div>
     </div>
 
