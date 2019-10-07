@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+
+    
+
+    
+    <title>javascript-study-04 | HYEOK999&#39;s Blog</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="hexo,git,Web,coding,developer,CSS,HTML,algorithm,javascript">
+    
+    <meta name="description" content="JavaScript Study 04 용어 변수 명명 데이터 타입의 정의 데이터 타입의 종류 숫자 타입 문자열 타입 불리언 타입 undefined 타입 null 타입   동적 타이밍 연산자 이항 산술 연산자 단항 산술 연산자 문자열 연결 연산자 할당 연산자 비교 연산자 삼항 조건 연산자 논리 조건 연산자 그룹 연산자 typeof 연산자 지수 연산자">
+<meta name="keywords" content="hexo,git,Web,coding,developer,CSS,HTML,algorithm,javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javascript-study-04">
+<meta property="og:url" content="http://yoursite.com/2019/10/07/javascript-study-04/index.html">
+<meta property="og:site_name" content="HYEOK999&#39;s Blog">
+<meta property="og:description" content="JavaScript Study 04 용어 변수 명명 데이터 타입의 정의 데이터 타입의 종류 숫자 타입 문자열 타입 불리언 타입 undefined 타입 null 타입   동적 타이밍 연산자 이항 산술 연산자 단항 산술 연산자 문자열 연결 연산자 할당 연산자 비교 연산자 삼항 조건 연산자 논리 조건 연산자 그룹 연산자 typeof 연산자 지수 연산자">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://user-images.githubusercontent.com/31315644/65933403-536fe400-e44c-11e9-981d-c4e8c1f86998.png">
+<meta property="og:updated_time" content="2019-10-07T09:06:52.472Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="javascript-study-04">
+<meta name="twitter:description" content="JavaScript Study 04 용어 변수 명명 데이터 타입의 정의 데이터 타입의 종류 숫자 타입 문자열 타입 불리언 타입 undefined 타입 null 타입   동적 타이밍 연산자 이항 산술 연산자 단항 산술 연산자 문자열 연결 연산자 할당 연산자 비교 연산자 삼항 조건 연산자 논리 조건 연산자 그룹 연산자 typeof 연산자 지수 연산자">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/31315644/65933403-536fe400-e44c-11e9-981d-c4e8c1f86998.png">
+    
+
+    
+
+    
+        <link rel="icon" href="/images/favicon_io/favicon.ico">
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">HYEOK999&#39;s Daily Develop</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/">Develop</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/CSS/">CSS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/GIT/">GIT</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Tips/">Tips</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/">TIL</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Algorithm/">Algorithm</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/GIT/">GIT</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/linux/">linux</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/etc/">etc</a></li></ul>
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/TIL/Javascript/">Javascript</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-javascript-study-04" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        javascript-study-04
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/10/07/javascript-study-04/" class="article-date">
+            <time datetime="2019-10-07T09:05:57.000Z" itemprop="datePublished">2019-10-07</time>
+        </a>
+    </div>
+
+		
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/CSS/">CSS</a>, <a class="tag-link" href="/tags/HTML/">HTML</a>, <a class="tag-link" href="/tags/Web/">Web</a>, <a class="tag-link" href="/tags/algorithm/">algorithm</a>, <a class="tag-link" href="/tags/coding/">coding</a>, <a class="tag-link" href="/tags/developer/">developer</a>, <a class="tag-link" href="/tags/git/">git</a>, <a class="tag-link" href="/tags/hexo/">hexo</a>, <a class="tag-link" href="/tags/javascript/">javascript</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p><img src="https://user-images.githubusercontent.com/31315644/65933403-536fe400-e44c-11e9-981d-c4e8c1f86998.png" alt="JavaScriptBanner"></p>
+<hr>
+<h2 id="JavaScript-Study-04"><a href="#JavaScript-Study-04" class="headerlink" title="JavaScript Study 04"></a>JavaScript Study 04</h2><ul>
+<li>용어</li>
+<li>변수 명명</li>
+<li>데이터 타입의 정의</li>
+<li>데이터 타입의 종류<ul>
+<li>숫자 타입</li>
+<li>문자열 타입</li>
+<li>불리언 타입</li>
+<li>undefined 타입</li>
+<li>null 타입</li>
+</ul>
+</li>
+<li>동적 타이밍</li>
+<li>연산자<ul>
+<li>이항 산술 연산자</li>
+<li>단항 산술 연산자</li>
+<li>문자열 연결 연산자</li>
+<li>할당 연산자</li>
+<li>비교 연산자</li>
+<li>삼항 조건 연산자</li>
+<li>논리 조건 연산자</li>
+<li>그룹 연산자</li>
+<li>typeof 연산자</li>
+<li>지수 연산자</li>
+</ul>
+</li>
+</ul>
+<br>
+
+<hr>
+<br>
+
+<h3 id="용어-러버덕"><a href="#용어-러버덕" class="headerlink" title="용어 - ( 러버덕 )"></a>용어 - ( 러버덕 )</h3><ul>
+<li>네이밍 케이스</li>
+<li>데이터 타입</li>
+<li>동적 타이핑</li>
+</ul>
+<br>
+
+<hr>
+<h2 id="변수명명"><a href="#변수명명" class="headerlink" title="변수명명"></a>변수명명</h2><blockquote>
+<p>변수의 이름을 지정할 때에는 항상 고민하고 신중해야만한다.</p>
+</blockquote>
+<p>*<em>식별자 이름 : 숫자 , 문자  , 특수기호(_ , $) *</em></p>
+<ul>
+<li>규칙1 : 맨 앞자리 숫자 불가능</li>
+<li>규칙2 : 예약어는 쓸 수 없다.(var , let, const , function …)</li>
+<li>규칙3 : 대소문자를 구별한다.</li>
+<li>규칙4 : 단어와 단어의 사이는 특정기법을 이용한다.(카멜케이스같은)</li>
+<li>규칙5 : 변수 이름이 전체다 대문자라면 상수다.</li>
+</ul>
+<p><strong>주석은 최대한 적게 쓰도록, 변수명을 제대로 적어야만 한다.</strong></p>
+<p><strong>특정기법</strong></p>
+<ol>
+<li><p>카멜케이스 : 변수 / 함수</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> firstName;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>스네이크케이스 :  javascript 에서 잘 사용하지 않는다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> first_name;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>파스칼 케이스 : 생성자 함수, 클래스 이름</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> FirstName;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>헝가리언 케이스</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> strFirstName;   			<span class="comment">// type + identifier</span></span><br><span class="line"><span class="keyword">var</span> $elem = $(<span class="string">'.myClass'</span>) <span class="comment">// jQuery</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<br>
+
+<h2 id="데이터-타입의-정의"><a href="#데이터-타입의-정의" class="headerlink" title="데이터 타입의 정의"></a>데이터 타입의 정의</h2><blockquote>
+<p>값의 종류</p>
+<ul>
+<li>데이터 타입을 알아야 메모리 공간을 확보가 가능하다. (타입마다 확보할 메모리공간이 다르다.)</li>
+<li>데이터를 참조할 때 한번에 읽어 들여야 할 메모리 공간의 크기 를 알 수 있다.</li>
+<li>값을 어떻게 해석하는지 알 수 있다.</li>
+</ul>
+</blockquote>
+<p><strong>값을 만들어내는 방법</strong></p>
+<ul>
+<li>값 : 리터럴 표기법은 값을 만들어내는 가장 기본적인 방법이다.</li>
+<li>표현식 : 평가되어 하나의 값을 만들어낸다.</li>
+</ul>
+<br>
+
+<p><img src="https://user-images.githubusercontent.com/31315644/66286795-ece83b80-e90d-11e9-81d1-3b43b257c4a4.jpeg" alt="표현식"></p>
+<h3 id="값"><a href="#값" class="headerlink" title="값"></a>값</h3><blockquote>
+<p>더 이상 평가할 수 없는 최소 표현식(토큰) </p>
+<p>자신을 평가시 자신이 나온다면 그것은 값 이다. ( ex : 30을 평가하면 30이다. ) </p>
+<p>리터럴 표기법에 의하여 만들어진다.</p>
+<p>표현식에 의하여 만들어진다.</p>
+</blockquote>
+<br>
+
+<h3 id="평가"><a href="#평가" class="headerlink" title="평가"></a>평가</h3><blockquote>
+<p>표현식 등의 결과를 새로운 값으로 반환한다.</p>
+</blockquote>
+<br>
+
+<h3 id="표현식"><a href="#표현식" class="headerlink" title="표현식"></a>표현식</h3><blockquote>
+<p><strong>하나의 값으로 평가될 수 있는 문.</strong></p>
+<p>평가되어 하나의 값을 표현하는 방법. (리터럴, 식별자(변수,함수), 연산자, 함수 호출등의  조합)</p>
+<p>하나 이상의 리터럴, 하나 이상의 표현식 , 연상자등으로 구성된 문.</p>
+</blockquote>
+<p><strong>식별자도 결국 표현식이다.</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">var</span> b = a; </span><br><span class="line"><span class="comment">// a라는 식별자(표현식)가 평가되어 10이라는 값을 반환하였고 b는 10이라는 값을 가리킨다.</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<br>
+
+<h3 id="리터럴"><a href="#리터럴" class="headerlink" title="리터럴"></a>리터럴</h3><blockquote>
+<p>변수나 상수를 나타내는 값 자체;</p>
+<p>소스 코드 안에서 직접 만들어낸 고정된 값.</p>
+<p>리터럴 자체는 표현식이지만, 연산이 들어간 표현식은 리터럴이 될 수 없다.( 10 + 20 )</p>
+</blockquote>
+<br>
+
+<h3 id="Symbol"><a href="#Symbol" class="headerlink" title="Symbol"></a>Symbol</h3><blockquote>
+<p>심볼은 주로 이름의 충돌 위험이 없는 객체의 유일한 프로퍼티 키(property key)를 만들기 위해 사용한다. </p>
+</blockquote>
+<p>(추후 다시 공부)</p>
+<br>
+
+<h2 id="데이터-타입의-종류"><a href="#데이터-타입의-종류" class="headerlink" title="데이터 타입의 종류"></a>데이터 타입의 종류</h2><p><strong>원시 타입 ( primitive ) - 6가지의 데이터 타입</strong> : 숫자 ,문자열 ,boolean , null, undefined, Symbol</p>
+<p>​    boolean : 평가 결과가 <code>true</code> 또는 <code>false</code>를 반환하는 데이터타입</p>
+<p>​    null : 변수에 값이 없다는것을 의도적으로 나타냄. (의도적 부재)</p>
+<p>​    undefined : 변수를 선언하고 할당하지 않을 경우. 암묵적으로 javascript엔진에 의하여 초기화되는 값.</p>
+<p><strong>객체 타입</strong> :  객체, 함수, 배열 </p>
+<br>
+
+<h3 id="숫자타입"><a href="#숫자타입" class="headerlink" title="숫자타입"></a>숫자타입</h3><blockquote>
+<p>C나 Java의 경우, 정수와 실수를 구분하여 int, long, float, double 등과 같은 다양한 숫자 타입이 존재한다.</p>
+<p><strong>하지만 자바스크립트는 독특하게 하나의 숫자 타입만 존재한다.</strong></p>
+</blockquote>
+<p>숫자 타입은 추가적으로 3가지 특별한 값들도 표현할 수 있다.</p>
+<ul>
+<li><p>Infinity : 양의 무한대</p>
+</li>
+<li><p>-Infinity : 음의 무한대</p>
+</li>
+<li><p>NaN : 산술 연산 불가(not-a-number)</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 숫자 타입의 3가지 특별한 값</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">10</span> / <span class="number">0</span>);       <span class="comment">// Infinity</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">10</span> / <span class="number">-0</span>);      <span class="comment">// -Infinity</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">1</span> * <span class="string">'String'</span>); <span class="comment">// NaN - NaN대소문자 주의 ( nan,NAN 등등 다 안됨. )</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<br>
+
+<h3 id="문자열-타입"><a href="#문자열-타입" class="headerlink" title="문자열 타입"></a>문자열 타입</h3><blockquote>
+<p>텍스트 데이터를 나타내는데 사용한다.</p>
+<p>작은 따옴표(‘’), 큰 따옴표(“”) 또는 백틱(``) 안에 텍스트를 넣어 생성한다. </p>
+<p>가장 일반적인 표기법은 작은 따옴표를 사용하는 것이다.</p>
+</blockquote>
+<p><strong>++ 추가</strong></p>
+<p>​    : 자바스크립트에서는 개행, 백스페이스 등을 나타낼수있는 <strong>이스케이스프 시퀀스</strong>를 지원한다.</p>
+<table>
+<thead>
+<tr>
+<th align="left">이스케이프 시퀀스</th>
+<th align="left">의미</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">\0</td>
+<td align="left">Null</td>
+</tr>
+<tr>
+<td align="left">\b</td>
+<td align="left">백스페이스</td>
+</tr>
+<tr>
+<td align="left">\f</td>
+<td align="left">새로운 페이지</td>
+</tr>
+<tr>
+<td align="left">\n</td>
+<td align="left">개행(LF, Line Feed)</td>
+</tr>
+<tr>
+<td align="left">\r</td>
+<td align="left">캐리지 리턴(CR, Carriage Return)</td>
+</tr>
+<tr>
+<td align="left">\t</td>
+<td align="left">탭(수평)</td>
+</tr>
+<tr>
+<td align="left">\v</td>
+<td align="left">탭(수직)</td>
+</tr>
+<tr>
+<td align="left">\’</td>
+<td align="left">작은 따옴표</td>
+</tr>
+<tr>
+<td align="left">\”</td>
+<td align="left">큰 따옴표</td>
+</tr>
+<tr>
+<td align="left">\</td>
+<td align="left">백슬래시</td>
+</tr>
+</tbody></table>
+<p>예를 들어, 줄바꿈과 들여쓰기가 적용된 HTML 문자열은 아래와 같이 이스케이프 시퀀스를 사용하여 작성한다.</p>
+<p><strong>근데 개행등의 불편함을 막기 위해스 ES6부터는 백틱( ` ) 이 사용이 가능하다.</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ES5</span></span><br><span class="line"><span class="keyword">var</span> template = <span class="string">'&lt;ul class="nav-items"&gt;\n'</span>;</span><br><span class="line">template += <span class="string">'\t&lt;li&gt;&lt;a href="#home"&gt;Home&lt;/a&gt;&lt;/li&gt;\n'</span>;</span><br><span class="line">template += <span class="string">'\t&lt;li&gt;&lt;a href="#about"&gt;About&lt;/a&gt;&lt;/li&gt;\n'</span>;</span><br><span class="line">template += <span class="string">'&lt;/ul&gt;'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ES6 - 백틱</span></span><br><span class="line"><span class="keyword">const</span> template = <span class="string">`&lt;ul class="nav-items"&gt;</span></span><br><span class="line"><span class="string">  &lt;li&gt;&lt;a href="#home"&gt;Home&lt;/a&gt;&lt;/li&gt;</span></span><br><span class="line"><span class="string">  &lt;li&gt;&lt;a href="#about"&gt;About&lt;/a&gt;&lt;/li&gt;</span></span><br><span class="line"><span class="string">&lt;/ul&gt;`</span>;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="문자열-인터폴레이션"><a href="#문자열-인터폴레이션" class="headerlink" title="문자열 인터폴레이션"></a>문자열 인터폴레이션</h4><p>​    리터럴 문자열 연산을 더 쉽게 하기 위한 ES6의 새로운 기능.</p>
+<p>​    <strong><code>${ }</code> 는  <code>백틱</code> 안에서만 사용이 가능하다.</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> first = <span class="string">'Ung-mo'</span>;</span><br><span class="line"><span class="keyword">var</span> last = <span class="string">'Lee'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ES5: 문자열 연결</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'My name is '</span> + first + <span class="string">' '</span> + last + <span class="string">'.'</span>);</span><br><span class="line"><span class="comment">// ES6: String Interpolation 문자열 인터폴레이션</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">`My name is <span class="subst">$&#123;first&#125;</span> <span class="subst">$&#123;last&#125;</span>.`</span>);</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="불리언-타입"><a href="#불리언-타입" class="headerlink" title="불리언 타입"></a>불리언 타입</h3><blockquote>
+<p>불리언(boolean) 타입의 값은 논리적 참, 거짓을 나타내는 true와 false 뿐이다.</p>
+</blockquote>
+<br>
+
+<h3 id="undefined-타입"><a href="#undefined-타입" class="headerlink" title="undefined 타입"></a>undefined 타입</h3><blockquote>
+<p>선언 이후 명시적으로 값을 할당하지 않은 변수는 자바스크립트 엔진의 암묵적 초기화에 의해 undefined 값을 가진다. </p>
+<p><strong>선언은 되었지만 아직 값을 할당하지 않은 변수에 접근하면 undefined가 반환된다.</strong></p>
+</blockquote>
+<p>선언 과 정의</p>
+<p>자바스크립트의 선언,  식별자가 생성되었지만 값이 아직 할당되지 않은 상태</p>
+<p>자바스크립트의 정의, 식별자가 생성되었고 값까지 할당되어 있는 상태를 의미한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 변수 선언. 내부적으로 undefined로 정의된다.</span></span><br><span class="line"><span class="keyword">var</span> foo;</span><br><span class="line"><span class="comment">// 변수 선언과 정의</span></span><br><span class="line"><span class="keyword">var</span> bar = <span class="number">1</span>;</span><br><span class="line"><span class="comment">// 함수 정의. 식별자가 암묵적으로 생성되고 함수 객체가 할당된다.</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">baz</span> </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="null-타입"><a href="#null-타입" class="headerlink" title="null 타입"></a>null 타입</h3><blockquote>
+<p>null은 변수에 값이 없다는 것을 의도적으로 명시(의도적 부재 Intentional absence)할 때 사용한다.</p>
+</blockquote>
+<p><strong>++추가 : 자바스크립트에서는 null값을 사용하는 것보다, 변수의 생명주기에 대해서 이해하고 사용하는 것이 더 바람직하고 유용하다.</strong></p>
+<br>
+
+<p>Symbol 타입 / 객체 타입 추후 다시 공부</p>
+<br>
+
+<h2 id="동적-타이핑"><a href="#동적-타이핑" class="headerlink" title="동적 타이핑"></a>동적 타이핑</h2><p><strong>정적 타입 언어</strong> : 변수 자체에 데이터 타입을 사전에 선언한다. (int num, float num, char c 등등)</p>
+<p><strong>동적 타입 언어</strong> : 변수에 데이터 타입을 알리지않는다. 대신 var / let / const등과 같이 키워드로 변수를 선언함만을 알린다.<br>대신,  동적타입 언어는 변수가 아닌 <strong>값</strong>에 의해 타입이 정해진다.</p>
+<br>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th>정적 타입 언어</th>
+<th>동적 타입 언어</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>장점</td>
+<td>엄격한 규칙으로 인해 버그 발생률을 줄인다.</td>
+<td>유연하다. 사용하기 편리하다.</td>
+</tr>
+<tr>
+<td>단점</td>
+<td>규칙이 엄격하다. 다루기 불편하다.</td>
+<td>코드가 길어질수록 점점 변수에 해당되는 값을 알기가 힘들어진다.</td>
+</tr>
+</tbody></table>
+<br>
+
+<p>자바스크립트는 <strong>동적 타입 언어</strong>이다. 동적 타입 언어는 정적처럼 변수에 타입을 지정하지 않기 때문에 버그 발생률을 높이는 치명적인 단점을 가지고 있기에 이를 해결하기 위해 <code>TypeScript</code>가 나타났다.</p>
+<br>
+
+<h3 id="문"><a href="#문" class="headerlink" title="문"></a>문</h3><blockquote>
+<p><code>;</code> 으로 끝나면 모두 <code>문</code> 이다.</p>
+<p>하나 이상의 표현식과 키워드의 조합.</p>
+</blockquote>
+<img src="https://poiemaweb.com/assets/fs-images/6-2.png" alt="표현식 및 문" style="zoom:50%;">
+
+<ul>
+<li>변수에 할당할 수 있는 문 : 표현식인 문</li>
+<li>변수에 할달할 수 없는 문 : 표현식이 아닌 문</li>
+</ul>
+<p><strong>표현식의 역할은 값을 생성하는 것</strong></p>
+<p><strong>문의 역할은 표현식으로 생성한 값을 사용해 자바스크립트 엔진에게 명령을 내리는 것</strong></p>
+<br>
+
+<h4 id="세미콜론-자동-삽입-기능-ASI-automati-semicolon-insertion"><a href="#세미콜론-자동-삽입-기능-ASI-automati-semicolon-insertion" class="headerlink" title="세미콜론 자동 삽입 기능 ( ASI : automati semicolon insertion )"></a>세미콜론 자동 삽입 기능 ( ASI : automati semicolon insertion )</h4><blockquote>
+<p>자바스크립트 엔진에는 소스 코드를 해석할 때, 문의 끝이라고 예측되는 지점에 세미콜론을 자동으로 붙여주는 <strong>세미콜론 자동 삽입 기능(ASI, automatic semicolon insertion)</strong>이 있다.</p>
+<p>하지만, 왠만해서는 세미콜론을 사용하도록 한다.</p>
+</blockquote>
+<br>
+
+<h2 id="연산자"><a href="#연산자" class="headerlink" title="연산자"></a>연산자</h2><h3 id="이항-산술-연산자"><a href="#이항-산술-연산자" class="headerlink" title="이항 산술 연산자"></a>이항 산술 연산자</h3><p>조건 : 2개의 피연산자 필요.</p>
+<table>
+<thead>
+<tr>
+<th align="center">이항 산술 연산자</th>
+<th align="center">의미</th>
+<th align="center">부수 효과</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">+</td>
+<td align="center">덧셈</td>
+<td align="center">✕</td>
+</tr>
+<tr>
+<td align="center">-</td>
+<td align="center">뺄셈</td>
+<td align="center">✕</td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td align="center">곱셈</td>
+<td align="center">✕</td>
+</tr>
+<tr>
+<td align="center">/</td>
+<td align="center">나눗셈</td>
+<td align="center">✕</td>
+</tr>
+<tr>
+<td align="center">%</td>
+<td align="center">나머지</td>
+<td align="center">✕</td>
+</tr>
+</tbody></table>
+<br>
+
+<h3 id="단항-산술-연산자"><a href="#단항-산술-연산자" class="headerlink" title="단항 산술 연산자"></a>단항 산술 연산자</h3><p>조건 : 1개의 연산자 필요.</p>
+<table>
+<thead>
+<tr>
+<th align="center">단항 산술 연산자</th>
+<th align="left">의미</th>
+<th align="center">부수 효과</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">++</td>
+<td align="left">증가</td>
+<td align="center">○</td>
+</tr>
+<tr>
+<td align="center">–</td>
+<td align="left">감소</td>
+<td align="center">○</td>
+</tr>
+<tr>
+<td align="center">+</td>
+<td align="left">어떠한 효과도 없다. 음수를 양수로 반전하지도 않는다.</td>
+<td align="center">✕</td>
+</tr>
+<tr>
+<td align="center">-</td>
+<td align="left">양수를 음수로 음수를 양수로 반전한 값을 반환한다.</td>
+<td align="center">✕</td>
+</tr>
+</tbody></table>
+<br>
+
+<h3 id="문자열-연결-연산자"><a href="#문자열-연결-연산자" class="headerlink" title="문자열 연결 연산자"></a>문자열 연결 연산자</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 문자열 연결 연산자</span></span><br><span class="line"><span class="string">'1'</span> + <span class="number">2</span>; <span class="comment">// -&gt; '12'</span></span><br><span class="line"><span class="number">1</span> + <span class="string">'2'</span>; <span class="comment">// -&gt; '12'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 산술 연산자</span></span><br><span class="line"><span class="number">1</span> + <span class="number">2</span>; <span class="comment">// -&gt; 3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// true는 1로 타입 변환된다.</span></span><br><span class="line"><span class="number">1</span> + <span class="literal">true</span>; <span class="comment">// -&gt; 2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// false는 0으로 타입 변환된다.</span></span><br><span class="line"><span class="number">1</span> + <span class="literal">false</span>; <span class="comment">// -&gt; 1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// null는 0으로 타입 변환된다.</span></span><br><span class="line"><span class="number">1</span> + <span class="literal">null</span>; <span class="comment">// -&gt; 1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// undefined는 숫자로 타입 변환되지 않는다.</span></span><br><span class="line">+<span class="literal">undefined</span>;    <span class="comment">// -&gt; NaN</span></span><br><span class="line"><span class="number">1</span> + <span class="literal">undefined</span>; <span class="comment">// -&gt; NaN</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="할당-연산자"><a href="#할당-연산자" class="headerlink" title="할당 연산자"></a>할당 연산자</h3><p>우항의 피연산자의 결과가 좌항에있는 변수에 할당된다. </p>
+<table>
+<thead>
+<tr>
+<th align="center">할당 연산자</th>
+<th align="left">사례</th>
+<th align="left">동일 표현</th>
+<th align="center">부수 효과</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">=</td>
+<td align="left">x = 5</td>
+<td align="left">x = 5</td>
+<td align="center">○</td>
+</tr>
+<tr>
+<td align="center">+=</td>
+<td align="left">x += 5</td>
+<td align="left">x = x + 5</td>
+<td align="center">○</td>
+</tr>
+<tr>
+<td align="center">-=</td>
+<td align="left">x -= 5</td>
+<td align="left">x = x - 5</td>
+<td align="center">○</td>
+</tr>
+<tr>
+<td align="center">*=</td>
+<td align="left">x *= 5</td>
+<td align="left">x = x * 5</td>
+<td align="center">○</td>
+</tr>
+<tr>
+<td align="center">/=</td>
+<td align="left">x /= 5</td>
+<td align="left">x = x / 5</td>
+<td align="center">○</td>
+</tr>
+<tr>
+<td align="center">%=</td>
+<td align="left">x %= 5</td>
+<td align="left">x = x % 5</td>
+<td align="center">○</td>
+</tr>
+</tbody></table>
+<br>
+
+<h3 id="비교-연산자"><a href="#비교-연산자" class="headerlink" title="비교 연산자"></a>비교 연산자</h3><p><strong>비교하는 엄격성의 정도가 다르다.</strong> 동등 비교 연산자는 느슨한 비교를 하지만 일치 비교 연산자는 엄격한 비교를 한다.</p>
+<p>조건 : 피연산자 2개</p>
+<table>
+<thead>
+<tr>
+<th align="center">비교 연산자</th>
+<th align="left">의미</th>
+<th align="left">사례</th>
+<th align="left">설명</th>
+<th align="center">부수 효과</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">==</td>
+<td align="left">동등 비교</td>
+<td align="left">x == y</td>
+<td align="left">x와 y의 값이 같음</td>
+<td align="center">✕</td>
+</tr>
+<tr>
+<td align="center">===</td>
+<td align="left">일치 비교</td>
+<td align="left">x === y</td>
+<td align="left">x와 y의 값과 타입이 같음</td>
+<td align="center">✕</td>
+</tr>
+<tr>
+<td align="center">!=</td>
+<td align="left">부동등 비교</td>
+<td align="left">x != y</td>
+<td align="left">x와 y의 값이 다름</td>
+<td align="center">✕</td>
+</tr>
+<tr>
+<td align="center">!==</td>
+<td align="left">불일치 비교</td>
+<td align="left">x !== y</td>
+<td align="left">x와 y의 값과 타입이 다름</td>
+<td align="center">✕</td>
+</tr>
+</tbody></table>
+<p><strong>왠만하면 === 을 사용할것.</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 일치 비교</span></span><br><span class="line"><span class="number">5</span> === <span class="number">5</span>; <span class="comment">// -&gt; true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 암묵적 타입 변환을 하지 않고 값을 비교한다.</span></span><br><span class="line"><span class="comment">// 즉, 값과 타입이 모두 같은 경우만 true를 반환한다.</span></span><br><span class="line"><span class="number">5</span> === <span class="string">'5'</span>; <span class="comment">// -&gt; false</span></span><br><span class="line"><span class="number">5</span> == <span class="string">'5'</span> <span class="comment">// -&gt; true</span></span><br></pre></td></tr></table></figure>
+
+<p>예외) NaN은 자신과 비교하면 false가 나온다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// NaN은 자신과 일치하지 않는 유일한 값이다.</span></span><br><span class="line"><span class="literal">NaN</span> === <span class="literal">NaN</span>; <span class="comment">// -&gt; false</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="삼항-조건-연산자"><a href="#삼항-조건-연산자" class="headerlink" title="삼항 조건 연산자"></a>삼항 조건 연산자</h3><blockquote>
+<p>조건식 ? 조건식이 true일때 반환할 값 : 조건식이 false일때 반환할 값</p>
+<p>if문을 한줄로 표현이 가능할 때 자주사용한다.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>삼항 조건 연산자</th>
+<th>if 문</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>var x = 2;<br>var result = x % 2 ? ‘홀수’ : ‘짝수’;<br>console.log(result); // 짝수</td>
+<td>var x = 2;<br>if(x % 2){<br>    var result = “홀수”<br>}<br>else{<br>    var result = “짝수”<br>}</td>
+</tr>
+</tbody></table>
+<p>x( 2 ) 를 나눈 값의 나머지가 0인데 어째서 결과가 짝수인가?</p>
+<ul>
+<li>x % 2 = 0이다. </li>
+<li>조건에서 0은 false를 의미한다.</li>
+</ul>
+<br>
+
+<h3 id="논리-연산자"><a href="#논리-연산자" class="headerlink" title="논리 연산자"></a>논리 연산자</h3><table>
+<thead>
+<tr>
+<th align="center">논리 연산자</th>
+<th align="left">의미</th>
+<th align="center">부수 효과</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">||</td>
+<td align="left">논리합(OR)</td>
+<td align="center">✕</td>
+</tr>
+<tr>
+<td align="center">&amp;&amp;</td>
+<td align="left">논리곱(AND)</td>
+<td align="center">✕</td>
+</tr>
+<tr>
+<td align="center">!</td>
+<td align="left">부정(NOT)</td>
+<td align="center">✕</td>
+</tr>
+</tbody></table>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 암묵적 타입 변환</span></span><br><span class="line">!<span class="number">0</span>;       <span class="comment">// -&gt; true</span></span><br><span class="line">!<span class="string">'Hello'</span>; <span class="comment">// -&gt; false</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'Cat'</span> &amp;&amp; <span class="string">'Dog'</span>; <span class="comment">// -&gt; 'Dog' - 단축평가</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>단축평가란?</strong> ‘Cat’은 true이고 그 뒤에 나와 있는 결과 값을 통해서 다이렉트로 값을 반환한다.</p>
+<br>
+
+<h3 id="그룹-연산자"><a href="#그룹-연산자" class="headerlink" title="그룹 연산자"></a>그룹 연산자</h3><p>​    우선 순위를 강제로 조절하고자 할 때 사용한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">10</span> * <span class="number">2</span> + <span class="number">3</span>; <span class="comment">// -&gt; 23</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 그룹 연산자를 사용하여 우선 순위 조절</span></span><br><span class="line"><span class="number">10</span> * (<span class="number">2</span> + <span class="number">3</span>); <span class="comment">// -&gt; 50 +보다 *가 높다.</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="typeof-연산자"><a href="#typeof-연산자" class="headerlink" title="typeof 연산자"></a>typeof 연산자</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typeof</span> <span class="string">''</span>              <span class="comment">// -&gt; "string"</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="number">1</span>               <span class="comment">// -&gt; "number"</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">NaN</span>             <span class="comment">// -&gt; "number"</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">true</span>            <span class="comment">// -&gt; "boolean"</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">undefined</span>       <span class="comment">// -&gt; "undefined"</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="built_in">Symbol</span>()        <span class="comment">// -&gt; "symbol"</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">null</span>            <span class="comment">// -&gt; "object"</span></span><br><span class="line"><span class="keyword">typeof</span> []              <span class="comment">// -&gt; "object"</span></span><br><span class="line"><span class="keyword">typeof</span> &#123;&#125;              <span class="comment">// -&gt; "object"</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="keyword">new</span> <span class="built_in">Date</span>()      <span class="comment">// -&gt; "object"</span></span><br><span class="line"><span class="keyword">typeof</span> /test/gi        <span class="comment">// -&gt; "object"</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;  <span class="comment">// -&gt; "function"</span></span><br></pre></td></tr></table></figure>
+
+<p>null 버그 : null의 type을 확인하고 싶다면 <code>===</code>을 사용할 것.</p>
+<p>undefined: 선언하지 변수에 대하여 typeof 를 찍어보면 undefined를 반환한다.</p>
+<br>
+
+<h3 id="지수-연산자"><a href="#지수-연산자" class="headerlink" title="지수 연산자"></a>지수 연산자</h3><table>
+<thead>
+<tr>
+<th>지수연산자 ( ES7 )</th>
+<th>Math.pow 함수( ES6 이하 )</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>5 ** 2;   // -&gt; 25<br>5 ** 2.5; // -&gt; 55.90169943749474<br>5 ** 0;   // -&gt; 1<br>5 ** -2;  // -&gt; 0.04</td>
+<td>Math.pow(5, 2);   // -&gt; 25<br>Math.pow(5, 2.5); // -&gt; 55.90169943749474<br>Math.pow(5, 0);   // -&gt; 1<br>Math.pow(5, -2);  // -&gt; 0.04</td>
+</tr>
+</tbody></table>
+<br>
+
+<p>음수를 지수화 할 때는 반드시 <code>( )</code> 를 쳐야만 한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">-5</span> ** <span class="number">2</span>;</span><br><span class="line"><span class="comment">// -&gt; SyntaxError: Unary operator used immediately before exponentiation expression. Parenthesis must be used to disambiguate operator precedence</span></span><br><span class="line">(<span class="number">-5</span>) ** <span class="number">2</span>; <span class="comment">// -&gt; 25</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 지수 연산자는 할당 연산자와 같이 사용이 가능하다.</span></span><br><span class="line"><span class="keyword">var</span> num = <span class="number">5</span>;</span><br><span class="line">num **= <span class="number">2</span>; <span class="comment">// -&gt; 25</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 지수 연산자는 이항 연산자보다 우선순위가 높다.</span></span><br><span class="line"><span class="number">2</span> * <span class="number">5</span> ** <span class="number">2</span>; <span class="comment">// -&gt; 50</span></span><br></pre></td></tr></table></figure>
+
+<br>
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://yoursite.com/2019/10/07/javascript-study-04/" data-id="ck1g6z5rt004203z0m92l9m6o" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Jun Hyeok Kim"
+        },
+        "headline": "javascript-study-04",
+        "image": "http://yoursite.comhttps://user-images.githubusercontent.com/31315644/65933403-536fe400-e44c-11e9-981d-c4e8c1f86998.png",
+        "keywords": "hexo git Web coding developer CSS HTML algorithm javascript",
+        "genre": "TIL Javascript",
+        "datePublished": "2019-10-07",
+        "dateCreated": "2019-10-07",
+        "dateModified": "2019-10-07",
+        "url": "http://yoursite.com/2019/10/07/javascript-study-04/",
+        "description": "
+
+JavaScript Study 04
+용어
+변수 명명
+데이터 타입의 정의
+데이터 타입의 종류
+숫자 타입
+문자열 타입
+불리언 타입
+undefined 타입
+null 타입
+
+
+동적 타이밍
+연산자
+이항 산술 연산자
+단항 산술 연산자
+문자열 연결 연산자
+할당 연산자
+비교 연산자
+삼항 조건 연산자
+논리 조건 연산자
+그룹 연산자
+typeof 연산자
+지수 연산자
+
+
+
+",
+        "wordCount": 2237
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="https://www.facebook.com/profile.php?id=100003801986180" target="_blank" rel="noopener">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/HYEOK999" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="youtube" href="https://www.youtube.com" target="_blank" rel="noopener">
+                        <i class="icon fa fa-youtube"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2019/10/07/daily-algorithm07/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">daily_algorithm07</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/10/07/javascript-study-04/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/65933403-536fe400-e44c-11e9-981d-c4e8c1f86998.png)" alt="javascript-study-04" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/Javascript/">Javascript</a></p>
+                            <p class="item-title"><a href="/2019/10/07/javascript-study-04/" class="title">javascript-study-04</a></p>
+                            <p class="item-date"><time datetime="2019-10-07T09:05:57.000Z" itemprop="datePublished">2019-10-07</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/10/07/daily-algorithm07/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://images.velog.io/post-images/leejh3224/619516b0-e892-11e8-98f5-997ef3c38110/what-is-an-algorithm-featured.png)" alt="daily_algorithm07" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/Algorithm/">Algorithm</a></p>
+                            <p class="item-title"><a href="/2019/10/07/daily-algorithm07/" class="title">daily_algorithm07</a></p>
+                            <p class="item-date"><time datetime="2019-10-07T03:56:27.000Z" itemprop="datePublished">2019-10-07</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/10/05/daily-algorithm06/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://images.velog.io/post-images/leejh3224/619516b0-e892-11e8-98f5-997ef3c38110/what-is-an-algorithm-featured.png)" alt="daily_algorithm06" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/Algorithm/">Algorithm</a></p>
+                            <p class="item-title"><a href="/2019/10/05/daily-algorithm06/" class="title">daily_algorithm06</a></p>
+                            <p class="item-date"><time datetime="2019-10-05T08:35:27.000Z" itemprop="datePublished">2019-10-05</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/10/05/VSCode-Settings/" class="thumbnail">
+    
+    
+        <span style="background-image:url(data:image/png;base64,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)" alt="VSCode-Settings" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Develop/">Develop</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Develop/Tips/">Tips</a></p>
+                            <p class="item-title"><a href="/2019/10/05/VSCode-Settings/" class="title">VSCode-Settings</a></p>
+                            <p class="item-date"><time datetime="2019-10-05T07:25:56.000Z" itemprop="datePublished">2019-10-05</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/10/05/daily-algorithm05/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://images.velog.io/post-images/leejh3224/619516b0-e892-11e8-98f5-997ef3c38110/what-is-an-algorithm-featured.png)" alt="daily_algorithm05" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/Algorithm/">Algorithm</a></p>
+                            <p class="item-title"><a href="/2019/10/05/daily-algorithm05/" class="title">daily_algorithm05</a></p>
+                            <p class="item-date"><time datetime="2019-10-05T07:03:00.000Z" itemprop="datePublished">2019-10-05</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/">Develop</a><span class="category-list-count">10</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/CSS/">CSS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/GIT/">GIT</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Java/">Java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Javascript/">Javascript</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Tips/">Tips</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/">TIL</a><span class="category-list-count">40</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Algorithm/">Algorithm</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/GIT/">GIT</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript/">Javascript</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/linux/">linux</a><span class="category-list-count">4</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/etc/">etc</a><span class="category-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a><span class="archive-list-count">38</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">34</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ESLint/">ESLint</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a><span class="tag-list-count">33</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/">JAVA</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MarkUP/">MarkUP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Selector/">Selector</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TIL/">TIL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a><span class="tag-list-count">52</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorism/">algorism</a><span class="tag-list-count">29</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a><span class="tag-list-count">16</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/coding/">coding</a><span class="tag-list-count">52</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/developer/">developer</a><span class="tag-list-count">52</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">52</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">52</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/inline-block/">inline-block</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">17</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">3</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://github.com">github</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.naver.com">Naver</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://google.com">Google</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://www.youtube.com/">Youtube</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2019 Jun Hyeok Kim</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'http://yoursite.com/2019/10/07/javascript-study-04/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
