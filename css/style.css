@@ -376,11 +376,11 @@ code {
   margin-left: 20px;
 }
 #header-title .subtitle {
-  font-size: 32px;
-  font-style: italic;
+  font-size: 45px;
   line-height: 175px;
   color: rgba(255,255,255,0.7);
   text-shadow: 0 1px rgba(0,0,0,0.2);
+  font-family: 'Cabin Sketch', cursive;
 }
 .nav-container .nav-icon,
 .nav-container .nav-container-inner #main-nav .main-nav-list-item .main-nav-list-link {
