@@ -12,15 +12,20 @@
     
         <meta name="keywords" content="hexo,git,Web,coding,developer,CSS,HTML,algorithm,javascript">
     
-    <meta name="keywords" content="hexo,git,Web,coding,developer,CSS,HTML,algorithm,javascript">
+    <meta name="description" content="JavaScript Study 05 용어 제어문 블록문 조건문 if ~ else , else if switch( )   반복문 for 문 while 문 do~while 문   break 문 레이블문   continue 문   타입변환 (암묵적) 문자열 타입 변환 (암묵적) 숫자 타입 변환 (암묵적) 불리언 타입 변환 (명시적) 문자열 타입 변환">
+<meta name="keywords" content="hexo,git,Web,coding,developer,CSS,HTML,algorithm,javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="javascript-study-05">
 <meta property="og:url" content="http://yoursite.com/2019/10/08/javascript-study-05/index.html">
 <meta property="og:site_name" content="HYEOK999&#39;s Blog">
+<meta property="og:description" content="JavaScript Study 05 용어 제어문 블록문 조건문 if ~ else , else if switch( )   반복문 for 문 while 문 do~while 문   break 문 레이블문   continue 문   타입변환 (암묵적) 문자열 타입 변환 (암묵적) 숫자 타입 변환 (암묵적) 불리언 타입 변환 (명시적) 문자열 타입 변환">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-08T04:21:55.785Z">
+<meta property="og:image" content="https://user-images.githubusercontent.com/31315644/65933403-536fe400-e44c-11e9-981d-c4e8c1f86998.png">
+<meta property="og:updated_time" content="2019-10-08T09:12:47.601Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javascript-study-05">
+<meta name="twitter:description" content="JavaScript Study 05 용어 제어문 블록문 조건문 if ~ else , else if switch( )   반복문 for 문 while 문 do~while 문   break 문 레이블문   continue 문   타입변환 (암묵적) 문자열 타입 변환 (암묵적) 숫자 타입 변환 (암묵적) 불리언 타입 변환 (명시적) 문자열 타입 변환">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/31315644/65933403-536fe400-e44c-11e9-981d-c4e8c1f86998.png">
     
 
     
@@ -132,7 +137,7 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/Develop/">Develop</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Develop/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Develop/TIL/Algorithm/">Algorithm</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Develop/TIL/Algorithm/HTML/">HTML</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Develop/TIL/Algorithm/HTML/CSS/">CSS</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Develop/TIL/Algorithm/HTML/CSS/HTML-CSS/">HTML&CSS</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Develop/TIL/Algorithm/HTML/CSS/HTML-CSS/Javascript/">Javascript</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Develop/TIL/Algorithm/HTML/CSS/HTML-CSS/Javascript/Javascript-Preview/">Javascript-Preview</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Develop/TIL/Algorithm/HTML/CSS/HTML-CSS/Javascript/Javascript-Preview/etc/">etc</a>
+    <a class="page-title-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/TIL/Javascript/">Javascript</a>
     </h1>
 </div>
 
@@ -171,14 +176,208 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <p><img src="https://user-images.githubusercontent.com/31315644/65933403-536fe400-e44c-11e9-981d-c4e8c1f86998.png" alt="JavaScriptBanner"></p>
+<hr>
+<h2 id="JavaScript-Study-05"><a href="#JavaScript-Study-05" class="headerlink" title="JavaScript Study 05"></a>JavaScript Study 05</h2><ul>
+<li>용어</li>
+<li>제어문<ul>
+<li>블록문</li>
+<li>조건문<ol>
+<li>if ~ else , else if</li>
+<li>switch( )</li>
+</ol>
+</li>
+<li>반복문<ol>
+<li>for 문</li>
+<li>while 문</li>
+<li>do~while 문</li>
+</ol>
+</li>
+<li>break 문<ul>
+<li>레이블문</li>
+</ul>
+</li>
+<li>continue 문</li>
+</ul>
+</li>
+<li>타입변환<ul>
+<li>(암묵적) 문자열 타입 변환</li>
+<li>(암묵적) 숫자 타입 변환</li>
+<li>(암묵적) 불리언 타입 변환</li>
+<li>(명시적) 문자열 타입 변환</li>
+</ul>
+</li>
+</ul>
+<br>
+
+<hr>
+<br>
+
+<h3 id="용어-러버덕"><a href="#용어-러버덕" class="headerlink" title="용어 - ( 러버덕 )"></a>용어 - ( 러버덕 )</h3><ul>
+<li>네이밍 케이스</li>
+<li>데이터 타입</li>
+<li>동적 타이핑</li>
+</ul>
+<br>
+
+<hr>
+<h2 id="제어문"><a href="#제어문" class="headerlink" title="제어문"></a>제어문</h2><br>
+
+<h3 id="블록문"><a href="#블록문" class="headerlink" title="블록문"></a>블록문</h3><blockquote>
+<p>0개 이상의 <code>{ }</code> 로 묶은 것으로 코드 블록 또는 블록이라고 부른다. <strong>( 하나의 실행단위 )</strong></p>
+</blockquote>
+<br>
+
+<h3 id="조건문"><a href="#조건문" class="headerlink" title="조건문"></a>조건문</h3><blockquote>
+<p>주어진 조건식의 평가 결과에 따라 코드 블럭의 실행을 결정한다.</p>
+</blockquote>
+<ul>
+<li><code>if ... else</code> 문</li>
+<li><code>swith</code> 문</li>
+</ul>
+<h4 id="1-if-else-else-if"><a href="#1-if-else-else-if" class="headerlink" title="1. if ~ else , else if"></a>1. if ~ else , else if</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (조건식) &#123;</span><br><span class="line">  <span class="comment">// 조건식이 참이면 이 코드 블록이 실행된다.</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="comment">// 조건식이 거짓이면 이 코드 블록이 실행된다.</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>*<em>else if 문과 else 문은 옵션으로 사용할 수도 있고 사용하지 않을 수도 있다. *</em></p>
+<p><strong>if 문과 else 문은 2번 이상 사용할 수 없지만 else if 문은 여러 번 사용할 수 있다.</strong></p>
+<br>
+
+<h4 id="2-switch"><a href="#2-switch" class="headerlink" title="2. switch( )"></a>2. switch( )</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span> (표현식) &#123;</span><br><span class="line">  <span class="keyword">case</span> 표현식<span class="number">1</span>:</span><br><span class="line">    <span class="keyword">switch</span> 문의 표현식과 표현식<span class="number">1</span>이 일치하면 실행될 문;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> 표현식<span class="number">2</span>:</span><br><span class="line">    <span class="keyword">switch</span> 문의 표현식과 표현식<span class="number">2</span>가 일치하면 실행될 문;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">default</span>:</span><br><span class="line">    <span class="keyword">switch</span> 문의 표현식과 일치하는 표현식을 갖는 <span class="keyword">case</span> 문이 없을 때 실행될 문;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>*<em>switch문은 반드시 <code>break;</code> 동반 해야만 한다. *</em>  </p>
+<p><code>break;</code>가 없다면 맞는 조건이어도 다음 case 표현식으로 넘어가게 된다. default에는 <code>break;</code> 생략이 가능하다.</p>
+<br>
+
+<h3 id="반복문"><a href="#반복문" class="headerlink" title="반복문"></a>반복문</h3><blockquote>
+<p>주어진 조건식의 평가 결과가 참인 경우 코드 블럭을 실행한다. 그 후 조건식을 다시 검사하여 여전히 참인 경우 코드 블록을 다시 실행한다. 이는 조건식이 거짓일 때까지 반복된다.</p>
+<p>for ( for-in, for-of ) , while , do~while</p>
+</blockquote>
+<br>
+
+
+
+<h4 id="1-for문"><a href="#1-for문" class="headerlink" title="1. for문"></a>1. for문</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (변수 선언문 또는 할당문; 조건식; 증감식) &#123;</span><br><span class="line">  조건식이 참인 경우 반복 실행될 문;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>for 문의 변수 선언문, 조건식, 증감식은 모두 옵션이므로 반드시 사용할 필요는 없다.</p>
+<p>만약 , 모두 비워있다면 무한 루프가 된다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(;;)&#123;</span><br><span class="line">	내용;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>예제, 중첩 for문을 이용한 주사위 눈 합</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt;= <span class="number">6</span>; i++) &#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">1</span>; j &lt;= <span class="number">6</span>; j++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (i + j === <span class="number">6</span>) <span class="built_in">console</span>.log(<span class="string">`[<span class="subst">$&#123;i&#125;</span>, <span class="subst">$&#123;j&#125;</span>]`</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p><strong>자바스크립트에서 for문 대체 함수들</strong></p>
+<p>​    실무에서는 반복문 대신 아래 함수들을 더 많이 사용한다. 왠만해서는 가독성이 안좋다는 이유로 인해 반복을 안쓰려한다.<br> 다만, 기본적인 for문을 다룰줄 알아야 아래 기능들에 대해 더 쉽게 이해가 가능하다.</p>
+<ul>
+<li>forEach</li>
+<li>map</li>
+<li>filter</li>
+<li>find</li>
+<li>reduce</li>
+</ul>
+<br>
+
+<h4 id="2-while-문"><a href="#2-while-문" class="headerlink" title="2. while 문"></a>2. while 문</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (조건식) &#123;</span><br><span class="line">  조건식이 참인 경우 반복 실행될 문;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>while문은 조건식이 <code>true</code>라면 무한루프가 된다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 무한루프</span></span><br><span class="line"><span class="keyword">while</span> (<span class="literal">true</span>) &#123; ... &#125;</span><br></pre></td></tr></table></figure>
+
+<p>무한 루프를 탈출 하기 위해서는 특정조건으로 인한 <code>break;</code> 를 추가하여야 한다.</p>
+<br>
+
+<h4 id="3-do…while-문"><a href="#3-do…while-문" class="headerlink" title="3. do…while 문"></a>3. do…while 문</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">do</span>&#123;</span><br><span class="line">	최소 <span class="number">1</span>번은 실행되고 그 후부터는 조건에 맞을 경우 반복 실행된다.</span><br><span class="line">&#125; <span class="keyword">while</span> (조건식);</span><br></pre></td></tr></table></figure>
+
+<p><code>do...while</code>문은 최소 1번은 실행된 뒤 조건을 판별하여 게속해서 반복할지 안할지 유무를 결정한다.</p>
+<br>
+
+<h3 id="break-문"><a href="#break-문" class="headerlink" title="break 문"></a>break 문</h3><blockquote>
+<p>가장 가까운 레이블 문, 반복문( for, for-in, for-of, while, do…while ) 또는 switch문의 코드 블록을 탈출한다.</p>
+<p>이외에 문에서 사용시 SyntaxError를 유발한다.</p>
+</blockquote>
+<br>
+
+<p><strong>레이블 문이란?</strong></p>
+<ul>
+<li>식별자가 붙은 문을 의미한다.</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// foo라는 레이블 식별자가 붙은 레이블 문</span></span><br><span class="line">foo: <span class="built_in">console</span>.log(<span class="string">'foo'</span>);</span><br></pre></td></tr></table></figure>
+
+<p><strong>레이블문은 중첩for문에서 외부for문까지 한번에 빠져나가고자 할 때 이용한다.</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// outer라는 식별자가 붙은 레이블 for 문</span></span><br><span class="line">outer: <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; <span class="number">3</span>; j++) &#123;</span><br><span class="line">    <span class="comment">// i + j === 3이면 outer라는 식별자가 붙은 레이블 for 문을 탈출한다.</span></span><br><span class="line">    <span class="keyword">if</span> (i + j === <span class="number">3</span>) <span class="keyword">break</span> outer;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'inner '</span> + j);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'Done!'</span>);</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="continue-문"><a href="#continue-문" class="headerlink" title="continue 문"></a>continue 문</h3><blockquote>
+<p>continue 문은 현재 진행되고 있는 반복문의 증감식을 중단하고 다음 증감식으로 이동한다.</p>
+<p>break문과 다르게 반복문을 탈출하지 않는다.</p>
+</blockquote>
+<br>
+
+<h3 id="문자열"><a href="#문자열" class="headerlink" title="문자열"></a>문자열</h3><p>자바스크립트의 문자열은 <code>유사 배열</code>이다.<br>객체를 배열처럼 사용하는 것은 <code>유사 배열</code> 이다.<br>배열은 <code>원시값</code> + <code>객체</code>이다.<br>문자열(배열)을 만들고서 .을 찍어보면 프로퍼티가 나온다.<br>즉, 문자열은 <code>유사배열</code>이다.<br>따라서 문자열을 for문으로 접근하여 1문자씩 읽어들일 수 있다.</p>
+<p><img src="https://user-images.githubusercontent.com/31315644/66377734-26dc3f00-e9ed-11e9-86ee-45e6c68bb90f.jpeg" alt="문자열-객체증거"></p>
+<br>
+
+<h2 id="타입-변환"><a href="#타입-변환" class="headerlink" title="타입 변환"></a>타입 변환</h2><ul>
+<li>명시적 타입 변환 ( 타입 캐스팅 ) : 개발자에 의도하에 값의 타입을 변환하는 것.</li>
+<li>암묵적 타입 변환 ( 강제 타입 변환 ) : 개발자에 의도하는 관계 없이 JS엔진에 의해 타입이 자동으로 변환되는 것.</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 명시적 타입 변환</span></span><br><span class="line"><span class="keyword">var</span> x = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">var</span> str = x.toString(); <span class="comment">// '10';</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 암묵적 타입 변환</span></span><br><span class="line"><span class="keyword">var</span> x = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">var</span> str = x + <span class="string">''</span>; <span class="comment">// '10';</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="연산자의-부수효과"><a href="#연산자의-부수효과" class="headerlink" title="연산자의 부수효과"></a>연산자의 부수효과</h4><p>​    연산자 중 유일하게 피연산자의 값을 변경하는 연산자는 증가 <code>++</code> 와 감소 <code>--</code>밖에 없다.</p>
+<br>
+
+<p>암묵적 타입변환을 예상하는 방법. </p>
+<p>어떻게해야 자바스크립트 엔진이 해당 구문을 보고 에러를 내지않을까? 라는 취지로 접근한다.</p>
+<p>예 )</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 피연산자가 모두 문자열 타입이여야 하는 문맥</span></span><br><span class="line"><span class="string">'10'</span> + <span class="number">2</span>  <span class="comment">// '102'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 피연산자가 모두 숫자 타입이여야 하는 문맥</span></span><br><span class="line"><span class="number">5</span> * <span class="string">'10'</span>  <span class="comment">// 50</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 피연산자 또는 표현식이 불리언 타입이여야 하는 문맥</span></span><br><span class="line">!<span class="number">0</span> <span class="comment">// true</span></span><br><span class="line"><span class="keyword">if</span> (<span class="number">1</span>) &#123; &#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="암묵적-문자열-타입으로-변환"><a href="#암묵적-문자열-타입으로-변환" class="headerlink" title="(암묵적) 문자열 타입으로 변환"></a>(암묵적) 문자열 타입으로 변환</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> + <span class="string">'2'</span> <span class="comment">// '12'</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">`1 + 1 = <span class="subst">$&#123;<span class="number">1</span> + <span class="number">1</span>&#125;</span>`</span>); <span class="comment">// "1 + 1 = 2" 문자열 인터폴레이션 $&#123; 표현식 &#125;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="암묵적-숫자-타입으로-변환"><a href="#암묵적-숫자-타입으로-변환" class="headerlink" title="(암묵적) 숫자 타입으로 변환"></a>(암묵적) 숫자 타입으로 변환</h3><p><code>-</code> <code>*</code> 는 대부분의 문자열을 숫자 타입으로 암묵적 타입변환시킨다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> - <span class="string">'1'</span>    <span class="comment">// 0</span></span><br><span class="line"><span class="number">1</span> * <span class="string">'10'</span>   <span class="comment">// 10</span></span><br><span class="line"><span class="number">1</span> / <span class="string">'one'</span>  <span class="comment">// NaN</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="추가"><a href="#추가" class="headerlink" title="+ 추가"></a>+ 추가</h4><p><code>&gt;</code> <code>&lt;</code> <code>=</code> 등의 비교 연산자 또한 숫자타입으로 변환시킬 때도 있다. (다만, 이러한 경우가 최대한 안나오게 해야한다. 안좋은 코드)</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'1'</span> &gt; <span class="number">0</span>   <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="추가-단항-연산자를-이용하여-문자열-변환"><a href="#추가-단항-연산자를-이용하여-문자열-변환" class="headerlink" title="++추가 단항 연산자를 이용하여 문자열 변환"></a>++추가 단항 연산자를 이용하여 문자열 변환</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 문자열 타입</span></span><br><span class="line">+<span class="string">''</span>             <span class="comment">// 0</span></span><br><span class="line">+<span class="string">'0'</span>            <span class="comment">// 0</span></span><br><span class="line">+<span class="string">'1'</span>            <span class="comment">// 1</span></span><br><span class="line">+<span class="string">'string'</span>       <span class="comment">// NaN</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 불리언 타입</span></span><br><span class="line">+<span class="literal">true</span>           <span class="comment">// 1</span></span><br><span class="line">+<span class="literal">false</span>          <span class="comment">// 0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// null 타입</span></span><br><span class="line">+<span class="literal">null</span>           <span class="comment">// 0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// undefined 타입</span></span><br><span class="line">+<span class="literal">undefined</span>      <span class="comment">// NaN</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 심볼 타입</span></span><br><span class="line">+<span class="built_in">Symbol</span>()       <span class="comment">// TypeError: Cannot convert a Symbol value to a number</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 객체 타입</span></span><br><span class="line">+&#123;&#125;             <span class="comment">// NaN</span></span><br><span class="line">+[]             <span class="comment">// 0</span></span><br><span class="line">+[<span class="number">10</span>, <span class="number">20</span>]       <span class="comment">// NaN</span></span><br><span class="line">+(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;) <span class="comment">// NaN</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="암묵적-불리언-타입으로-변환"><a href="#암묵적-불리언-타입으로-변환" class="headerlink" title="(암묵적) 불리언 타입으로 변환"></a>(암묵적) 불리언 타입으로 변환</h3><p>불리언 값으로 평가되어야 할 문맥에서 false로 평가되는 Falsy 값이다.</p>
+<ul>
+<li>false</li>
+<li>undefined</li>
+<li>null</li>
+<li>0, -0</li>
+<li>NaN</li>
+<li>’’ (빈문자열)</li>
+</ul>
+<br>
+
+<h3 id="명시적-문자열-타입으로-변환"><a href="#명시적-문자열-타입으로-변환" class="headerlink" title="(명시적) 문자열 타입으로 변환"></a>(명시적) 문자열 타입으로 변환</h3><p>문자열 타입이 아닌 값을 문자열 타입으로 변환하는 방법은 아래와 같다.</p>
+<ol>
+<li>String 생성자 함수를 new 연산자 없이 호출하는 방법 ( 실무에서 잘 사용 안함 )</li>
+<li>Object.prototype.toString 메소드를 사용하는 방법 ( 실무에서 잘 사용 안함 )</li>
+<li><strong>문자열 연결 연산자를 이용하는 방법</strong> = (암묵적) 경험자 입장에서 제일 가독성이 뛰어남.</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. String 생성자 함수를 new 연산자 없이 호출하는 방법</span></span><br><span class="line"><span class="comment">// 숫자 타입 =&gt; 문자열 타입</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">String</span>(<span class="number">1</span>));        <span class="comment">// "1"</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">String</span>(<span class="literal">NaN</span>));      <span class="comment">// "NaN"</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">String</span>(<span class="literal">Infinity</span>)); <span class="comment">// "Infinity"</span></span><br><span class="line"><span class="comment">// 불리언 타입 =&gt; 문자열 타입</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">String</span>(<span class="literal">true</span>));     <span class="comment">// "true"</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">String</span>(<span class="literal">false</span>));    <span class="comment">// "false"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. Object.prototype.toString 메소드를 사용하는 방법</span></span><br><span class="line"><span class="comment">// 숫자 타입 =&gt; 문자열 타입</span></span><br><span class="line"><span class="built_in">console</span>.log((<span class="number">1</span>).toString());        <span class="comment">// "1"</span></span><br><span class="line"><span class="built_in">console</span>.log((<span class="literal">NaN</span>).toString());      <span class="comment">// "NaN"</span></span><br><span class="line"><span class="built_in">console</span>.log((<span class="literal">Infinity</span>).toString()); <span class="comment">// "Infinity"</span></span><br><span class="line"><span class="comment">// 불리언 타입 =&gt; 문자열 타입</span></span><br><span class="line"><span class="built_in">console</span>.log((<span class="literal">true</span>).toString());     <span class="comment">// "true"</span></span><br><span class="line"><span class="built_in">console</span>.log((<span class="literal">false</span>).toString());    <span class="comment">// "false"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. 문자열 연결 연산자를 이용하는 방법</span></span><br><span class="line"><span class="comment">// 숫자 타입 =&gt; 문자열 타입</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">1</span> + <span class="string">''</span>);        <span class="comment">// "1"</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="literal">NaN</span> + <span class="string">''</span>);      <span class="comment">// "NaN"</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="literal">Infinity</span> + <span class="string">''</span>); <span class="comment">// "Infinity"</span></span><br><span class="line"><span class="comment">// 불리언 타입 =&gt; 문자열 타입</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="literal">true</span> + <span class="string">''</span>);     <span class="comment">// "true"</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="literal">false</span> + <span class="string">''</span>);    <span class="comment">// "false"</span></span><br></pre></td></tr></table></figure>
+
+
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="http://yoursite.com/2019/10/08/javascript-study-05/" data-id="ck1hc86q5004ha7z0i4p9p13p" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2019/10/08/javascript-study-05/" data-id="ck1hmmcev004jtlz00s487j6r" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -249,15 +448,48 @@
             "name": "Jun Hyeok Kim"
         },
         "headline": "javascript-study-05",
-        "image": "http://yoursite.com",
+        "image": "http://yoursite.comhttps://user-images.githubusercontent.com/31315644/65933403-536fe400-e44c-11e9-981d-c4e8c1f86998.png",
         "keywords": "hexo git Web coding developer CSS HTML algorithm javascript",
-        "genre": "Develop TIL Algorithm HTML CSS HTML&CSS Javascript Javascript-Preview etc",
+        "genre": "TIL Javascript",
         "datePublished": "2019-10-08",
         "dateCreated": "2019-10-08",
         "dateModified": "2019-10-08",
         "url": "http://yoursite.com/2019/10/08/javascript-study-05/",
-        "description": "",
-        "wordCount": 1
+        "description": "
+
+JavaScript Study 05
+용어
+제어문
+블록문
+조건문
+if ~ else , else if
+switch( )
+
+
+반복문
+for 문
+while 문
+do~while 문
+
+
+break 문
+레이블문
+
+
+continue 문
+
+
+타입변환
+(암묵적) 문자열 타입 변환
+(암묵적) 숫자 타입 변환
+(암묵적) 불리언 타입 변환
+(명시적) 문자열 타입 변환
+
+
+
+
+",
+        "wordCount": 1730
     }
 </script>
 
@@ -313,6 +545,16 @@
         
 <nav id="article-nav">
     
+        <a href="/2019/10/08/daily-algorithm08/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            daily_algorithm08
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
     
         <a href="/2019/10/08/javascript-preview-070809/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
@@ -338,7 +580,7 @@
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2019/10/08/javascript-study-05/" class="thumbnail">
+                            <a href="/2019/10/08/daily-algorithm08/" class="thumbnail">
     
     
         <span class="thumbnail-image thumbnail-none"></span>
@@ -350,6 +592,26 @@
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/Develop/">Develop</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Develop/TIL/">TIL</a></p>
+                            <p class="item-title"><a href="/2019/10/08/daily-algorithm08/" class="title">daily_algorithm08</a></p>
+                            <p class="item-date"><time datetime="2019-10-08T07:47:14.000Z" itemprop="datePublished">2019-10-08</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/10/08/javascript-study-05/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/65933403-536fe400-e44c-11e9-981d-c4e8c1f86998.png)" alt="javascript-study-05" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/Javascript/">Javascript</a></p>
                             <p class="item-title"><a href="/2019/10/08/javascript-study-05/" class="title">javascript-study-05</a></p>
                             <p class="item-date"><time datetime="2019-10-08T04:21:55.000Z" itemprop="datePublished">2019-10-08</time></p>
                         </div>
@@ -415,26 +677,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2019/10/05/daily-algorithm06/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://images.velog.io/post-images/leejh3224/619516b0-e892-11e8-98f5-997ef3c38110/what-is-an-algorithm-featured.png)" alt="daily_algorithm06" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/Algorithm/">Algorithm</a></p>
-                            <p class="item-title"><a href="/2019/10/05/daily-algorithm06/" class="title">daily_algorithm06</a></p>
-                            <p class="item-date"><time datetime="2019-10-05T08:35:27.000Z" itemprop="datePublished">2019-10-05</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -444,7 +686,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/">Develop</a><span class="category-list-count">11</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/CSS/">CSS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/GIT/">GIT</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Java/">Java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Javascript/">Javascript</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/TIL/">TIL</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/TIL/Algorithm/">Algorithm</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/TIL/Algorithm/HTML/">HTML</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/TIL/Algorithm/HTML/CSS/">CSS</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/TIL/Algorithm/HTML/CSS/HTML-CSS/">HTML&CSS</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/TIL/Algorithm/HTML/CSS/HTML-CSS/Javascript/">Javascript</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/TIL/Algorithm/HTML/CSS/HTML-CSS/Javascript/Javascript-Preview/">Javascript-Preview</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/TIL/Algorithm/HTML/CSS/HTML-CSS/Javascript/Javascript-Preview/etc/">etc</a><span class="category-list-count">1</span></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Tips/">Tips</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/">TIL</a><span class="category-list-count">41</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Algorithm/">Algorithm</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/GIT/">GIT</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript/">Javascript</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/linux/">linux</a><span class="category-list-count">4</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/etc/">etc</a><span class="category-list-count">2</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/">Develop</a><span class="category-list-count">11</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/CSS/">CSS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/GIT/">GIT</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Java/">Java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Javascript/">Javascript</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/TIL/">TIL</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/TIL/Algorithm/">Algorithm</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/TIL/Algorithm/HTML/">HTML</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/TIL/Algorithm/HTML/CSS/">CSS</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/TIL/Algorithm/HTML/CSS/HTML-CSS/">HTML&CSS</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/TIL/Algorithm/HTML/CSS/HTML-CSS/Javascript/">Javascript</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/TIL/Algorithm/HTML/CSS/HTML-CSS/Javascript/Javascript-Preview/">Javascript-Preview</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/TIL/Algorithm/HTML/CSS/HTML-CSS/Javascript/Javascript-Preview/etc/">etc</a><span class="category-list-count">1</span></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Tips/">Tips</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/">TIL</a><span class="category-list-count">42</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Algorithm/">Algorithm</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/GIT/">GIT</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript/">Javascript</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/linux/">linux</a><span class="category-list-count">4</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/etc/">etc</a><span class="category-list-count">2</span></li></ul>
         </div>
     </div>
 
@@ -454,7 +696,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a><span class="archive-list-count">38</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a><span class="archive-list-count">38</span></li></ul>
         </div>
     </div>
 
@@ -464,7 +706,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">36</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ESLint/">ESLint</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a><span class="tag-list-count">35</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/">JAVA</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MarkUP/">MarkUP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Selector/">Selector</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TIL/">TIL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a><span class="tag-list-count">54</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorism/">algorism</a><span class="tag-list-count">29</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a><span class="tag-list-count">18</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/coding/">coding</a><span class="tag-list-count">54</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/developer/">developer</a><span class="tag-list-count">54</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">54</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">54</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/inline-block/">inline-block</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">19</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">3</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">37</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ESLint/">ESLint</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a><span class="tag-list-count">36</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/">JAVA</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MarkUP/">MarkUP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Selector/">Selector</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TIL/">TIL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a><span class="tag-list-count">55</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorism/">algorism</a><span class="tag-list-count">29</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a><span class="tag-list-count">19</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/coding/">coding</a><span class="tag-list-count">55</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/developer/">developer</a><span class="tag-list-count">55</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">55</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">55</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/inline-block/">inline-block</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">20</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">3</span></li></ul>
         </div>
     </div>
 
