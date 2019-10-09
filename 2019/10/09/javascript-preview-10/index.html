@@ -12,15 +12,20 @@
     
         <meta name="keywords" content="hexo,git,Web,coding,developer,CSS,HTML,algorithm,javascript">
     
-    <meta name="keywords" content="hexo,git,Web,coding,developer,CSS,HTML,algorithm,javascript">
+    <meta name="description" content="JacaScript 10강 예습 10강 : 원시 값과 객체의 비교 원시값 변경 불가능한 값 문자열과 불변성 유사 배열 객체 값에 의한 전달   객체 (참조값) 변경 가능한 값 참조에 의한 전달 복사 : 얕은 복사( shallow copy ) / 깊은 복사 ( deep copy ) shallow copy deep copy           10강​">
+<meta name="keywords" content="hexo,git,Web,coding,developer,CSS,HTML,algorithm,javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="javascript-preview-10">
 <meta property="og:url" content="http://yoursite.com/2019/10/09/javascript-preview-10/index.html">
 <meta property="og:site_name" content="HYEOK999&#39;s Blog">
+<meta property="og:description" content="JacaScript 10강 예습 10강 : 원시 값과 객체의 비교 원시값 변경 불가능한 값 문자열과 불변성 유사 배열 객체 값에 의한 전달   객체 (참조값) 변경 가능한 값 참조에 의한 전달 복사 : 얕은 복사( shallow copy ) / 깊은 복사 ( deep copy ) shallow copy deep copy           10강​">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-09T08:32:19.876Z">
+<meta property="og:image" content="https://user-images.githubusercontent.com/31315644/66104821-b9976b00-e5f4-11e9-84e9-20c797dd2c51.jpeg">
+<meta property="og:updated_time" content="2019-10-09T11:52:31.257Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javascript-preview-10">
+<meta name="twitter:description" content="JacaScript 10강 예습 10강 : 원시 값과 객체의 비교 원시값 변경 불가능한 값 문자열과 불변성 유사 배열 객체 값에 의한 전달   객체 (참조값) 변경 가능한 값 참조에 의한 전달 복사 : 얕은 복사( shallow copy ) / 깊은 복사 ( deep copy ) shallow copy deep copy           10강​">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/31315644/66104821-b9976b00-e5f4-11e9-84e9-20c797dd2c51.jpeg">
     
 
     
@@ -171,14 +176,196 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <p><img src="https://user-images.githubusercontent.com/31315644/66104821-b9976b00-e5f4-11e9-84e9-20c797dd2c51.jpeg" alt></p>
+<hr>
+<h2 id="JacaScript-10강-예습"><a href="#JacaScript-10강-예습" class="headerlink" title="JacaScript 10강 예습"></a>JacaScript 10강 예습</h2><ul>
+<li>10강 : 원시 값과 객체의 비교<ol>
+<li>원시값<ul>
+<li>변경 불가능한 값</li>
+<li>문자열과 불변성</li>
+<li>유사 배열 객체</li>
+<li>값에 의한 전달</li>
+</ul>
+</li>
+<li>객체 (참조값)<ul>
+<li>변경 가능한 값</li>
+<li>참조에 의한 전달</li>
+<li>복사 : 얕은 복사( shallow copy ) / 깊은 복사 ( deep copy )<ol>
+<li>shallow copy</li>
+<li>deep copy</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<br>
+
+<hr>
+<h1 id="10강"><a href="#10강" class="headerlink" title="10강"></a>10강</h1><p>​    데이터 타입의 구분</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- 원시타입 : 변경 불가능한 값. 원시값 - 숫자, 문자열, 불리언, null, undefined, symbol</span><br><span class="line">- 객체타입 : 변경 가능한 값. 참조값 - Object</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th>원시 타입</th>
+<th>객체 타입</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>변경 유무</td>
+<td>변경 불가능한 값</td>
+<td>변경 가능한 값</td>
+</tr>
+<tr>
+<td>값</td>
+<td>원시값</td>
+<td>참조값</td>
+</tr>
+<tr>
+<td>종류</td>
+<td>숫자,문자열,불리언,null,undefined,symbo</td>
+<td>객체타입( Object)</td>
+</tr>
+<tr>
+<td>저장 방법</td>
+<td>실제값 저장</td>
+<td>참조값이 저장</td>
+</tr>
+<tr>
+<td>타 변수 할당</td>
+<td>원본의 원식 값이 복사되어 전달(Pass by value)</td>
+<td>원본의 참조값이 복사되어 전달(Pass by reference)</td>
+</tr>
+</tbody></table>
+<br>
+
+<h2 id="원시값"><a href="#원시값" class="headerlink" title="원시값"></a>원시값</h2><br>
+
+<h3 id="변경-불가능한-값"><a href="#변경-불가능한-값" class="headerlink" title="변경 불가능한 값"></a>변경 불가능한 값</h3><blockquote>
+<p>원시값은 오직 읽을 수 만 있는(Read Only)한 값이므로 변경할 수 없다.</p>
+</blockquote>
+<p>​    변경 불가능 하다는 것은 변수를 변경이 불가능하다는 것이 아니라 값을 변경 불가능하다는 이야기이다.</p>
+<p>( 참고로, 상수는 재할당이 금지된 변수라는 뜻이므로 상수 내부에 있는 객체 프로퍼티의 값은 변경이 가능하다. )</p>
+<p> 변수의 값을 변경하기 위해 원시 값을 재할당하면 새로운 메모리 공간을 확보하고 재할당한 값을 저장한 후, 변수가 참조하던 메모리 공간의 주소를 변경한다. 원시 값의 이러한 특성을 <strong>불변성(immutability)</strong>이라 한다. </p>
+<p><img src="https://user-images.githubusercontent.com/31315644/66475027-77c36480-eacd-11e9-9f53-1428b02490b7.jpeg" alt="원시값"></p>
+<br>
+
+<h3 id="문자열과-불변성"><a href="#문자열과-불변성" class="headerlink" title="문자열과 불변성"></a>문자열과 불변성</h3><blockquote>
+<p>문자열은 0개 이상인 문자들의 집합을 말하며 1개의 문자는 2Byte의 메모리 공간에 저장된다.</p>
+<p>따라서, 문자열 타입의 값은 몇개의 문자로 이루어졌는지에 따라 필요한 메모리 공간의 크기가 다르다.</p>
+</blockquote>
+<br>
+
+<p>숫자는 1도 , 100000000000도 동일한 8byte가 필요하지만<br>문자열 타입은 1개의 문자로 이루어진 문자열은 2byte , 10개의 문자로 이루어진 문자열은 20byte가 필요하다.</p>
+<p>문자열또한 <code>원시값</code> 인것을 명시해야만 한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">'Hello'</span>;</span><br><span class="line">str = <span class="string">'World'</span>;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://user-images.githubusercontent.com/31315644/66474759-e9e77980-eacc-11e9-8db0-562b7cf2f394.png" alt="문자열할당"></p>
+<br>
+
+<h3 id="유사-배열-객체"><a href="#유사-배열-객체" class="headerlink" title="유사 배열 객체"></a>유사 배열 객체</h3><blockquote>
+<p>유사 배열 객체는 마치 <strong>배열처럼</strong> 인덱스 프로퍼티 값에 접근할 수 있고 length프로퍼티를 갖는 객체를 의미한다.</p>
+<p>따라서, 문자열은 원시값이면서 유사 배열 객체이다.</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">'string'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 문자열은 유사 배열이므로 배열과 유사하게 인덱스를 사용하여 각 문자에 접근할 수 있다.</span></span><br><span class="line"><span class="comment">// 하지만 문자열은 원시 타입인 값이므로 변경할 수 없다. 이때 에러가 발생하지 않는다.</span></span><br><span class="line">str[<span class="number">0</span>] = <span class="string">'S'</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(str); <span class="comment">// string</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="값에-의한-전달"><a href="#값에-의한-전달" class="headerlink" title="값에 의한 전달"></a>값에 의한 전달</h3><blockquote>
+<p>변수에 변수를 할당하는 경우, 할당되는 변수(score)가 원시값을 갖는 변수라면 할당받는 변수(copy)에는 할당되는 변수(score)의 원시값이 복사되어 전달된다. 이를 <strong>값에 의한 전달(Pass by value)</strong>라 한다.</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> score = <span class="number">80</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 변수 copy에는 변수 score의 원시값 80이 복사되어 할당된다.</span></span><br><span class="line"><span class="keyword">var</span> copy = score;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://user-images.githubusercontent.com/31315644/66475024-76923780-eacd-11e9-92ff-0ba267df2d44.jpeg" alt="값에 의한 전달"></p>
+<br>
+
+<h2 id="객체"><a href="#객체" class="headerlink" title="객체"></a>객체</h2><blockquote>
+<p>객체는 프로퍼티의 개수가 정해져 있지 않으며 동적으로 추가되고 삭제할 수 있다.</p>
+<p>또한 프로퍼티의 값에도 제약이 없다. </p>
+<p>따라서 객체는 원시 값과 같이 확보해야 할 메모리 공간의 크기를 사전에 정해 둘 수 없다.</p>
+</blockquote>
+<p>자바는 클래스를 통해 미리 프로퍼티의 내용과 값을 지정해두는 방식을 기반하여 객체를 생성한다.</p>
+<p>하지만, 자바스크립트의 대부분은 객체의 프로퍼티 값의 위치를 메모리에 저장하기 위해 해시 함수 기반의 유사딕셔너리구조(dictionary-like structure)를 사용한다.</p>
+<p><strong>유사 딕셔너리 구조(dictionary-like structure)는 클래스없이 객체를 생성할 수 있으며 객체가 생성된 이후라도 동적으로 프로퍼티와 메소드를 추가할 수 있다.</strong> </p>
+<img src="https://poiemaweb.com/assets/fs-images/10-5.png" alt="딕셔너리와 리스트" style="zoom:50%;">
+
+<p>이는 비효율적이라서 자바스크립트에서는 자바와 같은 객체 관리 방식처럼 비용을 줄이기 위해 히든 클래스라는 방식을 이용한다.</p>
+<br>
+
+<h3 id="변경-가능한-값"><a href="#변경-가능한-값" class="headerlink" title="변경 가능한 값"></a>변경 가능한 값</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  name: <span class="string">'Lee'</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>아래 그림에서 person의 주소 0x000000F2에 저장된 값이 <code>참조값</code>이다. <code>참조값</code>을 평가하면 참조값에 적힌 메모리주소에 있는 객체를 반환한다.</p>
+<img src="https://poiemaweb.com/assets/fs-images/10-6.png" alt="객체의 할당" style="zoom:50%;">
+
+<p><strong>객체를 할당한 변수를 평가하면 메모리에 저장되어 있는 참조 값을 반환하는 것이 아니라 참조 값을 통해 실제 객체에 접근해 그 객체를 반환한다.</strong></p>
+<br>
+
+<p>원시 값을 할당한 변수의 경우, “변수는 ◯값을 갖는다.” 또는 “변수의 값은 ◯이다.”라고 표현한다.</p>
+<p>객체를 할당한 변수의 경우, “변수는 객체를 참조하고 있다” 또는 “변수는 객체를 가리키고(point) 있다”라고 표현한다.</p>
+<br>
+
+<p>원시 값을 할당한 변수는 재할당을 통해서만 변경이 가능하다. </p>
+<p>반면에, 변수가 참조하고 있는 객체의 경우, 동적으로 프로퍼티 추가나 변경,삭제 등등 변경할 수 있는 값이다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  name: <span class="string">'Lee'</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 프로퍼티 키 name 의 프로퍼티 값 갱신</span></span><br><span class="line">person.name = <span class="string">'Kim'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 프로퍼티 동적 추가 </span></span><br><span class="line">person.gender = <span class="string">'male'</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(person); <span class="comment">// &#123;name: "Kim", gender: "male"&#125;</span></span><br></pre></td></tr></table></figure>
+
+<img src="https://poiemaweb.com/assets/fs-images/10-7.png" alt="변경가능한 객체" style="zoom:50%;">
+
+<p>객체를 변경할 때 마다 원시 값처럼 이전 값을 복사하여 새롭게 생성한다면 명확하고 깔끔하겠지만 객체는 크기가 매우 클 수도 있고 프로퍼티 값이 객체일 수도 있어서 복사(Deep copy)하고 생성하는 비용이 많이 든다. 다시 말해, 메모리의 효율적 소비가 어렵고 퍼포먼스가 나빠진다.</p>
+<p>따라서, 객체는 이러한 구조적 단점에 따른 부작용(Side effect)이 있다. 그것은 원시 값과는 다르게 <strong>여러 개의 식별자가 하나의 객체를 공유할 수 있다</strong>는 것이다.</p>
+<br>
+
+<h3 id="참조에-의한-전달"><a href="#참조에-의한-전달" class="headerlink" title="참조에 의한 전달"></a>참조에 의한 전달</h3><p>​    객체를 가리키는 변수(원본, person)를 다른 변수(사본, copy)에 할당하면 원본의 참조 값이 복사되어 전달된다. 이를 <strong>참조에 의한 전달(Pass by reference)</strong>라 한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  name: <span class="string">'Lee'</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 참조 값을 복사</span></span><br><span class="line"><span class="keyword">var</span> copy = person;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p><img src="https://poiemaweb.com/assets/fs-images/10-8.png" alt="참조에 의한 전달"></p>
+<br>
+
+<p>원본 person와 사본 copy 모두 동일한 객체를 가리키고 있다. </p>
+<p>이것은 두개의 식별자가 하나의 객체를 공유한다는 것을 의미한다. </p>
+<p>따라서 원본 또는 사본 어떤 한쪽에서 객체를 변경(객체의 프로퍼티 값 변경 또는 추가, 삭제)이 하면 <strong>서로 영향을 주고 받는다.</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  name: <span class="string">'Lee'</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 참조 값을 복사. copy와 person은 동일한 객체를 참조한다.</span></span><br><span class="line"><span class="keyword">var</span> copy = person;</span><br><span class="line"></span><br><span class="line"><span class="comment">// copy와 person은 같은 참조 값을 갖는다.</span></span><br><span class="line"><span class="built_in">console</span>.log(copy === person); <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// copy를 통해 객체를 변경한다.</span></span><br><span class="line">copy.name = <span class="string">'Kim'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// person을 통해 객체를 변경한다.</span></span><br><span class="line">person.address = <span class="string">'Seoul'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// copy와 person은 같은 동일한 가리키고 있다.</span></span><br><span class="line"><span class="comment">// 따라서 어느 한쪽에서 객체를 변경하면 서로 영향을 주고 받는다.</span></span><br><span class="line"><span class="built_in">console</span>.log(person); <span class="comment">// &#123;name: "Kim", address: "Seoul"&#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(copy);   <span class="comment">// &#123;name: "Kim", address: "Seoul"&#125;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="복사-얕은-복사-shallow-copy-깊은-복사-deep-copy"><a href="#복사-얕은-복사-shallow-copy-깊은-복사-deep-copy" class="headerlink" title="복사 : 얕은 복사( shallow copy ) / 깊은 복사 ( deep copy )"></a>복사 : 얕은 복사( shallow copy ) / 깊은 복사 ( deep copy )</h3><p>copy에는 두 가지가 있다.</p>
+<p><strong>shallow copy</strong>(얕은 복사)와 <strong>deep copy</strong>(깊은 복사)이다.</p>
+<p><strong>shallow copy</strong>는 가장 상위 객체만 메모리에 새로 생성되고 내부 객체들은 참조 관계인 경우를 의미한다.</p>
+<p><strong>deep copy</strong>는 내부 객체까지 모두 새로 생성된 것을 의미합니다. </p>
+<h4 id="객체를-복사하는-방법들"><a href="#객체를-복사하는-방법들" class="headerlink" title="+++객체를 복사하는 방법들"></a>+++객체를 복사하는 방법들</h4><br>
+
+<h4 id="shaloow-copy"><a href="#shaloow-copy" class="headerlink" title="shaloow copy"></a>shaloow copy</h4><p>*<em>1. slice 메서드 이용 *</em>- Array.prototype.slice.call(변수명)</p>
+<p><code>변수명.slice[0]</code>  혹은 <code>Array.prototype.slice.call(변수명)</code> 을 이용한다</p>
+<p><code>Array.prototype.slice.call(변수명)</code> 대신 <code>변수명.slice(0)</code>을 해도 되지만, arguments 같은 것(<strong>유사배열</strong>)을 복사할 때를 생각하면 <code>Array.prototype.slice.call</code>로 통일하는 게 좋다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> array = [&#123; <span class="attr">name</span>: <span class="string">'a'</span> &#125;, &#123; <span class="attr">name</span>: <span class="string">'b'</span> &#125;, &#123; <span class="attr">name</span>: <span class="string">'c'</span> &#125;];</span><br><span class="line"><span class="keyword">var</span> shallow = <span class="built_in">Array</span>.prototype.slice.call(array);</span><br><span class="line">shallow[<span class="number">0</span>].name = <span class="string">'d'</span>;</span><br><span class="line">shallow[<span class="number">1</span>] = <span class="string">'e'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(array); <span class="comment">// [&#123; name: 'd' &#125;, &#123; name: 'b' &#125;, &#123; name: 'c' &#125;]</span></span><br><span class="line"><span class="built_in">console</span>.log(shallow); <span class="comment">// [&#123; name: 'd' &#125;, 'e' , &#123; name: 'c' &#125;]</span></span><br></pre></td></tr></table></figure>
+
+<p>위 예제를 보면 <code>array</code> 변수를 얕은 복사를 한 <code>shallow</code>라는 변수는 array 변수가 가리키는 객체(배열) 안에 있는 각 객체들 중 첫번째 객체의 name값을 공유하고 있기 때문에 ‘d’라고 변경시 <code>array</code>의 프로퍼티 값은 공유가 되어 변경이 되었다.</p>
+<p>하지만 <code>shallow</code>의 두번째 배열 인덱스의  e값을 직접 변경할 경우 메모리에 직접 생성되었기에 <code>array</code>변수와 공유가 되어있지 않다.</p>
+<br>
+
+<h4 id="deep-copy"><a href="#deep-copy" class="headerlink" title="deep copy"></a>deep copy</h4><p><strong>1. 자바스크립트 재귀 사용</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">cloneObject</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> clone = &#123;&#125;;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i <span class="keyword">in</span> obj) &#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">typeof</span>(obj[i])==<span class="string">"object"</span> &amp;&amp; obj[i] != <span class="literal">null</span>)</span><br><span class="line">            clone[i] = cloneObject(obj[i]);</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            clone[i] = obj[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> clone;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>오브젝트의 프로퍼티들을 순회하여 빈 오브젝트에 더한다. 그 과정에서 원본 오브젝트의 프로퍼티가 오브젝트일 경우 재귀적으로 함수를 실행한다.<br>이 방법은 객체를 <code>깊은 복사(Deep Copy)</code>한다.</p>
+<br>
+
+<p><strong>2. JSON 객체의 메소드를 이용</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">cloneObject</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(obj));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>JSON.stringify</strong>는 자바스크립트 오브젝트를 스트링 포멧으로 변환하는 메소드이다.<br><strong>JSON.parse</strong>는 스트링 포멧을 자바스크립트 오브젝트로 변환하는 메소드이다.</p>
+<p>스트링으로 변환하였다가 다시 오브젝트로 변환하기 때문에 이전 객체에 대한 참조가 없어지지만 JSON 메소드 자체가 성능면에서 다른 방법에 비해 굉장히 느리기 때문에 주의해야한다.<br>이 방법은 객체를 <code>깊은 복사(Deep Copy)</code>한다.</p>
+<br>
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="http://yoursite.com/2019/10/09/javascript-preview-10/" data-id="ck1j0m5de004bqwz0yhsehkye" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2019/10/09/javascript-preview-10/" data-id="ck1j7rj28004bciz0tg6ikmig" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -249,15 +436,42 @@
             "name": "Jun Hyeok Kim"
         },
         "headline": "javascript-preview-10",
-        "image": "http://yoursite.com",
+        "image": "http://yoursite.comhttps://user-images.githubusercontent.com/31315644/66104821-b9976b00-e5f4-11e9-84e9-20c797dd2c51.jpeg",
         "keywords": "hexo git Web coding developer CSS HTML algorithm javascript",
         "genre": "TIL Javascript-Preview",
         "datePublished": "2019-10-09",
         "dateCreated": "2019-10-09",
         "dateModified": "2019-10-09",
         "url": "http://yoursite.com/2019/10/09/javascript-preview-10/",
-        "description": "",
-        "wordCount": 1
+        "description": "
+
+JacaScript 10강 예습
+10강 : 원시 값과 객체의 비교
+원시값
+변경 불가능한 값
+문자열과 불변성
+유사 배열 객체
+값에 의한 전달
+
+
+객체 (참조값)
+변경 가능한 값
+참조에 의한 전달
+복사 : 얕은 복사( shallow copy ) / 깊은 복사 ( deep copy )
+shallow copy
+deep copy
+
+
+
+
+
+
+
+
+
+
+10강​    ",
+        "wordCount": 1395
     }
 </script>
 
@@ -341,7 +555,7 @@
                             <a href="/2019/10/09/javascript-preview-10/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/66104821-b9976b00-e5f4-11e9-84e9-20c797dd2c51.jpeg)" alt="javascript-preview-10" class="thumbnail-image"></span>
     
     
 </a>
