@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+
+    
+
+    
+    <title>javascript-study-08 | HYEOK999&#39;s Blog</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="hexo,git,Web,coding,developer,CSS,HTML,algorithm,javascript">
+    
+    <meta name="description" content="JavaScript Study 08 용어  스코프  순수 함수 비순수 함수 스코프의 종류 스코프 체인 렉시컬 스코프 암묵적 전역 변수 JS 모듈 미지원 모듈      전역 변수의 문제점  전역 변수 사용 억제 방법   let, const와 블록 레벨 스코프  var 키워드로 선언한 변수의 문제점 let 키워드와 var 키워드의 차이점 const 키워드">
+<meta name="keywords" content="hexo,git,Web,coding,developer,CSS,HTML,algorithm,javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javascript-study-08">
+<meta property="og:url" content="http://yoursite.com/2019/10/14/javascript-study-08/index.html">
+<meta property="og:site_name" content="HYEOK999&#39;s Blog">
+<meta property="og:description" content="JavaScript Study 08 용어  스코프  순수 함수 비순수 함수 스코프의 종류 스코프 체인 렉시컬 스코프 암묵적 전역 변수 JS 모듈 미지원 모듈      전역 변수의 문제점  전역 변수 사용 억제 방법   let, const와 블록 레벨 스코프  var 키워드로 선언한 변수의 문제점 let 키워드와 var 키워드의 차이점 const 키워드">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://user-images.githubusercontent.com/31315644/65933403-536fe400-e44c-11e9-981d-c4e8c1f86998.png">
+<meta property="og:updated_time" content="2019-10-14T10:23:15.091Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="javascript-study-08">
+<meta name="twitter:description" content="JavaScript Study 08 용어  스코프  순수 함수 비순수 함수 스코프의 종류 스코프 체인 렉시컬 스코프 암묵적 전역 변수 JS 모듈 미지원 모듈      전역 변수의 문제점  전역 변수 사용 억제 방법   let, const와 블록 레벨 스코프  var 키워드로 선언한 변수의 문제점 let 키워드와 var 키워드의 차이점 const 키워드">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/31315644/65933403-536fe400-e44c-11e9-981d-c4e8c1f86998.png">
+    
+
+    
+
+    
+        <link rel="icon" href="/images/favicon_io/favicon.ico">
+    
+
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Architects+Daughter&display=swap" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin+Sketch&display=swap">
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">HYEOK999&#39;s Daily Develop</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/">Develop</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/CSS/">CSS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/GIT/">GIT</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Tips/">Tips</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/">TIL</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Algorithm/">Algorithm</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/GIT/">GIT</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/linux/">linux</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/etc/">etc</a></li></ul>
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/TIL/Javascript/">Javascript</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-javascript-study-08" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        javascript-study-08
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/10/14/javascript-study-08/" class="article-date">
+            <time datetime="2019-10-14T10:22:46.000Z" itemprop="datePublished">2019-10-14</time>
+        </a>
+    </div>
+
+		
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/CSS/">CSS</a>, <a class="tag-link" href="/tags/HTML/">HTML</a>, <a class="tag-link" href="/tags/Web/">Web</a>, <a class="tag-link" href="/tags/algorithm/">algorithm</a>, <a class="tag-link" href="/tags/coding/">coding</a>, <a class="tag-link" href="/tags/developer/">developer</a>, <a class="tag-link" href="/tags/git/">git</a>, <a class="tag-link" href="/tags/hexo/">hexo</a>, <a class="tag-link" href="/tags/javascript/">javascript</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p><img src="https://user-images.githubusercontent.com/31315644/65933403-536fe400-e44c-11e9-981d-c4e8c1f86998.png" alt="JavaScriptBanner"></p>
+<hr>
+<h2 id="JavaScript-Study-08"><a href="#JavaScript-Study-08" class="headerlink" title="JavaScript Study 08"></a>JavaScript Study 08</h2><ul>
+<li><p>용어</p>
+</li>
+<li><p>스코프</p>
+<ul>
+<li>순수 함수</li>
+<li>비순수 함수</li>
+<li>스코프의 종류</li>
+<li>스코프 체인</li>
+<li>렉시컬 스코프</li>
+<li>암묵적 전역 변수</li>
+<li>JS 모듈 미지원<ul>
+<li>모듈 </li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>전역 변수의 문제점</p>
+<ul>
+<li>전역 변수 사용 억제 방법</li>
+</ul>
+</li>
+<li><p>let, const와 블록 레벨 스코프</p>
+<ul>
+<li>var 키워드로 선언한 변수의 문제점</li>
+<li>let 키워드와 var 키워드의 차이점</li>
+<li>const 키워드</li>
+<li>const 키워드와 객체</li>
+<li>var : let : const</li>
+</ul>
+</li>
+</ul>
+<br>
+
+<hr>
+<br>
+
+<h3 id="용어-러버덕"><a href="#용어-러버덕" class="headerlink" title="용어 - ( 러버덕 )"></a>용어 - ( 러버덕 )</h3><ul>
+<li>스코프</li>
+<li>순수 함수</li>
+<li>비순수 함수</li>
+<li>전역 변수</li>
+<li>암묵적 전역 변수</li>
+<li>지역 변수</li>
+<li>let : var : const</li>
+<li>var 의 문제점</li>
+<li>let 키워드 특징</li>
+<li>const 키워드 특징</li>
+</ul>
+<br>
+
+<hr>
+<h2 id="스코프"><a href="#스코프" class="headerlink" title="스코프"></a>스코프</h2><blockquote>
+<p><strong>JS엔진이 식별자를 찾는 규칙. 식별자가 유효한 범위</strong></p>
+<p>스코프는 유효범위 , 변수의 생명주기와 큰 관련이 있다.</p>
+<p>JS에서는 함수가 스코프 큰 관련이 있다.</p>
+</blockquote>
+<p><strong>객체의 프로퍼티는 스코프에 존재하는게 아니라, 프로토타입 스코프 체인에 존재한다.</strong></p>
+<p><strong>함수의 코드 블록이 스코프를 만든다.</strong></p>
+<p>자바스크립트는 함수 레벨 스코프다.</p>
+<p>함수의 매개변수는 함수 몸체 내부에서만 참조할 수 있고 , 몸체 외부에서는 참조할 수 없다.</p>
+<p>➤  매개변수를 참조할 수 있는 유효한 범위, 즉 <strong>매개변수의 스코프가 함수 몸체 내부로 한정</strong>되기 때문이다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//순수 함수</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 매개변수는 함수 몸체 내부에서만 참조할 수 있다.</span></span><br><span class="line">  <span class="comment">// 즉, 매개변수의 스코프(유효범위)는 함수 몸체 내부이다.</span></span><br><span class="line">  <span class="built_in">console</span>.log(x, y); <span class="comment">// 2 5</span></span><br><span class="line">  <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">add(<span class="number">2</span>, <span class="number">5</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 매개변수는 함수 몸체 내부에서만 참조할 수 있다.</span></span><br><span class="line"><span class="built_in">console</span>.log(x, y); <span class="comment">// ReferenceError: x is not defined</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//비순수 함수</span></span><br><span class="line"><span class="keyword">var</span> num = <span class="number">0</span>; <span class="comment">// 현재 카운트를 나타내는 상태: increase 함수에 의해 변화한다.</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">increase</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> ++num; <span class="comment">// 외부 상태를 변경한다.</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(increase()); <span class="comment">// 1</span></span><br><span class="line"><span class="built_in">console</span>.log(increase()); <span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
+
+<p><code>num</code>은 누구나 참조할 수 있는 전역 변수이다. </p>
+<p><code>increase()</code>에서도 <code>num</code>은 참조할 수 있다. 이렇게 누구나 사용 가능 하게끔 설정할 때는 변수보다는 상수를 이용하는게 더 효율적이다. 단, 상수는 재할당이 불가능하므로 해당 값이 변해도 되는지를 판단을 하여야만 한다.</p>
+<br>
+
+<h4 id="순수-함수"><a href="#순수-함수" class="headerlink" title="순수 함수"></a>순수 함수</h4><blockquote>
+<p>동일한 인수가 전달되면 언제나 동일한 값을 반환하는 함수를 말한다. ( 위 add예제 )</p>
+</blockquote>
+<br>
+
+<h4 id="비순수-함수"><a href="#비순수-함수" class="headerlink" title="비순수 함수"></a>비순수 함수</h4><blockquote>
+<p>함수의 외부 상태에 의존하여 외부 상태에 따라 반환값이 달라지는 함수. ( 위 increase 예제 )</p>
+</blockquote>
+<br>
+
+<h4 id="즉-스코프는-식별자가-유효한-범위를-의미"><a href="#즉-스코프는-식별자가-유효한-범위를-의미" class="headerlink" title="즉, 스코프는 식별자가 유효한 범위를 의미"></a>즉, 스코프는 식별자가 유효한 범위를 의미</h4><p>*<em>모든 식별자(변수 명 ← (함수명), 클래스 명 등)은 자신이  선언된 위치에 의해 다른 코드가 식별자 자신을 참조할 수 있는 유효범위가 결정된다. *</em></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="string">'global'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> x = <span class="string">'local'</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(x); <span class="comment">// ① local</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(x); <span class="comment">// ② global</span></span><br></pre></td></tr></table></figure>
+
+<img src="https://poiemaweb.com/assets/fs-images/12-1.png" style="zoom:50%;">
+
+<br>
+
+<h3 id="스코프의-종류"><a href="#스코프의-종류" class="headerlink" title="스코프의 종류"></a>스코프의 종류</h3><p>​    코드는 전역(global)과 지역(local)으로 구분할 수 있다.</p>
+<table>
+<thead>
+<tr>
+<th align="center">구분</th>
+<th align="left">설명</th>
+<th align="left">스코프</th>
+<th align="left">변수</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">전역</td>
+<td align="left">코드의 가장 바깥 영역</td>
+<td align="left">전역 스코프</td>
+<td align="left">전역 변수</td>
+</tr>
+<tr>
+<td align="center">지역</td>
+<td align="left">함수 몸체 내부</td>
+<td align="left">지역 스코프</td>
+<td align="left">지역 변수</td>
+</tr>
+</tbody></table>
+<p>이때 변수는 자신이 선언된 위치(전역 또는 지역)에 의해 자신이 유효한 범위인 스코프가 결정된다. 즉, 전역에서 선언된 변수는 전역 스코프를 갖는 전역 변수이고, 지역에서 선언된 변수는 지역 스코프를 갖는 지역 변수이다.</p>
+<img src="https://poiemaweb.com/assets/fs-images/12-2.png" alt="poiema-web 전역/지역" style="zoom:50%;">
+
+<p><strong>전역 변수는 어디서든지 참조할 수 있다.</strong></p>
+<p><strong>부모는 부모꺼만 쓸 수 있고, 자식은 자신과 부모꺼 모두 사용할 수 있다.</strong></p>
+<br>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1.</span></span><br><span class="line"><span class="keyword">var</span> x = <span class="number">5</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> x = <span class="number">9</span>;</span><br><span class="line">	<span class="built_in">console</span>.log(x); <span class="comment">// 1-1 : 9</span></span><br><span class="line">	<span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fn();</span><br><span class="line"><span class="built_in">console</span>.log(x); <span class="comment">// 1-2: 5</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 2.</span></span><br><span class="line"><span class="keyword">var</span> x = <span class="number">5</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	x = <span class="number">9</span>;</span><br><span class="line">	<span class="built_in">console</span>.log(x); <span class="comment">// 2-1 : 9</span></span><br><span class="line">	<span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fn();</span><br><span class="line"><span class="built_in">console</span>.log(x); <span class="comment">// 2-2 : 9</span></span><br></pre></td></tr></table></figure>
+
+<p>1  과 2의 차이는 무엇일까?</p>
+<p>1은 <code>fn()</code>의 지역 스코프에서 x라는 <strong>변수를 선언하여 9를 할당</strong>하였다. 결국 전역 스코프의 x는 변하지 않는다.</p>
+<p>2는 <code>fn()</code> 지역 스코프에서 x라는 변수에 9를 <strong>재할당</strong> 한 것이다. 결국 2는 전역 스코프의 x값이 바뀌고 9가 출력된다.</p>
+<br>
+
+<h3 id="스코프-체인"><a href="#스코프-체인" class="headerlink" title="스코프 체인"></a>스코프 체인</h3><blockquote>
+<p>함수는 중첩될 수 있으므로 함수의 지역 스코프도 중첩될 수 있다. 이는 <strong>스코프는 함수의 중첩에 의해 계층적 구조를 갖는다</strong>는 것을 의미.</p>
+</blockquote>
+<img src="https://poiemaweb.com/assets/fs-images/12-3.png" alt="스코프 체인 - poiemaweb" style="zoom:50%;">
+
+<p><strong>변수를 참조할 때, **<br>자바스크립트 엔진은 **스코프 체인을 통해</strong><br><strong>변수를 참조하는 코드의 스코프에서 시작</strong>하여<br><strong>상위 스코프 방향으로 이동하며 선언된 변수를 검색한다.</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 전역 함수</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'global function foo'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 중첩 함수</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'local function foo'</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  foo(); <span class="comment">// ①</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">bar();</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="렉시컬-스코프"><a href="#렉시컬-스코프" class="headerlink" title="렉시컬 스코프"></a>렉시컬 스코프</h3><blockquote>
+<p>JS에서는 상위 스코프의 결정 방식을 렉시컬 스코프 하게 짓는다.</p>
+<p><strong><em>함수를 어디서 정의</em>했는지에 따라 함수의 상위 스코프를 결정한다.</strong></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var x = 1;</span><br><span class="line"></span><br><span class="line">function foo() &#123;</span><br><span class="line">  var x = 10;</span><br><span class="line">  bar();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function bar() &#123;</span><br><span class="line">  console.log(x);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo(); // ?</span><br><span class="line">bar(); // ?</span><br></pre></td></tr></table></figure>
+
+<p>정답은 <code>foo</code>는 1 , <code>bar</code> 도 1이다. <code>bar</code>는 전역 스코프에서 정의가 되었다. 따라서 <code>bar</code>의 스코프 위치는 전역의 바로 아래이다.</p>
+<p>따라서 <code>bar()</code>를 호출했을 때, <code>bar()</code>의 내용물은 결국 전역 스코프에 읽게 된다.</p>
+<p>만약 <code>bar()</code>가 <code>foo()</code> 내부의 스코프를 타서 x값을 읽어드렸다면, 이를 동적 스코프(함수를 호출한 위치로 스코프 결정)라 한다.</p>
+<p>대부분의 언어(JS를 포함)는 렉시컬 스코프를 지원한다.</p>
+<p>이유는 동적 스코프는 가독성이 떨어지기 때문이다.</p>
+<br>
+
+<h3 id="암묵적-전역-변수"><a href="#암묵적-전역-변수" class="headerlink" title="암묵적 전역 변수"></a>암묵적 전역 변수</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 선언하지 않은 변수에 값을 할당하면 암묵적 전역 변수가 된다.</span></span><br><span class="line">  x = <span class="number">10</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(x); <span class="comment">// 10</span></span><br></pre></td></tr></table></figure>
+
+<p>나는 <code>foo()</code>라는 변수와 <code>foo()내부의 x</code> 를 선언한적이 없다.</p>
+<p>근데 <code>foo()</code>를 호출할수 있고 또 console.log에서 <code>x</code>를 찾아 출력까지 했다..</p>
+<p>이처럼 <strong>선언하지 않은 변수에 값을 할당하면 자바스크립트 엔진은 아무런 에러없이 암묵적으로 전역 변수를 선언하고 값을 할당한다.</strong></p>
+<p><strong>과정</strong></p>
+<ol>
+<li>함수 foo가 호출 </li>
+<li>변수 x에 값을 할당하기 위해 자바스크립트 엔진은 스코프 체인을 따라서 함수 foo의 스코프부터 변수 x의 선언을 찾는다.</li>
+<li>함수 foo에는 x의 선언이 존재하지 않으므로 전역에서 x의 선언을 찾는다.</li>
+<li>전역 스코프에서도 변수 x의 선언을 찾을 수 없다.</li>
+<li>➤ 참조에러를 발생시켜야 하지만, 자바스크립트 엔진은 암묵적으로 전역 변수 x를 선언한다.</li>
+</ol>
+<br>
+
+<h3 id="JS-모듈-미지원"><a href="#JS-모듈-미지원" class="headerlink" title="JS 모듈 미지원"></a>JS 모듈 미지원</h3><p>만약 2개의 <code>.js</code>파일이 있다고 가정하고. 하나의 html파일에서 js를 로드했다고 하자.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// x.js</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  i = <span class="number">0</span>; <span class="comment">// 암묵적 전역 변수</span></span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// y.js</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</span><br><span class="line">  foo();</span><br><span class="line">  <span class="built_in">console</span>.log(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">'x.js'</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">'y.js'</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>이경우 <code>y.js</code>의 var 키워드로 선언된 변수는 함수의 코드 블록 만을 지역 스코프로 인정한다.<br>따라서 for문에서 선언한 i는 전역 변수이다.<br>이미 암묵적 전역 변수 i가 있으므로 변수 i는 중복 선언된다.<br>결국 <code>y.js</code> 에서 호출한 <code>foo()</code> 때문에 i는 게속 0으로 할당될 것이고 무한루프에 빠지게 된다.</p>
+<p>여기서 HTML에서 로드한 js파일들은 모두 하나의 전역 스코프를 공유한다. </p>
+<p>자바스크립트 파일을 여러 개로 분리하여도 결국 하나의 자바스크립트 파일로 통합된 것처럼 동작한다.</p>
+<p>즉, i는 서로간에 충돌을 일으킨다. 다시 말해 <strong>자바스크립트는 파일마다 독립적인 파일 스코프를 갖지 않는다.</strong> </p>
+<p>*<em>자바스크립트에는 모듈이라는 개념이 없기 때문. *</em>모듈화가 되려면 file스코프를 지원되어야 한다.</p>
+<p>를 해결하기 위해 번들링 (Webpack) 이라는 개념이 나왔다. (이는 추후에 공부)</p>
+<br>
+
+<h4 id="모듈"><a href="#모듈" class="headerlink" title="모듈"></a>모듈</h4><p>모듈의 역할 : Bundling</p>
+<blockquote>
+<p>애플리케이션을 구성하는 개별적 요소로 재사용이 가능한 코드 조각을 의미</p>
+</blockquote>
+<p>공개가 필요한 API만을 외부에 노출시키며, 세부적인 부분은 캡슐화로 정보은닉.</p>
+<p>ES6 부터 기능이 제공.</p>
+<hr>
+<h2 id="전역-변수의-문제점"><a href="#전역-변수의-문제점" class="headerlink" title="전역 변수의 문제점"></a>전역 변수의 문제점</h2><blockquote>
+<p>스코프를 통해 전역변수가 위험하다는 것을 직간접적으로 느꼈을 것이다. </p>
+<p>따라서 생명주기에 대해 제대로 공부해야한다.</p>
+</blockquote>
+<br>
+
+<ol>
+<li><strong>긴  생명주기</strong>로 인해 버그 발생률을 높인다. (이름 충돌, 메모리 리소스 높이는 원인, 상태 변경 등등)</li>
+<li>모든코드가 전역 변수를 참조하고 변경할 수 있는 <strong>암묵적 결합(implicit coupling)</strong>을 허용하는 것.</li>
+<li>스코프 체인상 종점에 존재하기 때문에 <strong>검색속도가 느리다.</strong></li>
+<li>파일이 분리되어도 전역 스코프는 공유하기 때문에 <strong>네임스페이스 오염</strong>이 일어난다.</li>
+<li>리소스 활용이 어려워진다.</li>
+</ol>
+<br>
+
+<h3 id="전역-변수-사용-억제-방법"><a href="#전역-변수-사용-억제-방법" class="headerlink" title="전역 변수 사용 억제 방법"></a>전역 변수 사용 억제 방법</h3><ol>
+<li><p>즉시 실행 함수</p>
+</li>
+<li><p>네임 스페이스 객체</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> MYAPP = &#123;&#125;; <span class="comment">// 전역 네임 스페이스 객체</span></span><br><span class="line"></span><br><span class="line">MYAPP.name = <span class="string">'Lee'</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(MYAPP.name); <span class="comment">// Lee</span></span><br></pre></td></tr></table></figure>
+
+<br>
+</li>
+<li><p>모듈패턴</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Counter = (<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// private 변수</span></span><br><span class="line">  <span class="keyword">var</span> num = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 외부로 공개할 데이터나 메소드를 프로퍼티로 추가한 객체를 반환한다.</span></span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    increase() &#123; <span class="comment">// 메소드 축약 표현</span></span><br><span class="line">      <span class="keyword">return</span> ++num;</span><br><span class="line">    &#125;,</span><br><span class="line">    decrease() &#123; <span class="comment">// 메소드 축약 표현</span></span><br><span class="line">      <span class="keyword">return</span> --num;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;());</span><br><span class="line"></span><br><span class="line"><span class="comment">// private 변수는 외부로 노출되지 않는다.</span></span><br><span class="line"><span class="built_in">console</span>.log(Counter.num); <span class="comment">// undefined</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(Counter.increase()); <span class="comment">// 1</span></span><br><span class="line"><span class="built_in">console</span>.log(Counter.increase()); <span class="comment">// 2</span></span><br><span class="line"><span class="built_in">console</span>.log(Counter.decrease()); <span class="comment">// 1</span></span><br><span class="line"><span class="built_in">console</span>.log(Counter.decrease()); <span class="comment">// 0</span></span><br></pre></td></tr></table></figure>
+
+<p>위 예제에서는 <code>return</code>을 이용하여 변수의 노출 여부를 판단하고 있다.</p>
+<p>자바스크립트의 강력한 기능인 클로저를 기반으로 동작하는 모듈 패턴은 </p>
+<p>클래스를 모방하여 관련이 있는 변수와 함수를 모아 즉시 실행 함수로 감싸 하나의 모듈을 만든다.</p>
+<br>
+
+</li>
+</ol>
+<hr>
+<h2 id="let-const-와-블록-레벨-스코프"><a href="#let-const-와-블록-레벨-스코프" class="headerlink" title="let, const 와 블록 레벨 스코프"></a>let, const 와 블록 레벨 스코프</h2><h3 id="var-키워드로-선언한-변수의-문제점"><a href="#var-키워드로-선언한-변수의-문제점" class="headerlink" title="var 키워드로 선언한 변수의 문제점"></a>var 키워드로 선언한 변수의 문제점</h3><ol>
+<li>변수호이스팅 (가독성 방해 No.1)</li>
+<li>중복 선언 허용. (중복 선언시, 에러를 유발하는게 아닌 재할당처럼 동작)</li>
+<li><strong>암묵적 전역 변수</strong> (var키워드 없이 할당할 경우. 강제 전역 변수로 암묵적 실행)</li>
+<li><strong>지역 레벨 스코프를 지원</strong>, 블록 레벨 스코프 사용불가(for, if 등등) </li>
+</ol>
+<br>
+
+<h3 id="let-키워드와-var-키워드의-차이점"><a href="#let-키워드와-var-키워드의-차이점" class="headerlink" title="let 키워드와 var 키워드의 차이점"></a>let 키워드와 var 키워드의 차이점</h3><ol>
+<li><p><strong>변수 중복 성언 금지</strong> : 중복 선언시 문법 에러를 유발.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> foo = <span class="number">123</span>;</span><br><span class="line"><span class="comment">// var 키워드로 선언된 변수는 같은 스코프 내에서 중복 선언을 허용한다.</span></span><br><span class="line"><span class="comment">// 아래 변수 선언문은 자바스크립트 엔진에 의해 var 키워드가 없는 것처럼 동작한다.</span></span><br><span class="line"><span class="keyword">var</span> foo = <span class="number">456</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> bar = <span class="number">123</span>;</span><br><span class="line"><span class="comment">// let이나 const 키워드로 선언된 변수는 같은 스코프 내에서 중복 선언을 허용하지 않는다.</span></span><br><span class="line"><span class="keyword">let</span> bar = <span class="number">456</span>; <span class="comment">// SyntaxError: Identifier 'bar' has already been declared</span></span><br></pre></td></tr></table></figure>
+
+<br>
+</li>
+<li><p><strong>블록 레벨 스코프를 지원</strong> </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> foo = <span class="number">123</span>; <span class="comment">// 전역 변수</span></span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">let</span> foo = <span class="number">456</span>; <span class="comment">// 지역 변수</span></span><br><span class="line">  <span class="keyword">let</span> bar = <span class="number">456</span>; <span class="comment">// 지역 변수</span></span><br><span class="line">&#125;  <span class="comment">// -&gt; 블록 레벨 스코프</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(foo); <span class="comment">// 123</span></span><br><span class="line"><span class="built_in">console</span>.log(bar); <span class="comment">// ReferenceError: bar is not defined</span></span><br></pre></td></tr></table></figure>
+
+<p>변수 이름은 스코프만 분리되어 있으면 된다. (그렇다고 좋은것 이나고 가급적이면 이름을 다르게 지어야한다.)</p>
+<p>위 코드는 <code>{ } 블록</code>으로 스코프가 나뉘게 되었다. let은 블록 레벨 스코프를 따른다.</p>
+<br>
+</li>
+<li><p><strong>변수 호이스팅</strong> : <code>let</code>은 변수 호이스팅을 안하는것 처럼 보일 뿐, 호이스팅을 한다.</p>
+<p><code>let</code>은 호이스팅 할 경우, <code>undefined</code>로 초기화 시키지 않는다.</p>
+<p><strong>초기화는 변수 선언문에 도달했을 때 실행된다.</strong></p>
+<p>스코프의 시작 지점부터 초기화 시작 지점까지의 구간을 TDZ (일시적 사각지대)라 칭한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> foo = <span class="number">1</span>; <span class="comment">// 전역 변수</span></span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(foo); <span class="comment">// ReferenceError: foo is not defined - TDZ일시적 사각지대</span></span><br><span class="line">  <span class="keyword">let</span> foo = <span class="number">2</span>; <span class="comment">// 지역 변수</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+</li>
+<li><p><strong>전역 객체와  let</strong></p>
+<p>window는 전역객체다.</p>
+<p><code>var</code> 키워드 만든 전역변수, 전역 함수와 암묵적으로 만들어진 전역 변수들은 <code>window</code>의 프로퍼티다.</p>
+<p>전역 객체의 프로퍼티를 참조할 때 window를 생략할 수 있다.</p>
+<p>반면에,</p>
+<p><strong><code>let</code> 와 <code>const</code>로 만든 전역 변수는 window의 프로퍼티가 아니다.</strong></p>
+<p><code>let</code>, <code>const</code>의 전역 변수의 생명주기는 죽을 때는 실행코드가 전부 실행되고 끝날떄 끝난다.<br>(window는 실행코드가 끝나도 살아있다.)</p>
+<p><code>let</code> 전역 변수는 보이지 않는 개념적인 블록 내에 존재하게 된다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 이 예제는 브라우저 환경에서 실행시켜야 한다.</span></span><br><span class="line"><span class="keyword">let</span> x = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// let, const 키워드로 선언한 전역 변수는 전역 객체의 프로퍼티가 아니다.</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">window</span>.x); <span class="comment">// undefined</span></span><br><span class="line"><span class="built_in">console</span>.log(x); <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<br>
+
+<h3 id="const-키워드"><a href="#const-키워드" class="headerlink" title="const 키워드"></a>const 키워드</h3><ol>
+<li><p>상수를 선언할 때 사용. 상수도 변수다. 다만, 재할당만 불가능함.</p>
+</li>
+<li><p>재할당불가</p>
+</li>
+<li><p>변수 선언과 동시 할당해야만 한다.</p>
+<p><strong>변수를 선언할떄 가급적이면 const로 상수를 선언하고 필요한 경우에만 let을 이용하여야 한다.</strong></p>
+</li>
+</ol>
+<br>
+
+<h3 id="const-키워드와-객체"><a href="#const-키워드와-객체" class="headerlink" title="const 키워드와 객체"></a>const 키워드와 객체</h3><p>const 키워드로 선언된 변수는 재할당이 금지된다.<br>객체는 변경 가능한 값(mutable value)이다.<br>따라서 const 키워드로 선언된 변수에 할당된 객체는 변경이 가능하다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> person = &#123;</span><br><span class="line">  name: <span class="string">'Lee'</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 객체는 변경 가능한 값이다.</span></span><br><span class="line">person.name = <span class="string">'Kim'</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(person); <span class="comment">// &#123;name: "Kim"&#125;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="var-vs-let-vs-const"><a href="#var-vs-let-vs-const" class="headerlink" title="var vs. let vs. const"></a>var vs. let vs. const</h3><p>변수 선언에는 기본적으로 const를 사용하고 let은 재할당이 필요한 경우에 한정해 사용하는 것이 좋다. 원시 값의 경우, 가급적 상수를 사용하는 편이 좋다. 그리고 객체를 재할당하는 경우는 생각보다 흔하지 않다. const 키워드를 사용하면 의도치 않은 재할당을 방지해 주기 때문에 보다 안전하다.</p>
+<p>var와 let, 그리고 const 키워드는 다음처럼 사용하는 것을 추천한다.</p>
+<ul>
+<li>ES6를 사용한다면 var 키워드는 사용하지 않는다.</li>
+<li>재할당이 필요한 경우에 한정해 let 키워드를 사용한다. 이때 변수의 스코프는 최대한 좁게 만든다.</li>
+<li>변경이 발생하지 않는(재할당이 필요 없는 상수) 원시 값과 객체에는 const 키워드를 사용한다. const 키워드는 재할당을 금지하므로 var, let 보다 안전하다.</li>
+</ul>
+<p>변수를 선언하는 시점에는 재할당이 필요할지 잘 모르는 경우가 많다. 그리고 객체는 의외로 재할당을 하는 경우가 드물다. 따라서 변수를 선언할 때에는 일단 const 키워드를 사용하도록 하자. 반드시 재할당이 필요하다면(반드시 재할당이 필요한지 한번 생각해 볼 일이다.) 그때 const를 let 키워드로 변경해도 결코 늦지 않는다.</p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://yoursite.com/2019/10/14/javascript-study-08/" data-id="ck1q9ryrq005wfvz05zqtds5w" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Jun Hyeok Kim"
+        },
+        "headline": "javascript-study-08",
+        "image": "http://yoursite.comhttps://user-images.githubusercontent.com/31315644/65933403-536fe400-e44c-11e9-981d-c4e8c1f86998.png",
+        "keywords": "hexo git Web coding developer CSS HTML algorithm javascript",
+        "genre": "TIL Javascript",
+        "datePublished": "2019-10-14",
+        "dateCreated": "2019-10-14",
+        "dateModified": "2019-10-14",
+        "url": "http://yoursite.com/2019/10/14/javascript-study-08/",
+        "description": "
+
+JavaScript Study 08
+용어
+
+스코프
+
+순수 함수
+비순수 함수
+스코프의 종류
+스코프 체인
+렉시컬 스코프
+암묵적 전역 변수
+JS 모듈 미지원
+모듈 
+
+
+
+
+전역 변수의 문제점
+
+전역 변수 사용 억제 방법
+
+
+let, const와 블록 레벨 스코프
+
+var 키워드로 선언한 변수의 문제점
+let 키워드와 var 키워드의 차이점
+const 키워드
+",
+        "wordCount": 2296
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="https://www.facebook.com/profile.php?id=100003801986180" target="_blank" rel="noopener">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/HYEOK999" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="youtube" href="https://www.youtube.com" target="_blank" rel="noopener">
+                        <i class="icon fa fa-youtube"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2019/10/14/daily-algorithm14/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">daily_algorithm14</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/10/14/javascript-study-08/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/65933403-536fe400-e44c-11e9-981d-c4e8c1f86998.png)" alt="javascript-study-08" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/Javascript/">Javascript</a></p>
+                            <p class="item-title"><a href="/2019/10/14/javascript-study-08/" class="title">javascript-study-08</a></p>
+                            <p class="item-date"><time datetime="2019-10-14T10:22:46.000Z" itemprop="datePublished">2019-10-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/10/14/daily-algorithm14/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://images.velog.io/post-images/leejh3224/619516b0-e892-11e8-98f5-997ef3c38110/what-is-an-algorithm-featured.png)" alt="daily_algorithm14" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/Algorithm/">Algorithm</a></p>
+                            <p class="item-title"><a href="/2019/10/14/daily-algorithm14/" class="title">daily_algorithm14</a></p>
+                            <p class="item-date"><time datetime="2019-10-14T00:43:50.000Z" itemprop="datePublished">2019-10-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/10/14/daily-algorithm13/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://images.velog.io/post-images/leejh3224/619516b0-e892-11e8-98f5-997ef3c38110/what-is-an-algorithm-featured.png)" alt="daily_algorithm13" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/Algorithm/">Algorithm</a></p>
+                            <p class="item-title"><a href="/2019/10/14/daily-algorithm13/" class="title">daily_algorithm13</a></p>
+                            <p class="item-date"><time datetime="2019-10-13T16:31:49.000Z" itemprop="datePublished">2019-10-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/10/14/javascript-preview-1314/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/66104821-b9976b00-e5f4-11e9-84e9-20c797dd2c51.jpeg)" alt="javascript-preview-1314" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a></p>
+                            <p class="item-title"><a href="/2019/10/14/javascript-preview-1314/" class="title">javascript-preview-1314</a></p>
+                            <p class="item-date"><time datetime="2019-10-13T16:16:35.000Z" itemprop="datePublished">2019-10-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/10/12/daily-algorithm12/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://images.velog.io/post-images/leejh3224/619516b0-e892-11e8-98f5-997ef3c38110/what-is-an-algorithm-featured.png)" alt="daily_algorithm12" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/Algorithm/">Algorithm</a></p>
+                            <p class="item-title"><a href="/2019/10/12/daily-algorithm12/" class="title">daily_algorithm12</a></p>
+                            <p class="item-date"><time datetime="2019-10-12T10:40:30.000Z" itemprop="datePublished">2019-10-12</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/">Develop</a><span class="category-list-count">10</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/CSS/">CSS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/GIT/">GIT</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Java/">Java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Javascript/">Javascript</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Tips/">Tips</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/">TIL</a><span class="category-list-count">56</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Algorithm/">Algorithm</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/GIT/">GIT</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript/">Javascript</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/linux/">linux</a><span class="category-list-count">4</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/etc/">etc</a><span class="category-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a><span class="archive-list-count">31</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a><span class="archive-list-count">38</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">50</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ESLint/">ESLint</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a><span class="tag-list-count">49</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/">JAVA</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MarkUP/">MarkUP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Selector/">Selector</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TIL/">TIL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a><span class="tag-list-count">68</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorism/">algorism</a><span class="tag-list-count">29</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a><span class="tag-list-count">32</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/coding/">coding</a><span class="tag-list-count">68</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/developer/">developer</a><span class="tag-list-count">68</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">68</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">68</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/inline-block/">inline-block</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">33</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">3</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://github.com">github</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.naver.com">Naver</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://google.com">Google</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://www.youtube.com/">Youtube</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2019 Jun Hyeok Kim</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'http://yoursite.com/2019/10/14/javascript-study-08/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
