@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+
+    
+
+    
+    <title>javascript-preview-16 | HYEOK999&#39;s Blog</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="hexo,git,Web,coding,developer,CSS,HTML,algorithm,javascript">
+    
+    <meta name="description" content="JacaScript 16강 예습 16강 : 생성자 함수에 의한 객체 생성  Object 생성자 함수  생성자 함수  객체 리터럴에 의한 객체 생성 방식의 문제점 생성자 함수에 의한 객체 생성 방식의 장점 내부 메소드 [[Call]] 과 [[Construct]]   FunctionCreate  생성자 함수의 인스턴스 생성 과정  new 연산자  new.t">
+<meta name="keywords" content="hexo,git,Web,coding,developer,CSS,HTML,algorithm,javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javascript-preview-16">
+<meta property="og:url" content="http://yoursite.com/2019/10/15/javascript-preview-16/index.html">
+<meta property="og:site_name" content="HYEOK999&#39;s Blog">
+<meta property="og:description" content="JacaScript 16강 예습 16강 : 생성자 함수에 의한 객체 생성  Object 생성자 함수  생성자 함수  객체 리터럴에 의한 객체 생성 방식의 문제점 생성자 함수에 의한 객체 생성 방식의 장점 내부 메소드 [[Call]] 과 [[Construct]]   FunctionCreate  생성자 함수의 인스턴스 생성 과정  new 연산자  new.t">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://user-images.githubusercontent.com/31315644/66104821-b9976b00-e5f4-11e9-84e9-20c797dd2c51.jpeg">
+<meta property="og:updated_time" content="2019-10-15T01:38:09.988Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="javascript-preview-16">
+<meta name="twitter:description" content="JacaScript 16강 예습 16강 : 생성자 함수에 의한 객체 생성  Object 생성자 함수  생성자 함수  객체 리터럴에 의한 객체 생성 방식의 문제점 생성자 함수에 의한 객체 생성 방식의 장점 내부 메소드 [[Call]] 과 [[Construct]]   FunctionCreate  생성자 함수의 인스턴스 생성 과정  new 연산자  new.t">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/31315644/66104821-b9976b00-e5f4-11e9-84e9-20c797dd2c51.jpeg">
+    
+
+    
+
+    
+        <link rel="icon" href="/images/favicon_io/favicon.ico">
+    
+
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Architects+Daughter&display=swap" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin+Sketch&display=swap">
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">HYEOK999&#39;s Daily Develop</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/">Develop</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/CSS/">CSS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/GIT/">GIT</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Tips/">Tips</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/">TIL</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Algorithm/">Algorithm</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/GIT/">GIT</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/linux/">linux</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/etc/">etc</a></li></ul>
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-javascript-preview-16" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        javascript-preview-16
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/10/15/javascript-preview-16/" class="article-date">
+            <time datetime="2019-10-15T01:36:30.000Z" itemprop="datePublished">2019-10-15</time>
+        </a>
+    </div>
+
+		
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/CSS/">CSS</a>, <a class="tag-link" href="/tags/HTML/">HTML</a>, <a class="tag-link" href="/tags/Web/">Web</a>, <a class="tag-link" href="/tags/algorithm/">algorithm</a>, <a class="tag-link" href="/tags/coding/">coding</a>, <a class="tag-link" href="/tags/developer/">developer</a>, <a class="tag-link" href="/tags/git/">git</a>, <a class="tag-link" href="/tags/hexo/">hexo</a>, <a class="tag-link" href="/tags/javascript/">javascript</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p><img src="https://user-images.githubusercontent.com/31315644/66104821-b9976b00-e5f4-11e9-84e9-20c797dd2c51.jpeg" alt></p>
+<hr>
+<h2 id="JacaScript-16강-예습"><a href="#JacaScript-16강-예습" class="headerlink" title="JacaScript 16강 예습"></a>JacaScript 16강 예습</h2><ul>
+<li><p>16강 : 생성자 함수에 의한 객체 생성</p>
+<ol>
+<li><p>Object 생성자 함수</p>
+</li>
+<li><p>생성자 함수</p>
+<ul>
+<li>객체 리터럴에 의한 객체 생성 방식의 문제점</li>
+<li>생성자 함수에 의한 객체 생성 방식의 장점</li>
+<li>내부 메소드 [[Call]] 과 [[Construct]]</li>
+</ul>
+</li>
+<li><p>FunctionCreate</p>
+</li>
+<li><p>생성자 함수의 인스턴스 생성 과정</p>
+</li>
+<li><p>new 연산자</p>
+</li>
+<li><p>new.target</p>
+</li>
+<li><p>스코프 세이프 생성자 패턴 (Scope-Safe Constructor)</p>
+</li>
+</ol>
+</li>
+</ul>
+<br>
+
+<hr>
+<h1 id="16강"><a href="#16강" class="headerlink" title="16강"></a>16강</h1><h2 id="생성자-함수에-의한-객체-생성"><a href="#생성자-함수에-의한-객체-생성" class="headerlink" title="생성자 함수에 의한 객체 생성"></a>생성자 함수에 의한 객체 생성</h2><br>
+
+<h3 id="Object-생성자-함수"><a href="#Object-생성자-함수" class="headerlink" title="Object 생성자 함수"></a>Object 생성자 함수</h3><blockquote>
+<p>new 연산자와 함께 Object 생성자 함수를 호출하면 빈 객체를 생성하여 반환한다.</p>
+<p>빈 객체를 생성한 이후 프로퍼티 또는 메소드를 추가하여 객체를 완성할 수 있다.</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 빈 객체의 생성</span></span><br><span class="line"><span class="keyword">const</span> person = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 프로퍼티 추가</span></span><br><span class="line">person.name = <span class="string">'Lee'</span>;</span><br><span class="line">person.sayHello = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'Hi! My name is '</span> + <span class="keyword">this</span>.name);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(person); <span class="comment">// &#123;name: "Lee", sayHello: ƒ&#125;</span></span><br><span class="line">person.sayHello(); <span class="comment">// Hi! My name is Lee</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="생성자-함수"><a href="#생성자-함수" class="headerlink" title="생성자 함수"></a>생성자 함수</h3><blockquote>
+<p>new 연산자와 함께 호출하여 객체(인스턴스)를 생성하는 함수.</p>
+<p>인스턴스는 생성자 함수 혹은 클래스에 의해 생성된 객체를 의미한다.</p>
+<p><strong>일반 함수와 동일한 방법으로 생성자 함수를 정의하고 new 연산자와 함께 호출하면 해당 함수는 생성자 함수로 동작한다.</strong></p>
+</blockquote>
+<p>JS는 Object, String, Number, Boolean, Function, Array, Date, RegExp 등의 빌트인(intrinsic 내장) 생성자 함수를 제공한다.</p>
+<p>하지만 Object 생성자 함수 방식은 특별한 이유가 없다면 가독성면에서 불편하다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// String 생성자 함수에 의한 String 객체 생성</span></span><br><span class="line"><span class="keyword">const</span> strObj = <span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">'Lee'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> strObj); <span class="comment">// object</span></span><br><span class="line"><span class="built_in">console</span>.log(strObj);        <span class="comment">// String &#123;"Lee"&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Number 생성자 함수에 의한 Number 객체 생성</span></span><br><span class="line"><span class="keyword">const</span> numObj = <span class="keyword">new</span> <span class="built_in">Number</span>(<span class="number">123</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> numObj); <span class="comment">// object</span></span><br><span class="line"><span class="built_in">console</span>.log(numObj);        <span class="comment">// Number &#123;123&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Boolean 생성자 함수에 의한 Boolean 객체 생성</span></span><br><span class="line"><span class="keyword">const</span> boolObj= <span class="keyword">new</span> <span class="built_in">Boolean</span>(<span class="literal">true</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> boolObj); <span class="comment">// object</span></span><br><span class="line"><span class="built_in">console</span>.log(boolObj);        <span class="comment">// Boolean &#123;true&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Function 생성자 함수에 의한 Function 객체(함수) 생성</span></span><br><span class="line"><span class="keyword">const</span> func = <span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">'x'</span>, <span class="string">'return x * x'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> func); <span class="comment">// function</span></span><br><span class="line"><span class="built_in">console</span>.dir(func);        <span class="comment">// ƒ anonymous(x )</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Array 생성자 함수에 의한 Array 객체(배열) 생성</span></span><br><span class="line"><span class="keyword">const</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> arr); <span class="comment">// object</span></span><br><span class="line"><span class="built_in">console</span>.log(arr);        <span class="comment">// (3) [1, 2, 3]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// RegExp 생성자 함수에 의한 RegExp 객체(정규 표현식) 생성</span></span><br><span class="line"><span class="keyword">const</span> regExp = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="regexp">/ab+c/i</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> regExp); <span class="comment">// object</span></span><br><span class="line"><span class="built_in">console</span>.log(regExp);        <span class="comment">// /ab+c/i</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Date 생성자 함수에 의한 Date 객체 생성</span></span><br><span class="line"><span class="keyword">const</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> date); <span class="comment">// object</span></span><br><span class="line"><span class="built_in">console</span>.log(date);        <span class="comment">// Tue Mar 19 2019 02:38:26 GMT+0900 (한국 표준시)</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="객체-리터럴에-의한-객체-생성-방식의-문제점"><a href="#객체-리터럴에-의한-객체-생성-방식의-문제점" class="headerlink" title="객체 리터럴에 의한 객체 생성 방식의 문제점"></a>객체 리터럴에 의한 객체 생성 방식의 문제점</h4><blockquote>
+<p>객체 리터럴은 매우 직관적이며 간편하다.</p>
+<p>하지만 객체 리터럴은 단 하나만의 객체를 생성하기 때문에, 동일한 프로퍼티를 갖는 객체를 여러개 생성 해야할 경우, 매번 같은 프로퍼티를 기술해야하는 비효율적인면이 존재한다.</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> circle1 = &#123;</span><br><span class="line">  radius: <span class="number">5</span>,</span><br><span class="line">  getDiameter() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">2</span> * <span class="keyword">this</span>.radius;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(circle1.getDiameter()); <span class="comment">// 10</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> circle2 = &#123;</span><br><span class="line">  radius: <span class="number">10</span>,</span><br><span class="line">  getDiameter() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">2</span> * <span class="keyword">this</span>.radius;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(circle2.getDiameter()); <span class="comment">// 20</span></span><br></pre></td></tr></table></figure>
+
+<p><code>circle1</code> <code>circle2</code> 의 메소드는 동일한데 같은 코드를 2번이나 적어야하는 비효율적인 면이 있다.</p>
+<br>
+
+<h4 id="생성자-함수에-의한-객체-생성-방식의-장점"><a href="#생성자-함수에-의한-객체-생성-방식의-장점" class="headerlink" title="생성자 함수에 의한 객체 생성 방식의 장점"></a>생성자 함수에 의한 객체 생성 방식의 장점</h4><p>​    객체 생성 방식은 마치 객체(인스턴스)를 생성하기 위한 템플릿(클래스)처럼<br><strong>생성자 함수를 사용하여 프로퍼티 구조가 동일한 객체 여러 개를 간편하게 생성할 수 있다.</strong></p>
+<p>만약 new 연산자와 함께 생성자 함수를 호출하지 않으면 생성자 함수가 아니라 일반 함수로 동작한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 생성자 함수</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Circle</span>(<span class="params">radius</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 생성자 함수 내부의 this는 생성자 함수가 생성할 인스턴스를 가리킨다.</span></span><br><span class="line">  <span class="keyword">this</span>.radius = radius;</span><br><span class="line">  <span class="keyword">this</span>.getDiameter = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">2</span> * <span class="keyword">this</span>.radius;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 인스턴스의 생성</span></span><br><span class="line"><span class="keyword">const</span> circle1 = <span class="keyword">new</span> Circle(<span class="number">5</span>);  <span class="comment">// 반지름이 5인 Circle 객체를 생성</span></span><br><span class="line"><span class="keyword">const</span> circle2 = <span class="keyword">new</span> Circle(<span class="number">10</span>); <span class="comment">// 반지름이 10인 Circle 객체를 생성</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(circle1.getDiameter()); <span class="comment">// 10</span></span><br><span class="line"><span class="built_in">console</span>.log(circle2.getDiameter()); <span class="comment">// 20</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// new 연산자와 함께 호출하지 않으면 생성자 함수로 동작하지 않는다.</span></span><br><span class="line"><span class="comment">// 즉, 일반적인 함수의 호출이다.</span></span><br><span class="line"><span class="keyword">const</span> circle3 = Circle(<span class="number">15</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 일반 함수 Circle은 반환문이 없으므로 암묵적으로 undefined를 반환한다.</span></span><br><span class="line"><span class="built_in">console</span>.log(circle3); <span class="comment">// undefined</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 일반 함수 Circle내의 this는 전역 객체를 가리킨다.</span></span><br><span class="line"><span class="built_in">console</span>.log(radius); <span class="comment">// 15</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>여기서 나오는 <code>this</code>는 무엇일까?</strong></p>
+<p>this는 객체 자신의 프로퍼티나 메소드를 참조하기 위한 자기 참조 변수(Self-referencing variable)이다.<br><strong>this가 가리키는 값, 즉 this 바인딩은 함수 호출 방식에 따라 동적으로 결정된다.</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">함수 호출 방식</th>
+<th align="left">this가 가리키는 값</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">일반 함수로서 호출</td>
+<td align="left">전역 객체</td>
+</tr>
+<tr>
+<td align="left">메소드로서 호출</td>
+<td align="left">메소드를 호출한 객체</td>
+</tr>
+<tr>
+<td align="left">생성자 함수로서 호출</td>
+<td align="left">생성자 함수가 (미래에) 생성할 인스턴스</td>
+</tr>
+</tbody></table>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 함수는 다양한 방식으로 호출될 수 있다.</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 일반적인 함수로서 호출</span></span><br><span class="line"><span class="comment">// 전역 객체는 브라우저 환경에서는 window, Node.js 환경에서는 global을 가리킨다.</span></span><br><span class="line">foo(); <span class="comment">// window</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 메소드로서 호출</span></span><br><span class="line"><span class="keyword">const</span> obj = &#123; foo &#125;; <span class="comment">// ES6 프로퍼티 축약 표현</span></span><br><span class="line">obj.foo(); <span class="comment">// obj</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 생성자 함수로서 호출</span></span><br><span class="line"><span class="keyword">const</span> inst = <span class="keyword">new</span> foo(); <span class="comment">// inst</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="내부-메소드-Call-과-Construct"><a href="#내부-메소드-Call-과-Construct" class="headerlink" title="내부 메소드 [[Call]] 과 [[Construct]]"></a>내부 메소드 [[Call]] 과 [[Construct]]</h4><p>함수 선언문 또는 함수 표현식으로 정의한 함수는 일반적인 함수로서 호출할 수 있는 것은 물론 생성자 함수로서 호출할 수 있다.</p>
+<p> 생성자 함수로서 호출한다는 것은 new 연산자와 함께 호출하여 객체를 생성하는 것을 의미한다.</p>
+<p>함수는 객체이므로 일반 객체와 동일하게 프로퍼티와 메소드를 가질수 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 함수는 객체이다.</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 함수는 객체이므로 프로퍼티를 소유할 수 있다.</span></span><br><span class="line">foo.prop = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 함수는 객체이므로 메소드를 소유할 수 있다.</span></span><br><span class="line">foo.method = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.prop);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">foo.method(); <span class="comment">// 10</span></span><br></pre></td></tr></table></figure>
+
+<p>내부 메소드 [[Call]]을 갖는 함수 객체를 callable이라 하며, </p>
+<p>내부 메소드인 [[Construct]]를 갖는 함수 객체를 constructor, </p>
+<p>[[Construct]]를 갖지 않는 함수 객체를 non-constructor라고 부른다.</p>
+<p>callable은 호출할 수 있는 객체, 즉 함수를 말하며, constructor는 생성자 함수로서 호출할 수 있는 객체를 의미한다. </p>
+<p>함수가 일반적인 함수로서 호출되면 함수 객체의 내부 메소드 [[Call]]가 호출되고 </p>
+<p>new 연산자(또는 super 연산자)와 함께 생성자 함수로서 호출되면 내부 메소드 [[Construct]]가 호출된다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 일반적인 함수로서 호출: [[Call]]이 호출된다.</span></span><br><span class="line">foo();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 생성자 함수로서 호출: [[Construct]]가 호출된다.</span></span><br><span class="line"><span class="keyword">new</span> foo();</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p>모든 함수는 호출하는 객체이므로 <code>callable</code>이어야 한다.(즉, [[Call]]을 모두 가지고 있다.)</p>
+<p>반면에 모든 함수 객체가 [[Construct]]를 갖지는 않는다. </p>
+<p>즉, 함수객체는 모두 <code>callable</code>이지만 <code>constructor</code> 일 수도 <code>non-constructor</code>일 수도 있다.</p>
+<p><img src="https://poiemaweb.com/assets/fs-images/16-3.png" alt="poiema"><br></p>
+<h3 id="FunctionCreate"><a href="#FunctionCreate" class="headerlink" title="FunctionCreate"></a>FunctionCreate</h3><blockquote>
+<p>JS엔진이 함수를 생성할 때 사용하는 <strong>추상연산</strong></p>
+<p>설명을 위해 사용되는 함수와 유사한 의사 코드.</p>
+</blockquote>
+<p>FunctionCreate는 함수 정의가 평가될 때 호출된다. </p>
+<p>함수 정의 방식에 따라 FunctionCreate의 첫번째 매개변수 kind에 함수의 종류를 나타내는 문자열이 전달된다.</p>
+<table>
+<thead>
+<tr>
+<th align="left">구분</th>
+<th align="left">함수의 종류를 나타내는 문자열</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">일반 함수 정의(함수 선언문, 함수 표현식)를 평가할 때</td>
+<td align="left">Normal</td>
+</tr>
+<tr>
+<td align="left">화살표 함수 정의를 평가할 때</td>
+<td align="left">Arrow</td>
+</tr>
+<tr>
+<td align="left">메소드 정의를 평가할 때</td>
+<td align="left">Method</td>
+</tr>
+</tbody></table>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 일반 함수 정의 : kind = 'Normal'</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="keyword">const</span> bar = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;;</span><br><span class="line"><span class="comment">// 프로퍼티 x에 할당된 것은 일반 함수 정의이다. 메소드 정의로 인정하지 않는다.</span></span><br><span class="line"><span class="keyword">const</span> baz = &#123;</span><br><span class="line">  x: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 일반 함수로 정의된 함수만이 constructor이다.</span></span><br><span class="line"><span class="keyword">new</span> foo(); <span class="comment">// OK</span></span><br><span class="line"><span class="keyword">new</span> bar(); <span class="comment">// OK</span></span><br><span class="line"><span class="keyword">new</span> baz.x(); <span class="comment">// OK</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 화살표 함수 정의 : kind = 'Arrow'</span></span><br><span class="line"><span class="keyword">const</span> arrow = <span class="function"><span class="params">()</span> =&gt;</span> &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> arrow(); <span class="comment">// TypeError: arrow is not a constructor</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 메소드 정의 : kind = 'Method'</span></span><br><span class="line"><span class="comment">// ES6의 메소드 축약 표현만을 메소드 정의로 인정한다.</span></span><br><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  x() &#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> obj.x(); <span class="comment">// TypeError: obj.x is not a constructor</span></span><br></pre></td></tr></table></figure>
+
+<p> 함수 정의 방식에 따라 함수의 종류를 구분한다. (ECMAScript에서 Method는 ES6 메소드 축약 표현만을 의미 )</p>
+<p>함수가 일반적인 함수로서 호출되면 함수 객체의 내부 메소드 [[Call]]가 호출되고 new 연산자 또는 super 연산자와 함께 생성자 함수로서 호출되면 내부 메소드 [[Construct]]가 호출된다.</p>
+<br>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 일반적인 함수로서 호출: [[Call]]이 호출된다.</span></span><br><span class="line"><span class="comment">// 모든 함수 객체는 [[Call]]이 구현되어 있다.</span></span><br><span class="line">foo();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 생성자 함수로서 호출: [[Construct]]가 호출된다.</span></span><br><span class="line"><span class="comment">// 이때 [[Construct]]를 갖지 않는다면 에러가 발생한다.</span></span><br><span class="line"><span class="keyword">new</span> foo();</span><br></pre></td></tr></table></figure>
+
+<p><strong>생성자 함수는 일반적으로 첫문자를 대문자로 기술하는 파스칼 케이스로 명명하여 일반 함수와 구별할 수 있도록 노력한다.</strong></p>
+<br>
+
+<h3 id="생성자-함수의-인스턴스-생성-과정"><a href="#생성자-함수의-인스턴스-생성-과정" class="headerlink" title="생성자 함수의 인스턴스 생성 과정"></a>생성자 함수의 인스턴스 생성 과정</h3><blockquote>
+<p>생성자 함수의 역할은 <strong>인스턴스를 생성</strong>하는 것과 <strong>생성된 인스턴스를 초기화(인스턴스 프로퍼티 추가 및 초기값 할당)</strong></p>
+<p>생성자 함수가 <strong>인스턴스를 생성하는 것은 필수</strong>이고, 생성된 <strong>인스턴스를 초기화하는 것은 옵션</strong>이다.</p>
+</blockquote>
+<br>
+
+<p>new 연산자와 함께 생성자 함수가 호출되면 JS엔진은 다음과 같은 동작을 한다.</p>
+<ol>
+<li><strong>인스턴스 생성과 this 바인딩 암묵적으로 빈 객체가 생성된다.</strong> </li>
+</ol>
+<p>생성자 함수가 생성한 인스턴스의 프로토타입으로 생성자 함수의 prototype 프로퍼티가 가리키는 객체가 설정된다. </p>
+<p>빈 객체, 즉 인스턴스는 this에 바인딩된다.</p>
+<p><code>프로토 타입</code> : 어떤 객체의 부모 역할을 하는 객체.<br>프로토 타입은 하위 객체에게 자신의 프로퍼티와 메소드를 상속함.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Circle</span>(<span class="params">radius</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 1. 암묵적으로 빈 객체가 생성되고 this에 바인딩된다.</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>); <span class="comment">// Circle &#123;&#125;</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="built_in">Object</span>.getPrototypeOf(<span class="keyword">this</span>) === Circle.prototype); <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  <span class="keyword">this</span>.radius = radius;</span><br><span class="line">  <span class="keyword">this</span>.getDiameter = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">2</span> * <span class="keyword">this</span>.radius;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 0. 인스턴스 생성</span></span><br><span class="line"><span class="keyword">const</span> circle1 = <span class="keyword">new</span> Circle(<span class="number">5</span>);  <span class="comment">// 반지름이 5인 Circle 객체를 생성</span></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li><strong>인스턴스 초기화</strong></li>
+</ol>
+<p>생성자 함수에 기술되어 있는 코드가 실행되어 this에 바인딩되어 있는 인스턴스를 초기화한다. </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Circle</span>(<span class="params">radius</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 1. 암묵적으로 인스턴스가 생성되고 this에 바인딩된다.</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 2. this에 바인딩되어 있는 인스턴스를 초기화한다.</span></span><br><span class="line">  <span class="keyword">this</span>.radius = radius;</span><br><span class="line">  <span class="keyword">this</span>.getDiameter = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">2</span> * <span class="keyword">this</span>.radius;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li><strong>인스턴스 반환</strong></li>
+</ol>
+<p>생성자 함수 내부의 모든 처리가 끝나면 완성된 인스턴스가 바인딩된 this가 암묵적으로 반환된다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Circle</span>(<span class="params">radius</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 1. 암묵적으로 인스턴스가 생성되고 this에 바인딩된다.</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 2. this에 바인딩되어 있는 인스턴스를 초기화한다.</span></span><br><span class="line">  <span class="keyword">this</span>.radius = radius;</span><br><span class="line">  <span class="keyword">this</span>.getDiameter = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">2</span> * <span class="keyword">this</span>.radius;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 3. 완성된 인스턴스가 바인딩된 this가 암묵적으로 반환된다</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 인스턴스 생성. Circle 생성자 함수는 암묵적으로 this를 반환한다.</span></span><br><span class="line"><span class="keyword">const</span> circle = <span class="keyword">new</span> Circle(<span class="number">1</span>);</span><br><span class="line"><span class="built_in">console</span>.log(circle); <span class="comment">// Circle &#123;radius: 1, getDiameter: ƒ&#125;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p><strong>예외1)</strong> 만약 명시적으로 객체 <code>{ }</code>를 반환하면 this는 반환되지 못한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Circle</span>(<span class="params">radius</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 1. 암묵적으로 인스턴스가 생성되고 this에 바인딩된다.</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 2. this에 바인딩되어 있는 인스턴스를 초기화한다.</span></span><br><span class="line">  <span class="keyword">this</span>.radius = radius;</span><br><span class="line">  <span class="keyword">this</span>.getDiameter = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">2</span> * <span class="keyword">this</span>.radius;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 3. 암묵적으로 this를 반환한다.</span></span><br><span class="line">  <span class="comment">// 명시적으로 객체를 반환하면 암묵적인 this 반환이 무시된다.</span></span><br><span class="line">  <span class="keyword">return</span> &#123;&#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 인스턴스 생성. Circle 생성자 함수는 명시적으로 반환한 객체를 반환한다.</span></span><br><span class="line"><span class="keyword">const</span> circle = <span class="keyword">new</span> Circle(<span class="number">1</span>);</span><br><span class="line"><span class="built_in">console</span>.log(circle); <span class="comment">// &#123;&#125;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p><strong>예외2)</strong> 만약 명시적으로 원시값을 반환하면 원시값을 무시하고 this가 반환된다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Circle</span>(<span class="params">radius</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 1. 암묵적으로 인스턴스가 생성되고 this에 바인딩된다.</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 2. this에 바인딩되어 있는 인스턴스를 초기화한다.</span></span><br><span class="line">  <span class="keyword">this</span>.radius = radius;</span><br><span class="line">  <span class="keyword">this</span>.getDiameter = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">2</span> * <span class="keyword">this</span>.radius;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 3. 암묵적으로 this를 반환한다.</span></span><br><span class="line">  <span class="comment">// 명시적으로 원시 값을 반환하면 원시 값 반환은 무시되고 암묵적으로 this가 반환된다.</span></span><br><span class="line">  <span class="keyword">return</span> <span class="number">100</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 인스턴스 생성. Circle 생성자 함수는 명시적으로 반환한 객체를 반환한다.</span></span><br><span class="line"><span class="keyword">const</span> circle = <span class="keyword">new</span> Circle(<span class="number">1</span>);</span><br><span class="line"><span class="built_in">console</span>.log(circle); <span class="comment">// Circle &#123;radius: 1, getDiameter: ƒ&#125;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="new-연산자"><a href="#new-연산자" class="headerlink" title="new 연산자"></a>new 연산자</h3><p>new 연산자와 함께 호출하는 함수는 non-constructor가 아닌 constructor이여야 한다.</p>
+<p>생성자 함수를 new와 함께 호출 시 항상 객체가 반환된다.</p>
+<p>기본값은 this가 참조되는 객체이다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 생성자 함수로서 정의하지 않은 일반 함수</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 생성자 함수로서 정의하지 않은 일반 함수를 new 연산자와 함께 호출</span></span><br><span class="line"><span class="keyword">let</span> inst = <span class="keyword">new</span> add();</span><br><span class="line"><span class="comment">// 함수가 객체를 반환하지 않았으므로 반환문이 무시된다. 따라서 빈 객체가 생성되어 반환된다.</span></span><br><span class="line"><span class="built_in">console</span>.log(inst); <span class="comment">// &#123;&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 객체를 반환하는 일반 함수</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createUser</span>(<span class="params">name, role</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123; name, role &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 생성자 함수로서 정의하지 않은 일반 함수를 new 연산자와 함께 호출</span></span><br><span class="line">inst = <span class="keyword">new</span> createUser(<span class="string">'Lee'</span>, <span class="string">'admin'</span>);</span><br><span class="line"><span class="comment">// 함수가 생성한 객체를 반환한다.</span></span><br><span class="line"><span class="built_in">console</span>.log(inst); <span class="comment">// &#123;name: "Lee", role: "admin"&#125;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="new-target-IE-미지원"><a href="#new-target-IE-미지원" class="headerlink" title="new.target (IE 미지원)"></a>new.target (IE 미지원)</h3><p>new 연산자 없이 생성자 함수를 호출하는 것을 방지하기 위해 파스칼 케이스 컨벤션을 사용한다 하더라도 실수는 언제나 발생할 수 있다. </p>
+<p>이러한 위험을 피하기 위해 ES6에서는 new.target을 지원한다. </p>
+<p>new.target을 사용하면 new연산자와 함께 호출되었는지 확인할 수 있다.</p>
+<p>new 연산자와 함께 호출되면 함수 내부의 new.target은 함수 자신을 가리키며</p>
+<p>new 연산자 없이 호출된 함수 내부의 new.target은 undefined다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 생성자 함수</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Circle</span>(<span class="params">radius</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 이 함수가 new 연산자와 함께 호출되지 않았다면 new.target은 undefined이다.</span></span><br><span class="line">  <span class="keyword">if</span> (!<span class="keyword">new</span>.target) &#123;</span><br><span class="line">    <span class="comment">// new 연산자와 함께 호출하여 생성된 인스턴스를 반환한다.</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Circle(radius);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">this</span>.radius = radius;</span><br><span class="line">  <span class="keyword">this</span>.getDiameter = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">2</span> * <span class="keyword">this</span>.radius;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// new 연산자 없이 생성자 함수를 호출하여도 생성자 함수로서 호출된다.</span></span><br><span class="line"><span class="keyword">const</span> circle = Circle(<span class="number">5</span>);</span><br><span class="line"><span class="built_in">console</span>.log(circle.getDiameter());</span><br></pre></td></tr></table></figure>
+
+<p>위 예제는 생성자함수로 호출이 아닌 일반 함수로 호출시 new.target을 통해 new 언산자 없이 호출했는지 판별하고 맞다면</p>
+<p>다시 new를 붙여 Circle함수를 생성자함수로 재 호출한다.</p>
+<br>
+
+<h3 id="스코프-세이프-생성자-Scope-Safe-Constructor-패턴"><a href="#스코프-세이프-생성자-Scope-Safe-Constructor-패턴" class="headerlink" title="스코프 세이프 생성자 (Scope-Safe Constructor) 패턴"></a>스코프 세이프 생성자 (Scope-Safe Constructor) 패턴</h3><p>. new.target을 사용할 수 없는 상황이라면 스코프 세이프 생성자(Scope-Safe Constructor) 패턴을 사용할 수 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Scope-Safe Constructor Pattern</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Circle</span>(<span class="params">radius</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 생성자 함수가 new 연산자와 함께 호출되면 함수의 선두에서 빈 객체를 생성하고</span></span><br><span class="line">  <span class="comment">// this에 바인딩한다. 이때 this와 Circle은 프로토타입에 의해 연결된다.</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 이 함수가 new 연산자와 함께 호출되지 않았다면 이 시점의 this는 전역 객체 window를 가리킨다.</span></span><br><span class="line">  <span class="comment">// 즉, this와 Circle은 프로토타입에 의해 연결되지 않는다.</span></span><br><span class="line">  <span class="keyword">if</span> (!(<span class="keyword">this</span> <span class="keyword">instanceof</span> Circle)) &#123;</span><br><span class="line">    <span class="comment">// new 연산자와 함께 호출하여 생성된 인스턴스를 반환한다.</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Circle(radius);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">this</span>.radius = radius;</span><br><span class="line">  <span class="keyword">this</span>.getDiameter = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">2</span> * <span class="keyword">this</span>.radius;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// new 연산자 없이 생성자 함수를 호출하여도 생성자 함수로서 호출된다.</span></span><br><span class="line"><span class="keyword">const</span> circle = Circle(<span class="number">5</span>);</span><br><span class="line"><span class="built_in">console</span>.log(circle.getDiameter()); <span class="comment">// 10</span></span><br></pre></td></tr></table></figure>
+
+<p>new 연산자와 함께 생성자 함수에 의해 생성된 객체(인스턴스)는 프로토타입에 의해 생성자 함수와 연결된다. 이를 이용해 new 연산자와 함께 호출되었는지를 확인할 수 있다.</p>
+<br>
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://yoursite.com/2019/10/15/javascript-preview-16/" data-id="ck1r6gz670052glz0ybsxymyi" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Jun Hyeok Kim"
+        },
+        "headline": "javascript-preview-16",
+        "image": "http://yoursite.comhttps://user-images.githubusercontent.com/31315644/66104821-b9976b00-e5f4-11e9-84e9-20c797dd2c51.jpeg",
+        "keywords": "hexo git Web coding developer CSS HTML algorithm javascript",
+        "genre": "TIL Javascript-Preview",
+        "datePublished": "2019-10-15",
+        "dateCreated": "2019-10-15",
+        "dateModified": "2019-10-15",
+        "url": "http://yoursite.com/2019/10/15/javascript-preview-16/",
+        "description": "
+
+JacaScript 16강 예습
+16강 : 생성자 함수에 의한 객체 생성
+
+Object 생성자 함수
+
+생성자 함수
+
+객체 리터럴에 의한 객체 생성 방식의 문제점
+생성자 함수에 의한 객체 생성 방식의 장점
+내부 메소드 [[Call]] 과 [[Construct]]
+
+
+FunctionCreate
+
+생성자 함수의 인스턴스 생성 과정
+
+new 연산자
+
+new.t",
+        "wordCount": 2981
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="https://www.facebook.com/profile.php?id=100003801986180" target="_blank" rel="noopener">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/HYEOK999" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="youtube" href="https://www.youtube.com" target="_blank" rel="noopener">
+                        <i class="icon fa fa-youtube"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2019/10/15/javascript-preview-17/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            javascript-preview-17
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2019/10/15/javascript-preview-15/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">javascript-preview-15</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/10/15/javascript-preview-17/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/66104821-b9976b00-e5f4-11e9-84e9-20c797dd2c51.jpeg)" alt="javascript-preview-17" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a></p>
+                            <p class="item-title"><a href="/2019/10/15/javascript-preview-17/" class="title">javascript-preview-17</a></p>
+                            <p class="item-date"><time datetime="2019-10-15T01:36:32.000Z" itemprop="datePublished">2019-10-15</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/10/15/javascript-preview-16/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/66104821-b9976b00-e5f4-11e9-84e9-20c797dd2c51.jpeg)" alt="javascript-preview-16" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a></p>
+                            <p class="item-title"><a href="/2019/10/15/javascript-preview-16/" class="title">javascript-preview-16</a></p>
+                            <p class="item-date"><time datetime="2019-10-15T01:36:30.000Z" itemprop="datePublished">2019-10-15</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/10/15/javascript-preview-15/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/66104821-b9976b00-e5f4-11e9-84e9-20c797dd2c51.jpeg)" alt="javascript-preview-15" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a></p>
+                            <p class="item-title"><a href="/2019/10/15/javascript-preview-15/" class="title">javascript-preview-15</a></p>
+                            <p class="item-date"><time datetime="2019-10-15T01:36:27.000Z" itemprop="datePublished">2019-10-15</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/10/14/javascript-daily-test01/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://c.pxhere.com/photos/17/91/book_page_open_book_reading_french_culture-523122.jpg!d)" alt="javascript-daily-test01" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/Javascript/">Javascript</a></p>
+                            <p class="item-title"><a href="/2019/10/14/javascript-daily-test01/" class="title">javascript-daily-test01</a></p>
+                            <p class="item-date"><time datetime="2019-10-14T11:02:58.000Z" itemprop="datePublished">2019-10-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/10/14/javascript-study-08/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/65933403-536fe400-e44c-11e9-981d-c4e8c1f86998.png)" alt="javascript-study-08" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/Javascript/">Javascript</a></p>
+                            <p class="item-title"><a href="/2019/10/14/javascript-study-08/" class="title">javascript-study-08</a></p>
+                            <p class="item-date"><time datetime="2019-10-14T10:22:46.000Z" itemprop="datePublished">2019-10-14</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/">Develop</a><span class="category-list-count">10</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/CSS/">CSS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/GIT/">GIT</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Java/">Java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Javascript/">Javascript</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Tips/">Tips</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/">TIL</a><span class="category-list-count">60</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Algorithm/">Algorithm</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/GIT/">GIT</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript/">Javascript</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/linux/">linux</a><span class="category-list-count">4</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/etc/">etc</a><span class="category-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a><span class="archive-list-count">35</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a><span class="archive-list-count">38</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">54</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ESLint/">ESLint</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a><span class="tag-list-count">53</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/">JAVA</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MarkUP/">MarkUP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Selector/">Selector</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TIL/">TIL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a><span class="tag-list-count">72</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorism/">algorism</a><span class="tag-list-count">29</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a><span class="tag-list-count">36</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/coding/">coding</a><span class="tag-list-count">72</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/developer/">developer</a><span class="tag-list-count">72</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">72</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">72</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/inline-block/">inline-block</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">37</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">3</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://github.com">github</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.naver.com">Naver</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://google.com">Google</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://www.youtube.com/">Youtube</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2019 Jun Hyeok Kim</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'http://yoursite.com/2019/10/15/javascript-preview-16/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+
+    
+
+    
+    <title>javascript-preview-15 | HYEOK999&#39;s Blog</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="hexo,git,Web,coding,developer,CSS,HTML,algorithm,javascript">
+    
+    <meta name="description" content="JacaScript 15강 예습 15강 : 프로퍼티 정의  프로퍼티 정의란?   프로퍼티 정의 및 동적 생성   내부 / 슬롯 메소드 내부 메소드 [[ Get ]]   접근자 프로퍼티 접근자 프로퍼티와 데이터 프로퍼티의 구별 방법   프로퍼티 어트리뷰트 데이터 프로퍼티의 어트리뷰트 접근자 프로펕 Object.defineProperty 메소드">
+<meta name="keywords" content="hexo,git,Web,coding,developer,CSS,HTML,algorithm,javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javascript-preview-15">
+<meta property="og:url" content="http://yoursite.com/2019/10/15/javascript-preview-15/index.html">
+<meta property="og:site_name" content="HYEOK999&#39;s Blog">
+<meta property="og:description" content="JacaScript 15강 예습 15강 : 프로퍼티 정의  프로퍼티 정의란?   프로퍼티 정의 및 동적 생성   내부 / 슬롯 메소드 내부 메소드 [[ Get ]]   접근자 프로퍼티 접근자 프로퍼티와 데이터 프로퍼티의 구별 방법   프로퍼티 어트리뷰트 데이터 프로퍼티의 어트리뷰트 접근자 프로펕 Object.defineProperty 메소드">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://user-images.githubusercontent.com/31315644/66104821-b9976b00-e5f4-11e9-84e9-20c797dd2c51.jpeg">
+<meta property="og:updated_time" content="2019-10-15T01:37:41.082Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="javascript-preview-15">
+<meta name="twitter:description" content="JacaScript 15강 예습 15강 : 프로퍼티 정의  프로퍼티 정의란?   프로퍼티 정의 및 동적 생성   내부 / 슬롯 메소드 내부 메소드 [[ Get ]]   접근자 프로퍼티 접근자 프로퍼티와 데이터 프로퍼티의 구별 방법   프로퍼티 어트리뷰트 데이터 프로퍼티의 어트리뷰트 접근자 프로펕 Object.defineProperty 메소드">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/31315644/66104821-b9976b00-e5f4-11e9-84e9-20c797dd2c51.jpeg">
+    
+
+    
+
+    
+        <link rel="icon" href="/images/favicon_io/favicon.ico">
+    
+
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Architects+Daughter&display=swap" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin+Sketch&display=swap">
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">HYEOK999&#39;s Daily Develop</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/">Develop</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/CSS/">CSS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/GIT/">GIT</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Tips/">Tips</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/">TIL</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Algorithm/">Algorithm</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/GIT/">GIT</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/linux/">linux</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/etc/">etc</a></li></ul>
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-javascript-preview-15" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        javascript-preview-15
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/10/15/javascript-preview-15/" class="article-date">
+            <time datetime="2019-10-15T01:36:27.000Z" itemprop="datePublished">2019-10-15</time>
+        </a>
+    </div>
+
+		
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/CSS/">CSS</a>, <a class="tag-link" href="/tags/HTML/">HTML</a>, <a class="tag-link" href="/tags/Web/">Web</a>, <a class="tag-link" href="/tags/algorithm/">algorithm</a>, <a class="tag-link" href="/tags/coding/">coding</a>, <a class="tag-link" href="/tags/developer/">developer</a>, <a class="tag-link" href="/tags/git/">git</a>, <a class="tag-link" href="/tags/hexo/">hexo</a>, <a class="tag-link" href="/tags/javascript/">javascript</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p><img src="https://user-images.githubusercontent.com/31315644/66104821-b9976b00-e5f4-11e9-84e9-20c797dd2c51.jpeg" alt></p>
+<hr>
+<h2 id="JacaScript-15강-예습"><a href="#JacaScript-15강-예습" class="headerlink" title="JacaScript 15강 예습"></a>JacaScript 15강 예습</h2><ul>
+<li><p>15강 : 프로퍼티 정의</p>
+<ol>
+<li>프로퍼티 정의란?</li>
+</ol>
+<ul>
+<li>프로퍼티 정의 및 동적 생성</li>
+</ul>
+<ol start="2">
+<li>내부 / 슬롯 메소드<ul>
+<li>내부 메소드 [[ Get ]]</li>
+</ul>
+</li>
+<li>접근자 프로퍼티<ul>
+<li>접근자 프로퍼티와 데이터 프로퍼티의 구별 방법</li>
+</ul>
+</li>
+<li>프로퍼티 어트리뷰트<ul>
+<li>데이터 프로퍼티의 어트리뷰트</li>
+<li>접근자 프로펕</li>
+<li>Object.defineProperty 메소드</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<br>
+
+<hr>
+<h1 id="15강"><a href="#15강" class="headerlink" title="15강"></a>15강</h1><h2 id="프로퍼티-정의"><a href="#프로퍼티-정의" class="headerlink" title="프로퍼티 정의"></a>프로퍼티 정의</h2><br>
+
+<h3 id="프로퍼티-정의란"><a href="#프로퍼티-정의란" class="headerlink" title="프로퍼티 정의란?"></a>프로퍼티 정의란?</h3><blockquote>
+<p><strong>프로퍼티 어트리뷰트의 값을 정의하여 프로퍼티의 상태를 관리하는 것</strong>을 말한다.</p>
+<p>프로퍼티 값을 갱신 가능하도록 할 것인지, 프로퍼티를 열거 가능하도록 할 것인지, 프로퍼티를 재정의 가능하도록 할 것인지 정의.</p>
+<p>*<em>JS 엔진은 프로퍼티를 생성(객체 리터럴의 평가, 프로퍼티 동적 생성)할 때, *</em></p>
+<p><strong>프로퍼티의 상태를 나타내는 프로퍼티 어트리뷰트를 기본값으로 자동 정의</strong></p>
+</blockquote>
+<br>
+
+<h4 id="프로퍼티-정의-및-동적-생성"><a href="#프로퍼티-정의-및-동적-생성" class="headerlink" title="프로퍼티 정의 및 동적 생성"></a>프로퍼티 정의 및 동적 생성</h4><p><strong>프로퍼티 어트리뷰트란?</strong> 프로퍼티의 상태를 나타내는 값</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 자바스크립트 엔진은 프로퍼티를 생성할 때, 프로퍼티의 상태를 나타내는</span></span><br><span class="line"><span class="comment">// 프로퍼티 어트리뷰트를 기본값으로 자동 정의한다.</span></span><br><span class="line">obj.prop = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 정의된 프로퍼티 어트리뷰트는 Object.getOwnPropertyDescriptor 메소드로 확인할 수 있다.</span></span><br><span class="line"><span class="keyword">const</span> descriptor = <span class="built_in">Object</span>.getOwnPropertyDescriptor(obj, <span class="string">'prop'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(descriptor);</span><br><span class="line"><span class="comment">// obj 객체의 prop 프로퍼티는 value, writable, enumerable, configurable</span></span><br><span class="line"><span class="comment">// 어트리뷰트가 정의되어 있다.</span></span><br><span class="line"><span class="comment">// &#123;value: 10, writable: true, enumerable: true, configurable: true&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>위 예제에서 JS엔진은 먼저, obj라는 객체 안에 <code>prop</code>라는 프로퍼티가 있는지 확인한다.</p>
+<p><code>prop</code> 가 없다면 동적으로 생성한 후 10을 할당한다. 이를 동적 생성이라 한다.</p>
+<p>동적 생성은 <strong>프로퍼티가 존재하지 않을 때, 프로퍼티를 생성하여 추가하는 것.</strong> 동적 생성시 <strong>프로퍼티 어트리뷰트를 기본값</strong>으로 지정한다.</p>
+<p>프로퍼티 정의는 <strong>프로퍼티 어트리뷰트를 정의하는 것</strong> ( 프로퍼티 어트리뷰트 : 프로퍼티의 상태 )</p>
+<p>프로퍼티 상태는 프로퍼티의 값, 갱신여부, 열거가능여부, 재정의 가능 여부 를 말한다.</p>
+<p>프로퍼티 어트리뷰트는 <code>Object.getOwnPropertyDescriptor</code> 메소드를 사용해 참조할 수 있다. 이 메소드는 프로퍼티 어트리뷰트 정보를 제공하는 객체인 <strong>프로퍼티 디스크립터(PropertyDescriptor)</strong>를 반환한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 하나의 프로퍼티 어트리뷰트를 표현하는 프로퍼티 디스크립터 객체를 취득한다.</span></span><br><span class="line"><span class="keyword">const</span> descriptor = <span class="built_in">Object</span>.getOwnPropertyDescriptor(obj, <span class="string">'prop'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(descriptor);</span><br><span class="line"><span class="comment">// &#123;value: 10, writable: true, enumerable: true, configurable: true&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// ES8</span></span><br><span class="line"><span class="comment">// 모든 프로퍼티 어트리뷰트를 표현하는 프로퍼티 디스크립터 객체를 취득한다.</span></span><br><span class="line"><span class="keyword">const</span> descriptors = <span class="built_in">Object</span>.getOwnPropertyDescriptors(obj);</span><br><span class="line"><span class="built_in">console</span>.log(descriptors);</span><br><span class="line"><span class="comment">// &#123;</span></span><br><span class="line"><span class="comment">//   prop: &#123; value: 10, writable: true, enumerable: true, configurable: true &#125;</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>존재하지 않는 프로퍼티 / 상속받은 프로퍼티에 대한 프로퍼티 디스크립터를 요구하면 undefined가 반환된다. </p>
+<p><code>Object.getOwnPropertyDescriptor(객체명, &#39;키명&#39;)</code></p>
+<br>
+
+<h3 id="내부-슬롯-메소드"><a href="#내부-슬롯-메소드" class="headerlink" title="내부 슬롯/메소드"></a>내부 슬롯/메소드</h3><blockquote>
+<p>내부 슬롯과 내부 메소드는 ECMAScript 스펙에서 요구하는 객체와 관련된 내부 상태와 내부 동작을 정의한 것이다. </p>
+</blockquote>
+<p>내부 슬롯과 내부 메소드는 <strong>객체의 프로퍼티가 아니다.</strong> </p>
+<p>따라서 내부 슬롯과 내부 메소드는 직접적으로 접근하거나 호출할 수 있는 방법을 원칙적으로 제공하지 않는다. </p>
+<p>단, 일부 내부 슬롯과 내부 메소드(의 구현체)에 간접적으로 접근할 수 있는 수단은 있다.</p>
+<h4 id="내부-메소드-Get"><a href="#내부-메소드-Get" class="headerlink" title="내부 메소드 [[ Get ]]"></a>내부 메소드 [[ Get ]]</h4><p>내부 메소드 [[ Get ]]는 프로퍼티 키로 프로퍼티 값에 접근하면 내부적으로 호출된다.  </p>
+<ol>
+<li>프로퍼티 키가 유효한지 확인한다. 프로퍼티 키는 문자열 또는 심볼이어야 한다. (“9.3 프로퍼티” 참고)</li>
+<li>프로토타입 체인에서 프로퍼티를 검색한다.</li>
+<li>검색된 프로퍼티가 “<strong>데이터 프로퍼티(Data property)</strong>“라면 프로퍼티 값,<br>즉 데이터 프로퍼티의 프로퍼티 어트리뷰트 [[Value]]의 값을 그대로 반환한다.</li>
+<li>만약 프로퍼티가 “<strong>접근자 프로퍼티(Accessor property)”</strong>라면 접근자 프로퍼티의 프로퍼티 어트리뷰트 [[Get]]의 값, 즉 getter 함수를 호출하여 그 결과를 반환한다.</li>
+</ol>
+<p><strong>프로토 타입 과 프로토 타입 체인</strong></p>
+<p>프로토 타입 : 어떤 객체의 부모 역할을 하는 객체<br>프로토 타입은 하위 객체에게 자신의 프로퍼티와 메소드를 상속함.</p>
+<p>프로토 타입 체인 : 프로토 타입이 단방향 링크드 리스트 형태로 연결되어 있는 상속 구조를 의미.</p>
+<p>객체의 프로퍼티나 메소드에 접근하려고 할 때 해당 객체에 접근하려는 프로퍼티 또는 메소드가 없다면 프로토타입 체인을 따라 프로토타입의 프로퍼티나 메소드를 차례대로 검색한다.</p>
+<br>
+
+<h3 id="접근자-프로퍼티"><a href="#접근자-프로퍼티" class="headerlink" title="접근자 프로퍼티"></a>접근자 프로퍼티</h3><p>​    프로퍼티는 데이터 프로퍼티 와 접근자 프로퍼티로 구분된다.</p>
+<ul>
+<li><strong>데이터 프로퍼티</strong> : 키와 값으로 구성된 일반적인 프로퍼티다.</li>
+<li><strong>접근자 프로퍼티</strong> : <strong>자체적으로는 값을 갖지 않고 다른 데이터 프로퍼티의 값을 읽거나 저장</strong>할 때 사용하는 <strong>접근자 함수</strong>로 구성된 프로퍼티 </li>
+</ul>
+<p>접근자 함수는 getter/setter 함수라고도 부른다. </p>
+<p>접근자 프로퍼티는 getter와 setter 함수를 모두 정의할 수도 있고 하나만 정의할 수도 있다. </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> person = &#123;</span><br><span class="line">  <span class="comment">// 데이터 프로퍼티</span></span><br><span class="line">  firstName: <span class="string">'Ungmo'</span>,</span><br><span class="line">  lastName: <span class="string">'Lee'</span>,</span><br><span class="line"></span><br><span class="line">  <span class="comment">// fullName은 접근자 함수로 구성된 접근자 프로퍼티이다.</span></span><br><span class="line">  <span class="comment">// getter 함수</span></span><br><span class="line">  <span class="keyword">get</span> fullName() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.firstName + <span class="string">' '</span> + <span class="keyword">this</span>.lastName;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// setter 함수</span></span><br><span class="line">  <span class="keyword">set</span> fullName(name) &#123;</span><br><span class="line">    [<span class="keyword">this</span>.firstName, <span class="keyword">this</span>.lastName] = name.split(<span class="string">' '</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 데이터 프로퍼티를 통한 프로퍼티 값의 참조.</span></span><br><span class="line"><span class="built_in">console</span>.log(person.firstName + <span class="string">' '</span> + person.lastName); <span class="comment">// Ungmo Lee</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 접근자 프로퍼티를 통한 프로퍼티 값의 저장</span></span><br><span class="line"><span class="comment">// 접근자 프로퍼티 fullName에 값을 저장하면 setter 함수가 호출된다.</span></span><br><span class="line">person.fullName = <span class="string">'Heegun Lee'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(person); <span class="comment">// &#123;firstName: "Heegun", lastName: "Lee"&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 접근자 프로퍼티를 통한 프로퍼티 값의 참조</span></span><br><span class="line"><span class="comment">// 접근자 프로퍼티 fullName에 접근하면 getter 함수가 호출된다.</span></span><br><span class="line"><span class="built_in">console</span>.log(person.fullName); <span class="comment">// Heegun Lee</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// firstName는 데이터 프로퍼티이다.</span></span><br><span class="line"><span class="comment">// 데이터 프로퍼티는 value, writable, enumerable, configurable 프로퍼티 어트리뷰트를 갖는다.</span></span><br><span class="line"><span class="keyword">let</span> descriptor = <span class="built_in">Object</span>.getOwnPropertyDescriptor(person, <span class="string">'firstName'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(descriptor);</span><br><span class="line"><span class="comment">// &#123;value: "Heegun", writable: true, enumerable: true, configurable: true&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// fullName는 접근자 프로퍼티이다.</span></span><br><span class="line"><span class="comment">// 접근자 프로퍼티는 get, set, enumerable, configurable 프로퍼티 어트리뷰트를 갖는다.</span></span><br><span class="line">descriptor = <span class="built_in">Object</span>.getOwnPropertyDescriptor(person, <span class="string">'fullName'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(descriptor);</span><br><span class="line"><span class="comment">// &#123;get: ƒ, set: ƒ, enumerable: true, configurable: true&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>person 객체의 <code>firstName</code>과 <code>lastName</code> 프로퍼티는 일반적인 데이터 프로퍼티. </p>
+<p>메소드 앞에 <code>get</code>,<code>set</code>이 붙은 메소드가 있는데 이것들이 바로 getter와 setter 함수이고 getter/setter 함수의 이름 <code>fullName</code>이 접근자 프로퍼티이다. </p>
+<p>접근자 프로퍼티는 자체적으로 값(value 프로퍼티 어트리뷰트)을 가지지 않으며 다만 데이터 프로퍼티의 값을 읽거나 저장할 때 관여할 뿐이다.</p>
+<p>접근자 프로퍼티 fullName으로 프로퍼티 값에 접근하면 내부적으로 [[Get]] 내부 메소드가 호출되어 아래와 같이 동작한다.</p>
+<ol>
+<li>프로퍼티 키가 유효한지 확인한다. 프로퍼티 키 “fullName”은 문자열이므로 유효한 프로퍼티 키이다.</li>
+<li>프로토타입 체인에서 프로퍼티를 검색한다. person 객체에 fullName 프로퍼티가 존재한다.</li>
+<li>검색된 fullName 프로퍼티가 데이터 프로퍼티인지 접근자 프로퍼티인지 확인한다. fullName 프로퍼티는 접근자 프로퍼티이다.</li>
+<li>접근자 프로퍼티 fullName의 프로퍼티 어트리뷰트 [[Get]]의 값, 즉 getter 함수를 호출하여 그 결과를 반환한다. 프로퍼티 fullName의 프로퍼티 어트리뷰트 [[Get]]의 값은 Object.getOwnPropertyDescriptor 메소드가 반환하는 프로퍼티 디스크립터(PropertyDescriptor) 객체의 get 프로퍼티 값과 같다.</li>
+</ol>
+<br>
+
+<h4 id="접근자-프로퍼티와-데이터-프로퍼티의-구별-방법"><a href="#접근자-프로퍼티와-데이터-프로퍼티의-구별-방법" class="headerlink" title="접근자 프로퍼티와 데이터 프로퍼티의 구별 방법"></a>접근자 프로퍼티와 데이터 프로퍼티의 구별 방법</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 일반 객체의 __proto__는 접근자 프로퍼티이다.</span></span><br><span class="line"><span class="built_in">Object</span>.getOwnPropertyDescriptor(<span class="built_in">Object</span>.prototype, <span class="string">'__proto__'</span>);</span><br><span class="line"><span class="comment">// &#123;get: ƒ, set: ƒ, enumerable: false, configurable: true&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 함수 객체의 prototype은 데이터 프로퍼티이다.</span></span><br><span class="line"><span class="built_in">Object</span>.getOwnPropertyDescriptor(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;, <span class="string">'prototype'</span>);</span><br><span class="line"><span class="comment">// &#123;value: &#123;…&#125;, writable: true, enumerable: false, configurable: false&#125;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="프로퍼티-어트리뷰트"><a href="#프로퍼티-어트리뷰트" class="headerlink" title="프로퍼티 어트리뷰트"></a>프로퍼티 어트리뷰트</h3><h4 id="데이터-프로퍼티의-어트리뷰트"><a href="#데이터-프로퍼티의-어트리뷰트" class="headerlink" title="데이터 프로퍼티의 어트리뷰트"></a>데이터 프로퍼티의 어트리뷰트</h4><p>프로퍼티 어트리뷰트 / 프로퍼티 디스크립터 객체의 프로퍼티</p>
+<ol>
+<li><p>[[Value]] / value</p>
+<ul>
+<li>프로퍼티 키에 접근하면 [[Get]]에 의해 반환되는 값</li>
+<li>프로퍼티 키로 값을 저장하면 [[Value]]에 값을 저장한다. 프로퍼티가 없다면 프로퍼티를 생성하고 저장한다.</li>
+</ul>
+</li>
+<li><p>[[Writable]] / writable</p>
+<ul>
+<li>프로퍼티 값의 변경가능 여부를 나타내며, boolean 값 을 지님.</li>
+<li>false 면 해당 프로퍼티의 [[Value]]를 변경 불가.</li>
+</ul>
+</li>
+<li><p>[[Enumerable]] / enumerable</p>
+<ul>
+<li>프로퍼티의 열거 가능 여부를 나타내며, boolean 갑을 지님.</li>
+<li>false 면 for…in 문이나 Object,keys 메소드 등으로 열거 불가.</li>
+</ul>
+</li>
+<li><p>[[Comfigurable]] / configurable</p>
+<ul>
+<li>프로퍼티의 재정의 가능 여부를 나타내며 불리언 값을 지님.</li>
+<li>false 면, 해당 프로퍼티의 삭제, 프로퍼티 어트리뷰트 값의 변경이 금지된다. </li>
+<li>[[Writable]]이 true인 경우, [[Value]]의 변경과 [[Writable]]을 false로 변경하는 것은 허용된다.</li>
+</ul>
+<br>
+
+</li>
+</ol>
+<h4 id="접근자-프로퍼티-1"><a href="#접근자-프로퍼티-1" class="headerlink" title="접근자 프로퍼티"></a>접근자 프로퍼티</h4><p>프로퍼티 어트리뷰트 / 프로퍼티 디스크립터 객체의 프로퍼티</p>
+<ol>
+<li>[[Get]]<ul>
+<li>접근자 프로퍼티를 통해 데이터 프로퍼티의 값을 읽을 때 호출되는 접근자 함수.</li>
+</ul>
+</li>
+<li>[[Set]]<ul>
+<li>접근자 프로퍼티를 통해 데이터 프로퍼티의 값을 저장할 때 호출되는 접근자 함수.</li>
+</ul>
+</li>
+<li>[[Enumerable]]<ul>
+<li>데이터 프로퍼티의 [[Enumerable]]와 같다.</li>
+</ul>
+</li>
+<li>[[Configurable]]<ul>
+<li>데이터 프로퍼티의 [[Configurable]]와 같다.</li>
+</ul>
+</li>
+</ol>
+<br>
+
+<h4 id="Object-defineProperty-메소드"><a href="#Object-defineProperty-메소드" class="headerlink" title="Object.defineProperty 메소드"></a>Object.defineProperty 메소드</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123; <span class="attr">prop1</span>: <span class="number">1</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 프로퍼티 동적 추가</span></span><br><span class="line">obj.prop2 = <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 프로퍼티 어트리뷰트를 표현하는 프로퍼티 디스크립터 객체를 취득한다.</span></span><br><span class="line"><span class="keyword">const</span> descriptor = <span class="built_in">Object</span>.getOwnPropertyDescriptor(obj, <span class="string">'prop2'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(descriptor);</span><br><span class="line"><span class="comment">// → &#123; value: 2, writable: true, enumerable: true, configurable: true &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.defineProperty 메소드를 사용하면 프로퍼티의 어트리뷰트를 정의할 수 있다. 인수는 객체의 참조와 데이터 프로퍼티의 키인 문자열 그리고 프로퍼티 디스크립터 객체를 전달한다.</span><br><span class="line"><span class="keyword">const</span> person = &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 데이터 프로퍼티 정의</span></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(person, <span class="string">'firstName'</span>, &#123;</span><br><span class="line">  value: <span class="string">'Ungmo'</span>,</span><br><span class="line">  writable: <span class="literal">true</span>,</span><br><span class="line">  enumerable: <span class="literal">true</span>,</span><br><span class="line">  configurable: <span class="literal">true</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(person, <span class="string">'lastName'</span>, &#123;</span><br><span class="line">  value: <span class="string">'Lee'</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> descriptor = <span class="built_in">Object</span>.getOwnPropertyDescriptor(person, <span class="string">'firstName'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'firstName'</span>, descriptor);</span><br><span class="line"><span class="comment">// firstName &#123;value: "Ungmo", writable: true, enumerable: true, configurable: true&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 디스크립터 객체의 프로퍼티를 누락시키면 undefined, false가 기본값이다.</span></span><br><span class="line">descriptor = <span class="built_in">Object</span>.getOwnPropertyDescriptor(person, <span class="string">'lastName'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'lastName'</span>, descriptor);</span><br><span class="line"><span class="comment">// lastName &#123;value: "Lee", writable: false, enumerable: false, configurable: false&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// [[Enumerable]]의 값이 false인 경우,</span></span><br><span class="line"><span class="comment">// 해당 프로퍼티는 for…in 문이나 Object.keys 등으로 열거할 수 없다.</span></span><br><span class="line"><span class="comment">// lastName 프로퍼티는 [[Enumerable]]의 값이 false이므로 열거되지 않는다.</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.keys(person)); <span class="comment">// ["firstName"]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// [[Writable]]의 값이 false인 경우, 해당 프로퍼티의 [[Value]]의 값을 변경할 수 없다.</span></span><br><span class="line"><span class="comment">// 에러는 발생하지 않고 무시된다.</span></span><br><span class="line"><span class="comment">// lastName 프로퍼티는 [[Writable]]의 값이 false이므로 값을 변경할 수 없다.</span></span><br><span class="line">person.lastName = <span class="string">'Kim'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// [[Configurable]]의 값이 false인 경우, 해당 프로퍼티를 삭제할 수 없다.</span></span><br><span class="line"><span class="comment">// 에러는 발생하지 않고 무시된다.</span></span><br><span class="line"><span class="comment">// lastName 프로퍼티는 [[Configurable]]의 값이 false이므로 삭제할 수 없다.</span></span><br><span class="line"><span class="keyword">delete</span> person.lastName;</span><br><span class="line"></span><br><span class="line"><span class="comment">// [[Configurable]]의 값이 false인 경우, 해당 프로퍼티를 재정의할 수 없다.</span></span><br><span class="line"><span class="comment">// Object.defineProperty(person, 'lastName', &#123; enumerable: true &#125;);</span></span><br><span class="line"><span class="comment">// Uncaught TypeError: Cannot redefine property: lastName</span></span><br><span class="line"></span><br><span class="line">descriptor = <span class="built_in">Object</span>.getOwnPropertyDescriptor(person, <span class="string">'lastName'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'lastName'</span>, descriptor);</span><br><span class="line"><span class="comment">// lastName &#123;value: "Lee", writable: false, enumerable: false, configurable: false&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 접근자 프로퍼티 정의</span></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(person, <span class="string">'fullName'</span>, &#123;</span><br><span class="line">  <span class="comment">// getter 함수</span></span><br><span class="line">  <span class="keyword">get</span>: function () &#123; <span class="comment">// === get() &#123;</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.firstName + <span class="string">' '</span> + <span class="keyword">this</span>.lastName;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// setter 함수</span></span><br><span class="line">  <span class="keyword">set</span>: function (name) &#123; <span class="comment">// === set(name) &#123;</span></span><br><span class="line">    [<span class="keyword">this</span>.firstName, <span class="keyword">this</span>.lastName] = name.split(<span class="string">' '</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">  enumerable: <span class="literal">true</span>,</span><br><span class="line">  configurable: <span class="literal">true</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">descriptor = <span class="built_in">Object</span>.getOwnPropertyDescriptor(person, <span class="string">'fullName'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'fullName'</span>, descriptor);</span><br><span class="line"><span class="comment">// fullName &#123;get: ƒ, set: ƒ, enumerable: true, configurable: true&#125;</span></span><br><span class="line"></span><br><span class="line">person.fullName = <span class="string">'Heegun Lee'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(person); <span class="comment">// &#123;firstName: "Heegun", lastName: "Lee"&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>Object.defineProperty 메소드로 프로퍼티 정의할 때 프로퍼티 디스크립터 객체의 프로퍼티를 일부 누락할 수 있다. </p>
+<p>프로퍼티 디스크립터 객체에서 누락된 어트리뷰트는 아래와 같이 기본값이 적용된다.</p>
+<table>
+<thead>
+<tr>
+<th align="left">프로퍼티 디스크립터 객체의 프로퍼티</th>
+<th align="left">대응하는 프로퍼티 어트리뷰트</th>
+<th align="left">디스크립터 객체의 프로퍼티 누락 시의 기본값</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">value</td>
+<td align="left">[[Value]]</td>
+<td align="left">undefined</td>
+</tr>
+<tr>
+<td align="left">get</td>
+<td align="left">[[Get]]</td>
+<td align="left">undefined</td>
+</tr>
+<tr>
+<td align="left">set</td>
+<td align="left">[[Set]]</td>
+<td align="left">undefined</td>
+</tr>
+<tr>
+<td align="left">writable</td>
+<td align="left">[[Writable]]</td>
+<td align="left">false</td>
+</tr>
+<tr>
+<td align="left">enumerable</td>
+<td align="left">[[Enumerable]]</td>
+<td align="left">false</td>
+</tr>
+<tr>
+<td align="left">configurable</td>
+<td align="left">[[Configurable]]</td>
+<td align="left">false</td>
+</tr>
+</tbody></table>
+<br>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> person = &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.defineProperties(person, &#123;</span><br><span class="line">  <span class="comment">// 데이터 프로퍼티 정의</span></span><br><span class="line">  firstName: &#123;</span><br><span class="line">    value: <span class="string">'Ungmo'</span>,</span><br><span class="line">    writable: <span class="literal">true</span>,</span><br><span class="line">    enumerable: <span class="literal">true</span>,</span><br><span class="line">    configurable: <span class="literal">true</span></span><br><span class="line">  &#125;,</span><br><span class="line">  lastName: &#123;</span><br><span class="line">    value: <span class="string">'Lee'</span>,</span><br><span class="line">    writable: <span class="literal">true</span>,</span><br><span class="line">    enumerable: <span class="literal">true</span>,</span><br><span class="line">    configurable: <span class="literal">true</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// 접근자 프로퍼티 정의</span></span><br><span class="line">  fullName: &#123;</span><br><span class="line">    <span class="comment">// getter 함수</span></span><br><span class="line">    <span class="keyword">get</span>: function () &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.firstName + <span class="string">' '</span> + <span class="keyword">this</span>.lastName;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// setter 함수</span></span><br><span class="line">    <span class="keyword">set</span>: function (name) &#123;</span><br><span class="line">      [<span class="keyword">this</span>.firstName, <span class="keyword">this</span>.lastName] = name.split(<span class="string">' '</span>);</span><br><span class="line">    &#125;,</span><br><span class="line">    enumerable: <span class="literal">true</span>,</span><br><span class="line">    configurable: <span class="literal">true</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">person.fullName = <span class="string">'Heegun Lee'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(person); <span class="comment">// &#123;firstName: "Heegun", lastName: "Lee"&#125;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://yoursite.com/2019/10/15/javascript-preview-15/" data-id="ck1r6gz66004yglz01mie6kso" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Jun Hyeok Kim"
+        },
+        "headline": "javascript-preview-15",
+        "image": "http://yoursite.comhttps://user-images.githubusercontent.com/31315644/66104821-b9976b00-e5f4-11e9-84e9-20c797dd2c51.jpeg",
+        "keywords": "hexo git Web coding developer CSS HTML algorithm javascript",
+        "genre": "TIL Javascript-Preview",
+        "datePublished": "2019-10-15",
+        "dateCreated": "2019-10-15",
+        "dateModified": "2019-10-15",
+        "url": "http://yoursite.com/2019/10/15/javascript-preview-15/",
+        "description": "
+
+JacaScript 15강 예습
+15강 : 프로퍼티 정의
+
+프로퍼티 정의란?
+
+
+프로퍼티 정의 및 동적 생성
+
+
+내부 / 슬롯 메소드
+내부 메소드 [[ Get ]]
+
+
+접근자 프로퍼티
+접근자 프로퍼티와 데이터 프로퍼티의 구별 방법
+
+
+프로퍼티 어트리뷰트
+데이터 프로퍼티의 어트리뷰트
+접근자 프로펕
+Object.defineProperty 메소드
+
+
+
+
+
+
+",
+        "wordCount": 2057
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="https://www.facebook.com/profile.php?id=100003801986180" target="_blank" rel="noopener">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/HYEOK999" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="youtube" href="https://www.youtube.com" target="_blank" rel="noopener">
+                        <i class="icon fa fa-youtube"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2019/10/15/javascript-preview-16/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            javascript-preview-16
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2019/10/14/javascript-daily-test01/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">javascript-daily-test01</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/10/15/javascript-preview-17/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/66104821-b9976b00-e5f4-11e9-84e9-20c797dd2c51.jpeg)" alt="javascript-preview-17" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a></p>
+                            <p class="item-title"><a href="/2019/10/15/javascript-preview-17/" class="title">javascript-preview-17</a></p>
+                            <p class="item-date"><time datetime="2019-10-15T01:36:32.000Z" itemprop="datePublished">2019-10-15</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/10/15/javascript-preview-16/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/66104821-b9976b00-e5f4-11e9-84e9-20c797dd2c51.jpeg)" alt="javascript-preview-16" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a></p>
+                            <p class="item-title"><a href="/2019/10/15/javascript-preview-16/" class="title">javascript-preview-16</a></p>
+                            <p class="item-date"><time datetime="2019-10-15T01:36:30.000Z" itemprop="datePublished">2019-10-15</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/10/15/javascript-preview-15/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/66104821-b9976b00-e5f4-11e9-84e9-20c797dd2c51.jpeg)" alt="javascript-preview-15" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a></p>
+                            <p class="item-title"><a href="/2019/10/15/javascript-preview-15/" class="title">javascript-preview-15</a></p>
+                            <p class="item-date"><time datetime="2019-10-15T01:36:27.000Z" itemprop="datePublished">2019-10-15</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/10/14/javascript-daily-test01/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://c.pxhere.com/photos/17/91/book_page_open_book_reading_french_culture-523122.jpg!d)" alt="javascript-daily-test01" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/Javascript/">Javascript</a></p>
+                            <p class="item-title"><a href="/2019/10/14/javascript-daily-test01/" class="title">javascript-daily-test01</a></p>
+                            <p class="item-date"><time datetime="2019-10-14T11:02:58.000Z" itemprop="datePublished">2019-10-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/10/14/javascript-study-08/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/65933403-536fe400-e44c-11e9-981d-c4e8c1f86998.png)" alt="javascript-study-08" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/Javascript/">Javascript</a></p>
+                            <p class="item-title"><a href="/2019/10/14/javascript-study-08/" class="title">javascript-study-08</a></p>
+                            <p class="item-date"><time datetime="2019-10-14T10:22:46.000Z" itemprop="datePublished">2019-10-14</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/">Develop</a><span class="category-list-count">10</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/CSS/">CSS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/GIT/">GIT</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Java/">Java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Javascript/">Javascript</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Tips/">Tips</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/">TIL</a><span class="category-list-count">60</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Algorithm/">Algorithm</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/GIT/">GIT</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript/">Javascript</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/linux/">linux</a><span class="category-list-count">4</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/etc/">etc</a><span class="category-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a><span class="archive-list-count">35</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a><span class="archive-list-count">38</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">54</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ESLint/">ESLint</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a><span class="tag-list-count">53</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/">JAVA</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MarkUP/">MarkUP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Selector/">Selector</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TIL/">TIL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a><span class="tag-list-count">72</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorism/">algorism</a><span class="tag-list-count">29</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a><span class="tag-list-count">36</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/coding/">coding</a><span class="tag-list-count">72</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/developer/">developer</a><span class="tag-list-count">72</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">72</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">72</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/inline-block/">inline-block</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">37</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">3</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://github.com">github</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.naver.com">Naver</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://google.com">Google</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://www.youtube.com/">Youtube</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2019 Jun Hyeok Kim</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'http://yoursite.com/2019/10/15/javascript-preview-15/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+
+    
+
+    
+    <title>javascript-preview-17 | HYEOK999&#39;s Blog</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="hexo,git,Web,coding,developer,CSS,HTML,algorithm,javascript">
+    
+    <meta name="description" content="JacaScript 17강 예습 17강 : 함수와 일급 객체  일급 객체 함수 객체의 프로퍼티   arguments 프로퍼티 caller 프로퍼티 length 프로퍼티 name 프로퍼티 __ proto __ 프로퍼티 prototype 프로퍼티         17강함수와 일급 객체  일급 객체란?  무명의 리터럴로 생성할 수 있다. (즉, 런타임에 생성이">
+<meta name="keywords" content="hexo,git,Web,coding,developer,CSS,HTML,algorithm,javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javascript-preview-17">
+<meta property="og:url" content="http://yoursite.com/2019/10/15/javascript-preview-17/index.html">
+<meta property="og:site_name" content="HYEOK999&#39;s Blog">
+<meta property="og:description" content="JacaScript 17강 예습 17강 : 함수와 일급 객체  일급 객체 함수 객체의 프로퍼티   arguments 프로퍼티 caller 프로퍼티 length 프로퍼티 name 프로퍼티 __ proto __ 프로퍼티 prototype 프로퍼티         17강함수와 일급 객체  일급 객체란?  무명의 리터럴로 생성할 수 있다. (즉, 런타임에 생성이">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://user-images.githubusercontent.com/31315644/66104821-b9976b00-e5f4-11e9-84e9-20c797dd2c51.jpeg">
+<meta property="og:updated_time" content="2019-10-15T01:38:32.702Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="javascript-preview-17">
+<meta name="twitter:description" content="JacaScript 17강 예습 17강 : 함수와 일급 객체  일급 객체 함수 객체의 프로퍼티   arguments 프로퍼티 caller 프로퍼티 length 프로퍼티 name 프로퍼티 __ proto __ 프로퍼티 prototype 프로퍼티         17강함수와 일급 객체  일급 객체란?  무명의 리터럴로 생성할 수 있다. (즉, 런타임에 생성이">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/31315644/66104821-b9976b00-e5f4-11e9-84e9-20c797dd2c51.jpeg">
+    
+
+    
+
+    
+        <link rel="icon" href="/images/favicon_io/favicon.ico">
+    
+
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Architects+Daughter&display=swap" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin+Sketch&display=swap">
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">HYEOK999&#39;s Daily Develop</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/">Develop</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/CSS/">CSS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/GIT/">GIT</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Tips/">Tips</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/">TIL</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Algorithm/">Algorithm</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/GIT/">GIT</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/linux/">linux</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/etc/">etc</a></li></ul>
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-javascript-preview-17" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        javascript-preview-17
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/10/15/javascript-preview-17/" class="article-date">
+            <time datetime="2019-10-15T01:36:32.000Z" itemprop="datePublished">2019-10-15</time>
+        </a>
+    </div>
+
+		
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/CSS/">CSS</a>, <a class="tag-link" href="/tags/HTML/">HTML</a>, <a class="tag-link" href="/tags/Web/">Web</a>, <a class="tag-link" href="/tags/algorithm/">algorithm</a>, <a class="tag-link" href="/tags/coding/">coding</a>, <a class="tag-link" href="/tags/developer/">developer</a>, <a class="tag-link" href="/tags/git/">git</a>, <a class="tag-link" href="/tags/hexo/">hexo</a>, <a class="tag-link" href="/tags/javascript/">javascript</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p><img src="https://user-images.githubusercontent.com/31315644/66104821-b9976b00-e5f4-11e9-84e9-20c797dd2c51.jpeg" alt></p>
+<hr>
+<h2 id="JacaScript-17강-예습"><a href="#JacaScript-17강-예습" class="headerlink" title="JacaScript 17강 예습"></a>JacaScript 17강 예습</h2><ul>
+<li><p>17강 : 함수와 일급 객체</p>
+<ol>
+<li>일급 객체</li>
+<li>함수 객체의 프로퍼티</li>
+</ol>
+<ul>
+<li>arguments 프로퍼티<ul>
+<li>caller 프로퍼티</li>
+<li>length 프로퍼티</li>
+<li>name 프로퍼티</li>
+<li>__ proto __ 프로퍼티</li>
+<li>prototype 프로퍼티</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<br>
+
+<hr>
+<h1 id="17강"><a href="#17강" class="headerlink" title="17강"></a>17강</h1><h2 id="함수와-일급-객체"><a href="#함수와-일급-객체" class="headerlink" title="함수와 일급 객체"></a>함수와 일급 객체</h2><br>
+
+<h3 id="일급-객체란"><a href="#일급-객체란" class="headerlink" title="일급 객체란?"></a>일급 객체란?</h3><blockquote>
+<ol>
+<li>무명의 리터럴로 생성할 수 있다. (즉, 런타임에 생성이 가능해야한다.)</li>
+<li>변수나 자료 구조에 저장할 수 있다.</li>
+<li>함수의 매개 변수에게 전달할 수 있다.</li>
+<li>함수의 결과값으로 반환할 수 있다.</li>
+</ol>
+<p>위 조건을 만족하는 객체를 <strong>일급 객체(first-class object)</strong>라 칭한다.</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 함수는 무명의 리터럴로 생성할 수 있다.</span></span><br><span class="line"><span class="comment">// 2. 함수는 변수에 저장할 수 있다.</span></span><br><span class="line"><span class="comment">// 런타임(할당 단계)에 함수 리터럴이 평가되어 함수 객체가 생성되고 변수에 할당된다.</span></span><br><span class="line"><span class="keyword">const</span> increase = <span class="function"><span class="keyword">function</span> (<span class="params">num</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> ++num;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> decrease = <span class="function"><span class="keyword">function</span> (<span class="params">num</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> --num;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 함수는 객체에 저장할 수 있다.</span></span><br><span class="line"><span class="keyword">const</span> predicates = &#123; increase, decrease &#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. 함수의 매개 변수에게 전달할 수 있다.</span></span><br><span class="line"><span class="comment">// 4. 함수의 반환값으로 사용할 수 있다.</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">makeCounter</span>(<span class="params">predicate</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> num = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    num = predicate(num);</span><br><span class="line">    <span class="keyword">return</span> num;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. 함수는 매개 변수에게 함수를 전달할 수 있다.</span></span><br><span class="line"><span class="keyword">const</span> increaser = makeCounter(predicates.increase);</span><br><span class="line"><span class="built_in">console</span>.log(increaser()); <span class="comment">// 1</span></span><br><span class="line"><span class="built_in">console</span>.log(increaser()); <span class="comment">// 2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. 함수는 매개 변수에게 함수를 전달할 수 있다.</span></span><br><span class="line"><span class="keyword">const</span> decreaser = makeCounter(predicates.decrease);</span><br><span class="line"><span class="built_in">console</span>.log(decreaser()); <span class="comment">// -1</span></span><br><span class="line"><span class="built_in">console</span>.log(decreaser()); <span class="comment">// -2</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>함수 일급 객체 = 객체와 동일하게 이용가능</li>
+<li>객체는 값이므로 함수는 값과 동일하게 취급가능( 변수 할당문, 객체의 프로퍼티, 배열의 요소, 함수 호출의 인수, 반환문)</li>
+<li>리터럴로 어디서든 정의할 수 있고 런타임에 함수 객체로 평가된다.</li>
+<li>매개 변수에 전달할 수 있고 결과값으로도 반환할 수 있다.</li>
+</ul>
+<br>
+
+<h3 id="함수-객체의-프로퍼티"><a href="#함수-객체의-프로퍼티" class="headerlink" title="함수 객체의 프로퍼티"></a>함수 객체의 프로퍼티</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">square</span>(<span class="params">number</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> number * number;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.dir(square);</span><br></pre></td></tr></table></figure>
+
+<img src="https://poiemaweb.com/assets/fs-images/17-1.png" alt="poiema" style="zoom:50%;">
+
+<p>일반 객체에는 없는 arguments, caller, length, name, prototype 프로퍼티가 함수 객체에는 존재한다. </p>
+<p>이 프로퍼티 들의 프로퍼티 어트리뷰트를 Object.getOwnPropertyDescriptor 메소드로 확인해 보면 아래와 같다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">square</span>(<span class="params">number</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> number * number;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// arguments는 square 함수 객체의 데이터 프로퍼티이다.</span></span><br><span class="line"><span class="built_in">Object</span>.getOwnPropertyDescriptor(square, <span class="string">'arguments'</span>);</span><br><span class="line"><span class="comment">// &#123;value: null, writable: false, enumerable: false, configurable: false&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// caller는 square 함수 객체의 데이터 프로퍼티이다.</span></span><br><span class="line"><span class="built_in">Object</span>.getOwnPropertyDescriptor(square, <span class="string">'caller'</span>);</span><br><span class="line"><span class="comment">// &#123;value: null, writable: false, enumerable: false, configurable: false&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// length는 square 함수 객체의 데이터 프로퍼티이다.</span></span><br><span class="line"><span class="built_in">Object</span>.getOwnPropertyDescriptor(square, <span class="string">'length'</span>);</span><br><span class="line"><span class="comment">// &#123;value: 1, writable: false, enumerable: false, configurable: true&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// name은 square 함수 객체의 데이터 프로퍼티이다.</span></span><br><span class="line"><span class="built_in">Object</span>.getOwnPropertyDescriptor(square, <span class="string">'name'</span>);</span><br><span class="line"><span class="comment">// &#123;value: "square", writable: false, enumerable: false, configurable: true&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// prototype은 square 함수 객체의 데이터 프로퍼티이다.</span></span><br><span class="line"><span class="built_in">Object</span>.getOwnPropertyDescriptor(square, <span class="string">'prototype'</span>);</span><br><span class="line"><span class="comment">// &#123;value: &#123;…&#125;, writable: true, enumerable: false, configurable: false&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// __proto__는 square 함수 객체의 프로퍼티가 아니다.</span></span><br><span class="line"><span class="built_in">Object</span>.getOwnPropertyDescriptor(square, <span class="string">'__proto__'</span>);</span><br><span class="line"><span class="comment">// undefined</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// __proto__는 Object.prototype 객체의 접근자 프로퍼티이다.</span></span><br><span class="line"><span class="comment">// square 함수 객체는 Object.prototype 객체로부터 __proto__ 접근자 프로퍼티를 상속받는다.</span></span><br><span class="line"><span class="built_in">Object</span>.getOwnPropertyDescriptor(<span class="built_in">Object</span>.prototype, <span class="string">'__proto__'</span>);</span><br><span class="line"><span class="comment">// &#123;get: ƒ, set: ƒ, enumerable: false, configurable: true&#125;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>데이터 프로퍼티</strong> : 키와 값으로 구성된 일반적인 프로퍼티다.</li>
+<li><strong>접근자 프로퍼티</strong> : <strong>자체적으로는 값을 갖지 않고 다른 데이터 프로퍼티의 값을 읽거나 저장</strong>할 때 사용하는 <strong>접근자 함수</strong>로 구성된 프로퍼티. 접근자 함수는 getter/setter 함수라고도 부른다. </li>
+</ul>
+<p>arguments, caller, length, name, prototype 프로퍼티는 모두 함수 객체의 데이터 프로퍼티.</p>
+<p> _ <em>proto</em> _는 접근자 프로퍼티이며 함수 객체의 프로퍼티가 아닌 Object.prototype 객체의 프로퍼티를 상속받은 것임.</p>
+<br>
+
+<h4 id="arguments-프로퍼티"><a href="#arguments-프로퍼티" class="headerlink" title="arguments 프로퍼티"></a>arguments 프로퍼티</h4><blockquote>
+<p>arguments 객체는 함수 호출 시 전달된 인수(argument)들의 정보를 담고 있는 순회 가능한(iterable) 유사 배열 객체(array-like object) 함수 내부에서 지역 변수처럼 사용된다. 즉, 함수 외부에서는 사용할 수 없다.</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">multiply</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="built_in">arguments</span>);</span><br><span class="line">  <span class="keyword">return</span> x * y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(multiply());        <span class="comment">// NaN</span></span><br><span class="line"><span class="built_in">console</span>.log(multiply(<span class="number">1</span>));       <span class="comment">// NaN</span></span><br><span class="line"><span class="built_in">console</span>.log(multiply(<span class="number">1</span>, <span class="number">2</span>));    <span class="comment">// 2</span></span><br><span class="line"><span class="built_in">console</span>.log(multiply(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)); <span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
+
+<p><code>multiply(1, 2, 3)</code>으로 초과된 인수는 arguments가 소유하고 있다.</p>
+<img src="https://poiemaweb.com/assets/fs-images/17-2.png" alt="arguments" style="zoom: 67%;">
+
+<p>arguments 객체의 callee 프로퍼티는 호출된 함수, 즉 arguments 객체를 생성한 함수를 가리키고<br>arguments 객체의 Symbol(Symbol.iterator) 프로퍼티는 arguments 객체를 순회 가능한 자료 구조인 이터러블(iterable)로 만들기 위한 프로퍼티다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">multiply</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 이터레이터</span></span><br><span class="line">  <span class="keyword">const</span> iterator = <span class="built_in">arguments</span>[<span class="built_in">Symbol</span>.iterator]();</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 이터레이터의 next 메소드를 호출하여 이터러블 객체 arguments를 순회</span></span><br><span class="line">  <span class="built_in">console</span>.log(iterator.next()); <span class="comment">// &#123;value: 1, done: false&#125;</span></span><br><span class="line">  <span class="built_in">console</span>.log(iterator.next()); <span class="comment">// &#123;value: 2, done: false&#125;</span></span><br><span class="line">  <span class="built_in">console</span>.log(iterator.next()); <span class="comment">// &#123;value: 3, done: false&#125;</span></span><br><span class="line">  <span class="built_in">console</span>.log(iterator.next()); <span class="comment">// &#123;value: undefined, done: true&#125;</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> x * y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">multiply(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>);</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p>arguments 객체는 매개변수 개수를 확정할 수 없는 <strong>가변 인자 함수</strong>를 구현할 때 유용하게 사용된다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> res = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// arguments 객체는 length 프로퍼티가 있는 유사 배열 객체이므로 for 문으로 순회할 수 있다.</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="built_in">arguments</span>.length; i++) &#123;</span><br><span class="line">    res += <span class="built_in">arguments</span>[i];</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(sum());        <span class="comment">// 0</span></span><br><span class="line"><span class="built_in">console</span>.log(sum(<span class="number">1</span>, <span class="number">2</span>));    <span class="comment">// 3</span></span><br><span class="line"><span class="built_in">console</span>.log(sum(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)); <span class="comment">// 6</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="caller-프로퍼티"><a href="#caller-프로퍼티" class="headerlink" title="caller 프로퍼티"></a>caller 프로퍼티</h4><blockquote>
+<p>함수 객체의 caller 프로퍼티는 함수 자신을 호출한 함수를 가리킨다.</p>
+</blockquote>
+<br>
+
+<h4 id="length-프로퍼티"><a href="#length-프로퍼티" class="headerlink" title="length 프로퍼티"></a>length 프로퍼티</h4><blockquote>
+<p>함수 객체의 length 프로퍼티는 함수 정의 시 선언한 매개변수의 개수를 가리킨다.</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="built_in">console</span>.log(foo.length); <span class="comment">// 0</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(bar.length); <span class="comment">// 1</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">baz</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> x * y;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(baz.length); <span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
+
+<p>arguments 객체의 length 프로퍼티는 인자의 개수를 가리키고, 함수 객체의 length 프로퍼티는 매개변수의 개수를 가리킨다.</p>
+<br>
+
+<h4 id="name-프로퍼티"><a href="#name-프로퍼티" class="headerlink" title="name 프로퍼티"></a>name 프로퍼티</h4><blockquote>
+<p><strong>함수의 이름</strong>을 나타내는 프로퍼티. (변수 이름 아니다. 함수 이름임.)</p>
+<p>ES6부터 정식 표준이 되었다.</p>
+<p>ES5 와 ES6의 동작이 달리하므로 주의.</p>
+<p>익명 함수 표현식의 경우 ES5 ➤ 빈 문자열</p>
+<p>익명 함수 표현식의 경우 ES6 ➤ 함수 객체를 가리키는 변수 이름</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 기명 함수 표현식</span></span><br><span class="line"><span class="keyword">var</span> namedFunc = <span class="function">function <span class="title">foo</span><span class="params">()</span> </span>&#123;&#125;;</span><br><span class="line">console.log(namedFunc.name); <span class="comment">// foo</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 익명 함수 표현식</span></span><br><span class="line"><span class="keyword">var</span> anonymousFunc = function() &#123;&#125;;</span><br><span class="line"><span class="comment">// ES5: name 프로퍼티는 빈 문자열을 값으로 갖는다.</span></span><br><span class="line"><span class="comment">// ES6: name 프로퍼티는 함수 객체를 가리키는 변수 이름을 값으로 갖는다.</span></span><br><span class="line">console.log(anonymousFunc.name); <span class="comment">// anonymousFunc</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 함수 선언문(Function declaration)</span></span><br><span class="line"><span class="function">function <span class="title">bar</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line">console.log(bar.name); <span class="comment">// bar</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="proto-접근자-프로퍼티"><a href="#proto-접근자-프로퍼티" class="headerlink" title="__ proto __ 접근자 프로퍼티"></a>__ proto __ 접근자 프로퍼티</h4><blockquote>
+<p><strong>모든 객체</strong>는 [[Prototype]]이라는 내부 슬롯을 갖는다.</p>
+<p>[[Prototype]] 내부 슬롯은 객체 지향 프로그래밍의 상속을 구현하는 프로토타입 객체를 가리킨다. </p>
+</blockquote>
+<p>__ proto __ 프로퍼티는 [[Prototype]] 내부 슬롯이 가리키는 프로토타입 객체에 접근하기 위해 사용하는 접근자 프로퍼티이다. </p>
+<ul>
+<li>데이터 프로퍼티** : 키와 값으로 구성된 일반적인 프로퍼티다.</li>
+<li><strong>접근자 프로퍼티</strong> : <strong>자체적으로는 값을 갖지 않고 다른 데이터 프로퍼티의 값을 읽거나 저장</strong>할 때 사용하는 <strong>접근자 함수</strong>로 구성된 프로퍼티. 접근자 함수는 getter/setter 함수라고도 부른다. </li>
+</ul>
+<p>[[Prototype]] 내부 슬롯에도 직접 접근할 수 없으며 __ proto __ 접근자 프로퍼티를 통해 간접적으로 프로토타입 객체에 접근할 수 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123; <span class="attr">a</span>: <span class="number">1</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 객체 리터럴 방식으로 생성한 객체의 프로토타입 객체는 Object.prototype이다.</span></span><br><span class="line"><span class="built_in">console</span>.log(obj.__proto__ === <span class="built_in">Object</span>.prototype); <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 객체 리터럴 방식으로 생성한 객체는 프로토타입 객체인 Object.prototype의 프로퍼티를 상속받는다.</span></span><br><span class="line"><span class="comment">// hasOwnProperty 메소드는 Object.prototype의 메소드이다.</span></span><br><span class="line"><span class="built_in">console</span>.log(obj.hasOwnProperty(<span class="string">'a'</span>));         <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(obj.hasOwnProperty(<span class="string">'__proto__'</span>)); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="prototype-프로퍼티"><a href="#prototype-프로퍼티" class="headerlink" title="prototype 프로퍼티"></a>prototype 프로퍼티</h4><blockquote>
+<p>prototype 프로퍼티는 <strong>함수 객체</strong>만이 소유하는 프로퍼티이다. 일반 객체에는 prototype 프로퍼티가 없다.</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 함수 객체는 prototype 프로퍼티를 소유한다.</span></span><br><span class="line"><span class="built_in">console</span>.log((<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;).hasOwnProperty(<span class="string">'prototype'</span>)); <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 일반 객체는 prototype 프로퍼티를 소유하지 않는다.</span></span><br><span class="line"><span class="built_in">console</span>.log((&#123;&#125;).hasOwnProperty(<span class="string">'prototype'</span>)); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+
+<p>prototype 프로퍼티는 함수가 객체를 생성하는 생성자 함수로 사용될 때, </p>
+<p>생성자 함수가 생성할 인스턴스의 프로토타입 객체를 가리킨다.</p>
+<br>
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://yoursite.com/2019/10/15/javascript-preview-17/" data-id="ck1r6gz680056glz08j7tla67" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Jun Hyeok Kim"
+        },
+        "headline": "javascript-preview-17",
+        "image": "http://yoursite.comhttps://user-images.githubusercontent.com/31315644/66104821-b9976b00-e5f4-11e9-84e9-20c797dd2c51.jpeg",
+        "keywords": "hexo git Web coding developer CSS HTML algorithm javascript",
+        "genre": "TIL Javascript-Preview",
+        "datePublished": "2019-10-15",
+        "dateCreated": "2019-10-15",
+        "dateModified": "2019-10-15",
+        "url": "http://yoursite.com/2019/10/15/javascript-preview-17/",
+        "description": "
+
+JacaScript 17강 예습
+17강 : 함수와 일급 객체
+
+일급 객체
+함수 객체의 프로퍼티
+
+
+arguments 프로퍼티
+caller 프로퍼티
+length 프로퍼티
+name 프로퍼티
+__ proto __ 프로퍼티
+prototype 프로퍼티
+
+
+
+
+
+
+
+
+17강함수와 일급 객체
+
+일급 객체란?
+
+무명의 리터럴로 생성할 수 있다. (즉, 런타임에 생성이",
+        "wordCount": 1545
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="https://www.facebook.com/profile.php?id=100003801986180" target="_blank" rel="noopener">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/HYEOK999" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="youtube" href="https://www.youtube.com" target="_blank" rel="noopener">
+                        <i class="icon fa fa-youtube"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2019/10/15/javascript-preview-16/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">javascript-preview-16</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/10/15/javascript-preview-17/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/66104821-b9976b00-e5f4-11e9-84e9-20c797dd2c51.jpeg)" alt="javascript-preview-17" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a></p>
+                            <p class="item-title"><a href="/2019/10/15/javascript-preview-17/" class="title">javascript-preview-17</a></p>
+                            <p class="item-date"><time datetime="2019-10-15T01:36:32.000Z" itemprop="datePublished">2019-10-15</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/10/15/javascript-preview-16/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/66104821-b9976b00-e5f4-11e9-84e9-20c797dd2c51.jpeg)" alt="javascript-preview-16" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a></p>
+                            <p class="item-title"><a href="/2019/10/15/javascript-preview-16/" class="title">javascript-preview-16</a></p>
+                            <p class="item-date"><time datetime="2019-10-15T01:36:30.000Z" itemprop="datePublished">2019-10-15</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/10/15/javascript-preview-15/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/66104821-b9976b00-e5f4-11e9-84e9-20c797dd2c51.jpeg)" alt="javascript-preview-15" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a></p>
+                            <p class="item-title"><a href="/2019/10/15/javascript-preview-15/" class="title">javascript-preview-15</a></p>
+                            <p class="item-date"><time datetime="2019-10-15T01:36:27.000Z" itemprop="datePublished">2019-10-15</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/10/14/javascript-daily-test01/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://c.pxhere.com/photos/17/91/book_page_open_book_reading_french_culture-523122.jpg!d)" alt="javascript-daily-test01" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/Javascript/">Javascript</a></p>
+                            <p class="item-title"><a href="/2019/10/14/javascript-daily-test01/" class="title">javascript-daily-test01</a></p>
+                            <p class="item-date"><time datetime="2019-10-14T11:02:58.000Z" itemprop="datePublished">2019-10-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/10/14/javascript-study-08/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/65933403-536fe400-e44c-11e9-981d-c4e8c1f86998.png)" alt="javascript-study-08" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/Javascript/">Javascript</a></p>
+                            <p class="item-title"><a href="/2019/10/14/javascript-study-08/" class="title">javascript-study-08</a></p>
+                            <p class="item-date"><time datetime="2019-10-14T10:22:46.000Z" itemprop="datePublished">2019-10-14</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/">Develop</a><span class="category-list-count">10</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/CSS/">CSS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/GIT/">GIT</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Java/">Java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Javascript/">Javascript</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Tips/">Tips</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/">TIL</a><span class="category-list-count">60</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Algorithm/">Algorithm</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/GIT/">GIT</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript/">Javascript</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/linux/">linux</a><span class="category-list-count">4</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/etc/">etc</a><span class="category-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a><span class="archive-list-count">35</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a><span class="archive-list-count">38</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">54</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ESLint/">ESLint</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a><span class="tag-list-count">53</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/">JAVA</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MarkUP/">MarkUP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Selector/">Selector</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TIL/">TIL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a><span class="tag-list-count">72</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorism/">algorism</a><span class="tag-list-count">29</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a><span class="tag-list-count">36</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/coding/">coding</a><span class="tag-list-count">72</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/developer/">developer</a><span class="tag-list-count">72</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">72</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">72</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/inline-block/">inline-block</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">37</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">3</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://github.com">github</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.naver.com">Naver</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://google.com">Google</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://www.youtube.com/">Youtube</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2019 Jun Hyeok Kim</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'http://yoursite.com/2019/10/15/javascript-preview-17/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
