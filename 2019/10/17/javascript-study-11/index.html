@@ -6,17 +6,26 @@
     
 
     
-    <title>Archive | HYEOK999&#39;s Blog</title>
+    <title>javascript-study-10 | HYEOK999&#39;s Blog</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta property="og:type" content="website">
-<meta property="og:title" content="HYEOK999&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/archives/page/2/index.html">
+        <meta name="keywords" content="hexo,git,Web,coding,developer,CSS,HTML,javascript,algorithm">
+    
+    <meta name="description" content="JavaScript Study 11 용어  Prototype  상속의 문제점  메소드의 종류   __ proto __ 접근자 프로퍼티  객체 리터럴의 프로토타입  __ proto __ 접근자 프로퍼티를 통해 프로토타입에 접근하는 이유  프로토타입의 생성 시점  Object.create 직접 상속        용어 - ( 러버덕 ) 객체 인스턴스 리터럴">
+<meta name="keywords" content="hexo,git,Web,coding,developer,CSS,HTML,javascript,algorithm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javascript-study-10">
+<meta property="og:url" content="http://yoursite.com/2019/10/17/javascript-study-11/index.html">
 <meta property="og:site_name" content="HYEOK999&#39;s Blog">
+<meta property="og:description" content="JavaScript Study 11 용어  Prototype  상속의 문제점  메소드의 종류   __ proto __ 접근자 프로퍼티  객체 리터럴의 프로토타입  __ proto __ 접근자 프로퍼티를 통해 프로토타입에 접근하는 이유  프로토타입의 생성 시점  Object.create 직접 상속        용어 - ( 러버덕 ) 객체 인스턴스 리터럴">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="https://user-images.githubusercontent.com/31315644/65933403-536fe400-e44c-11e9-981d-c4e8c1f86998.png">
+<meta property="og:updated_time" content="2019-10-18T00:53:21.112Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HYEOK999&#39;s Blog">
+<meta name="twitter:title" content="javascript-study-10">
+<meta name="twitter:description" content="JavaScript Study 11 용어  Prototype  상속의 문제점  메소드의 종류   __ proto __ 접근자 프로퍼티  객체 리터럴의 프로토타입  __ proto __ 접근자 프로퍼티를 통해 프로토타입에 접근하는 이유  프로토타입의 생성 시점  Object.create 직접 상속        용어 - ( 러버덕 ) 객체 인스턴스 리터럴">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/31315644/65933403-536fe400-e44c-11e9-981d-c4e8c1f86998.png">
     
 
     
@@ -132,665 +141,233 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <i class="icon fa fa-archive"></i>Archive
+    <a class="page-title-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/TIL/Javascript/">Javascript</a>
     </h1>
 </div>
 
                         <div class="main-body-content">
-                            
-
-    
-    
+                            <article id="post-javascript-study-11" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-        
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2019" class="archive-year"><i class="icon fa fa-calendar-o"></i>2019</a>
-            </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2019/10/15/daily-algorithm15/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://images.velog.io/post-images/leejh3224/619516b0-e892-11e8-98f5-997ef3c38110/what-is-an-algorithm-featured.png)" alt="daily_algorithm15" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://yoursite.com/2019/10/15/daily-algorithm15/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/Algorithm/">Algorithm</a>
-            </div>
-            <div class="date"><time datetime="2019-10-15T03:53:18.000Z" itemprop="datePublished">2019-10-15</time></div>
-        </div>
-        
+            <header class="article-header">
+                
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/10/15/daily-algorithm15/">daily_algorithm15</a>
+        javascript-study-10
         </h1>
     
 
-        <p class="article-excerpt">
-            
-
-문제 출처 : poiema 알고리즘 연습 문제
-16. 소수 찾기numberOfPrime 메소드는 정수 n을 매개변수로 입력받는다. 1부터 입력받은 숫자 n 사이에 있는 소수의 개수를 반환하도록 numberOfPrime 함수를 완성하라. 예를 들어 10을 입력받았다면, 1부터 10 사이의 소수는 [2,3,5,7] 4개가 존재하므로 4를 반환한다.
-소수(素
-        </p>
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/10/17/javascript-study-11/" class="article-date">
+            <time datetime="2019-10-17T10:50:36.000Z" itemprop="datePublished">2019-10-17</time>
+        </a>
     </div>
-</article>
-    
 
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2019/10/15/javascript-preview-17/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/66104821-b9976b00-e5f4-11e9-84e9-20c797dd2c51.jpeg)" alt="javascript-preview-17" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://yoursite.com/2019/10/15/javascript-preview-17/">0</span>
-    
-</span>
+		
 
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a>
-            </div>
-            <div class="date"><time datetime="2019-10-15T01:36:32.000Z" itemprop="datePublished">2019-10-15</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/10/15/javascript-preview-17/">javascript-preview-17</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            
-
-JacaScript 17강 예습
-17강 : 함수와 일급 객체
-
-일급 객체
-함수 객체의 프로퍼티
-
-
-arguments 프로퍼티
-caller 프로퍼티
-length 프로퍼티
-name 프로퍼티
-__ proto __ 프로퍼티
-prototype 프로퍼티
-
-
-
-
-
-
-
-
-17강함수와 일급 객체
-
-일급 객체란?
-
-무명의 리터럴로 생성할 수 있다. (즉, 런타임에 생성이
-        </p>
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/CSS/">CSS</a>, <a class="tag-link" href="/tags/HTML/">HTML</a>, <a class="tag-link" href="/tags/Web/">Web</a>, <a class="tag-link" href="/tags/algorithm/">algorithm</a>, <a class="tag-link" href="/tags/coding/">coding</a>, <a class="tag-link" href="/tags/developer/">developer</a>, <a class="tag-link" href="/tags/git/">git</a>, <a class="tag-link" href="/tags/hexo/">hexo</a>, <a class="tag-link" href="/tags/javascript/">javascript</a>
     </div>
-</article>
-    
-        </div>
-    
 
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2019/10/15/javascript-preview-16/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/66104821-b9976b00-e5f4-11e9-84e9-20c797dd2c51.jpeg)" alt="javascript-preview-16" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://yoursite.com/2019/10/15/javascript-preview-16/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a>
             </div>
-            <div class="date"><time datetime="2019-10-15T01:36:30.000Z" itemprop="datePublished">2019-10-15</time></div>
-        </div>
         
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/10/15/javascript-preview-16/">javascript-preview-16</a>
-        </h1>
-    
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p><img src="https://user-images.githubusercontent.com/31315644/65933403-536fe400-e44c-11e9-981d-c4e8c1f86998.png" alt="JavaScriptBanner"></p>
+<hr>
+<h2 id="JavaScript-Study-11"><a href="#JavaScript-Study-11" class="headerlink" title="JavaScript Study 11"></a>JavaScript Study 11</h2><ul>
+<li><p>용어</p>
+</li>
+<li><p>Prototype</p>
+</li>
+<li><p>상속의 문제점</p>
+<ul>
+<li>메소드의 종류</li>
+</ul>
+</li>
+<li><p>__ proto __ 접근자 프로퍼티</p>
+</li>
+<li><p>객체 리터럴의 프로토타입</p>
+</li>
+<li><p>__ proto __ 접근자 프로퍼티를 통해 프로토타입에 접근하는 이유</p>
+</li>
+<li><p>프로토타입의 생성 시점</p>
+</li>
+<li><p>Object.create 직접 상속</p>
+<br>
 
-        <p class="article-excerpt">
+</li>
+</ul>
+<hr>
+<br>
+
+<h3 id="용어-러버덕"><a href="#용어-러버덕" class="headerlink" title="용어 - ( 러버덕 )"></a>용어 - ( 러버덕 )</h3><ul>
+<li>객체</li>
+<li>인스턴스</li>
+<li>리터럴</li>
+<li>상속</li>
+<li>메소드</li>
+<li>__ proto __ 이란?</li>
+<li>객체 리터럴의 프로토타입</li>
+<li>함수 객체의 protype 프로퍼티</li>
+</ul>
+<br>
+
+<hr>
+<h2 id="Prototype"><a href="#Prototype" class="headerlink" title="Prototype"></a>Prototype</h2><p><strong>객체</strong> : 사람이 구체적으로 이해할 수 있게끔 어떠한 사물이나 개념을 속성 ( 프로퍼티 ) 만 추상화하여 프로그래밍적으로 표현한 것.</p>
+<p><strong>인스턴스</strong> : 객체를 사용하게끔 실물화 한 것. (생성자함수, 클래스로 인해 탄생)</p>
+<p><strong>클래스</strong> : JS에서 클래스는 내부적으로 돌아가는 함수다.</p>
+<p><strong>__ proto __</strong> : 모든 객체가 소유중. 단방향 링크트 리스트. 접근자 프로퍼티. getter / setter</p>
+<p><strong>prototytpe</strong> : 함수 객체만 소유중. 함수 객체의 prototype 프로퍼티</p>
+<p><strong>상속</strong> : 부모 객체로 부터 메소드나 프로퍼티를 물려받는 행위. </p>
+<p><strong>일급객체가 갖는 4가지 특징</strong></p>
+<ol>
+<li>무명의 객체를 갖는다. 런타임에 실행할수있다.</li>
+<li>변수에 값으로서 담을수있다.</li>
+<li>매개변수에 전달할 수 있다.</li>
+<li>함수의 결과값으로 반환할 수 있다.</li>
+</ol>
+
+        </div>
+        <footer class="article-footer">
             
 
-JacaScript 16강 예습
-16강 : 생성자 함수에 의한 객체 생성
-
-Object 생성자 함수
-
-생성자 함수
-
-객체 리터럴에 의한 객체 생성 방식의 문제점
-생성자 함수에 의한 객체 생성 방식의 장점
-내부 메소드 [[Call]] 과 [[Construct]]
 
 
-FunctionCreate
+    <a data-url="http://yoursite.com/2019/10/17/javascript-study-11/" data-id="ck1vf89z100766rz0i5ejmh6e" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
 
-생성자 함수의 인스턴스 생성 과정
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
 
-new 연산자
+            if ($('#' + id).length) {
+                box = $('#' + id);
 
-new.t
-        </p>
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
     </div>
-</article>
-    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Jun Hyeok Kim"
+        },
+        "headline": "javascript-study-10",
+        "image": "http://yoursite.comhttps://user-images.githubusercontent.com/31315644/65933403-536fe400-e44c-11e9-981d-c4e8c1f86998.png",
+        "keywords": "hexo git Web coding developer CSS HTML javascript algorithm",
+        "genre": "TIL Javascript",
+        "datePublished": "2019-10-17",
+        "dateCreated": "2019-10-17",
+        "dateModified": "2019-10-18",
+        "url": "http://yoursite.com/2019/10/17/javascript-study-11/",
+        "description": "
 
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2019/10/15/javascript-preview-15/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/66104821-b9976b00-e5f4-11e9-84e9-20c797dd2c51.jpeg)" alt="javascript-preview-15" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://yoursite.com/2019/10/15/javascript-preview-15/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a>
-            </div>
-            <div class="date"><time datetime="2019-10-15T01:36:27.000Z" itemprop="datePublished">2019-10-15</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/10/15/javascript-preview-15/">javascript-preview-15</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            
-
-JacaScript 15강 예습
-15강 : 프로퍼티 정의
-
-프로퍼티 정의란?
-
-
-프로퍼티 정의 및 동적 생성
-
-
-내부 / 슬롯 메소드
-내부 메소드 [[ Get ]]
-
-
-접근자 프로퍼티
-접근자 프로퍼티와 데이터 프로퍼티의 구별 방법
-
-
-프로퍼티 어트리뷰트
-데이터 프로퍼티의 어트리뷰트
-접근자 프로펕
-Object.defineProperty 메소드
-
-
-
-
-
-
-
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2019/10/14/javascript-daily-test01/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://c.pxhere.com/photos/17/91/book_page_open_book_reading_french_culture-523122.jpg!d)" alt="javascript-daily-test01" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://yoursite.com/2019/10/14/javascript-daily-test01/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/Javascript/">Javascript</a>
-            </div>
-            <div class="date"><time datetime="2019-10-14T11:02:58.000Z" itemprop="datePublished">2019-10-14</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/10/14/javascript-daily-test01/">javascript-daily-test01</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            
-
-
-JavaScript Weekly Test 오답 및 개념 재정리
-Javascript vs ECMAScript
-
-
-
-
-ECMAScript는 자바스크립트의 표준 사양인 ECMA-262 이다.ECMAScript는 자바스크립트의 모든 영역을 담고 잇는 것이 아니라.통상영역만 담고 있다.es6, es5 등등 ECMASciprt의 사양을 의미한다.
-
-
-JS는 EC
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2019/10/14/javascript-study-08/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/65933403-536fe400-e44c-11e9-981d-c4e8c1f86998.png)" alt="javascript-study-08" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://yoursite.com/2019/10/14/javascript-study-08/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/Javascript/">Javascript</a>
-            </div>
-            <div class="date"><time datetime="2019-10-14T10:22:46.000Z" itemprop="datePublished">2019-10-14</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/10/14/javascript-study-08/">javascript-study-08</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            
-
-JavaScript Study 08
+JavaScript Study 11
 용어
 
-스코프
+Prototype
 
-순수 함수
-비순수 함수
-스코프의 종류
-스코프 체인
-렉시컬 스코프
-암묵적 전역 변수
-JS 모듈 미지원
-모듈 
+상속의 문제점
+
+메소드의 종류
 
 
+__ proto __ 접근자 프로퍼티
+
+객체 리터럴의 프로토타입
+
+__ proto __ 접근자 프로퍼티를 통해 프로토타입에 접근하는 이유
+
+프로토타입의 생성 시점
+
+Object.create 직접 상속
 
 
-전역 변수의 문제점
-
-전역 변수 사용 억제 방법
 
 
-let, const와 블록 레벨 스코프
 
-var 키워드로 선언한 변수의 문제점
-let 키워드와 var 키워드의 차이점
-const 키워드
 
-        </p>
-    </div>
+
+용어 - ( 러버덕 )
+객체
+인스턴스
+리터럴
+",
+        "wordCount": 136
+    }
+</script>
+
 </article>
-    
-        </div>
-    
 
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2019/10/14/daily-algorithm14/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://images.velog.io/post-images/leejh3224/619516b0-e892-11e8-98f5-997ef3c38110/what-is-an-algorithm-featured.png)" alt="daily_algorithm14" class="thumbnail-image"></span>
-    
+    <section id="comments">
     
         
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://yoursite.com/2019/10/14/daily-algorithm14/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/Algorithm/">Algorithm</a>
-            </div>
-            <div class="date"><time datetime="2019-10-14T00:43:50.000Z" itemprop="datePublished">2019-10-14</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/10/14/daily-algorithm14/">daily_algorithm14</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            
-
-문제 출저 : poiema 알고리즘 연습 문제
-11. Check Palindrompalindrome(팰린드롬/회문)은 왼쪽에서 오른쪽으로 읽은 다음, 오른쪽부터 왼쪽으로 다시 읽어도 똑같은 형태와 의미를 유지하는 문장이나 단어를 지칭한다. 인자로 전달한 문자열이 palindrome인지 검사하여 Boolean값을 반환하는 함수를 완성하라. 단, 반드시 1
-        </p>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </div>
-</article>
-    
 
     
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2019/10/14/daily-algorithm13/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://images.velog.io/post-images/leejh3224/619516b0-e892-11e8-98f5-997ef3c38110/what-is-an-algorithm-featured.png)" alt="daily_algorithm13" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://yoursite.com/2019/10/14/daily-algorithm13/">0</span>
-    
-</span>
+    </section>
 
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/Algorithm/">Algorithm</a>
-            </div>
-            <div class="date"><time datetime="2019-10-13T16:31:49.000Z" itemprop="datePublished">2019-10-14</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/10/14/daily-algorithm13/">daily_algorithm13</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            
-
-문제 출저 : poiema 알고리즘 연습 문제
-6. 핸드폰번호 가리기핸드폰 요금 고지서에 표시할 전화번호는 개인정보 보호를 위해 맨 뒷자리 4자리를 제외한 나머지를 *으로 바꿔야 한다. 전화번호를 나타내는 문자열 str을 입력받는 hideNumbers 함수를 완성하라 예를들어 s가 ‘01033334444’면 *******4444를 리턴하고, ‘02777
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2019/10/14/javascript-preview-1314/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/66104821-b9976b00-e5f4-11e9-84e9-20c797dd2c51.jpeg)" alt="javascript-preview-1314" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://yoursite.com/2019/10/14/javascript-preview-1314/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a>
-            </div>
-            <div class="date"><time datetime="2019-10-13T16:16:35.000Z" itemprop="datePublished">2019-10-14</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/10/14/javascript-preview-1314/">javascript-preview-1314</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            
-
-JacaScript 13강~14강 예습
-13강 : 전역 변수의 문제점
-
-변수의 생명 주기
-
-전역 변수의 생명 주기
-
-진입점
-JS의 return 위치
-전역의 var 키워드
-
-
-전역 변수의 문제점
-
-암묵적 결합 implicit coupling
-긴 생명 주기
-스코프 체인 상에서 종점에 존재
-네임스페이스 오염
-
-
-전역 변수 사용 억제 방법
-
-즉시 실행 함수
-네
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2019/10/12/daily-algorithm12/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://images.velog.io/post-images/leejh3224/619516b0-e892-11e8-98f5-997ef3c38110/what-is-an-algorithm-featured.png)" alt="daily_algorithm12" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://yoursite.com/2019/10/12/daily-algorithm12/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/Algorithm/">Algorithm</a>
-            </div>
-            <div class="date"><time datetime="2019-10-12T10:40:30.000Z" itemprop="datePublished">2019-10-12</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/10/12/daily-algorithm12/">daily_algorithm12</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            
-
-문제 출저 : poiema 알고리즘 연습 문제
-1. 짝수와 홀수evenOrOdd 함수는 정수 num을 매개변수로 받는다. num은 1이상의 정수이며, num이 음수인 경우는 없다. num이 짝수일 경우 ‘Even’을 반환하고 홀수인 경우 ‘Odd’를 반환하도록 evenOrOdd 함수를 완성하라.
-단, if문을 사용한 답과 삼항 조건 연산자를 사용한 답 
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-
-    </div></section>
-
-
-    <nav id="page-nav">
-        <span class="pages">Page 2 of 9</span>
-        <a class="extend prev" rel="prev" href="/archives/">&laquo;</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/page/3/">3</a><a class="page-number" href="/archives/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/9/">9</a><a class="extend next" rel="next" href="/archives/page/3/">&raquo;</a>
-    </nav>
 
 
                         </div>
@@ -827,6 +404,29 @@ JS의 return 위치
             
         </ul>
     </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2019/10/17/daily-algorithm18/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            daily_algorithm18
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2019/10/17/javascript-study-10/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">javascript-study-10</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
     
     <div class="widgets-container">
         
@@ -1041,11 +641,13 @@ JS의 return 위치
     var disqus_shortname = 'hexo-theme-hueman';
     
     
+    var disqus_url = 'http://yoursite.com/2019/10/17/javascript-study-11/';
+    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>
