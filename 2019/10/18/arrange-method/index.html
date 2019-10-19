@@ -21,7 +21,7 @@
 <meta property="og:description" content="함수 정리  Object.getPrototypeOf(인스턴스명);  해당 인스턴스 객체의 프로토타입을 반환한다.     Object.setPrototypeOf(프로토타입의 하위 객체명, 바꿀객체명);  == 객체명.__ proto __ = 바꿀 객체명;  객체명의 프로토타입을 바꿀객체명으로 교체한다. 링크를 복구시켜야되므로 비추천     Object.g">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://user-images.githubusercontent.com/31315644/67020346-04f36280-f139-11e9-9a0d-83c72b8254fe.jpg">
-<meta property="og:updated_time" content="2019-10-18T10:24:15.487Z">
+<meta property="og:updated_time" content="2019-10-19T08:19:33.194Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="arrange_method">
 <meta name="twitter:description" content="함수 정리  Object.getPrototypeOf(인스턴스명);  해당 인스턴스 객체의 프로토타입을 반환한다.     Object.setPrototypeOf(프로토타입의 하위 객체명, 바꿀객체명);  == 객체명.__ proto __ = 바꿀 객체명;  객체명의 프로토타입을 바꿀객체명으로 교체한다. 링크를 복구시켜야되므로 비추천     Object.g">
@@ -299,12 +299,21 @@
 
 <br>
 
-<h4 id="map"><a href="#map" class="headerlink" title="map"></a>map</h4><p>foreach , map , reduce , findIndex , for~of(객체를 이터러블 화 할 필요가 있다.)</p>
+<h4 id="map-함수"><a href="#map-함수" class="headerlink" title="map 함수"></a>map 함수</h4><h4 id="reduce-함수"><a href="#reduce-함수" class="headerlink" title="reduce 함수"></a>reduce 함수</h4><p>누적값에 현잿값을 넣어가면 순</p>
+<p><code>배열.reduce((누적값, 현잿값, 인덱스, 요소) =&gt; { return 결과 }, 초깃값);</code></p>
+<p><code>배열.reduce( function (누적값, 현잿값, 인덱스, 요소) { return 결과 }, 초깃값);</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">result = oneTwoThree.reduce(<span class="function">(<span class="params">acc, cur, i</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(acc, cur, i);</span><br><span class="line">  <span class="keyword">return</span> acc + cur;</span><br><span class="line">&#125;, <span class="number">0</span>);</span><br><span class="line"><span class="comment">// 0 1 0</span></span><br><span class="line"><span class="comment">// 1 2 1</span></span><br><span class="line"><span class="comment">// 3 3 2</span></span><br><span class="line">result; <span class="comment">// 6</span></span><br></pre></td></tr></table></figure>
+
+<p>foreach , map , reduce , findIndex , for~of(객체를 이터러블 화 할 필요가 있다.)</p>
 <p>setTimeout</p>
 <hr>
+<h3 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h3><h4 id="sort-함수"><a href="#sort-함수" class="headerlink" title="sort 함수"></a>sort 함수</h4><p><code>배열명.sort()</code> : 배열 내용을 문자열로 간접변환 한 후 문자열 순으로 정렬.( 반활할때는 원래 타입으로 돌려놓는다. )</p>
+<p><code>배열명.sort(function(a,b){return a - b;});</code> : 숫자 정렬시 사용. 오름차순으로 정렬한다.<br><code>배열명.sort(function(a,b){return b - a;})</code> : 숫자 정렬 시 사용.  내림차순으로 정렬한다.</p>
+<h4 id="pop-shift-함수"><a href="#pop-shift-함수" class="headerlink" title="pop() , shift() 함수"></a>pop() , shift() 함수</h4><p><code>배열명.pop()</code>: 배열의 마지막 아이템 제거. </p>
+<p><code>배열명.shift()</code>: 배열의 첫번째 아이템 제거.</p>
 <p>number 타입 - Math.abs(); , 고차함수</p>
 <p>string 타입 - split, splice, slice, join, 공백없애는함수</p>
-<p>array 타입 - 고차함수, indexOf</p>
+<p>array 타입 - 고차함수, indexOf , 정렬함수</p>
 <p>객체 - for in</p>
 
         </div>
@@ -313,7 +322,7 @@
 
 
 
-    <a data-url="http://yoursite.com/2019/10/18/arrange-method/" data-id="ck1xaegbj000yk9z0y1i98y72" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2019/10/18/arrange-method/" data-id="ck1xam0fg000ywvz0ul00kgkf" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -389,7 +398,7 @@
         "genre": "Develop Javascript",
         "datePublished": "2019-10-18",
         "dateCreated": "2019-10-18",
-        "dateModified": "2019-10-18",
+        "dateModified": "2019-10-19",
         "url": "http://yoursite.com/2019/10/18/arrange-method/",
         "description": "
 
@@ -410,7 +419,7 @@ Object.setPrototypeOf(프로토타입의 하위 객체명, 바꿀객체명);  ==
 
 
 Object.g",
-        "wordCount": 751
+        "wordCount": 903
     }
 </script>
 
