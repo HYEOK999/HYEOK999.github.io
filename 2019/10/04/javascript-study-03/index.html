@@ -12,19 +12,19 @@
     
         <meta name="keywords" content="hexo,git,Web,coding,developer,CSS,HTML,algorithm,javascript">
     
-    <meta name="description" content="JavaScript Study 03 용어 변수 식별자란? 평가란? 할당 참조 변수 선언 호이스팅 변수와 메모리의 관계       용어 - ( 러버덕 ) 키워드 식별자 변수 메모리와 메모리 주소 할당 호이스팅     변수 값을 저장하는 메커니즘. 메모리에 접근하기 위해 메모리의 주소에 이름을 부여하는 것. 메모리 공간 그 자체.  메모리 공간에 부여한 이">
+    <meta name="description" content="JavaScript Study 03 용어 변수 식별자란? 평가란? 할당 참조 변수 선언 호이스팅 변수와 메모리의 관계       용어 - ( 러버덕 ) 키워드 식별자 변수 메모리와 메모리 주소 할당 호이스팅     변수 값을 저장하는 메커니즘. 메모리에 접근하기 위해 메모리의 주소에 이름을 부여하는 것. 메모리 공간 그 자체. 메모리 공간에 부여한 이름">
 <meta name="keywords" content="hexo,git,Web,coding,developer,CSS,HTML,algorithm,javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="javascript-study-03">
 <meta property="og:url" content="http://yoursite.com/2019/10/04/javascript-study-03/index.html">
 <meta property="og:site_name" content="HYEOK999&#39;s Blog">
-<meta property="og:description" content="JavaScript Study 03 용어 변수 식별자란? 평가란? 할당 참조 변수 선언 호이스팅 변수와 메모리의 관계       용어 - ( 러버덕 ) 키워드 식별자 변수 메모리와 메모리 주소 할당 호이스팅     변수 값을 저장하는 메커니즘. 메모리에 접근하기 위해 메모리의 주소에 이름을 부여하는 것. 메모리 공간 그 자체.  메모리 공간에 부여한 이">
+<meta property="og:description" content="JavaScript Study 03 용어 변수 식별자란? 평가란? 할당 참조 변수 선언 호이스팅 변수와 메모리의 관계       용어 - ( 러버덕 ) 키워드 식별자 변수 메모리와 메모리 주소 할당 호이스팅     변수 값을 저장하는 메커니즘. 메모리에 접근하기 위해 메모리의 주소에 이름을 부여하는 것. 메모리 공간 그 자체. 메모리 공간에 부여한 이름">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://user-images.githubusercontent.com/31315644/65933403-536fe400-e44c-11e9-981d-c4e8c1f86998.png">
-<meta property="og:updated_time" content="2019-10-04T13:50:30.257Z">
+<meta property="og:updated_time" content="2019-10-20T05:41:02.724Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javascript-study-03">
-<meta name="twitter:description" content="JavaScript Study 03 용어 변수 식별자란? 평가란? 할당 참조 변수 선언 호이스팅 변수와 메모리의 관계       용어 - ( 러버덕 ) 키워드 식별자 변수 메모리와 메모리 주소 할당 호이스팅     변수 값을 저장하는 메커니즘. 메모리에 접근하기 위해 메모리의 주소에 이름을 부여하는 것. 메모리 공간 그 자체.  메모리 공간에 부여한 이">
+<meta name="twitter:description" content="JavaScript Study 03 용어 변수 식별자란? 평가란? 할당 참조 변수 선언 호이스팅 변수와 메모리의 관계       용어 - ( 러버덕 ) 키워드 식별자 변수 메모리와 메모리 주소 할당 호이스팅     변수 값을 저장하는 메커니즘. 메모리에 접근하기 위해 메모리의 주소에 이름을 부여하는 것. 메모리 공간 그 자체. 메모리 공간에 부여한 이름">
 <meta name="twitter:image" content="https://user-images.githubusercontent.com/31315644/65933403-536fe400-e44c-11e9-981d-c4e8c1f86998.png">
     
 
@@ -212,16 +212,16 @@
 <h3 id="변수"><a href="#변수" class="headerlink" title="변수"></a>변수</h3><blockquote>
 <p>값을 저장하는 메커니즘.</p>
 <p>메모리에 접근하기 위해 메모리의 주소에 이름을 부여하는 것.</p>
-<p>메모리 공간 그 자체. </p>
+<p>메모리 공간 그 자체.</p>
 <p>메모리 공간에 부여한 이름.</p>
 </blockquote>
 <h4 id="메모리-기억하는-영역"><a href="#메모리-기억하는-영역" class="headerlink" title="메모리 : 기억하는 영역"></a>메모리 : 기억하는 영역</h4><h4 id="메모리-셀-메모리를-이루는-공간-1byte-8bit-크기로-이루어져있음-각-셀마다-주소를-가지고-있다"><a href="#메모리-셀-메모리를-이루는-공간-1byte-8bit-크기로-이루어져있음-각-셀마다-주소를-가지고-있다" class="headerlink" title="메모리 셀 : 메모리를 이루는 공간. 1byte (8bit) 크기로 이루어져있음. 각 셀마다 주소를 가지고 있다."></a>메모리 셀 : 메모리를 이루는 공간. 1byte (8bit) 크기로 이루어져있음. 각 셀마다 주소를 가지고 있다.</h4><p><em>자바스크립트는 메모리의 주소를 알려주지않는다.</em></p>
-<p><strong>이유</strong> : 각 메모리의 주소가 어디서 쓰고있는지 모르기에 변경을 했다거나 지웠다거나 하는 일이 생길 경우 큰 에러를 발생시킬수 있기 떄문이다. 따라서 각 메모리의 주소를 기억하게 하는 매커니즘(변수)을 사용한다.</p>
+<p><strong>이유</strong> : 각 메모리의 주소가 어디서 쓰고있는지 모르기에 변경을 했다거나 지웠다거나 하는 일이 생길 경우 큰 에러를 발생시킬수 있기 때문이다. 따라서 각 메모리의 주소를 기억하게 하는 매커니즘(변수)을 사용한다.</p>
 <br>
 
 <p><strong>변수의 이름</strong> : 메모리 공간의 주소 위치를 별칭으로 참조한 것.</p>
 <p>변수는 하나의 값만을 저장할 수 있다. (예외, 배열 / 객체)</p>
-<p><strong>변수의 명명은 1번 명명하면 해당 주소의 이름은 바꿀 수 없기 때문에, 변수의 이름을 지을때는 항상 고민하고 고민해야한다.</strong> </p>
+<p><strong>변수의 명명은 1번 명명하면 해당 주소의 이름은 바꿀 수 없기 때문에, 변수의 이름을 지을때는 항상 고민하고 고민해야한다.</strong></p>
 <br>
 
 <p><strong>값이란?</strong> : 컴퓨터가 인식할 수 있는 데이터의 종류. 메모리에 들어가는 대상.</p>
@@ -234,7 +234,7 @@
 
 <h4 id="변수가-여러-값을-저장하기-위한-방법"><a href="#변수가-여러-값을-저장하기-위한-방법" class="headerlink" title="변수가 여러 값을 저장하기 위한 방법"></a>변수가 여러 값을 저장하기 위한 방법</h4><ul>
 <li>자료구조 이용<ul>
-<li>객체 </li>
+<li>객체</li>
 <li>배열</li>
 </ul>
 </li>
@@ -253,7 +253,7 @@
 </blockquote>
 <p><code>var</code>는  자바스크립트엔진에게 내리는 키워드이며,<code>var</code> 뒤에 변수이름을 적어야한다.</p>
 <p><code>CPU</code> : 계산(연산)하는 영역.</p>
-<p>메모리는 한정된 영역이기 떄문에 자바스크린트 엔진에 내장된 Garbage Collector가 해당 메모리 주소가 사용이 되는지 안되는지를 게속 감시한다. 만약 해당 메모리 주소가 사용되지 않고 있다면 주소를 비워준다.</p>
+<p>메모리는 한정된 영역이기 때문에 자바스크린트 엔진에 내장된 Garbage Collector가 해당 메모리 주소가 사용이 되는지 안되는지를 게속 감시한다. 만약 해당 메모리 주소가 사용되지 않고 있다면 주소를 비워준다.</p>
 <br>
 
 <h3 id="할당"><a href="#할당" class="headerlink" title="할당"></a>할당</h3><blockquote>
@@ -302,7 +302,7 @@
 <ol>
 <li><p>var result 로 특정 메모리 공간에 변수 선언 및 초기화를 한다. ( 메모리에는 undefined가 생성됨. )</p>
 </li>
-<li><p>result 변수에 100이라는 숫자 타입의 값을 재할당한다.  </p>
+<li><p>result 변수에 100이라는 숫자 타입의 값을 재할당한다.</p>
 <p>( 따라서 undefined라고 적힌 메모리에 걸려있는 링크를 끊고 새 메모리에 100값과 함께 링크를 건다.)</p>
 <p>( undefined는 안쓰기때문에 가비지컬렉터에 의해 관리된다. )</p>
 </li>
@@ -317,9 +317,9 @@
 <hr>
 <ul>
 <li><p>Code.Runner : 브라우저 나 노드에서 굳이 사용하지 않고 js파일을 실행할수있다.  <code>ctrl + option + n</code></p>
-<p>(단, 코드러너는 노드환경에서 실행되기 때문에 DOMAPI등은 못읽는다.) </p>
+<p>(단, 코드러너는 노드환경에서 실행되기 때문에 DOMAPI등은 못읽는다.)</p>
 </li>
-<li><p>quokka.js 시작 : <code>cmd + shift + p - quokka.js : start on current file</code> </p>
+<li><p>quokka.js 시작 : <code>cmd + shift + p - quokka.js : start on current file</code></p>
 <p> quokka.js 종료 : <code>stop all (current)</code></p>
 </li>
 </ul>
@@ -331,7 +331,7 @@
 
 
 
-    <a data-url="http://yoursite.com/2019/10/04/javascript-study-03/" data-id="ck1xam0h50074wvz08n3aikxu" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2019/10/04/javascript-study-03/" data-id="ck1yklk080072uxz0di72rvn9" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -407,7 +407,7 @@
         "genre": "TIL Javascript",
         "datePublished": "2019-10-04",
         "dateCreated": "2019-10-04",
-        "dateModified": "2019-10-04",
+        "dateModified": "2019-10-20",
         "url": "http://yoursite.com/2019/10/04/javascript-study-03/",
         "description": "
 
@@ -441,9 +441,9 @@ JavaScript Study 03
 변수
 값을 저장하는 메커니즘.
 메모리에 접근하기 위해 메모리의 주소에 이름을 부여하는 것.
-메모리 공간 그 자체. 
-메모리 공간에 부여한 이",
-        "wordCount": 659
+메모리 공간 그 자체.
+메모리 공간에 부여한 이름",
+        "wordCount": 652
     }
 </script>
 

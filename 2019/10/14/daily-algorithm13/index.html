@@ -12,19 +12,19 @@
     
         <meta name="keywords" content="hexo,git,Web,coding,developer,CSS,HTML,algorithm,javascript">
     
-    <meta name="description" content="문제 출저 : poiema 알고리즘 연습 문제 6. 핸드폰번호 가리기핸드폰 요금 고지서에 표시할 전화번호는 개인정보 보호를 위해 맨 뒷자리 4자리를 제외한 나머지를 *으로 바꿔야 한다. 전화번호를 나타내는 문자열 str을 입력받는 hideNumbers 함수를 완성하라 예를들어 s가 ‘01033334444’면 *******4444를 리턴하고, ‘02777">
+    <meta name="description" content="문제 출처 : poiema 알고리즘 연습 문제 6. 핸드폰번호 가리기핸드폰 요금 고지서에 표시할 전화번호는 개인정보 보호를 위해 맨 뒷자리 4자리를 제외한 나머지를 *으로 바꿔야 한다. 전화번호를 나타내는 문자열 str을 입력받는 hideNumbers 함수를 완성하라 예를들어 s가 ‘01033334444’면 *******4444를 리턴하고, ‘02777">
 <meta name="keywords" content="hexo,git,Web,coding,developer,CSS,HTML,algorithm,javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="daily_algorithm13">
 <meta property="og:url" content="http://yoursite.com/2019/10/14/daily-algorithm13/index.html">
 <meta property="og:site_name" content="HYEOK999&#39;s Blog">
-<meta property="og:description" content="문제 출저 : poiema 알고리즘 연습 문제 6. 핸드폰번호 가리기핸드폰 요금 고지서에 표시할 전화번호는 개인정보 보호를 위해 맨 뒷자리 4자리를 제외한 나머지를 *으로 바꿔야 한다. 전화번호를 나타내는 문자열 str을 입력받는 hideNumbers 함수를 완성하라 예를들어 s가 ‘01033334444’면 *******4444를 리턴하고, ‘02777">
+<meta property="og:description" content="문제 출처 : poiema 알고리즘 연습 문제 6. 핸드폰번호 가리기핸드폰 요금 고지서에 표시할 전화번호는 개인정보 보호를 위해 맨 뒷자리 4자리를 제외한 나머지를 *으로 바꿔야 한다. 전화번호를 나타내는 문자열 str을 입력받는 hideNumbers 함수를 완성하라 예를들어 s가 ‘01033334444’면 *******4444를 리턴하고, ‘02777">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://images.velog.io/post-images/leejh3224/619516b0-e892-11e8-98f5-997ef3c38110/what-is-an-algorithm-featured.png">
-<meta property="og:updated_time" content="2019-10-13T16:32:15.935Z">
+<meta property="og:updated_time" content="2019-10-20T05:42:45.380Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="daily_algorithm13">
-<meta name="twitter:description" content="문제 출저 : poiema 알고리즘 연습 문제 6. 핸드폰번호 가리기핸드폰 요금 고지서에 표시할 전화번호는 개인정보 보호를 위해 맨 뒷자리 4자리를 제외한 나머지를 *으로 바꿔야 한다. 전화번호를 나타내는 문자열 str을 입력받는 hideNumbers 함수를 완성하라 예를들어 s가 ‘01033334444’면 *******4444를 리턴하고, ‘02777">
+<meta name="twitter:description" content="문제 출처 : poiema 알고리즘 연습 문제 6. 핸드폰번호 가리기핸드폰 요금 고지서에 표시할 전화번호는 개인정보 보호를 위해 맨 뒷자리 4자리를 제외한 나머지를 *으로 바꿔야 한다. 전화번호를 나타내는 문자열 str을 입력받는 hideNumbers 함수를 완성하라 예를들어 s가 ‘01033334444’면 *******4444를 리턴하고, ‘02777">
 <meta name="twitter:image" content="https://images.velog.io/post-images/leejh3224/619516b0-e892-11e8-98f5-997ef3c38110/what-is-an-algorithm-featured.png">
     
 
@@ -182,7 +182,7 @@
         <div class="article-entry" itemprop="articleBody">
             <p><img src="https://images.velog.io/post-images/leejh3224/619516b0-e892-11e8-98f5-997ef3c38110/what-is-an-algorithm-featured.png" alt></p>
 <hr>
-<p>문제 출저 : poiema 알고리즘 연습 문제</p>
+<p>문제 출처 : poiema 알고리즘 연습 문제</p>
 <h3 id="6-핸드폰번호-가리기"><a href="#6-핸드폰번호-가리기" class="headerlink" title="6. 핸드폰번호 가리기"></a>6. 핸드폰번호 가리기</h3><p>핸드폰 요금 고지서에 표시할 전화번호는 개인정보 보호를 위해 맨 뒷자리 4자리를 제외한 나머지를 <code>*</code>으로 바꿔야 한다. 전화번호를 나타내는 문자열 str을 입력받는 hideNumbers 함수를 완성하라 예를들어 s가 ‘01033334444’면 <code>*******4444</code>를 리턴하고, ‘027778888’인 경우는 <code>*****8888</code>을 리턴한다.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">hideNumbers</span>(<span class="params">str</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> answer = <span class="string">''</span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; str.length - <span class="number">4</span>; i++) &#123;</span><br><span class="line">    answer += <span class="string">'*'</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = str.length - <span class="number">4</span>; i &lt; str.length; i++) &#123;</span><br><span class="line">    answer += str[i];</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">console</span>.log(answer);</span><br><span class="line">  <span class="keyword">return</span> answer;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(hideNumbers(<span class="string">'01033334444'</span>)); <span class="comment">// *******4444</span></span><br><span class="line"><span class="built_in">console</span>.log(hideNumbers(<span class="string">'027778888'</span>));   <span class="comment">// *****8888</span></span><br></pre></td></tr></table></figure>
 
@@ -216,7 +216,7 @@
 
 
 
-    <a data-url="http://yoursite.com/2019/10/14/daily-algorithm13/" data-id="ck1xam0fv002fwvz04ufpbhnk" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2019/10/14/daily-algorithm13/" data-id="ck1ykljyq002kuxz01pjng62h" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -292,11 +292,11 @@
         "genre": "TIL Algorithm",
         "datePublished": "2019-10-14",
         "dateCreated": "2019-10-14",
-        "dateModified": "2019-10-14",
+        "dateModified": "2019-10-20",
         "url": "http://yoursite.com/2019/10/14/daily-algorithm13/",
         "description": "
 
-문제 출저 : poiema 알고리즘 연습 문제
+문제 출처 : poiema 알고리즘 연습 문제
 6. 핸드폰번호 가리기핸드폰 요금 고지서에 표시할 전화번호는 개인정보 보호를 위해 맨 뒷자리 4자리를 제외한 나머지를 *으로 바꿔야 한다. 전화번호를 나타내는 문자열 str을 입력받는 hideNumbers 함수를 완성하라 예를들어 s가 ‘01033334444’면 *******4444를 리턴하고, ‘02777",
         "wordCount": 744
     }

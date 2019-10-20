@@ -21,7 +21,7 @@
 <meta property="og:description" content="HTML Study 02 display flex layout a 태그 position font css 개발 방법론 외부 css 적용 방법 ( reset CSS 와 normalize CSS )   오늘의 중요점!css 문제가 생길시 홈페이지를 열어서 검사를 하고 항상 작은 단위부터 큰단위로 확인하다.( 특히 상속,겹침,우선순위 ) box-sizing 방식은">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://user-images.githubusercontent.com/31315644/64251759-3252cb00-cf54-11e9-88f9-922505f9789e.jpeg">
-<meta property="og:updated_time" content="2019-10-02T08:56:43.140Z">
+<meta property="og:updated_time" content="2019-10-20T05:41:02.723Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="html-css-study-02">
 <meta name="twitter:description" content="HTML Study 02 display flex layout a 태그 position font css 개발 방법론 외부 css 적용 방법 ( reset CSS 와 normalize CSS )   오늘의 중요점!css 문제가 생길시 홈페이지를 열어서 검사를 하고 항상 작은 단위부터 큰단위로 확인하다.( 특히 상속,겹침,우선순위 ) box-sizing 방식은">
@@ -192,8 +192,8 @@
 </ul>
 <blockquote>
 <h2 id="오늘의-중요점"><a href="#오늘의-중요점" class="headerlink" title="오늘의 중요점!"></a>오늘의 중요점!</h2><p>css 문제가 생길시 홈페이지를 열어서 검사를 하고 항상 작은 단위부터 큰단위로 확인하다.( 특히 상속,겹침,우선순위 )</p>
-<p>box-sizing 방식은 통일하는게 나중의 유지보수에 좋다. </p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt; *, *<span class="selector-pseudo">::before</span>, *<span class="selector-pseudo">::after</span>&#123;</span><br><span class="line">&gt; </span><br><span class="line">&gt; <span class="selector-tag">box-sizing</span>: <span class="selector-tag">border-box</span>;</span><br><span class="line">&gt; </span><br><span class="line">&gt; &#125; <span class="comment">/*import 바로 아래*/</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+<p>box-sizing 방식은 통일하는게 나중의 유지보수에 좋다.</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt; *, *<span class="selector-pseudo">::before</span>, *<span class="selector-pseudo">::after</span>&#123;</span><br><span class="line">&gt;</span><br><span class="line">&gt; <span class="selector-tag">box-sizing</span>: <span class="selector-tag">border-box</span>;</span><br><span class="line">&gt;</span><br><span class="line">&gt; &#125; <span class="comment">/*import 바로 아래*/</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
 </blockquote>
 <blockquote>
 <p>부모가 css box 레이아웃을 결정하면 자식도 그것을 따라감.(상속 - 무조건은 아니다. margin , padding 등등)</p>
@@ -201,7 +201,7 @@
 <h2 id="display"><a href="#display" class="headerlink" title="display"></a>display</h2><blockquote>
 <p>요소(즉 태그)는 inline과 block 요소로 나뉜다.</p>
 <p>inline : 줄 속에 넣는 요소. 줄바꿈이 되지 않고 글자수에 따라 크기 자체가 줄고 늘어난다. <b> <span> <a></a></span></b></p>
-<p>block : 좀 더 넓은 범위를 지정할 때 사용하는 요소. 가로화면을 100% 다차지. 줄바꿈이 됨.                          </p><p> </p><h1> <div> <ul> <ol> <p></p>
+<p>block : 좀 더 넓은 범위를 지정할 때 사용하는 요소. 가로화면을 100% 다차지. 줄바꿈이 됨.                          </p><p> </p><h1> <div> <ul> <ol><p></p>
 </ol></ul></div></h1></blockquote>
 <ol>
 <li><p>display : inline - block과 다르게 줄바꿈이 안되고, width와 height가 적용되지 않는다. 오로지 적용된 글자 수에 따라서 크기가 결정된다.</p>
@@ -214,8 +214,8 @@
 </li>
 </ol>
 <h2 id="Flex-layout"><a href="#Flex-layout" class="headerlink" title="Flex layout"></a>Flex layout</h2><blockquote>
-<p>flex 모델은 크기 수치를 잘못입력하여도 레이아웃이 크게 깨지지 않는다. </p>
-<p>이유는 전체길이에 대해서 비율로 따져서 스스로 값을 정해주기 떄문.</p>
+<p>flex 모델은 크기 수치를 잘못입력하여도 레이아웃이 크게 깨지지 않는다.</p>
+<p>이유는 전체길이에 대해서 비율로 따져서 스스로 값을 정해주기 때문.</p>
 </blockquote>
 <ul>
 <li><h3 id="display-flex"><a href="#display-flex" class="headerlink" title="display: flex"></a>display: flex</h3><p>IE 10 or 그 이상 버전에서 사용 가능.</p>
@@ -224,8 +224,8 @@
 </ul>
 <ul>
 <li><h3 id="flex-direction-부모노드"><a href="#flex-direction-부모노드" class="headerlink" title="flex-direction (부모노드)"></a>flex-direction (부모노드)</h3><p>flex-direction은 flex설정시 어떤 방향으로 제기 될것인가를 나열한다. 기본 flex-direction=row 이다.</p>
-<p>x축 , y축 으로 기준을 나눈다. </p>
-<p>row = x축 </p>
+<p>x축 , y축 으로 기준을 나눈다.</p>
+<p>row = x축</p>
 <p>column = y축</p>
 </li>
 <li><h3 id="flex-basis-자식-노드"><a href="#flex-basis-자식-노드" class="headerlink" title="flex-basis (자식 노드)"></a>flex-basis (자식 노드)</h3><p>flex-item의 크기를 결정합니다. 각 축에 해당하는 (width / height) 의 값을 설정.</p>
@@ -234,8 +234,8 @@
 <li>flex-start(default) ,기본</li>
 <li>flex-end ,끝방향 정렬</li>
 <li>center ,중앙 정렬</li>
-<li>space-between , flex-item들의 사이를 동일하게 비워줌. </li>
-<li>space-around, flex-item들의 사이를 비워줌. </li>
+<li>space-between , flex-item들의 사이를 동일하게 비워줌.</li>
+<li>space-around, flex-item들의 사이를 비워줌.</li>
 <li>space-evenly : 익스플로러 지원x</li>
 </ul>
 </li>
@@ -261,7 +261,7 @@
 <li>static : MarkUp 순서대로 배치, top-bottom-left-right 의 속성값이 적용되지 않는다.</li>
 <li>absolute : 상위 요소(상위는 반드시 static이 아닌 다른 값)를 기준으로 위치를 설정.</li>
 <li>relative : 상위 요소(상위는 반드시 static)를 기준으로 위치를 설정.</li>
-<li>fixed : 요소의 위치를 사용자의 브라우저 기준으로 설정. ( 광고, 상단바, 하단바 등등) </li>
+<li>fixed : 요소의 위치를 사용자의 브라우저 기준으로 설정. ( 광고, 상단바, 하단바 등등)</li>
 </ul>
 <h2 id="font"><a href="#font" class="headerlink" title="font"></a>font</h2><ul>
 <li><p>em : 상위요소의 크기에 대해서 비율로 계산한다.</p>
@@ -305,7 +305,7 @@
 <p>​    [Reset css] <a href="https://meyerweb.com/eric/tools/css/reset/" target="_blank" rel="noopener">https://meyerweb.com/eric/tools/css/reset/</a></p>
 <ul>
 <li><p>적용방법 ( 예 - nomalize )</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span></span></span><br><span class="line"><span class="tag"><span class="attr">href</span>=<span class="string">"https://necolas.github.io/normalize.css/latest/normalize.css"</span>&gt;</span> </span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">@<span class="keyword">import</span> url(<span class="string">'https://necolas.github.io/normalize.css/latest/normalize.css'</span>);</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span></span></span><br><span class="line"><span class="tag"><span class="attr">href</span>=<span class="string">"https://necolas.github.io/normalize.css/latest/normalize.css"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">@<span class="keyword">import</span> url(<span class="string">'https://necolas.github.io/normalize.css/latest/normalize.css'</span>);</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 
         </div>
@@ -314,7 +314,7 @@
 
 
 
-    <a data-url="http://yoursite.com/2019/09/06/html-css-study-02/" data-id="ck1xam0g9003lwvz00smobx9h" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2019/09/06/html-css-study-02/" data-id="ck1ykljz3003puxz0ef54km0z" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -390,7 +390,7 @@
         "genre": "TIL HTML&CSS",
         "datePublished": "2019-09-06",
         "dateCreated": "2019-09-06",
-        "dateModified": "2019-10-02",
+        "dateModified": "2019-10-20",
         "url": "http://yoursite.com/2019/09/06/html-css-study-02/",
         "description": "
 HTML Study 02
@@ -405,7 +405,7 @@ css 개발 방법론
 
 오늘의 중요점!css 문제가 생길시 홈페이지를 열어서 검사를 하고 항상 작은 단위부터 큰단위로 확인하다.( 특히 상속,겹침,우선순위 )
 box-sizing 방식은",
-        "wordCount": 716
+        "wordCount": 705
     }
 </script>
 

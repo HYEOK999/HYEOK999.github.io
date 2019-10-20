@@ -21,7 +21,7 @@
 <meta property="og:description" content="JacaScript 18강 예습 18강 : 프로토타입  객체 지향 프로그래밍  상속과 프로토타입  프로토타입 과 객체  __ proto __ 접근자 프로퍼티  __ proto __ 접근자 프로퍼티 다.  __ proto __ 접근자 프로퍼티 상속을 통해 사용된다.  프로토타입 체인   __ proto __ 접근자 프로퍼티를 통해 프로토타입에 접근하는 이">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://user-images.githubusercontent.com/31315644/66104821-b9976b00-e5f4-11e9-84e9-20c797dd2c51.jpeg">
-<meta property="og:updated_time" content="2019-10-16T16:41:37.768Z">
+<meta property="og:updated_time" content="2019-10-20T05:43:43.986Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javascript-preview-18">
 <meta name="twitter:description" content="JacaScript 18강 예습 18강 : 프로토타입  객체 지향 프로그래밍  상속과 프로토타입  프로토타입 과 객체  __ proto __ 접근자 프로퍼티  __ proto __ 접근자 프로퍼티 다.  __ proto __ 접근자 프로퍼티 상속을 통해 사용된다.  프로토타입 체인   __ proto __ 접근자 프로퍼티를 통해 프로토타입에 접근하는 이">
@@ -214,7 +214,7 @@
 </li>
 <li><p>리터럴 표기법에 의해 생성된 객체의 생성자 함수와 프로토타입</p>
 <ul>
-<li>리터럴 표기법에 의해 생성된 객체 </li>
+<li>리터럴 표기법에 의해 생성된 객체</li>
 </ul>
 </li>
 <li><p>프로토타입의 생성 시점</p>
@@ -281,9 +281,9 @@
 <br>
 
 <h3 id="객체지향-프로그래밍"><a href="#객체지향-프로그래밍" class="headerlink" title="객체지향 프로그래밍"></a>객체지향 프로그래밍</h3><blockquote>
-<p>객체의 상태(state)를 나타내는 데이터(property)와 </p>
-<p>상태 데이터를 조작할 수 있는 동작(behavior)(method)을 하나의 논리적인 단위로 묶어 생각한다. </p>
-<p>이때 <strong>상태 데이터와 동작을 하나의 논리적인 단위로 묶은 복합적인 자료 구조를 객체(object)라 한다.</strong> </p>
+<p>객체의 상태(state)를 나타내는 데이터(property)와</p>
+<p>상태 데이터를 조작할 수 있는 동작(behavior)(method)을 하나의 논리적인 단위로 묶어 생각한다.</p>
+<p>이때 <strong>상태 데이터와 동작을 하나의 논리적인 단위로 묶은 복합적인 자료 구조를 객체(object)라 한다.</strong></p>
 <p>이러한 객체들의 집합으로 표현하려는 프로그래밍 패러다임을 객체지향 프로그래밍이라 한다.</p>
 </blockquote>
 <br>
@@ -302,7 +302,7 @@
 
 <br>
 
-<p>위의 문제를 상속을 통해 불필요한 중복을 제거해 보자. </p>
+<p>위의 문제를 상속을 통해 불필요한 중복을 제거해 보자.</p>
 <p><strong>자바스크립트는 프로토타입(prototype)을 기반으로 상속을 구현한다.</strong></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Circle</span>(<span class="params">radius</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.radius = radius;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Circle 생성자 함수가 생성한 모든 인스턴스가 공유할 수 있도록 getArea 메소드를 프로토타입에 추가한다.</span></span><br><span class="line"><span class="comment">// 프로토타입은 Circle 생성자 함수의 prototype 프로퍼티에 바인딩되어 있다.</span></span><br><span class="line">Circle.prototype.getArea = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Math</span>.PI * <span class="built_in">Math</span>.pow(<span class="keyword">this</span>.radius, <span class="number">2</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 인스턴스 생성</span></span><br><span class="line"><span class="keyword">const</span> circle1 = <span class="keyword">new</span> Circle(<span class="number">1</span>);</span><br><span class="line"><span class="keyword">const</span> circle2 = <span class="keyword">new</span> Circle(<span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Circle 생성자 함수가 생성한 모든 인스턴스는 부모 객체의 역할을 하는</span></span><br><span class="line"><span class="comment">// 프로토타입 Circle.prototype로부터 getArea 메소드를 상속받는다.</span></span><br><span class="line"><span class="comment">// 즉, Circle 생성자 함수가 생성하는 모든 인스턴스는 하나의 getArea 메소드를 공유한다.</span></span><br><span class="line"><span class="built_in">console</span>.log(circle1.getArea === circle2.getArea); <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(circle1.getArea()); <span class="comment">// 3.141592653589793</span></span><br><span class="line"><span class="built_in">console</span>.log(circle2.getArea()); <span class="comment">// 12.566370614359172</span></span><br></pre></td></tr></table></figure>
 
@@ -321,7 +321,7 @@
 </blockquote>
 <ul>
 <li>모든 객체는 [[Prototype]]이라는 내부 슬롯을 갖는다.</li>
-<li>모든 객체는 생성될 때 [[Prototype]] 내부 슬롯의 값으로 프로토타입의 참조를 저장한다. </li>
+<li>모든 객체는 생성될 때 [[Prototype]] 내부 슬롯의 값으로 프로토타입의 참조를 저장한다.</li>
 <li>모든 객체는 하나의 프로토타입을 갖으며 프로토타입은 객체의 생성 방식에 의해 결정된다.</li>
 </ul>
 <p>객체 리터럴에 의해 생성된 객체의 프로토타입 Object.prototype과<br>생성자 함수에 의해 생성된 객체의 프로토타입은 생성자 함수의 prototype 프로퍼티에 바인딩 되어 있다.</p>
@@ -332,21 +332,21 @@
 <ol>
 <li><p><code>인스턴스(객체) x</code>는 자신의 프로토타입(<code>생성자함수.prototype</code>)에게 접근하기 위해 링크프로퍼티인 __ proto __ 로 자신의 [[Prototype]] 내부 슬롯이 가리키는 객체에 접근할 수 있다.</p>
 </li>
-<li><p><code>생성자 함수 Fn()</code>는 자신의  프로퍼티 prototype을 통해 프로토타입(<code>생성자함수.prototype</code>)에 접근할 수 있다. </p>
+<li><p><code>생성자 함수 Fn()</code>는 자신의  프로퍼티 prototype을 통해 프로토타입(<code>생성자함수.prototype</code>)에 접근할 수 있다.</p>
 </li>
 <li><p>프로토타입(<code>생성자함수.prototype</code>)은 constructor 프로퍼티를 통해 생성자 함수에 접근할 수 있다.</p>
 </li>
 </ol>
 <p>( 객체 리터럴에 의해 생성된 객체의 프로토 타입은 Object.prototype이다.<br>생성자 함수에 의해 생성된 객체는 생성자함수.prototype 프로퍼티에 바인딩 되어 있다. )</p>
 <ul>
-<li>모든 객체는 하나의 프로토 타입을 갖는다. </li>
+<li>모든 객체는 하나의 프로토 타입을 갖는다.</li>
 <li>프로토 타입은 null 이거나 객체다.</li>
 <li>모든 프로토 타입은 생성자 함수와 연결 되어 있다. (즉, 생성자함수 &lt;-&gt; 프로토타입 &lt;-&gt; 객체)</li>
 </ul>
 <br>
 
 <h3 id="proto-접근자-프로퍼티"><a href="#proto-접근자-프로퍼티" class="headerlink" title="__ proto __ 접근자 프로퍼티"></a>__ proto __ 접근자 프로퍼티</h3><blockquote>
-<p><strong>모든 객체는 __ proto __ 접근자 프로퍼티를 통해 자신의 프로토타입, 즉 [[Prototype]] 내부 슬롯에 접근할 수 있다.</strong> </p>
+<p><strong>모든 객체는 __ proto __ 접근자 프로퍼티를 통해 자신의 프로토타입, 즉 [[Prototype]] 내부 슬롯에 접근할 수 있다.</strong></p>
 </blockquote>
 <h4 id="proto-접근자-프로퍼티다"><a href="#proto-접근자-프로퍼티다" class="headerlink" title="__ proto __ 접근자 프로퍼티다."></a>__ proto __ 접근자 프로퍼티다.</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> person = &#123; <span class="attr">name</span>: <span class="string">'Lee'</span> &#125;;</span><br></pre></td></tr></table></figure>
 
@@ -369,15 +369,15 @@
 <br>
 
 <h4 id="proto-접근자-프로퍼티는-상속을-통해-사용된다"><a href="#proto-접근자-프로퍼티는-상속을-통해-사용된다" class="headerlink" title="__ proto __ 접근자 프로퍼티는 상속을 통해 사용된다."></a>__ proto __ 접근자 프로퍼티는 상속을 통해 사용된다.</h4><blockquote>
-<p>__ proto __ 접근자 프로퍼티는 객체가 직접 소유하는 프로퍼티가 아니라 Object.prototype의 프로퍼티이다. </p>
+<p>__ proto __ 접근자 프로퍼티는 객체가 직접 소유하는 프로퍼티가 아니라 Object.prototype의 프로퍼티이다.</p>
 <p>모든 객체는 상속을 통해 Object.prototype.__ proto __ 접근자 프로퍼티를 사용할 수 있다.</p>
 </blockquote>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// person 객체는 __proto__ 프로퍼티를 소유하지 않는다.</span></span><br><span class="line"><span class="built_in">console</span>.log(person.hasOwnProperty(<span class="string">'__proto__'</span>)); <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// __proto__ 프로퍼티는 모든 객체의 프로토타입 객체인 Object.prototype의 접근자 프로퍼티이다.</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.getOwnPropertyDescriptor(<span class="built_in">Object</span>.prototype, <span class="string">'__proto__'</span>));</span><br><span class="line"><span class="comment">// &#123;get: ƒ, set: ƒ, enumerable: false, configurable: true&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 모든 객체는 Object.prototype의 접근자 프로퍼티 __proto__를 상속받아 사용할 수 있다.</span></span><br><span class="line"><span class="built_in">console</span>.log(&#123;&#125;.__proto__ === <span class="built_in">Object</span>.prototype); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
 
 <br>
 
-<h5 id="프로토타입-체인"><a href="#프로토타입-체인" class="headerlink" title="프로토타입 체인"></a>프로토타입 체인</h5><p>​    JS는 객체의 프로퍼티(메소드 포함)에 접근하려고 할 때 해당 객체에 접근하려는 프로퍼티가 없다면 __ proto __ 접근자 프로퍼티가 가리키는 링크를 따라 자신의 부모 역할을 하는 프로토타입의 프로퍼티를 순차적으로 검색한다. </p>
-<p>프로토타입 체인의 종점, 즉 프로토타입 체인의 최상위 객체는 Object.prototype이며 이 객체는 모든 객체에게 상속된다. </p>
+<h5 id="프로토타입-체인"><a href="#프로토타입-체인" class="headerlink" title="프로토타입 체인"></a>프로토타입 체인</h5><p>​    JS는 객체의 프로퍼티(메소드 포함)에 접근하려고 할 때 해당 객체에 접근하려는 프로퍼티가 없다면 __ proto __ 접근자 프로퍼티가 가리키는 링크를 따라 자신의 부모 역할을 하는 프로토타입의 프로퍼티를 순차적으로 검색한다.</p>
+<p>프로토타입 체인의 종점, 즉 프로토타입 체인의 최상위 객체는 Object.prototype이며 이 객체는 모든 객체에게 상속된다.</p>
 <br>
 
 <h4 id="proto-접근자-프로퍼티를-통해-프로토타입에-접근하는-이유"><a href="#proto-접근자-프로퍼티를-통해-프로토타입에-접근하는-이유" class="headerlink" title="__ proto __ 접근자 프로퍼티를 통해 프로토타입에 접근하는 이유"></a>__ proto __ 접근자 프로퍼티를 통해 프로토타입에 접근하는 이유</h4><blockquote>
@@ -399,10 +399,10 @@
 <br>
 
 <h3 id="함수-객체의-prototype-프로퍼티"><a href="#함수-객체의-prototype-프로퍼티" class="headerlink" title="함수 객체의 prototype 프로퍼티"></a>함수 객체의 prototype 프로퍼티</h3><blockquote>
-<p>*<em>함수 객체는 __ proto __ 접근자 프로퍼티 이외에 prototype 프로퍼티도 소유한다. *</em></p>
+<p><strong>함수 객체는 __ proto __ 접근자 프로퍼티 이외에 prototype 프로퍼티도 소유한다.</strong></p>
 <p><strong>함수 객체의 prototype 프로퍼티는 생성자 함수가 생성할 인스턴스의 프로토타입을 가리킨다.</strong></p>
 </blockquote>
-<p>prototype 프로퍼티는 함수 객체만이 소유하는 프로퍼티이다.<br>일반 객체에는 prototype 프로퍼티가 없다. </p>
+<p>prototype 프로퍼티는 함수 객체만이 소유하는 프로퍼티이다.<br>일반 객체에는 prototype 프로퍼티가 없다.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 함수 객체는 prototype 프로퍼티를 소유한다.</span></span><br><span class="line"><span class="built_in">console</span>.log((<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;).hasOwnProperty(<span class="string">'prototype'</span>)); <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 일반 객체는 prototype 프로퍼티를 소유하지 않는다.</span></span><br><span class="line"><span class="built_in">console</span>.log(&#123;&#125;.hasOwnProperty(<span class="string">'prototype'</span>)); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
 
 <p>prototype 프로퍼티는 함수가 객체를 생성하는 생성자 함수로서 사용될 때,<br>생성자 함수가 생성할 객체(인스턴스)의 프로토타입을 가리킨다.<br>따라서 생성자 함수로서 호출할 수 없는 함수, 즉 <strong>함수의 종류가 Arrow, Method인 함수인 non-constructor는 프로토타입이 생성되지 않으며 prototype 프로퍼티도 소유하지 않는다.</strong></p>
@@ -441,22 +441,22 @@
 <br>
 
 <h3 id="프로토타입의-constructor-프로퍼티와-생성자-함수"><a href="#프로토타입의-constructor-프로퍼티와-생성자-함수" class="headerlink" title="프로토타입의 constructor 프로퍼티와 생성자 함수"></a>프로토타입의 constructor 프로퍼티와 생성자 함수</h3><blockquote>
-<p><strong>모든 프로토타입은 constructor 프로퍼티를 갖는다.</strong> </p>
-<p>이 constructor 프로퍼티는 prototype 프로퍼티로 자신을 참조하고 있는 생성자 함수를 가리킨다. </p>
-<p>이 연결은 생성자 함수가 생성될 때, 즉 함수 객체가 생성될 떄 이루어진다.</p>
+<p><strong>모든 프로토타입은 constructor 프로퍼티를 갖는다.</strong></p>
+<p>이 constructor 프로퍼티는 prototype 프로퍼티로 자신을 참조하고 있는 생성자 함수를 가리킨다.</p>
+<p>이 연결은 생성자 함수가 생성될 때, 즉 함수 객체가 생성될 때 이루어진다.</p>
 </blockquote>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 생성자 함수</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> me = <span class="keyword">new</span> Person(<span class="string">'Lee'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// me 객체의 생성자 함수는 Person이다.</span></span><br><span class="line"><span class="built_in">console</span>.log(me.constructor === Person);  <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
 
 <img src="https://poiemaweb.com/assets/fs-images/18-10.png" style="zoom:48%;">
 
 <ol>
-<li><p>위 예제에서 Person 생성자 함수는 me 객체를 생성했다. </p>
+<li><p>위 예제에서 Person 생성자 함수는 me 객체를 생성했다.</p>
 </li>
-<li><p>이때 me 객체는 프로토타입의 contructor 프로퍼티를 통해 생성자 함수와 연결된다. </p>
+<li><p>이때 me 객체는 프로토타입의 contructor 프로퍼티를 통해 생성자 함수와 연결된다.</p>
 </li>
-<li><p>me 객체에는 constructor 프로퍼티가 없지만 me 객체의 프로토타입인 Person.prototye에 constructor 프로퍼티가 있다. </p>
+<li><p>me 객체에는 constructor 프로퍼티가 없지만 me 객체의 프로토타입인 Person.prototype에 constructor 프로퍼티가 있다.</p>
 </li>
-<li><p>me 객체는 프로토타입인 Person.prototye에 constructor 프로퍼티를 상속받아 사용할 수 있다. </p>
+<li><p>me 객체는 프로토타입인 Person.prototype에 constructor 프로퍼티를 상속받아 사용할 수 있다.</p>
 </li>
 </ol>
 <br>
@@ -472,12 +472,12 @@
 <p>위 객체들도 <strong>프로토타입</strong>이 존재한다.</p>
 <p>객체 <code>const obj = {};</code>의 경우 객체 리터럴에 의해 생성된 객체이다.</p>
 <p>하지만 객체 <code>obj</code>는 Object 생성자 함수와 constructor 프로퍼티로 연결되어있다.</p>
-<p>즉, Object 생성자 함수는 new 연산자와 함께 호출하지 않아도 new 연산자와 함께 호출한 것과 동일하게 동작한다. </p>
-<p>그리고 인수가 전달되지 않았을 때 추상 연산 ObjectCreate을 호출하여 빈 객체를 생성한다. </p>
+<p>즉, Object 생성자 함수는 new 연산자와 함께 호출하지 않아도 new 연산자와 함께 호출한 것과 동일하게 동작한다.</p>
+<p>그리고 인수가 전달되지 않았을 때 추상 연산 ObjectCreate을 호출하여 빈 객체를 생성한다.</p>
 <p>인수가 전달된 경우에는 인수를 객체로 변환한다.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Object 생성자 함수에 의한 객체 생성</span></span><br><span class="line"><span class="keyword">let</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line"><span class="built_in">console</span>.log(obj); <span class="comment">// &#123;&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Object 생성자 함수는 new 연산자와 함께 호출하지 않아도 new 연산자와 함께 호출한 것과 동일하게 동작한다.</span></span><br><span class="line"><span class="comment">// 인수가 전달되지 않았을 때 추상 연산 ObjectCreate을 호출하여 빈 객체를 생성한다.</span></span><br><span class="line">obj = <span class="built_in">Object</span>();</span><br><span class="line"><span class="built_in">console</span>.log(obj); <span class="comment">// &#123;&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 인수가 전달된 경우에는 인수를 객체로 변환한다.</span></span><br><span class="line"><span class="comment">// Number 객체 생성</span></span><br><span class="line">obj = <span class="keyword">new</span> <span class="built_in">Object</span>(<span class="number">123</span>);</span><br><span class="line"><span class="built_in">console</span>.log(obj); <span class="comment">// Number &#123;123&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// String  객체 생성</span></span><br><span class="line">obj = <span class="keyword">new</span> <span class="built_in">Object</span>(<span class="string">'123'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(obj); <span class="comment">// String &#123;"123"&#125;</span></span><br></pre></td></tr></table></figure>
 
-<p>리터럴 표기법(객체 리터럴, 함수 리터럴, 배열 리터럴, 정규 표현식 리터럴 등)에 의해 생성된 객체는 생성자 함수에 의해 생성된 객체는 아니다. </p>
+<p>리터럴 표기법(객체 리터럴, 함수 리터럴, 배열 리터럴, 정규 표현식 리터럴 등)에 의해 생성된 객체는 생성자 함수에 의해 생성된 객체는 아니다.</p>
 <table>
 <thead>
 <tr>
@@ -517,7 +517,7 @@
 <br>
 
 <h4 id="빌트인-생성자-함수와-프로토타입-생성-시점"><a href="#빌트인-생성자-함수와-프로토타입-생성-시점" class="headerlink" title="빌트인 생성자 함수와 프로토타입 생성 시점"></a>빌트인 생성자 함수와 프로토타입 생성 시점</h4><p>( Object, String, Number, Function, Array, RegExp, Date, Promise 등 ) = 빌트인 생성자 함수</p>
-<p><strong>모든 빌트인 생성자 함수는 전역 객체가 생성되는 시점에 생성된다.</strong> </p>
+<p><strong>모든 빌트인 생성자 함수는 전역 객체가 생성되는 시점에 생성된다.</strong></p>
 <p>전역 객체(window)는 누구보다도 먼저 생성된다.</p>
 <p>전역 객체는 Object, String, Number, Function, Array, RegExp, Date, Math와 같은 표준 빌트인 객체(standard built-in object)를 프로퍼티로 갖는다. Math를 제외한 표준 빌트인 객체는 생성자 함수 객체이다.</p>
 <br>
@@ -536,7 +536,7 @@
 
 <img src="https://user-images.githubusercontent.com/31315644/66939451-0dd32e00-f07e-11e9-9129-bc62a2635705.jpeg" alt="객체 리터럴" style="zoom: 50%;">
 
-<p> 객체 obj는 Object.prototype을 프로토타입으로 갖게 되며 이로써 <strong>Object.prototype을 상속</strong>받는다. </p>
+<p> 객체 obj는 Object.prototype을 프로토타입으로 갖게 되며 이로써 <strong>Object.prototype을 상속</strong>받는다.</p>
 <p>obj 객체는 ( constructor 프로퍼티와 hasOwnProperty 메소드 등을 소유X )</p>
 <p>자신의 프로토타입인 Object.prototype의 constructor 프로퍼티와 hasOwnProperty 메소드를 자신의 자산인 것처럼 자유롭게 사용할 수 있다.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123; <span class="attr">x</span>: <span class="number">1</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 객체 obj는 Object.prototype을 상속받는다.</span></span><br><span class="line"><span class="built_in">console</span>.log(obj.constructor === <span class="built_in">Object</span>); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(obj.hasOwnProperty(<span class="string">'x'</span>));    <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
@@ -569,7 +569,7 @@
 <br>
 
 <h3 id="캡슐화"><a href="#캡슐화" class="headerlink" title="캡슐화"></a>캡슐화</h3><blockquote>
-<p>캡슐화(encapsulation)는 정보의 일부를 외부에 감추어 은닉(정보 은닉(information hiding))하는 것을 말한다. </p>
+<p>캡슐화(encapsulation)는 정보의 일부를 외부에 감추어 은닉(정보 은닉(information hiding))하는 것을 말한다.</p>
 </blockquote>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Person = (<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 자유 변수이며 private하다</span></span><br><span class="line">  <span class="keyword">let</span> _name = <span class="string">''</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 생성자 함수</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>) </span>&#123; _name = name; &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 프로토타입 메소드</span></span><br><span class="line">  Person.prototype.sayHello = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">`Hi! My name is <span class="subst">$&#123;_name&#125;</span>`</span>);</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 생성자 함수를 반환</span></span><br><span class="line">  <span class="keyword">return</span> Person;</span><br><span class="line">&#125;());</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> me = <span class="keyword">new</span> Person(<span class="string">'Lee'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// _name은 지역 변수이므로 외부에서 접근하여 변경할 수 없다. 즉, private하다.</span></span><br><span class="line">me._name = <span class="string">'Kim'</span>;</span><br><span class="line">me.sayHello(); <span class="comment">// Hi! My name is Lee</span></span><br></pre></td></tr></table></figure>
 
@@ -590,7 +590,7 @@
 
 <p>즉, 프로토타입에 있는 SayHello를 복사해서 와서 사용하는 것.</p>
 <p>따라서, sayHello를 삭제해도 프로토타입에 남아있다.</p>
-<p>하위 객체를 통해 프로토타입의 프로퍼티를 변경 또는 삭제하는 것은 불가능하다. </p>
+<p>하위 객체를 통해 프로토타입의 프로퍼티를 변경 또는 삭제하는 것은 불가능하다.</p>
 <p>다시 말해 하위 객체를 통해 프로토타입에 get 액세스는 허용되나 set 액세스는 허용되지 않는다.</p>
 <p><strong>만약 프로토타입 프로퍼티를 변경또는 삭제하려면 직접 접근 해야만 한다.</strong></p>
 <br>
@@ -599,7 +599,7 @@
 <p>프로토타입은 다른 임의의 객체로 변경할 수 있다.</p>
 <p>프로토타입은 생성자 함수 또는 인스턴스에 의해 교체할 수 있다.</p>
 </blockquote>
-<h4 id="생성자-함수에-의한-프로토타입의-교체"><a href="#생성자-함수에-의한-프로토타입의-교체" class="headerlink" title="생성자 함수에 의한 프로토타입의 교체"></a>생성자 함수에 의한 프로토타입의 교체</h4><p> <strong>프로토타입을 교체하면 constructor 프로퍼티와 생성자 함수 간의 링크가 파괴된다.</strong> </p>
+<h4 id="생성자-함수에-의한-프로토타입의-교체"><a href="#생성자-함수에-의한-프로토타입의-교체" class="headerlink" title="생성자 함수에 의한 프로토타입의 교체"></a>생성자 함수에 의한 프로토타입의 교체</h4><p> <strong>프로토타입을 교체하면 constructor 프로퍼티와 생성자 함수 간의 링크가 파괴된다.</strong></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Person = (<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// ① 생성자 함수의 prototype 프로퍼티를 통해 프로토타입을 교체</span></span><br><span class="line">  Person.prototype = &#123;</span><br><span class="line">    sayHello() &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">`Hi! My name is <span class="subst">$&#123;<span class="keyword">this</span>.name&#125;</span>`</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> Person;</span><br><span class="line">&#125;());</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> me = <span class="keyword">new</span> Person(<span class="string">'Lee'</span>);</span><br></pre></td></tr></table></figure>
 
 <p>위 예제는 <code>Person</code>의 프로토타입에 객체 리터럴을 할당하였다.</p>
@@ -622,7 +622,7 @@
 
 <img src="https://poiemaweb.com/assets/fs-images/18-27.png" style="zoom:50%;">
 
-<p>바뀌버린 프로토타입 또한 생성자떄처럼 <code>constructor</code>를 가지고 있지 않다.<br>인스턴스에 의한 프로토타입 교체도 constructor 프로퍼티와 생성자 함수 간의 연결을 파괴한다.</p>
+<p>바뀌버린 프로토타입 또한 생성자때처럼 <code>constructor</code>를 가지고 있지 않다.<br>인스턴스에 의한 프로토타입 교체도 constructor 프로퍼티와 생성자 함수 간의 연결을 파괴한다.</p>
 <p>따라서 프로토 타입의 constructor 프로퍼티로 me 객체의 생성자 함수를 검색하면 Person이 아니라, Object가 나온다.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 프로토타입을 교체하면 constructor 프로퍼티와 생성자 함수 간의 링크가 파괴된다.</span></span><br><span class="line"><span class="built_in">console</span>.log(me.constructor === Person); <span class="comment">// false</span></span><br><span class="line"><span class="comment">// 프로토타입 체인을 따라 Object.prototype의 constructor 프로퍼티가 검색된다.</span></span><br><span class="line"><span class="built_in">console</span>.log(me.constructor === <span class="built_in">Object</span>); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
 
@@ -635,22 +635,22 @@
 
 <h3 id="instanceof-연산자"><a href="#instanceof-연산자" class="headerlink" title="instanceof 연산자"></a>instanceof 연산자</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">객체 <span class="keyword">instanceof</span> 생성자 함수</span><br></pre></td></tr></table></figure>
 
-<p>instanceof 는 좌측은 식별자 </p>
+<p>instanceof 는 좌측은 식별자</p>
 <p>우측은 생성자 함수를 가리키는 식별자를 둔다.</p>
 <p>좌측의 객체가 우측의 함수의 인스턴스가 아닐 경우 false를 맞을경우 true를 반환한다.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 생성자 함수</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> me = <span class="keyword">new</span> Person(<span class="string">'Lee'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// me 객체는 Person 생성자 함수에 의해 생성된 인스턴스이다.</span></span><br><span class="line"><span class="built_in">console</span>.log(me <span class="keyword">instanceof</span> Person); <span class="comment">// true</span></span><br><span class="line"><span class="comment">// instanceof 연산자는 상속 관계를 고려한다.</span></span><br><span class="line"><span class="comment">// me 객체는 Object.prototype을 상속받기 때문에 아래의 코드는 true로 평가된다.</span></span><br><span class="line"><span class="built_in">console</span>.log(me <span class="keyword">instanceof</span> <span class="built_in">Object</span>); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
 
 <p>만약 위 예제에서 me객체가 가리키는 프로토타입을 다른 객체로 교체해버린다면 instanceof 시 false를 반환한다.</p>
 <p>이유는 교체된 프로토타입의 constructor 프로퍼티가 존재하지 않기 때문이다.</p>
-<p>즉, <strong>instanceof 연산자는 생성자 함수의 prototype 프로퍼티가 가리키는 객체가 프로토타입 체인 상에 존재하는지 확인한다.</strong> </p>
+<p>즉, <strong>instanceof 연산자는 생성자 함수의 prototype 프로퍼티가 가리키는 객체가 프로토타입 체인 상에 존재하는지 확인한다.</strong></p>
 <br>
 
 <h3 id="직접-상속"><a href="#직접-상속" class="headerlink" title="직접 상속"></a>직접 상속</h3><h4 id="Object-create에-의한-직접-상속"><a href="#Object-create에-의한-직접-상속" class="headerlink" title="Object.create에 의한 직접 상속"></a>Object.create에 의한 직접 상속</h4><blockquote>
-<p>Object.create 메소드는 명시적으로 프로토타입을 지정하여 새로운 객체를 생성한다. </p>
+<p>Object.create 메소드는 명시적으로 프로토타입을 지정하여 새로운 객체를 생성한다.</p>
 </blockquote>
-<p>Object.create 메소드의 </p>
+<p>Object.create 메소드의</p>
 <ul>
-<li>첫번째 매개변수에는 생성할 객체의 프로토타입으로 지정할 객체를 전달한다. </li>
+<li>첫번째 매개변수에는 생성할 객체의 프로토타입으로 지정할 객체를 전달한다.</li>
 <li>두번째 매개변수에는 생성할 객체의 프로퍼티를 갖는 객체를 전달한다. (옵션이므로 생략 가능)</li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.create(prototype[, propertiesObject])</span><br></pre></td></tr></table></figure>
@@ -680,8 +680,8 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 생성자 함수</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 프로토타입 메소드</span></span><br><span class="line">Person.prototype.sayHello = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">`Hi! My name is <span class="subst">$&#123;<span class="keyword">this</span>.name&#125;</span>`</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Person 생성자 함수는 객체이므로 자신의 프로퍼티/메소드를 소유할 수 있다.</span></span><br><span class="line"><span class="comment">// 정적 프로퍼티</span></span><br><span class="line">Person.staticProp = <span class="string">'static prop'</span>;</span><br><span class="line"><span class="comment">// 정적 메소드</span></span><br><span class="line">Person.staticMethod = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'staticMethod'</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> me = <span class="keyword">new</span> Person(<span class="string">'Lee'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 생성자 함수에 추가한 정적 프로퍼티/메소드는 생성자 함수로 참조/호출한다.</span></span><br><span class="line">Person.staticMethod(); <span class="comment">// staticMethod</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 정적 프로퍼티/메소드는 생성자 함수가 생성한 인스턴스로 참조/호출할 수 없다.</span></span><br><span class="line"><span class="comment">// 인스턴스로 참조/호출할 수 있는 프로퍼티/메소드는 프로토타입 체인 상에 존재해야 한다.</span></span><br><span class="line">me.staticMethod(); <span class="comment">// TypeError: me.staticMethod is not a function</span></span><br></pre></td></tr></table></figure>
 
 <p><img src="https://poiemaweb.com/assets/fs-images/18-31.png" alt="poiema"></p>
-<p>Person 생성자 함수는 객체이므로 자신의 프로퍼티/메소드를 소유할 수 있다. </p>
-<p>Person 생성자 함수 객체가 소유한 프로퍼티/메소드를 정적 프로퍼티/메소드라고 부른다. </p>
+<p>Person 생성자 함수는 객체이므로 자신의 프로퍼티/메소드를 소유할 수 있다.</p>
+<p>Person 생성자 함수 객체가 소유한 프로퍼티/메소드를 정적 프로퍼티/메소드라고 부른다.</p>
 <p>정적 프로퍼티와 메서드는 인스턴스로 참조 및 호출이 불가능하다.</p>
 <p>(인스턴스가 참조및 호출 가능한건 프로토타입체인에 존재해야한다.)</p>
 <p>참고) Object.create 메소드도 Object 생성자 함수의 정적 메소드다. 따라서 상속이 불가능하다.</p>
@@ -696,7 +696,7 @@
 <br>
 
 <h3 id="프로퍼티-열거"><a href="#프로퍼티-열거" class="headerlink" title="프로퍼티 열거"></a>프로퍼티 열거</h3><blockquote>
-<p>객체의 모든 프로퍼티를 순회하며 열거(enumeration)하려면 for…in 문을 사용한다. </p>
+<p>객체의 모든 프로퍼티를 순회하며 열거(enumeration)하려면 for…in 문을 사용한다.</p>
 <p>for…in 문은 프로퍼티를 열거할 때 <strong>순서를 보장하지 않는다.</strong></p>
 <p>for (변수선언문 in 객체) { … }</p>
 <p>for…in 문은 객체의 프로토타입 체인 상에 존재하는 모든 프로토타입의 프로퍼티 중에서 프로퍼티 어트리뷰트 [[Enumerable]]의 값인 ture인 프로퍼티를 순회하며 열거(enumeration)한다.</p>
@@ -716,7 +716,7 @@
 
 
 
-    <a data-url="http://yoursite.com/2019/10/17/javascript-preview-18/" data-id="ck1xam0h0006gwvz0c4eg1rl4" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2019/10/17/javascript-preview-18/" data-id="ck1ykljzv0064uxz0rtoa5518" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -792,7 +792,7 @@
         "genre": "TIL Javascript-Preview",
         "datePublished": "2019-10-17",
         "dateCreated": "2019-10-17",
-        "dateModified": "2019-10-17",
+        "dateModified": "2019-10-20",
         "url": "http://yoursite.com/2019/10/17/javascript-preview-18/",
         "description": "
 
@@ -815,7 +815,7 @@ __ proto __ 접근자 프로퍼티 상속을 통해 사용된다.
 
 
 __ proto __ 접근자 프로퍼티를 통해 프로토타입에 접근하는 이",
-        "wordCount": 5480
+        "wordCount": 5444
     }
 </script>
 

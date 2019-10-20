@@ -21,7 +21,7 @@
 <meta property="og:description" content="HTML Study 12 webfont 정리 flex 재정리 white-space 속성 - pre , pre-wrap, pre-line 프로젝트 하면서 느낀점 9월 24일   webfont 정리 웹폰트를 사용하기 위해서는 다음과 같은 코드들이 일부 필요하다. 123456789101112131415@font-face &amp;#123;  font-family: N">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://user-images.githubusercontent.com/31315644/64251759-3252cb00-cf54-11e9-88f9-922505f9789e.jpeg">
-<meta property="og:updated_time" content="2019-10-02T09:03:46.859Z">
+<meta property="og:updated_time" content="2019-10-20T05:41:02.723Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="html-css-study-12">
 <meta name="twitter:description" content="HTML Study 12 webfont 정리 flex 재정리 white-space 속성 - pre , pre-wrap, pre-line 프로젝트 하면서 느낀점 9월 24일   webfont 정리 웹폰트를 사용하기 위해서는 다음과 같은 코드들이 일부 필요하다. 123456789101112131415@font-face &amp;#123;  font-family: N">
@@ -189,7 +189,7 @@
 </ul>
 <hr>
 <h3 id="webfont-정리"><a href="#webfont-정리" class="headerlink" title="webfont 정리"></a>webfont 정리</h3><p> 웹폰트를 사용하기 위해서는 다음과 같은 코드들이 일부 필요하다.</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">font-face</span> &#123;</span><br><span class="line">  <span class="attribute">font-family</span>: NanumSquareWeb;</span><br><span class="line">  <span class="attribute">src</span>: <span class="built_in">local</span>(NanumSquareR),</span><br><span class="line">       <span class="built_in">local</span>(NanumSquare),</span><br><span class="line">       <span class="built_in">url</span>(NanumSquareR.eot?#iefix) <span class="built_in">format</span>(<span class="string">'embedded-opentype'</span>),</span><br><span class="line">       <span class="built_in">url</span>(NanumSquareR.woff) <span class="built_in">format</span>(<span class="string">'woff'</span>),</span><br><span class="line">       <span class="built_in">url</span>(NanumSquareR.ttf) <span class="built_in">format</span>(<span class="string">'truetype'</span>);</span><br><span class="line">  <span class="attribute">font-style</span>: normal;</span><br><span class="line">  <span class="attribute">font-weight</span>: normal;</span><br><span class="line">  <span class="attribute">unicode-range</span>: U+<span class="number">0</span>-<span class="number">10</span>FFFF;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="selector-tag">h1</span> &#123;</span><br><span class="line">  <span class="attribute">font-family</span>: NanumSquareWeb, sans-serif;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">font-face</span> &#123;</span><br><span class="line">  <span class="attribute">font-family</span>: NanumSquareWeb;</span><br><span class="line">  <span class="attribute">src</span>: <span class="built_in">local</span>(NanumSquareR),</span><br><span class="line">       <span class="built_in">local</span>(NanumSquare),</span><br><span class="line">       <span class="built_in">url</span>(NanumSquareR.eot?#iefix) <span class="built_in">format</span>(<span class="string">'embedded-opentype'</span>),</span><br><span class="line">       <span class="built_in">url</span>(NanumSquareR.woff) <span class="built_in">format</span>(<span class="string">'woff'</span>),</span><br><span class="line">       <span class="built_in">url</span>(NanumSquareR.ttf) <span class="built_in">format</span>(<span class="string">'truetype'</span>);</span><br><span class="line">  <span class="attribute">font-style</span>: normal;</span><br><span class="line">  <span class="attribute">font-weight</span>: normal;</span><br><span class="line">  <span class="attribute">unicode-range</span>: U+<span class="number">0</span>-<span class="number">10</span>FFFF;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">h1</span> &#123;</span><br><span class="line">  <span class="attribute">font-family</span>: NanumSquareWeb, sans-serif;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <ol>
 <li><p>내가 사용할 웹폰트 패밀리명을 NanumSquareWeb으로 하겠다. 라고 선언한 예이다.</p>
@@ -306,14 +306,14 @@
 
 <h3 id="프로젝트-하면서-느낀점-9월-24일"><a href="#프로젝트-하면서-느낀점-9월-24일" class="headerlink" title="프로젝트 하면서 느낀점 9월 24일"></a>프로젝트 하면서 느낀점 9월 24일</h3><ol>
 <li>내가 모르는 태그들이 정말로 많다.</li>
-<li>layout 작업시 <ul>
+<li>layout 작업시<ul>
 <li>큰 틀에 대한 width를 전부 지정해주어야한다.</li>
 <li>작은 틀을 맞추고 싶다면 width값을 100%로 큰틀에 대해 맞춘다.</li>
 </ul>
 </li>
 <li>최대한 그려가면서 레이아웃 작업을 진행해야 될 것 같음.</li>
 <li>조언을 아끼지 말아라. (구하는 조언도, 모르는 조언도)</li>
-<li>남들보다 1개더 안다면 1개더 배풀고 더 모른다면 알 떄까지 노력할 것.</li>
+<li>남들보다 1개더 안다면 1개더 배풀고 더 모른다면 알 때까지 노력할 것.</li>
 <li>암기보다 이해가 먼저고 이해가 정 안될 경우 암기한다.</li>
 </ol>
 
@@ -323,7 +323,7 @@
 
 
 
-    <a data-url="http://yoursite.com/2019/09/25/html-css-study-12/" data-id="ck1xam0gi004pwvz0fitm8k2v" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2019/09/25/html-css-study-12/" data-id="ck1ykljze004ouxz024ba1cap" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -399,7 +399,7 @@
         "genre": "TIL HTML&CSS",
         "datePublished": "2019-09-25",
         "dateCreated": "2019-09-25",
-        "dateModified": "2019-10-02",
+        "dateModified": "2019-10-20",
         "url": "http://yoursite.com/2019/09/25/html-css-study-12/",
         "description": "
 HTML Study 12
@@ -411,7 +411,7 @@ white-space 속성 - pre , pre-wrap, pre-line
 
 webfont 정리 웹폰트를 사용하기 위해서는 다음과 같은 코드들이 일부 필요하다.
 123456789101112131415@font-face &#123;  font-family: N",
-        "wordCount": 807
+        "wordCount": 805
     }
 </script>
 
