@@ -12,19 +12,19 @@
     
         <meta name="keywords" content="hexo,git,Web,coding,developer,CSS,HTML,algorithm,javascript">
     
-    <meta name="description" content="JacaScript 17강 예습 17강 : 함수와 일급 객체  일급 객체 함수 객체의 프로퍼티   arguments 프로퍼티 caller 프로퍼티 length 프로퍼티 name 프로퍼티 __ proto __ 프로퍼티 prototype 프로퍼티         17강함수와 일급 객체  일급 객체란?  무명의 리터럴로 생성할 수 있다. (즉, 런타임에 생성이">
+    <meta name="description" content="JavaScript 17강 예습 17강 : 함수와 일급 객체  일급 객체 함수 객체의 프로퍼티   arguments 프로퍼티 caller 프로퍼티 length 프로퍼티 name 프로퍼티 __ proto __ 프로퍼티 prototype 프로퍼티         17강함수와 일급 객체  일급 객체란?  무명의 리터럴로 생성할 수 있다. (즉, 런타임에 생성이">
 <meta name="keywords" content="hexo,git,Web,coding,developer,CSS,HTML,algorithm,javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="javascript-preview-17">
 <meta property="og:url" content="http://yoursite.com/2019/10/15/javascript-preview-17/index.html">
 <meta property="og:site_name" content="HYEOK999&#39;s Blog">
-<meta property="og:description" content="JacaScript 17강 예습 17강 : 함수와 일급 객체  일급 객체 함수 객체의 프로퍼티   arguments 프로퍼티 caller 프로퍼티 length 프로퍼티 name 프로퍼티 __ proto __ 프로퍼티 prototype 프로퍼티         17강함수와 일급 객체  일급 객체란?  무명의 리터럴로 생성할 수 있다. (즉, 런타임에 생성이">
+<meta property="og:description" content="JavaScript 17강 예습 17강 : 함수와 일급 객체  일급 객체 함수 객체의 프로퍼티   arguments 프로퍼티 caller 프로퍼티 length 프로퍼티 name 프로퍼티 __ proto __ 프로퍼티 prototype 프로퍼티         17강함수와 일급 객체  일급 객체란?  무명의 리터럴로 생성할 수 있다. (즉, 런타임에 생성이">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://user-images.githubusercontent.com/31315644/66104821-b9976b00-e5f4-11e9-84e9-20c797dd2c51.jpeg">
-<meta property="og:updated_time" content="2019-10-15T01:38:32.702Z">
+<meta property="og:updated_time" content="2019-10-22T02:34:33.193Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javascript-preview-17">
-<meta name="twitter:description" content="JacaScript 17강 예습 17강 : 함수와 일급 객체  일급 객체 함수 객체의 프로퍼티   arguments 프로퍼티 caller 프로퍼티 length 프로퍼티 name 프로퍼티 __ proto __ 프로퍼티 prototype 프로퍼티         17강함수와 일급 객체  일급 객체란?  무명의 리터럴로 생성할 수 있다. (즉, 런타임에 생성이">
+<meta name="twitter:description" content="JavaScript 17강 예습 17강 : 함수와 일급 객체  일급 객체 함수 객체의 프로퍼티   arguments 프로퍼티 caller 프로퍼티 length 프로퍼티 name 프로퍼티 __ proto __ 프로퍼티 prototype 프로퍼티         17강함수와 일급 객체  일급 객체란?  무명의 리터럴로 생성할 수 있다. (즉, 런타임에 생성이">
 <meta name="twitter:image" content="https://user-images.githubusercontent.com/31315644/66104821-b9976b00-e5f4-11e9-84e9-20c797dd2c51.jpeg">
     
 
@@ -182,7 +182,7 @@
         <div class="article-entry" itemprop="articleBody">
             <p><img src="https://user-images.githubusercontent.com/31315644/66104821-b9976b00-e5f4-11e9-84e9-20c797dd2c51.jpeg" alt></p>
 <hr>
-<h2 id="JacaScript-17강-예습"><a href="#JacaScript-17강-예습" class="headerlink" title="JacaScript 17강 예습"></a>JacaScript 17강 예습</h2><ul>
+<h2 id="JavaScript-17강-예습"><a href="#JavaScript-17강-예습" class="headerlink" title="JavaScript 17강 예습"></a>JavaScript 17강 예습</h2><ul>
 <li><p>17강 : 함수와 일급 객체</p>
 <ol>
 <li>일급 객체</li>
@@ -228,13 +228,13 @@
 
 <img src="https://poiemaweb.com/assets/fs-images/17-1.png" alt="poiema" style="zoom:50%;">
 
-<p>일반 객체에는 없는 arguments, caller, length, name, prototype 프로퍼티가 함수 객체에는 존재한다. </p>
+<p>일반 객체에는 없는 arguments, caller, length, name, prototype 프로퍼티가 함수 객체에는 존재한다.</p>
 <p>이 프로퍼티 들의 프로퍼티 어트리뷰트를 Object.getOwnPropertyDescriptor 메소드로 확인해 보면 아래와 같다.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">square</span>(<span class="params">number</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> number * number;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// arguments는 square 함수 객체의 데이터 프로퍼티이다.</span></span><br><span class="line"><span class="built_in">Object</span>.getOwnPropertyDescriptor(square, <span class="string">'arguments'</span>);</span><br><span class="line"><span class="comment">// &#123;value: null, writable: false, enumerable: false, configurable: false&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// caller는 square 함수 객체의 데이터 프로퍼티이다.</span></span><br><span class="line"><span class="built_in">Object</span>.getOwnPropertyDescriptor(square, <span class="string">'caller'</span>);</span><br><span class="line"><span class="comment">// &#123;value: null, writable: false, enumerable: false, configurable: false&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// length는 square 함수 객체의 데이터 프로퍼티이다.</span></span><br><span class="line"><span class="built_in">Object</span>.getOwnPropertyDescriptor(square, <span class="string">'length'</span>);</span><br><span class="line"><span class="comment">// &#123;value: 1, writable: false, enumerable: false, configurable: true&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// name은 square 함수 객체의 데이터 프로퍼티이다.</span></span><br><span class="line"><span class="built_in">Object</span>.getOwnPropertyDescriptor(square, <span class="string">'name'</span>);</span><br><span class="line"><span class="comment">// &#123;value: "square", writable: false, enumerable: false, configurable: true&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// prototype은 square 함수 객체의 데이터 프로퍼티이다.</span></span><br><span class="line"><span class="built_in">Object</span>.getOwnPropertyDescriptor(square, <span class="string">'prototype'</span>);</span><br><span class="line"><span class="comment">// &#123;value: &#123;…&#125;, writable: true, enumerable: false, configurable: false&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// __proto__는 square 함수 객체의 프로퍼티가 아니다.</span></span><br><span class="line"><span class="built_in">Object</span>.getOwnPropertyDescriptor(square, <span class="string">'__proto__'</span>);</span><br><span class="line"><span class="comment">// undefined</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// __proto__는 Object.prototype 객체의 접근자 프로퍼티이다.</span></span><br><span class="line"><span class="comment">// square 함수 객체는 Object.prototype 객체로부터 __proto__ 접근자 프로퍼티를 상속받는다.</span></span><br><span class="line"><span class="built_in">Object</span>.getOwnPropertyDescriptor(<span class="built_in">Object</span>.prototype, <span class="string">'__proto__'</span>);</span><br><span class="line"><span class="comment">// &#123;get: ƒ, set: ƒ, enumerable: false, configurable: true&#125;</span></span><br></pre></td></tr></table></figure>
 
 <ul>
 <li><strong>데이터 프로퍼티</strong> : 키와 값으로 구성된 일반적인 프로퍼티다.</li>
-<li><strong>접근자 프로퍼티</strong> : <strong>자체적으로는 값을 갖지 않고 다른 데이터 프로퍼티의 값을 읽거나 저장</strong>할 때 사용하는 <strong>접근자 함수</strong>로 구성된 프로퍼티. 접근자 함수는 getter/setter 함수라고도 부른다. </li>
+<li><strong>접근자 프로퍼티</strong> : <strong>자체적으로는 값을 갖지 않고 다른 데이터 프로퍼티의 값을 읽거나 저장</strong>할 때 사용하는 <strong>접근자 함수</strong>로 구성된 프로퍼티. 접근자 함수는 getter/setter 함수라고도 부른다.</li>
 </ul>
 <p>arguments, caller, length, name, prototype 프로퍼티는 모두 함수 객체의 데이터 프로퍼티.</p>
 <p> _ <em>proto</em> _는 접근자 프로퍼티이며 함수 객체의 프로퍼티가 아닌 Object.prototype 객체의 프로퍼티를 상속받은 것임.</p>
@@ -284,12 +284,12 @@
 
 <h4 id="proto-접근자-프로퍼티"><a href="#proto-접근자-프로퍼티" class="headerlink" title="__ proto __ 접근자 프로퍼티"></a>__ proto __ 접근자 프로퍼티</h4><blockquote>
 <p><strong>모든 객체</strong>는 [[Prototype]]이라는 내부 슬롯을 갖는다.</p>
-<p>[[Prototype]] 내부 슬롯은 객체 지향 프로그래밍의 상속을 구현하는 프로토타입 객체를 가리킨다. </p>
+<p>[[Prototype]] 내부 슬롯은 객체 지향 프로그래밍의 상속을 구현하는 프로토타입 객체를 가리킨다.</p>
 </blockquote>
-<p>__ proto __ 프로퍼티는 [[Prototype]] 내부 슬롯이 가리키는 프로토타입 객체에 접근하기 위해 사용하는 접근자 프로퍼티이다. </p>
+<p>__ proto __ 프로퍼티는 [[Prototype]] 내부 슬롯이 가리키는 프로토타입 객체에 접근하기 위해 사용하는 접근자 프로퍼티이다.</p>
 <ul>
 <li>데이터 프로퍼티** : 키와 값으로 구성된 일반적인 프로퍼티다.</li>
-<li><strong>접근자 프로퍼티</strong> : <strong>자체적으로는 값을 갖지 않고 다른 데이터 프로퍼티의 값을 읽거나 저장</strong>할 때 사용하는 <strong>접근자 함수</strong>로 구성된 프로퍼티. 접근자 함수는 getter/setter 함수라고도 부른다. </li>
+<li><strong>접근자 프로퍼티</strong> : <strong>자체적으로는 값을 갖지 않고 다른 데이터 프로퍼티의 값을 읽거나 저장</strong>할 때 사용하는 <strong>접근자 함수</strong>로 구성된 프로퍼티. 접근자 함수는 getter/setter 함수라고도 부른다.</li>
 </ul>
 <p>[[Prototype]] 내부 슬롯에도 직접 접근할 수 없으며 __ proto __ 접근자 프로퍼티를 통해 간접적으로 프로토타입 객체에 접근할 수 있다.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123; <span class="attr">a</span>: <span class="number">1</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 객체 리터럴 방식으로 생성한 객체의 프로토타입 객체는 Object.prototype이다.</span></span><br><span class="line"><span class="built_in">console</span>.log(obj.__proto__ === <span class="built_in">Object</span>.prototype); <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 객체 리터럴 방식으로 생성한 객체는 프로토타입 객체인 Object.prototype의 프로퍼티를 상속받는다.</span></span><br><span class="line"><span class="comment">// hasOwnProperty 메소드는 Object.prototype의 메소드이다.</span></span><br><span class="line"><span class="built_in">console</span>.log(obj.hasOwnProperty(<span class="string">'a'</span>));         <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(obj.hasOwnProperty(<span class="string">'__proto__'</span>)); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
@@ -301,7 +301,7 @@
 </blockquote>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 함수 객체는 prototype 프로퍼티를 소유한다.</span></span><br><span class="line"><span class="built_in">console</span>.log((<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;).hasOwnProperty(<span class="string">'prototype'</span>)); <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 일반 객체는 prototype 프로퍼티를 소유하지 않는다.</span></span><br><span class="line"><span class="built_in">console</span>.log((&#123;&#125;).hasOwnProperty(<span class="string">'prototype'</span>)); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
 
-<p>prototype 프로퍼티는 함수가 객체를 생성하는 생성자 함수로 사용될 때, </p>
+<p>prototype 프로퍼티는 함수가 객체를 생성하는 생성자 함수로 사용될 때,</p>
 <p>생성자 함수가 생성할 인스턴스의 프로토타입 객체를 가리킨다.</p>
 <br>
         </div>
@@ -310,7 +310,7 @@
 
 
 
-    <a data-url="http://yoursite.com/2019/10/15/javascript-preview-17/" data-id="ck21833g3006f4sz0pl3e4weh" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2019/10/15/javascript-preview-17/" data-id="ck218l2a2006f0zz0lklo8mev" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -386,11 +386,11 @@
         "genre": "TIL Javascript-Preview",
         "datePublished": "2019-10-15",
         "dateCreated": "2019-10-15",
-        "dateModified": "2019-10-15",
+        "dateModified": "2019-10-22",
         "url": "http://yoursite.com/2019/10/15/javascript-preview-17/",
         "description": "
 
-JacaScript 17강 예습
+JavaScript 17강 예습
 17강 : 함수와 일급 객체
 
 일급 객체
@@ -416,7 +416,7 @@ prototype 프로퍼티
 일급 객체란?
 
 무명의 리터럴로 생성할 수 있다. (즉, 런타임에 생성이",
-        "wordCount": 1545
+        "wordCount": 1539
     }
 </script>
 

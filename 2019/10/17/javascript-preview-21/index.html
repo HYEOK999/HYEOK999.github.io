@@ -12,19 +12,19 @@
     
         <meta name="keywords" content="hexo,git,Web,coding,developer,CSS,HTML,algorithm,javascript">
     
-    <meta name="description" content="JacaScript 21강 예습 21강 : this this 키워드 this는 코드 어디든지 참조가능하다. 함수 호출 방식과 this 바인딩 일반 함수 호출 메소드 호출 생성자 함수 호출 Function.prototype.apply/call 메소드에 의한 간접 호출 Function.prototype.bind 메소드에 의한 간접 호출         21강">
+    <meta name="description" content="JavaScript 21강 예습 21강 : this this 키워드 this는 코드 어디든지 참조가능하다. 함수 호출 방식과 this 바인딩 일반 함수 호출 메소드 호출 생성자 함수 호출 Function.prototype.apply/call 메소드에 의한 간접 호출 Function.prototype.bind 메소드에 의한 간접 호출         21강">
 <meta name="keywords" content="hexo,git,Web,coding,developer,CSS,HTML,algorithm,javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="javascript-preview-21">
 <meta property="og:url" content="http://yoursite.com/2019/10/17/javascript-preview-21/index.html">
 <meta property="og:site_name" content="HYEOK999&#39;s Blog">
-<meta property="og:description" content="JacaScript 21강 예습 21강 : this this 키워드 this는 코드 어디든지 참조가능하다. 함수 호출 방식과 this 바인딩 일반 함수 호출 메소드 호출 생성자 함수 호출 Function.prototype.apply/call 메소드에 의한 간접 호출 Function.prototype.bind 메소드에 의한 간접 호출         21강">
+<meta property="og:description" content="JavaScript 21강 예습 21강 : this this 키워드 this는 코드 어디든지 참조가능하다. 함수 호출 방식과 this 바인딩 일반 함수 호출 메소드 호출 생성자 함수 호출 Function.prototype.apply/call 메소드에 의한 간접 호출 Function.prototype.bind 메소드에 의한 간접 호출         21강">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://user-images.githubusercontent.com/31315644/66104821-b9976b00-e5f4-11e9-84e9-20c797dd2c51.jpeg">
-<meta property="og:updated_time" content="2019-10-16T21:55:47.137Z">
+<meta property="og:updated_time" content="2019-10-22T02:34:33.151Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javascript-preview-21">
-<meta name="twitter:description" content="JacaScript 21강 예습 21강 : this this 키워드 this는 코드 어디든지 참조가능하다. 함수 호출 방식과 this 바인딩 일반 함수 호출 메소드 호출 생성자 함수 호출 Function.prototype.apply/call 메소드에 의한 간접 호출 Function.prototype.bind 메소드에 의한 간접 호출         21강">
+<meta name="twitter:description" content="JavaScript 21강 예습 21강 : this this 키워드 this는 코드 어디든지 참조가능하다. 함수 호출 방식과 this 바인딩 일반 함수 호출 메소드 호출 생성자 함수 호출 Function.prototype.apply/call 메소드에 의한 간접 호출 Function.prototype.bind 메소드에 의한 간접 호출         21강">
 <meta name="twitter:image" content="https://user-images.githubusercontent.com/31315644/66104821-b9976b00-e5f4-11e9-84e9-20c797dd2c51.jpeg">
     
 
@@ -182,7 +182,7 @@
         <div class="article-entry" itemprop="articleBody">
             <p><img src="https://user-images.githubusercontent.com/31315644/66104821-b9976b00-e5f4-11e9-84e9-20c797dd2c51.jpeg" alt></p>
 <hr>
-<h2 id="JacaScript-21강-예습"><a href="#JacaScript-21강-예습" class="headerlink" title="JacaScript 21강 예습"></a>JacaScript 21강 예습</h2><ul>
+<h2 id="JavaScript-21강-예습"><a href="#JavaScript-21강-예습" class="headerlink" title="JavaScript 21강 예습"></a>JavaScript 21강 예습</h2><ul>
 <li>21강 : this<ul>
 <li>this 키워드</li>
 <li>this는 코드 어디든지 참조가능하다.</li>
@@ -203,7 +203,7 @@
 <h1 id="21강"><a href="#21강" class="headerlink" title="21강"></a>21강</h1><h2 id="this"><a href="#this" class="headerlink" title="this"></a>this</h2><h3 id="this-키워드"><a href="#this-키워드" class="headerlink" title="this 키워드"></a>this 키워드</h3><blockquote>
 <p>동작인 메소드는 자신이 속한 객체의 상태를 참조하고 변경할 수 있어야 한다.</p>
 <p><strong>즉, 자신이 속한 객체를 가리키는 식별자를 참조할 수 있어야 한다.</strong></p>
-<p><strong>this는 객체 자신의 프로퍼티나 메소드를 참조하기 위한 자기 참조 변수(Self-referencing variable)이다.</strong> </p>
+<p><strong>this는 객체 자신의 프로퍼티나 메소드를 참조하기 위한 자기 참조 변수(Self-referencing variable)이다.</strong></p>
 </blockquote>
 <p> <strong>this가 가리키는 값 - this 바인딩은 함수 호출 방식에 의해 동적으로 결정된다.</strong></p>
 <ul>
@@ -264,7 +264,7 @@
 <br>
 
 <h4 id="메소드-호출"><a href="#메소드-호출" class="headerlink" title="메소드 호출"></a>메소드 호출</h4><blockquote>
-<p>메소드 내부의 this는 메소드를 소유한 객체가 아닌 메소드를 호출한 객체에 바인딩된다는 것이다. </p>
+<p>메소드 내부의 this는 메소드를 소유한 객체가 아닌 메소드를 호출한 객체에 바인딩된다는 것이다.</p>
 </blockquote>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> person = &#123;</span><br><span class="line">  name: <span class="string">'Lee'</span>,</span><br><span class="line">  getName() &#123;</span><br><span class="line">    <span class="comment">// 메소드의 this는 메소드를 호출한 객체에 바인딩된다.</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 메소드 getName을 호출한 객체는 person이다.</span></span><br><span class="line"><span class="built_in">console</span>.log(person.getName()); <span class="comment">// Lee</span></span><br></pre></td></tr></table></figure>
 
@@ -289,7 +289,7 @@
 </blockquote>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 주어진 this 바인딩과 인수 리스트 배열을 사용하여 함수를 호출한다.</span></span><br><span class="line"><span class="comment"> * @param thisArg - this로 사용될 객체</span></span><br><span class="line"><span class="comment"> * @param argsArray - 함수에게 전달할 인수 리스트의 배열 또는 유사 배열 객체</span></span><br><span class="line"><span class="comment"> * @returns 호출된 함수의 반환값</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Function</span>.prototype.apply(thisArg[, argsArray])</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 주어진 this 바인딩과 인수 리스트를 사용하여 함수를 호출한다.</span></span><br><span class="line"><span class="comment"> * @param thisArg - this로 사용될 객체</span></span><br><span class="line"><span class="comment"> * @param arg1, arg2, ... - 함수에게 전달할 인수 리스트</span></span><br><span class="line"><span class="comment"> * @returns 호출된 함수의 반환값</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"> </span><br><span class="line"><span class="built_in">Function</span>.prototype.call (thisArg[, arg1[, arg2[, ...]]])</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 주어진 this 바인딩과 인수 리스트를 사용하여 함수를 호출한다.</span></span><br><span class="line"><span class="comment"> * @param thisArg - this로 사용될 객체</span></span><br><span class="line"><span class="comment"> * @param arg1, arg2, ... - 함수에게 전달할 인수 리스트</span></span><br><span class="line"><span class="comment"> * @returns 호출된 함수의 반환값</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Function</span>.prototype.call (thisArg[, arg1[, arg2[, ...]]])</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getThisBinding</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// this로 사용할 객체</span></span><br><span class="line"><span class="keyword">const</span> thisArg = &#123; <span class="attr">a</span>: <span class="number">1</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(getThisBinding()); <span class="comment">// window</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 함수(getThisBinding)를 호출하면서 인수로 전달한 객체를 호출한 함수의 this에 바인딩한다.</span></span><br><span class="line"><span class="built_in">console</span>.log(getThisBinding.apply(thisArg)); <span class="comment">// &#123; a: 1 &#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(getThisBinding.call(thisArg)); <span class="comment">// &#123; a: 1 &#125;</span></span><br></pre></td></tr></table></figure>
 
@@ -308,7 +308,7 @@
 <p>bind는 주로 콜백함수 혹은 중첩함수등에서 자주 이용된다.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Person.prototype.doSomething = <span class="function"><span class="keyword">function</span> (<span class="params">callback</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// ①</span></span><br><span class="line">  callback();</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.name); <span class="comment">// ②</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> person = <span class="keyword">new</span> Person(<span class="string">'Lee'</span>);</span><br><span class="line"></span><br><span class="line">person.doSomething(foo); <span class="comment">// ''</span></span><br><span class="line"><span class="comment">// =&gt;  window.name은 브라우저 창의 이름을 나타내는 빌트인 프로퍼티이다. window.name의 기본값은 ''이다.</span></span><br><span class="line"><span class="comment">// 만약 Node.js 환경에서 실행하면 undefined가 출력된다.</span></span><br></pre></td></tr></table></figure>
 
-<p>위 예제에서 <code>foo()</code>를 호출하면 일반함수이므로 window를 가리키게 된다. </p>
+<p>위 예제에서 <code>foo()</code>를 호출하면 일반함수이므로 window를 가리키게 된다.</p>
 <p><code>콜백 함수 foo</code>는 외부 함수 doSomething를 돕는 헬퍼 함수(보조 함수)의 역할을 하기 때문에 외부 함수 doSomething 내부의 this와 콜백 함수 내부의 this가 상이하면 문맥상 문제가 발생한다.</p>
 <p>따라서 콜백 함수 내부의 this를 콜백 함수를 호출하는 외부 함수 내부의 this와 일치시켜 주어야 한다. 이때 bind 메소드를 사용하여 this를 일치시킬 수 있다. 물론 apply와 call 메소드를 사용할 수도 있다.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Person.prototype.doSomething = <span class="function"><span class="keyword">function</span> (<span class="params">callback</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// ①</span></span><br><span class="line">  callback.bind(<span class="keyword">this</span>)();</span><br><span class="line">  <span class="comment">// callback.apply(this);</span></span><br><span class="line">  <span class="comment">// callback.call(this);</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.name); <span class="comment">// ②</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> person = <span class="keyword">new</span> Person(<span class="string">'Lee'</span>);</span><br><span class="line"></span><br><span class="line">person.doSomething(foo); <span class="comment">// Lee</span></span><br></pre></td></tr></table></figure>
@@ -345,7 +345,7 @@
 
 
 
-    <a data-url="http://yoursite.com/2019/10/17/javascript-preview-21/" data-id="ck21833g8006u4sz0wof13xw7" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2019/10/17/javascript-preview-21/" data-id="ck218l2a5006u0zz0inmsftgp" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -421,11 +421,11 @@
         "genre": "TIL Javascript-Preview",
         "datePublished": "2019-10-17",
         "dateCreated": "2019-10-17",
-        "dateModified": "2019-10-17",
+        "dateModified": "2019-10-22",
         "url": "http://yoursite.com/2019/10/17/javascript-preview-21/",
         "description": "
 
-JacaScript 21강 예습
+JavaScript 21강 예습
 21강 : this
 this 키워드
 this는 코드 어디든지 참조가능하다.
@@ -444,7 +444,7 @@ Function.prototype.bind 메소드에 의한 간접 호출
 
 
 21강",
-        "wordCount": 2516
+        "wordCount": 2512
     }
 </script>
 

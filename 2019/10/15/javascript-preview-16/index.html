@@ -12,19 +12,19 @@
     
         <meta name="keywords" content="hexo,git,Web,coding,developer,CSS,HTML,algorithm,javascript">
     
-    <meta name="description" content="JacaScript 16강 예습 16강 : 생성자 함수에 의한 객체 생성  Object 생성자 함수  생성자 함수  객체 리터럴에 의한 객체 생성 방식의 문제점 생성자 함수에 의한 객체 생성 방식의 장점 내부 메소드 [[Call]] 과 [[Construct]]   FunctionCreate  생성자 함수의 인스턴스 생성 과정  new 연산자  new.t">
+    <meta name="description" content="JavaScript 16강 예습 16강 : 생성자 함수에 의한 객체 생성  Object 생성자 함수  생성자 함수  객체 리터럴에 의한 객체 생성 방식의 문제점 생성자 함수에 의한 객체 생성 방식의 장점 내부 메소드 [[Call]] 과 [[Construct]]   FunctionCreate  생성자 함수의 인스턴스 생성 과정  new 연산자  new.t">
 <meta name="keywords" content="hexo,git,Web,coding,developer,CSS,HTML,algorithm,javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="javascript-preview-16">
 <meta property="og:url" content="http://yoursite.com/2019/10/15/javascript-preview-16/index.html">
 <meta property="og:site_name" content="HYEOK999&#39;s Blog">
-<meta property="og:description" content="JacaScript 16강 예습 16강 : 생성자 함수에 의한 객체 생성  Object 생성자 함수  생성자 함수  객체 리터럴에 의한 객체 생성 방식의 문제점 생성자 함수에 의한 객체 생성 방식의 장점 내부 메소드 [[Call]] 과 [[Construct]]   FunctionCreate  생성자 함수의 인스턴스 생성 과정  new 연산자  new.t">
+<meta property="og:description" content="JavaScript 16강 예습 16강 : 생성자 함수에 의한 객체 생성  Object 생성자 함수  생성자 함수  객체 리터럴에 의한 객체 생성 방식의 문제점 생성자 함수에 의한 객체 생성 방식의 장점 내부 메소드 [[Call]] 과 [[Construct]]   FunctionCreate  생성자 함수의 인스턴스 생성 과정  new 연산자  new.t">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://user-images.githubusercontent.com/31315644/66104821-b9976b00-e5f4-11e9-84e9-20c797dd2c51.jpeg">
-<meta property="og:updated_time" content="2019-10-15T01:38:09.988Z">
+<meta property="og:updated_time" content="2019-10-22T02:34:33.188Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javascript-preview-16">
-<meta name="twitter:description" content="JacaScript 16강 예습 16강 : 생성자 함수에 의한 객체 생성  Object 생성자 함수  생성자 함수  객체 리터럴에 의한 객체 생성 방식의 문제점 생성자 함수에 의한 객체 생성 방식의 장점 내부 메소드 [[Call]] 과 [[Construct]]   FunctionCreate  생성자 함수의 인스턴스 생성 과정  new 연산자  new.t">
+<meta name="twitter:description" content="JavaScript 16강 예습 16강 : 생성자 함수에 의한 객체 생성  Object 생성자 함수  생성자 함수  객체 리터럴에 의한 객체 생성 방식의 문제점 생성자 함수에 의한 객체 생성 방식의 장점 내부 메소드 [[Call]] 과 [[Construct]]   FunctionCreate  생성자 함수의 인스턴스 생성 과정  new 연산자  new.t">
 <meta name="twitter:image" content="https://user-images.githubusercontent.com/31315644/66104821-b9976b00-e5f4-11e9-84e9-20c797dd2c51.jpeg">
     
 
@@ -182,7 +182,7 @@
         <div class="article-entry" itemprop="articleBody">
             <p><img src="https://user-images.githubusercontent.com/31315644/66104821-b9976b00-e5f4-11e9-84e9-20c797dd2c51.jpeg" alt></p>
 <hr>
-<h2 id="JacaScript-16강-예습"><a href="#JacaScript-16강-예습" class="headerlink" title="JacaScript 16강 예습"></a>JacaScript 16강 예습</h2><ul>
+<h2 id="JavaScript-16강-예습"><a href="#JavaScript-16강-예습" class="headerlink" title="JavaScript 16강 예습"></a>JavaScript 16강 예습</h2><ul>
 <li><p>16강 : 생성자 함수에 의한 객체 생성</p>
 <ol>
 <li><p>Object 생성자 함수</p>
@@ -275,25 +275,25 @@
 <p>함수는 객체이므로 일반 객체와 동일하게 프로퍼티와 메소드를 가질수 있다.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 함수는 객체이다.</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 함수는 객체이므로 프로퍼티를 소유할 수 있다.</span></span><br><span class="line">foo.prop = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 함수는 객체이므로 메소드를 소유할 수 있다.</span></span><br><span class="line">foo.method = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.prop);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">foo.method(); <span class="comment">// 10</span></span><br></pre></td></tr></table></figure>
 
-<p>내부 메소드 [[Call]]을 갖는 함수 객체를 callable이라 하며, </p>
-<p>내부 메소드인 [[Construct]]를 갖는 함수 객체를 constructor, </p>
+<p>내부 메소드 [[Call]]을 갖는 함수 객체를 callable이라 하며,</p>
+<p>내부 메소드인 [[Construct]]를 갖는 함수 객체를 constructor,</p>
 <p>[[Construct]]를 갖지 않는 함수 객체를 non-constructor라고 부른다.</p>
-<p>callable은 호출할 수 있는 객체, 즉 함수를 말하며, constructor는 생성자 함수로서 호출할 수 있는 객체를 의미한다. </p>
-<p>함수가 일반적인 함수로서 호출되면 함수 객체의 내부 메소드 [[Call]]가 호출되고 </p>
+<p>callable은 호출할 수 있는 객체, 즉 함수를 말하며, constructor는 생성자 함수로서 호출할 수 있는 객체를 의미한다.</p>
+<p>함수가 일반적인 함수로서 호출되면 함수 객체의 내부 메소드 [[Call]]가 호출되고</p>
 <p>new 연산자(또는 super 연산자)와 함께 생성자 함수로서 호출되면 내부 메소드 [[Construct]]가 호출된다.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 일반적인 함수로서 호출: [[Call]]이 호출된다.</span></span><br><span class="line">foo();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 생성자 함수로서 호출: [[Construct]]가 호출된다.</span></span><br><span class="line"><span class="keyword">new</span> foo();</span><br></pre></td></tr></table></figure>
 
 <br>
 
 <p>모든 함수는 호출하는 객체이므로 <code>callable</code>이어야 한다.(즉, [[Call]]을 모두 가지고 있다.)</p>
-<p>반면에 모든 함수 객체가 [[Construct]]를 갖지는 않는다. </p>
+<p>반면에 모든 함수 객체가 [[Construct]]를 갖지는 않는다.</p>
 <p>즉, 함수객체는 모두 <code>callable</code>이지만 <code>constructor</code> 일 수도 <code>non-constructor</code>일 수도 있다.</p>
 <p><img src="https://poiemaweb.com/assets/fs-images/16-3.png" alt="poiema"><br></p>
 <h3 id="FunctionCreate"><a href="#FunctionCreate" class="headerlink" title="FunctionCreate"></a>FunctionCreate</h3><blockquote>
 <p>JS엔진이 함수를 생성할 때 사용하는 <strong>추상연산</strong></p>
 <p>설명을 위해 사용되는 함수와 유사한 의사 코드.</p>
 </blockquote>
-<p>FunctionCreate는 함수 정의가 평가될 때 호출된다. </p>
+<p>FunctionCreate는 함수 정의가 평가될 때 호출된다.</p>
 <p>함수 정의 방식에 따라 FunctionCreate의 첫번째 매개변수 kind에 함수의 종류를 나타내는 문자열이 전달된다.</p>
 <table>
 <thead>
@@ -334,9 +334,9 @@
 
 <p>new 연산자와 함께 생성자 함수가 호출되면 JS엔진은 다음과 같은 동작을 한다.</p>
 <ol>
-<li><strong>인스턴스 생성과 this 바인딩 암묵적으로 빈 객체가 생성된다.</strong> </li>
+<li><strong>인스턴스 생성과 this 바인딩 암묵적으로 빈 객체가 생성된다.</strong></li>
 </ol>
-<p>생성자 함수가 생성한 인스턴스의 프로토타입으로 생성자 함수의 prototype 프로퍼티가 가리키는 객체가 설정된다. </p>
+<p>생성자 함수가 생성한 인스턴스의 프로토타입으로 생성자 함수의 prototype 프로퍼티가 가리키는 객체가 설정된다.</p>
 <p>빈 객체, 즉 인스턴스는 this에 바인딩된다.</p>
 <p><code>프로토 타입</code> : 어떤 객체의 부모 역할을 하는 객체.<br>프로토 타입은 하위 객체에게 자신의 프로퍼티와 메소드를 상속함.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Circle</span>(<span class="params">radius</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 1. 암묵적으로 빈 객체가 생성되고 this에 바인딩된다.</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>); <span class="comment">// Circle &#123;&#125;</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="built_in">Object</span>.getPrototypeOf(<span class="keyword">this</span>) === Circle.prototype); <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  <span class="keyword">this</span>.radius = radius;</span><br><span class="line">  <span class="keyword">this</span>.getDiameter = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">2</span> * <span class="keyword">this</span>.radius;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 0. 인스턴스 생성</span></span><br><span class="line"><span class="keyword">const</span> circle1 = <span class="keyword">new</span> Circle(<span class="number">5</span>);  <span class="comment">// 반지름이 5인 Circle 객체를 생성</span></span><br></pre></td></tr></table></figure>
@@ -344,7 +344,7 @@
 <ol start="2">
 <li><strong>인스턴스 초기화</strong></li>
 </ol>
-<p>생성자 함수에 기술되어 있는 코드가 실행되어 this에 바인딩되어 있는 인스턴스를 초기화한다. </p>
+<p>생성자 함수에 기술되어 있는 코드가 실행되어 this에 바인딩되어 있는 인스턴스를 초기화한다.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Circle</span>(<span class="params">radius</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 1. 암묵적으로 인스턴스가 생성되고 this에 바인딩된다.</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 2. this에 바인딩되어 있는 인스턴스를 초기화한다.</span></span><br><span class="line">  <span class="keyword">this</span>.radius = radius;</span><br><span class="line">  <span class="keyword">this</span>.getDiameter = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">2</span> * <span class="keyword">this</span>.radius;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <ol start="3">
@@ -372,8 +372,8 @@
 
 <br>
 
-<h3 id="new-target-IE-미지원"><a href="#new-target-IE-미지원" class="headerlink" title="new.target (IE 미지원)"></a>new.target (IE 미지원)</h3><p>new 연산자 없이 생성자 함수를 호출하는 것을 방지하기 위해 파스칼 케이스 컨벤션을 사용한다 하더라도 실수는 언제나 발생할 수 있다. </p>
-<p>이러한 위험을 피하기 위해 ES6에서는 new.target을 지원한다. </p>
+<h3 id="new-target-IE-미지원"><a href="#new-target-IE-미지원" class="headerlink" title="new.target (IE 미지원)"></a>new.target (IE 미지원)</h3><p>new 연산자 없이 생성자 함수를 호출하는 것을 방지하기 위해 파스칼 케이스 컨벤션을 사용한다 하더라도 실수는 언제나 발생할 수 있다.</p>
+<p>이러한 위험을 피하기 위해 ES6에서는 new.target을 지원한다.</p>
 <p>new.target을 사용하면 new연산자와 함께 호출되었는지 확인할 수 있다.</p>
 <p>new 연산자와 함께 호출되면 함수 내부의 new.target은 함수 자신을 가리키며</p>
 <p>new 연산자 없이 호출된 함수 내부의 new.target은 undefined다.</p>
@@ -394,7 +394,7 @@
 
 
 
-    <a data-url="http://yoursite.com/2019/10/15/javascript-preview-16/" data-id="ck21833g2006c4sz00vfptetc" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2019/10/15/javascript-preview-16/" data-id="ck218l2a1006c0zz0wd6n2jr4" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -470,11 +470,11 @@
         "genre": "TIL Javascript-Preview",
         "datePublished": "2019-10-15",
         "dateCreated": "2019-10-15",
-        "dateModified": "2019-10-15",
+        "dateModified": "2019-10-22",
         "url": "http://yoursite.com/2019/10/15/javascript-preview-16/",
         "description": "
 
-JacaScript 16강 예습
+JavaScript 16강 예습
 16강 : 생성자 함수에 의한 객체 생성
 
 Object 생성자 함수
@@ -493,7 +493,7 @@ FunctionCreate
 new 연산자
 
 new.t",
-        "wordCount": 2981
+        "wordCount": 2970
     }
 </script>
 

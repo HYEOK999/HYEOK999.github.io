@@ -12,19 +12,19 @@
     
         <meta name="keywords" content="hexo,git,Web,coding,developer,CSS,HTML,algorithm,javascript">
     
-    <meta name="description" content="JacaScript 15강 예습 15강 : 프로퍼티 정의  프로퍼티 정의란?   프로퍼티 정의 및 동적 생성   내부 / 슬롯 메소드 내부 메소드 [[ Get ]]   접근자 프로퍼티 접근자 프로퍼티와 데이터 프로퍼티의 구별 방법   프로퍼티 어트리뷰트 데이터 프로퍼티의 어트리뷰트 접근자 프로펕 Object.defineProperty 메소드">
+    <meta name="description" content="JavaScript 15강 예습 15강 : 프로퍼티 정의  프로퍼티 정의란?   프로퍼티 정의 및 동적 생성   내부 / 슬롯 메소드 내부 메소드 [[ Get ]]   접근자 프로퍼티 접근자 프로퍼티와 데이터 프로퍼티의 구별 방법   프로퍼티 어트리뷰트 데이터 프로퍼티의 어트리뷰트 접근자 프로펕 Object.defineProperty 메소드">
 <meta name="keywords" content="hexo,git,Web,coding,developer,CSS,HTML,algorithm,javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="javascript-preview-15">
 <meta property="og:url" content="http://yoursite.com/2019/10/15/javascript-preview-15/index.html">
 <meta property="og:site_name" content="HYEOK999&#39;s Blog">
-<meta property="og:description" content="JacaScript 15강 예습 15강 : 프로퍼티 정의  프로퍼티 정의란?   프로퍼티 정의 및 동적 생성   내부 / 슬롯 메소드 내부 메소드 [[ Get ]]   접근자 프로퍼티 접근자 프로퍼티와 데이터 프로퍼티의 구별 방법   프로퍼티 어트리뷰트 데이터 프로퍼티의 어트리뷰트 접근자 프로펕 Object.defineProperty 메소드">
+<meta property="og:description" content="JavaScript 15강 예습 15강 : 프로퍼티 정의  프로퍼티 정의란?   프로퍼티 정의 및 동적 생성   내부 / 슬롯 메소드 내부 메소드 [[ Get ]]   접근자 프로퍼티 접근자 프로퍼티와 데이터 프로퍼티의 구별 방법   프로퍼티 어트리뷰트 데이터 프로퍼티의 어트리뷰트 접근자 프로펕 Object.defineProperty 메소드">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://user-images.githubusercontent.com/31315644/66104821-b9976b00-e5f4-11e9-84e9-20c797dd2c51.jpeg">
-<meta property="og:updated_time" content="2019-10-15T01:37:41.082Z">
+<meta property="og:updated_time" content="2019-10-22T02:34:33.176Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javascript-preview-15">
-<meta name="twitter:description" content="JacaScript 15강 예습 15강 : 프로퍼티 정의  프로퍼티 정의란?   프로퍼티 정의 및 동적 생성   내부 / 슬롯 메소드 내부 메소드 [[ Get ]]   접근자 프로퍼티 접근자 프로퍼티와 데이터 프로퍼티의 구별 방법   프로퍼티 어트리뷰트 데이터 프로퍼티의 어트리뷰트 접근자 프로펕 Object.defineProperty 메소드">
+<meta name="twitter:description" content="JavaScript 15강 예습 15강 : 프로퍼티 정의  프로퍼티 정의란?   프로퍼티 정의 및 동적 생성   내부 / 슬롯 메소드 내부 메소드 [[ Get ]]   접근자 프로퍼티 접근자 프로퍼티와 데이터 프로퍼티의 구별 방법   프로퍼티 어트리뷰트 데이터 프로퍼티의 어트리뷰트 접근자 프로펕 Object.defineProperty 메소드">
 <meta name="twitter:image" content="https://user-images.githubusercontent.com/31315644/66104821-b9976b00-e5f4-11e9-84e9-20c797dd2c51.jpeg">
     
 
@@ -182,7 +182,7 @@
         <div class="article-entry" itemprop="articleBody">
             <p><img src="https://user-images.githubusercontent.com/31315644/66104821-b9976b00-e5f4-11e9-84e9-20c797dd2c51.jpeg" alt></p>
 <hr>
-<h2 id="JacaScript-15강-예습"><a href="#JacaScript-15강-예습" class="headerlink" title="JacaScript 15강 예습"></a>JacaScript 15강 예습</h2><ul>
+<h2 id="JavaScript-15강-예습"><a href="#JavaScript-15강-예습" class="headerlink" title="JavaScript 15강 예습"></a>JavaScript 15강 예습</h2><ul>
 <li><p>15강 : 프로퍼티 정의</p>
 <ol>
 <li>프로퍼티 정의란?</li>
@@ -232,17 +232,17 @@
 <p>프로퍼티 어트리뷰트는 <code>Object.getOwnPropertyDescriptor</code> 메소드를 사용해 참조할 수 있다. 이 메소드는 프로퍼티 어트리뷰트 정보를 제공하는 객체인 <strong>프로퍼티 디스크립터(PropertyDescriptor)</strong>를 반환한다.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 하나의 프로퍼티 어트리뷰트를 표현하는 프로퍼티 디스크립터 객체를 취득한다.</span></span><br><span class="line"><span class="keyword">const</span> descriptor = <span class="built_in">Object</span>.getOwnPropertyDescriptor(obj, <span class="string">'prop'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(descriptor);</span><br><span class="line"><span class="comment">// &#123;value: 10, writable: true, enumerable: true, configurable: true&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// ES8</span></span><br><span class="line"><span class="comment">// 모든 프로퍼티 어트리뷰트를 표현하는 프로퍼티 디스크립터 객체를 취득한다.</span></span><br><span class="line"><span class="keyword">const</span> descriptors = <span class="built_in">Object</span>.getOwnPropertyDescriptors(obj);</span><br><span class="line"><span class="built_in">console</span>.log(descriptors);</span><br><span class="line"><span class="comment">// &#123;</span></span><br><span class="line"><span class="comment">//   prop: &#123; value: 10, writable: true, enumerable: true, configurable: true &#125;</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br></pre></td></tr></table></figure>
 
-<p>존재하지 않는 프로퍼티 / 상속받은 프로퍼티에 대한 프로퍼티 디스크립터를 요구하면 undefined가 반환된다. </p>
+<p>존재하지 않는 프로퍼티 / 상속받은 프로퍼티에 대한 프로퍼티 디스크립터를 요구하면 undefined가 반환된다.</p>
 <p><code>Object.getOwnPropertyDescriptor(객체명, &#39;키명&#39;)</code></p>
 <br>
 
 <h3 id="내부-슬롯-메소드"><a href="#내부-슬롯-메소드" class="headerlink" title="내부 슬롯/메소드"></a>내부 슬롯/메소드</h3><blockquote>
-<p>내부 슬롯과 내부 메소드는 ECMAScript 스펙에서 요구하는 객체와 관련된 내부 상태와 내부 동작을 정의한 것이다. </p>
+<p>내부 슬롯과 내부 메소드는 ECMAScript 스펙에서 요구하는 객체와 관련된 내부 상태와 내부 동작을 정의한 것이다.</p>
 </blockquote>
-<p>내부 슬롯과 내부 메소드는 <strong>객체의 프로퍼티가 아니다.</strong> </p>
-<p>따라서 내부 슬롯과 내부 메소드는 직접적으로 접근하거나 호출할 수 있는 방법을 원칙적으로 제공하지 않는다. </p>
+<p>내부 슬롯과 내부 메소드는 <strong>객체의 프로퍼티가 아니다.</strong></p>
+<p>따라서 내부 슬롯과 내부 메소드는 직접적으로 접근하거나 호출할 수 있는 방법을 원칙적으로 제공하지 않는다.</p>
 <p>단, 일부 내부 슬롯과 내부 메소드(의 구현체)에 간접적으로 접근할 수 있는 수단은 있다.</p>
-<h4 id="내부-메소드-Get"><a href="#내부-메소드-Get" class="headerlink" title="내부 메소드 [[ Get ]]"></a>내부 메소드 [[ Get ]]</h4><p>내부 메소드 [[ Get ]]는 프로퍼티 키로 프로퍼티 값에 접근하면 내부적으로 호출된다.  </p>
+<h4 id="내부-메소드-Get"><a href="#내부-메소드-Get" class="headerlink" title="내부 메소드 [[ Get ]]"></a>내부 메소드 [[ Get ]]</h4><p>내부 메소드 [[ Get ]]는 프로퍼티 키로 프로퍼티 값에 접근하면 내부적으로 호출된다.</p>
 <ol>
 <li>프로퍼티 키가 유효한지 확인한다. 프로퍼티 키는 문자열 또는 심볼이어야 한다. (“9.3 프로퍼티” 참고)</li>
 <li>프로토타입 체인에서 프로퍼티를 검색한다.</li>
@@ -258,14 +258,14 @@
 <h3 id="접근자-프로퍼티"><a href="#접근자-프로퍼티" class="headerlink" title="접근자 프로퍼티"></a>접근자 프로퍼티</h3><p>​    프로퍼티는 데이터 프로퍼티 와 접근자 프로퍼티로 구분된다.</p>
 <ul>
 <li><strong>데이터 프로퍼티</strong> : 키와 값으로 구성된 일반적인 프로퍼티다.</li>
-<li><strong>접근자 프로퍼티</strong> : <strong>자체적으로는 값을 갖지 않고 다른 데이터 프로퍼티의 값을 읽거나 저장</strong>할 때 사용하는 <strong>접근자 함수</strong>로 구성된 프로퍼티 </li>
+<li><strong>접근자 프로퍼티</strong> : <strong>자체적으로는 값을 갖지 않고 다른 데이터 프로퍼티의 값을 읽거나 저장</strong>할 때 사용하는 <strong>접근자 함수</strong>로 구성된 프로퍼티</li>
 </ul>
-<p>접근자 함수는 getter/setter 함수라고도 부른다. </p>
-<p>접근자 프로퍼티는 getter와 setter 함수를 모두 정의할 수도 있고 하나만 정의할 수도 있다. </p>
+<p>접근자 함수는 getter/setter 함수라고도 부른다.</p>
+<p>접근자 프로퍼티는 getter와 setter 함수를 모두 정의할 수도 있고 하나만 정의할 수도 있다.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> person = &#123;</span><br><span class="line">  <span class="comment">// 데이터 프로퍼티</span></span><br><span class="line">  firstName: <span class="string">'Ungmo'</span>,</span><br><span class="line">  lastName: <span class="string">'Lee'</span>,</span><br><span class="line"></span><br><span class="line">  <span class="comment">// fullName은 접근자 함수로 구성된 접근자 프로퍼티이다.</span></span><br><span class="line">  <span class="comment">// getter 함수</span></span><br><span class="line">  <span class="keyword">get</span> fullName() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.firstName + <span class="string">' '</span> + <span class="keyword">this</span>.lastName;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// setter 함수</span></span><br><span class="line">  <span class="keyword">set</span> fullName(name) &#123;</span><br><span class="line">    [<span class="keyword">this</span>.firstName, <span class="keyword">this</span>.lastName] = name.split(<span class="string">' '</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 데이터 프로퍼티를 통한 프로퍼티 값의 참조.</span></span><br><span class="line"><span class="built_in">console</span>.log(person.firstName + <span class="string">' '</span> + person.lastName); <span class="comment">// Ungmo Lee</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 접근자 프로퍼티를 통한 프로퍼티 값의 저장</span></span><br><span class="line"><span class="comment">// 접근자 프로퍼티 fullName에 값을 저장하면 setter 함수가 호출된다.</span></span><br><span class="line">person.fullName = <span class="string">'Heegun Lee'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(person); <span class="comment">// &#123;firstName: "Heegun", lastName: "Lee"&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 접근자 프로퍼티를 통한 프로퍼티 값의 참조</span></span><br><span class="line"><span class="comment">// 접근자 프로퍼티 fullName에 접근하면 getter 함수가 호출된다.</span></span><br><span class="line"><span class="built_in">console</span>.log(person.fullName); <span class="comment">// Heegun Lee</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// firstName는 데이터 프로퍼티이다.</span></span><br><span class="line"><span class="comment">// 데이터 프로퍼티는 value, writable, enumerable, configurable 프로퍼티 어트리뷰트를 갖는다.</span></span><br><span class="line"><span class="keyword">let</span> descriptor = <span class="built_in">Object</span>.getOwnPropertyDescriptor(person, <span class="string">'firstName'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(descriptor);</span><br><span class="line"><span class="comment">// &#123;value: "Heegun", writable: true, enumerable: true, configurable: true&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// fullName는 접근자 프로퍼티이다.</span></span><br><span class="line"><span class="comment">// 접근자 프로퍼티는 get, set, enumerable, configurable 프로퍼티 어트리뷰트를 갖는다.</span></span><br><span class="line">descriptor = <span class="built_in">Object</span>.getOwnPropertyDescriptor(person, <span class="string">'fullName'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(descriptor);</span><br><span class="line"><span class="comment">// &#123;get: ƒ, set: ƒ, enumerable: true, configurable: true&#125;</span></span><br></pre></td></tr></table></figure>
 
-<p>person 객체의 <code>firstName</code>과 <code>lastName</code> 프로퍼티는 일반적인 데이터 프로퍼티. </p>
-<p>메소드 앞에 <code>get</code>,<code>set</code>이 붙은 메소드가 있는데 이것들이 바로 getter와 setter 함수이고 getter/setter 함수의 이름 <code>fullName</code>이 접근자 프로퍼티이다. </p>
+<p>person 객체의 <code>firstName</code>과 <code>lastName</code> 프로퍼티는 일반적인 데이터 프로퍼티.</p>
+<p>메소드 앞에 <code>get</code>,<code>set</code>이 붙은 메소드가 있는데 이것들이 바로 getter와 setter 함수이고 getter/setter 함수의 이름 <code>fullName</code>이 접근자 프로퍼티이다.</p>
 <p>접근자 프로퍼티는 자체적으로 값(value 프로퍼티 어트리뷰트)을 가지지 않으며 다만 데이터 프로퍼티의 값을 읽거나 저장할 때 관여할 뿐이다.</p>
 <p>접근자 프로퍼티 fullName으로 프로퍼티 값에 접근하면 내부적으로 [[Get]] 내부 메소드가 호출되어 아래와 같이 동작한다.</p>
 <ol>
@@ -303,7 +303,7 @@
 <li><p>[[Comfigurable]] / configurable</p>
 <ul>
 <li>프로퍼티의 재정의 가능 여부를 나타내며 불리언 값을 지님.</li>
-<li>false 면, 해당 프로퍼티의 삭제, 프로퍼티 어트리뷰트 값의 변경이 금지된다. </li>
+<li>false 면, 해당 프로퍼티의 삭제, 프로퍼티 어트리뷰트 값의 변경이 금지된다.</li>
 <li>[[Writable]]이 true인 경우, [[Value]]의 변경과 [[Writable]]을 false로 변경하는 것은 허용된다.</li>
 </ul>
 <br>
@@ -333,7 +333,7 @@
 
 <h4 id="Object-defineProperty-메소드"><a href="#Object-defineProperty-메소드" class="headerlink" title="Object.defineProperty 메소드"></a>Object.defineProperty 메소드</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123; <span class="attr">prop1</span>: <span class="number">1</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 프로퍼티 동적 추가</span></span><br><span class="line">obj.prop2 = <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 프로퍼티 어트리뷰트를 표현하는 프로퍼티 디스크립터 객체를 취득한다.</span></span><br><span class="line"><span class="keyword">const</span> descriptor = <span class="built_in">Object</span>.getOwnPropertyDescriptor(obj, <span class="string">'prop2'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(descriptor);</span><br><span class="line"><span class="comment">// → &#123; value: 2, writable: true, enumerable: true, configurable: true &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.defineProperty 메소드를 사용하면 프로퍼티의 어트리뷰트를 정의할 수 있다. 인수는 객체의 참조와 데이터 프로퍼티의 키인 문자열 그리고 프로퍼티 디스크립터 객체를 전달한다.</span><br><span class="line"><span class="keyword">const</span> person = &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 데이터 프로퍼티 정의</span></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(person, <span class="string">'firstName'</span>, &#123;</span><br><span class="line">  value: <span class="string">'Ungmo'</span>,</span><br><span class="line">  writable: <span class="literal">true</span>,</span><br><span class="line">  enumerable: <span class="literal">true</span>,</span><br><span class="line">  configurable: <span class="literal">true</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(person, <span class="string">'lastName'</span>, &#123;</span><br><span class="line">  value: <span class="string">'Lee'</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> descriptor = <span class="built_in">Object</span>.getOwnPropertyDescriptor(person, <span class="string">'firstName'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'firstName'</span>, descriptor);</span><br><span class="line"><span class="comment">// firstName &#123;value: "Ungmo", writable: true, enumerable: true, configurable: true&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 디스크립터 객체의 프로퍼티를 누락시키면 undefined, false가 기본값이다.</span></span><br><span class="line">descriptor = <span class="built_in">Object</span>.getOwnPropertyDescriptor(person, <span class="string">'lastName'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'lastName'</span>, descriptor);</span><br><span class="line"><span class="comment">// lastName &#123;value: "Lee", writable: false, enumerable: false, configurable: false&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// [[Enumerable]]의 값이 false인 경우,</span></span><br><span class="line"><span class="comment">// 해당 프로퍼티는 for…in 문이나 Object.keys 등으로 열거할 수 없다.</span></span><br><span class="line"><span class="comment">// lastName 프로퍼티는 [[Enumerable]]의 값이 false이므로 열거되지 않는다.</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.keys(person)); <span class="comment">// ["firstName"]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// [[Writable]]의 값이 false인 경우, 해당 프로퍼티의 [[Value]]의 값을 변경할 수 없다.</span></span><br><span class="line"><span class="comment">// 에러는 발생하지 않고 무시된다.</span></span><br><span class="line"><span class="comment">// lastName 프로퍼티는 [[Writable]]의 값이 false이므로 값을 변경할 수 없다.</span></span><br><span class="line">person.lastName = <span class="string">'Kim'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// [[Configurable]]의 값이 false인 경우, 해당 프로퍼티를 삭제할 수 없다.</span></span><br><span class="line"><span class="comment">// 에러는 발생하지 않고 무시된다.</span></span><br><span class="line"><span class="comment">// lastName 프로퍼티는 [[Configurable]]의 값이 false이므로 삭제할 수 없다.</span></span><br><span class="line"><span class="keyword">delete</span> person.lastName;</span><br><span class="line"></span><br><span class="line"><span class="comment">// [[Configurable]]의 값이 false인 경우, 해당 프로퍼티를 재정의할 수 없다.</span></span><br><span class="line"><span class="comment">// Object.defineProperty(person, 'lastName', &#123; enumerable: true &#125;);</span></span><br><span class="line"><span class="comment">// Uncaught TypeError: Cannot redefine property: lastName</span></span><br><span class="line"></span><br><span class="line">descriptor = <span class="built_in">Object</span>.getOwnPropertyDescriptor(person, <span class="string">'lastName'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'lastName'</span>, descriptor);</span><br><span class="line"><span class="comment">// lastName &#123;value: "Lee", writable: false, enumerable: false, configurable: false&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 접근자 프로퍼티 정의</span></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(person, <span class="string">'fullName'</span>, &#123;</span><br><span class="line">  <span class="comment">// getter 함수</span></span><br><span class="line">  <span class="keyword">get</span>: function () &#123; <span class="comment">// === get() &#123;</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.firstName + <span class="string">' '</span> + <span class="keyword">this</span>.lastName;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// setter 함수</span></span><br><span class="line">  <span class="keyword">set</span>: function (name) &#123; <span class="comment">// === set(name) &#123;</span></span><br><span class="line">    [<span class="keyword">this</span>.firstName, <span class="keyword">this</span>.lastName] = name.split(<span class="string">' '</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">  enumerable: <span class="literal">true</span>,</span><br><span class="line">  configurable: <span class="literal">true</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">descriptor = <span class="built_in">Object</span>.getOwnPropertyDescriptor(person, <span class="string">'fullName'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'fullName'</span>, descriptor);</span><br><span class="line"><span class="comment">// fullName &#123;get: ƒ, set: ƒ, enumerable: true, configurable: true&#125;</span></span><br><span class="line"></span><br><span class="line">person.fullName = <span class="string">'Heegun Lee'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(person); <span class="comment">// &#123;firstName: "Heegun", lastName: "Lee"&#125;</span></span><br></pre></td></tr></table></figure>
 
-<p>Object.defineProperty 메소드로 프로퍼티 정의할 때 프로퍼티 디스크립터 객체의 프로퍼티를 일부 누락할 수 있다. </p>
+<p>Object.defineProperty 메소드로 프로퍼티 정의할 때 프로퍼티 디스크립터 객체의 프로퍼티를 일부 누락할 수 있다.</p>
 <p>프로퍼티 디스크립터 객체에서 누락된 어트리뷰트는 아래와 같이 기본값이 적용된다.</p>
 <table>
 <thead>
@@ -385,7 +385,7 @@
 
 
 
-    <a data-url="http://yoursite.com/2019/10/15/javascript-preview-15/" data-id="ck21833fz00684sz0hjr72zbp" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2019/10/15/javascript-preview-15/" data-id="ck218l2a000680zz05pkrmnvy" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -461,11 +461,11 @@
         "genre": "TIL Javascript-Preview",
         "datePublished": "2019-10-15",
         "dateCreated": "2019-10-15",
-        "dateModified": "2019-10-15",
+        "dateModified": "2019-10-22",
         "url": "http://yoursite.com/2019/10/15/javascript-preview-15/",
         "description": "
 
-JacaScript 15강 예습
+JavaScript 15강 예습
 15강 : 프로퍼티 정의
 
 프로퍼티 정의란?
@@ -493,7 +493,7 @@ Object.defineProperty 메소드
 
 
 ",
-        "wordCount": 2057
+        "wordCount": 2044
     }
 </script>
 

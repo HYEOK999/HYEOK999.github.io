@@ -12,19 +12,19 @@
     
         <meta name="keywords" content="hexo,git,Web,coding,developer,CSS,HTML,algorithm,javascript">
     
-    <meta name="description" content="JacaScript 26강 배열 고차 함수 26강 :   배열 개요 및 배열 메소드  배열 고차 함수  Array.prototype.sort() Array.prototype.forEach Array.prototype.map Array.prototype.filter Array.prototype.reduce Array.prototype.some Array.">
+    <meta name="description" content="JavaScript 26강 배열 고차 함수 26강 :  배열 개요 및 배열 메소드  배열 고차 함수  Array.prototype.sort() Array.prototype.forEach Array.prototype.map Array.prototype.filter Array.prototype.reduce Array.prototype.some Array.p">
 <meta name="keywords" content="hexo,git,Web,coding,developer,CSS,HTML,algorithm,javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="javascript-preview-26-2">
 <meta property="og:url" content="http://yoursite.com/2019/10/21/javascript-preview-26-2/index.html">
 <meta property="og:site_name" content="HYEOK999&#39;s Blog">
-<meta property="og:description" content="JacaScript 26강 배열 고차 함수 26강 :   배열 개요 및 배열 메소드  배열 고차 함수  Array.prototype.sort() Array.prototype.forEach Array.prototype.map Array.prototype.filter Array.prototype.reduce Array.prototype.some Array.">
+<meta property="og:description" content="JavaScript 26강 배열 고차 함수 26강 :  배열 개요 및 배열 메소드  배열 고차 함수  Array.prototype.sort() Array.prototype.forEach Array.prototype.map Array.prototype.filter Array.prototype.reduce Array.prototype.some Array.p">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://user-images.githubusercontent.com/31315644/66104821-b9976b00-e5f4-11e9-84e9-20c797dd2c51.jpeg">
-<meta property="og:updated_time" content="2019-10-20T16:41:39.747Z">
+<meta property="og:updated_time" content="2019-10-22T02:34:33.152Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javascript-preview-26-2">
-<meta name="twitter:description" content="JacaScript 26강 배열 고차 함수 26강 :   배열 개요 및 배열 메소드  배열 고차 함수  Array.prototype.sort() Array.prototype.forEach Array.prototype.map Array.prototype.filter Array.prototype.reduce Array.prototype.some Array.">
+<meta name="twitter:description" content="JavaScript 26강 배열 고차 함수 26강 :  배열 개요 및 배열 메소드  배열 고차 함수  Array.prototype.sort() Array.prototype.forEach Array.prototype.map Array.prototype.filter Array.prototype.reduce Array.prototype.some Array.p">
 <meta name="twitter:image" content="https://user-images.githubusercontent.com/31315644/66104821-b9976b00-e5f4-11e9-84e9-20c797dd2c51.jpeg">
     
 
@@ -182,8 +182,8 @@
         <div class="article-entry" itemprop="articleBody">
             <p><img src="https://user-images.githubusercontent.com/31315644/66104821-b9976b00-e5f4-11e9-84e9-20c797dd2c51.jpeg" alt></p>
 <hr>
-<h2 id="JacaScript-26강-배열-고차-함수"><a href="#JacaScript-26강-배열-고차-함수" class="headerlink" title="JacaScript 26강 배열 고차 함수"></a>JacaScript 26강 배열 고차 함수</h2><ul>
-<li><p>26강 : </p>
+<h2 id="JavaScript-26강-배열-고차-함수"><a href="#JavaScript-26강-배열-고차-함수" class="headerlink" title="JavaScript 26강 배열 고차 함수"></a>JavaScript 26강 배열 고차 함수</h2><ul>
+<li><p>26강 :</p>
 <ul>
 <li><p><a href="https://hyeok999.github.io/2019/10/21/javascript-preview-26-1/" target="_blank" rel="noopener">배열 개요 및 배열 메소드</a></p>
 </li>
@@ -210,7 +210,7 @@
 <h2 id="배열-고차함수"><a href="#배열-고차함수" class="headerlink" title="배열 고차함수"></a>배열 고차함수</h2><p>고차 함수(High Order Function, HOF)는 함수를 인자로 전달받거나 함수를 반환하는 함수를 말한다.<br>다시 말해, 고차 함수는 인자로 받은 함수를 필요한 시점에 호출하거나 클로저를 생성하여 반환한다.</p>
 <blockquote>
 <p>반복문,조건문은 가독성을 해치고, 변수의 값에 대한 보호가 안되기 때문에 오류 발생의 원이 될 수 있다.</p>
-<p>함수형 프로그래밍은 순수 함수를 통해 부수 효과를 최대한 억제하여 오류를 피하고 프로그램의 안정성을 높이려는 노력의 일환으로 고차함수를 사용한다. </p>
+<p>함수형 프로그래밍은 순수 함수를 통해 부수 효과를 최대한 억제하여 오류를 피하고 프로그램의 안정성을 높이려는 노력의 일환으로 고차함수를 사용한다.</p>
 </blockquote>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 고차 함수 makeCounter는 함수를 인수로 전달받고 클로저를 반환한다.</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">makeCounter</span>(<span class="params">predicate</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 자유 변수. num의 상태는 유지되어야 한다.</span></span><br><span class="line">  <span class="keyword">let</span> num = <span class="number">0</span>;</span><br><span class="line">  <span class="comment">// num의 상태를 유지하는 클로저를 반환한다.</span></span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// predicate를 호출하여 자유 변수 num의 상태를 변화시킨다.</span></span><br><span class="line">    num = predicate(num);</span><br><span class="line">    <span class="keyword">return</span> num;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 보조 함수</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">increase</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> ++n;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 보조 함수</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">decrease</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> --n;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 고차 함수 makeCounter는 함수를 인수로 전달받고 클로저를 반환한다.</span></span><br><span class="line"><span class="keyword">const</span> increaser = makeCounter(increase);</span><br><span class="line"><span class="built_in">console</span>.log(increaser()); <span class="comment">// 1</span></span><br><span class="line"><span class="built_in">console</span>.log(increaser()); <span class="comment">// 2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 고차 함수 makeCounter는 함수를 인수로 전달받고 클로저를 반환한다.</span></span><br><span class="line"><span class="keyword">const</span> decreaser = makeCounter(decrease);</span><br><span class="line"><span class="built_in">console</span>.log(decreaser()); <span class="comment">// -1</span></span><br><span class="line"><span class="built_in">console</span>.log(decreaser()); <span class="comment">// -2</span></span><br></pre></td></tr></table></figure>
 
@@ -242,13 +242,13 @@
 <h3 id="Array-prototype-forEach"><a href="#Array-prototype-forEach" class="headerlink" title="Array.prototype.forEach"></a>Array.prototype.forEach</h3><ul>
 <li>forEach 메소드는 for 문을 대체할 수 있는 메소드이다.</li>
 <li>forEach의 반환값은 undefined다.</li>
-<li>희소 배열의 존재하지 않는 요소는 순회 대상에서 제외된다. </li>
+<li>희소 배열의 존재하지 않는 요소는 순회 대상에서 제외된다.</li>
 <li>원본 배열을 변경할 수 없다. (단, 콜백함수가 변경할수는 있다.)</li>
 <li>배열을 순회하며 배열의 각 요소에 대하여 인자로 주어진 콜백함수를 실행한다.</li>
 <li>배열의 모든 요소를 빠짐없이 모두 순회하며 중간에 순회를 중단할 수 없다.(즉, break / continue  사용 불가)</li>
 <li>this를 전달 받을 수 있다.</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// forEach 메소드는 전달받은 콜백 함수를 호출하면서 3개(요소값, 인덱스, this)의 인수를 전달한다.</span></span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>].forEach(<span class="function">(<span class="params">item, index, self</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">`요소값: <span class="subst">$&#123;item&#125;</span>, 인덱스: <span class="subst">$&#123;index&#125;</span>, this: <span class="subst">$&#123;self&#125;</span>`</span>);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">요소값: 1, 인덱스: 0, this: 1,2,3 </span></span><br><span class="line"><span class="comment">요소값: 2, 인덱스: 1, this: 1,2,3</span></span><br><span class="line"><span class="comment">요소값: 3, 인덱스: 2, this: 1,2,3</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// forEach 메소드는 전달받은 콜백 함수를 호출하면서 3개(요소값, 인덱스, this)의 인수를 전달한다.</span></span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>].forEach(<span class="function">(<span class="params">item, index, self</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">`요소값: <span class="subst">$&#123;item&#125;</span>, 인덱스: <span class="subst">$&#123;index&#125;</span>, this: <span class="subst">$&#123;self&#125;</span>`</span>);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">요소값: 1, 인덱스: 0, this: 1,2,3</span></span><br><span class="line"><span class="comment">요소값: 2, 인덱스: 1, this: 1,2,3</span></span><br><span class="line"><span class="comment">요소값: 3, 인덱스: 2, this: 1,2,3</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
 
 <br>
 
@@ -271,10 +271,10 @@
 <br>
 
 <h3 id="Array-prototype-map"><a href="#Array-prototype-map" class="headerlink" title="Array.prototype.map"></a>Array.prototype.map</h3><ul>
-<li>배열을 순회하며 배열의 각 요소에 대하여 인자로 주어진 콜백 함수를 실행한다. </li>
-<li>콜백 함수의 반환한 값들이 요소로서 추가된 <strong>새로운 배열을 반환한다.</strong> </li>
+<li>배열을 순회하며 배열의 각 요소에 대하여 인자로 주어진 콜백 함수를 실행한다.</li>
+<li>콜백 함수의 반환한 값들이 요소로서 추가된 <strong>새로운 배열을 반환한다.</strong></li>
 <li>원본 배열은 변경되지 않는다.</li>
-<li>희소 배열의 존재하지 않는 요소는 순회 대상에서 제외된다. </li>
+<li>희소 배열의 존재하지 않는 요소는 순회 대상에서 제외된다.</li>
 <li>this를 전달 받을 수 있다.</li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// map 메소드는 전달받은 콜백 함수를 호출하면서 3개(요소값, 인덱스, this)의 인수를 전달한다.</span></span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>].map(<span class="function">(<span class="params">item, index, self</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">`요소값: <span class="subst">$&#123;item&#125;</span>, 인덱스: <span class="subst">$&#123;index&#125;</span>, this: <span class="subst">$&#123;self&#125;</span>`</span>);</span><br><span class="line">  <span class="keyword">return</span> item;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">요소값: 1, 인덱스: 0, this: 1,2,3</span></span><br><span class="line"><span class="comment">요소값: 2, 인덱스: 1, this: 1,2,3</span></span><br><span class="line"><span class="comment">요소값: 3, 인덱스: 2, this: 1,2,3</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
@@ -293,7 +293,7 @@
 <br>
 
 <h3 id="Array-prototype-filter"><a href="#Array-prototype-filter" class="headerlink" title="Array.prototype.filter"></a>Array.prototype.filter</h3><ul>
-<li>배열을 순회하며 배열의 각 요소에 대하여 인자로 주어진 콜백 함수를 실행한다. </li>
+<li>배열을 순회하며 배열의 각 요소에 대하여 인자로 주어진 콜백 함수를 실행한다.</li>
 <li>실행 결과가 true인 배열 요소의 값만을 추출한 <strong>새로운 배열을 반환</strong></li>
 <li>원본 배열은 변경되지 않는다.</li>
 <li>this를 전달 받을 수 있다.</li>
@@ -307,7 +307,7 @@
 <br>
 
 <h3 id="Array-prototype-reduce"><a href="#Array-prototype-reduce" class="headerlink" title="Array.prototype.reduce"></a>Array.prototype.reduce</h3><ul>
-<li>reduce 메소드는 배열을 순회하며 콜백 함수의 이전 반환값과 배열의 각 요소에 대하여 인자로 주어진 콜백 함수를 실행하여 하나의 결과값을 반환한다. </li>
+<li>reduce 메소드는 배열을 순회하며 콜백 함수의 이전 반환값과 배열의 각 요소에 대하여 인자로 주어진 콜백 함수를 실행하여 하나의 결과값을 반환한다.</li>
 <li>원본 배열은 변경되지 않는다.</li>
 <li>첫번째 인수로 콜백 함수 [ 반환값, 요소값, 인덱스, reduce호출한 배열(this)]</li>
 <li>두번째 인수는 초기값.</li>
@@ -315,7 +315,7 @@
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1부터 4까지 누적을 구한다.</span></span><br><span class="line"><span class="keyword">const</span> sum = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>].reduce(<span class="function">(<span class="params">pre, cur, index, self</span>) =&gt;</span> pre + cur, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(sum); <span class="comment">// 10</span></span><br></pre></td></tr></table></figure>
 
-<p>첫번째 인수로 전달받은 콜백 함수는 4개의 인수를 전달받아 배열의 length만큼 총 4회 호출된다. </p>
+<p>첫번째 인수로 전달받은 콜백 함수는 4개의 인수를 전달받아 배열의 length만큼 총 4회 호출된다.</p>
 <p>이때 콜백 함수로 전달되는 인수와 반환값은 아래와 같다.</p>
 <table>
 <thead>
@@ -398,7 +398,7 @@
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> values = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">4</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> result = values.reduce(<span class="function">(<span class="params">pre, cur, i, self</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 순회중인 요소의 인덱스가 자신의 인덱스라면 처음 순회하는 요소이다.</span></span><br><span class="line">  <span class="comment">// 이 요소만 배열에 담아 반환한다.</span></span><br><span class="line">  <span class="comment">// 순회중인 요소의 인덱스가 자신의 인덱스가 아니라면 중복된 요소이다.</span></span><br><span class="line">  <span class="comment">// 3번째 순회: [1, 2], 1, 2, [1, 2, 1, 3, 5, 4, 5, 3, 4, 4]</span></span><br><span class="line">  <span class="comment">// if ([1, 2, 1, 3, 5, 4, 5, 3, 4, 4].indexOf(1) === 2) =&gt; if(0 === 2)</span></span><br><span class="line">  <span class="keyword">if</span> (self.indexOf(cur) === i) pre.push(cur);</span><br><span class="line">  <span class="keyword">return</span> pre;</span><br><span class="line">&#125;, []);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(result); <span class="comment">// [1, 2, 3, 5, 4]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// filter 사용 시</span></span><br><span class="line"><span class="keyword">const</span> values2 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">4</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 순회중인 요소의 인덱스가 자신의 인덱스라면 처음 순회하는 요소이다. 이 요소만 반환한다.</span></span><br><span class="line"><span class="keyword">const</span> result = values2.filter(<span class="function">(<span class="params">v, i, self</span>) =&gt;</span> self.indexOf(v) === i);</span><br><span class="line"><span class="built_in">console</span>.log(result); <span class="comment">// [1, 2, 3, 5, 4]</span></span><br></pre></td></tr></table></figure>
 
-<p>이처럼 map, filter, some, every, find와 같은 모든 배열 고차 함수는 reduce로 구현할 수 있다. </p>
+<p>이처럼 map, filter, some, every, find와 같은 모든 배열 고차 함수는 reduce로 구현할 수 있다.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> sum = [].reduce(<span class="function">(<span class="params">pre, cur</span>) =&gt;</span> pre + cur);</span><br><span class="line"><span class="comment">// TypeError: Reduce of empty array with no initial value</span></span><br></pre></td></tr></table></figure>
 
 <p>이처럼 빈 배열로 reduce 메소드를 호출하면 에러가 발생한다.<br>reduce 메소드에 초기값을 전달하면 에러가 발생하지 않는다.</p>
@@ -429,9 +429,9 @@
 <br>
 
 <h3 id="Array-prototype-find"><a href="#Array-prototype-find" class="headerlink" title="Array.prototype.find"></a>Array.prototype.find</h3><ul>
-<li>배열을 순회하며 각 요소에 대하여 인자로 주어진 콜백 함수를 실행하여 그 결과가 참인 첫번째 <strong>요소를 반환</strong>한다. </li>
+<li>배열을 순회하며 각 요소에 대하여 인자로 주어진 콜백 함수를 실행하여 그 결과가 참인 첫번째 <strong>요소를 반환</strong>한다.</li>
 <li>참인 요소가 존재하지 않는다면 undefined를 반환한다.</li>
-<li>반드시 첫번쨰 요소만 반환하고 끝난다. </li>
+<li>반드시 첫번쨰 요소만 반환하고 끝난다.</li>
 <li>2번째 인자로 this를 전달 받을 수 있다.</li>
 </ul>
 <p>아래 예제에서는 프로퍼티 id의 값이 2인 배열 요소가 2개 있다. 그러나 정작 반환하는 것은 name: ‘Kim’ 뿐이다.</p>
@@ -440,9 +440,9 @@
 <br>
 
 <h3 id="Array-prototype-findIndex"><a href="#Array-prototype-findIndex" class="headerlink" title="Array.prototype.findIndex"></a>Array.prototype.findIndex</h3><ul>
-<li>배열을 순회하며 각 요소에 대하여 인자로 주어진 콜백 함수를 실행하여 그 결과가 참인 첫번째 요소의 <strong>인덱스를 반환</strong>한다. </li>
+<li>배열을 순회하며 각 요소에 대하여 인자로 주어진 콜백 함수를 실행하여 그 결과가 참인 첫번째 요소의 <strong>인덱스를 반환</strong>한다.</li>
 <li>콜백 함수의 실행 결과가 참인 요소가 존재하지 않는다면 -1를 반환한다.</li>
-<li>반드시 첫번쨰 요소의 인덱스만 반환하고 끝난다. </li>
+<li>반드시 첫번쨰 요소의 인덱스만 반환하고 끝난다.</li>
 <li>2번째 인자로 this를 전달 받을 수 있다.</li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> users = [</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="number">1</span>, <span class="attr">name</span>: <span class="string">'Lee'</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="number">2</span>, <span class="attr">name</span>: <span class="string">'Kim'</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="number">2</span>, <span class="attr">name</span>: <span class="string">'Choi'</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="number">3</span>, <span class="attr">name</span>: <span class="string">'Park'</span> &#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">predicate</span>(<span class="params">key, value</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// key와 value를 기억하는 클로저를 반환</span></span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="params">item</span> =&gt;</span> item[key] === value;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Array#findIndex는 콜백 함수를 실행하여 그 결과가 참인 첫번째 요소의 인덱스를 반환한다.</span></span><br><span class="line"><span class="comment">// id가 2인 요소의 인덱스를 구한다.</span></span><br><span class="line"><span class="keyword">let</span> index = users.findIndex(predicate(<span class="string">'id'</span>, <span class="number">2</span>));</span><br><span class="line"><span class="built_in">console</span>.log(index); <span class="comment">// 1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// name이 'Park'인 요소의 인덱스를 구한다.</span></span><br><span class="line">index = users.findIndex(predicate(<span class="string">'name'</span>, <span class="string">'Park'</span>));</span><br><span class="line"><span class="built_in">console</span>.log(index); <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
@@ -454,7 +454,7 @@
 
 
 
-    <a data-url="http://yoursite.com/2019/10/21/javascript-preview-26-2/" data-id="ck21833ga00724sz0teg16oo8" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2019/10/21/javascript-preview-26-2/" data-id="ck218l2a700720zz0t9i5nlc0" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -530,12 +530,12 @@
         "genre": "TIL Javascript-Preview",
         "datePublished": "2019-10-21",
         "dateCreated": "2019-10-21",
-        "dateModified": "2019-10-21",
+        "dateModified": "2019-10-22",
         "url": "http://yoursite.com/2019/10/21/javascript-preview-26-2/",
         "description": "
 
-JacaScript 26강 배열 고차 함수
-26강 : 
+JavaScript 26강 배열 고차 함수
+26강 :
 
 배열 개요 및 배열 메소드
 
@@ -547,8 +547,8 @@ Array.prototype.map
 Array.prototype.filter
 Array.prototype.reduce
 Array.prototype.some
-Array.",
-        "wordCount": 3715
+Array.p",
+        "wordCount": 3700
     }
 </script>
 
