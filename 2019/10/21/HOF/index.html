@@ -12,19 +12,19 @@
     
         <meta name="keywords" content="hexo,git,Web,coding,developer,CSS,HTML,algorithm,javascript">
     
-    <meta name="description" content="JavaScript 고차 함수 Array.prototype.sort Array.prototype.forEach     고차 함수내부적으로 for문을 돌며, 인수로 콜백함수를 받을 수 있다. Array.prototype.sort  배열명.sort() 배열의 요소를 적절하게 정렬.  (기본적으로 오름차순) 원본 배열을 직접 변경하며 정렬된 배열을 반환. 문">
+    <meta name="description" content="JavaScript 고차 함수 Array.prototype.sort Array.prototype.forEach Array.prototype.map Array.prototype.filter Array.prototype.reduce Array.prototype.some Array.prototype.every Array.prototype.find Array.">
 <meta name="keywords" content="hexo,git,Web,coding,developer,CSS,HTML,algorithm,javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HOF-고차함수">
 <meta property="og:url" content="http://yoursite.com/2019/10/21/HOF/index.html">
 <meta property="og:site_name" content="HYEOK999&#39;s Blog">
-<meta property="og:description" content="JavaScript 고차 함수 Array.prototype.sort Array.prototype.forEach     고차 함수내부적으로 for문을 돌며, 인수로 콜백함수를 받을 수 있다. Array.prototype.sort  배열명.sort() 배열의 요소를 적절하게 정렬.  (기본적으로 오름차순) 원본 배열을 직접 변경하며 정렬된 배열을 반환. 문">
+<meta property="og:description" content="JavaScript 고차 함수 Array.prototype.sort Array.prototype.forEach Array.prototype.map Array.prototype.filter Array.prototype.reduce Array.prototype.some Array.prototype.every Array.prototype.find Array.">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://user-images.githubusercontent.com/31315644/67205062-de3f6f80-f449-11e9-85ec-0a654e1d3d1b.png">
-<meta property="og:updated_time" content="2019-10-21T12:30:40.093Z">
+<meta property="og:updated_time" content="2019-10-22T12:02:58.898Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HOF-고차함수">
-<meta name="twitter:description" content="JavaScript 고차 함수 Array.prototype.sort Array.prototype.forEach     고차 함수내부적으로 for문을 돌며, 인수로 콜백함수를 받을 수 있다. Array.prototype.sort  배열명.sort() 배열의 요소를 적절하게 정렬.  (기본적으로 오름차순) 원본 배열을 직접 변경하며 정렬된 배열을 반환. 문">
+<meta name="twitter:description" content="JavaScript 고차 함수 Array.prototype.sort Array.prototype.forEach Array.prototype.map Array.prototype.filter Array.prototype.reduce Array.prototype.some Array.prototype.every Array.prototype.find Array.">
 <meta name="twitter:image" content="https://user-images.githubusercontent.com/31315644/67205062-de3f6f80-f449-11e9-85ec-0a654e1d3d1b.png">
     
 
@@ -180,11 +180,18 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            <p><img src="https://user-images.githubusercontent.com/31315644/67205062-de3f6f80-f449-11e9-85ec-0a654e1d3d1b.png" alt="HOF"></p>
+            <p><img src="https://user-images.githubusercontent.com/31315644/67205062-de3f6f80-f449-11e9-85ec-0a654e1d3d1b.png" alt></p>
 <hr>
 <h2 id="JavaScript-고차-함수"><a href="#JavaScript-고차-함수" class="headerlink" title="JavaScript 고차 함수"></a>JavaScript 고차 함수</h2><ul>
 <li><a href="#sort">Array.prototype.sort</a></li>
 <li><a href="#foreach">Array.prototype.forEach</a></li>
+<li><a href="#map">Array.prototype.map</a></li>
+<li><a href="#filter">Array.prototype.filter</a></li>
+<li><a href="#reduce">Array.prototype.reduce</a></li>
+<li><a href="#some">Array.prototype.some</a></li>
+<li><a href="#every">Array.prototype.every</a></li>
+<li><a href="#find">Array.prototype.find</a></li>
+<li><a href="#findindex">Array.prototype.findIndex</a></li>
 </ul>
 <br>
 
@@ -228,14 +235,202 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Numbers</span> </span>&#123;</span><br><span class="line">  numberArray = [];</span><br><span class="line"></span><br><span class="line">  multiply(arr) &#123;</span><br><span class="line">    <span class="comment">// 화살표 함수 내부에서 this를 참조하면</span></span><br><span class="line">    <span class="comment">// 상위 컨텍스트, 즉 multiply 메소드 내부의 this를 그대로 참조한다.</span></span><br><span class="line">    arr.forEach(<span class="function"><span class="params">item</span> =&gt;</span> <span class="keyword">this</span>.numberArray.push(item * item));</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> numbers = <span class="keyword">new</span> Numbers();</span><br><span class="line">numbers.multiply([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]);</span><br><span class="line"><span class="built_in">console</span>.log(numbers.numberArray); <span class="comment">// [1, 4, 9]</span></span><br></pre></td></tr></table></figure>
 
 <p>화살표 함수는 내부에 this가 없기 떄문에 자신의 상위 스코프의 this를 가져다가 쓴다.</p>
+<br>
 
+<h3 id="Array-prototype-map"><a href="#Array-prototype-map" class="headerlink" title="Array.prototype.map "></a>Array.prototype.map <a id="map"></a></h3><ul>
+<li><code>배열명.map((item, index, self) =&gt; { }); //item: 요소, index: 인덱스, self: this</code></li>
+<li>배열을 순회하며 배열의 각 요소에 대하여 인자로 주어진 콜백 함수를 실행한다.</li>
+<li><strong>map은 요소의 개수만큼 순회하면서 요소를 생성하여 반환한다.</strong></li>
+<li>콜백 함수의 반환한 값들이 요소로서 추가된 <strong>새로운 배열을 반환한다.</strong></li>
+<li>원본 배열은 변경되지 않는다.</li>
+<li>희소 배열의 존재하지 않는 요소는 순회 대상에서 제외된다.</li>
+<li>this를 전달 받을 수 있다.</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// map 메소드는 전달받은 콜백 함수를 호출하면서 3개(요소값, 인덱스, this)의 인수를 전달한다.</span></span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>].map(<span class="function">(<span class="params">item, index, self</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">`요소값: <span class="subst">$&#123;item&#125;</span>, 인덱스: <span class="subst">$&#123;index&#125;</span>, this: <span class="subst">$&#123;self&#125;</span>`</span>);</span><br><span class="line">  <span class="keyword">return</span> item;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">요소값: 1, 인덱스: 0, this: 1,2,3</span></span><br><span class="line"><span class="comment">요소값: 2, 인덱스: 1, this: 1,2,3</span></span><br><span class="line"><span class="comment">요소값: 3, 인덱스: 2, this: 1,2,3</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<img src="https://poiemaweb.com/assets/fs-images/26-7.png" style="zoom:50%;">
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> numbers = [<span class="number">1</span>, <span class="number">4</span>, <span class="number">9</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 배열을 순회하며 배열의 각 요소에 대하여 인자로 주어진 콜백 함수를 실행한다.</span></span><br><span class="line"><span class="comment">// 그리고 콜백 함수의 반환한 값들이 요소로서 추가된 새로운 배열을 반환한다.</span></span><br><span class="line"><span class="keyword">const</span> roots = numbers.map(<span class="function"><span class="params">item</span> =&gt;</span> <span class="built_in">Math</span>.sqrt(item));</span><br><span class="line"></span><br><span class="line"><span class="comment">// 위 코드의 축약표현은 아래와 같다.</span></span><br><span class="line"><span class="comment">// const roots = numbers.map(Math.sqrt);</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// map 메소드는 새로운 배열을 반환한다</span></span><br><span class="line"><span class="built_in">console</span>.log(roots);   <span class="comment">// [ 1, 2, 3 ]</span></span><br><span class="line"><span class="comment">// map 메소드는 원본 배열은 변경하지 않는다</span></span><br><span class="line"><span class="built_in">console</span>.log(numbers); <span class="comment">// [ 1, 4, 9 ]</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="Array-prototype-filter"><a href="#Array-prototype-filter" class="headerlink" title="Array.prototype.filter "></a>Array.prototype.filter <a id="filter"></a></h3><ul>
+<li><code>배열명.filter((item, index, self) =&gt; { }); //item: 요소, index: 인덱스, self: this</code></li>
+<li>배열을 순회하며 배열의 각 요소에 대하여 인자로 주어진 콜백 함수를 실행한다.</li>
+<li><strong>return 조건식에 부합하는 것을 반환한다.</strong></li>
+<li>실행 결과가 true인 배열 요소의 값만을 추출한 <strong>새로운 배열을 반환</strong></li>
+<li>원본 배열은 변경되지 않는다.</li>
+<li>this를 전달 받을 수 있다.</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// filter 메소드는 전달받은 콜백 함수를 호출하면서 3개(요소값, 인덱스, this)의 인수를 전달한다.</span></span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>].filter(<span class="function">(<span class="params">item, index, self</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">`요소값: <span class="subst">$&#123;item&#125;</span>, 인덱스: <span class="subst">$&#123;index&#125;</span>, this: <span class="subst">$&#123;self&#125;</span>`</span>);</span><br><span class="line">  <span class="keyword">return</span> item % <span class="number">2</span>;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">요소값: 1, 인덱스: 0, this: 1,2,3</span></span><br><span class="line"><span class="comment">요소값: 2, 인덱스: 1, this: 1,2,3</span></span><br><span class="line"><span class="comment">요소값: 3, 인덱스: 2, this: 1,2,3</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<img src="https://poiemaweb.com/assets/fs-images/26-8.png" style="zoom:50%;">
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> numbers = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 홀수만을 필터링한다 (1은 true로 평가된다)</span></span><br><span class="line"><span class="keyword">const</span> odds = numbers.filter(<span class="function"><span class="params">item</span> =&gt;</span> item % <span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(odds); <span class="comment">// [1, 3, 5]</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="Array-prototype-reduce"><a href="#Array-prototype-reduce" class="headerlink" title="Array.prototype.reduce "></a>Array.prototype.reduce <a id="reduce"></a></h3><ul>
+<li><code>배열.reduce( (누적값, 현잿값, 인덱스, 요소) =&gt; { return 결과 }, 초깃값);</code></li>
+<li>reduce 메소드는 배열을 순회하며 콜백 함수의 이전 반환값과 배열의 각 요소에 대하여 인자로 주어진 콜백 함수를 실행하여 <strong>하나의 결과값을 반환한다.</strong></li>
+<li>원본 배열은 변경되지 않는다.</li>
+<li>첫번째 인수로 콜백 함수 [ 반환값, 요소값, 인덱스, reduce호출한 배열(this)]</li>
+<li>두번째 인수는 초기값.</li>
+<li>reduce 메소드는 배열을 순회하며 <strong>단일값을 구해야 하는 경우에 사용한다.</strong></li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1부터 4까지 누적을 구한다.</span></span><br><span class="line"><span class="keyword">const</span> sum = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>].reduce(<span class="function">(<span class="params">pre, cur, index, self</span>) =&gt;</span> pre + cur, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(sum); <span class="comment">// 10</span></span><br></pre></td></tr></table></figure>
+
+<p>첫번째 인수로 전달받은 콜백 함수는 4개의 인수를 전달받아 배열의 length만큼 총 4회 호출된다.</p>
+<p>이때 콜백 함수로 전달되는 인수와 반환값은 아래와 같다.</p>
+<table>
+<thead>
+<tr>
+<th align="center">구분</th>
+<th align="center">콜백 함수에 전달된 인수</th>
+<th align="center">콜백 함수의 반환값</th>
+<th align="center"></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">pre</td>
+<td align="center">cur</td>
+<td align="center">index</td>
+<td align="center">self</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td align="center">첫번째 순회</td>
+<td align="center">0 (초기값)</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td>[1, 2, 3, 4]</td>
+<td>1 (pre + cur)</td>
+</tr>
+<tr>
+<td align="center">두번째 순회</td>
+<td align="center">1</td>
+<td align="center">2</td>
+<td align="center">1</td>
+<td>[1, 2, 3, 4]</td>
+<td>3 (pre + cur)</td>
+</tr>
+<tr>
+<td align="center">세번째 순회</td>
+<td align="center">3</td>
+<td align="center">3</td>
+<td align="center">2</td>
+<td>[1, 2, 3, 4]</td>
+<td>6 (pre + cur)</td>
+</tr>
+<tr>
+<td align="center">네번째 순회</td>
+<td align="center">6</td>
+<td align="center">4</td>
+<td align="center">3</td>
+<td>[1, 2, 3, 4]</td>
+<td>10 (pre + cur</td>
+</tr>
+</tbody></table>
+<img src="https://poiemaweb.com/assets/fs-images/26-9.png" style="zoom:50%;">
+
+<br>
+
+<ul>
+<li>평균 구하기</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> values = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> average = values.reduce(<span class="function">(<span class="params">pre, cur, i, self</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 마지막 순회인 경우, 누적값으로 평균을 구해 반환</span></span><br><span class="line">  <span class="comment">// 마지막 순회가 아닌 경우, 누적값을 반환</span></span><br><span class="line">  <span class="keyword">return</span> i === self.length - <span class="number">1</span> ? (pre + cur) / self.length : pre + cur;</span><br><span class="line">&#125;, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(average); <span class="comment">// 3.5</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>최대값 구하기</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> values = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> max = values.reduce(<span class="function">(<span class="params">pre, cur</span>) =&gt;</span> (pre &gt; cur ? pre : cur), <span class="number">0</span>);</span><br><span class="line"><span class="built_in">console</span>.log(max); <span class="comment">// 5</span></span><br></pre></td></tr></table></figure>
+
+<p>하지만, Math.max 메소드를 사용하는 방법이 보다 직관적이다. <code>min</code>, <code>max</code>는 가변인자함수형태로 받는다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> values = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> max = <span class="built_in">Math</span>.max(...values);</span><br><span class="line"><span class="built_in">console</span>.log(max); <span class="comment">// 5</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>중복된 요소의 개수 구하기</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fruits = [<span class="string">'banana'</span>, <span class="string">'apple'</span>, <span class="string">'orange'</span>, <span class="string">'orange'</span>, <span class="string">'apple'</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> count = fruits.reduce(<span class="function">(<span class="params">pre, cur</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 첫번째 순회: pre =&gt; &#123;&#125;, cur =&gt; 'banana'</span></span><br><span class="line">  <span class="comment">// 빈 객체에 요소값을 프로퍼티 키로 추가하고 프로퍼티 값을 할당</span></span><br><span class="line">  <span class="comment">// 만약 프로퍼티 값이 undefined이면 0으로 초기화</span></span><br><span class="line">  pre[cur] = (pre[cur] || <span class="number">0</span>) + <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">return</span> pre;</span><br><span class="line">&#125;, &#123;&#125;);     </span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(count); <span class="comment">// &#123; banana: 1, apple: 2, orange: 2 &#125;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>중첩 배열 평탄화</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> values = [<span class="number">1</span>, [<span class="number">2</span>, <span class="number">3</span>], <span class="number">4</span>, [<span class="number">5</span>, <span class="number">6</span>]];</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> flatten = values.reduce(<span class="function">(<span class="params">pre, cur</span>) =&gt;</span> pre.concat(cur), []);</span><br><span class="line"><span class="comment">// [1] =&gt; [1, 2, 3] =&gt; [1, 2, 3, 4] =&gt; [1, 2, 3, 4, 5, 6]</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(flatten); <span class="comment">// [1, 2, 3, 4, 5, 6]</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>중복 요소 제거 ( reduce보다는 filter이용하는게 더 직관적이다. )</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> values = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">4</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> result = values.reduce(<span class="function">(<span class="params">pre, cur, i, self</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 순회중인 요소의 인덱스가 자신의 인덱스라면 처음 순회하는 요소이다.</span></span><br><span class="line">  <span class="comment">// 이 요소만 배열에 담아 반환한다.</span></span><br><span class="line">  <span class="comment">// 순회중인 요소의 인덱스가 자신의 인덱스가 아니라면 중복된 요소이다.</span></span><br><span class="line">  <span class="comment">// 3번째 순회: [1, 2], 1, 2, [1, 2, 1, 3, 5, 4, 5, 3, 4, 4]</span></span><br><span class="line">  <span class="comment">// if ([1, 2, 1, 3, 5, 4, 5, 3, 4, 4].indexOf(1) === 2) =&gt; if(0 === 2)</span></span><br><span class="line">  <span class="keyword">if</span> (self.indexOf(cur) === i) pre.push(cur);</span><br><span class="line">  <span class="keyword">return</span> pre;</span><br><span class="line">&#125;, []);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(result); <span class="comment">// [1, 2, 3, 5, 4]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// filter 사용 시</span></span><br><span class="line"><span class="keyword">const</span> values2 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">4</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 순회중인 요소의 인덱스가 자신의 인덱스라면 처음 순회하는 요소이다. 이 요소만 반환한다.</span></span><br><span class="line"><span class="keyword">const</span> result = values2.filter(<span class="function">(<span class="params">v, i, self</span>) =&gt;</span> self.indexOf(v) === i);</span><br><span class="line"><span class="built_in">console</span>.log(result); <span class="comment">// [1, 2, 3, 5, 4]</span></span><br></pre></td></tr></table></figure>
+
+<p>이처럼 map, filter, some, every, find와 같은 모든 배열 고차 함수는 reduce로 구현할 수 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> sum = [].reduce(<span class="function">(<span class="params">pre, cur</span>) =&gt;</span> pre + cur);</span><br><span class="line"><span class="comment">// TypeError: Reduce of empty array with no initial value</span></span><br></pre></td></tr></table></figure>
+
+<p>이처럼 빈 배열로 reduce 메소드를 호출하면 에러가 발생한다.<br>reduce 메소드에 초기값을 전달하면 에러가 발생하지 않는다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> sum = [].reduce(<span class="function">(<span class="params">pre, cur</span>) =&gt;</span> pre + cur, <span class="number">0</span>);</span><br><span class="line"><span class="built_in">console</span>.log(sum); <span class="comment">// 0</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>객체의 프로퍼티 값을 합산하는 경우에는 반드시 초기값을 전달해야 한다.</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> products = [</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="number">1</span>, <span class="attr">price</span>: <span class="number">100</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="number">2</span>, <span class="attr">price</span>: <span class="number">200</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="number">3</span>, <span class="attr">price</span>: <span class="number">300</span> &#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 1번째 순회 : pre =&gt; 0, cur =&gt; 100</span></span><br><span class="line"><span class="comment">// 2번째 순회 : pre =&gt; 100, cur =&gt; 200</span></span><br><span class="line"><span class="comment">// 3번째 순회 : pre =&gt; 300, cur =&gt; 300</span></span><br><span class="line"><span class="keyword">const</span> priceSum = products.reduce(<span class="function">(<span class="params">pre, cur</span>) =&gt;</span> pre + cur.price, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(priceSum); <span class="comment">// 600</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="Array-prototype-some"><a href="#Array-prototype-some" class="headerlink" title="Array.prototype.some "></a>Array.prototype.some <a id="some"></a></h3><ul>
+<li><code>배열명.some((item, index, self) =&gt; { }); //item: 요소, index: 인덱스, self: this</code></li>
+<li>배열을 순회하며 요소 중 <strong>하나라도 콜백 함수의 테스트를 통과하면 true, 모든 요소가 콜백 함수의 테스트를 통과하지 못하면 false</strong>를 반환한다.</li>
+<li>2번째 인자로 this를 전달 받을 수 있다.</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 배열의 요소 중에 10보다 큰 요소가 1개 이상 존재하는지 확인</span></span><br><span class="line"><span class="keyword">let</span> result = [<span class="number">5</span>, <span class="number">10</span>, <span class="number">15</span>].some(<span class="function"><span class="params">item</span> =&gt;</span> item &gt; <span class="number">10</span>);</span><br><span class="line"><span class="built_in">console</span>.log(result); <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 배열의 요소 중에 0보다 작은 요소가 1개 이상 존재하는지 확인</span></span><br><span class="line">result = [<span class="number">5</span>, <span class="number">10</span>, <span class="number">15</span>].some(<span class="function"><span class="params">item</span> =&gt;</span> item &lt; <span class="number">0</span>);</span><br><span class="line"><span class="built_in">console</span>.log(result); <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 배열의 요소 중에 'banana'가 1개 이상 존재하는지 확인</span></span><br><span class="line">result = [<span class="string">'apple'</span>, <span class="string">'banana'</span>, <span class="string">'mango'</span>].some(<span class="function"><span class="params">item</span> =&gt;</span> item === <span class="string">'banana'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(result); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="Array-prototype-every"><a href="#Array-prototype-every" class="headerlink" title="Array.prototype.every "></a>Array.prototype.every <a id="every"></a></h3><ul>
+<li><code>배열명.every((item, index, self) =&gt; { }); //item: 요소, index: 인덱스, self: this</code></li>
+<li>every 메소드는 배열을 순회하며 <strong>모든 요소가 콜백 함수의 테스트를 통과하면 true, 요소 중 하나라도 콜백 함수의 테스트를 통과하지 못하면 false</strong>를 반환한다.</li>
+<li>2번째 인자로 this를 전달 받을 수 있다.</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 배열의 모든 요소가 3보다 큰지 확인</span></span><br><span class="line"><span class="keyword">let</span> result = [<span class="number">5</span>, <span class="number">10</span>, <span class="number">15</span>].every(<span class="function"><span class="params">item</span> =&gt;</span> item &gt; <span class="number">3</span>);</span><br><span class="line"><span class="built_in">console</span>.log(result); <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 배열의 모든 요소가 10보다 큰지 확인</span></span><br><span class="line">result = [<span class="number">5</span>, <span class="number">10</span>, <span class="number">15</span>].every(<span class="function"><span class="params">item</span> =&gt;</span> item &gt; <span class="number">10</span>);</span><br><span class="line"><span class="built_in">console</span>.log(result); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="Array-prototype-find"><a href="#Array-prototype-find" class="headerlink" title="Array.prototype.find "></a>Array.prototype.find <a id="find"></a></h3><ul>
+<li><code>배열명.find((item, index, self) =&gt; { }); //item: 요소, index: 인덱스, self: this</code></li>
+<li>배열을 순회하며 각 요소에 대하여 인자로 주어진 콜백 함수를 실행하여 그 결과가 참인 첫번째 <strong>요소를 반환</strong>한다.</li>
+<li>참인 요소가 존재하지 않는다면 undefined를 반환한다.</li>
+<li><strong>반드시 첫번쨰 요소만 반환하고 끝난다.</strong></li>
+<li>2번째 인자로 this를 전달 받을 수 있다.</li>
+</ul>
+<p>아래 예제에서는 프로퍼티 id의 값이 2인 배열 요소가 2개 있다. 그러나 정작 반환하는 것은 name: ‘Kim’ 뿐이다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> users = [</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="number">1</span>, <span class="attr">name</span>: <span class="string">'Lee'</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="number">2</span>, <span class="attr">name</span>: <span class="string">'Kim'</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="number">2</span>, <span class="attr">name</span>: <span class="string">'Choi'</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="number">3</span>, <span class="attr">name</span>: <span class="string">'Park'</span> &#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="comment">// id가 2인 요소를 반환한다.</span></span><br><span class="line"><span class="keyword">const</span> result = users.find(<span class="function"><span class="params">item</span> =&gt;</span> item.id === <span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Array#find는 배열이 아니라 요소를 반환한다.</span></span><br><span class="line"><span class="built_in">console</span>.log(result); <span class="comment">// &#123;id: 2, name: 'Kim'&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>filter 메소드는 콜백 함수의 실행 결과가 true인 요소만을 추출한 새로운 배열을 반환한다. </p>
+<p>따라서 filter의 반환값은 언제나 배열이다. </p>
+<p>하지만 find 메소드는 콜백 함수를 실행하여 그 결과가 참인 첫번째 요소를 반환하므로 find의 결과값은 해당 요소값이다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Array#filter는 배열을 반환한다.</span></span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">3</span>].filter(<span class="function"><span class="params">item</span> =&gt;</span> item === <span class="number">2</span>); <span class="comment">// -&gt; [2, 2]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Array#find는 요소를 반환한다.</span></span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">3</span>].find(<span class="function"><span class="params">item</span> =&gt;</span> item === <span class="number">2</span>); <span class="comment">// -&gt; 2</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="Array-prototype-findIndex"><a href="#Array-prototype-findIndex" class="headerlink" title="Array.prototype.findIndex "></a>Array.prototype.findIndex <a id="findindex"></a></h3><ul>
+<li><code>배열명.findIndex((item, index, self) =&gt; { }); //item: 요소, index: 인덱스, self: this</code></li>
+<li>배열을 순회하며 각 요소에 대하여 인자로 주어진 콜백 함수를 실행하여 그 결과가 참인 첫번째 요소의 <strong>인덱스를 반환</strong>한다.</li>
+<li>콜백 함수의 실행 결과가 참인 요소가 존재하지 않는다면 -1를 반환한다.</li>
+<li>반드시 첫번쨰 요소의 인덱스만 반환하고 끝난다.</li>
+<li>2번째 인자로 this를 전달 받을 수 있다.</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> users = [</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="number">1</span>, <span class="attr">name</span>: <span class="string">'Lee'</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="number">2</span>, <span class="attr">name</span>: <span class="string">'Kim'</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="number">2</span>, <span class="attr">name</span>: <span class="string">'Choi'</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="number">3</span>, <span class="attr">name</span>: <span class="string">'Park'</span> &#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">predicate</span>(<span class="params">key, value</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// key와 value를 기억하는 클로저를 반환</span></span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="params">item</span> =&gt;</span> item[key] === value;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Array#findIndex는 콜백 함수를 실행하여 그 결과가 참인 첫번째 요소의 인덱스를 반환한다.</span></span><br><span class="line"><span class="comment">// id가 2인 요소의 인덱스를 구한다.</span></span><br><span class="line"><span class="keyword">let</span> index = users.findIndex(predicate(<span class="string">'id'</span>, <span class="number">2</span>));</span><br><span class="line"><span class="built_in">console</span>.log(index); <span class="comment">// 1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// name이 'Park'인 요소의 인덱스를 구한다.</span></span><br><span class="line">index = users.findIndex(predicate(<span class="string">'name'</span>, <span class="string">'Park'</span>));</span><br><span class="line"><span class="built_in">console</span>.log(index); <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
+
+<br>
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="http://yoursite.com/2019/10/21/HOF/" data-id="ck218myyq000q6pz0d9v4wqxa" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2019/10/21/HOF/" data-id="ck21tb2te000q8kz0skefa7kw" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -311,24 +506,21 @@
         "genre": "Develop Javascript",
         "datePublished": "2019-10-21",
         "dateCreated": "2019-10-21",
-        "dateModified": "2019-10-21",
+        "dateModified": "2019-10-22",
         "url": "http://yoursite.com/2019/10/21/HOF/",
         "description": "
 
 JavaScript 고차 함수
 Array.prototype.sort
 Array.prototype.forEach
-
-
-
-
-고차 함수내부적으로 for문을 돌며, 인수로 콜백함수를 받을 수 있다.
-Array.prototype.sort 
-배열명.sort()
-배열의 요소를 적절하게 정렬.  (기본적으로 오름차순)
-원본 배열을 직접 변경하며 정렬된 배열을 반환.
-문",
-        "wordCount": 620
+Array.prototype.map
+Array.prototype.filter
+Array.prototype.reduce
+Array.prototype.some
+Array.prototype.every
+Array.prototype.find
+Array.",
+        "wordCount": 2796
     }
 </script>
 
@@ -419,6 +611,26 @@ Array.prototype.sort
                     <li>
                         
                         <div class="item-thumbnail">
+                            <a href="/2019/10/22/javascript-study-13/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/65933403-536fe400-e44c-11e9-981d-c4e8c1f86998.png)" alt="javascript-study-13" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/Javascript/">Javascript</a></p>
+                            <p class="item-title"><a href="/2019/10/22/javascript-study-13/" class="title">javascript-study-13</a></p>
+                            <p class="item-date"><time datetime="2019-10-22T12:14:50.000Z" itemprop="datePublished">2019-10-22</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
                             <a href="/2019/10/22/number-object/" class="thumbnail">
     
     
@@ -496,26 +708,6 @@ Array.prototype.sort
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2019/10/21/array-method/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/67205066-e0093300-f449-11e9-8ce9-f043ad30ccb5.png)" alt="배열 메소드" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Develop/">Develop</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Develop/Javascript/">Javascript</a></p>
-                            <p class="item-title"><a href="/2019/10/21/array-method/" class="title">배열 메소드</a></p>
-                            <p class="item-date"><time datetime="2019-10-21T12:16:43.000Z" itemprop="datePublished">2019-10-21</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -525,7 +717,7 @@ Array.prototype.sort
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/">Develop</a><span class="category-list-count">15</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/CSS/">CSS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/GIT/">GIT</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Java/">Java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Javascript/">Javascript</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Tips/">Tips</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/">TIL</a><span class="category-list-count">77</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Algorithm/">Algorithm</a><span class="category-list-count">27</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/GIT/">GIT</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript/">Javascript</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/linux/">linux</a><span class="category-list-count">4</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/etc/">etc</a><span class="category-list-count">1</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/">Develop</a><span class="category-list-count">15</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/CSS/">CSS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/GIT/">GIT</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Java/">Java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Javascript/">Javascript</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Tips/">Tips</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/">TIL</a><span class="category-list-count">78</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Algorithm/">Algorithm</a><span class="category-list-count">27</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/GIT/">GIT</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript/">Javascript</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/linux/">linux</a><span class="category-list-count">4</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/etc/">etc</a><span class="category-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -535,7 +727,7 @@ Array.prototype.sort
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a><span class="archive-list-count">57</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a><span class="archive-list-count">37</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a><span class="archive-list-count">58</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a><span class="archive-list-count">37</span></li></ul>
         </div>
     </div>
 
@@ -545,7 +737,7 @@ Array.prototype.sort
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">76</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ESLint/">ESLint</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a><span class="tag-list-count">75</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/">JAVA</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MarkUP/">MarkUP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Selector/">Selector</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TIL/">TIL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a><span class="tag-list-count">93</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorism/">algorism</a><span class="tag-list-count">29</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a><span class="tag-list-count">58</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/coding/">coding</a><span class="tag-list-count">93</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/developer/">developer</a><span class="tag-list-count">93</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">93</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">93</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/inline-block/">inline-block</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">59</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">3</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">77</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ESLint/">ESLint</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a><span class="tag-list-count">76</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/">JAVA</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MarkUP/">MarkUP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Selector/">Selector</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TIL/">TIL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a><span class="tag-list-count">94</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorism/">algorism</a><span class="tag-list-count">29</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a><span class="tag-list-count">59</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/coding/">coding</a><span class="tag-list-count">94</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/developer/">developer</a><span class="tag-list-count">94</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">94</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">94</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/inline-block/">inline-block</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">60</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">3</span></li></ul>
         </div>
     </div>
 
