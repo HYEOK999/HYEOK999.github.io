@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+
+    
+
+    
+    <title>test_arrange02 | HYEOK999&#39;s Blog</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="hexo,git,Web,coding,developer,CSS,HTML,algorithm,javascript">
+    
+    <meta name="description" content="짧은 개념 정리글함수란?여러가지 실행문들을 코드 블럭으로 묶은 하나의 실행단위.   함수 사용 이유코드의 재사용 , 유지보수의 편의성, 코드의 신뢰성   함수객체vs일반객체함수객체는 호출할 수 있고 일반객체는 호출할 수 없다.   함수 정의 방법 함수표현문  함수선언문  Function 생성자 함수  화살표 함수     메소드 종류 인스턴스 메소드  프로">
+<meta name="keywords" content="hexo,git,Web,coding,developer,CSS,HTML,algorithm,javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="test_arrange02">
+<meta property="og:url" content="http://yoursite.com/2019/10/27/test-arrange02/index.html">
+<meta property="og:site_name" content="HYEOK999&#39;s Blog">
+<meta property="og:description" content="짧은 개념 정리글함수란?여러가지 실행문들을 코드 블럭으로 묶은 하나의 실행단위.   함수 사용 이유코드의 재사용 , 유지보수의 편의성, 코드의 신뢰성   함수객체vs일반객체함수객체는 호출할 수 있고 일반객체는 호출할 수 없다.   함수 정의 방법 함수표현문  함수선언문  Function 생성자 함수  화살표 함수     메소드 종류 인스턴스 메소드  프로">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://cdn.pixabay.com/photo/2017/06/28/10/53/board-2450236_1280.jpg">
+<meta property="og:updated_time" content="2019-10-26T19:05:03.788Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="test_arrange02">
+<meta name="twitter:description" content="짧은 개념 정리글함수란?여러가지 실행문들을 코드 블럭으로 묶은 하나의 실행단위.   함수 사용 이유코드의 재사용 , 유지보수의 편의성, 코드의 신뢰성   함수객체vs일반객체함수객체는 호출할 수 있고 일반객체는 호출할 수 없다.   함수 정의 방법 함수표현문  함수선언문  Function 생성자 함수  화살표 함수     메소드 종류 인스턴스 메소드  프로">
+<meta name="twitter:image" content="https://cdn.pixabay.com/photo/2017/06/28/10/53/board-2450236_1280.jpg">
+    
+
+    
+
+    
+        <link rel="icon" href="/images/favicon_io/favicon.ico">
+    
+
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Architects+Daughter&display=swap" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin+Sketch&display=swap">
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">HYEOK999&#39;s Daily Develop</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/">Develop</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/CSS/">CSS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/GIT/">GIT</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Tips/">Tips</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/">TIL</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Algorithm/">Algorithm</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/GIT/">GIT</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/linux/">linux</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/etc/">etc</a></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="https://about.me/iasg2004">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/TIL/Javascript/">Javascript</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-test-arrange02" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        test_arrange02
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/10/27/test-arrange02/" class="article-date">
+            <time datetime="2019-10-26T19:04:24.000Z" itemprop="datePublished">2019-10-27</time>
+        </a>
+    </div>
+
+		
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/CSS/">CSS</a>, <a class="tag-link" href="/tags/HTML/">HTML</a>, <a class="tag-link" href="/tags/Web/">Web</a>, <a class="tag-link" href="/tags/algorithm/">algorithm</a>, <a class="tag-link" href="/tags/coding/">coding</a>, <a class="tag-link" href="/tags/developer/">developer</a>, <a class="tag-link" href="/tags/git/">git</a>, <a class="tag-link" href="/tags/hexo/">hexo</a>, <a class="tag-link" href="/tags/javascript/">javascript</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p><img src="https://cdn.pixabay.com/photo/2017/06/28/10/53/board-2450236_1280.jpg" alt></p>
+<h2 id="짧은-개념-정리글"><a href="#짧은-개념-정리글" class="headerlink" title="짧은 개념 정리글"></a>짧은 개념 정리글</h2><h4 id="함수란"><a href="#함수란" class="headerlink" title="함수란?"></a>함수란?</h4><p>여러가지 실행문들을 코드 블럭으로 묶은 하나의 실행단위.</p>
+<br>
+
+<h4 id="함수-사용-이유"><a href="#함수-사용-이유" class="headerlink" title="함수 사용 이유"></a>함수 사용 이유</h4><p>코드의 재사용 , 유지보수의 편의성, 코드의 신뢰성</p>
+<br>
+
+<h4 id="함수객체vs일반객체"><a href="#함수객체vs일반객체" class="headerlink" title="함수객체vs일반객체"></a>함수객체vs일반객체</h4><p>함수객체는 호출할 수 있고 일반객체는 호출할 수 없다.</p>
+<br>
+
+<h4 id="함수-정의-방법"><a href="#함수-정의-방법" class="headerlink" title="함수 정의 방법"></a>함수 정의 방법</h4><ol>
+<li><p>함수표현문</p>
+</li>
+<li><p>함수선언문</p>
+</li>
+<li><p>Function 생성자 함수</p>
+</li>
+<li><p>화살표 함수</p>
+<br>
+
+</li>
+</ol>
+<h4 id="메소드-종류"><a href="#메소드-종류" class="headerlink" title="메소드 종류"></a>메소드 종류</h4><ol>
+<li><p>인스턴스 메소드</p>
+</li>
+<li><p>프로토타입 메소드</p>
+</li>
+<li><p>정적 메소드</p>
+<br>
+
+</li>
+</ol>
+<h4 id="매개변수-vs-인수-parameter-vs-argument"><a href="#매개변수-vs-인수-parameter-vs-argument" class="headerlink" title="매개변수 vs. 인수 (parameter vs. argument)"></a>매개변수 vs. 인수 (parameter vs. argument)</h4><p>할당해주는 값이 인수고 그 값을 전달 받는게 매개변수이다.</p>
+<br>
+
+<h4 id="함수정의시-동작"><a href="#함수정의시-동작" class="headerlink" title="함수정의시 동작"></a>함수정의시 동작</h4><p> 모든 함수 객체는 일반 객체가 가지고 있는 메소드를 가지고, 추가적으로 [[Call]] 내부 메소드와 생성자 함수인 경우</p>
+<p>[[Constructor]]를 가지고 있다. [[Constructor]]는 생성자 함수로서 호출이 가능한지를 알려주는 내부 메소드로, 해당 메소드를 가지고 있다면 constructor, 없다면 non-constructor이다. 이는 함수 정의 방식에 따라 결정된다.</p>
+<br>
+
+<h4 id="일반-함수로서의-호출-생성자-함수로서의-호출"><a href="#일반-함수로서의-호출-생성자-함수로서의-호출" class="headerlink" title="일반 함수로서의 호출 , 생성자 함수로서의 호출"></a>일반 함수로서의 호출 , 생성자 함수로서의 호출</h4><p>일반 함수는 호출시 함수 객체의 내부 메소드 [[Call]]가 호출 되고 </p>
+<p>new 연산자와 함께 생성자 함수로서 호출되면 내부 메소드 [[Construct]]가 호출된다.</p>
+<br>
+
+<h4 id="다양한-함수의-형태"><a href="#다양한-함수의-형태" class="headerlink" title="다양한 함수의 형태"></a>다양한 함수의 형태</h4><ol>
+<li>재귀함수</li>
+<li>중첩함수</li>
+<li>즉시실행함수</li>
+<li>콜백함수</li>
+</ol>
+<br>
+
+<h4 id="스코프"><a href="#스코프" class="headerlink" title="스코프"></a>스코프</h4><p>JS엔진이 식별자를 찾는 규칙 , 식별자가 유효한 범위</p>
+<br>
+
+<h4 id="스코프-체인"><a href="#스코프-체인" class="headerlink" title="스코프 체인"></a>스코프 체인</h4><p>지역 스코프부터 시작하여  자신의 상위 스코프 방향으로 올라가면서 찾고자하는 식별자를 찾을 때까지 올라간다. </p>
+<br>
+
+<h4 id="순수-함수-vs-비순수"><a href="#순수-함수-vs-비순수" class="headerlink" title="순수 함수 vs 비순수"></a>순수 함수 vs 비순수</h4><p>순수함수는 함수내부를 돌았을때 외부값을 변경시키지 않으며</p>
+<p>비순수함수는 함수내부를 돌았을때 함수 외부값을 변경시키면  비순수함수이다.</p>
+<br>
+
+<h4 id="전역변수의-단점"><a href="#전역변수의-단점" class="headerlink" title="전역변수의 단점"></a>전역변수의 단점</h4><p>스코프의 종점에 존재하여 검색속도가 느리다.</p>
+<p>유효범위가 넓어서 의도치않게 값을 변경시킬 수 있다</p>
+<p>네임스페이스 오염</p>
+<p>긴 생명주기</p>
+<br>
+
+<h4 id="렉시컬-스코프"><a href="#렉시컬-스코프" class="headerlink" title="렉시컬 스코프"></a>렉시컬 스코프</h4><p>함수 호출 위치가 아닌 정의 위치에 따라 상위 스코프를 결정한다.</p>
+<br>
+
+<h4 id="함수-레벨-스코프"><a href="#함수-레벨-스코프" class="headerlink" title="함수 레벨 스코프"></a>함수 레벨 스코프</h4><p>var키워드로 선언된 변수는 함수의 코드블록만을 지역스코프로 인정한다<br>var 키워드가 함수 레벨 스코프.<br>let , const 블록 레벨 스코프.</p>
+<br>
+
+<h4 id="var-키워드-문제점-3개"><a href="#var-키워드-문제점-3개" class="headerlink" title="var 키워드 문제점 3개"></a>var 키워드 문제점 3개</h4><ol>
+<li>함수 레벨 스코프</li>
+<li>변수 중복 선언 허용</li>
+<li>변수 호이스팅</li>
+</ol>
+<br>
+
+<h4 id="let-키워드-특징-3개"><a href="#let-키워드-특징-3개" class="headerlink" title="let 키워드 특징 3개"></a>let 키워드 특징 3개</h4><ol>
+<li>동일 스코프 내에서 변수 중복 선언 금지</li>
+<li>블록레벨 스코프</li>
+<li>변수 호이스팅이 마치 발생 안한것처럼 동작</li>
+<li>스코프 시작지점부터 초기화 시작 지점까지의 구간을 일시적 사각지대(TDZ)라고 부른다.</li>
+</ol>
+<br>
+
+<h4 id="생성자-함수-로직"><a href="#생성자-함수-로직" class="headerlink" title="생성자 함수 로직"></a>생성자 함수 로직</h4><ol>
+<li>함수를 new연산자와 생성자를 호출하면 빈 객체를 생성한다.</li>
+<li>this에 빈객체를 할당한다.</li>
+<li>this의 빈객체 내부에서  프로퍼티 추가, 메서드 추가 등등 을 한다.</li>
+<li>생성자 함수는 마지막에 <code>return = this;</code>를 암묵적으로 실행한다. (마지막에 return을 안적어줘도 되는 이유임) (생성자 함수는 <code>return</code>을 사용하지 말아야한다.)</li>
+</ol>
+<br>
+
+<h4 id="내부슬롯-내부메소드"><a href="#내부슬롯-내부메소드" class="headerlink" title="내부슬롯 / 내부메소드"></a>내부슬롯 / 내부메소드</h4><p>자바스크립트엔진이 동작하기 위한 내부코드를 설명하기 위한 의사코드를 내부슬롯과 내부메소드 라고 한다. </p>
+<p>get 키워드가 해석되면 [[GET]] 내부메서드에 들어가서 동작을 수행한다.</p>
+<p>set 키워드가 해석되면 [[SET]] 내부메서드에 들어가서 동작을 수행한다.</p>
+<br>
+
+<h4 id="프로퍼티-정의"><a href="#프로퍼티-정의" class="headerlink" title="프로퍼티 정의"></a>프로퍼티 정의</h4><p>프로퍼티 어트리뷰트 값을 정의하여 프로퍼티의 상태를 관리하는 것.</p>
+<br>
+
+<h4 id="const-키워드-특징"><a href="#const-키워드-특징" class="headerlink" title="const 키워드 특징"></a>const 키워드 특징</h4><ol>
+<li>재할당 금지</li>
+<li>선언과 동시에 할당이 이루어져야한다.</li>
+<li>상수는 가독성과 유지보수의 편의가 좋다.</li>
+</ol>
+<br>
+
+<h4 id="전역-변수-사용-억제-방법"><a href="#전역-변수-사용-억제-방법" class="headerlink" title="전역 변수 사용 억제 방법"></a>전역 변수 사용 억제 방법</h4><ol>
+<li>즉시실행함수</li>
+<li>네임스페이스 객체</li>
+<li>모듈패턴</li>
+<li>ES6문법</li>
+</ol>
+<br>
+
+<h4 id="전역-변수의-단점"><a href="#전역-변수의-단점" class="headerlink" title="전역 변수의 단점"></a>전역 변수의 단점</h4><ol>
+<li>스코프 체인상 종점에 존재</li>
+<li>네임스페이스 오렴</li>
+<li>긴 생명 주기</li>
+<li>암묵적 결합</li>
+</ol>
+<br>
+
+<h4 id="함수-객체-VS-객체"><a href="#함수-객체-VS-객체" class="headerlink" title="함수 객체 VS 객체"></a>함수 객체 VS 객체</h4><p>일반 객체는 호출할 수 없지만, 함수 객체는 호출할 수 있다.</p>
+<br>
+
+<h4 id="데이터-프로퍼티-vs-접근자-프로퍼티"><a href="#데이터-프로퍼티-vs-접근자-프로퍼티" class="headerlink" title="데이터 프로퍼티 vs 접근자 프로퍼티"></a>데이터 프로퍼티 vs 접근자 프로퍼티</h4><p>데이터프로퍼티는 키와 값으로 구성된 일반적인 프로퍼티다.</p>
+<p>접근자 프로퍼티는 자체적으로 값을 갖지 않고 다른 데이터 프로퍼티의 값을  읽거나 저장할때 사용하는 접근자함수로 구성된 프로퍼티다. 접근자 함수는 getter/setter함수라고도 부른다.</p>
+<br>
+
+<h4 id="데이터-프로퍼티-어트리뷰트"><a href="#데이터-프로퍼티-어트리뷰트" class="headerlink" title="데이터 프로퍼티 어트리뷰트"></a>데이터 프로퍼티 어트리뷰트</h4><p>[[Value]] , [[Writable]] , [[Enumerable]] , [[Configurable]]</p>
+<br>
+
+<h4 id="접근자-프로퍼티-어트리뷰트"><a href="#접근자-프로퍼티-어트리뷰트" class="headerlink" title="접근자 프로퍼티 어트리뷰트"></a>접근자 프로퍼티 어트리뷰트</h4><p>[[Get]] , [[Set]] , [[Enumerable]] , [[Configurable]]</p>
+<br>
+
+<h4 id="일급-함수-객체의-특징-4가지"><a href="#일급-함수-객체의-특징-4가지" class="headerlink" title="일급 함수 객체의 특징 4가지"></a>일급 함수 객체의 특징 4가지</h4><ol>
+<li>무명의 객체를 만들 수 있다. 즉 런타임에 생성 가능하다.</li>
+<li>변수나 자료구조에 저장 할 수 있다.</li>
+<li>함수의 매개변수에 전달할 수 있다.</li>
+<li>함수의 결과값으로 반환할 수 있다.</li>
+</ol>
+<br>
+
+<h4 id="함수형-프로그래밍"><a href="#함수형-프로그래밍" class="headerlink" title="함수형 프로그래밍"></a>함수형 프로그래밍</h4><p> 순수함수 와 보조함수를 이용해 부수효과를 최소한으로 하는 프로그래밍.</p>
+<p>JS는 함수형 프로그래밍을 가능하게 한다.</p>
+<br>
+
+<h4 id="인스턴스"><a href="#인스턴스" class="headerlink" title="인스턴스"></a>인스턴스</h4><p>객체가 메모리에 저장되어 실제로 존재하는 것에 초점을 맞춘 용어.</p>
+<br>
+
+<h4 id="함수-객체에만-있는-프로퍼티"><a href="#함수-객체에만-있는-프로퍼티" class="headerlink" title="함수 객체에만 있는 프로퍼티"></a>함수 객체에만 있는 프로퍼티</h4><p>일반 객체에는 없는 arguments, caller, length, name, prototype 프로퍼티가 함수 객체에는 존재한다.</p>
+<br>
+
+<h4 id="객체를-만드는-5가지-방법"><a href="#객체를-만드는-5가지-방법" class="headerlink" title="객체를 만드는 5가지 방법"></a>객체를 만드는 5가지 방법</h4><p>Object생성자함수(+Object.create() ) , 객체리터럴 , new생성자함수 , class</p>
+<br>
+
+<p>####객체 지향 프로그래밍</p>
+<p>객체 : 데이터와 동작을 집합으로 표현한 것.</p>
+<p>이러한 객체를 프로그래밍으로 표현하려는 패러다임.</p>
+<br>
+
+<h4 id="캡슐화"><a href="#캡슐화" class="headerlink" title="캡슐화"></a>캡슐화</h4><p>정보은닉. 외부에서 내부상태를 변경할 수 없다.</p>
+<br>
+
+<h4 id="추상화"><a href="#추상화" class="headerlink" title="추상화"></a>추상화</h4><p>필요한 속성 만을 간추려서 표현 하는 것.</p>
+<br>
+
+<h4 id="상속"><a href="#상속" class="headerlink" title="상속"></a>상속</h4><p>어떤 객체의 프로퍼티나 메소드를 다른 객체가 물려 받아 그대로 사용하는 것.</p>
+<br>
+
+<p>####프로토타입</p>
+<p>어떤 객체의 상위 역할을 하는 객체. 다른 객체에게 공유프로퍼티를 제공한다. 모든 객체는 하나의 프로토타입을 갖는다.</p>
+<p>프로토타입은 객체 생성 방식에 의해 결정된다.</p>
+<br>
+
+<h4 id="프로토타입-체인"><a href="#프로토타입-체인" class="headerlink" title="프로토타입 체인"></a>프로토타입 체인</h4><p>객체의 프로퍼티에 접근하려고 할때 해당 객체에 접근하려는 프로퍼티가 없다면 접근자 프로퍼티가 가리키는 링크에 따라 자신의 부모 역할을 하는 프로토타입에 프로퍼티를 순차적으로 검색한다.</p>
+<br>
+
+<h4 id="리터럴-방식-과-생성자-함수"><a href="#리터럴-방식-과-생성자-함수" class="headerlink" title="리터럴 방식 과 생성자 함수"></a>리터럴 방식 과 생성자 함수</h4><table>
+<thead>
+<tr>
+<th align="left">리터럴 표기법</th>
+<th align="left">생성자 함수</th>
+<th align="left">프로토타입</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">객체 리터럴</td>
+<td align="left">[new] Object()</td>
+<td align="left">Object.protptype</td>
+</tr>
+<tr>
+<td align="left">함수 리터럴</td>
+<td align="left">new Function()</td>
+<td align="left">Function.prototype</td>
+</tr>
+<tr>
+<td align="left">배열 리터럴</td>
+<td align="left">new Array()</td>
+<td align="left">Array.prototype</td>
+</tr>
+<tr>
+<td align="left">정규 표현식 리터럴</td>
+<td align="left">new RegExp()</td>
+<td align="left">RegExp.protptype</td>
+</tr>
+</tbody></table>
+<p> 즉, 객체는 리터럴 표기법 또는 생성자 함수에 의해 생성되므로 결국 모든 객체는 생성자 함수와 연결되어 있다.</p>
+<br>
+
+<h4 id="사용자-정의-생성자-함수와-프로토타입-생성-시점"><a href="#사용자-정의-생성자-함수와-프로토타입-생성-시점" class="headerlink" title="사용자 정의 생성자 함수와 프로토타입 생성 시점"></a>사용자 정의 생성자 함수와 프로토타입 생성 시점</h4><p>함수 정의가 평가되어 함수 객체를 생성하는 시점에 프로토타입도 더불어 생성된다.</p>
+<p>생성자 함수로서 호출할 수 없는 함수, 즉 non-constructor는 프로토타입이 생성되지 않는다.</p>
+<br>
+
+<h4 id="빌트인-생성자-함수와-프로토타입-생성-시점"><a href="#빌트인-생성자-함수와-프로토타입-생성-시점" class="headerlink" title="빌트인 생성자 함수와 프로토타입 생성 시점"></a>빌트인 생성자 함수와 프로토타입 생성 시점</h4><p>모든 빌트인 생성자 함수는 전역 객체가 생성되는 시점에 생성된다. 빌트인 생성자 함수와 더불어 프로토타입이 생성된다. </p>
+<br>
+
+<h4 id="객체의-프로토타입을-찾는-방법"><a href="#객체의-프로토타입을-찾는-방법" class="headerlink" title="객체의 프로토타입을 찾는 방법"></a>객체의 프로토타입을 찾는 방법</h4><p>Object.getPrototypeOf(객체명) , <code>객체명.__Proto__</code></p>
+<br>
+
+<h4 id="프로토타입이-생성자함수에-접근하는법"><a href="#프로토타입이-생성자함수에-접근하는법" class="headerlink" title="프로토타입이 생성자함수에 접근하는법"></a>프로토타입이 생성자함수에 접근하는법</h4><p>constructor 프로퍼티</p>
+<br>
+
+<h4 id="생성자함수가-프로토타입에-접근하는-법"><a href="#생성자함수가-프로토타입에-접근하는-법" class="headerlink" title="생성자함수가 프로토타입에 접근하는 법"></a>생성자함수가 프로토타입에 접근하는 법</h4><p>생성자함수명.prototype</p>
+<br>
+
+<h4 id="Proto-접근자-프로퍼티를-코드내에서-직접사용을-비추천하는-이유"><a href="#Proto-접근자-프로퍼티를-코드내에서-직접사용을-비추천하는-이유" class="headerlink" title="__Proto__ 접근자 프로퍼티를 코드내에서 직접사용을 비추천하는 이유"></a><code>__Proto__</code> 접근자 프로퍼티를 코드내에서 직접사용을 비추천하는 이유</h4><p>ES5에서는 비표준이었기 때문이다. 모든 객체가 <code>__Proto__</code>를 사용할 수 없기 때문이다.</p>
+<br>
+
+<h4 id="메소드의-종류3개"><a href="#메소드의-종류3개" class="headerlink" title="메소드의 종류3개"></a>메소드의 종류3개</h4><p>정적메소드 , 프로토타입메소드 , 인스턴스메소드</p>
+<br>
+
+<h4 id="정적-프로퍼티-메소드"><a href="#정적-프로퍼티-메소드" class="headerlink" title="정적 프로퍼티/메소드"></a>정적 프로퍼티/메소드</h4><p>정적(static) 프로퍼티/메소드는 생성자 함수로 인스턴스를 생성하지 않아도 참조/호출할 수 있는 프로퍼티/메소드를 말한다.</p>
+<br>
+
+<h4 id="함수호출방식에-따른-this가-가리키는-값"><a href="#함수호출방식에-따른-this가-가리키는-값" class="headerlink" title="함수호출방식에 따른 this가 가리키는 값"></a>함수호출방식에 따른 this가 가리키는 값</h4><table>
+<thead>
+<tr>
+<th>함수호출방식</th>
+<th>this가 가리키는 값</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>일반 함수로서 호출</td>
+<td>전역객체</td>
+</tr>
+<tr>
+<td>메소드로서 호출</td>
+<td>메소드를 호출한 객체</td>
+</tr>
+<tr>
+<td>생성자함수로서 호출</td>
+<td>생성자함수가 생성할 인스턴스</td>
+</tr>
+</tbody></table>
+<br>
+
+<h4 id="this의-binding-확정시간"><a href="#this의-binding-확정시간" class="headerlink" title="this의 binding 확정시간"></a>this의 binding 확정시간</h4><blockquote>
+<p>함수가 호출 되었을 때, this의 binding이 확정 된다.</p>
+</blockquote>
+<p><strong>바인딩(binding)</strong> : 바인딩이란 식별자와 값을 연결하는 과정을 의미한다. 예를 들어 변수는 할당에 의해 값이 바인딩된다.</p>
+<table>
+<thead>
+<tr>
+<th align="left">함수 호출 방식</th>
+<th align="left">this 바인딩</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">일반 함수 호출</td>
+<td align="left">전역 객체</td>
+</tr>
+<tr>
+<td align="left">메소드 호출</td>
+<td align="left">메소드를 호출한 객체</td>
+</tr>
+<tr>
+<td align="left">생성자 함수 호출</td>
+<td align="left">생성자 함수가 (미래에) 생성할 인스턴스</td>
+</tr>
+<tr>
+<td align="left">Function.prototype.apply/call/bind 메소드에 의한 간접 호출</td>
+<td align="left">Function.prototype.apply/call/bind 메소드에 인자로 전달한 객체</td>
+</tr>
+</tbody></table>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://yoursite.com/2019/10/27/test-arrange02/" data-id="ck27xpbni00aqho2b7asuih2t" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Jun Hyeok Kim"
+        },
+        "headline": "test_arrange02",
+        "image": "http://yoursite.comhttps://cdn.pixabay.com/photo/2017/06/28/10/53/board-2450236_1280.jpg",
+        "keywords": "hexo git Web coding developer CSS HTML algorithm javascript",
+        "genre": "TIL Javascript",
+        "datePublished": "2019-10-27",
+        "dateCreated": "2019-10-27",
+        "dateModified": "2019-10-27",
+        "url": "http://yoursite.com/2019/10/27/test-arrange02/",
+        "description": "
+짧은 개념 정리글함수란?여러가지 실행문들을 코드 블럭으로 묶은 하나의 실행단위.
+
+
+함수 사용 이유코드의 재사용 , 유지보수의 편의성, 코드의 신뢰성
+
+
+함수객체vs일반객체함수객체는 호출할 수 있고 일반객체는 호출할 수 없다.
+
+
+함수 정의 방법
+함수표현문
+
+함수선언문
+
+Function 생성자 함수
+
+화살표 함수
+
+
+
+
+메소드 종류
+인스턴스 메소드
+
+프로",
+        "wordCount": 1024
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="https://www.facebook.com/profile.php?id=100003801986180" target="_blank" rel="noopener">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/HYEOK999" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="youtube" href="https://www.youtube.com" target="_blank" rel="noopener">
+                        <i class="icon fa fa-youtube"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2019/10/26/daily-algorithm24/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">daily_algorithm24</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/10/27/test-arrange02/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://cdn.pixabay.com/photo/2017/06/28/10/53/board-2450236_1280.jpg)" alt="test_arrange02" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/Javascript/">Javascript</a></p>
+                            <p class="item-title"><a href="/2019/10/27/test-arrange02/" class="title">test_arrange02</a></p>
+                            <p class="item-date"><time datetime="2019-10-26T19:04:24.000Z" itemprop="datePublished">2019-10-27</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/10/26/daily-algorithm24/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://images.velog.io/post-images/leejh3224/619516b0-e892-11e8-98f5-997ef3c38110/what-is-an-algorithm-featured.png)" alt="daily_algorithm24" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/Algorithm/">Algorithm</a></p>
+                            <p class="item-title"><a href="/2019/10/26/daily-algorithm24/" class="title">daily_algorithm24</a></p>
+                            <p class="item-date"><time datetime="2019-10-26T14:30:57.000Z" itemprop="datePublished">2019-10-26</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/10/26/daily-algorithm23/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://images.velog.io/post-images/leejh3224/619516b0-e892-11e8-98f5-997ef3c38110/what-is-an-algorithm-featured.png)" alt="daily_algorithm23" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/Algorithm/">Algorithm</a></p>
+                            <p class="item-title"><a href="/2019/10/26/daily-algorithm23/" class="title">daily_algorithm23</a></p>
+                            <p class="item-date"><time datetime="2019-10-26T12:35:42.000Z" itemprop="datePublished">2019-10-26</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/10/26/daily-algorithm22/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://images.velog.io/post-images/leejh3224/619516b0-e892-11e8-98f5-997ef3c38110/what-is-an-algorithm-featured.png)" alt="daily_algorithm22" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/Algorithm/">Algorithm</a></p>
+                            <p class="item-title"><a href="/2019/10/26/daily-algorithm22/" class="title">daily_algorithm22</a></p>
+                            <p class="item-date"><time datetime="2019-10-26T12:35:38.000Z" itemprop="datePublished">2019-10-26</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/10/25/javascript-study-15/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/65933403-536fe400-e44c-11e9-981d-c4e8c1f86998.png)" alt="javascript-study-15" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/Javascript/">Javascript</a></p>
+                            <p class="item-title"><a href="/2019/10/25/javascript-study-15/" class="title">javascript-study-15</a></p>
+                            <p class="item-date"><time datetime="2019-10-25T04:30:47.000Z" itemprop="datePublished">2019-10-25</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/">Develop</a><span class="category-list-count">16</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/CSS/">CSS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/GIT/">GIT</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Java/">Java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Javascript/">Javascript</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Tips/">Tips</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/">TIL</a><span class="category-list-count">89</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Algorithm/">Algorithm</a><span class="category-list-count">33</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/GIT/">GIT</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript/">Javascript</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a><span class="category-list-count">19</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/linux/">linux</a><span class="category-list-count">4</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/etc/">etc</a><span class="category-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a><span class="archive-list-count">70</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a><span class="archive-list-count">37</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">89</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ESLint/">ESLint</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a><span class="tag-list-count">88</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/">JAVA</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MarkUP/">MarkUP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Selector/">Selector</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TIL/">TIL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a><span class="tag-list-count">106</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorism/">algorism</a><span class="tag-list-count">29</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a><span class="tag-list-count">71</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/coding/">coding</a><span class="tag-list-count">106</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/developer/">developer</a><span class="tag-list-count">106</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">106</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">106</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/inline-block/">inline-block</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">72</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">3</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://github.com">github</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.naver.com">Naver</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://google.com">Google</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://www.youtube.com/">Youtube</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2019 Jun Hyeok Kim</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'http://yoursite.com/2019/10/27/test-arrange02/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
