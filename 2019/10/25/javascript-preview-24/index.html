@@ -21,7 +21,7 @@
 <meta property="og:description" content="JavaScript 24강 예습 24강 : 클래스 클래스 vs 생성자 함수 클래스 정의 클래스 호이스팅 인스턴스 생성 메소드 constructor 프로토타입 메소드 정적 메소드   정적 메소드와 프로토타입 메소드의 차이 클래스에서 정의한 메소드의 특징 클래스의 인스턴스 생성 과정 프로퍼티 인스턴스 프로퍼티 접근자 프로퍼티 클래스 필드 정의 제안 priv">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://user-images.githubusercontent.com/31315644/66104821-b9976b00-e5f4-11e9-84e9-20c797dd2c51.jpeg">
-<meta property="og:updated_time" content="2019-10-25T01:46:07.540Z">
+<meta property="og:updated_time" content="2019-10-28T15:41:00.541Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javascript-preview-24">
 <meta name="twitter:description" content="JavaScript 24강 예습 24강 : 클래스 클래스 vs 생성자 함수 클래스 정의 클래스 호이스팅 인스턴스 생성 메소드 constructor 프로토타입 메소드 정적 메소드   정적 메소드와 프로토타입 메소드의 차이 클래스에서 정의한 메소드의 특징 클래스의 인스턴스 생성 과정 프로퍼티 인스턴스 프로퍼티 접근자 프로퍼티 클래스 필드 정의 제안 priv">
@@ -478,8 +478,7 @@
 
 <br>
 
-<p>####서브 클래스의 constructor</p>
-<p>서브 클래스에 constructor를 생략하면 클래스에 아래와 같이 디폴트 constructor가 암묵적으로 정의된다. </p>
+<h4 id="서브-클래스의-constructor"><a href="#서브-클래스의-constructor" class="headerlink" title="서브 클래스의 constructor"></a>서브 클래스의 constructor</h4><p>서브 클래스에 constructor를 생략하면 클래스에 아래와 같이 디폴트 constructor가 암묵적으로 정의된다. </p>
 <p>args는 new 연산자와 함께 클래스를 호출할 때 전달한 인수의 리스트이다. </p>
 <p>super()는 수퍼 클래스의 constructor(super-constructor)를 호출하여 인스턴스를 생성한다.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">constructor</span>(...args) &#123; <span class="keyword">super</span>(...args); &#125;</span><br></pre></td></tr></table></figure>
@@ -543,7 +542,7 @@
 <h4 id="상속-클래스의-인스턴스-생성-과정"><a href="#상속-클래스의-인스턴스-생성-과정" class="headerlink" title="상속 클래스의 인스턴스 생성 과정"></a>상속 클래스의 인스턴스 생성 과정</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 수퍼 클래스</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Rectangle</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(width, height) &#123;</span><br><span class="line">    <span class="keyword">this</span>.width = width;</span><br><span class="line">    <span class="keyword">this</span>.height = height;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  getArea() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.width * <span class="keyword">this</span>.height;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  toString() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">`width = <span class="subst">$&#123;<span class="keyword">this</span>.width&#125;</span>, height = <span class="subst">$&#123;<span class="keyword">this</span>.height&#125;</span>`</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 서브 클래스</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ColorRectangle</span> <span class="keyword">extends</span> <span class="title">Rectangle</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(width, height, color) &#123;</span><br><span class="line">    <span class="keyword">super</span>(width, height);</span><br><span class="line">    <span class="keyword">this</span>.color = color;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 메소드 오버라이딩</span></span><br><span class="line">  toString() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">super</span>.toString() + <span class="string">`, color = <span class="subst">$&#123;<span class="keyword">this</span>.color&#125;</span>`</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> colorRectangle = <span class="keyword">new</span> ColorRectangle(<span class="number">2</span>, <span class="number">4</span>, <span class="string">'red'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(colorRectangle); <span class="comment">// Rectangle &#123; width: 2, height: 4, color: 'red' &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 상속을 통해 getArea 메소드를 호출</span></span><br><span class="line"><span class="built_in">console</span>.log(colorRectangle.getArea()); <span class="comment">// 8</span></span><br><span class="line"><span class="comment">// 오버라이딩된 toString 메소드를 호출</span></span><br><span class="line"><span class="built_in">console</span>.log(colorRectangle.toString()); <span class="comment">// width = 2, height = 4, color = red</span></span><br></pre></td></tr></table></figure>
 
 <p>ColorRectangle 클래스에 의해 생성된 인스턴스의 프로토타입 체인은 아래와 같다.</p>
-<img src="https://poiemaweb.com/assets/fs-images/24-6.png" alt="img" style="zoom:50%;">
+<img src="https://user-images.githubusercontent.com/31315644/67693224-b5d4e980-f9e4-11e9-85c6-7c62865a3eba.jpeg" alt="rectangle" style="zoom:50%;">
 
 <p><strong>서브 클래스(ColorRectangle)가 new 연산자와 함께 호출되면 아래의 과정을 통해 인스턴스를 생성한다.</strong></p>
 <p><strong>1. 서브 클래스의 super 호출</strong></p>
@@ -600,7 +599,7 @@
 
 
 
-    <a data-url="http://yoursite.com/2019/10/25/javascript-preview-24/" data-id="ck2abxi020082iwz0axom9kfm" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2019/10/25/javascript-preview-24/" data-id="ck2alekc700865oz0ler1spw7" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -676,7 +675,7 @@
         "genre": "TIL Javascript-Preview",
         "datePublished": "2019-10-25",
         "dateCreated": "2019-10-25",
-        "dateModified": "2019-10-25",
+        "dateModified": "2019-10-29",
         "url": "http://yoursite.com/2019/10/25/javascript-preview-24/",
         "description": "
 
@@ -700,7 +699,7 @@ constructor
 접근자 프로퍼티
 클래스 필드 정의 제안
 priv",
-        "wordCount": 6868
+        "wordCount": 6874
     }
 </script>
 
