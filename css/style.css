@@ -279,9 +279,9 @@ code {
   background-image: url("images/HYEOK999.png");
   background-position: 0px 10px;
   background-repeat: no-repeat;
-  -webkit-background-size: 165px 165px;
-  -moz-background-size: 165px 165px;
-  background-size: 165px 165px;
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  background-size: contain;
 }
 .main-body {
   margin-top: -60px;
@@ -356,7 +356,7 @@ code {
   position: relative;
 }
 #header-title {
-  text-align: center;
+  display: table;
   padding: 30px 30px;
 }
 #header-title:before,
@@ -369,7 +369,8 @@ code {
 }
 #header-title .logo-wrap,
 #header-title .subtitle-wrap {
-  float: left;
+  display: table-cell;
+  vertical-align: middle;
 }
 #header-title .subtitle-wrap {
   padding: 10px 0px 0px;
@@ -377,10 +378,14 @@ code {
 }
 #header-title .subtitle {
   font-size: 45px;
-  line-height: 175px;
   color: rgba(255,255,255,0.7);
   text-shadow: 0 1px rgba(0,0,0,0.2);
   font-family: 'Cabin Sketch', cursive;
+}
+@media only screen and (max-width: 815px) {
+  #header-title .subtitle {
+    font-size: 30px;
+  }
 }
 .nav-container .nav-icon,
 .nav-container .nav-container-inner #main-nav .main-nav-list-item .main-nav-list-link {
