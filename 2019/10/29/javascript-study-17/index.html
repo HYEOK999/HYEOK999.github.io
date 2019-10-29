@@ -10,17 +10,22 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="hexo,git,Web,coding,developer,CSS,HTML,algorithm,javascript">
+        <meta name="keywords" content="hexo,git,Web,coding,developer,HTML,CSS,algorithm,javascript">
     
-    <meta name="keywords" content="hexo,git,Web,coding,developer,CSS,HTML,algorithm,javascript">
+    <meta name="description" content="JavaScript Study 17 용어  String 생성자 함수  문자열은 유사배열 객체 + 이터러블  문자열 명시적 타입 변환 (new 없이 사용했을 때)  length 프로퍼티  String 메서드  indexOf  includes  charat  replace  split  substring  trim  repeat  include      D">
+<meta name="keywords" content="hexo,git,Web,coding,developer,HTML,CSS,algorithm,javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="javascript-study-17">
 <meta property="og:url" content="http://yoursite.com/2019/10/29/javascript-study-17/index.html">
 <meta property="og:site_name" content="HYEOK999&#39;s Blog">
+<meta property="og:description" content="JavaScript Study 17 용어  String 생성자 함수  문자열은 유사배열 객체 + 이터러블  문자열 명시적 타입 변환 (new 없이 사용했을 때)  length 프로퍼티  String 메서드  indexOf  includes  charat  replace  split  substring  trim  repeat  include      D">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-29T04:05:08.971Z">
+<meta property="og:image" content="https://user-images.githubusercontent.com/31315644/65933403-536fe400-e44c-11e9-981d-c4e8c1f86998.png">
+<meta property="og:updated_time" content="2019-10-29T12:55:31.847Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javascript-study-17">
+<meta name="twitter:description" content="JavaScript Study 17 용어  String 생성자 함수  문자열은 유사배열 객체 + 이터러블  문자열 명시적 타입 변환 (new 없이 사용했을 때)  length 프로퍼티  String 메서드  indexOf  includes  charat  replace  split  substring  trim  repeat  include      D">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/31315644/65933403-536fe400-e44c-11e9-981d-c4e8c1f86998.png">
     
 
     
@@ -77,7 +82,7 @@
                                     <a class="main-nav-list-link" href="/">Home</a>
                                 </li>
                             
-                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/">Develop</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/CSS/">CSS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/GIT/">GIT</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/TIL/">TIL</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Tips/">Tips</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/">TIL</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Algorithm/">Algorithm</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/GIT/">GIT</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/linux/">linux</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/etc/">etc</a></li></ul>
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/">Develop</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/CSS/">CSS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/GIT/">GIT</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Tips/">Tips</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/">TIL</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Algorithm/">Algorithm</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/GIT/">GIT</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/linux/">linux</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/etc/">etc</a></li></ul>
                                     
                                 <li class="main-nav-list-item" >
                                     <a class="main-nav-list-link" href="https://about.me/iasg2004">About</a>
@@ -136,7 +141,7 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/Develop/">Develop</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Develop/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Develop/TIL/Algorithm/">Algorithm</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Develop/TIL/Algorithm/HTML/">HTML</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Develop/TIL/Algorithm/HTML/CSS/">CSS</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Develop/TIL/Algorithm/HTML/CSS/HTML-CSS/">HTML&CSS</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Develop/TIL/Algorithm/HTML/CSS/HTML-CSS/Javascript/">Javascript</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Develop/TIL/Algorithm/HTML/CSS/HTML-CSS/Javascript/Javascript-Preview/">Javascript-Preview</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Develop/TIL/Algorithm/HTML/CSS/HTML-CSS/Javascript/Javascript-Preview/etc/">etc</a>
+    <a class="page-title-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/TIL/Javascript/">Javascript</a>
     </h1>
 </div>
 
@@ -175,14 +180,522 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <p><img src="https://user-images.githubusercontent.com/31315644/65933403-536fe400-e44c-11e9-981d-c4e8c1f86998.png" alt="JavaScriptBanner"></p>
+<hr>
+<h2 id="JavaScript-Study-17"><a href="#JavaScript-Study-17" class="headerlink" title="JavaScript Study 17"></a>JavaScript Study 17</h2><ul>
+<li><p>용어</p>
+</li>
+<li><p>String 생성자 함수</p>
+<ul>
+<li><p>문자열은 유사배열 객체 + 이터러블</p>
+</li>
+<li><p>문자열 명시적 타입 변환 (new 없이 사용했을 때)</p>
+</li>
+<li><p>length 프로퍼티</p>
+</li>
+<li><p>String 메서드</p>
+<ul>
+<li><p>indexOf</p>
+</li>
+<li><p>includes</p>
+</li>
+<li><p>charat</p>
+</li>
+<li><p>replace</p>
+</li>
+<li><p>split</p>
+</li>
+<li><p>substring</p>
+</li>
+<li><p>trim</p>
+</li>
+<li><p>repeat</p>
+</li>
+<li><p>include</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Date 객체</p>
+<ul>
+<li>new Date()</li>
+<li>new Date(milliseconds)</li>
+<li>new Date(dateString)</li>
+<li>new Date(year, month[, day, hour, minute, second, millisecond])</li>
+<li>Date 생성자 함수를 new 연산자없이 호출</li>
+</ul>
+</li>
+<li><p>DOM</p>
+<ul>
+<li>DOM 트리</li>
+</ul>
+</li>
+<li><p>DOM 검색</p>
+<ul>
+<li>하나의 요소 노드 선택</li>
+<li>여러개의 요소 노드 선택</li>
+</ul>
+</li>
+<li><p>DOM 탐색</p>
+</li>
+<li><p>DOM Manipulation (조작)</p>
+<ul>
+<li>텍스트 노드에의 접근/수정</li>
+<li>어트리뷰트 노드에의 접근/수정</li>
+<li>HTML 콘텐츠 조작(Manipulation)</li>
+</ul>
+</li>
+</ul>
+<br>
+
+<hr>
+<br>
+
+<h3 id="용어-러버덕"><a href="#용어-러버덕" class="headerlink" title="용어 - ( 러버덕 )"></a>용어 - ( 러버덕 )</h3><ul>
+<li><p>String 생성자</p>
+</li>
+<li><p>String 메서드</p>
+</li>
+<li><p>lenght 프로퍼티</p>
+</li>
+<li><p>DOM 객체</p>
+</li>
+<li><p>DOM 트리</p>
+</li>
+<li><p>DOM 검색 ,탐색 ,조작</p>
+<br>
+
+</li>
+</ul>
+<hr>
+<h2 id="String-생성자-함수"><a href="#String-생성자-함수" class="headerlink" title="String 생성자 함수"></a>String 생성자 함수</h2><ul>
+<li>표준 빌트인 객체인 String 객체는 생성자 함수 객체이다. </li>
+<li>따라서 new 연산자와 함께 호출하여 String 인스턴스를 생성할 수 있다.</li>
+<li>String 생성자 함수에 인수를 전달하지 않고 new 연산자와 함께 호출하면 [[StringData]] 내부 슬롯에 빈 문자열을 할당한 String 래퍼 객체를 생성한다.</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> strObj = <span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">'Lee'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(strObj);</span><br><span class="line"><span class="comment">// String &#123;0: "L", 1: "e", 2: "e", length: 3, [[PrimitiveValue]]: "Lee"&#125;</span></span><br><span class="line">strObj.valueOf(); <span class="comment">//'Lee'</span></span><br></pre></td></tr></table></figure>
+
+<p>위 예제를 크롬 브라우저의 개발자 도구에서 실행해보면 [[PrimitiveValue]]라는 프로퍼티가 보인다.<br>이는 [[StringData]] 내부 슬롯을 가리킨다. ES5에서는 [[StringData]]을 [[PrimitiveValue]]이라 불렸다.</p>
+<ol>
+<li>String 생성자 함수에 문자열을 인수로 전달 ( 문자열이 아니라면 문자열로 강제 변환한다. )</li>
+<li>[[StringData]] 내부 슬롯에 인수로 전달받은 문자열을 할당</li>
+<li>String 래퍼 객체를 생성한다.</li>
+</ol>
+<br>
+
+<h3 id="문자열은-유사배열-객체-이터러블"><a href="#문자열은-유사배열-객체-이터러블" class="headerlink" title="문자열은 유사배열 객체 + 이터러블"></a>문자열은 유사배열 객체 + 이터러블</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(strObj[<span class="number">0</span>]); <span class="comment">// L</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="문자열-명시적-타입-변환-new-없이-사용했을-때"><a href="#문자열-명시적-타입-변환-new-없이-사용했을-때" class="headerlink" title="문자열 명시적 타입 변환 (new 없이 사용했을 때)"></a>문자열 명시적 타입 변환 (new 없이 사용했을 때)</h3><p>명시적 타입 변환 : new 연산자를 사용하지 않고 String 생성자 함수를 호출하면 String 인스턴스가 아닌 문자열을 반환한다. </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 숫자 타입 =&gt; 문자열 타입</span></span><br><span class="line"><span class="built_in">String</span>(<span class="number">1</span>);        <span class="comment">// -&gt; "1"</span></span><br><span class="line"><span class="built_in">String</span>(<span class="literal">NaN</span>);      <span class="comment">// -&gt; "NaN"</span></span><br><span class="line"><span class="built_in">String</span>(<span class="literal">Infinity</span>); <span class="comment">// -&gt; "Infinity"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 불리언 타입 =&gt; 문자열 타입</span></span><br><span class="line"><span class="built_in">String</span>(<span class="literal">true</span>);  <span class="comment">// -&gt; "true"</span></span><br><span class="line"><span class="built_in">String</span>(<span class="literal">false</span>); <span class="comment">// -&gt; "false"</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="length-프로퍼티"><a href="#length-프로퍼티" class="headerlink" title="length 프로퍼티"></a>length 프로퍼티</h3><p>length 프로퍼티는 문자열의 문자 개수를 반환한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'Hello'</span>.length;    <span class="comment">// -&gt; 5</span></span><br><span class="line"><span class="string">'안녕하세요!'</span>.length; <span class="comment">// -&gt; 6</span></span><br></pre></td></tr></table></figure>
+
+<p>문자열 레퍼 객체는 배열과 마찬가지로 length 프로퍼티를 갖는다.<br>그리고 인덱스를 나타내는 숫자를 프로퍼티 키로, 각 문자를 프로퍼티 값으로 가지므로 문자열 레퍼 객체는 유사 배열 객체이다.</p>
+<br>
+
+<h3 id="String-메서드"><a href="#String-메서드" class="headerlink" title="String 메서드"></a>String 메서드</h3><h4 id="indexOf"><a href="#indexOf" class="headerlink" title="indexOf"></a>indexOf</h4><ul>
+<li>첫번쨰 인수로 전달한 문자열을 검색해 첫번쨰 인덱스를 반환. 검색 실패시 -1을 반환</li>
+<li>두번째 인수는 생략가능. 시작할 인덱스를 전달 가능하다.</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> str = <span class="string">'Hello World'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 문자열 str에서 'l'을 검색하여 첫번째 인덱스를 반환한다.</span></span><br><span class="line"><span class="keyword">let</span> index = str.indexOf(<span class="string">'l'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(index); <span class="comment">// 2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 문자열 str에서 'or'을 검색하여 첫번째 인덱스를 반환한다.</span></span><br><span class="line">index = str.indexOf(<span class="string">'or'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(index); <span class="comment">// 7</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 문자열 str에서 'x'를 검색하여 첫번째 인덱스를 반환한다.</span></span><br><span class="line"><span class="comment">// 검색에 실패하면 -1을 반환한다.</span></span><br><span class="line">index = str.indexOf(<span class="string">'x'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(index); <span class="comment">// -1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 문자열 str의 인덱스 3부터 'l'을 검색하여 첫번째 인덱스를 반환한다.</span></span><br><span class="line">index = str.indexOf(<span class="string">'l'</span>, <span class="number">3</span>);</span><br><span class="line"><span class="built_in">console</span>.log(index); <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="includes"><a href="#includes" class="headerlink" title="includes"></a>includes</h4><ul>
+<li>첫번쨰 인수로 전달한 문자열이 포함되어 있는지 확인하여 그 결과를 true 또는 false로 반환한다.</li>
+<li>두번째 인수는 생략가능. 시작할 인덱스를 전달 가능하다.</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> str = <span class="string">'Hello world'</span>;</span><br><span class="line"></span><br><span class="line">str.includes(<span class="string">'Hello'</span>); <span class="comment">// -&gt; true</span></span><br><span class="line">str.includes(<span class="string">''</span>);      <span class="comment">// -&gt; true</span></span><br><span class="line">str.includes(<span class="string">'x'</span>);     <span class="comment">// -&gt; false</span></span><br><span class="line">str.includes();        <span class="comment">// -&gt; false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// String.prototype.indexOf 메소드로 대체할 수 있다.</span></span><br><span class="line"><span class="built_in">console</span>.log(str.indexOf(<span class="string">'hello'</span>)); <span class="comment">// 0</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="charat"><a href="#charat" class="headerlink" title="charat"></a>charat</h4><ul>
+<li>charAt 메소드는 인수로 전달한 인덱스에 위치한 문자를 반환한다.</li>
+<li>인덱스는 문자열의 범위, 즉 0 ~ (문자열 길이 - 1) 사이의 정수이어야 한다. </li>
+<li>인덱스가 문자열의 범위를 벗어난 정수인 경우, 빈문자열을 반환한다.</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> str = <span class="string">'Hello'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; str.length; i++) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(str.charAt(i)); <span class="comment">// H e l l o</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="replace"><a href="#replace" class="headerlink" title="replace"></a>replace</h4><ul>
+<li>원본 문자열을 변경한다.</li>
+<li>첫번째 인수 - 문자열 또는 정규 표현식 : 검색할 문자열 , 여러개인 경우 1개만 반환</li>
+<li>두번째 인수 - 문자열 또는 치환 함수 : 바꿀 문자열 , 특수패턴 : $&amp;는 검색된 문자열을 의미</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> str = <span class="string">'Hello world'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 첫번째로 검색된 문자열만 대체하여 새로운 문자열을 반환한다.</span></span><br><span class="line"><span class="built_in">console</span>.log(str.replace(<span class="string">'world'</span>, <span class="string">'Lee'</span>)); <span class="comment">// Hello Lee</span></span><br></pre></td></tr></table></figure>
+
+<p>문자열.match(정규표현식)은 해당 정규표현식 조건에 해당되는 문자열을 찾아서 반환한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// camelCase =&gt; snake_case</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">camelToSnake</span>(<span class="params">camelCase</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// /.[A-Z]/g =&gt; 문자와 대문자로 이루어진 문자열 검색</span></span><br><span class="line">  <span class="comment">// 두번째 인수로 치환 함수를 전달할 수 있다.</span></span><br><span class="line">  <span class="keyword">return</span> camelCase.replace(<span class="regexp">/.[A-Z]/g</span>, match =&gt; &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(match); <span class="comment">// 'oW'</span></span><br><span class="line">    <span class="keyword">return</span> match[<span class="number">0</span>] + <span class="string">'_'</span> + match[<span class="number">1</span>].toLowerCase();</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> camelCase = <span class="string">'helloWorld'</span>;</span><br><span class="line">camelToSnake(camelCase); <span class="comment">// -&gt; 'hello_world'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// snake_case =&gt; camelCase</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">snakeToCamel</span>(<span class="params">snakeCase</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// /_[a-z]/g =&gt; _와 소문자로 이루어진 문자열 검색</span></span><br><span class="line">  <span class="comment">// 두번째 인수로 치환 함수를 전달할 수 있다.</span></span><br><span class="line">  <span class="keyword">return</span> snakeCase.replace(<span class="regexp">/_[a-z]]/g</span>, match =&gt; &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(match); <span class="comment">// '_w'</span></span><br><span class="line">    <span class="keyword">return</span> match[<span class="number">1</span>].toUpperCase();</span><br><span class="line">  &#125;); <span class="comment">// helloWorld</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> snakeCase = <span class="string">'hello_world'</span>;</span><br><span class="line">snakeToCamel(snakeCase); <span class="comment">// -&gt; 'helloWorld'</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="split"><a href="#split" class="headerlink" title="split"></a>split</h4><ul>
+<li>원본 문자열은 변경되지 않는다.</li>
+<li>첫번째 인수로 전달한 문자열 또는 정규표현식을 대상 문자열에서 검색하여 문자열을 구분한 후 분리된 각 문자열로 이루어진 배열을 반환한다. </li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param &#123;string | RegExp&#125; [separator] - 구분 대상 문자열 또는 정규표현식</span></span><br><span class="line"><span class="comment"> * @param &#123;number&#125; [limit] - 구분 대상수의 한계를 나타내는 정수</span></span><br><span class="line"><span class="comment"> * @return &#123;string[]&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">str.split([separator[, limit]])</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> str = <span class="string">'How are you doing?'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 공백으로 구분(단어로 구분)하여 배열로 반환한다</span></span><br><span class="line"><span class="built_in">console</span>.log(str.split(<span class="string">' '</span>)); <span class="comment">// [ 'How', 'are', 'you', 'doing?' ]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 정규 표현식</span></span><br><span class="line"><span class="built_in">console</span>.log(str.split(<span class="regexp">/\s/</span>)); <span class="comment">// [ 'How', 'are', 'you', 'doing?' ]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 인수가 없는 경우, 대상 문자열 전체를 단일 요소로 하는 배열을 반환한다.</span></span><br><span class="line"><span class="built_in">console</span>.log(str.split()); <span class="comment">// [ 'How are you doing?' ]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 각 문자를 모두 분리한다</span></span><br><span class="line"><span class="built_in">console</span>.log(str.split(<span class="string">''</span>)); <span class="comment">// [ 'H','o','w',' ','a','r','e',' ','y','o','u',' ','d','o','i','n','g','?' ]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 공백으로 구분하여 배열로 반환한다. 단 요소수는 3개까지만 허용한다</span></span><br><span class="line"><span class="built_in">console</span>.log(str.split(<span class="string">' '</span>, <span class="number">3</span>)); <span class="comment">// [ 'How', 'are', 'you' ]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 'o'으로 구분하여 배열로 반환한다.</span></span><br><span class="line"><span class="built_in">console</span>.log(str.split(<span class="string">'o'</span>)); <span class="comment">// [ 'H', 'w are y', 'u d', 'ing?' ]</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="substring"><a href="#substring" class="headerlink" title="substring"></a>substring</h4><ul>
+<li>첫번째 인수의 값 부터 두번째 인수의 바로 전(두번쨰 인수는 미포함)까지 위치한 부분 문자열을 반환한다.</li>
+<li>두번쨰 인수는 생략이 가능하다. 첫번쨰 인수의 값부터 끝까지 반환한다.</li>
+<li>원본 배별은 변하지 않는다.</li>
+<li>인수가 0보다 작거나 NaN 일경우, 강제로 0 취급</li>
+<li>인수가 문자열의 길이보다 클 경우 그 인수는 문자열의 길이로 취급.</li>
+<li><strong>slice와 거의 동일하게 동작하나 slice는 음수일 경우 뒤부터 음수만큼 복사해서 반환한다.</strong></li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> str = <span class="string">'Hello World'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 인덱스 1부터 인덱스 4 이전까지의 부분 문자열을 반환한다.</span></span><br><span class="line">str.substring(<span class="number">1</span>, <span class="number">4</span>); <span class="comment">// -&gt; ell</span></span><br><span class="line">str.substring(<span class="number">1</span>); <span class="comment">// -&gt; 'ello World'</span></span><br></pre></td></tr></table></figure>
+
+<img src="https://poiemaweb.com/assets/fs-images/string-1.png" alt="img" style="zoom:50%;">
+
+<br>
+
+<h4 id="trim"><a href="#trim" class="headerlink" title="trim"></a>trim</h4><ul>
+<li>대상 문자열 양쪽 끝에 있는 공백 문자를 제거한 문자열을 반환한다.</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> str = <span class="string">'   foo  '</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(str.trim()); <span class="comment">// 'foo'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// String.prototype.replace</span></span><br><span class="line"><span class="built_in">console</span>.log(str.replace(<span class="regexp">/\s/g</span>, <span class="string">''</span>));   <span class="comment">// 'foo'</span></span><br><span class="line"><span class="built_in">console</span>.log(str.replace(<span class="regexp">/^\s+/g</span>, <span class="string">''</span>)); <span class="comment">// 'foo  '</span></span><br><span class="line"><span class="built_in">console</span>.log(str.replace(<span class="regexp">/\s+$/g</span>, <span class="string">''</span>)); <span class="comment">// '   foo'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// String.prototype.&#123;trimStart,trimEnd&#125; : Proposal stage 3</span></span><br><span class="line"><span class="built_in">console</span>.log(str.trimStart()); <span class="comment">// 'foo  '</span></span><br><span class="line"><span class="built_in">console</span>.log(str.trimEnd());   <span class="comment">// '   foo'</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="repeat"><a href="#repeat" class="headerlink" title="repeat"></a>repeat</h4><ul>
+<li>인수로 전달한 정수만큼 반복해 연결한 새로운 문자열을 반환한다.</li>
+<li>인수로 전달한 정수가 0이면 빈 문자열을 반환 , 음수면 RangeError 발생</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> str = <span class="string">'abc'</span>;</span><br><span class="line"></span><br><span class="line">str.repeat(<span class="number">0</span>);   <span class="comment">// -&gt; ''</span></span><br><span class="line">str.repeat(<span class="number">1</span>);   <span class="comment">// -&gt; 'abc'</span></span><br><span class="line">str.repeat(<span class="number">2</span>);   <span class="comment">// -&gt; 'abcabc'</span></span><br><span class="line">str.repeat(<span class="number">2.5</span>); <span class="comment">// -&gt; 'abcabc' (2.5 → 2)</span></span><br><span class="line">str.repeat(<span class="number">-1</span>);  <span class="comment">// -&gt; RangeError: Invalid count value</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h2 id="Date-객체"><a href="#Date-객체" class="headerlink" title="Date 객체"></a>Date 객체</h2><p>날짜 시간 요일 까지 제공하는 빌트인 객체이면서 생성자 함수.</p>
+<p>Date 생성자 함수로 생성한 Date 객체는 내부적으로 숫자값을 갖는다. </p>
+<p>이 값은 1970년 1월 1일 00:00(UTC)을 기점으로 현재 시간까지의 밀리초를 나타낸다.</p>
+<p>한국시간(KST) 는 UTC보다 9시간이 빠르다.</p>
+<br>
+
+<h3 id="new-Date"><a href="#new-Date" class="headerlink" title="new Date()"></a>new Date()</h3><p><strong>인수를 전달하지 않으면 현재 날짜와 시간을 가지는 인스턴스를 반환</strong>한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="built_in">console</span>.log(date); <span class="comment">// Thu May 16 2019 17:16:13 GMT+0900 (한국 표준시)</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="new-Date-milliseconds"><a href="#new-Date-milliseconds" class="headerlink" title="new Date(milliseconds)"></a>new Date(milliseconds)</h3><p>인수로 숫자 타입의 밀리초를 전달하면 1970년 1월 1일 00:00(UTC)을 기점으로 인수로 전달된 밀리초만큼 경과한 날짜와 시간을 가지는 인스턴스를 반환한다.</p>
+<br>
+
+<h3 id="new-Date-dateString"><a href="#new-Date-dateString" class="headerlink" title="new Date(dateString)"></a>new Date(dateString)</h3><ul>
+<li><strong>인수로 날짜와 시간을 나타내는 문자열을 전달하면 지정된 날짜와 시간을 가지는 인스턴스를 반환</strong>한다. </li>
+<li>인수로 전달한 문자열은 Date.parse 메소드에 의해 해석 가능한 형식이어야 한다.</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">'May 16, 2019 17:22:10'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(date); <span class="comment">// Thu May 16 2019 17:22:10 GMT+0900 (한국 표준시)</span></span><br><span class="line"></span><br><span class="line">date = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">'2019/05/16/17:22:10'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(date); <span class="comment">// Thu May 16 2019 17:22:10 GMT+0900 (한국 표준시)</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="new-Date-year-month-day-hour-minute-second-millisecond"><a href="#new-Date-year-month-day-hour-minute-second-millisecond" class="headerlink" title="new Date(year, month[, day, hour, minute, second, millisecond])"></a>new Date(year, month[, day, hour, minute, second, millisecond])</h3><ul>
+<li>인수로 년, 월, 일, 시, 분, 초, 밀리초를 의미하는 숫자를 전달하면 지정된 날짜와 시간을 가지는 인스턴스를 반환한다. </li>
+<li>이때 년, 월은 반드시 지정하여야 한다. 지정하지 않은 옵션 정보는 0 또는 1으로 초기화된다.</li>
+</ul>
+<p>인수는 다음과 같다.</p>
+<table>
+<thead>
+<tr>
+<th align="left">인수</th>
+<th align="left">내용</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">year</td>
+<td align="left">1900년 이후의 년</td>
+</tr>
+<tr>
+<td align="left">month</td>
+<td align="left">월을 나타내는 <strong>0 ~ 11</strong>까지의 정수 (주의: 0부터 시작, 0 = 1월)</td>
+</tr>
+<tr>
+<td align="left">day</td>
+<td align="left">일을 나타내는 1 ~ 31까지의 정수</td>
+</tr>
+<tr>
+<td align="left">hour</td>
+<td align="left">시를 나타내는 0 ~ 23까지의 정수</td>
+</tr>
+<tr>
+<td align="left">minute</td>
+<td align="left">분을 나타내는 0 ~ 59까지의 정수</td>
+</tr>
+<tr>
+<td align="left">second</td>
+<td align="left">초를 나타내는 0 ~ 59까지의 정수</td>
+</tr>
+<tr>
+<td align="left">millisecond</td>
+<td align="left">밀리초를 나타내는 0 ~ 999까지의 정수</td>
+</tr>
+</tbody></table>
+<p>년, 월을 지정하지 않은 경우 1970년 1월 1일 00:00(UTC)을 가지는 인스턴스를 반환한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 월을 나타내는 4는 5월을 의미한다.</span></span><br><span class="line"><span class="comment">// 2019/5/1/00:00:00:00</span></span><br><span class="line"><span class="keyword">let</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">2019</span>, <span class="number">4</span>);</span><br><span class="line"><span class="built_in">console</span>.log(date); <span class="comment">// Wed May 01 2019 00:00:00 GMT+0900 (한국 표준시)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 월을 나타내는 4는 5월을 의미한다.</span></span><br><span class="line"><span class="comment">// 2019/5/16/17:24:30:00</span></span><br><span class="line">date = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">2019</span>, <span class="number">4</span>, <span class="number">16</span>, <span class="number">17</span>, <span class="number">24</span>, <span class="number">30</span>, <span class="number">0</span>);</span><br><span class="line"><span class="built_in">console</span>.log(date); <span class="comment">// Thu May 16 2019 17:24:30 GMT+0900 (한국 표준시)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 가독성이 훨씬 좋다.</span></span><br><span class="line">date = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">'2019/5/16/17:24:30:10'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(date); <span class="comment">// Thu May 16 2019 17:24:30 GMT+0900 (한국 표준시)</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="Date-생성자-함수를-new-연산자없이-호출"><a href="#Date-생성자-함수를-new-연산자없이-호출" class="headerlink" title="Date 생성자 함수를 new 연산자없이 호출"></a>Date 생성자 함수를 new 연산자없이 호출</h3><p>Date 생성자 함수를 new 연산자없이 호출하면 인스턴스를 반환하지 않고 결과값을 문자열로 반환한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> date = <span class="built_in">Date</span>();</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> date, date); <span class="comment">// string Thu May 16 2019 17:33:03 GMT+0900 (한국 표준시)</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h2 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h2><ul>
+<li>HTML 파서가 HTML을 분석해서 결과물을 만들어내는 것이 DOM tree. </li>
+<li>HTML 문법은 중첩관계 표현 가능하다. </li>
+<li>태그들 사이에 다른 요소가 올 수 있다. </li>
+<li>요소 안에 요소가 중첩되는 관계를 통해 트리를 만들 수 있음 (부자-자식 관계)</li>
+<li>CSS는 부자-자식 관계가 없고 룰셋이 중첩되거나 하지는 않는다. CSS는 HTML 없으면 무용지물. </li>
+<li>CSSOM tree 는 DOM tree에 종속적이다. </li>
+</ul>
+<p><code>&lt;head&gt;</code> 태그 안의 내용은 브라우저를 위한 정보를 적어준다.</p>
+<p><code>&lt;script&gt;</code>태그도 <code>&lt;head&gt;</code>에게 적어주는 것이 맞으나, 이럴경우 <code>&lt;script&gt;</code>가 블락당할 수 있으니 <code>body</code>아래에 적어준다.</p>
+<br>
+
+<p>DOM은 콘솔창 ➤ Properties 에 들어가야 확인 할 수 있다.</p>
+<p><img src="https://user-images.githubusercontent.com/31315644/67741128-78f80980-fa5b-11e9-974c-04f7ffaf4b81.jpeg" alt="DOMM"></p>
+<p>어트리뷰트와 DOM 요소는 항상 1대1 매칭되지 않는다. (예를들어 class, cal, span는 프로퍼티가 없다.)</p>
+<ul>
+<li><code>html</code> 의  <code>id</code>, <code>class</code> 어트리뷰트의 값의 네이밍은 케밥케이스 , 카멜케이스가 통상적이다.</li>
+<li><code>class</code>는 예전 버전에는 <code>className</code>에 문자열 형태로 추가되는 식이었기 때문에 <code>split()</code>를 이용해 하나하나 잘라내서 접근해야됬지만, 현재는 <code>classList</code>라는 객체를 통해서 관리되기 떄문에 더욱 간편해졌다.</li>
+<li>태그 요소의 특정 속성들의 하위 자식들에게 상속될 수 있다. ( ul ➤ li : <code>&lt;style = &quot;color:red&quot;&gt;</code> )</li>
+<li>어트리뷰트는 프로퍼티와 구조가 다르다. (어트리뷰트 != 프로퍼티)</li>
+<li>어트리뷰트 class != className , classList</li>
+<li>DOM 객체는 전부 window에 들어있다.</li>
+</ul>
+<br>
+
+<h3 id="DOM-트리"><a href="#DOM-트리" class="headerlink" title="DOM 트리"></a>DOM 트리</h3><img src="https://poiemaweb.com/img/dom-tree.png" alt="DOM tree" style="zoom:48%;">
+
+<ul>
+<li><p>DOM 객체는 전부 <code>window</code>에 들어있다.</p>
+</li>
+<li><p>DOM트리의 진입점은 항상 <code>document</code>다.</p>
+</li>
+<li><p>각각의 가지들을 ‘노드’ 라 한다.</p>
+</li>
+<li><p>DOM tree에 접근하기 위한 시작점인 노드를 ‘문서노드’라 한다.</p>
+</li>
+<li><p>html 태그 내의 요소와 1:1 맵핑하는 노드를 ‘요소노드’라 한다.</p>
+</li>
+<li><p>html 태그 내의 요소의 어트리뷰트와 1:1 맵핑하는 노드를 ‘어트리뷰트 노드’라 한다. 어트리뷰트노드는 형제 노드다.</p>
+</li>
+<li><p>html 태그 내의 요소 안의 텍스트들과 1:1 맵핑하는 노드를 ‘텍스트 노드’라 한다. 텍스트노드는 자식 노드다.</p>
+</li>
+<li><p>아래는 DOM tree의 객체 구조다.</p>
+<p><img src="https://poiemaweb.com/img/HTMLElement.png" alt="Element Node"></p>
+</li>
+</ul>
+<br>
+
+<h2 id="DOM-검색"><a href="#DOM-검색" class="headerlink" title="DOM 검색"></a>DOM 검색</h2><p>특정 요소에 접근하는 것을 의미.</p>
+<br>
+
+<h3 id="하나의-요소-노드-선택"><a href="#하나의-요소-노드-선택" class="headerlink" title="하나의 요소 노드 선택"></a>하나의 요소 노드 선택</h3><p><a href="https://developer.mozilla.org/ko/docs/Web/API/Document/getElementById" target="_blank" rel="noopener">document.getElementById(id)</a></p>
+<ul>
+<li>id 어트리뷰트 값으로 요소 노드를 한 개 선택한다. 복수개가 선택된 경우, 첫번째 요소만 반환한다.</li>
+<li>Return: HTMLElement를 상속받은 객체</li>
+<li>모든 브라우저에서 동작</li>
+<li>id는 전역으로 만들어지기 때문에 이 방법은 추천하지 않는다.</li>
+</ul>
+<br>
+
+<p><a href="https://developer.mozilla.org/ko/docs/Web/API/Document/querySelector" target="_blank" rel="noopener">document.querySelector(cssSelector)</a></p>
+<ul>
+<li>CSS 셀렉터를 사용하여 요소 노드를 한 개 선택한다. 복수개가 선택된 경우, 첫번째 요소만 반환한다.</li>
+<li>Return: HTMLElement를 상속받은 객체</li>
+<li>IE8 이상의 브라우저에서 동작</li>
+<li>배열메소드들이 더 다양하기 떄문에 배열로 변경하여 사용하면 좋다.</li>
+</ul>
+<br>
+
+<h3 id="여러-개의-요소-노드-선택"><a href="#여러-개의-요소-노드-선택" class="headerlink" title="여러 개의 요소 노드 선택"></a>여러 개의 요소 노드 선택</h3><p><a href="https://developer.mozilla.org/ko/docs/Web/API/Document/getElementsByClassName" target="_blank" rel="noopener">document.getElementsByClassName(class)</a></p>
+<ul>
+<li>class 어트리뷰트 값으로 요소 노드를 모두 선택한다. 공백으로 구분하여 여러 개의 class를 지정할 수 있다.</li>
+<li>Return: HTMLCollection (live) ➤ 매우 큰 혼란을 준다.</li>
+<li>IE9 이상의 브라우저에서 동작</li>
+<li>사용 금지</li>
+</ul>
+<br>
+
+<p><a href="https://developer.mozilla.org/ko/docs/Web/API/Document/querySelectorAll" target="_blank" rel="noopener">document.querySelectorAll(selector)</a></p>
+<ul>
+<li>지정된 CSS 선택자를 사용하여 요소 노드를 모두 선택한다.</li>
+<li>Return: <a href="https://developer.mozilla.org/ko/docs/Web/API/NodeList" target="_blank" rel="noopener">NodeList</a> (non-live)</li>
+<li>IE8 이상의 브라우저에서 동작</li>
+<li>배열메소드들이 더 다양하기 떄문에 배열로 변경하여 사용하면 좋다.</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// querySelectorAll는 Nodelist(non-live)를 반환한다. IE8+</span></span><br><span class="line"><span class="keyword">const</span> elems = <span class="built_in">document</span>.querySelectorAll(<span class="string">'.red'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 배열메소드들이 더 다양하기 떄문에 배열로 변경하여 사용하면 좋다.</span></span><br><span class="line">[...elems].forEach(<span class="function"><span class="params">elem</span> =&gt;</span> elem.className = <span class="string">'blue'</span>);</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h2 id="DOM-탐색"><a href="#DOM-탐색" class="headerlink" title="DOM 탐색"></a>DOM 탐색</h2><p>​    DOM 검색 하여 특정 요소에 접근하여 그 요소에 대한 부모 형제 자식 등을 찾아가는 것을 의미.</p>
+<br>
+
+<p><a href="https://developer.mozilla.org/ko/docs/Web/API/Node/parentNode" target="_blank" rel="noopener">parentNode</a> - 부모</p>
+<ul>
+<li>부모 노드를 탐색한다.</li>
+<li>Return: HTMLElement를 상속받은 객체</li>
+<li>모든 브라우저에서 동작</li>
+</ul>
+<p><a href="https://developer.mozilla.org/ko/docs/Web/API/Node/firstChild" target="_blank" rel="noopener">firstChild</a>, <a href="https://developer.mozilla.org/ko/docs/Web/API/Node/lastChild" target="_blank" rel="noopener">lastChild</a> - 자식</p>
+<ul>
+<li><strong>텍스트노드를 포함한 자식 노드를 탐색한다.</strong></li>
+<li>Return: HTMLElement를 상속받은 객체</li>
+<li>IE9 이상의 브라우저에서 동작</li>
+<li>위 두개의 프로퍼티는 각각 텍스트노드를 못건너뛰기 때문에 <a href="https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/firstElementChild" target="_blank" rel="noopener">firstElementChild</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/lastElementChild" target="_blank" rel="noopener">lastElementChild</a>를 사용한다.</li>
+</ul>
+<p><a href="https://developer.mozilla.org/ko/docs/Web/API/Node/hasChildNodes" target="_blank" rel="noopener">hasChildNodes()</a> - 자식</p>
+<ul>
+<li>자식 노드가 있는지 확인하고 Boolean 값을 반환한다.</li>
+<li>Return: Boolean 값</li>
+<li>모든 브라우저에서 동작</li>
+</ul>
+<p><a href="https://developer.mozilla.org/ko/docs/Web/API/Node/childNodes" target="_blank" rel="noopener">childNodes</a> - 자식</p>
+<ul>
+<li>자식 노드의 컬렉션을 반환한다. <strong>텍스트 요소를 포함한 모든 자식 요소를 반환한다.</strong></li>
+<li>Return: <a href="https://developer.mozilla.org/ko/docs/Web/API/NodeList" target="_blank" rel="noopener">NodeList</a> (non-live)</li>
+<li>모든 브라우저에서 동작</li>
+</ul>
+<p><a href="https://developer.mozilla.org/ko/docs/Web/API/ParentNode/children" target="_blank" rel="noopener">children</a> - 자식</p>
+<ul>
+<li>자식 노드의 컬렉션을 반환한다. <strong>자식 요소 중에서 Element type 요소만을 반환한다.</strong></li>
+<li>Return: <a href="https://developer.mozilla.org/ko/docs/Web/API/HTMLCollection" target="_blank" rel="noopener">HTMLCollection</a> (live)</li>
+<li>IE9 이상의 브라우저에서 동작</li>
+</ul>
+<p><a href="https://developer.mozilla.org/ko/docs/Web/API/Node/previousSibling" target="_blank" rel="noopener">previousSibling</a>, <a href="https://developer.mozilla.org/ko/docs/Web/API/Node/nextSibling" target="_blank" rel="noopener">nextSibling</a> - 형제</p>
+<ul>
+<li>형제 노드를 탐색한다. </li>
+<li><strong>text node를 포함한 모든 형제 노드를 탐색한다.</strong></li>
+<li>Return: HTMLElement를 상속받은 객체모든 브라우저에서 동작</li>
+</ul>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/NonDocumentTypeChildNode/previousElementSibling" target="_blank" rel="noopener">previousElementSibling</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/API/NonDocumentTypeChildNode/nextElementSibling" target="_blank" rel="noopener">nextElementSibling</a> - 형제</p>
+<ul>
+<li>형제 노드를 탐색한다. </li>
+<li><strong>형제 노드 중에서 Element type 요소만을 탐색한다.</strong></li>
+<li>Return: HTMLElement를 상속받은 객체IE9 이상의 브라우저에서 동작</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> elem = <span class="built_in">document</span>.querySelector(<span class="string">'ul'</span>);</span><br><span class="line"></span><br><span class="line">elem.firstElementChild.nextElementSibling.className = <span class="string">'blue'</span>;</span><br><span class="line">elem.firstElementChild.nextElementSibling.previousElementSibling.className = <span class="string">'blue'</span>;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h2 id="DOM-Manipulation-조작"><a href="#DOM-Manipulation-조작" class="headerlink" title="DOM Manipulation (조작)"></a>DOM Manipulation (조작)</h2><br>
+
+<h3 id="텍스트-노드에의-접근-수정"><a href="#텍스트-노드에의-접근-수정" class="headerlink" title="텍스트 노드에의 접근/수정"></a>텍스트 노드에의 접근/수정</h3><img src="https://poiemaweb.com/img/nodeValue.png" alt="nodeValue" style="zoom:48%;">
+
+<p><a href="https://developer.mozilla.org/ko/docs/Web/API/Node/nodeValue" target="_blank" rel="noopener">nodeValue</a> , nodeType , nodeName</p>
+<ul>
+<li>노드의 값을 반환한다.</li>
+<li>Return: 텍스트 노드의 경우는 문자열, 요소 노드의 경우 null 반환</li>
+<li>IE6 이상의 브라우저에서 동작한다.</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 해당 텍스트 노드의 부모 요소 노드를 선택한다.</span></span><br><span class="line"><span class="keyword">const</span> one = <span class="built_in">document</span>.getElementById(<span class="string">'one'</span>);</span><br><span class="line"><span class="built_in">console</span>.dir(one); <span class="comment">// HTMLLIElement: li#one.red</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// nodeName, nodeType을 통해 노드의 정보를 취득할 수 있다.</span></span><br><span class="line"><span class="built_in">console</span>.log(one.nodeName); <span class="comment">// LI</span></span><br><span class="line"><span class="built_in">console</span>.log(one.nodeType); <span class="comment">// 1: Element node</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// firstChild 프로퍼티를 사용하여 텍스트 노드를 탐색한다.</span></span><br><span class="line"><span class="keyword">const</span> textNode = one.firstChild;</span><br><span class="line"></span><br><span class="line"><span class="comment">// nodeName, nodeType을 통해 노드의 정보를 취득할 수 있다.</span></span><br><span class="line"><span class="built_in">console</span>.log(textNode.nodeName); <span class="comment">// #text</span></span><br><span class="line"><span class="built_in">console</span>.log(textNode.nodeType); <span class="comment">// 3: Text node</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// nodeValue 프로퍼티를 사용하여 노드의 값을 취득한다.</span></span><br><span class="line"><span class="built_in">console</span>.log(textNode.nodeValue); <span class="comment">// Seoul</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// nodeValue 프로퍼티를 이용하여 텍스트를 수정한다.</span></span><br><span class="line">textNode.nodeValue = <span class="string">'Pusan'</span>;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="어트리뷰트-노드에의-접근-수정"><a href="#어트리뷰트-노드에의-접근-수정" class="headerlink" title="어트리뷰트 노드에의 접근/수정"></a>어트리뷰트 노드에의 접근/수정</h3><p><img src="https://poiemaweb.com/img/nodeValue.png" alt="nodeValue"></p>
+<p>어트리뷰트 노드을 조작할 때 다음 프로퍼티 또는 메소드를 사용할 수 있다.</p>
+<p><a href="https://developer.mozilla.org/ko/docs/Web/API/Element/className" target="_blank" rel="noopener">className</a></p>
+<ul>
+<li>class 어트리뷰트의 값을 취득 또는 변경한다. className 프로퍼티에 값을 할당하는 경우, class 어트리뷰트가 존재하지 않으면 class 어트리뷰트를 생성하고 지정된 값을 설정한다. class 어트리뷰트의 값이 여러 개일 경우, 공백으로 구분된 문자열이 반환되므로 String 메소드 <code>split(&#39; &#39;)</code>를 사용하여 배열로 변경하여 사용한다.</li>
+<li>모든 브라우저에서 동작한다.</li>
+</ul>
+<p><a href="https://developer.mozilla.org/ko/docs/Web/API/Element/classList" target="_blank" rel="noopener">classList</a></p>
+<ul>
+<li>add, remove, item, toggle, contains, replace 메소드를 제공한다.</li>
+<li>IE10 이상의 브라우저에서 동작한다.</li>
+<li>추천한다.</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> elems = <span class="built_in">document</span>.querySelectorAll(<span class="string">'li'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// className</span></span><br><span class="line">[...elems].forEach(<span class="function"><span class="params">elem</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// class 어트리뷰트 값을 취득하여 확인</span></span><br><span class="line">  <span class="keyword">if</span> (elem.className === <span class="string">'red'</span>) &#123;</span><br><span class="line">    <span class="comment">// class 어트리뷰트 값을 변경한다.</span></span><br><span class="line">    elem.className = <span class="string">'blue'</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// classList</span></span><br><span class="line">[...elems].forEach(<span class="function"><span class="params">elem</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// class 어트리뷰트 값 확인</span></span><br><span class="line">  <span class="keyword">if</span> (elem.classList.contains(<span class="string">'blue'</span>)) &#123;</span><br><span class="line">    <span class="comment">// class 어트리뷰트 값 변경한다.</span></span><br><span class="line">    elem.classList.replace(<span class="string">'blue'</span>, <span class="string">'red'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p><a href="https://developer.mozilla.org/ko/docs/Web/API/Element/id" target="_blank" rel="noopener">id</a></p>
+<p>id 어트리뷰트의 값을 취득 또는 변경한다. id 프로퍼티에 값을 할당하는 경우, id 어트리뷰트가 존재하지 않으면 id 어트리뷰트를 생성하고 지정된 값을 설정한다.모든 브라우저에서 동작한다.</p>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// h1 태그 요소 중 첫번째 요소를 취득</span></span><br><span class="line"><span class="keyword">const</span> heading = <span class="built_in">document</span>.querySelector(<span class="string">'h1'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.dir(heading); <span class="comment">// HTMLHeadingElement: h1</span></span><br><span class="line"><span class="built_in">console</span>.log(heading.firstChild.nodeValue); <span class="comment">// Cities</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// id 어트리뷰트의 값을 변경.</span></span><br><span class="line"><span class="comment">// id 어트리뷰트가 존재하지 않으면 id 어트리뷰트를 생성하고 지정된 값을 설정</span></span><br><span class="line">heading.id = <span class="string">'heading'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(heading.id); <span class="comment">// heading</span></span><br></pre></td></tr></table></figure>
+
+<p>이외의 어트리뷰트</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/hasAttribute" target="_blank" rel="noopener">hasAttribute(attribute)</a></p>
+<ul>
+<li>지정한 어트리뷰트를 가지고 있는지 검사한다.</li>
+<li>Return : Boolean</li>
+<li>IE8 이상의 브라우저에서 동작한다.</li>
+</ul>
+<p><a href="https://developer.mozilla.org/ko/docs/Web/API/Element/getAttribute" target="_blank" rel="noopener">getAttribute(attribute)</a></p>
+<ul>
+<li>어트리뷰트의 값을 취득한다.</li>
+<li>Return : 문자열</li>
+<li>모든 브라우저에서 동작한다.</li>
+</ul>
+<p><a href="https://developer.mozilla.org/ko/docs/Web/API/Element/setAttribute" target="_blank" rel="noopener">setAttribute(attribute, value)</a></p>
+<ul>
+<li>어트리뷰트와 어트리뷰트 값을 설정한다.</li>
+<li>Return : undefined</li>
+<li>모든 브라우저에서 동작한다.</li>
+</ul>
+<p><a href="https://developer.mozilla.org/ko/docs/Web/API/Element/removeAttribute" target="_blank" rel="noopener">removeAttribute(attribute)</a></p>
+<ul>
+<li>지정한 어트리뷰트를 제거한다.</li>
+<li>Return : undefined</li>
+<li>모든 브라우저에서 동작한다.</li>
+</ul>
+<br>
+
+<p>attribute는 고정값 이고 DOM객체의 프로퍼티는 동적으로 변한다.</p>
+<p>Attributes는 key : value 형태로 관리한다.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">value</span>=<span class="string">"100"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>위 <code>input</code>태그의 <code>value</code>어트리뷰트의 값 100은 고정(초기값)이다. 이 값을 직접 변경을 하고 싶다면 <code>input</code>태그 안의 Attributes 프로퍼티 내의 value를 변경해야한다. input 요소의 value프로퍼티를 변경해도 초기값은 그대로 100이다.</p>
+<p>즉, 어트리뷰트 와 프로퍼티는 다른것이며 따로 관리된다.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"ko"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"ie=edge"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">"my-id"</span> <span class="attr">style</span>=<span class="string">"color: red"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>HTML<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>CSS<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>Java Script<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">"myId"</span> <span class="attr">style</span>=<span class="string">"color: green"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>3<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">value</span>=<span class="string">"100"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">    <span class="comment">// 요소 1개 선택</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> $ul = <span class="built_in">document</span>.querySelector(<span class="string">'#my-id'</span>);</span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log($ul);</span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log($ul.style.color = <span class="string">'blue'</span>);</span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log([...$ul.classList].forEach(<span class="function">(<span class="params">item</span>) =&gt;</span> <span class="built_in">console</span>.log(item)));</span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log($ul.classList.add(<span class="string">'class3'</span>));</span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log($ul.classList.contains(<span class="string">'class3'</span>));</span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log($ul.classList.remove(<span class="string">'class3'</span>));</span></span><br><span class="line"><span class="actionscript">    $ul.firstElementChild.style.color = <span class="string">'red'</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="actionscript">    <span class="comment">// 다중 요소 선택</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> $lis = <span class="built_in">document</span>.querySelectorAll(<span class="string">'li'</span>);</span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log($lis);</span></span><br><span class="line"><span class="javascript">    [...$lis].forEach(<span class="function">(<span class="params">item, index</span>) =&gt;</span> item.classList.add(<span class="string">`class<span class="subst">$&#123;index + <span class="number">1</span>&#125;</span>`</span>));</span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log($lis);</span></span><br><span class="line"></span><br><span class="line"><span class="actionscript">    <span class="comment">// ul.#myId 안에 있는 요소들을 문자열로 반환한다.</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(<span class="built_in">document</span>.querySelector(<span class="string">'#myId'</span>).innerHTML);</span></span><br><span class="line"><span class="javascript">    <span class="built_in">document</span>.querySelector(<span class="string">'#myId'</span>).innerHTML = <span class="string">'&lt;h1&gt;Hi&lt;/h1&gt;'</span>;</span></span><br><span class="line"><span class="javascript">    <span class="built_in">document</span>.querySelector(<span class="string">'#myId'</span>).innerHTML += <span class="string">'&lt;h2&gt;Hi&lt;/h2&gt;'</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="actionscript">    <span class="comment">// 어트리뷰트 접근</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> $input = <span class="built_in">document</span>.querySelector(<span class="string">'input'</span>);</span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.dir($input);</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="HTML-콘텐츠-조작-Manipulation"><a href="#HTML-콘텐츠-조작-Manipulation" class="headerlink" title="HTML 콘텐츠 조작(Manipulation)"></a>HTML 콘텐츠 조작(Manipulation)</h3><br>
+
+<p><a href="https://developer.mozilla.org/ko/docs/Web/API/Node/textContent" target="_blank" rel="noopener">textContent</a></p>
+<ul>
+<li>요소의 텍스트 콘텐츠를 취득 또는 변경한다. 이때 마크업은 무시된다. textContent를 통해 요소에 새로운 텍스트를 할당하면 텍스트를 변경할 수 있다. 이때 순수한 텍스트만 지정해야 하며 마크업을 포함시키면 문자열로 인식되어 그대로 출력된다.</li>
+<li>IE9 이상의 브라우저에서 동작한다.</li>
+</ul>
+<p><a href="https://developer.mozilla.org/ko/docs/Web/API/Node/innerText" target="_blank" rel="noopener">innerText</a></p>
+<ul>
+<li><p>innerText 프로퍼티를 사용하여도 요소의 텍스트 콘텐츠에만 접근할 수 있다. 하지만 아래의 이유로 사용하지 않는 것이 좋다.</p>
+<ul>
+<li><p>비표준이다.</p>
+</li>
+<li><p>CSS에 순종적이다. 예를 들어 CSS에 의해 비표시(visibility: hidden;)로 지정되어 있다면 텍스트가 반환되지 않는다.</p>
+</li>
+<li><p>CSS를 고려해야 하므로 textContent 프로퍼티보다 느리다</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><a href="https://developer.mozilla.org/ko/docs/Web/API/Element/innerHTML" target="_blank" rel="noopener">innerHTML</a></p>
+<ul>
+<li>해당 요소의 모든 자식 요소를 포함하는 모든 콘텐츠를 하나의 문자열로 취득할 수 있다. 이 문자열은 마크업을 포함한다.</li>
+<li>마크업이 포함된 새로운 콘텐츠를 지정하면 새로운 요소를 DOM에 추가할 수 있다.</li>
+<li>크로스 스크립팅 공격에 취약하다. </li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> one = <span class="built_in">document</span>.getElementById(<span class="string">'one'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 마크업이 포함된 콘텐츠 취득</span></span><br><span class="line"><span class="built_in">console</span>.log(one.innerHTML); <span class="comment">// Seoul</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 마크업이 포함된 콘텐츠 변경</span></span><br><span class="line">one.innerHTML += <span class="string">'&lt;em class="blue"&gt;, Korea&lt;/em&gt;'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 마크업이 포함된 콘텐츠 취득</span></span><br><span class="line"><span class="built_in">console</span>.log(one.innerHTML); <span class="comment">// Seoul &lt;em class="blue"&gt;, Korea&lt;/em&gt;</span></span><br></pre></td></tr></table></figure>
+
+<br>
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="http://yoursite.com/2019/10/29/javascript-study-17/" data-id="ck2bbvct900allhz0l2tjr3w5" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2019/10/29/javascript-study-17/" data-id="ck2buvsf400ai6zz0nol0so9f" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -253,15 +766,52 @@
             "name": "Jun Hyeok Kim"
         },
         "headline": "javascript-study-17",
-        "image": "http://yoursite.com",
-        "keywords": "hexo git Web coding developer CSS HTML algorithm javascript",
-        "genre": "Develop TIL Algorithm HTML CSS HTML&CSS Javascript Javascript-Preview etc",
+        "image": "http://yoursite.comhttps://user-images.githubusercontent.com/31315644/65933403-536fe400-e44c-11e9-981d-c4e8c1f86998.png",
+        "keywords": "hexo git Web coding developer HTML CSS algorithm javascript",
+        "genre": "TIL Javascript",
         "datePublished": "2019-10-29",
         "dateCreated": "2019-10-29",
         "dateModified": "2019-10-29",
         "url": "http://yoursite.com/2019/10/29/javascript-study-17/",
-        "description": "",
-        "wordCount": 1
+        "description": "
+
+JavaScript Study 17
+용어
+
+String 생성자 함수
+
+문자열은 유사배열 객체 + 이터러블
+
+문자열 명시적 타입 변환 (new 없이 사용했을 때)
+
+length 프로퍼티
+
+String 메서드
+
+indexOf
+
+includes
+
+charat
+
+replace
+
+split
+
+substring
+
+trim
+
+repeat
+
+include
+
+
+
+
+
+D",
+        "wordCount": 3740
     }
 </script>
 
@@ -345,7 +895,7 @@
                             <a href="/2019/10/29/javascript-study-17/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/65933403-536fe400-e44c-11e9-981d-c4e8c1f86998.png)" alt="javascript-study-17" class="thumbnail-image"></span>
     
     
 </a>
@@ -353,7 +903,7 @@
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Develop/">Develop</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Develop/TIL/">TIL</a></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/Javascript/">Javascript</a></p>
                             <p class="item-title"><a href="/2019/10/29/javascript-study-17/" class="title">javascript-study-17</a></p>
                             <p class="item-date"><time datetime="2019-10-29T04:05:08.000Z" itemprop="datePublished">2019-10-29</time></p>
                         </div>
@@ -448,7 +998,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/">Develop</a><span class="category-list-count">18</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/CSS/">CSS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/GIT/">GIT</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Java/">Java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Javascript/">Javascript</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/TIL/">TIL</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/TIL/Algorithm/">Algorithm</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/TIL/Algorithm/HTML/">HTML</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/TIL/Algorithm/HTML/CSS/">CSS</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/TIL/Algorithm/HTML/CSS/HTML-CSS/">HTML&CSS</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/TIL/Algorithm/HTML/CSS/HTML-CSS/Javascript/">Javascript</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/TIL/Algorithm/HTML/CSS/HTML-CSS/Javascript/Javascript-Preview/">Javascript-Preview</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/TIL/Algorithm/HTML/CSS/HTML-CSS/Javascript/Javascript-Preview/etc/">etc</a><span class="category-list-count">1</span></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Tips/">Tips</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/">TIL</a><span class="category-list-count">94</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Algorithm/">Algorithm</a><span class="category-list-count">34</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/GIT/">GIT</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript/">Javascript</a><span class="category-list-count">19</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/linux/">linux</a><span class="category-list-count">4</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/etc/">etc</a><span class="category-list-count">1</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/">Develop</a><span class="category-list-count">17</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/CSS/">CSS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/GIT/">GIT</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Java/">Java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Javascript/">Javascript</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Tips/">Tips</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/">TIL</a><span class="category-list-count">95</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Algorithm/">Algorithm</a><span class="category-list-count">34</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/GIT/">GIT</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript/">Javascript</a><span class="category-list-count">20</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/linux/">linux</a><span class="category-list-count">4</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/etc/">etc</a><span class="category-list-count">1</span></li></ul>
         </div>
     </div>
 
