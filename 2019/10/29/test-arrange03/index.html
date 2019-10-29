@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+
+    
+
+    
+    <title>test_arrange03 | HYEOK999&#39;s Blog</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="hexo,git,Web,coding,developer,CSS,HTML,algorithm,javascript">
+    
+    <meta name="description" content="짧은 개념 정리글####  실행 컨텍스트식별자, 스코프, 호이스팅, 클로저 등의 동작원리를 담고 있는 자바스크립트의 핵심개념.실행 가능한 코드를 평가하고 실행하기 위해 필요한 환경을 제공하고 코드의 실행결과를 실제로 관리하는 영역.   실행 컨텍스트 등록 과정코드의 평가 과정에서 실행 컨텍스트가 생성되고 변수, 함수, 클래스 등의 선언문이 평가되어 그 결">
+<meta name="keywords" content="hexo,git,Web,coding,developer,CSS,HTML,algorithm,javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="test_arrange03">
+<meta property="og:url" content="http://yoursite.com/2019/10/29/test-arrange03/index.html">
+<meta property="og:site_name" content="HYEOK999&#39;s Blog">
+<meta property="og:description" content="짧은 개념 정리글####  실행 컨텍스트식별자, 스코프, 호이스팅, 클로저 등의 동작원리를 담고 있는 자바스크립트의 핵심개념.실행 가능한 코드를 평가하고 실행하기 위해 필요한 환경을 제공하고 코드의 실행결과를 실제로 관리하는 영역.   실행 컨텍스트 등록 과정코드의 평가 과정에서 실행 컨텍스트가 생성되고 변수, 함수, 클래스 등의 선언문이 평가되어 그 결">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://cdn.pixabay.com/photo/2017/06/28/10/53/board-2450236_1280.jpg">
+<meta property="og:updated_time" content="2019-10-29T02:45:45.725Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="test_arrange03">
+<meta name="twitter:description" content="짧은 개념 정리글####  실행 컨텍스트식별자, 스코프, 호이스팅, 클로저 등의 동작원리를 담고 있는 자바스크립트의 핵심개념.실행 가능한 코드를 평가하고 실행하기 위해 필요한 환경을 제공하고 코드의 실행결과를 실제로 관리하는 영역.   실행 컨텍스트 등록 과정코드의 평가 과정에서 실행 컨텍스트가 생성되고 변수, 함수, 클래스 등의 선언문이 평가되어 그 결">
+<meta name="twitter:image" content="https://cdn.pixabay.com/photo/2017/06/28/10/53/board-2450236_1280.jpg">
+    
+
+    
+
+    
+        <link rel="icon" href="/images/favicon_io/favicon.ico">
+    
+
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Architects+Daughter&display=swap" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin+Sketch&display=swap">
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">HYEOK999&#39;s Daily Develop</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/">Develop</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/CSS/">CSS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/GIT/">GIT</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Tips/">Tips</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/">TIL</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Algorithm/">Algorithm</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/GIT/">GIT</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/linux/">linux</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/etc/">etc</a></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="https://about.me/iasg2004">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/TIL/Javascript/">Javascript</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-test-arrange03" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        test_arrange03
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/10/29/test-arrange03/" class="article-date">
+            <time datetime="2019-10-29T02:45:12.000Z" itemprop="datePublished">2019-10-29</time>
+        </a>
+    </div>
+
+		
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/CSS/">CSS</a>, <a class="tag-link" href="/tags/HTML/">HTML</a>, <a class="tag-link" href="/tags/Web/">Web</a>, <a class="tag-link" href="/tags/algorithm/">algorithm</a>, <a class="tag-link" href="/tags/coding/">coding</a>, <a class="tag-link" href="/tags/developer/">developer</a>, <a class="tag-link" href="/tags/git/">git</a>, <a class="tag-link" href="/tags/hexo/">hexo</a>, <a class="tag-link" href="/tags/javascript/">javascript</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p><img src="https://cdn.pixabay.com/photo/2017/06/28/10/53/board-2450236_1280.jpg" alt></p>
+<h2 id="짧은-개념-정리글"><a href="#짧은-개념-정리글" class="headerlink" title="짧은 개념 정리글"></a>짧은 개념 정리글</h2><p>#### </p>
+<h4 id="실행-컨텍스트"><a href="#실행-컨텍스트" class="headerlink" title="실행 컨텍스트"></a>실행 컨텍스트</h4><p>식별자, 스코프, 호이스팅, 클로저 등의 동작원리를 담고 있는 자바스크립트의 핵심개념.<br>실행 가능한 코드를 평가하고 실행하기 위해 필요한 환경을 제공하고 코드의 실행결과를 실제로 관리하는 영역.</p>
+<br>
+
+<h4 id="실행-컨텍스트-등록-과정"><a href="#실행-컨텍스트-등록-과정" class="headerlink" title="실행 컨텍스트 등록 과정"></a>실행 컨텍스트 등록 과정</h4><p>코드의 평가 과정에서 실행 컨텍스트가 생성되고 변수, 함수, 클래스 등의 선언문이 평가되어 그 결과가 실행 컨텍스트에 등록 -&gt; 코드 평가 과정 끝 -&gt; 선언문을 제외한 코드 순차적으로 실행 </p>
+<br>
+
+<h4 id="실행-컨텍스트-스택"><a href="#실행-컨텍스트-스택" class="headerlink" title="실행 컨텍스트 스택"></a>실행 컨텍스트 스택</h4><p>코드의 실행 순서를 스택형태의 자료구조로 관리. ( = 콜스택)</p>
+<br>
+
+<h4 id="렉시컬-환경"><a href="#렉시컬-환경" class="headerlink" title="렉시컬 환경"></a>렉시컬 환경</h4><p>스코프와 식별자를 관리. 스코프를 구분하여 식별자를 등록하고 관리하는 저장소 역할을 한다.</p>
+<br>
+
+<h4 id="렉시컬-환경의-3가지-콤퍼넌트"><a href="#렉시컬-환경의-3가지-콤퍼넌트" class="headerlink" title="렉시컬 환경의 3가지 콤퍼넌트"></a>렉시컬 환경의 3가지 콤퍼넌트</h4><ol>
+<li>환경레코드 </li>
+<li>외부렉시컬환경참조 </li>
+<li>ThisBinding</li>
+</ol>
+<br>
+
+<h4 id="실행-컨텍스트의-생성과-식별자-검색-과정"><a href="#실행-컨텍스트의-생성과-식별자-검색-과정" class="headerlink" title="실행 컨텍스트의 생성과 식별자 검색 과정"></a>실행 컨텍스트의 생성과 식별자 검색 과정</h4><ol>
+<li><p>전역 객체 생성 (코드가 평가 되기 이전에 생성된다.)</p>
+</li>
+<li><p>전역 코드 평가</p>
+<ol>
+<li>전역 실행 컨텍스트 생성</li>
+</ol>
+</li>
+<li><p>전역 렉시컬 환경 생성</p>
+<ol>
+<li>객체 환경 레코드 생성<ol start="2">
+<li>선언적 환경 레코드 생성</li>
+</ol>
+</li>
+<li>외부 렉시컬 환경에 대한 참조 할당</li>
+</ol>
+</li>
+<li><p>this 바인딩</p>
+</li>
+<li><p>함수 호출</p>
+<ol>
+<li>함수 실행 컨텍스트 생성</li>
+<li>함수 렉시컬 환경 생성<ol>
+<li>함수 환경 레코드 생성</li>
+</ol>
+</li>
+<li>외부 렉시컬 환경에 대한 참조 할당</li>
+<li>this 바인딩</li>
+</ol>
+</li>
+</ol>
+<p><strong>식별자를 검색할 때는 실행 중인 실행 컨텍스트의 렉시컬 환경에서 식별자를 검색한다.</strong></p>
+<br>
+
+<h4 id="클로저"><a href="#클로저" class="headerlink" title="클로저"></a>클로저</h4><p>​    함수와 그 함수가 선언된 렉시컬 환경(Lexical environment)과의 조합이다.</p>
+<br>
+
+<h4 id="함수-객체의-내부-슬롯-Environment"><a href="#함수-객체의-내부-슬롯-Environment" class="headerlink" title="함수 객체의 내부 슬롯 [[Environment]]"></a>함수 객체의 내부 슬롯 [[Environment]]</h4><p>​    함수는 자신의 내부 슬롯[[Environment]]에 자신이 정의된 환경, 즉 상위 스코프의 참조를 저장한다.</p>
+<br>
+
+<h4 id="클로저의-역할"><a href="#클로저의-역할" class="headerlink" title="클로저의 역할"></a>클로저의 역할</h4><ol>
+<li>상태를 안전하게 유지하기 위해 사용.</li>
+<li>의도치 않게 변경되지 않도록 안전하게 은닉.<ol start="3">
+<li>상태가 변경되면 최신 상태(state)를 유지.</li>
+</ol>
+</li>
+</ol>
+<br>
+
+<h4 id="아래는-왜-클로저가-아닌가"><a href="#아래는-왜-클로저가-아닌가" class="headerlink" title="아래는 왜 클로저가 아닌가?"></a>아래는 왜 클로저가 아닌가?</h4><p> <strong>함수 makeCounter를 호출해 함수를 반환할 때 반환된 함수는 자신만의 독립된 렉시컬 환경을 갖는다</strong></p>
+<p>문제는 2개의 makeCounter를 호출 했으므로 각각의 렉시컬환경에 counter라는 변수를 전부 가지고 있으므로 counter는 증감 되지 않는다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 함수를 인수로 전달받고 함수를 반환하는 고차 함수</span></span><br><span class="line"><span class="comment">// 이 함수가 반환하는 함수는 카운트 상태를 유지하기 위한 자유 변수 counter을 기억하는 클로저다.</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">makeCounter</span>(<span class="params">predicate</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 카운트 상태를 유지하기 위한 자유 변수</span></span><br><span class="line">  <span class="keyword">let</span> counter = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 클로저를 반환</span></span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 인수로 전달 받은 보조 함수에 상태 변경을 위임한다.</span></span><br><span class="line">    counter = predicate(counter);</span><br><span class="line">    <span class="keyword">return</span> counter;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 보조 함수</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">increase</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> ++n;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 보조 함수</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">decrease</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> --n;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 함수로 함수를 생성한다.</span></span><br><span class="line"><span class="comment">// makeCounter 함수는 보조 함수를 인수로 전달받아 함수를 반환한다</span></span><br><span class="line"><span class="keyword">const</span> increaser = makeCounter(increase); <span class="comment">// ①</span></span><br><span class="line"><span class="built_in">console</span>.log(increaser()); <span class="comment">// 1</span></span><br><span class="line"><span class="built_in">console</span>.log(increaser()); <span class="comment">// 2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// increaser 함수와는 별개의 독립된 렉시컬 환경을 갖기 때문에 카운터 상태가 연동하지 않는다.</span></span><br><span class="line"><span class="keyword">const</span> decreaser = makeCounter(decrease); <span class="comment">// ②</span></span><br><span class="line"><span class="built_in">console</span>.log(decreaser()); <span class="comment">// -1</span></span><br><span class="line"><span class="built_in">console</span>.log(decreaser()); <span class="comment">// -2</span></span><br></pre></td></tr></table></figure>
+
+<img src="https://poiemaweb.com/assets/fs-images/23-10.png" alt="img" style="zoom:50%;">
+
+<br>
+
+<h4 id="클로저를-사용시-나타나는-실수"><a href="#클로저를-사용시-나타나는-실수" class="headerlink" title="클로저를 사용시 나타나는 실수"></a>클로저를 사용시 나타나는 실수</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [];</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</span><br><span class="line">  arr[i] = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; <span class="comment">// ①</span></span><br><span class="line">    <span class="keyword">return</span> i;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; arr.length; j++) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(arr[j]()); <span class="comment">// ②</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>출력시 <code>i</code>가 게속 5로만 출력된다. <code>i</code>를 var키워드로 선언했고 따라서 <code>i</code>는 전역 렉시컬 환경의 window의 소유이기 때문이다.</p>
+<p><code>arr</code>함수 호출이 2번째 <code>for</code>문 때 일어나기 때문에 그 때 실행컨텍스트가 쌓이고 <code>i</code>를 반환한다.</p>
+<p>그 때의 <code>i</code>는 값이 5다.  따라서 5를 5번 출력한다.</p>
+<br>
+
+<h4 id="해결법-1-즉시-실행-함수"><a href="#해결법-1-즉시-실행-함수" class="headerlink" title="해결법 1 - 즉시 실행 함수"></a>해결법 1 - 즉시 실행 함수</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [];</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++)&#123;</span><br><span class="line">  arr[i] = (<span class="function"><span class="keyword">function</span> (<span class="params">id</span>) </span>&#123; <span class="comment">// ①</span></span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> id;</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;(i));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; arr.length; j++) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(arr[j]());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>즉시 실행 함수의 매개변수 id는 반환한 함수의 상위 스코프(즉시 실행 함수)에 존재하기 때문에 자유변수가 된다. </p>
+<p>즉시 실행 함수가 반환한 함수에 의해 그 값이 유지된다.</p>
+<br>
+
+<h4 id="해결법-2-let-키워드-사용"><a href="#해결법-2-let-키워드-사용" class="headerlink" title="해결법 2 - let 키워드 사용"></a>해결법 2 - let 키워드 사용</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [];</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">  arr[i] = <span class="function"><span class="params">()</span> =&gt;</span> i;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(arr[i]()); <span class="comment">// 0 1 2</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p> for 문이 반복될 때마다 독립적인 렉시컬 환경을 생성하여 식별자의 값을 유지한다.</p>
+<br>
+
+<h4 id="자바스크립트의-클래스"><a href="#자바스크립트의-클래스" class="headerlink" title="자바스크립트의 클래스"></a>자바스크립트의 클래스</h4><p>함수. 객체를 만드는 용도.</p>
+<br>
+
+<h4 id="클래스-vs-생성자함수"><a href="#클래스-vs-생성자함수" class="headerlink" title="클래스 vs 생성자함수"></a>클래스 vs 생성자함수</h4><ol>
+<li>클래스는 new 연산자 없이 호출 시 에러를 발생한다.</li>
+<li>상속을 지원하는 <code>extends</code> 키워드 와 <code>super</code>키워드 제공</li>
+<li>클래스는 호이스팅이 발생하지 않는 것처럼 동작함( 마치 let, const )</li>
+<li>암묵적으로 strict모드로 실행됨(해지 불가)</li>
+<li>클래스의 메소드들은 모두 열거되지 않는다.</li>
+</ol>
+<br>
+
+<h4 id="클래스는-문법적-설탕이-아닌-이유"><a href="#클래스는-문법적-설탕이-아닌-이유" class="headerlink" title="클래스는 문법적 설탕이 아닌 이유"></a>클래스는 문법적 설탕이 아닌 이유</h4><p>​    생성자 함수를 기반으로 한 객체 생성방식보다 견고하면서 명료하기 때문에 새로운 객체 생성 메카니즘이다.</p>
+<br>
+
+<h4 id="클래스의-메소드-3가지"><a href="#클래스의-메소드-3가지" class="headerlink" title="클래스의 메소드 3가지"></a>클래스의 메소드 3가지</h4><ol>
+<li>정적 메소드 ( static sayHello( ) { } )</li>
+<li>프로토타입 메소드 ( sayHello( ) { } )</li>
+<li>constructor 메소드 ( constructor( ) { } )</li>
+</ol>
+<br>
+
+<h4 id="클래스에서-정의한-메소드의-특징"><a href="#클래스에서-정의한-메소드의-특징" class="headerlink" title="클래스에서 정의한 메소드의 특징"></a>클래스에서 정의한 메소드의 특징</h4><ol>
+<li>메소드 축약 표현을 이용</li>
+<li>콤마가 필요없다.</li>
+<li>암묵적인 strict모드</li>
+<li>열거 불가능</li>
+<li><code>new</code>연산자와 함께 호출이 불가능.</li>
+</ol>
+<br>
+
+<h4 id="클래스-인스턴스-생성-과정"><a href="#클래스-인스턴스-생성-과정" class="headerlink" title="클래스 인스턴스 생성 과정"></a>클래스 인스턴스 생성 과정</h4><ol>
+<li>인스턴스 생성 (빈 객체) </li>
+<li>해당 인스턴스의 prototype 객체가 설정됨.</li>
+<li>인스턴스를 this에 암묵적으로 바인딩 ( constructor 내부의 this는 클래스가 생성한 인스턴스를 가리킴. )</li>
+<li>인스턴스 초기화 (프로퍼티 추가)</li>
+<li>프로토 타입 / 정적 메소드 추가</li>
+<li>인스턴스 반환</li>
+</ol>
+<br>
+
+<h4 id="클래스-private-필드"><a href="#클래스-private-필드" class="headerlink" title="클래스 private 필드"></a>클래스 private 필드</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">  <span class="comment">// private 필드 정의</span></span><br><span class="line">  #_name = '';</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> person = <span class="keyword">new</span> Person();</span><br></pre></td></tr></table></figure>
+
+<p><code>person.#_name</code>을 참조하면 private 관련 에러를 발생하고, <code>person._name</code>을 참조하면 <code>undefined</code>를 반환한다.</p>
+<br>
+
+<h3 id="extends"><a href="#extends" class="headerlink" title="extends"></a>extends</h3><p> 부모 클래스를 자식 클래스에 상속하는 키워드</p>
+<br>
+
+<h4 id="super"><a href="#super" class="headerlink" title="super"></a>super</h4><p>수퍼클래스의 constructor를 호출.</p>
+<p>super를 참조하여 수퍼클래스의 메소드를 호출.</p>
+<p>constructor를 기재시 반드시 counstructor 내부 최상단에 작성해야됨.</p>
+<p>constructor를 기재하고 super를 안적거나 최상단에 미기재시 에러 발생. (constructor를 미기재했다면 암묵적으로 전달함)</p>
+<p>서브 클래스의 constructor 에서만 호출.</p>
+<br>
+
+<h4 id="상속-클래스의-인스턴스-생성과정"><a href="#상속-클래스의-인스턴스-생성과정" class="headerlink" title="상속 클래스의 인스턴스 생성과정"></a>상속 클래스의 인스턴스 생성과정</h4><ol>
+<li>서브클래스의 super 호출 -  내부 슬롯 [[ConstructorKind]] (‘base’, ‘derived’) = ‘derived’</li>
+<li>인스턴스 생성(빈객체)을 수퍼클래스에게 위임.</li>
+<li>수퍼클래스 인스턴스 생성 및 this 바인딩</li>
+<li>수퍼클래스의 인스턴스 초기화</li>
+<li>수퍼클래스의 프로토타입 / 정적 메소드 추가</li>
+<li>서브 클래스 constructor로의 복귀 및 this 바인딩</li>
+<li>서브 클래스 인스턴스 초기화</li>
+<li>인스턴스 반환</li>
+</ol>
+<br>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://yoursite.com/2019/10/29/test-arrange03/" data-id="ck2b91gki00b9mnz0hoi2cfz7" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Jun Hyeok Kim"
+        },
+        "headline": "test_arrange03",
+        "image": "http://yoursite.comhttps://cdn.pixabay.com/photo/2017/06/28/10/53/board-2450236_1280.jpg",
+        "keywords": "hexo git Web coding developer CSS HTML algorithm javascript",
+        "genre": "TIL Javascript",
+        "datePublished": "2019-10-29",
+        "dateCreated": "2019-10-29",
+        "dateModified": "2019-10-29",
+        "url": "http://yoursite.com/2019/10/29/test-arrange03/",
+        "description": "
+짧은 개념 정리글#### 
+실행 컨텍스트식별자, 스코프, 호이스팅, 클로저 등의 동작원리를 담고 있는 자바스크립트의 핵심개념.실행 가능한 코드를 평가하고 실행하기 위해 필요한 환경을 제공하고 코드의 실행결과를 실제로 관리하는 영역.
+
+
+실행 컨텍스트 등록 과정코드의 평가 과정에서 실행 컨텍스트가 생성되고 변수, 함수, 클래스 등의 선언문이 평가되어 그 결",
+        "wordCount": 1189
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="https://www.facebook.com/profile.php?id=100003801986180" target="_blank" rel="noopener">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/HYEOK999" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="youtube" href="https://www.youtube.com" target="_blank" rel="noopener">
+                        <i class="icon fa fa-youtube"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2019/10/29/DOM/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">DOM</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/10/29/test-arrange03/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://cdn.pixabay.com/photo/2017/06/28/10/53/board-2450236_1280.jpg)" alt="test_arrange03" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/Javascript/">Javascript</a></p>
+                            <p class="item-title"><a href="/2019/10/29/test-arrange03/" class="title">test_arrange03</a></p>
+                            <p class="item-date"><time datetime="2019-10-29T02:45:12.000Z" itemprop="datePublished">2019-10-29</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/10/29/DOM/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/67669470-4e537580-f9b5-11e9-93b5-0a8af449bc72.jpeg)" alt="DOM" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Develop/">Develop</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Develop/Javascript/">Javascript</a></p>
+                            <p class="item-title"><a href="/2019/10/29/DOM/" class="title">DOM</a></p>
+                            <p class="item-date"><time datetime="2019-10-29T02:33:55.000Z" itemprop="datePublished">2019-10-29</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/10/28/daily-algorithm25/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://images.velog.io/post-images/leejh3224/619516b0-e892-11e8-98f5-997ef3c38110/what-is-an-algorithm-featured.png)" alt="daily_algorithm25" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/Algorithm/">Algorithm</a></p>
+                            <p class="item-title"><a href="/2019/10/28/daily-algorithm25/" class="title">daily_algorithm25</a></p>
+                            <p class="item-date"><time datetime="2019-10-28T07:28:11.000Z" itemprop="datePublished">2019-10-28</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/10/28/javascript-study-16/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/65933403-536fe400-e44c-11e9-981d-c4e8c1f86998.png)" alt="javascript-study-16" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/Javascript/">Javascript</a></p>
+                            <p class="item-title"><a href="/2019/10/28/javascript-study-16/" class="title">javascript-study-16</a></p>
+                            <p class="item-date"><time datetime="2019-10-28T04:05:46.000Z" itemprop="datePublished">2019-10-28</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/10/28/javascript-preview-272829/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/66104821-b9976b00-e5f4-11e9-84e9-20c797dd2c51.jpeg)" alt="javascript-preview-272829" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a></p>
+                            <p class="item-title"><a href="/2019/10/28/javascript-preview-272829/" class="title">javascript-preview-272829</a></p>
+                            <p class="item-date"><time datetime="2019-10-27T17:10:20.000Z" itemprop="datePublished">2019-10-28</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/">Develop</a><span class="category-list-count">17</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/CSS/">CSS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/GIT/">GIT</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Java/">Java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Javascript/">Javascript</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Tips/">Tips</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/">TIL</a><span class="category-list-count">93</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Algorithm/">Algorithm</a><span class="category-list-count">34</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/GIT/">GIT</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript/">Javascript</a><span class="category-list-count">19</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a><span class="category-list-count">20</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/linux/">linux</a><span class="category-list-count">4</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/etc/">etc</a><span class="category-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a><span class="archive-list-count">75</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a><span class="archive-list-count">37</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">94</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ESLint/">ESLint</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a><span class="tag-list-count">93</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/">JAVA</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MarkUP/">MarkUP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Selector/">Selector</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TIL/">TIL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a><span class="tag-list-count">111</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorism/">algorism</a><span class="tag-list-count">29</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a><span class="tag-list-count">76</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/coding/">coding</a><span class="tag-list-count">111</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/developer/">developer</a><span class="tag-list-count">111</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">111</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">111</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/inline-block/">inline-block</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">77</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">3</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://github.com">github</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.naver.com">Naver</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://google.com">Google</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://www.youtube.com/">Youtube</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2019 Jun Hyeok Kim</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'http://yoursite.com/2019/10/29/test-arrange03/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
