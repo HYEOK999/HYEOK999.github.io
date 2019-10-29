@@ -10,21 +10,21 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="hexo,git,Web,coding,developer,HTML,CSS,algorithm,javascript">
+        <meta name="keywords" content="hexo,git,Web,coding,developer,CSS,HTML,algorithm,javascript">
     
-    <meta name="description" content="JavaScript Number 래퍼 객체 Number 래퍼 객체 Number Constructor Number() 생성자 함수를 통해서 만들어진 Number 객체는 객체다. Number Property Number.EPSILON Number.MAX_VALUE Number.MIN_VALUEa Number.POSITIVE_INFINITY Number.N">
-<meta name="keywords" content="hexo,git,Web,coding,developer,HTML,CSS,algorithm,javascript">
+    <meta name="description" content="JavaScript Number 래퍼 객체 Number 래퍼 객체 Number Constructor Number() 생성자 함수를 통해서 만들어진 Number 객체는 객체다. Number Property Number.EPSILON Number.MAX_VALUE || Number.MIN_VALUE Number.POSITIVE_INFINITY Number">
+<meta name="keywords" content="hexo,git,Web,coding,developer,CSS,HTML,algorithm,javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Number 래퍼 객체">
 <meta property="og:url" content="http://yoursite.com/2019/10/22/number-object/index.html">
 <meta property="og:site_name" content="HYEOK999&#39;s Blog">
-<meta property="og:description" content="JavaScript Number 래퍼 객체 Number 래퍼 객체 Number Constructor Number() 생성자 함수를 통해서 만들어진 Number 객체는 객체다. Number Property Number.EPSILON Number.MAX_VALUE Number.MIN_VALUEa Number.POSITIVE_INFINITY Number.N">
+<meta property="og:description" content="JavaScript Number 래퍼 객체 Number 래퍼 객체 Number Constructor Number() 생성자 함수를 통해서 만들어진 Number 객체는 객체다. Number Property Number.EPSILON Number.MAX_VALUE || Number.MIN_VALUE Number.POSITIVE_INFINITY Number">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://cdn.pixabay.com/photo/2015/11/10/08/22/pay-1036469_960_720.jpg">
-<meta property="og:updated_time" content="2019-10-22T02:36:26.061Z">
+<meta property="og:updated_time" content="2019-10-29T17:47:39.212Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Number 래퍼 객체">
-<meta name="twitter:description" content="JavaScript Number 래퍼 객체 Number 래퍼 객체 Number Constructor Number() 생성자 함수를 통해서 만들어진 Number 객체는 객체다. Number Property Number.EPSILON Number.MAX_VALUE Number.MIN_VALUEa Number.POSITIVE_INFINITY Number.N">
+<meta name="twitter:description" content="JavaScript Number 래퍼 객체 Number 래퍼 객체 Number Constructor Number() 생성자 함수를 통해서 만들어진 Number 객체는 객체다. Number Property Number.EPSILON Number.MAX_VALUE || Number.MIN_VALUE Number.POSITIVE_INFINITY Number">
 <meta name="twitter:image" content="https://cdn.pixabay.com/photo/2015/11/10/08/22/pay-1036469_960_720.jpg">
     
 
@@ -188,23 +188,25 @@
 <li>Number Constructor</li>
 <li>Number() 생성자 함수를 통해서 만들어진 Number 객체는 객체다.</li>
 <li>Number Property<ul>
-<li>Number.EPSILON</li>
-<li>Number.MAX_VALUE</li>
-<li>Number.MIN_VALUEa</li>
-<li>Number.POSITIVE_INFINITY</li>
-<li>Number.NEGATIVE_INFINITY</li>
-<li>Number.NaN</li>
+<li><a href="#a1">Number.EPSILON</a></li>
+<li><a href="#a2">Number.MAX_VALUE || Number.MIN_VALUE</a></li>
+<li><a href="#a3">Number.POSITIVE_INFINITY</a></li>
+<li><a href="#a4">Number.NEGATIVE_INFINITY</a></li>
+<li><a href="#a5">Number.NaN</a></li>
 </ul>
 </li>
 <li>Number.Method<ul>
-<li>Number.isFinite(testValue: number): boolean</li>
-<li>Number.isInteger(testValue: number): boolean </li>
-<li>Number.isNaN(testValue: number): boolean </li>
-<li>Number.isSafeInteger(testValue: number): boolean</li>
-<li>Number.prototype.toExponential(fractionDigits?: number): string</li>
-<li>Number.prototype.toFixed(fractionDigits?: number): string</li>
-<li>Number.prototype.toString(radix?: number): string</li>
-<li>Number.prototype.valueOf(): number ES1</li>
+<li><a href="#b1">Number.isFinite(testValue: number): boolean</a></li>
+<li><a href="#b2">Number.isInteger(testValue: number): boolean</a></li>
+<li><a href="#b3">Number.isNaN(testValue: number): boolean</a></li>
+<li><a href="#b4">Number.isSafeInteger(testValue: number): boolean</a></li>
+<li><a href="#b5">Number.prototype.toExponential(fractionDigits?: number): string</a></li>
+<li><a href="#b7">Number.prototype.toFixed(fractionDigits?: number): string</a></li>
+<li><a href="#b8">Number.prototype.toString(radix?: number): string</a><ul>
+<li>정수 리터럴과 함께 메소드를 사용할 경우. 주의점</li>
+</ul>
+</li>
+<li><a href="#b9">Number.prototype.valueOf(): number ES1</a></li>
 </ul>
 </li>
 </ul>
@@ -222,7 +224,7 @@
 <p>위에서 원시 타입을 담고 있는 변수 num이 Number.prototype.toFixed() 메소드를 호출할 수 있는 것은 변수 num의 값이 일시적으로 wrapper객체로 변환되었기 때문이다.</p>
 <br>
 
-<h3 id="Numver-Constructor"><a href="#Numver-Constructor" class="headerlink" title="Numver Constructor"></a>Numver Constructor</h3><p>Number 객체는 Number() 생성자 함수를 통해 생성할 수 있다. (new는 생략할 수 있다.)</p>
+<h3 id="Number-Constructor"><a href="#Number-Constructor" class="headerlink" title="Number Constructor"></a>Number Constructor</h3><p>Number 객체는 Number() 생성자 함수를 통해 생성할 수 있다. (new는 생략할 수 있다.)</p>
 <p>만일 인자가 숫자로 변환될 수 없다면 NaN을 반환한다.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="keyword">new</span> <span class="built_in">Number</span>(<span class="number">123</span>);</span><br><span class="line"><span class="keyword">var</span> y = <span class="keyword">new</span> <span class="built_in">Number</span>(<span class="string">'123'</span>);</span><br><span class="line"><span class="keyword">var</span> z = <span class="keyword">new</span> <span class="built_in">Number</span>(<span class="string">'str'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(x); <span class="comment">// 123</span></span><br><span class="line"><span class="built_in">console</span>.log(y); <span class="comment">// 123</span></span><br><span class="line"><span class="built_in">console</span>.log(z); <span class="comment">// NaN</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> o = <span class="built_in">Number</span>(<span class="string">'123'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> o, o); <span class="comment">// number 123</span></span><br></pre></td></tr></table></figure>
 
@@ -233,13 +235,13 @@
 
 <br>
 
-<h3 id="Number-Property"><a href="#Number-Property" class="headerlink" title="Number Property"></a>Number Property</h3><h4 id="Number-EPSILON"><a href="#Number-EPSILON" class="headerlink" title="Number.EPSILON"></a>Number.EPSILON</h4><blockquote>
+<h3 id="Number-Property"><a href="#Number-Property" class="headerlink" title="Number Property"></a>Number Property</h3><h4 id="Number-EPSILON"><a href="#Number-EPSILON" class="headerlink" title="Number.EPSILON "></a>Number.EPSILON <a id="a1"></a></h4><blockquote>
 <p>Number.EPSILON은 JavaScript에서 표현할 수 있는 가장 작은 수이다. (ES6)</p>
-<p> Number.EPSILON은 약 2.2204460492503130808472633361816E-16 또는 2-52이다.</p>
+<p>Number.EPSILON은 약 2.2204460492503130808472633361816E-16 또는 2-52이다.</p>
 </blockquote>
 <br>
 
-<h4 id="Number-MAX-VALUE-Number-MIN-VALUE"><a href="#Number-MAX-VALUE-Number-MIN-VALUE" class="headerlink" title="Number.MAX_VALUE || Number.MIN_VALUE"></a>Number.MAX_VALUE || Number.MIN_VALUE</h4><blockquote>
+<h4 id="Number-MAX-VALUE-Number-MIN-VALUE"><a href="#Number-MAX-VALUE-Number-MIN-VALUE" class="headerlink" title="Number.MAX_VALUE || Number.MIN_VALUE "></a>Number.MAX_VALUE || Number.MIN_VALUE <a id="a2"></a></h4><blockquote>
 <p>Number.MAX_VALUE는 JavaScript에서 Infinity를 제외한 표현할 수 있는 가장 큰 수 이다. </p>
 <p>Number.MAX_VALUE는 가장 큰 숫자(1.7976931348623157e+308)를 반환한다. </p>
 <p>Number.MIN_VALUE는 JavaScript에서 사용 가능한 가장 작은 숫자(5e-324)를 반환한다.</p>
@@ -249,22 +251,22 @@
 
 <br>
 
-<h4 id="Number-POSITIVE-INFINITY"><a href="#Number-POSITIVE-INFINITY" class="headerlink" title="Number.POSITIVE_INFINITY"></a>Number.POSITIVE_INFINITY</h4><p>양의 무한대 <code>Infinity</code>를 반환한다.</p>
+<h4 id="Number-POSITIVE-INFINITY"><a href="#Number-POSITIVE-INFINITY" class="headerlink" title="Number.POSITIVE_INFINITY  "></a>Number.POSITIVE_INFINITY  <a id="a3"></a></h4><p>양의 무한대 <code>Infinity</code>를 반환한다.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Number</span>.POSITIVE_INFINITY <span class="comment">// Infinity</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> num = <span class="number">10</span>;</span><br><span class="line">num.POSITIVE_INFINITY;   <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
 
 <br>
 
-<h4 id="Number-NEGATIVE-INFINITY"><a href="#Number-NEGATIVE-INFINITY" class="headerlink" title="Number.NEGATIVE_INFINITY"></a>Number.NEGATIVE_INFINITY</h4><p>음의 무한대 <code>-Infinity</code>를 반환한다.</p>
+<h4 id="Number-NEGATIVE-INFINITY"><a href="#Number-NEGATIVE-INFINITY" class="headerlink" title="Number.NEGATIVE_INFINITY  "></a>Number.NEGATIVE_INFINITY  <a id="a4"></a></h4><p>음의 무한대 <code>-Infinity</code>를 반환한다.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Number</span>.NEGATIVE_INFINITY <span class="comment">// -Infinity</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> num = <span class="number">10</span>;</span><br><span class="line">num.NEGATIVE_INFINITY;   <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
 
 <br>
 
-<h4 id="Number-NaN"><a href="#Number-NaN" class="headerlink" title="Number.NaN"></a>Number.NaN</h4><p>숫자가 아님(Not-a-Number)을 나타내는 숫자값이다. Number.NaN 프로퍼티는 window.NaN 프로퍼티와 같다.</p>
+<h4 id="Number-NaN"><a href="#Number-NaN" class="headerlink" title="Number.NaN  "></a>Number.NaN  <a id="a5"></a></h4><p>숫자가 아님(Not-a-Number)을 나타내는 숫자값이다. Number.NaN 프로퍼티는 window.NaN 프로퍼티와 같다.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(<span class="string">'xyz'</span>)); <span class="comment">// NaN</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">1</span> * <span class="string">'string'</span>);  <span class="comment">// NaN</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="literal">NaN</span>);    <span class="comment">// number</span></span><br></pre></td></tr></table></figure>
 
 <br>
 
-<h3 id="Number-Method"><a href="#Number-Method" class="headerlink" title="Number Method"></a>Number Method</h3><h4 id="Number-isFinite-testValue-number-boolean-ES6"><a href="#Number-isFinite-testValue-number-boolean-ES6" class="headerlink" title="Number.isFinite(testValue: number): boolean ES6"></a>Number.isFinite(testValue: number): boolean ES6</h4><blockquote>
+<h3 id="Number-Method"><a href="#Number-Method" class="headerlink" title="Number Method"></a>Number Method</h3><h4 id="Number-isFinite-testValue-number-boolean-ES6"><a href="#Number-isFinite-testValue-number-boolean-ES6" class="headerlink" title="Number.isFinite(testValue: number): boolean ES6  "></a>Number.isFinite(testValue: number): boolean ES6  <a id="b1"></a></h4><blockquote>
 <p>매개변수에 전달된 값이 정상적인 유한수인지를 검사하여 그 결과를 Boolean으로 반환한다.</p>
 </blockquote>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param &#123;any&#125; testValue - 검사 대상 값. 암묵적 형변환되지 않는다.</span></span><br><span class="line"><span class="comment"> * @return &#123;boolean&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="built_in">Number</span>.isFinite(testValue)</span><br></pre></td></tr></table></figure>
@@ -273,15 +275,15 @@
 <p>전역 함수 isFinite()는 인수를 숫자로 변환하여 검사를 수행하지만 Number.isFinite()는 인수를 변환하지 않는다. 따라서 숫자가 아닌 인수가 주어졌을 때 반환값은 언제나 false가 된다.</p>
 <br>
 
-<h4 id="Number-isInteger-testValue-number-boolean-ES6"><a href="#Number-isInteger-testValue-number-boolean-ES6" class="headerlink" title="Number.isInteger(testValue: number): boolean ES6"></a>Number.isInteger(testValue: number): boolean ES6</h4><blockquote>
+<h4 id="Number-isInteger-testValue-number-boolean-ES6"><a href="#Number-isInteger-testValue-number-boolean-ES6" class="headerlink" title="Number.isInteger(testValue: number): boolean ES6 "></a>Number.isInteger(testValue: number): boolean ES6 <a id="b2"></a></h4><blockquote>
 <p> 매개변수에 전달된 값이 정수(Integer)인지 검사하여 그 결과를 Boolean으로 반환한다. </p>
-<p>검사전에 인수를 숫자로 변환하지 않는다.</p>
+<p> 검사전에 인수를 숫자로 변환하지 않는다.</p>
 </blockquote>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param &#123;any&#125; testValue - 검사 대상 값. 암묵적 형변환되지 않는다.</span></span><br><span class="line"><span class="comment"> * @return &#123;boolean&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="built_in">Number</span>.isInteger(testValue)</span><br></pre></td></tr></table></figure>
 
 <br>
 
-<h4 id="Number-isNaN-testValue-number-boolean-ES6"><a href="#Number-isNaN-testValue-number-boolean-ES6" class="headerlink" title="Number.isNaN(testValue: number): boolean ES6"></a>Number.isNaN(testValue: number): boolean ES6</h4><blockquote>
+<h4 id="Number-isNaN-testValue-number-boolean-ES6"><a href="#Number-isNaN-testValue-number-boolean-ES6" class="headerlink" title="Number.isNaN(testValue: number): boolean ES6 "></a>Number.isNaN(testValue: number): boolean ES6 <a id="b3"></a></h4><blockquote>
 <p>매개변수에 전달된 값이 NaN인지를 검사하여 그 결과를 Boolean으로 반환한다.</p>
 </blockquote>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param &#123;any&#125; testValue - 검사 대상 값. 암묵적 형변환되지 않는다.</span></span><br><span class="line"><span class="comment"> * @return &#123;boolean&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="built_in">Number</span>.isNaN(testValue)</span><br></pre></td></tr></table></figure>
@@ -290,43 +292,41 @@
 <p>전역 함수 isNaN()는 인수를 숫자로 변환하여 검사를 수행하지만 Number.isNaN()는 인수를 변환하지 않는다. 따라서 숫자가 아닌 인수가 주어졌을 때 반환값은 언제나 false가 된다.</p>
 <br>
 
-<h4 id="Number-isSafeInteger-testValue-number-boolean-ES6"><a href="#Number-isSafeInteger-testValue-number-boolean-ES6" class="headerlink" title="Number.isSafeInteger(testValue: number): boolean ES6"></a>Number.isSafeInteger(testValue: number): boolean ES6</h4><blockquote>
+<h4 id="Number-isSafeInteger-testValue-number-boolean-ES6"><a href="#Number-isSafeInteger-testValue-number-boolean-ES6" class="headerlink" title="Number.isSafeInteger(testValue: number): boolean ES6  "></a>Number.isSafeInteger(testValue: number): boolean ES6  <a id="b4"></a></h4><blockquote>
 <p> 매개변수에 전달된 값이 안전한(safe) 정수값인지 검사하여 그 결과를 Boolean으로 반환한다. </p>
-<p>안전한 정수값은 -(253 - 1)와 253 - 1 사이의 정수값이다. 검사전에 인수를 숫자로 변환하지 않는다.</p>
+<p> 안전한 정수값은 -(253 - 1)와 253 - 1 사이의 정수값이다. 검사전에 인수를 숫자로 변환하지 않는다.</p>
 </blockquote>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param &#123;any&#125; testValue - 검사 대상 값. 암묵적 형변환되지 않는다.</span></span><br><span class="line"><span class="comment"> * @return &#123;boolean&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="built_in">Number</span>.isSafeInteger(testValue)</span><br></pre></td></tr></table></figure>
 
 <br>
 
-<h4 id="Number-prototype-toExponential-fractionDigits-number-string-ES3"><a href="#Number-prototype-toExponential-fractionDigits-number-string-ES3" class="headerlink" title="Number.prototype.toExponential(fractionDigits?: number): string ES3"></a>Number.prototype.toExponential(fractionDigits?: number): string ES3</h4><blockquote>
+<h4 id="Number-prototype-toExponential-fractionDigits-number-string-ES3"><a href="#Number-prototype-toExponential-fractionDigits-number-string-ES3" class="headerlink" title="Number.prototype.toExponential(fractionDigits?: number): string ES3 "></a>Number.prototype.toExponential(fractionDigits?: number): string ES3 <a id="b5"></a></h4><blockquote>
 <p> 대상을 지수 표기법으로 변환하여 문자열로 반환한다. 지수 표기법이란 매우 큰 숫자를 표기할 때 주로 사용하며 e(Exponent) 앞에 있는 숫자에 10의 n승이 곱하는 형식으로 수를 나타내는 방식이다.</p>
 </blockquote>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1234</span> = <span class="number">1.234e+3</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param &#123;number&#125; [fractionDigits] - 0~20 사이의 정수값으로 소숫점 이하의 자릿수를 나타낸다. 옵션으로 생략 가능하다.</span></span><br><span class="line"><span class="comment"> * @return &#123;string&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">numObj.toExponential([fractionDigits])</span><br></pre></td></tr></table></figure>
 
 <br>
 
-<h4 id="정수-리터럴과-함께-메소드를-사용할-경우-주의점"><a href="#정수-리터럴과-함께-메소드를-사용할-경우-주의점" class="headerlink" title="정수 리터럴과 함께 메소드를 사용할 경우. 주의점"></a>정수 리터럴과 함께 메소드를 사용할 경우. 주의점</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">77.</span>toString(); <span class="comment">// SyntaxError: Invalid or unexpected token</span></span><br></pre></td></tr></table></figure>
-
-<p>의 경우 <code>.</code>이 소숫점인지 아닌지 모르기 때문에 에러를 일으킨다. 따라서 다음과 같은 방법을 권장한다.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="number">77</span>).toString(); <span class="comment">// '77'</span></span><br></pre></td></tr></table></figure>
-
-<br>
-
-<h4 id="Number-prototype-toFixed-fractionDigits-number-string-ES3"><a href="#Number-prototype-toFixed-fractionDigits-number-string-ES3" class="headerlink" title="Number.prototype.toFixed(fractionDigits?: number): string ES3"></a>Number.prototype.toFixed(fractionDigits?: number): string ES3</h4><p>매개변수로 지정된 소숫점자리를 반올림하여 문자열로 반환한다.</p>
+<h4 id="Number-prototype-toFixed-fractionDigits-number-string-ES3"><a href="#Number-prototype-toFixed-fractionDigits-number-string-ES3" class="headerlink" title="Number.prototype.toFixed(fractionDigits?: number): string ES3 "></a>Number.prototype.toFixed(fractionDigits?: number): string ES3 <a id="b7"></a></h4><p>매개변수로 지정된 소숫점자리를 반올림하여 문자열로 반환한다.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param &#123;number&#125; [fractionDigits] - 0~20 사이의 정수값으로 소숫점 이하 자릿수를 나타낸다. 기본값은 0이며 옵션으로 생략 가능하다.</span></span><br><span class="line"><span class="comment"> * @return &#123;string&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">numObj.toFixed([fractionDigits])</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> numObj = <span class="number">12345.6789</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 소숫점 이하 반올림</span></span><br><span class="line"><span class="built_in">console</span>.log(numObj.toFixed());   <span class="comment">// '12346'</span></span><br><span class="line"><span class="comment">// 소숫점 이하 1자리수 유효, 나머지 반올림</span></span><br><span class="line"><span class="built_in">console</span>.log(numObj.toFixed(<span class="number">1</span>));  <span class="comment">// '12345.7'</span></span><br><span class="line"><span class="comment">// 소숫점 이하 2자리수 유효, 나머지 반올림</span></span><br><span class="line"><span class="built_in">console</span>.log(numObj.toFixed(<span class="number">2</span>));  <span class="comment">// '12345.68'</span></span><br><span class="line"><span class="comment">// 소숫점 이하 3자리수 유효, 나머지 반올림</span></span><br><span class="line"><span class="built_in">console</span>.log(numObj.toFixed(<span class="number">3</span>));  <span class="comment">// '12345.679'</span></span><br><span class="line"><span class="comment">// 소숫점 이하 6자리수 유효, 나머지 반올림</span></span><br><span class="line"><span class="built_in">console</span>.log(numObj.toFixed(<span class="number">6</span>));  <span class="comment">// '12345.678900'</span></span><br></pre></td></tr></table></figure>
 
 <br>
 
-<h4 id="Number-prototype-toString-radix-number-string-ES1"><a href="#Number-prototype-toString-radix-number-string-ES1" class="headerlink" title="Number.prototype.toString(radix?: number): string ES1"></a>Number.prototype.toString(radix?: number): string ES1</h4><p>숫자를 문자열로 변환하여 반환한다.</p>
+<h4 id="Number-prototype-toString-radix-number-string-ES1"><a href="#Number-prototype-toString-radix-number-string-ES1" class="headerlink" title="Number.prototype.toString(radix?: number): string ES1 "></a>Number.prototype.toString(radix?: number): string ES1 <a id="b8"></a></h4><p>숫자를 문자열로 변환하여 반환한다.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param &#123;number&#125; [radix] - 2~36 사이의 정수값으로 진법을 나타낸다. 옵션으로 생략 가능하다.</span></span><br><span class="line"><span class="comment"> * @return &#123;string&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">numObj.toString([radix])</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> count = <span class="number">10</span>;</span><br><span class="line"><span class="built_in">console</span>.log(count.toString());   <span class="comment">// '10'</span></span><br><span class="line"><span class="built_in">console</span>.log((<span class="number">17</span>).toString());    <span class="comment">// '17'</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">17</span> .toString());     <span class="comment">// '17'</span></span><br><span class="line"><span class="built_in">console</span>.log((<span class="number">17.2</span>).toString());  <span class="comment">// '17.2'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> x = <span class="number">16</span>;</span><br><span class="line"><span class="built_in">console</span>.log(x.toString(<span class="number">2</span>));       <span class="comment">// '10000'</span></span><br><span class="line"><span class="built_in">console</span>.log(x.toString(<span class="number">8</span>));       <span class="comment">// '20'</span></span><br><span class="line"><span class="built_in">console</span>.log(x.toString(<span class="number">16</span>));      <span class="comment">// '10'</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log((<span class="number">254</span>).toString(<span class="number">16</span>));  <span class="comment">// 'fe'</span></span><br><span class="line"><span class="built_in">console</span>.log((<span class="number">-10</span>).toString(<span class="number">2</span>));   <span class="comment">// '-1010'</span></span><br><span class="line"><span class="built_in">console</span>.log((<span class="number">-0xff</span>).toString(<span class="number">2</span>)); <span class="comment">// '-11111111'</span></span><br></pre></td></tr></table></figure>
 
+<h5 id="정수-리터럴과-함께-메소드를-사용할-경우-주의점"><a href="#정수-리터럴과-함께-메소드를-사용할-경우-주의점" class="headerlink" title="정수 리터럴과 함께 메소드를 사용할 경우. 주의점"></a>정수 리터럴과 함께 메소드를 사용할 경우. 주의점</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">77.</span>toString(); <span class="comment">// SyntaxError: Invalid or unexpected token</span></span><br></pre></td></tr></table></figure>
+
+<p>의 경우 <code>.</code>이 소숫점인지 아닌지 모르기 때문에 에러를 일으킨다. 따라서 다음과 같은 방법을 권장한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="number">77</span>).toString(); <span class="comment">// '77'</span></span><br></pre></td></tr></table></figure>
+
 <br>
 
-<h4 id="Number-prototype-valueOf-number-ES1"><a href="#Number-prototype-valueOf-number-ES1" class="headerlink" title="Number.prototype.valueOf(): number ES1"></a>Number.prototype.valueOf(): number ES1</h4><p>Number 객체의 원시 타입 값(primitive value)을 반환한다.</p>
+<h4 id="Number-prototype-valueOf-number-ES1"><a href="#Number-prototype-valueOf-number-ES1" class="headerlink" title="Number.prototype.valueOf(): number ES1 "></a>Number.prototype.valueOf(): number ES1 <a id="b9"></a></h4><p>Number 객체의 원시 타입 값(primitive value)을 반환한다.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> numObj = <span class="keyword">new</span> <span class="built_in">Number</span>(<span class="number">10</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> numObj); <span class="comment">// object</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> num = numObj.valueOf();</span><br><span class="line"><span class="built_in">console</span>.log(num);           <span class="comment">// 10</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> num);    <span class="comment">// number</span></span><br></pre></td></tr></table></figure>
         </div>
         <footer class="article-footer">
@@ -334,7 +334,7 @@
 
 
 
-    <a data-url="http://yoursite.com/2019/10/22/number-object/" data-id="ck2buvsfb00b66zz0rerrm9xz" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2019/10/22/number-object/" data-id="ck2c5ag3100b95az0reh92r2f" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -406,11 +406,11 @@
         },
         "headline": "Number 래퍼 객체",
         "image": "http://yoursite.comhttps://cdn.pixabay.com/photo/2015/11/10/08/22/pay-1036469_960_720.jpg",
-        "keywords": "hexo git Web coding developer HTML CSS algorithm javascript",
+        "keywords": "hexo git Web coding developer CSS HTML algorithm javascript",
         "genre": "Develop Javascript",
         "datePublished": "2019-10-22",
         "dateCreated": "2019-10-22",
-        "dateModified": "2019-10-22",
+        "dateModified": "2019-10-30",
         "url": "http://yoursite.com/2019/10/22/number-object/",
         "description": "
 
@@ -421,11 +421,10 @@ Number Constructor
 Number() 생성자 함수를 통해서 만들어진 Number 객체는 객체다.
 Number Property
 Number.EPSILON
-Number.MAX_VALUE
-Number.MIN_VALUEa
+Number.MAX_VALUE || Number.MIN_VALUE
 Number.POSITIVE_INFINITY
-Number.N",
-        "wordCount": 1370
+Number",
+        "wordCount": 1439
     }
 </script>
 
@@ -516,6 +515,26 @@ Number.N",
                     <li>
                         
                         <div class="item-thumbnail">
+                            <a href="/2019/10/30/DateObject/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/67781764-34945a00-faab-11e9-8821-e3537aba6553.jpeg)" alt="Date 객체" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Develop/">Develop</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Develop/Javascript/">Javascript</a></p>
+                            <p class="item-title"><a href="/2019/10/30/DateObject/" class="title">Date 객체</a></p>
+                            <p class="item-date"><time datetime="2019-10-29T17:46:13.000Z" itemprop="datePublished">2019-10-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
                             <a href="/2019/10/29/javascript-study-17/" class="thumbnail">
     
     
@@ -593,26 +612,6 @@ Number.N",
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2019/10/28/daily-algorithm25/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://images.velog.io/post-images/leejh3224/619516b0-e892-11e8-98f5-997ef3c38110/what-is-an-algorithm-featured.png)" alt="daily_algorithm25" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/Algorithm/">Algorithm</a></p>
-                            <p class="item-title"><a href="/2019/10/28/daily-algorithm25/" class="title">daily_algorithm25</a></p>
-                            <p class="item-date"><time datetime="2019-10-28T07:28:11.000Z" itemprop="datePublished">2019-10-28</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -622,7 +621,7 @@ Number.N",
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/">Develop</a><span class="category-list-count">17</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/CSS/">CSS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/GIT/">GIT</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Java/">Java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Javascript/">Javascript</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Tips/">Tips</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/">TIL</a><span class="category-list-count">95</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Algorithm/">Algorithm</a><span class="category-list-count">34</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/GIT/">GIT</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript/">Javascript</a><span class="category-list-count">20</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/linux/">linux</a><span class="category-list-count">4</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/etc/">etc</a><span class="category-list-count">1</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/">Develop</a><span class="category-list-count">18</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/CSS/">CSS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/GIT/">GIT</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Java/">Java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Javascript/">Javascript</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Tips/">Tips</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/">TIL</a><span class="category-list-count">95</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Algorithm/">Algorithm</a><span class="category-list-count">34</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/GIT/">GIT</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript/">Javascript</a><span class="category-list-count">20</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/linux/">linux</a><span class="category-list-count">4</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/etc/">etc</a><span class="category-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -632,7 +631,7 @@ Number.N",
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a><span class="archive-list-count">77</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a><span class="archive-list-count">37</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a><span class="archive-list-count">78</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a><span class="archive-list-count">37</span></li></ul>
         </div>
     </div>
 
@@ -642,7 +641,7 @@ Number.N",
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">96</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ESLint/">ESLint</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a><span class="tag-list-count">95</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/">JAVA</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MarkUP/">MarkUP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Selector/">Selector</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TIL/">TIL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a><span class="tag-list-count">113</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorism/">algorism</a><span class="tag-list-count">29</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a><span class="tag-list-count">78</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/coding/">coding</a><span class="tag-list-count">113</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/developer/">developer</a><span class="tag-list-count">113</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">113</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">113</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/inline-block/">inline-block</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">79</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">3</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">97</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ESLint/">ESLint</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a><span class="tag-list-count">96</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/">JAVA</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MarkUP/">MarkUP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Selector/">Selector</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TIL/">TIL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a><span class="tag-list-count">114</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorism/">algorism</a><span class="tag-list-count">29</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a><span class="tag-list-count">79</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/coding/">coding</a><span class="tag-list-count">114</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/developer/">developer</a><span class="tag-list-count">114</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">114</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">114</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/inline-block/">inline-block</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">80</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">3</span></li></ul>
         </div>
     </div>
 
