@@ -10,10 +10,10 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="hexo,git,Web,coding,developer,algorithm,HTML,CSS,javascript">
+        <meta name="keywords" content="hexo,git,Web,coding,developer,CSS,HTML,algorithm,javascript">
     
     <meta name="description" content="JavaScript 30강(M) 30강 :  문서 객체 모델 (Document Object Model)  DOM (Document Object Model)  DOM tree  DOM tree의 종류 DOM 조작 순서    DOM Query (요소 접근)  html 예제  하나의 요소 노드 선택  document.getElementById(id) docu">
-<meta name="keywords" content="hexo,git,Web,coding,developer,algorithm,HTML,CSS,javascript">
+<meta name="keywords" content="hexo,git,Web,coding,developer,CSS,HTML,algorithm,javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="DOM">
 <meta property="og:url" content="http://yoursite.com/2019/10/29/DOM/index.html">
@@ -21,7 +21,7 @@
 <meta property="og:description" content="JavaScript 30강(M) 30강 :  문서 객체 모델 (Document Object Model)  DOM (Document Object Model)  DOM tree  DOM tree의 종류 DOM 조작 순서    DOM Query (요소 접근)  html 예제  하나의 요소 노드 선택  document.getElementById(id) docu">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://user-images.githubusercontent.com/31315644/67669470-4e537580-f9b5-11e9-93b5-0a8af449bc72.jpeg">
-<meta property="og:updated_time" content="2019-10-29T02:34:31.327Z">
+<meta property="og:updated_time" content="2019-10-29T02:37:35.041Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DOM">
 <meta name="twitter:description" content="JavaScript 30강(M) 30강 :  문서 객체 모델 (Document Object Model)  DOM (Document Object Model)  DOM tree  DOM tree의 종류 DOM 조작 순서    DOM Query (요소 접근)  html 예제  하나의 요소 노드 선택  document.getElementById(id) docu">
@@ -331,7 +331,10 @@
 </blockquote>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">      .red  &#123; color: #ff0000; &#125;</span><br><span class="line">      .blue &#123; color: #0000ff; &#125;</span><br><span class="line">    &lt;<span class="regexp">/style&gt;</span></span><br><span class="line"><span class="regexp">  &lt;/</span>head&gt;</span><br><span class="line">  &lt;body&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;h1&gt;Cities&lt;<span class="regexp">/h1&gt;</span></span><br><span class="line"><span class="regexp">      &lt;ul&gt;</span></span><br><span class="line"><span class="regexp">        &lt;li id="one" class="red"&gt;Seoul&lt;/</span>li&gt;</span><br><span class="line">        &lt;li id=<span class="string">"two"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"red"</span>&gt;London&lt;<span class="regexp">/li&gt;</span></span><br><span class="line"><span class="regexp">        &lt;li id="three" class="red"&gt;Newyork&lt;/</span>li&gt;</span><br><span class="line">        &lt;li id=<span class="string">"four"</span>&gt;Tokyo&lt;<span class="regexp">/li&gt;</span></span><br><span class="line"><span class="regexp">      &lt;/u</span>l&gt;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  &lt;/</span>body&gt;</span><br><span class="line">&lt;<span class="regexp">/html&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p><img src="https://poiemaweb.com/img/dom-tree.png" alt="DOM tree" style="zoom:50%;">\</p>
+<img src="https://poiemaweb.com/img/dom-tree.png" alt="DOM tree" style="zoom:50%;">
+
+
+
 <br>
 
 <h4 id="DOM-tree의-종류"><a href="#DOM-tree의-종류" class="headerlink" title="DOM tree의 종류"></a>DOM tree의 종류</h4><ul>
@@ -735,8 +738,7 @@
 
 <br>
 
-<p>####<a href="https://developer.mozilla.org/ko/docs/Web/API/Window/getComputedStyle" target="_blank" rel="noopener">window.getComputedStyle(element[, pseudoElt])</a> <a id="last2"></a></p>
-<ul>
+<h4 id="window-getComputedStyle-element-pseudoElt"><a href="#window-getComputedStyle-element-pseudoElt" class="headerlink" title="window.getComputedStyle(element[, pseudoElt]) "></a><a href="https://developer.mozilla.org/ko/docs/Web/API/Window/getComputedStyle" target="_blank" rel="noopener">window.getComputedStyle(element[, pseudoElt])</a> <a id="last2"></a></h4><ul>
 <li>style 프로퍼티의 값을 취득할 때 사용한다.</li>
 <li>인자로 주어진 요소의 모든 CSS 프로퍼티 값을 반환한다.</li>
 <li>2번쨰 인자는 옵션이며, 의사 요소를 지정하는 문자열을 입력한다. (보통의 요소들은 생략 혹은 null을 적는다.)</li>
@@ -755,7 +757,7 @@
 
 
 
-    <a data-url="http://yoursite.com/2019/10/29/DOM/" data-id="ck2b8n468000i7xz0eqfsk7x8" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2019/10/29/DOM/" data-id="ck2b8rmnh000nv9z0hgpt5b9q" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -827,7 +829,7 @@
         },
         "headline": "DOM",
         "image": "http://yoursite.comhttps://user-images.githubusercontent.com/31315644/67669470-4e537580-f9b5-11e9-93b5-0a8af449bc72.jpeg",
-        "keywords": "hexo git Web coding developer algorithm HTML CSS javascript",
+        "keywords": "hexo git Web coding developer CSS HTML algorithm javascript",
         "genre": "Develop Javascript",
         "datePublished": "2019-10-29",
         "dateCreated": "2019-10-29",
@@ -857,7 +859,7 @@ html 예제
 
 document.getElementById(id)
 docu",
-        "wordCount": 4921
+        "wordCount": 4927
     }
 </script>
 
