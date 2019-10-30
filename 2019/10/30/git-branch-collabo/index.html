@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+
+    
+
+    
+    <title>깃 브랜치 및 협업 | HYEOK999&#39;s Blog</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="hexo,git,Web,coding,developer,CSS,HTML,algorithm,javascript">
+    
+    <meta name="description" content="git branch branch 확인 branch 새로 만들기 branch 이동 (반드시 커밋 다 하고 넘어가야됨) 타 브랜치 내용 병합 git checkout 브랜치명 -&amp;gt; 해당 브랜치에서 푸쉬하기 master 브랜치에서 최신상태를 땡겨오기 브랜치 지우기 실제 개발환경에서 브랜치 설정 예   협업 git-flow 란? git flow 지원 확인">
+<meta name="keywords" content="hexo,git,Web,coding,developer,CSS,HTML,algorithm,javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="깃 브랜치 및 협업">
+<meta property="og:url" content="http://yoursite.com/2019/10/30/git-branch-collabo/index.html">
+<meta property="og:site_name" content="HYEOK999&#39;s Blog">
+<meta property="og:description" content="git branch branch 확인 branch 새로 만들기 branch 이동 (반드시 커밋 다 하고 넘어가야됨) 타 브랜치 내용 병합 git checkout 브랜치명 -&amp;gt; 해당 브랜치에서 푸쉬하기 master 브랜치에서 최신상태를 땡겨오기 브랜치 지우기 실제 개발환경에서 브랜치 설정 예   협업 git-flow 란? git flow 지원 확인">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://user-images.githubusercontent.com/31315644/67828520-0cdadb80-fb17-11e9-8f7c-a85e1454eb01.jpeg">
+<meta property="og:updated_time" content="2019-10-30T10:40:52.003Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="깃 브랜치 및 협업">
+<meta name="twitter:description" content="git branch branch 확인 branch 새로 만들기 branch 이동 (반드시 커밋 다 하고 넘어가야됨) 타 브랜치 내용 병합 git checkout 브랜치명 -&amp;gt; 해당 브랜치에서 푸쉬하기 master 브랜치에서 최신상태를 땡겨오기 브랜치 지우기 실제 개발환경에서 브랜치 설정 예   협업 git-flow 란? git flow 지원 확인">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/31315644/67828520-0cdadb80-fb17-11e9-8f7c-a85e1454eb01.jpeg">
+    
+
+    
+
+    
+        <link rel="icon" href="/images/favicon_io/favicon.ico">
+    
+
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Architects+Daughter&display=swap" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin+Sketch&display=swap">
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">HYEOK999&#39;s Daily Develop</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/">Develop</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/CSS/">CSS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/GIT/">GIT</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/TIPS/">TIPS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Tips/">Tips</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/">TIL</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Algorithm/">Algorithm</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/GIT/">GIT</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/linux/">linux</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/etc/">etc</a></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="https://about.me/iasg2004">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Develop/">Develop</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Develop/TIPS/">TIPS</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-git-branch-collabo" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        깃 브랜치 및 협업
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/10/30/git-branch-collabo/" class="article-date">
+            <time datetime="2019-10-30T10:39:50.000Z" itemprop="datePublished">2019-10-30</time>
+        </a>
+    </div>
+
+		
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/CSS/">CSS</a>, <a class="tag-link" href="/tags/HTML/">HTML</a>, <a class="tag-link" href="/tags/Web/">Web</a>, <a class="tag-link" href="/tags/algorithm/">algorithm</a>, <a class="tag-link" href="/tags/coding/">coding</a>, <a class="tag-link" href="/tags/developer/">developer</a>, <a class="tag-link" href="/tags/git/">git</a>, <a class="tag-link" href="/tags/hexo/">hexo</a>, <a class="tag-link" href="/tags/javascript/">javascript</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p><img src="https://user-images.githubusercontent.com/31315644/67828520-0cdadb80-fb17-11e9-8f7c-a85e1454eb01.jpeg" alt="chain"></p>
+<hr>
+<ul>
+<li>git branch<ul>
+<li>branch 확인</li>
+<li>branch 새로 만들기</li>
+<li>branch 이동 (반드시 커밋 다 하고 넘어가야됨)</li>
+<li>타 브랜치 내용 병합</li>
+<li>git checkout 브랜치명 -&gt; 해당 브랜치에서 푸쉬하기</li>
+<li>master 브랜치에서 최신상태를 땡겨오기</li>
+<li>브랜치 지우기</li>
+<li>실제 개발환경에서 브랜치 설정 예</li>
+</ul>
+</li>
+<li>협업<ul>
+<li>git-flow 란?<ul>
+<li>git flow 지원 확인</li>
+</ul>
+</li>
+<li>실습<ul>
+<li>git flow init</li>
+<li>기능 feature 브랜치 생성  - <code>git flow feature start 브랜치명</code></li>
+<li>기능 feature 브랜치 개발 완료 후 -&gt; 종료 -&gt; devleop에 병합하기 - <code>git flow feature finish 브랜치명</code></li>
+<li>feature 브랜치 에서 develop 브랜치 병합치기. - (feature 브랜치에서) <code>git merge develop</code></li>
+<li>feature 브랜치 에서 develop 브랜치 병합치기. - (feature 브랜치에서) <code>git merge develop</code></li>
+<li>feature branch 지우기</li>
+</ul>
+</li>
+<li>배포<ul>
+<li>release start</li>
+<li>release finish</li>
+<li>git 파일 이동 시 주의점</li>
+</ul>
+</li>
+<li>협업 <ul>
+<li>예시 일반적 (팀원 기준)</li>
+<li>시나리오</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="git-branch"><a href="#git-branch" class="headerlink" title="git branch"></a>git branch</h2><h3 id="branch-확인"><a href="#branch-확인" class="headerlink" title="branch 확인"></a>branch 확인</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gir branch</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="branch-새로-만들기"><a href="#branch-새로-만들기" class="headerlink" title="branch 새로 만들기"></a>branch 새로 만들기</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch 브랜치명</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="branch-이동-반드시-커밋-다-하고-넘어가야됨"><a href="#branch-이동-반드시-커밋-다-하고-넘어가야됨" class="headerlink" title="branch 이동 (반드시 커밋 다 하고 넘어가야됨)"></a>branch 이동 (반드시 커밋 다 하고 넘어가야됨)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout 브랜치명</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="타-브랜치-내용-병합"><a href="#타-브랜치-내용-병합" class="headerlink" title="타 브랜치 내용 병합"></a>타 브랜치 내용 병합</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge 브랜치명</span><br></pre></td></tr></table></figure>
+
+<p> ( <strong>만약 , 충돌이 난다면  ➤  충돌 수정 후  ➤  git add  ➤  git commit 재실행 )</strong></p>
+<p>github 페이지  ➤  insight  ➤  Network에 보면 현재 git의 상태가 어디쯤인지 파악할수 있다.</p>
+<br>
+
+<h3 id="git-checkout-브랜치명-gt-해당-브랜치에서-푸쉬하기"><a href="#git-checkout-브랜치명-gt-해당-브랜치에서-푸쉬하기" class="headerlink" title="git checkout 브랜치명 -&gt; 해당 브랜치에서 푸쉬하기"></a>git checkout 브랜치명 -&gt; 해당 브랜치에서 푸쉬하기</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout 브랜치명</span><br><span class="line">git push -u origin 브랜치명</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="master-브랜치에서-최신상태를-땡겨오기"><a href="#master-브랜치에서-최신상태를-땡겨오기" class="headerlink" title="master 브랜치에서 최신상태를 땡겨오기"></a>master 브랜치에서 최신상태를 땡겨오기</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull origin master</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="브랜치-지우기"><a href="#브랜치-지우기" class="headerlink" title="브랜치 지우기"></a>브랜치 지우기</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -D 브랜치명</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="실제-개발환경에서-브랜치-설정-예"><a href="#실제-개발환경에서-브랜치-설정-예" class="headerlink" title="실제 개발환경에서 브랜치 설정 예"></a>실제 개발환경에서 브랜치 설정 예</h3><p>master  - develop을 머지</p>
+<p> ⌙ develop - layout을 머지</p>
+<p>​        ⌙ layout  -&gt;  차후 develop에 커밋</p>
+<p>이 과정을 Git-flow로 한다.</p>
+<br>
+
+<hr>
+<h2 id="협업"><a href="#협업" class="headerlink" title="협업"></a>협업</h2><h3 id="Git-Flow란"><a href="#Git-Flow란" class="headerlink" title="Git-Flow란?"></a>Git-Flow란?</h3><ul>
+<li>git-flow는 전략적으로 관리하는 Git을 쉽고 편하게 도와주는 도구. :)</li>
+</ul>
+<br>
+
+<h4 id="git-flow-지원-확인"><a href="#git-flow-지원-확인" class="headerlink" title="git flow 지원 확인"></a>git flow 지원 확인</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git flow</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="실습"><a href="#실습" class="headerlink" title="실습"></a>실습</h3><ul>
+<li><code>git push -u origin master</code>: 새로운 브랜치에 대한 존재를 remote에게 알리기 위해 사용. (처음에만 알리면 됨.)</li>
+<li><code>git branch</code> : 현재 만들어져있는 브랜치 확인.</li>
+<li><code>git checkout 브랜치명</code> : 해당 브랜치로 이동. (어디서나 가능, 개념이기 때문)</li>
+</ul>
+<h4 id="1-git-flow-init"><a href="#1-git-flow-init" class="headerlink" title="1. git flow init"></a>1. git flow init</h4><ul>
+<li><code>git flow init</code>을 한 순간 <code>develop</code> 브랜치를 만들고 <code>develop</code>으로 checkout까지 함.</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git flow init</span><br><span class="line">&gt; 기본 [master]</span><br><span class="line">&gt; 전부 엔터</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://user-images.githubusercontent.com/31315644/67849283-aa4f0300-fb49-11e9-86f0-f8c725e259e3.jpeg" alt="git1"></p>
+<br>
+
+<h4 id="2-기능-feature-브랜치-생성-git-flow-feature-start-브랜치명"><a href="#2-기능-feature-브랜치-생성-git-flow-feature-start-브랜치명" class="headerlink" title="2. 기능 feature 브랜치 생성  - git flow feature start 브랜치명"></a>2. 기능 feature 브랜치 생성  - <code>git flow feature start 브랜치명</code></h4><ul>
+<li><code>feature</code>는 <code>develop</code>에서 따야만 하므로 현재 위치가 <code>develop</code>인지 확인을 먼저 한다.</li>
+<li><code>feature</code>브랜치 이름은 브랜치 이름만 들어도 알 수 있게금 이름 디테일을 확실히 해야 한다.</li>
+<li>자동으로 만든 브랜치로 이동한다.</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// git flow feature start 브랜치명</span><br><span class="line">git flow feature start markup-init</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="3-기능-feature-브랜치-개발-완료-후-gt-종료-gt-devleop에-병합하기-git-flow-feature-finish-브랜치명"><a href="#3-기능-feature-브랜치-개발-완료-후-gt-종료-gt-devleop에-병합하기-git-flow-feature-finish-브랜치명" class="headerlink" title="3. 기능 feature 브랜치 개발 완료 후 -&gt; 종료 -&gt; devleop에 병합하기 - git flow feature finish 브랜치명"></a>3. 기능 feature 브랜치 개발 완료 후 -&gt; 종료 -&gt; devleop에 병합하기 - <code>git flow feature finish 브랜치명</code></h4><ul>
+<li>자동으로 <code>develop</code> 브랜치로 이동한다.</li>
+<li>해당 기능 <code>feature</code> 브랜치에서 작성했던 내용은 상위 브랜치로 병합된다.</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// git flow feature finish 브랜치명</span><br><span class="line">git flow feature finish markup-init</span><br><span class="line">// 자동으로 develop 브랜치로 이동하게 됩니다.</span><br></pre></td></tr></table></figure>
+
+ <br>
+
+<h4 id="4-feature-브랜치-에서-develop-브랜치-병합치기-feature-브랜치에서-git-merge-develop"><a href="#4-feature-브랜치-에서-develop-브랜치-병합치기-feature-브랜치에서-git-merge-develop" class="headerlink" title="4. feature 브랜치 에서 develop 브랜치 병합치기. - (feature 브랜치에서) git merge develop"></a>4. feature 브랜치 에서 develop 브랜치 병합치기. - (feature 브랜치에서) <code>git merge develop</code></h4><ul>
+<li>새로운 <code>feature</code> 가 만들어 져 있다고 가정 ( 이미 다 하고나서 생성하면 자동 병합된다. )</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// git flow feature start 브랜치명</span><br><span class="line">git flow feature start style-init</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>develop</code> 브랜치의 내용을 해당 <code>feature</code> 브랜치로 가져오기</li>
+<li>현재 위치는 <code>feature</code> 브랜치</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// git flow feature start 브랜치명</span><br><span class="line">git merge develop</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="feature-branch-지우기"><a href="#feature-branch-지우기" class="headerlink" title="feature branch 지우기"></a>feature branch 지우기</h4><ul>
+<li>만들고 개발중이던 기능이 아예 무산됬다고 가정<ol>
+<li>상위 브랜치(develop)으로 올라간다. -&gt;  <code>git checkout 브랜치명</code></li>
+<li>해당 기능 브랜치를 제거 해버리면된다. -&gt;  <code>git branch -D feature/브랜치명</code></li>
+</ol>
+</li>
+<li>해당 기능 브랜치는 commit이 되어있어야 한다. </li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">git flow feature start wrong-feature</span><br><span class="line">// ~~~ 내용 추가 (html 파일 생성 내용 추가등등)</span><br><span class="line">// html 내용 git add -&gt; git commit </span><br><span class="line">// 해당 기능이 무산됨. 해당 wrong-feature가 존재해서는 안됨.</span><br><span class="line"></span><br><span class="line">// 1. 상위 브랜치로 이동(develop)</span><br><span class="line">git checkout develop</span><br><span class="line"></span><br><span class="line">// 2. 해당 브랜치에서 잘못된 기능 브랜치를 제거한다.</span><br><span class="line">git branch -D feature/wrong-feature</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="배포"><a href="#배포" class="headerlink" title="배포"></a>배포</h3><p><img src="https://user-images.githubusercontent.com/31315644/66800837-c94a7400-ef51-11e9-874f-af33c780e892.png" alt="버전"></p>
+<h4 id="release-start"><a href="#release-start" class="headerlink" title="release start"></a>release start</h4><ul>
+<li>배포 버전 브랜치를 생성한다.</li>
+<li>맨뒤에 버전 명을 적어주어야 한다. </li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git flow release start v0.0.1.001910300002</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="release-finish"><a href="#release-finish" class="headerlink" title="release finish"></a>release finish</h4><ul>
+<li>release finish 명령이 되면 자동으로 모든 내용이 master와 병합이된다.</li>
+<li>finish 후 branch 위치는 develop</li>
+<li>develop push , master push 전부 해야한다.</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git flow release finish v0.0.1.001910300002</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="git-파일-이동-시-주의점"><a href="#git-파일-이동-시-주의점" class="headerlink" title="git 파일 이동 시 주의점"></a>git 파일 이동 시 주의점</h4><ul>
+<li>git이 관리하는 폴더 중에 파일을 강제로 이동,잘라내기를 해서 다른곳으로 이동시키면 git은 해당 파일이 삭제되고 다른 쪽에 새로 생긴걸로 착가한다. ( <code>mv 파일명 이동위치명</code> )</li>
+<li>따라서 이것을 방지하기 위해 앞에 <code>git mv 파일명 이동위치명</code>을 적어준다. </li>
+</ul>
+<br>
+
+<h3 id="협업-예시"><a href="#협업-예시" class="headerlink" title="협업 예시"></a>협업 예시</h3><h4 id="일반적-팀원-기준"><a href="#일반적-팀원-기준" class="headerlink" title="일반적 ( 팀원 기준 )"></a>일반적 ( 팀원 기준 )</h4><p>팀장의 깃 폴더를 fork 뜬다. ➢ 로컬에서 내 레포(fork한) git clone을 한다. ➢ clone한 폴더로 이동한다. ➢<br>git flow init을 한다. ➢ git flow feature start 브랜치명 ➢ (현재 위치:feature 브랜치) 해당 브랜치에서 내용 수정 ➢<br>add / commit ➢ git flow feature finish 브랜치명 ➢ (현재 위치:develop) 자신의 레포에 푸쉬 ➢<br>내용 변경 확인 후 ➢ git 페이지에서 pull request 버튼 클릭 ➢ 내 develop :  팀장의 devleop ➢ 메시지 작성 ➢ 전송 ➢<br>팀장 레포에서 풀리퀘스트를 받아주면 팀장의 develop에 작업내용 반영.</p>
+<br>
+
+<h3 id="시나리오"><a href="#시나리오" class="headerlink" title="시나리오"></a>시나리오</h3><h4 id="팀장"><a href="#팀장" class="headerlink" title="팀장"></a>팀장</h4><ol>
+<li>레포 생성 ➢ git clone ➢ git flow init (자동 develop 브랜치 이동) ➢ touch index.html 생성 ➢ git add, commit  ➢ git push </li>
+</ol>
+<br>
+
+<h4 id="팀원-A"><a href="#팀원-A" class="headerlink" title="팀원 A"></a>팀원 A</h4><ol start="2">
+<li>팀장 깃을 fork를 한다. ➢ fork 한 자신의 레포를 clone ➢ git flow init ➢ (현재 develop) git pull origin develop ➢ git feature start ➢ git feature finish ➢ push ➢ 자신의 git 페이지에서 Create pull request(github.com) </li>
+</ol>
+<br>
+
+<h4 id="팀장-1"><a href="#팀장-1" class="headerlink" title="팀장"></a>팀장</h4><ol start="3">
+<li>Merge pull request(github.com) </li>
+</ol>
+<br>
+
+<h4 id="팀원-B-2번에서-팀원-A와-fork만-같이-한-상황"><a href="#팀원-B-2번에서-팀원-A와-fork만-같이-한-상황" class="headerlink" title="팀원 B (2번에서 팀원 A와 fork만 같이 한 상황)"></a>팀원 B (2번에서 팀원 A와 fork만 같이 한 상황)</h4><ol start="4">
+<li>git rmote add pmorigin [팀장깃주소] ➢ git pull pmrorigin develop</li>
+<li>팀장에서 issue를 남긴다 .</li>
+</ol>
+<br>
+
+<h4 id="팀장-2"><a href="#팀장-2" class="headerlink" title="팀장"></a>팀장</h4><ol start="6">
+<li>issue 확인 하고 역할 분배 - Assignees : 담당자 , Labels : 업무</li>
+</ol>
+<p><img src="https://user-images.githubusercontent.com/31315644/67849282-a9b66c80-fb49-11e9-8813-6e512a6e651d.jpeg" alt="zxzx21"></p>
+<br>
+
+<h4 id="팀원들"><a href="#팀원들" class="headerlink" title="팀원들"></a>팀원들</h4><ol start="7">
+<li>git rmote add pmorigin [팀장깃주소]  (리모트 연결했다면 생략가능) ➢ git pull pmorigin develop  ➢ git feature start ➢ 내용작성 ➢ git add/commit ➢ git feature finish ➢ push ➢ 자신의 git 페이지에서 Create pull request(github.com) </li>
+</ol>
+<br>
+
+<h4 id="팀장-3"><a href="#팀장-3" class="headerlink" title="팀장"></a>팀장</h4><ol start="8">
+<li>Merge pull request(github.com) ➢ git pull ➢ git flow release start v0.0.1.001910300001 ➢ git flow release finish v0.0.1.001910300001 ➢ (현재 위치 develop)  ➢ git push ➢ git checkout master ➢ (현재 위치 master) ➢  git push</li>
+</ol>
+<p><strong>모든 팀원은 merge 발생 시 pm-origin의 develop을 자신의 develop 으로 pull 하여 업데이트 한다.</strong></p>
+<br>
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://yoursite.com/2019/10/30/git-branch-collabo/" data-id="ck2d5ju1f0046nyz0vt6038gy" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Jun Hyeok Kim"
+        },
+        "headline": "깃 브랜치 및 협업",
+        "image": "http://yoursite.comhttps://user-images.githubusercontent.com/31315644/67828520-0cdadb80-fb17-11e9-8f7c-a85e1454eb01.jpeg",
+        "keywords": "hexo git Web coding developer CSS HTML algorithm javascript",
+        "genre": "Develop TIPS",
+        "datePublished": "2019-10-30",
+        "dateCreated": "2019-10-30",
+        "dateModified": "2019-10-30",
+        "url": "http://yoursite.com/2019/10/30/git-branch-collabo/",
+        "description": "
+
+
+git branch
+branch 확인
+branch 새로 만들기
+branch 이동 (반드시 커밋 다 하고 넘어가야됨)
+타 브랜치 내용 병합
+git checkout 브랜치명 -&gt; 해당 브랜치에서 푸쉬하기
+master 브랜치에서 최신상태를 땡겨오기
+브랜치 지우기
+실제 개발환경에서 브랜치 설정 예
+
+
+협업
+git-flow 란?
+git flow 지원 확인",
+        "wordCount": 1189
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="https://www.facebook.com/profile.php?id=100003801986180" target="_blank" rel="noopener">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/HYEOK999" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="youtube" href="https://www.youtube.com" target="_blank" rel="noopener">
+                        <i class="icon fa fa-youtube"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2019/10/30/daily-algorithm26/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">daily_algorithm26</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/10/30/git-branch-collabo/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/67828520-0cdadb80-fb17-11e9-8f7c-a85e1454eb01.jpeg)" alt="깃 브랜치 및 협업" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Develop/">Develop</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Develop/TIPS/">TIPS</a></p>
+                            <p class="item-title"><a href="/2019/10/30/git-branch-collabo/" class="title">깃 브랜치 및 협업</a></p>
+                            <p class="item-date"><time datetime="2019-10-30T10:39:50.000Z" itemprop="datePublished">2019-10-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/10/30/daily-algorithm26/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://images.velog.io/post-images/leejh3224/619516b0-e892-11e8-98f5-997ef3c38110/what-is-an-algorithm-featured.png)" alt="daily_algorithm26" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/Algorithm/">Algorithm</a></p>
+                            <p class="item-title"><a href="/2019/10/30/daily-algorithm26/" class="title">daily_algorithm26</a></p>
+                            <p class="item-date"><time datetime="2019-10-30T10:39:37.000Z" itemprop="datePublished">2019-10-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/10/30/DateObject/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/67781764-34945a00-faab-11e9-8821-e3537aba6553.jpeg)" alt="Date 객체" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Develop/">Develop</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Develop/Javascript/">Javascript</a></p>
+                            <p class="item-title"><a href="/2019/10/30/DateObject/" class="title">Date 객체</a></p>
+                            <p class="item-date"><time datetime="2019-10-29T17:46:13.000Z" itemprop="datePublished">2019-10-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/10/29/javascript-study-17/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/65933403-536fe400-e44c-11e9-981d-c4e8c1f86998.png)" alt="javascript-study-17" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/Javascript/">Javascript</a></p>
+                            <p class="item-title"><a href="/2019/10/29/javascript-study-17/" class="title">javascript-study-17</a></p>
+                            <p class="item-date"><time datetime="2019-10-29T04:05:08.000Z" itemprop="datePublished">2019-10-29</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/10/29/javascript-preview-30/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/66104821-b9976b00-e5f4-11e9-84e9-20c797dd2c51.jpeg)" alt="javascript-preview-30" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a></p>
+                            <p class="item-title"><a href="/2019/10/29/javascript-preview-30/" class="title">javascript-preview-30</a></p>
+                            <p class="item-date"><time datetime="2019-10-29T02:53:28.000Z" itemprop="datePublished">2019-10-29</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/">Develop</a><span class="category-list-count">19</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/CSS/">CSS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/GIT/">GIT</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Java/">Java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Javascript/">Javascript</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/TIPS/">TIPS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Tips/">Tips</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/">TIL</a><span class="category-list-count">96</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Algorithm/">Algorithm</a><span class="category-list-count">35</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/GIT/">GIT</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript/">Javascript</a><span class="category-list-count">20</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/linux/">linux</a><span class="category-list-count">4</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/etc/">etc</a><span class="category-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a><span class="archive-list-count">80</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a><span class="archive-list-count">37</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">99</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ESLint/">ESLint</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a><span class="tag-list-count">98</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/">JAVA</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MarkUP/">MarkUP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Selector/">Selector</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TIL/">TIL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a><span class="tag-list-count">116</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorism/">algorism</a><span class="tag-list-count">29</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a><span class="tag-list-count">81</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/coding/">coding</a><span class="tag-list-count">116</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/developer/">developer</a><span class="tag-list-count">116</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">116</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">116</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/inline-block/">inline-block</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">82</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">3</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://github.com">github</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.naver.com">Naver</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://google.com">Google</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://www.youtube.com/">Youtube</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2019 Jun Hyeok Kim</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'http://yoursite.com/2019/10/30/git-branch-collabo/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
