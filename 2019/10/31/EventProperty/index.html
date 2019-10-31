@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+
+    
+
+    
+    <title>EventProperty | HYEOK999&#39;s Blog</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="hexo,git,Web,coding,developer,CSS,HTML,algorithm,javascript">
+    
+    <meta name="description" content="EVENT 이벤트 란? 이벤트 루프 이벤트 루프(Event Loop)와 동시성(Concurrency) addEventListener 메소드 방식 이벤트의 종류 ( 참고 : Event reference ) UI Event Keyboard Event Mouse Event Focus Event Form Event Clipboard Event   이벤트 핸들">
+<meta name="keywords" content="hexo,git,Web,coding,developer,CSS,HTML,algorithm,javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="EventProperty">
+<meta property="og:url" content="http://yoursite.com/2019/10/31/EventProperty/index.html">
+<meta property="og:site_name" content="HYEOK999&#39;s Blog">
+<meta property="og:description" content="EVENT 이벤트 란? 이벤트 루프 이벤트 루프(Event Loop)와 동시성(Concurrency) addEventListener 메소드 방식 이벤트의 종류 ( 참고 : Event reference ) UI Event Keyboard Event Mouse Event Focus Event Form Event Clipboard Event   이벤트 핸들">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://user-images.githubusercontent.com/31315644/67955024-3b4ed880-fc35-11e9-8e1e-837dc8c282ed.jpg">
+<meta property="og:updated_time" content="2019-10-31T14:24:53.978Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="EventProperty">
+<meta name="twitter:description" content="EVENT 이벤트 란? 이벤트 루프 이벤트 루프(Event Loop)와 동시성(Concurrency) addEventListener 메소드 방식 이벤트의 종류 ( 참고 : Event reference ) UI Event Keyboard Event Mouse Event Focus Event Form Event Clipboard Event   이벤트 핸들">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/31315644/67955024-3b4ed880-fc35-11e9-8e1e-837dc8c282ed.jpg">
+    
+
+    
+
+    
+        <link rel="icon" href="/images/favicon_io/favicon.ico">
+    
+
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Architects+Daughter&display=swap" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin+Sketch&display=swap">
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">HYEOK999&#39;s Daily Develop</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/">Develop</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/CSS/">CSS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/GIT/">GIT</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Tips/">Tips</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/">TIL</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Algorithm/">Algorithm</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/GIT/">GIT</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/linux/">linux</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/etc/">etc</a></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="https://about.me/iasg2004">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Develop/">Develop</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Develop/Javascript/">Javascript</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-EventProperty" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        EventProperty
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/10/31/EventProperty/" class="article-date">
+            <time datetime="2019-10-31T14:24:26.000Z" itemprop="datePublished">2019-10-31</time>
+        </a>
+    </div>
+
+		
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/CSS/">CSS</a>, <a class="tag-link" href="/tags/HTML/">HTML</a>, <a class="tag-link" href="/tags/Web/">Web</a>, <a class="tag-link" href="/tags/algorithm/">algorithm</a>, <a class="tag-link" href="/tags/coding/">coding</a>, <a class="tag-link" href="/tags/developer/">developer</a>, <a class="tag-link" href="/tags/git/">git</a>, <a class="tag-link" href="/tags/hexo/">hexo</a>, <a class="tag-link" href="/tags/javascript/">javascript</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <img src="https://user-images.githubusercontent.com/31315644/67955024-3b4ed880-fc35-11e9-8e1e-837dc8c282ed.jpg" alt="alcohol" style="zoom:50%;">
+
+<hr>
+<h2 id="EVENT"><a href="#EVENT" class="headerlink" title="EVENT"></a>EVENT</h2><ul>
+<li>이벤트 란?</li>
+<li>이벤트 루프</li>
+<li>이벤트 루프(Event Loop)와 동시성(Concurrency)</li>
+<li>addEventListener 메소드 방식</li>
+<li><a href="#a1">이벤트의 종류 ( 참고 : Event reference )</a><ul>
+<li><a href="#a2">UI Event</a></li>
+<li><a href="#a3">Keyboard Event</a></li>
+<li><a href="#a4">Mouse Event</a></li>
+<li><a href="#a5">Focus Event</a></li>
+<li><a href="#a6">Form Event</a></li>
+<li><a href="#a7">Clipboard Event</a></li>
+</ul>
+</li>
+<li>이벤트 핸들러 등록 (3가지)<ul>
+<li><a href="#b1">인라인 이벤트 핸들러 방식</a></li>
+<li><a href="#b2">이벤트 핸들러 프로퍼티 방식</a></li>
+<li><a href="#b3">addEventListener 메소드 방식</a><ul>
+<li>예1</li>
+<li>예2</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>이벤트 핸들러 함수 내부의 this<ul>
+<li><a href="#c1">인라인 이벤트 핸들러 방식</a></li>
+<li><a href="#c2">이벤트 핸들러 프로퍼티 방식</a></li>
+<li><a href="#c3">addEventListener 메소드 방식</a></li>
+</ul>
+</li>
+<li>이벤트의 흐름<ul>
+<li>캡처링 표현 예제</li>
+<li>캡처링 예제</li>
+<li>버블링 예제</li>
+<li>캡처링 과 버블링 혼용</li>
+</ul>
+</li>
+<li>Event 객체<ul>
+<li>Event Property<ul>
+<li><a href="#d1">Event.target</a></li>
+<li><a href="#d2">Event.currentTarget</a></li>
+<li><a href="#d2">Event.type</a></li>
+<li><a href="#d4">Event.cancelabel</a></li>
+<li><a href="#d5">Event.eventPhase</a></li>
+</ul>
+</li>
+<li><a href="#d6">Event.Delegation 이벤트 위임</a></li>
+</ul>
+</li>
+<li>기본 동작의 변경<ul>
+<li><a href="#d8">Event.preventDefault</a></li>
+<li><a href="#d9">Event.stopPropagation</a></li>
+<li><a href="#d10">preventDefault &amp; stopPropagation</a></li>
+</ul>
+</li>
+</ul>
+<br>
+
+<hr>
+<h2 id="이벤트"><a href="#이벤트" class="headerlink" title="이벤트"></a>이벤트</h2><br>
+
+<h3 id="이벤트-란"><a href="#이벤트-란" class="headerlink" title="이벤트 란?"></a>이벤트 란?</h3><blockquote>
+<p>어떤 사건을 의미.</p>
+</blockquote>
+<ul>
+<li>브라우저에서의 이벤트 - 예 : 사용자가 버튼을 클릭했을 때, 웹페이지가 로드되었을 때 등등 </li>
+<li>이벤트는 발생하는 시점이나 순서를 사전에 인지할 수 없다.</li>
+<li>일반적인 제어 흐름과는 다른 접근 방식이 필요하다.</li>
+</ul>
+<p>위와 같은 조건 떄문에 <strong>이벤트가 발생하면 누군가 이를 감지할 수 있어야 하며 그에 대응하는 처리를 호출해 주어야 한다.</strong></p>
+<p><strong>브라우저는 이벤트를 감지</strong>할 수 있으며 <strong>이벤트 발생 시에는 통지</strong>해 준다.<br>이 과정을 통해 <strong>사용자와 웹페이지는 상호작용(Interaction)</strong>이 가능하게 된다.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"myButton"</span>&gt;</span>Click me!<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="built_in">document</span>.querySelector(<span class="string">'.myButton'</span>).addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="actionscript">      alert(<span class="string">'Clicked!'</span>);</span></span><br><span class="line">    &#125;);</span><br><span class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>버튼을 클릭 했을 때, 브라우저는 이벤트를 버튼 클릭이라는 이벤트를 감지하고서 그에 대응하는 처리<code>alert</code>를 호출해준다.</p>
+<p>이벤트는 일반적으로 함수에 연결되며 그 함수는 이벤트가 발생하기 전에는 실행되지 않다가 이벤트가 발생되면 실행된다.<br>이 함수를 <strong>이벤트 핸들러</strong>라 하며 이벤트에 대응하는 처리를 기술한다. ( 위 예제에서는 <code>&#39;addEventListenter&#39;안에 있는 함수</code> 가 이벤트 핸들러)</p>
+<br>
+
+<p>###이벤트 루프(Event Loop)와 동시성(Concurrency)</p>
+<p>브라우저는 단일 쓰레드 에서 이벤트 드리븐 방식으로 동작한다.</p>
+<p>단일쓰레드인데도 마치 멀티 쓰레드 마냥 동시에 처리되는 것처럼 느껴지는데 그것은 <strong>JS의 동시성을 지원하는 이벤트루프</strong> 때문이다. 브라우저의 환경은 다음과 같다. </p>
+<img src="https://poiemaweb.com/img/event-loop.png" alt="event-loop" style="zoom: 50%;">
+
+<br>
+
+<p>구글의 V8을 비롯한 대부분의 JS엔진은 크게 2가지 영역으로 나눌 수 있다.</p>
+<ol>
+<li><p><strong>Call Stack (호출 스택)</strong></p>
+<ul>
+<li>함수가 호출 되면(= 작업이 요청되면) 호출된 함수는 순차적으로 Cal Stack에 쌓이게 되고 순차적으로 실행</li>
+<li>JS는 단 하나의 Call Stack을 이용하기 때문에 해당 task가 종료하기 전까지는 다른 어떤 task도 실행 할 수 없다.</li>
+</ul>
+</li>
+<li><p><strong>Heap</strong></p>
+<ul>
+<li>동적으로 생성된 객체 인스턴스가 할당된느 영역</li>
+</ul>
+</li>
+</ol>
+<br>
+
+<p><strong>비동기(이벤트 포함) 처리는 JS엔진을 구동하는 환경인 브라우저(Node.js)가 담당한다.</strong></p>
+<ol>
+<li><p><strong>Event Queue(Task Queue)</strong></p>
+<ul>
+<li>비동기 처리 함수의 콜백함수, 비동기식 이벤트 헨들러, Timer 함수(setTimeout(), setInterval())의 콜백 함수가 보관되는 영역. </li>
+<li>이벤트 루프에 의해 특정 시점(Call Stack이 비어졌을 떄)에 순차적으로 Call Stack으로 이동되어 실행.</li>
+</ul>
+</li>
+<li><p><strong>Event Loop</strong>(이벤트 루프)</p>
+<ul>
+<li>Call Stack 내에서 현재 실행 중인 task가 있는지 Event Queue에 task가 있는지 반복하여 확인.</li>
+<li>만약 Call Stack이 비어있다면 Event Queue 내의 Task가 Call Stack으로 이동하고 실행.</li>
+</ul>
+</li>
+</ol>
+<br>
+
+<p>예제1</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">func1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'func1'</span>);</span><br><span class="line">  func2();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">func2</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'func2'</span>);</span><br><span class="line">  &#125;, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">  func3();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">func3</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'func3'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func1();</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>함수 func1이 호출되면 함수 func1은 Call Stack에 쌓인다. </li>
+<li>함수 func1은 함수 func2을 호출한다.</li>
+<li>함수 func2가 Call Stack에 쌓이고 setTimeout가 호출된다. </li>
+<li><strong>setTimeout의 콜백함수는 즉시 실행되지 않고 지정 대기 시간만큼 기다린다.</strong></li>
+<li><strong>“tick” 이벤트가 발생하면 태스크(이벤트) 큐로 이동한다.</strong></li>
+<li><strong>Call Stack이 비어졌을 때 Call Stack으로 이동되어 실행된다.</strong></li>
+</ol>
+<br>
+
+<p>예제2 - DOM 이벤트 핸들러</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">func1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'func1'</span>);</span><br><span class="line">  func2();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">func2</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// &lt;button class="foo"&gt;foo&lt;/button&gt;</span></span><br><span class="line">  <span class="keyword">const</span> elem = <span class="built_in">document</span>.querySelector(<span class="string">'.foo'</span>);</span><br><span class="line"></span><br><span class="line">  elem.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.style.backgroundColor = <span class="string">'indigo'</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'func2'</span>);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  func3();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">func3</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'func3'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func1();</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>함수 func1이 호출되면 함수 func1은 Call Stack에 쌓인다. </li>
+<li>함수 func1은 함수 func2을 호출한다.</li>
+<li>함수 func2가 Call Stack에 쌓이고 addEventListener가 호출된다. </li>
+<li><strong>addEventListener의 콜백함수는 즉시 실행되지 않고 이벤트를 기다린다.</strong></li>
+<li><strong>foo버튼의 “click” 이벤트가 발생하면 태스크(이벤트) 큐로 이동한다.</strong></li>
+<li><strong>Call Stack이 비어졌을 때 Call Stack으로 이동되어 실행된다.</strong></li>
+</ol>
+<br>
+
+<h3 id="이벤트의-종류-참고-Event-reference"><a href="#이벤트의-종류-참고-Event-reference" class="headerlink" title="이벤트의 종류 ( 참고 : Event reference ) "></a>이벤트의 종류 ( 참고 : <a href="https://developer.mozilla.org/en-US/docs/Web/Events" target="_blank" rel="noopener">Event reference</a> ) <a id="a1"></a></h3><br>
+
+<h4 id="UI-Event"><a href="#UI-Event" class="headerlink" title="UI Event  "></a>UI Event  <a id="a2"></a></h4><table>
+<thead>
+<tr>
+<th align="left">Event</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>load</strong></td>
+<td align="left">웹페이지의 로드가 완료되었을 때</td>
+</tr>
+<tr>
+<td align="left">unload</td>
+<td align="left">웹페이지가 언로드될 때(주로 새로운 페이지를 요청한 경우)</td>
+</tr>
+<tr>
+<td align="left">error</td>
+<td align="left">브라우저가 자바스크립트 오류를 만났거나 요청한 자원이 존재하지 않는 경우</td>
+</tr>
+<tr>
+<td align="left">resize</td>
+<td align="left">브라우저 창의 크기를 조절했을 때</td>
+</tr>
+<tr>
+<td align="left">scroll</td>
+<td align="left">사용자가 페이지를 위아래로 스크롤할 때</td>
+</tr>
+<tr>
+<td align="left">select</td>
+<td align="left">텍스트를 선택했을 때</td>
+</tr>
+</tbody></table>
+<br>
+
+<h4 id="Keyboard-Event"><a href="#Keyboard-Event" class="headerlink" title="Keyboard Event "></a>Keyboard Event <a id="a3"></a></h4><table>
+<thead>
+<tr>
+<th align="left">Event</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">keydown</td>
+<td align="left">키를 누르고 있을 때</td>
+</tr>
+<tr>
+<td align="left"><strong>keyup</strong></td>
+<td align="left">누르고 있던 키를 뗄 때</td>
+</tr>
+<tr>
+<td align="left">keypress</td>
+<td align="left">키를 누르고 뗏을 때</td>
+</tr>
+</tbody></table>
+<br>
+
+<h4 id="Mouse-Event"><a href="#Mouse-Event" class="headerlink" title="Mouse Event "></a>Mouse Event <a id="a4"></a></h4><table>
+<thead>
+<tr>
+<th align="left">Event</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>click</strong></td>
+<td align="left">마우스 버튼을 클릭했을 때</td>
+</tr>
+<tr>
+<td align="left">dbclick</td>
+<td align="left">마우스 버튼을 더블 클릭했을 때</td>
+</tr>
+<tr>
+<td align="left">mousedown</td>
+<td align="left">마우스 버튼을 누르고 있을 때</td>
+</tr>
+<tr>
+<td align="left">mouseup</td>
+<td align="left">누르고 있던 마우스 버튼을 뗄 때</td>
+</tr>
+<tr>
+<td align="left">mousemove</td>
+<td align="left">마우스를 움직일 때 (터치스크린에서 동작하지 않는다)</td>
+</tr>
+<tr>
+<td align="left">mouseover</td>
+<td align="left">마우스를 요소 위로 움직였을 때 (터치스크린에서 동작하지 않는다)</td>
+</tr>
+<tr>
+<td align="left">mouseout</td>
+<td align="left">마우스를 요소 밖으로 움직였을 때 (터치스크린에서 동작하지 않는다)</td>
+</tr>
+</tbody></table>
+<br>
+
+<h4 id="Focus-Event"><a href="#Focus-Event" class="headerlink" title="Focus Event "></a>Focus Event <a id="a5"></a></h4><table>
+<thead>
+<tr>
+<th align="left">Event</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>focus</strong>/focusin</td>
+<td align="left">요소가 포커스를 얻었을 때</td>
+</tr>
+<tr>
+<td align="left"><strong>blur</strong>/foucusout</td>
+<td align="left">요소가 포커스를 잃었을 때</td>
+</tr>
+</tbody></table>
+<br>
+
+<h4 id="Form-Event"><a href="#Form-Event" class="headerlink" title="Form Event "></a>Form Event <a id="a6"></a></h4><table>
+<thead>
+<tr>
+<th align="left">Event</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>input</strong></td>
+<td align="left">input 또는 textarea 요소의 값이 변경되었을 때</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">contenteditable 어트리뷰트를 가진 요소의 값이 변경되었을 때</td>
+</tr>
+<tr>
+<td align="left"><strong>change</strong></td>
+<td align="left">select box, checkbox, radio button의 상태가 변경되었을 때</td>
+</tr>
+<tr>
+<td align="left">submit</td>
+<td align="left">form을 submit할 때 (버튼 또는 키)</td>
+</tr>
+<tr>
+<td align="left">reset</td>
+<td align="left">reset 버튼을 클릭할 때 (최근에는 사용 안함)</td>
+</tr>
+</tbody></table>
+<br>
+
+<h4 id="Clipboard-Event"><a href="#Clipboard-Event" class="headerlink" title="Clipboard Event    "></a>Clipboard Event    <a id="a7"></a></h4><table>
+<thead>
+<tr>
+<th align="left">Event</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">cut</td>
+<td align="left">콘텐츠를 잘라내기할 때</td>
+</tr>
+<tr>
+<td align="left">copy</td>
+<td align="left">콘텐츠를 복사할 때</td>
+</tr>
+<tr>
+<td align="left">paste</td>
+<td align="left">콘텐츠를 붙여넣기할 때</td>
+</tr>
+</tbody></table>
+<br>
+
+<h3 id="이벤트-핸들러-등록-3가지"><a href="#이벤트-핸들러-등록-3가지" class="headerlink" title="이벤트 핸들러 등록 (3가지)"></a>이벤트 핸들러 등록 (3가지)</h3><h4 id="인라인-이벤트-핸들러-방식"><a href="#인라인-이벤트-핸들러-방식" class="headerlink" title="인라인 이벤트 핸들러 방식 "></a>인라인 이벤트 핸들러 방식 <a id="b1"></a></h4><ul>
+<li>더 이상 사용되고 있지 않은 방식.</li>
+<li>on으로 시작하는 이벤트 어트리뷰트의 값으로 함수 호출을 전달한다는 것.</li>
+<li>이벤트 어트리뷰트의 값으로 전달한 함수 호출이 즉시 호출되는 것은 아니다. </li>
+<li>사실은 이벤트 어트리뷰트 키를 이름으로 갖는 함수를 암묵적으로 정의하고 그 함수의 몸체에 이벤트 어트리뷰트의 값으로 전달한 함수 호출을 문으로 갖는다. </li>
+<li>아래 예제 기준 = <code>function onclick(event) { foo(); }</code></li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">"myHandler()"</span>&gt;</span>Click me<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">    <span class="function"><span class="keyword">function</span> <span class="title">myHandler</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">      alert(<span class="string">'Button clicked!'</span>);</span></span><br><span class="line">    &#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="이벤트-핸들러-프로퍼티-방식"><a href="#이벤트-핸들러-프로퍼티-방식" class="headerlink" title="이벤트 핸들러 프로퍼티 방식  "></a>이벤트 핸들러 프로퍼티 방식  <a id="b2"></a></h4><ul>
+<li>HTML과 Javascript가 뒤섞이는 문제는 해결할 수 있는 방식. </li>
+<li>하지만 <strong>이벤트 핸들러 프로퍼티에 하나의 이벤트 핸들러만을 바인딩할 수 있다는 단점</strong>이 있다.</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"btn"</span>&gt;</span>Click me<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> btn = <span class="built_in">document</span>.querySelector(<span class="string">'.btn'</span>);</span></span><br><span class="line"></span><br><span class="line"><span class="actionscript">    <span class="comment">// 이벤트 핸들러 프로퍼티 방식은 이벤트에 하나의 이벤트 핸들러만을 바인딩할 수 있다</span></span></span><br><span class="line"><span class="actionscript">    <span class="comment">// 첫번째 바인딩된 이벤트 핸들러 =&gt; 실행되지 않는다.</span></span></span><br><span class="line"><span class="actionscript">    btn.onclick = <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">      alert(<span class="string">'① Button clicked 1'</span>);</span></span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line"><span class="actionscript">    <span class="comment">// 두번째 바인딩된 이벤트 핸들러</span></span></span><br><span class="line"><span class="actionscript">    btn.onclick = <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">      alert(<span class="string">'① Button clicked 2'</span>);</span></span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line"><span class="actionscript">    <span class="comment">// addEventListener 메소드 방식</span></span></span><br><span class="line"><span class="actionscript">    <span class="comment">// 첫번째 바인딩된 이벤트 핸들러</span></span></span><br><span class="line"><span class="actionscript">    btn.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">      alert(<span class="string">'② Button clicked 1'</span>);</span></span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line"><span class="actionscript">    <span class="comment">// 두번째 바인딩된 이벤트 핸들러</span></span></span><br><span class="line"><span class="actionscript">    btn.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">      alert(<span class="string">'② Button clicked 2'</span>);</span></span><br><span class="line">    &#125;);</span><br><span class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="addEventListener-메소드-방식"><a href="#addEventListener-메소드-방식" class="headerlink" title="addEventListener 메소드 방식  "></a>addEventListener 메소드 방식  <a id="b3"></a></h4><p><img src="https://poiemaweb.com/img/event_listener.png" alt="Event Listener"></p>
+<ul>
+<li>대상 DOM 요소에 이벤트를 바인딩.</li>
+<li>해당 이벤트가 발생했을 때 실행될 콜백 함수(이벤트 핸들러)를 지정.</li>
+<li>IE 9 이상에서 동작. IE 8 이하는 <code>attachEvent</code> 메소드를 사용. ( 참고 :  <a href="https://developer.mozilla.org/ko/docs/Web/API/EventTarget/attachEvent" target="_blank" rel="noopener">attachEvent</a> )</li>
+</ul>
+<p><code>addEventListener</code> 함수 방식은 이전 방식에 비해 아래와 같이 보다 나은 장점을 갖는다.</p>
+<ul>
+<li>하나의 이벤트에 대해 하나 이상의 이벤트 핸들러를 추가할 수 있다.</li>
+<li>캡처링과 버블링을 지원한다.</li>
+<li>HTML 요소뿐만아니라 모든 DOM 요소(HTML, XML, SVG)에 대해 동작한다. 브라우저는 웹 문서(HTML, XML, SVG)를 로드한 후, 파싱하여 DOM을 생성한다.</li>
+</ul>
+<br>
+
+<h5 id="예1"><a href="#예1" class="headerlink" title="예1"></a>예1</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">    addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">      alert(<span class="string">'Clicked!'</span>);</span></span><br><span class="line">    &#125;);</span><br><span class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>DOM 요소를 지정 안해주면 전역객체 window(브라우저의 윈도우)에서 발생되는 click 이벤트에 이벤트 핸들러를 바인딩한다.</li>
+</ul>
+<br>
+
+<h5 id="예2"><a href="#예2" class="headerlink" title="예2"></a>예2</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">label</span>&gt;</span>User name <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">'text'</span>&gt;</span><span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">em</span> <span class="attr">class</span>=<span class="string">"message"</span>&gt;</span><span class="tag">&lt;/<span class="name">em</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> input = <span class="built_in">document</span>.querySelector(<span class="string">'input[type=text]'</span>);</span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> msg = <span class="built_in">document</span>.querySelector(<span class="string">'.message'</span>);</span></span><br><span class="line"></span><br><span class="line"><span class="actionscript">    input.addEventListener(<span class="string">'blur'</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">      <span class="keyword">if</span> (input.value.length &lt; <span class="number">2</span>) &#123;</span></span><br><span class="line"><span class="actionscript">        msg.innerHTML = <span class="string">'이름은 2자 이상 입력해 주세요'</span>;</span></span><br><span class="line"><span class="actionscript">      &#125; <span class="keyword">else</span> &#123;</span></span><br><span class="line"><span class="actionscript">        msg.innerHTML = <span class="string">''</span>;</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>blur 이벤트</code>는 포커스를 잃을 경우 생기는 이벤트다.</li>
+<li>키보드로 input 내부에 내용을 입력 후 글자수가 모자르다면 다른 곳을 클릭, tab 하였을 때 이벤트가 호출된다. </li>
+</ul>
+<p>위와 같은 코드는 좋지 못한 코드다 이유는 ‘2’라는 원시값을 통해서 어떤 이벤트가 실행될 지를 판별하는데 코드가 길어질수록 저런 식으로 원시값을 하나하나 변경하는 것은 시간낭비 와 실수를 유발한다.</p>
+<p>해결 방법으로는 ‘2’ 라는 원시값을 상수화 하고 상수를 함수의 인수로 받는 함수를 작성한다.<br>문제는 이럴경우 이벤트 핸들러 프로퍼티 처럼 1개의 함수만 전달할 수 있게된다.<br>이를 해결 하기 위해 addEventListener에서 익명 함수를 작성한다면 내부에서 여러개의 함수를 받을 수 있다.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">label</span>&gt;</span>User name <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">'text'</span>&gt;</span><span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">em</span> <span class="attr">class</span>=<span class="string">"message"</span>&gt;</span><span class="tag">&lt;/<span class="name">em</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">    <span class="keyword">const</span> MIN_USER_NAME_LENGTH = <span class="number">2</span>; <span class="comment">// 이름 최소 길이</span></span></span><br><span class="line"></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> input = <span class="built_in">document</span>.querySelector(<span class="string">'input[type=text]'</span>);</span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> msg = <span class="built_in">document</span>.querySelector(<span class="string">'.message'</span>);</span></span><br><span class="line"></span><br><span class="line"><span class="actionscript">    <span class="function"><span class="keyword">function</span> <span class="title">checkUserNameLength</span><span class="params">(n)</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">      <span class="keyword">if</span> (input.value.length &lt; n) &#123;</span></span><br><span class="line"><span class="actionscript">        msg.innerHTML = <span class="string">'이름은 '</span> + n + <span class="string">'자 이상이어야 합니다'</span>;</span></span><br><span class="line"><span class="actionscript">      &#125; <span class="keyword">else</span> &#123;</span></span><br><span class="line"><span class="actionscript">        msg.innerHTML = <span class="string">''</span>;</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="actionscript">    input.addEventListener(<span class="string">'blur'</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">      <span class="comment">// 이벤트 핸들러 내부에서 함수를 호출하면서 인수를 전달한다.</span></span></span><br><span class="line">      checkUserNameLength(MIN_USER_NAME_LENGTH);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line"><span class="actionscript">    <span class="comment">// 이벤트 핸들러 프로퍼티 방식도 동일한 방식으로 인수를 전달할 수 있다.</span></span></span><br><span class="line"><span class="actionscript">    <span class="comment">// input.onblur = function () &#123;</span></span></span><br><span class="line"><span class="actionscript">    <span class="comment">//   // 이벤트 핸들러 내부에서 함수를 호출하면서 인수를 전달한다.</span></span></span><br><span class="line"><span class="actionscript">    <span class="comment">//   checkUserNameLength(MIN_USER_NAME_LENGTH);</span></span></span><br><span class="line"><span class="actionscript">    <span class="comment">// &#125;;</span></span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="이벤트-핸들러-함수-내부의-this"><a href="#이벤트-핸들러-함수-내부의-this" class="headerlink" title="이벤트 핸들러 함수 내부의 this"></a>이벤트 핸들러 함수 내부의 this</h3><h4 id="인라인-이벤트-핸들러-방식-1"><a href="#인라인-이벤트-핸들러-방식-1" class="headerlink" title="인라인 이벤트 핸들러 방식 "></a>인라인 이벤트 핸들러 방식 <a id="c1"></a></h4><ul>
+<li><strong>이벤트 핸들러</strong>는 <strong>일반 함수로서 호출</strong>되므로 이벤트 핸들러 내부의 <strong>this는 전역 객체 window</strong>를 가리킨다.</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">"foo()"</span>&gt;</span>Button<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">    <span class="function"><span class="keyword">function</span> <span class="title">foo</span> <span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="keyword">this</span>); <span class="comment">// window</span></span></span><br><span class="line">    &#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="이벤트-핸들러-프로퍼티-방식-1"><a href="#이벤트-핸들러-프로퍼티-방식-1" class="headerlink" title="이벤트 핸들러 프로퍼티 방식  "></a>이벤트 핸들러 프로퍼티 방식  <a id="c2"></a></h4><ul>
+<li><strong>이벤트 핸들러</strong>는 <strong>메소드</strong>이므로 이벤트 핸들러 내부의 <strong>this는 이벤트에 바인딩된 요소</strong>를 가리킨다. </li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"btn"</span>&gt;</span>Button<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> btn = <span class="built_in">document</span>.querySelector(<span class="string">'.btn'</span>);</span></span><br><span class="line"></span><br><span class="line"><span class="actionscript">    btn.onclick = <span class="function"><span class="keyword">function</span> <span class="params">(e)</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="keyword">this</span>); <span class="comment">// &lt;button id="btn"&gt;Button&lt;/button&gt;</span></span></span><br><span class="line"><span class="handlebars"><span class="xml">      console.log(e.currentTarget); // <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"btn"</span>&gt;</span>Button<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="keyword">this</span> === e.currentTarget); <span class="comment">// true</span></span></span><br><span class="line">    &#125;;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="addEventListener-메소드-방식-1"><a href="#addEventListener-메소드-방식-1" class="headerlink" title="addEventListener 메소드 방식  "></a>addEventListener 메소드 방식  <a id="c3"></a></h4><ul>
+<li><strong>이벤트 핸들러</strong>는 <strong>콜백 함수</strong>이지만 이벤트 핸들러 내부의 <strong>this는 이벤트 리스너에 바인딩된 요소(currentTarget)</strong>를 가리킨다. </li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"btn"</span>&gt;</span>Button<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> btn = <span class="built_in">document</span>.querySelector(<span class="string">'.btn'</span>);</span></span><br><span class="line"></span><br><span class="line"><span class="actionscript">    btn.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> <span class="params">(e)</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="keyword">this</span>); <span class="comment">// &lt;button id="btn"&gt;Button&lt;/button&gt;</span></span></span><br><span class="line"><span class="handlebars"><span class="xml">      console.log(e.currentTarget); // <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"btn"</span>&gt;</span>Button<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="keyword">this</span> === e.currentTarget); <span class="comment">// true</span></span></span><br><span class="line">    &#125;);</span><br><span class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="이벤트의-흐름"><a href="#이벤트의-흐름" class="headerlink" title="이벤트의 흐름"></a>이벤트의 흐름</h3><p>HTML 요소는 계층적 구조에 포함되어 있다.<br>이 요소에 이벤트가 발생되면 연쇄적 반응이 얼어난다.<br>이것을 <strong>이벤트전파</strong>라 하고 전파 방향에 따라 <strong>버블링(Event Bubbling)</strong>과 <strong>캡처링(Event Capturing)</strong>으로 구분할 수 있다.</p>
+<blockquote>
+<p>버블링 : 자식요소에서 발생한 이벤트가 부모요소로 전파</p>
+<p>캡처링 : 부모요소부터 시작하여 이벤트를 발생시킨 자식 요소까지 도달</p>
+<p>캡처링 과 버블링은 둘 중 하나만 발생되는 개념이 아니라 캠처링부터 시작해 버블링으로 종료한다.</p>
+</blockquote>
+<img src="https://poiemaweb.com/img/eventflow.svg" alt="event flow" style="zoom: 25%;">
+
+<p><strong>addEventListener 메소드의 세번째 매개변수에 true를 설정하면 캡처링으로 전파되는 이벤트를 캐치하고 false 또는 미설정하면 버블링으로 전파되는 이벤트를 캐치한다.</strong></p>
+<br>
+
+<h4 id="캡처링-표현-예제"><a href="#캡처링-표현-예제" class="headerlink" title="캡처링 표현 예제"></a>캡처링 표현 예제</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">html</span> &#123; <span class="attribute">border</span>:<span class="number">1px</span> solid red; <span class="attribute">padding</span>:<span class="number">30px</span>; <span class="attribute">text-align</span>: center; &#125;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">body</span> &#123; <span class="attribute">border</span>:<span class="number">1px</span> solid green; <span class="attribute">padding</span>:<span class="number">30px</span>; &#125;</span></span><br><span class="line"><span class="css">    <span class="selector-class">.top</span> &#123;</span></span><br><span class="line">      width: 300px; height: 300px;</span><br><span class="line">      background-color: red;</span><br><span class="line">      margin: auto;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="css">    <span class="selector-class">.middle</span> &#123;</span></span><br><span class="line">      width: 200px; height: 200px;</span><br><span class="line">      background-color: blue;</span><br><span class="line">      position: relative; top: 34px; left: 50px;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="css">    <span class="selector-class">.bottom</span> &#123;</span></span><br><span class="line">      width: 100px; height: 100px;</span><br><span class="line">      background-color: yellow;</span><br><span class="line">      position: relative; top: 34px; left: 50px;</span><br><span class="line">      line-height: 100px;</span><br><span class="line">    &#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  body</span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"top"</span>&gt;</span>top</span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"middle"</span>&gt;</span>middle</span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"bottom"</span>&gt;</span>bottom<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">  <span class="comment">// true: capturing / false: bubbling</span></span></span><br><span class="line"><span class="actionscript">  <span class="keyword">const</span> useCature = <span class="literal">true</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="actionscript">  <span class="keyword">const</span> handler = <span class="function"><span class="keyword">function</span> <span class="params">(e)</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">    <span class="keyword">const</span> phases = [<span class="string">'capturing'</span>, <span class="string">'target'</span>, <span class="string">'bubbling'</span>];</span></span><br><span class="line"><span class="actionscript">    <span class="keyword">const</span> node = <span class="keyword">this</span>.nodeName + (<span class="keyword">this</span>.className ? <span class="string">'.'</span> + <span class="keyword">this</span>.className : <span class="string">''</span>);</span></span><br><span class="line"><span class="actionscript">    <span class="comment">// eventPhase: 이벤트 흐름 상에서 어느 phase에 있는지를 반환한다.</span></span></span><br><span class="line"><span class="actionscript">    <span class="comment">// 0 : 이벤트 없음 / 1 : 캡처링 단계 / 2 : 타깃 / 3 : 버블링 단계</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(node, phases[e.eventPhase - <span class="number">1</span>]);</span></span><br><span class="line"><span class="actionscript">    alert(node + <span class="string">' : '</span> + phases[e.eventPhase - <span class="number">1</span>]);</span></span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line"><span class="javascript">  <span class="built_in">document</span>.querySelector(<span class="string">'html'</span>).addEventListener(<span class="string">'click'</span>, handler, useCature);</span></span><br><span class="line"><span class="javascript">  <span class="built_in">document</span>.querySelector(<span class="string">'body'</span>).addEventListener(<span class="string">'click'</span>, handler, useCature);</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">  <span class="built_in">document</span>.querySelector(<span class="string">'div.top'</span>).addEventListener(<span class="string">'click'</span>, handler, useCature);</span></span><br><span class="line"><span class="javascript">  <span class="built_in">document</span>.querySelector(<span class="string">'div.middle'</span>).addEventListener(<span class="string">'click'</span>, handler, useCature);</span></span><br><span class="line"><span class="javascript">  <span class="built_in">document</span>.querySelector(<span class="string">'div.bottom'</span>).addEventListener(<span class="string">'click'</span>, handler, useCature);</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="버블링-예제"><a href="#버블링-예제" class="headerlink" title="버블링 예제"></a>버블링 예제</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">html</span>, <span class="selector-tag">body</span> &#123; <span class="attribute">height</span>: <span class="number">100%</span>; &#125;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>버블링 이벤트 <span class="tag">&lt;<span class="name">button</span>&gt;</span>버튼<span class="tag">&lt;/<span class="name">button</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> body = <span class="built_in">document</span>.querySelector(<span class="string">'body'</span>);</span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> para = <span class="built_in">document</span>.querySelector(<span class="string">'p'</span>);</span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> button = <span class="built_in">document</span>.querySelector(<span class="string">'button'</span>);</span></span><br><span class="line"></span><br><span class="line"><span class="actionscript">    <span class="comment">// 버블링</span></span></span><br><span class="line"><span class="actionscript">    body.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">'Handler for body.'</span>);</span></span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line"><span class="actionscript">    <span class="comment">// 버블링</span></span></span><br><span class="line"><span class="actionscript">    para.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">'Handler for paragraph.'</span>);</span></span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line"><span class="actionscript">    <span class="comment">// 버블링</span></span></span><br><span class="line"><span class="actionscript">    button.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">'Handler for button.'</span>);</span></span><br><span class="line">    &#125;);</span><br><span class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>결과는 다음과 같다. 캡쳐링 이벤트 흐름에 대해서는 동작하지 않는다. </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Handler for button.</span><br><span class="line">Handler for paragraph.</span><br><span class="line">Handler for body.</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="캡처링-예제"><a href="#캡처링-예제" class="headerlink" title="캡처링 예제"></a>캡처링 예제</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">html</span>, <span class="selector-tag">body</span> &#123; <span class="attribute">height</span>: <span class="number">100%</span>; &#125;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>캡처링 이벤트 <span class="tag">&lt;<span class="name">button</span>&gt;</span>버튼<span class="tag">&lt;/<span class="name">button</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> body = <span class="built_in">document</span>.querySelector(<span class="string">'body'</span>);</span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> para = <span class="built_in">document</span>.querySelector(<span class="string">'p'</span>);</span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> button = <span class="built_in">document</span>.querySelector(<span class="string">'button'</span>);</span></span><br><span class="line"></span><br><span class="line"><span class="actionscript">    <span class="comment">// 캡처링</span></span></span><br><span class="line"><span class="actionscript">    body.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">'Handler for body.'</span>);</span></span><br><span class="line"><span class="actionscript">    &#125;, <span class="literal">true</span>);</span></span><br><span class="line"></span><br><span class="line"><span class="actionscript">    <span class="comment">// 캡처링</span></span></span><br><span class="line"><span class="actionscript">    para.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">'Handler for paragraph.'</span>);</span></span><br><span class="line"><span class="actionscript">    &#125;, <span class="literal">true</span>);</span></span><br><span class="line"></span><br><span class="line"><span class="actionscript">    <span class="comment">// 캡처링</span></span></span><br><span class="line"><span class="actionscript">    button.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">'Handler for button.'</span>);</span></span><br><span class="line"><span class="actionscript">    &#125;, <span class="literal">true</span>);</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>결과는 다음과 같다. 버블링 이벤트 흐름에 동작하지 않는다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Handler for body.</span><br><span class="line">Handler for paragraph.</span><br><span class="line">Handler for button.</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="캡처링-과-버블링-혼용"><a href="#캡처링-과-버블링-혼용" class="headerlink" title="캡처링 과 버블링 혼용"></a>캡처링 과 버블링 혼용</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">html</span>, <span class="selector-tag">body</span> &#123; <span class="attribute">height</span>: <span class="number">100%</span>; &#125;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>버블링과 캡처링 이벤트 <span class="tag">&lt;<span class="name">button</span>&gt;</span>버튼<span class="tag">&lt;/<span class="name">button</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> body = <span class="built_in">document</span>.querySelector(<span class="string">'body'</span>);</span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> para = <span class="built_in">document</span>.querySelector(<span class="string">'p'</span>);</span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> button = <span class="built_in">document</span>.querySelector(<span class="string">'button'</span>);</span></span><br><span class="line"></span><br><span class="line"><span class="actionscript">    <span class="comment">// 버블링</span></span></span><br><span class="line"><span class="actionscript">    body.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">'Handler for body.'</span>);</span></span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line"><span class="actionscript">    <span class="comment">// 캡처링</span></span></span><br><span class="line"><span class="actionscript">    para.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">'Handler for paragraph.'</span>);</span></span><br><span class="line"><span class="actionscript">    &#125;, <span class="literal">true</span>);</span></span><br><span class="line"></span><br><span class="line"><span class="actionscript">    <span class="comment">// 버블링</span></span></span><br><span class="line"><span class="actionscript">    button.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">'Handler for button.'</span>);</span></span><br><span class="line">    &#125;);</span><br><span class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>위 코드는 body, button 요소는 버블링 이벤트 흐름을 캐치하고 p 요소는 캡처링 이벤트 흐름만을 캐치한다.</p>
+<p>따라서 결과는 다음과 같다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Handler for paragraph.</span><br><span class="line">Handler for button.</span><br><span class="line">Handler for body.</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="Event-객체"><a href="#Event-객체" class="headerlink" title="Event 객체"></a>Event 객체</h3><ul>
+<li>event 객체는 이벤트를 발생시킨 요소와 발생한 이벤트에 대한 유용한 정보를 제공한다. </li>
+<li>이벤트가 발생하면 event 객체는 동적으로 생성되며 이벤트를 처리할 수 있는 이벤트 핸들러에 인자로 전달된다.</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>클릭하세요. 클릭한 곳의 좌표가 표시됩니다.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">em</span> <span class="attr">class</span>=<span class="string">"message"</span>&gt;</span><span class="tag">&lt;/<span class="name">em</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">  <span class="function"><span class="keyword">function</span> <span class="title">showCoords</span><span class="params">(e)</span> </span>&#123; <span class="comment">// e: event object</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> msg = <span class="built_in">document</span>.querySelector(<span class="string">'.message'</span>);</span></span><br><span class="line">    msg.innerHTML =</span><br><span class="line"><span class="actionscript">      <span class="string">'clientX value: '</span> + e.clientX + <span class="string">'&lt;br&gt;'</span> +</span></span><br><span class="line"><span class="actionscript">      <span class="string">'clientY value: '</span> + e.clientY;</span></span><br><span class="line">  &#125;</span><br><span class="line"><span class="actionscript">  addEventListener(<span class="string">'click'</span>, showCoords);</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p>위와 같이 event 객체는 이벤트 핸들러에 암묵적으로 전달된다.</p>
+<p>이벤트 핸들러를 선언할 때, event 객체를 전달받을 첫번째 매개변수를 명시적으로 선언하는 것이 좋다.</p>
+<p>따라서 함수로 1번더 감싸고 <code>addEventListener</code>를 호출 할 때 익명함수로 event객체를 넘겨준다.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">em</span> <span class="attr">class</span>=<span class="string">"message"</span>&gt;</span><span class="tag">&lt;/<span class="name">em</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">  <span class="function"><span class="keyword">function</span> <span class="title">showCoords</span><span class="params">(e, msg)</span> </span>&#123;</span></span><br><span class="line">    msg.innerHTML =</span><br><span class="line"><span class="actionscript">      <span class="string">'clientX value: '</span> + e.clientX + <span class="string">'&lt;br&gt;'</span> +</span></span><br><span class="line"><span class="actionscript">      <span class="string">'clientY value: '</span> + e.clientY;</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="javascript">  <span class="keyword">const</span> msg = <span class="built_in">document</span>.querySelector(<span class="string">'.message'</span>);</span></span><br><span class="line"></span><br><span class="line"><span class="actionscript">  addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> <span class="params">(e)</span> </span>&#123;</span></span><br><span class="line">    showCoords(e, msg);</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="Event-Property"><a href="#Event-Property" class="headerlink" title="Event Property"></a>Event Property</h4><h5 id="Event-target"><a href="#Event-target" class="headerlink" title="Event.target  "></a>Event.target  <a id="d1"></a></h5><blockquote>
+<p>실제로 이벤트를 발생시킨 요소를 가리킴</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"btn1"</span>&gt;</span>Hide me 1<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"btn2"</span>&gt;</span>Hide me 2<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">    <span class="function"><span class="keyword">function</span> <span class="title">hide</span><span class="params">(e)</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">      e.target.style.visibility = <span class="string">'hidden'</span>;</span></span><br><span class="line"><span class="actionscript">      <span class="comment">// 동일하게 동작한다.</span></span></span><br><span class="line"><span class="actionscript">      <span class="comment">// this.style.visibility = 'hidden';</span></span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="javascript">    <span class="built_in">document</span>.getElementById(<span class="string">'btn1'</span>).addEventListener(<span class="string">'click'</span>, hide);</span></span><br><span class="line"><span class="javascript">    <span class="built_in">document</span>.getElementById(<span class="string">'btn2'</span>).addEventListener(<span class="string">'click'</span>, hide);</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>여기서 event객체는 btn1 과 btn2를 각각 가리키고 있기 때문에 this와 별반 차이가 없다.</p>
+<p>하지만 아래 예제를 보자.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"btn1"</span>&gt;</span>Hide me 1<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"btn2"</span>&gt;</span>Hide me 2<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> container = <span class="built_in">document</span>.querySelector(<span class="string">'.container'</span>);</span></span><br><span class="line"></span><br><span class="line"><span class="actionscript">    <span class="function"><span class="keyword">function</span> <span class="title">hide</span><span class="params">(e)</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">      <span class="comment">// e.target은 실제로 이벤트를 발생시킨 DOM 요소를 가리킨다.</span></span></span><br><span class="line"><span class="actionscript">      e.target.style.visibility = <span class="string">'hidden'</span>;</span></span><br><span class="line"><span class="actionscript">      <span class="comment">// this는 이벤트에 바인딩된 DOM 요소(.container)를 가리킨다. 따라서 .container 요소를 감춘다.</span></span></span><br><span class="line"><span class="actionscript">      <span class="comment">// this.style.visibility = 'hidden';</span></span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="actionscript">    container.addEventListener(<span class="string">'click'</span>, hide);</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>이 예제처럼 this는 자신이 불러들인 객체를 바인딩하기 때문에 DOM 요소(.container)를 가리킨다. 따라서 버튼 1개 클릭시 전부 가리게 되는데 반면에 event객체의 e.target은 실제로 인벤트를 발생시킨 DOM요소를 의미한다. </p>
+<p>따라서 <strong>Event.target은 this와 반드시 일치하지는 않는다.</strong></p>
+<br>
+
+<h5 id="Event-currentTarget"><a href="#Event-currentTarget" class="headerlink" title="Event.currentTarget  "></a>Event.currentTarget  <a id="d2"></a></h5><blockquote>
+<p>이벤트에 바인딩된 DOM 요소를 가리킴.</p>
+<p>addEventListener 앞에 기술된 객체를 가리킨다.</p>
+</blockquote>
+<p><strong>Event.target 과 this 는 반드시 일치하지 않는다.</strong></p>
+<p><strong>그러나, Event.currentTarget과 this는 언제나 일치한다.</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">html</span>, <span class="selector-tag">body</span> &#123; <span class="attribute">height</span>: <span class="number">100%</span>; &#125;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">div</span> &#123; <span class="attribute">height</span>: <span class="number">100%</span>; &#125;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span>&gt;</span>배경색 변경<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">    <span class="function"><span class="keyword">function</span> <span class="title">bluify</span><span class="params">(e)</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">      <span class="comment">// this: 이벤트에 바인딩된 DOM 요소(div 요소)</span></span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">'this: '</span>, <span class="keyword">this</span>);</span></span><br><span class="line"><span class="actionscript">      <span class="comment">// target: 실제로 이벤트를 발생시킨 요소(button 요소 또는 div 요소)</span></span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">'e.target:'</span>, e.target);</span></span><br><span class="line"><span class="actionscript">      <span class="comment">// currentTarget: 이벤트에 바인딩된 DOM 요소(div 요소)</span></span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">'e.currentTarget: '</span>, e.currentTarget);</span></span><br><span class="line"></span><br><span class="line"><span class="actionscript">      <span class="comment">// 언제나 true</span></span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="keyword">this</span> === e.currentTarget);</span></span><br><span class="line"><span class="actionscript">      <span class="comment">// currentTarget과 target이 같은 객체일 때 true</span></span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="keyword">this</span> === e.target);</span></span><br><span class="line"></span><br><span class="line"><span class="actionscript">      <span class="comment">// click 이벤트가 발생하면 이벤트를 발생시킨 요소(target)과는 상관없이 this(이벤트에 바인딩된 div 요소)의 배경색이 변경된다.</span></span></span><br><span class="line"><span class="actionscript">      <span class="keyword">this</span>.style.backgroundColor = <span class="string">'#A5D9F3'</span>;</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="actionscript">    <span class="comment">// div 요소에 이벤트 핸들러가 바인딩되어 있다.</span></span></span><br><span class="line"><span class="actionscript">    <span class="comment">// 자식 요소인 button이 발생시킨 이벤트가 버블링되어 div 요소에도 전파된다.</span></span></span><br><span class="line"><span class="actionscript">    <span class="comment">// 따라서 div 요소에 이벤트 핸들러가 바인딩되어 있으면 자식 요소인 button이 발생시킨 이벤트를 div 요소에서도 핸들링할 수 있다.</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">document</span>.querySelector(<span class="string">'div'</span>).addEventListener(<span class="string">'click'</span>, bluify);</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h5 id="Event-type"><a href="#Event-type" class="headerlink" title="Event.type  "></a>Event.type  <a id="d3"></a></h5><blockquote>
+<p>발생한 이벤트의 종류를 나타내는 문자열을 반환한다.</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>키를 입력하세요<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">em</span> <span class="attr">class</span>=<span class="string">"message"</span>&gt;</span><span class="tag">&lt;/<span class="name">em</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">  <span class="keyword">const</span> body = <span class="built_in">document</span>.querySelector(<span class="string">'body'</span>);</span></span><br><span class="line"></span><br><span class="line"><span class="actionscript">  <span class="function"><span class="keyword">function</span> <span class="title">getEventType</span><span class="params">(e)</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(e);</span></span><br><span class="line"><span class="javascript">    <span class="built_in">document</span>.querySelector(<span class="string">'.message'</span>).innerHTML = <span class="string">`<span class="subst">$&#123;e.type&#125;</span> : <span class="subst">$&#123;e.keyCode&#125;</span>`</span>;</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="actionscript">  body.addEventListener(<span class="string">'keydown'</span>, getEventType);</span></span><br><span class="line"><span class="actionscript">  body.addEventListener(<span class="string">'keyup'</span>, getEventType);</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h5 id="Event-cancelable"><a href="#Event-cancelable" class="headerlink" title="Event.cancelable  "></a>Event.cancelable  <a id="d4"></a></h5><blockquote>
+<p>요소의 기본 동작을 취소시킬 수 있는지 여부(true/false)를 나타낸다.</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"poiemaweb.com"</span>&gt;</span>Go to poiemaweb.com<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">  <span class="keyword">const</span> elem = <span class="built_in">document</span>.querySelector(<span class="string">'a'</span>);</span></span><br><span class="line"></span><br><span class="line"><span class="actionscript">  elem.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> <span class="params">(e)</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(e.cancelable);</span></span><br><span class="line"></span><br><span class="line"><span class="actionscript">    <span class="comment">// 기본 동작을 중단시킨다.</span></span></span><br><span class="line"><span class="actionscript">    e.preventDefault(); <span class="comment">// 해당 링크를 눌러도 이동되지않는다.</span></span></span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h5 id="Event-eventPhase"><a href="#Event-eventPhase" class="headerlink" title="Event.eventPhase "></a>Event.eventPhase <a id="d5"></a></h5><blockquote>
+<p>이벤트 흐름(event flow) 상에서 어느 단계(event phase)에 있는지를 반환한다.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th align="left">반환값</th>
+<th align="left">의미</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">0</td>
+<td align="left">이벤트 없음</td>
+</tr>
+<tr>
+<td align="left">1</td>
+<td align="left">캡쳐링 단계</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left">타깃</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">버블링 단계</td>
+</tr>
+</tbody></table>
+<br>
+
+<h4 id="Event-Delegation-이벤트-위임"><a href="#Event-Delegation-이벤트-위임" class="headerlink" title="Event Delegation (이벤트 위임) "></a>Event Delegation (이벤트 위임) <a id="d6"></a></h4><p>​    <code>&lt;li&gt;</code>가 6개 있다고 가정했을 경우, 해당 태그에 모두 이벤트 반응 처리하고 싶다면 아래처럼 6개의 이벤트 핸들러를 구현해서 바인딩해야하는 비효율적인 면이 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">printId</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.id);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">'#post-1'</span>).addEventListener(<span class="string">'click'</span>, printId);</span><br><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">'#post-2'</span>).addEventListener(<span class="string">'click'</span>, printId);</span><br><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">'#post-3'</span>).addEventListener(<span class="string">'click'</span>, printId);</span><br><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">'#post-4'</span>).addEventListener(<span class="string">'click'</span>, printId);</span><br><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">'#post-5'</span>).addEventListener(<span class="string">'click'</span>, printId);</span><br><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">'#post-6'</span>).addEventListener(<span class="string">'click'</span>, printId);</span><br></pre></td></tr></table></figure>
+
+<p>6개 말고도 100개 1000개 라고 쳤을 때, 실행속도 저하 뿐만아니라 코드 작성의 불편함까지 겸비하고 있다.</p>
+<p><strong>동적으로 li 요소가 추가되는 경우, 아직 추가되지 않은 요소는 DOM에 존재하지 않으므로 이벤트 핸들러를 바인딩할 수 없다.</strong> 이러한 경우 이벤트 위임을 사용한다.</p>
+<blockquote>
+<p> 다수의 자식 요소에 각각 이벤트 핸들러를 바인딩하는 대신 하나의 부모 요소에 이벤트 핸들러를 바인딩하는 방법</p>
+</blockquote>
+<p>실제로 이벤트를 발생시킨 요소를 알아내기 위해서는 <code>Event.target</code>을 사용한다.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"post-list"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">id</span>=<span class="string">"post-1"</span>&gt;</span>Item 1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">id</span>=<span class="string">"post-2"</span>&gt;</span>Item 2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">id</span>=<span class="string">"post-3"</span>&gt;</span>Item 3<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">id</span>=<span class="string">"post-4"</span>&gt;</span>Item 4<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">id</span>=<span class="string">"post-5"</span>&gt;</span>Item 5<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">id</span>=<span class="string">"post-6"</span>&gt;</span>Item 6<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"msg"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> msg = <span class="built_in">document</span>.querySelector(<span class="string">'.msg'</span>);</span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> list = <span class="built_in">document</span>.querySelector(<span class="string">'.post-list'</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="actionscript">    list.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> <span class="params">(e)</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">      <span class="comment">// 이벤트를 발생시킨 요소</span></span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">'[target]: '</span> + e.target);</span></span><br><span class="line"><span class="actionscript">      <span class="comment">// 이벤트를 발생시킨 요소의 nodeName</span></span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">'[target.nodeName]: '</span> + e.target.nodeName);</span></span><br><span class="line"></span><br><span class="line"><span class="actionscript">      <span class="comment">// li 요소 이외의 요소에서 발생한 이벤트는 대응하지 않는다.</span></span></span><br><span class="line"><span class="actionscript">      <span class="keyword">if</span> (e.target &amp;&amp; e.target.nodeName === <span class="string">'LI'</span>) &#123;</span></span><br><span class="line"><span class="actionscript">        msg.innerHTML = <span class="string">'li#'</span> + e.target.id + <span class="string">' was clicked!'</span>;</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="기본-동작의-변경"><a href="#기본-동작의-변경" class="headerlink" title="기본 동작의 변경"></a>기본 동작의 변경</h3><h4 id="Event-preventDefault"><a href="#Event-preventDefault" class="headerlink" title="Event.preventDefault() "></a>Event.preventDefault() <a id="d8"></a></h4><blockquote>
+<p>기본 동작을 중단 시킨다.</p>
+<p>예를들어 폼을 submit 하거나 a태그의 링크를 클릭하면 페이지 이동이 발생하는데 이를 중단시킨다.</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"http://www.google.com"</span>&gt;</span>go<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">  <span class="built_in">document</span>.querySelector(<span class="string">'a'</span>).addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(e.target, e.target.nodeName);</span></span><br><span class="line"></span><br><span class="line"><span class="actionscript">    <span class="comment">// a 요소의 기본 동작을 중단한다.</span></span></span><br><span class="line">    e.preventDefault();</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="Event-stopPropagation"><a href="#Event-stopPropagation" class="headerlink" title="Event.stopPropagation() "></a>Event.stopPropagation() <a id="d9"></a></h4><blockquote>
+<p>어느 한 요소를 이용해 이벤트를 처리한 후 이벤트가 부모 요소로 이벤트가 전파되는 것을 중단시키기 위한 메소드.</p>
+<p>부모 요소에 동일한 이벤트에 대한 다른 핸들러가 지정되어 있을 경우 사용된다.</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">html</span>, <span class="selector-tag">body</span> &#123; <span class="attribute">height</span>: <span class="number">100%</span>;&#125;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>버튼을 클릭하면 이벤트 전파를 중단한다. <span class="tag">&lt;<span class="name">button</span>&gt;</span>버튼<span class="tag">&lt;/<span class="name">button</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> body = <span class="built_in">document</span>.querySelector(<span class="string">'body'</span>);</span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> para = <span class="built_in">document</span>.querySelector(<span class="string">'p'</span>);</span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> button = <span class="built_in">document</span>.querySelector(<span class="string">'button'</span>);</span></span><br><span class="line"></span><br><span class="line"><span class="actionscript">    <span class="comment">// 버블링</span></span></span><br><span class="line"><span class="actionscript">    body.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">'Handler for body.'</span>);</span></span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line"><span class="actionscript">    <span class="comment">// 버블링</span></span></span><br><span class="line"><span class="actionscript">    para.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">'Handler for paragraph.'</span>);</span></span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line"><span class="actionscript">    <span class="comment">// 버블링</span></span></span><br><span class="line"><span class="actionscript">    button.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> <span class="params">(event)</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">'Handler for button.'</span>);</span></span><br><span class="line"></span><br><span class="line"><span class="actionscript">      <span class="comment">// 이벤트 전파를 중단한다.</span></span></span><br><span class="line">      event.stopPropagation();</span><br><span class="line">    &#125;);</span><br><span class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Handler for button.</span><br></pre></td></tr></table></figure>
+
+<p>button 요소의 이벤트의 전파(버블링)을 중단시키기 위해 Event.stopPropagation 메소드를 이용하였다.</p>
+<br>
+
+<h4 id="preventDefault-amp-stopPropagation"><a href="#preventDefault-amp-stopPropagation" class="headerlink" title="preventDefault &amp; stopPropagation  "></a>preventDefault &amp; stopPropagation  <a id="d10"></a></h4><p>기본 동작의 중단과 버블링 또는 캡처링의 중단을 동시에 실시하는 방법은 아래와 같다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> <span class="literal">false</span>;</span><br></pre></td></tr></table></figure>
+
+<p>단 이 방법은 jQuery를 사용할 때와 아래와 같이 사용할 때만 적용된다.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"http://www.google.com"</span> <span class="attr">onclick</span>=<span class="string">'return handleEvent()'</span>&gt;</span>go<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">  <span class="function"><span class="keyword">function</span> <span class="title">handleEvent</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">    <span class="keyword">return</span> <span class="literal">false</span>;</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"http://www.google.com"</span>&gt;</span>go<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="actionscript">  <span class="comment">// within jQuery</span></span></span><br><span class="line"><span class="javascript">  $(<span class="string">'a'</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span></span><br><span class="line"><span class="actionscript">    e.preventDefault(); <span class="comment">// OK</span></span></span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line"><span class="javascript">  $(<span class="string">'a'</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="actionscript">    <span class="keyword">return</span> <span class="literal">false</span>; <span class="comment">// OK --&gt; e.preventDefault() &amp; e.stopPropagation().</span></span></span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line"><span class="actionscript">  <span class="comment">// pure js</span></span></span><br><span class="line"><span class="javascript">  <span class="built_in">document</span>.querySelector(<span class="string">'a'</span>).addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span></span><br><span class="line"><span class="actionscript">    <span class="comment">// e.preventDefault(); // OK</span></span></span><br><span class="line"><span class="actionscript">    <span class="keyword">return</span> <span class="literal">false</span>;       <span class="comment">// NG!!!!!</span></span></span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>이 방법은 기본 동작의 중단과 이벤트 흐름의 중단 모두 적용되므로<br>이 두가지 중 하나만 중단하기 원하는 경우는 preventDefault() 또는 stopPropagation() 메소드를 개별적으로 사용한다.</p>
+<br>                                                                                                                                                                                                                                                
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://yoursite.com/2019/10/31/EventProperty/" data-id="ck2eswbdx0012fvz0m3jm1z2s" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Jun Hyeok Kim"
+        },
+        "headline": "EventProperty",
+        "image": "http://yoursite.comhttps://user-images.githubusercontent.com/31315644/67955024-3b4ed880-fc35-11e9-8e1e-837dc8c282ed.jpg",
+        "keywords": "hexo git Web coding developer CSS HTML algorithm javascript",
+        "genre": "Develop Javascript",
+        "datePublished": "2019-10-31",
+        "dateCreated": "2019-10-31",
+        "dateModified": "2019-10-31",
+        "url": "http://yoursite.com/2019/10/31/EventProperty/",
+        "description": "
+
+
+EVENT
+이벤트 란?
+이벤트 루프
+이벤트 루프(Event Loop)와 동시성(Concurrency)
+addEventListener 메소드 방식
+이벤트의 종류 ( 참고 : Event reference )
+UI Event
+Keyboard Event
+Mouse Event
+Focus Event
+Form Event
+Clipboard Event
+
+
+이벤트 핸들",
+        "wordCount": 7043
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="https://www.facebook.com/profile.php?id=100003801986180" target="_blank" rel="noopener">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/HYEOK999" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="youtube" href="https://www.youtube.com" target="_blank" rel="noopener">
+                        <i class="icon fa fa-youtube"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2019/10/31/javascript-study-18/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">javascript-study-18</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/10/31/EventProperty/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/67955024-3b4ed880-fc35-11e9-8e1e-837dc8c282ed.jpg)" alt="EventProperty" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Develop/">Develop</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Develop/Javascript/">Javascript</a></p>
+                            <p class="item-title"><a href="/2019/10/31/EventProperty/" class="title">EventProperty</a></p>
+                            <p class="item-date"><time datetime="2019-10-31T14:24:26.000Z" itemprop="datePublished">2019-10-31</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/10/31/javascript-study-18/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/65933403-536fe400-e44c-11e9-981d-c4e8c1f86998.png)" alt="javascript-study-18" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/Javascript/">Javascript</a></p>
+                            <p class="item-title"><a href="/2019/10/31/javascript-study-18/" class="title">javascript-study-18</a></p>
+                            <p class="item-date"><time datetime="2019-10-31T14:18:25.000Z" itemprop="datePublished">2019-10-31</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/10/31/javascript-preview-31m32m/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/66104821-b9976b00-e5f4-11e9-84e9-20c797dd2c51.jpeg)" alt="javascript-preview-31m32m" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a></p>
+                            <p class="item-title"><a href="/2019/10/31/javascript-preview-31m32m/" class="title">javascript-preview-31m32m</a></p>
+                            <p class="item-date"><time datetime="2019-10-31T01:53:00.000Z" itemprop="datePublished">2019-10-31</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/10/30/daily-algorithm27/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://images.velog.io/post-images/leejh3224/619516b0-e892-11e8-98f5-997ef3c38110/what-is-an-algorithm-featured.png)" alt="daily_algorithm27" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/Algorithm/">Algorithm</a></p>
+                            <p class="item-title"><a href="/2019/10/30/daily-algorithm27/" class="title">daily_algorithm27</a></p>
+                            <p class="item-date"><time datetime="2019-10-30T11:41:46.000Z" itemprop="datePublished">2019-10-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/10/30/StringObject/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/67781766-34945a00-faab-11e9-9803-7b102817cfe8.jpeg)" alt="문자열 객체" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Develop/">Develop</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Develop/Javascript/">Javascript</a></p>
+                            <p class="item-title"><a href="/2019/10/30/StringObject/" class="title">문자열 객체</a></p>
+                            <p class="item-date"><time datetime="2019-10-30T10:54:20.000Z" itemprop="datePublished">2019-10-30</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/">Develop</a><span class="category-list-count">21</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/CSS/">CSS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/GIT/">GIT</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Java/">Java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Javascript/">Javascript</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Tips/">Tips</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/">TIL</a><span class="category-list-count">99</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Algorithm/">Algorithm</a><span class="category-list-count">36</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/GIT/">GIT</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript/">Javascript</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a><span class="category-list-count">22</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/linux/">linux</a><span class="category-list-count">4</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/etc/">etc</a><span class="category-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a><span class="archive-list-count">85</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a><span class="archive-list-count">37</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">104</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ESLint/">ESLint</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a><span class="tag-list-count">103</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/">JAVA</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MarkUP/">MarkUP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Selector/">Selector</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TIL/">TIL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a><span class="tag-list-count">121</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorism/">algorism</a><span class="tag-list-count">29</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a><span class="tag-list-count">86</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/coding/">coding</a><span class="tag-list-count">121</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/developer/">developer</a><span class="tag-list-count">121</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">121</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">121</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/inline-block/">inline-block</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">87</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">3</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://github.com">github</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.naver.com">Naver</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://google.com">Google</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://www.youtube.com/">Youtube</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2019 Jun Hyeok Kim</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'http://yoursite.com/2019/10/31/EventProperty/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
