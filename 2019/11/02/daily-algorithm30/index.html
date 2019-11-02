@@ -12,15 +12,20 @@
     
         <meta name="keywords" content="hexo,git,Web,coding,developer,CSS,HTML,algorithm,javascript">
     
-    <meta name="keywords" content="hexo,git,Web,coding,developer,CSS,HTML,algorithm,javascript">
+    <meta name="description" content="문제 출처 : 프로그래머스 실패율문제 설명 슈퍼 게임 개발자 오렐리는 큰 고민에 빠졌다. 그녀가 만든 프랜즈 오천성이 대성공을 거뒀지만, 요즘 신규 사용자의 수가 급감한 것이다. 원인은 신규 사용자와 기존 사용자 사이에 스테이지 차이가 너무 큰 것이 문제였다. 이 문제를 어떻게 할까 고민 한 그녀는 동적으로 게임 시간을 늘려서 난이도를 조절하기로 했다.">
+<meta name="keywords" content="hexo,git,Web,coding,developer,CSS,HTML,algorithm,javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="daily_algorithm30">
 <meta property="og:url" content="http://yoursite.com/2019/11/02/daily-algorithm30/index.html">
 <meta property="og:site_name" content="HYEOK999&#39;s Blog">
+<meta property="og:description" content="문제 출처 : 프로그래머스 실패율문제 설명 슈퍼 게임 개발자 오렐리는 큰 고민에 빠졌다. 그녀가 만든 프랜즈 오천성이 대성공을 거뒀지만, 요즘 신규 사용자의 수가 급감한 것이다. 원인은 신규 사용자와 기존 사용자 사이에 스테이지 차이가 너무 큰 것이 문제였다. 이 문제를 어떻게 할까 고민 한 그녀는 동적으로 게임 시간을 늘려서 난이도를 조절하기로 했다.">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-02T11:11:31.190Z">
+<meta property="og:image" content="https://images.velog.io/post-images/leejh3224/619516b0-e892-11e8-98f5-997ef3c38110/what-is-an-algorithm-featured.png">
+<meta property="og:updated_time" content="2019-11-02T11:13:31.746Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="daily_algorithm30">
+<meta name="twitter:description" content="문제 출처 : 프로그래머스 실패율문제 설명 슈퍼 게임 개발자 오렐리는 큰 고민에 빠졌다. 그녀가 만든 프랜즈 오천성이 대성공을 거뒀지만, 요즘 신규 사용자의 수가 급감한 것이다. 원인은 신규 사용자와 기존 사용자 사이에 스테이지 차이가 너무 큰 것이 문제였다. 이 문제를 어떻게 할까 고민 한 그녀는 동적으로 게임 시간을 늘려서 난이도를 조절하기로 했다.">
+<meta name="twitter:image" content="https://images.velog.io/post-images/leejh3224/619516b0-e892-11e8-98f5-997ef3c38110/what-is-an-algorithm-featured.png">
     
 
     
@@ -175,14 +180,117 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <p><img src="https://images.velog.io/post-images/leejh3224/619516b0-e892-11e8-98f5-997ef3c38110/what-is-an-algorithm-featured.png" alt></p>
+<hr>
+<p>문제 출처 : 프로그래머스</p>
+<h3 id="실패율"><a href="#실패율" class="headerlink" title="실패율"></a>실패율</h3><h6 id="문제-설명"><a href="#문제-설명" class="headerlink" title="문제 설명"></a>문제 설명</h6><p><img src="https://grepp-programmers.s3.amazonaws.com/files/production/bde471d8ac/48ddf1cc-c4ea-499d-b431-9727ee799191.png" alt="failture_rate1.png"></p>
+<p>슈퍼 게임 개발자 오렐리는 큰 고민에 빠졌다. 그녀가 만든 프랜즈 오천성이 대성공을 거뒀지만, 요즘 신규 사용자의 수가 급감한 것이다. 원인은 신규 사용자와 기존 사용자 사이에 스테이지 차이가 너무 큰 것이 문제였다.</p>
+<p>이 문제를 어떻게 할까 고민 한 그녀는 동적으로 게임 시간을 늘려서 난이도를 조절하기로 했다. 역시 슈퍼 개발자라 대부분의 로직은 쉽게 구현했지만, 실패율을 구하는 부분에서 위기에 빠지고 말았다. 오렐리를 위해 실패율을 구하는 코드를 완성하라.</p>
+<ul>
+<li>실패율은 다음과 같이 정의한다.<ul>
+<li>스테이지에 도달했으나 아직 클리어하지 못한 플레이어의 수 / 스테이지에 도달한 플레이어 수</li>
+</ul>
+</li>
+</ul>
+<p>전체 스테이지의 개수 N, 게임을 이용하는 사용자가 현재 멈춰있는 스테이지의 번호가 담긴 배열 stages가 매개변수로 주어질 때, 실패율이 높은 스테이지부터 내림차순으로 스테이지의 번호가 담겨있는 배열을 return 하도록 solution 함수를 완성하라.</p>
+<h5 id="제한사항"><a href="#제한사항" class="headerlink" title="제한사항"></a>제한사항</h5><ul>
+<li><p>스테이지의 개수 N은 <code>1</code> 이상 <code>500</code> 이하의 자연수이다.</p>
+</li>
+<li><p>stages의 길이는 <code>1</code> 이상 <code>200,000</code> 이하이다.</p>
+</li>
+<li><p>stages에는</p>
+</li>
+</ul>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1</span><br></pre></td></tr></table></figure>
+
+
+
+<p>  이상</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">N + 1</span><br></pre></td></tr></table></figure>
+
+
+
+<p>  이하의 자연수가 담겨있다.</p>
+<ul>
+<li>각 자연수는 사용자가 현재 도전 중인 스테이지의 번호를 나타낸다.</li>
+<li>단, <code>N + 1</code> 은 마지막 스테이지(N 번째 스테이지) 까지 클리어 한 사용자를 나타낸다.</li>
+</ul>
+<ul>
+<li><p>만약 실패율이 같은 스테이지가 있다면 작은 번호의 스테이지가 먼저 오도록 하면 된다.</p>
+</li>
+<li><p>스테이지에 도달한 유저가 없는 경우 해당 스테이지의 실패율은 <code>0</code> 으로 정의한다.</p>
+</li>
+</ul>
+<h5 id="입출력-예"><a href="#입출력-예" class="headerlink" title="입출력 예"></a>입출력 예</h5><table>
+<thead>
+<tr>
+<th>N</th>
+<th>stages</th>
+<th>result</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>5</td>
+<td>[2, 1, 2, 6, 2, 4, 3, 3]</td>
+<td>[3,4,2,1,5]</td>
+</tr>
+<tr>
+<td>4</td>
+<td>[4,4,4,4,4]</td>
+<td>[4,1,2,3]</td>
+</tr>
+</tbody></table>
+<h5 id="입출력-예-설명"><a href="#입출력-예-설명" class="headerlink" title="입출력 예 설명"></a>입출력 예 설명</h5><p>입출력 예 #1<br>1번 스테이지에는 총 8명의 사용자가 도전했으며, 이 중 1명의 사용자가 아직 클리어하지 못했다. 따라서 1번 스테이지의 실패율은 다음과 같다.</p>
+<ul>
+<li>1 번 스테이지 실패율 : 1/8</li>
+</ul>
+<p>2번 스테이지에는 총 7명의 사용자가 도전했으며, 이 중 3명의 사용자가 아직 클리어하지 못했다. 따라서 2번 스테이지의 실패율은 다음과 같다.</p>
+<ul>
+<li>2 번 스테이지 실패율 : 3/7</li>
+</ul>
+<p>마찬가지로 나머지 스테이지의 실패율은 다음과 같다.</p>
+<ul>
+<li>3 번 스테이지 실패율 : 2/4</li>
+<li>4번 스테이지 실패율 : 1/2</li>
+<li>5번 스테이지 실패율 : 0/1</li>
+</ul>
+<p>각 스테이지의 번호를 실패율의 내림차순으로 정렬하면 다음과 같다.</p>
+<ul>
+<li>[3,4,2,1,5]</li>
+</ul>
+<p>입출력 예 #2</p>
+<p>모든 사용자가 마지막 스테이지에 있으므로 4번 스테이지의 실패율은 1이며 나머지 스테이지의 실패율은 0이다.</p>
+<ul>
+<li>[4,1,2,3]</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">solution</span>(<span class="params">N, stages</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> answer = [];</span><br><span class="line">  <span class="keyword">const</span> stage = [...stages].sort(<span class="function">(<span class="params">a, b</span>) =&gt;</span> a - b);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> rate = <span class="built_in">Array</span>(N).fill(<span class="number">0</span>);</span><br><span class="line">  <span class="keyword">let</span> nonClearUser = [];</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">1</span>; i &lt;= N; i++) &#123;</span><br><span class="line">    nonClearUser = stage.splice(stage.indexOf(i), stage.lastIndexOf(i) + <span class="number">1</span>);</span><br><span class="line">    rate[i - <span class="number">1</span>] = nonClearUser.length / stage.length;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">Number</span>.isNaN(rate[i - <span class="number">1</span>])) rate[i - <span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">1</span>; i &lt;= N; i++) &#123;</span><br><span class="line">    answer[i - <span class="number">1</span>] = rate.indexOf(<span class="built_in">Math</span>.max(...rate)) + <span class="number">1</span>;</span><br><span class="line">    rate[rate.indexOf(<span class="built_in">Math</span>.max(...rate))] = <span class="literal">null</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> answer;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>마지막에 NaN값에 대한 처리를 안해줘서 많이 애먹었다.</p>
+<ol>
+<li><p>각 스테이지마다 클리어하지 못한 스테이지를 담고 있는 변수 stage를 sort로 정렬시킨다.</p>
+</li>
+<li><p>각 실패율을 담을 변수인 rate를 N의 배열로 만들고 전부 0으로 채운다.</p>
+</li>
+<li><p>실패한 유저수를 세기 위해 nonClearUser라는 변수를 생성한다.</p>
+</li>
+<li><p>스테이지 1부터 스테이지 N까지 돌면서 각 스테이지에서 클리어하지 못한 사람을 찾아 배열에 담는다.</p>
+<p>여기서 1번에서 만든 stage를 미리 정렬해놨으니 특정 길이만큼만 자르면 해당 스테이지를 클리어하지 못한 사람들이 모인 배열을 찾을 수 있다. 그 부분에서 indexOf, lastIndexOf를 사용한다. </p>
+<p>nonClearUser의 길이 / 잘리고 남은 스테이지 길이만큼을 나누고 그 결과 2번에 만든 rate에 쌓기 시작한다.</p>
+</li>
+<li><p>rate는 현재 실패율(소숫점)이 들어가 있는데 여기에 있는 실패율들의 순서대로 인덱스를 반환하면 된다</p>
+<p>주의점은 또 splice로 자르게 되면 rate의 전체적인 길이가 줄어들기 때문에 자르지말고 null값으로 채워준다.</p>
+</li>
+</ol>
+<br>
+
+
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="http://yoursite.com/2019/11/02/daily-algorithm30/" data-id="ck2hgvdtg004l9hz0ns7kv3xl" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2019/11/02/daily-algorithm30/" data-id="ck2hgxrhx004yeez0tg6my2gl" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -253,15 +361,20 @@
             "name": "Jun Hyeok Kim"
         },
         "headline": "daily_algorithm30",
-        "image": "http://yoursite.com",
+        "image": "http://yoursite.comhttps://images.velog.io/post-images/leejh3224/619516b0-e892-11e8-98f5-997ef3c38110/what-is-an-algorithm-featured.png",
         "keywords": "hexo git Web coding developer CSS HTML algorithm javascript",
         "genre": "TIL Algorithm",
         "datePublished": "2019-11-02",
         "dateCreated": "2019-11-02",
         "dateModified": "2019-11-02",
         "url": "http://yoursite.com/2019/11/02/daily-algorithm30/",
-        "description": "",
-        "wordCount": 1
+        "description": "
+
+문제 출처 : 프로그래머스
+실패율문제 설명
+슈퍼 게임 개발자 오렐리는 큰 고민에 빠졌다. 그녀가 만든 프랜즈 오천성이 대성공을 거뒀지만, 요즘 신규 사용자의 수가 급감한 것이다. 원인은 신규 사용자와 기존 사용자 사이에 스테이지 차이가 너무 큰 것이 문제였다.
+이 문제를 어떻게 할까 고민 한 그녀는 동적으로 게임 시간을 늘려서 난이도를 조절하기로 했다.",
+        "wordCount": 593
     }
 </script>
 
@@ -345,7 +458,7 @@
                             <a href="/2019/11/02/daily-algorithm30/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(https://images.velog.io/post-images/leejh3224/619516b0-e892-11e8-98f5-997ef3c38110/what-is-an-algorithm-featured.png)" alt="daily_algorithm30" class="thumbnail-image"></span>
     
     
 </a>
@@ -365,7 +478,7 @@
                             <a href="/2019/11/02/daily-algorithm29/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(https://images.velog.io/post-images/leejh3224/619516b0-e892-11e8-98f5-997ef3c38110/what-is-an-algorithm-featured.png)" alt="daily_algorithm29" class="thumbnail-image"></span>
     
     
 </a>
@@ -385,7 +498,7 @@
                             <a href="/2019/11/02/daily-algorithm28/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(https://images.velog.io/post-images/leejh3224/619516b0-e892-11e8-98f5-997ef3c38110/what-is-an-algorithm-featured.png)" alt="daily_algorithm28" class="thumbnail-image"></span>
     
     
 </a>

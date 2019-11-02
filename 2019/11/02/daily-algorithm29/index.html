@@ -12,15 +12,20 @@
     
         <meta name="keywords" content="hexo,git,Web,coding,developer,CSS,HTML,algorithm,javascript">
     
-    <meta name="keywords" content="hexo,git,Web,coding,developer,CSS,HTML,algorithm,javascript">
+    <meta name="description" content="문제 출처 : 프로그래머스 소수 찾기문제 설명1부터 입력받은 숫자 n 사이에 있는 소수의 개수를 반환하는 함수, solution을 만들어 보세요. 소수는 1과 자기 자신으로만 나누어지는 수를 의미합니다.(1은 소수가 아닙니다.) 제한 조건 n은 2이상 1000000이하의 자연수입니다.  입출력 예   n result    10 4   5 3   입출력">
+<meta name="keywords" content="hexo,git,Web,coding,developer,CSS,HTML,algorithm,javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="daily_algorithm29">
 <meta property="og:url" content="http://yoursite.com/2019/11/02/daily-algorithm29/index.html">
 <meta property="og:site_name" content="HYEOK999&#39;s Blog">
+<meta property="og:description" content="문제 출처 : 프로그래머스 소수 찾기문제 설명1부터 입력받은 숫자 n 사이에 있는 소수의 개수를 반환하는 함수, solution을 만들어 보세요. 소수는 1과 자기 자신으로만 나누어지는 수를 의미합니다.(1은 소수가 아닙니다.) 제한 조건 n은 2이상 1000000이하의 자연수입니다.  입출력 예   n result    10 4   5 3   입출력">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-02T11:11:23.972Z">
+<meta property="og:image" content="https://images.velog.io/post-images/leejh3224/619516b0-e892-11e8-98f5-997ef3c38110/what-is-an-algorithm-featured.png">
+<meta property="og:updated_time" content="2019-11-02T11:13:12.351Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="daily_algorithm29">
+<meta name="twitter:description" content="문제 출처 : 프로그래머스 소수 찾기문제 설명1부터 입력받은 숫자 n 사이에 있는 소수의 개수를 반환하는 함수, solution을 만들어 보세요. 소수는 1과 자기 자신으로만 나누어지는 수를 의미합니다.(1은 소수가 아닙니다.) 제한 조건 n은 2이상 1000000이하의 자연수입니다.  입출력 예   n result    10 4   5 3   입출력">
+<meta name="twitter:image" content="https://images.velog.io/post-images/leejh3224/619516b0-e892-11e8-98f5-997ef3c38110/what-is-an-algorithm-featured.png">
     
 
     
@@ -175,14 +180,67 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <p><img src="https://images.velog.io/post-images/leejh3224/619516b0-e892-11e8-98f5-997ef3c38110/what-is-an-algorithm-featured.png" alt></p>
+<hr>
+<p>문제 출처 : 프로그래머스</p>
+<h3 id="소수-찾기"><a href="#소수-찾기" class="headerlink" title="소수 찾기"></a>소수 찾기</h3><h6 id="문제-설명"><a href="#문제-설명" class="headerlink" title="문제 설명"></a>문제 설명</h6><p>1부터 입력받은 숫자 n 사이에 있는 소수의 개수를 반환하는 함수, solution을 만들어 보세요.</p>
+<p>소수는 1과 자기 자신으로만 나누어지는 수를 의미합니다.<br>(1은 소수가 아닙니다.)</p>
+<h5 id="제한-조건"><a href="#제한-조건" class="headerlink" title="제한 조건"></a>제한 조건</h5><ul>
+<li>n은 2이상 1000000이하의 자연수입니다.</li>
+</ul>
+<h5 id="입출력-예"><a href="#입출력-예" class="headerlink" title="입출력 예"></a>입출력 예</h5><table>
+<thead>
+<tr>
+<th>n</th>
+<th>result</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>10</td>
+<td>4</td>
+</tr>
+<tr>
+<td>5</td>
+<td>3</td>
+</tr>
+</tbody></table>
+<h5 id="입출력-예-설명"><a href="#입출력-예-설명" class="headerlink" title="입출력 예 설명"></a>입출력 예 설명</h5><p>입출력 예 #1<br>1부터 10 사이의 소수는 [2,3,5,7] 4개가 존재하므로 4를 반환</p>
+<p>입출력 예 #2<br>1부터 5 사이의 소수는 [2,3,5] 3개가 존재하므로 3를 반환</p>
+<br>
+
+<h4 id="O-n제곱-형태의-기본적인-풀이"><a href="#O-n제곱-형태의-기본적인-풀이" class="headerlink" title="O n제곱 형태의 기본적인 풀이"></a>O n제곱 형태의 기본적인 풀이</h4><p>각 수마다 for문을 돌아가면서 소수를 찾는 방법 for문 내부에 또 for문이 돌기때문에 시간이 오래걸린다.</p>
+<p>테스트 케이스가 커지면 커질수록 시간이 오래걸려서 테스트 10 ~13번까지 통과하지 못했다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">solution</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> result = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">let</span> count = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">2</span>; i &lt;= n; i++) &#123;</span><br><span class="line">    count = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> j = <span class="number">1</span>; j &lt;= i; j++) &#123;</span><br><span class="line">      <span class="keyword">if</span> (i % j == <span class="number">0</span>) &#123;</span><br><span class="line">        count++;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (count == <span class="number">2</span>) &#123;</span><br><span class="line">      result++;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://user-images.githubusercontent.com/31315644/68067317-6269ef00-fd88-11e9-8444-79a8cc6292f7.jpeg" alt="소수찾기"></p>
+<br>
+
+<h4 id="에라토스테네스의-체"><a href="#에라토스테네스의-체" class="headerlink" title="에라토스테네스의 체"></a>에라토스테네스의 체</h4><p>소수를 더 쉽게 찾는 방법이 존재하길래 구글 검색을 통해 알아낸 에라토스테네스의 체 공식이다.</p>
+<p>여기서 주워진 문제는 2부터 n만큼까지의 소수를 찾는 문제이다.</p>
+<p>n은 결국 어떤 수의 제곱보다 낮은 숫자들만큼만 길이를 재면 된다. </p>
+<p>예를들면 120은 11(121)의 제곱보다 1낮기 떄문에 11로 가정한다. </p>
+<p>120까지 1번이라도 같은 배수해서 나온 수가 있다면 그 수는 소수가 아니기 때문에 11까지 검사하면 된다.</p>
+<p>풀이 방법은 다음과 같다.</p>
+<ol>
+<li>받아온 n을 제곱근으로 반환한다.(Math.sqrt) 그리고 소수가 나올수도 있기 때문에 올림한다.(Math.ceil)</li>
+<li>n만큼의 배열을 만들어낸다. 여기서 모두 false 혹은 true로 채워버린다. (Array(n).fill(false))</li>
+<li>미리 구해둔 n의 제곱근만큼 반복을 돌린다. 시작은 2이다(1은 소수가 아니기 떄문)</li>
+<li>조건이 true라면 소수가 아니다. 따라서 해당 배열이 true일 경우 continue로 다음 반복으로 돌아가 소수인지를 찾는다.</li>
+<li>조건이 false라면 소수다. 소수의 배수만큼 배열 내부에 접근해 반복을 사용하여 배수의 인덱스 부분들을 전부 true로 바꿔준다.</li>
+<li>모든 반복이 끝나고 마지막에 2부터 시작해서 n까지 배열에 false값만을 찾는다. false의 갯수당 카운터를 1개씩 올리면 소수의 갯수를 판단할 수 있다.</li>
+</ol>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/Sieve_of_Eratosthenes_animation.gif" alt="에라토스테네스의 체"></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">solution</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line"><span class="keyword">let</span> rootSqrt = <span class="built_in">Math</span>.ceil(<span class="built_in">Math</span>.sqrt(n));</span><br><span class="line"><span class="keyword">let</span> arr = <span class="built_in">Array</span>(n).fill(<span class="literal">false</span>);</span><br><span class="line"><span class="keyword">let</span> answer = <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">2</span>; i &lt;= rootSqrt; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (arr[i]) &#123;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> j = i + i; j &lt;= n; j += i) &#123;</span><br><span class="line">            arr[j] = <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">2</span>; i &lt;= n ; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(!arr[i]) answer++;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> answer</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://user-images.githubusercontent.com/31315644/68067318-6269ef00-fd88-11e9-8878-b3db4314e1b9.jpeg" alt="소수찾기2"></p>
+
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="http://yoursite.com/2019/11/02/daily-algorithm29/" data-id="ck2hgvdth004p9hz0s5e2ik6i" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2019/11/02/daily-algorithm29/" data-id="ck2hgxrhx004veez0bz4w7mjp" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -253,15 +311,39 @@
             "name": "Jun Hyeok Kim"
         },
         "headline": "daily_algorithm29",
-        "image": "http://yoursite.com",
+        "image": "http://yoursite.comhttps://images.velog.io/post-images/leejh3224/619516b0-e892-11e8-98f5-997ef3c38110/what-is-an-algorithm-featured.png",
         "keywords": "hexo git Web coding developer CSS HTML algorithm javascript",
         "genre": "TIL Algorithm",
         "datePublished": "2019-11-02",
         "dateCreated": "2019-11-02",
         "dateModified": "2019-11-02",
         "url": "http://yoursite.com/2019/11/02/daily-algorithm29/",
-        "description": "",
-        "wordCount": 1
+        "description": "
+
+문제 출처 : 프로그래머스
+소수 찾기문제 설명1부터 입력받은 숫자 n 사이에 있는 소수의 개수를 반환하는 함수, solution을 만들어 보세요.
+소수는 1과 자기 자신으로만 나누어지는 수를 의미합니다.(1은 소수가 아닙니다.)
+제한 조건
+n은 2이상 1000000이하의 자연수입니다.
+
+입출력 예
+
+
+n
+result
+
+
+
+10
+4
+
+
+5
+3
+
+
+입출력 ",
+        "wordCount": 609
     }
 </script>
 
@@ -355,7 +437,7 @@
                             <a href="/2019/11/02/daily-algorithm30/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(https://images.velog.io/post-images/leejh3224/619516b0-e892-11e8-98f5-997ef3c38110/what-is-an-algorithm-featured.png)" alt="daily_algorithm30" class="thumbnail-image"></span>
     
     
 </a>
@@ -375,7 +457,7 @@
                             <a href="/2019/11/02/daily-algorithm29/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(https://images.velog.io/post-images/leejh3224/619516b0-e892-11e8-98f5-997ef3c38110/what-is-an-algorithm-featured.png)" alt="daily_algorithm29" class="thumbnail-image"></span>
     
     
 </a>
@@ -395,7 +477,7 @@
                             <a href="/2019/11/02/daily-algorithm28/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(https://images.velog.io/post-images/leejh3224/619516b0-e892-11e8-98f5-997ef3c38110/what-is-an-algorithm-featured.png)" alt="daily_algorithm28" class="thumbnail-image"></span>
     
     
 </a>
