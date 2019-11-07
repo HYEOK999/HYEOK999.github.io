@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+
+    
+
+    
+    <title>REST API | HYEOK999&#39;s Blog</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="hexo,git,Web,coding,developer,algorithm,HTML,CSS,javascript">
+    
+    <meta name="description" content="JavaScript REST API REST(Representational State Transfer) API REST API 중심 규칙 URI는 정보의 자원을 표현 자원에 대한 행위는 HTTP Method(GET, POST, PUT, DELETE 등)으로 표현   HTTP Method REST API의 구성 REST API 예 json-server G">
+<meta name="keywords" content="hexo,git,Web,coding,developer,algorithm,HTML,CSS,javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="REST API">
+<meta property="og:url" content="http://yoursite.com/2019/11/07/REST-API/index.html">
+<meta property="og:site_name" content="HYEOK999&#39;s Blog">
+<meta property="og:description" content="JavaScript REST API REST(Representational State Transfer) API REST API 중심 규칙 URI는 정보의 자원을 표현 자원에 대한 행위는 HTTP Method(GET, POST, PUT, DELETE 등)으로 표현   HTTP Method REST API의 구성 REST API 예 json-server G">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://user-images.githubusercontent.com/31315644/68327674-22509680-0111-11ea-9ab0-8cff7da105ba.jpg">
+<meta property="og:updated_time" content="2019-11-07T15:59:15.705Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="REST API">
+<meta name="twitter:description" content="JavaScript REST API REST(Representational State Transfer) API REST API 중심 규칙 URI는 정보의 자원을 표현 자원에 대한 행위는 HTTP Method(GET, POST, PUT, DELETE 등)으로 표현   HTTP Method REST API의 구성 REST API 예 json-server G">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/31315644/68327674-22509680-0111-11ea-9ab0-8cff7da105ba.jpg">
+    
+
+    
+
+    
+        <link rel="icon" href="/images/favicon_io/favicon.ico">
+    
+
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Architects+Daughter&display=swap" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin+Sketch&display=swap">
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">HYEOK999&#39;s Daily Develop</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/">Develop</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/CSS/">CSS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/GIT/">GIT</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Tips/">Tips</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/">TIL</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Algorithm-Quiz/">Algorithm & Quiz</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/GIT/">GIT</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/linux/">linux</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/etc/">etc</a></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="https://about.me/iasg2004">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Develop/">Develop</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Develop/Javascript/">Javascript</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-REST-API" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        REST API
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/11/07/REST-API/" class="article-date">
+            <time datetime="2019-11-07T03:58:49.000Z" itemprop="datePublished">2019-11-07</time>
+        </a>
+    </div>
+
+		
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/CSS/">CSS</a>, <a class="tag-link" href="/tags/HTML/">HTML</a>, <a class="tag-link" href="/tags/Web/">Web</a>, <a class="tag-link" href="/tags/algorithm/">algorithm</a>, <a class="tag-link" href="/tags/coding/">coding</a>, <a class="tag-link" href="/tags/developer/">developer</a>, <a class="tag-link" href="/tags/git/">git</a>, <a class="tag-link" href="/tags/hexo/">hexo</a>, <a class="tag-link" href="/tags/javascript/">javascript</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p><img src="https://user-images.githubusercontent.com/31315644/68327674-22509680-0111-11ea-9ab0-8cff7da105ba.jpg" alt="rest"></p>
+<hr>
+<h2 id="JavaScript-REST-API"><a href="#JavaScript-REST-API" class="headerlink" title="JavaScript REST API"></a>JavaScript REST API</h2><ul>
+<li>REST(Representational State Transfer) API<ul>
+<li><a href="#a1">REST API 중심 규칙</a><ul>
+<li><a href="#a2">URI는 정보의 자원을 표현</a></li>
+<li><a href="#a3">자원에 대한 행위는 HTTP Method(GET, POST, PUT, DELETE 등)으로 표현</a></li>
+</ul>
+</li>
+<li><a href="#a4">HTTP Method</a></li>
+<li><a href="#a5">REST API의 구성</a></li>
+<li><a href="#a6">REST API 예</a><ul>
+<li><a href="#a7">json-server</a></li>
+<li><a href="#a8">GET</a><ul>
+<li><a href="#a9">특정 아이디만 선택이 가능하다.</a></li>
+</ul>
+</li>
+<li><a href="#a10">POST</a></li>
+<li><a href="#a11">PUT</a></li>
+<li><a href="#a12">PATCH</a></li>
+<li><a href="#a13">DELETE</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<br>
+
+<hr>
+<h1 id="35강"><a href="#35강" class="headerlink" title="35강"></a>35강</h1><h2 id="REST-Representational-State-Transfer-API"><a href="#REST-Representational-State-Transfer-API" class="headerlink" title="REST(Representational State Transfer) API"></a>REST(Representational State Transfer) API</h2><p>REST의 기본 원칙을 성실히 지킨 서비스 디자인을 “RESTful”이라고 표현한다.</p>
+<p>Method 작성 시 시멘틱하게 작성하는 것. </p>
+<p>따르지 않더라도 에러가 나는 것은 아니지만 협업하기 위해 필요로 한다.</p>
+<br>
+
+<h3 id="REST-API-중심-규칙"><a href="#REST-API-중심-규칙" class="headerlink" title="REST API 중심 규칙 "></a>REST API 중심 규칙 <a id="a1"></a></h3><ul>
+<li>URI는 자원을 표현하는데 집중</li>
+<li>HTTP Method는 행위에 대한 정의에 집중</li>
+</ul>
+<br>
+
+<h4 id="1-URI는-정보의-자원을-표현"><a href="#1-URI는-정보의-자원을-표현" class="headerlink" title="1. URI는 정보의 자원을 표현 "></a>1. URI는 정보의 자원을 표현 <a id="a2"></a></h4><ul>
+<li>리소스명은 명사위주로 작성한다. ( 동사x , 명사o )</li>
+<li>get같은 행위에 대한 표현이 들어가는 것은 좋지 않다.</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># bad</span></span><br><span class="line">GET /getTodos/1</span><br><span class="line">GET /todos/show/1</span><br><span class="line"></span><br><span class="line"><span class="comment"># good</span></span><br><span class="line">GET /todos/1</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="2-자원에-대한-행위는-HTTP-Method-GET-POST-PUT-DELETE-등-으로-표현"><a href="#2-자원에-대한-행위는-HTTP-Method-GET-POST-PUT-DELETE-등-으로-표현" class="headerlink" title="2. 자원에 대한 행위는 HTTP Method(GET, POST, PUT, DELETE 등)으로 표현 "></a>2. 자원에 대한 행위는 HTTP Method(GET, POST, PUT, DELETE 등)으로 표현 <a id="a3"></a></h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># bad</span></span><br><span class="line">GET /todos/delete/1</span><br><span class="line"></span><br><span class="line"><span class="comment"># good</span></span><br><span class="line">DELETE /todos/1</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="HTTP-Method"><a href="#HTTP-Method" class="headerlink" title="HTTP Method "></a>HTTP Method <a id="a4"></a></h3><p>주로 5가지의 Method(GET, POST, PUT, PATCH, DELETE)를 사용하여 CRUD를 구현한다.<br>(CRUD : Create, Read, Update, Delete)</p>
+<table>
+<thead>
+<tr>
+<th align="left">Method</th>
+<th align="left">Action</th>
+<th align="left">역할</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">GET</td>
+<td align="left">index/retrieve</td>
+<td align="left">모든/특정 리소스를 조회</td>
+</tr>
+<tr>
+<td align="left">POST</td>
+<td align="left">create</td>
+<td align="left">리소스를 생성</td>
+</tr>
+<tr>
+<td align="left">PUT</td>
+<td align="left">update all</td>
+<td align="left"><strong>리소스의 전체를 갱신</strong></td>
+</tr>
+<tr>
+<td align="left">PATCH</td>
+<td align="left">update</td>
+<td align="left"><strong>리소스의 일부를 갱신</strong></td>
+</tr>
+<tr>
+<td align="left">DELETE</td>
+<td align="left">delete</td>
+<td align="left">리소스를 삭제</td>
+</tr>
+</tbody></table>
+<br>
+
+<h3 id="REST-API의-구성"><a href="#REST-API의-구성" class="headerlink" title="REST API의 구성 "></a>REST API의 구성 <a id="a5"></a></h3><ul>
+<li>자원(Resource), 행위(Verb), 표현(Representations)의 3가지 요소로 구성된다. </li>
+<li>REST는 자체 표현 구조(Self-descriptiveness)로 구성되어 REST API만으로 요청을 이해할 수 있다.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">구성 요소</th>
+<th align="left">내용</th>
+<th align="left">표현 방법</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Resource</td>
+<td align="left">자원</td>
+<td align="left">HTTP URI</td>
+</tr>
+<tr>
+<td align="left">Verb</td>
+<td align="left">자원에 대한 행위</td>
+<td align="left">HTTP Method</td>
+</tr>
+<tr>
+<td align="left">Representations</td>
+<td align="left">자원에 대한 행위의 내용</td>
+<td align="left">HTTP Message Pay Load</td>
+</tr>
+</tbody></table>
+<br>
+
+<h3 id="REST-API-예"><a href="#REST-API-예" class="headerlink" title="REST API 예  "></a>REST API 예  <a id="a6"></a></h3><h4 id="json-server"><a href="#json-server" class="headerlink" title="json-server  "></a>json-server  <a id="a7"></a></h4><p>폴더 만들고 접근 후 다음 명령을 사용하여 예습을 준비한다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir rest-api-exam &amp;&amp; <span class="built_in">cd</span> rest-api-exam</span><br><span class="line">$ npm init -y</span><br><span class="line">$ npm install json-server</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p>db.json 파일을 아래와 같이 생성한다.</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"todos"</span>: [</span><br><span class="line">    &#123; <span class="attr">"id"</span>: <span class="number">1</span>, <span class="attr">"content"</span>: <span class="string">"HTML"</span>, <span class="attr">"completed"</span>: <span class="literal">false</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">"id"</span>: <span class="number">2</span>, <span class="attr">"content"</span>: <span class="string">"CSS"</span>, <span class="attr">"completed"</span>: <span class="literal">true</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">"id"</span>: <span class="number">3</span>, <span class="attr">"content"</span>: <span class="string">"Javascript"</span>, <span class="attr">"completed"</span>: <span class="literal">false</span> &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>package.json 파일을 수정한다.</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"name"</span>: <span class="string">"rest-api-exam"</span>,</span><br><span class="line">  <span class="attr">"version"</span>: <span class="string">"1.0.0"</span>,</span><br><span class="line">  <span class="attr">"description"</span>: <span class="string">""</span>,</span><br><span class="line">  <span class="attr">"scripts"</span>: &#123;</span><br><span class="line">    <span class="attr">"start"</span>: <span class="string">"json-server --watch db.json --port 5000"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"dependencies"</span>: &#123;</span><br><span class="line">    <span class="attr">"json-server"</span>: <span class="string">"^0.15.0"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>실행은 <code>$ npm start</code> 명령을 이용하며 포트는 5000 이다.</p>
+<br>
+
+<h4 id="GET"><a href="#GET" class="headerlink" title="GET  "></a>GET  <a id="a8"></a></h4><p>GET은 <strong>리소스를 조회, 검색</strong> 할 때 사용한다.</p>
+<p>todos 리소스에서 모든 todo를 조회(index)한다.</p>
+<p><img src="https://user-images.githubusercontent.com/31315644/68354814-bdb52c00-0150-11ea-9523-10b6c09a3d1c.jpeg" alt="get"></p>
+<p>GET 요청을 보낼떄마다 서버측에 로그가 뜬다.</p>
+<p>GET 요청을 RESTful 하게 하여 명사로 todos를 달라고 명시적으로 접근하였다.</p>
+<br>
+
+<p><strong>Script로 작성</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">xhr.open(<span class="string">'GET'</span>, <span class="string">'http://localhost:5000/todos/'</span>);</span><br><span class="line">xhr.send();</span><br><span class="line"></span><br><span class="line">xhr.onreadystatechange = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line"><span class="keyword">if</span> (xhr.readyState !== XMLHttpRequest.DONE) <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span>(xhr.status === <span class="number">200</span>) &#123; <span class="comment">// 200: OK =&gt; https://httpstatuses.com</span></span><br><span class="line">    <span class="built_in">console</span>.log(xhr.responseText);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"Error!"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h5 id="특정-아이디만-선택이-가능하다"><a href="#특정-아이디만-선택이-가능하다" class="headerlink" title="특정 아이디만 선택이 가능하다.  "></a>특정 아이디만 선택이 가능하다.  <a id="a9"></a></h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ curl -X GET http://localhost:5000/todos/1</span><br><span class="line">// &#123;</span><br><span class="line">//   <span class="string">"id"</span>: 1,</span><br><span class="line">//   <span class="string">"content"</span>: <span class="string">"HTML"</span>,</span><br><span class="line">//   <span class="string">"completed"</span>: <span class="literal">false</span></span><br><span class="line">// &#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>Script로 작성</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">xhr.open(<span class="string">'GET'</span>, <span class="string">'http://localhost:5000/todos/1'</span>);</span><br><span class="line">xhr.send();</span><br><span class="line"></span><br><span class="line">xhr.onreadystatechange = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (xhr.readyState !== XMLHttpRequest.DONE) <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span>(xhr.status === <span class="number">200</span>) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(xhr.responseText);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"Error!"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="POST"><a href="#POST" class="headerlink" title="POST  "></a>POST  <a id="a10"></a></h4><p>POST 는 <strong>리소스를 생성</strong>할 때 사용한다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ curl -X POST http://localhost:5000/todos -H <span class="string">"Content-Type: application/json"</span> -d <span class="string">'&#123;"id": 4, "content": "Angular", "completed": true&#125;'</span></span><br><span class="line">// &#123;</span><br><span class="line">//   <span class="string">"id"</span>: 4,</span><br><span class="line">//   <span class="string">"content"</span>: <span class="string">"Angular"</span>,</span><br><span class="line">//   <span class="string">"completed"</span>: <span class="literal">true</span></span><br><span class="line">// &#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>-H &quot;Content-Type: application/json&quot; -d &#39;{&quot;id&quot;: 4, &quot;content&quot;: &quot;Angular&quot;, &quot;completed&quot;: true}&#39;</code></p>
+<p>는 리소스를 생성하기 위한 명령어다.</p>
+<p><strong>Script로 작성</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">xhr.open(<span class="string">'POST'</span>, <span class="string">'http://localhost:5000/todos'</span>);</span><br><span class="line">xhr.setRequestHeader(<span class="string">'Content-type'</span>, <span class="string">'application/json'</span>);</span><br><span class="line">xhr.send(<span class="built_in">JSON</span>.stringify(&#123; <span class="attr">id</span>: <span class="number">4</span>, <span class="attr">content</span>: <span class="string">'Angular'</span>, <span class="attr">completed</span>: <span class="literal">true</span> &#125;));</span><br><span class="line"></span><br><span class="line">xhr.onreadystatechange = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (xhr.readyState !== XMLHttpRequest.DONE) <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span>(xhr.status === <span class="number">201</span>) &#123; <span class="comment">// 201: Created</span></span><br><span class="line">    <span class="built_in">console</span>.log(xhr.responseText);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"Error!"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="PUT"><a href="#PUT" class="headerlink" title="PUT  "></a>PUT  <a id="a11"></a></h4><p>PUT은 특정 리소스의 <strong>전체를 갱신</strong>할 때 사용한다. (Update)<br>todos 리소스에서 id를 사용하여 todo를 특정하여 id를 제외한 리소스 전체를 갱신한다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ curl -X PUT http://localhost:5000/todos/4 -H <span class="string">"Content-Type: application/json"</span> -d <span class="string">'&#123;"id": 4, "content": "React", "completed": false&#125;'</span></span><br><span class="line">// &#123;</span><br><span class="line">//   <span class="string">"content"</span>: <span class="string">"React"</span>,</span><br><span class="line">//   <span class="string">"completed"</span>: <span class="literal">false</span>,</span><br><span class="line">//   <span class="string">"id"</span>: 4</span><br><span class="line">// &#125;</span><br></pre></td></tr></table></figure>
+
+<p>“content”: “Angular” -&gt; “content”: “React”로 변경되었다.</p>
+<p><strong>Script로 작성</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">xhr.open(<span class="string">'PUT'</span>, <span class="string">'http://localhost:5000/todos/4'</span>);</span><br><span class="line">xhr.setRequestHeader(<span class="string">'Content-type'</span>, <span class="string">'application/json'</span>);</span><br><span class="line">xhr.send(<span class="built_in">JSON</span>.stringify(&#123; <span class="attr">id</span>: <span class="number">4</span>, <span class="attr">content</span>: <span class="string">'React'</span>, <span class="attr">completed</span>: <span class="literal">false</span> &#125;));</span><br><span class="line"></span><br><span class="line">xhr.onreadystatechange = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (xhr.readyState !== XMLHttpRequest.DONE) <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span>(xhr.status === <span class="number">200</span>) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(xhr.responseText);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"Error!"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="PATCH"><a href="#PATCH" class="headerlink" title="PATCH  "></a>PATCH  <a id="a12"></a></h4><p>PATCH는 특정 리소스의 <strong>일부를 갱신</strong>할 때 사용한다.<br>todos 리소스의 id를 사용하여 todo를 특정하여 completed만을 true로 갱신한다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ curl -X PATCH http://localhost:5000/todos/4 -H <span class="string">"Content-Type: application/json"</span> -d <span class="string">'&#123;"completed": true&#125;'</span></span><br><span class="line">// &#123;</span><br><span class="line">//   <span class="string">"id"</span>: 4,</span><br><span class="line">//   <span class="string">"content"</span>: <span class="string">"React"</span>,</span><br><span class="line">//   <span class="string">"completed"</span>: <span class="literal">true</span></span><br><span class="line">// &#125;</span><br></pre></td></tr></table></figure>
+
+<p>“completed”: false -&gt; “completed”: true 로 변경되었다.</p>
+<p><strong>Script로 작성</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">xhr.open(<span class="string">'PATCH'</span>, <span class="string">'http://localhost:5000/todos/4'</span>);</span><br><span class="line">xhr.setRequestHeader(<span class="string">'Content-type'</span>, <span class="string">'application/json'</span>);</span><br><span class="line">xhr.send(<span class="built_in">JSON</span>.stringify(&#123; <span class="attr">completed</span>: <span class="literal">true</span> &#125;));</span><br><span class="line"></span><br><span class="line">xhr.onreadystatechange = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (xhr.readyState !== XMLHttpRequest.DONE) <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span>(xhr.status === <span class="number">200</span>) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(xhr.responseText);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"Error!"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="DELETE"><a href="#DELETE" class="headerlink" title="DELETE  "></a>DELETE  <a id="a13"></a></h4><p>DELETE는 특정 리소스의 <strong>일부를 삭제</strong>할 때 사용한다.<br>todos 리소스에서 id를 사용하여 todo를 특정하고 삭제한다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ curl -X DELETE http://localhost:5000/todos/4</span><br><span class="line">// &#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>Script로 작성</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">xhr.open(<span class="string">'DELETE'</span>, <span class="string">'http://localhost:5000/todos/4'</span>);</span><br><span class="line">xhr.send();</span><br><span class="line"></span><br><span class="line">xhr.onreadystatechange = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (xhr.readyState !== XMLHttpRequest.DONE) <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span>(xhr.status === <span class="number">200</span>) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(xhr.responseText);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"Error!"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://yoursite.com/2019/11/07/REST-API/" data-id="ck2owcszg001l90z08hm2la9e" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Jun Hyeok Kim"
+        },
+        "headline": "REST API",
+        "image": "http://yoursite.comhttps://user-images.githubusercontent.com/31315644/68327674-22509680-0111-11ea-9ab0-8cff7da105ba.jpg",
+        "keywords": "hexo git Web coding developer algorithm HTML CSS javascript",
+        "genre": "Develop Javascript",
+        "datePublished": "2019-11-07",
+        "dateCreated": "2019-11-07",
+        "dateModified": "2019-11-08",
+        "url": "http://yoursite.com/2019/11/07/REST-API/",
+        "description": "
+
+JavaScript REST API
+REST(Representational State Transfer) API
+REST API 중심 규칙
+URI는 정보의 자원을 표현
+자원에 대한 행위는 HTTP Method(GET, POST, PUT, DELETE 등)으로 표현
+
+
+HTTP Method
+REST API의 구성
+REST API 예
+json-server
+G",
+        "wordCount": 1418
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="https://www.facebook.com/profile.php?id=100003801986180" target="_blank" rel="noopener">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/HYEOK999" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="youtube" href="https://www.youtube.com" target="_blank" rel="noopener">
+                        <i class="icon fa fa-youtube"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2019/11/08/daily-quiz34/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            daily_quiz34
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2019/11/07/Ajax/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">Ajax</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/11/08/javascript-study-23/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/65933403-536fe400-e44c-11e9-981d-c4e8c1f86998.png)" alt="javascript-study-23" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/Javascript/">Javascript</a></p>
+                            <p class="item-title"><a href="/2019/11/08/javascript-study-23/" class="title">javascript-study-23</a></p>
+                            <p class="item-date"><time datetime="2019-11-07T15:49:12.000Z" itemprop="datePublished">2019-11-08</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/11/08/daily-quiz34/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/68214647-3026ee80-0021-11ea-8e28-41a3aa5de18a.png)" alt="daily_quiz34" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/Algorithm-Quiz/">Algorithm & Quiz</a></p>
+                            <p class="item-title"><a href="/2019/11/08/daily-quiz34/" class="title">daily_quiz34</a></p>
+                            <p class="item-date"><time datetime="2019-11-07T15:47:40.000Z" itemprop="datePublished">2019-11-08</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/11/07/REST-API/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/68327674-22509680-0111-11ea-9ab0-8cff7da105ba.jpg)" alt="REST API" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Develop/">Develop</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Develop/Javascript/">Javascript</a></p>
+                            <p class="item-title"><a href="/2019/11/07/REST-API/" class="title">REST API</a></p>
+                            <p class="item-date"><time datetime="2019-11-07T03:58:49.000Z" itemprop="datePublished">2019-11-07</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/11/07/Ajax/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/68359576-b3e6f500-015f-11ea-9ef8-f45b78dd0f97.png)" alt="Ajax" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Develop/">Develop</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Develop/Javascript/">Javascript</a></p>
+                            <p class="item-title"><a href="/2019/11/07/Ajax/" class="title">Ajax</a></p>
+                            <p class="item-date"><time datetime="2019-11-06T15:55:29.000Z" itemprop="datePublished">2019-11-07</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/11/06/daily-quiz33/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/68214647-3026ee80-0021-11ea-8e28-41a3aa5de18a.png)" alt="daily_quiz33" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/Algorithm-Quiz/">Algorithm & Quiz</a></p>
+                            <p class="item-title"><a href="/2019/11/06/daily-quiz33/" class="title">daily_quiz33</a></p>
+                            <p class="item-date"><time datetime="2019-11-06T07:23:01.000Z" itemprop="datePublished">2019-11-06</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/">Develop</a><span class="category-list-count">24</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/CSS/">CSS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/GIT/">GIT</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Java/">Java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Javascript/">Javascript</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Tips/">Tips</a><span class="category-list-count">4</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/">TIL</a><span class="category-list-count">112</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Algorithm-Quiz/">Algorithm & Quiz</a><span class="category-list-count">43</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/GIT/">GIT</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript/">Javascript</a><span class="category-list-count">26</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a><span class="category-list-count">23</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/linux/">linux</a><span class="category-list-count">4</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/etc/">etc</a><span class="category-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a><span class="archive-list-count">86</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a><span class="archive-list-count">37</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">120</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ESLint/">ESLint</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a><span class="tag-list-count">119</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/">JAVA</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MarkUP/">MarkUP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Selector/">Selector</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TIL/">TIL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a><span class="tag-list-count">137</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorism/">algorism</a><span class="tag-list-count">29</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a><span class="tag-list-count">102</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/coding/">coding</a><span class="tag-list-count">137</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/developer/">developer</a><span class="tag-list-count">137</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">137</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">137</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/inline-block/">inline-block</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">103</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">3</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://github.com">github</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.naver.com">Naver</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://google.com">Google</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://www.youtube.com/">Youtube</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2019 Jun Hyeok Kim</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'http://yoursite.com/2019/11/07/REST-API/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
