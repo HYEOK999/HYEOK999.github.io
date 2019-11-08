@@ -12,15 +12,20 @@
     
         <meta name="keywords" content="hexo,git,Web,coding,developer,algorithm,HTML,CSS,javascript">
     
-    <meta name="keywords" content="hexo,git,Web,coding,developer,algorithm,HTML,CSS,javascript">
+    <meta name="description" content="JavaScript 프로미스 ( Promise ) 프로미스 ( Promise )  프로미스란?  콜백 패턴의 단점  콜백 헬 에러 처리의 한계   프로미스의 생성  프로미스의 후속 처리 메소드  프로미스의 에러 처리  프로미스 체이닝  프로미스의 정적 메소드  Promise.resolve / Promise.reject  Promise.all  Pr">
+<meta name="keywords" content="hexo,git,Web,coding,developer,algorithm,HTML,CSS,javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Promise">
 <meta property="og:url" content="http://yoursite.com/2019/11/08/Promise/index.html">
 <meta property="og:site_name" content="HYEOK999&#39;s Blog">
+<meta property="og:description" content="JavaScript 프로미스 ( Promise ) 프로미스 ( Promise )  프로미스란?  콜백 패턴의 단점  콜백 헬 에러 처리의 한계   프로미스의 생성  프로미스의 후속 처리 메소드  프로미스의 에러 처리  프로미스 체이닝  프로미스의 정적 메소드  Promise.resolve / Promise.reject  Promise.all  Pr">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-08T00:34:02.428Z">
+<meta property="og:image" content="https://user-images.githubusercontent.com/31315644/68408656-19bb9700-01c9-11ea-96d8-65e42b4d349d.jpg">
+<meta property="og:updated_time" content="2019-11-08T00:34:45.621Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Promise">
+<meta name="twitter:description" content="JavaScript 프로미스 ( Promise ) 프로미스 ( Promise )  프로미스란?  콜백 패턴의 단점  콜백 헬 에러 처리의 한계   프로미스의 생성  프로미스의 후속 처리 메소드  프로미스의 에러 처리  프로미스 체이닝  프로미스의 정적 메소드  Promise.resolve / Promise.reject  Promise.all  Pr">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/31315644/68408656-19bb9700-01c9-11ea-96d8-65e42b4d349d.jpg">
     
 
     
@@ -175,14 +180,253 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <img src="https://user-images.githubusercontent.com/31315644/68408656-19bb9700-01c9-11ea-96d8-65e42b4d349d.jpg" alt="pinky" style="zoom: 50%;">
+
+
+
+<hr>
+<h2 id="JavaScript-프로미스-Promise"><a href="#JavaScript-프로미스-Promise" class="headerlink" title="JavaScript 프로미스 ( Promise )"></a>JavaScript 프로미스 ( Promise )</h2><ul>
+<li><p>프로미스 ( Promise )</p>
+<ul>
+<li><p>프로미스란?</p>
+</li>
+<li><p>콜백 패턴의 단점</p>
+<ol>
+<li>콜백 헬</li>
+<li>에러 처리의 한계</li>
+</ol>
+</li>
+<li><p><a href="#a1">프로미스의 생성</a></p>
+</li>
+<li><p><a href="#a2">프로미스의 후속 처리 메소드</a></p>
+</li>
+<li><p><a href="#a3">프로미스의 에러 처리</a></p>
+</li>
+<li><p><a href="#a4">프로미스 체이닝</a></p>
+</li>
+<li><p><a href="#a5">프로미스의 정적 메소드</a></p>
+<ul>
+<li><p><a href="#a6">Promise.resolve / Promise.reject</a></p>
+</li>
+<li><p><a href="#a7">Promise.all</a></p>
+</li>
+<li><p><a href="#a8">Promise.race</a></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<br>
+
+<hr>
+<h2 id="프로미스-Promise"><a href="#프로미스-Promise" class="headerlink" title="프로미스 ( Promise )"></a>프로미스 ( Promise )</h2><br>
+
+<h3 id="프로미스란"><a href="#프로미스란" class="headerlink" title="프로미스란?"></a>프로미스란?</h3><blockquote>
+<p> 콜백함수의 단점(구린 가독성, 에러의 예외처리가 힘듬, 여러개의 비동기 처리 로직 불가 등등)을 해결하기 위해서 ES6에 생긴 패턴.</p>
+<p> <strong>전통적인 콜백 패턴이 가진 단점을 보완하며 비동기 처리 시점을 명확하게 표현한다.</strong></p>
+</blockquote>
+<br>
+
+<h3 id="콜백-패턴의-단점"><a href="#콜백-패턴의-단점" class="headerlink" title="콜백 패턴의 단점"></a>콜백 패턴의 단점</h3><h4 id="1-콜백-헬"><a href="#1-콜백-헬" class="headerlink" title="1. 콜백 헬"></a>1. 콜백 헬</h4><p>JS의 대부분의 DOM 이벤트와 Timer 함수(setTimeout, setInterval), Ajax 요청은 비동기식 처리 모델로 동작한다.</p>
+<img src="https://poiemaweb.com/img/asynchronous.png" alt="asynchronous" style="zoom:48%;">
+
+<p>이러한 비동기식 처리 모델은 요청을 병렬로 처리해 다른 요청이 블로킹되지 않고 수행된다는 장점이 있다.</p>
+<p>문제는, 비동기 처리를 위해 콜백 패턴을 남발하고 처리 순서 보장을 위해서 여러개의 콜백 함수가 중첩되어 복잡도가 증가한다면, <strong>콜벡 헬</strong>이 발생한다. <strong>콜백 헬은 가독성을 나쁘게 하며 실수를 유발하는 원인이 된다.</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 콜백헬. 멸망의 피라미드</span></span><br><span class="line">step1(<span class="function"><span class="keyword">function</span>(<span class="params">value1</span>) </span>&#123;</span><br><span class="line">  step2(value1, <span class="function"><span class="keyword">function</span>(<span class="params">value2</span>) </span>&#123;</span><br><span class="line">    step3(value2, <span class="function"><span class="keyword">function</span>(<span class="params">value3</span>) </span>&#123;</span><br><span class="line">      step4(value3, <span class="function"><span class="keyword">function</span>(<span class="params">value4</span>) </span>&#123;</span><br><span class="line">        step5(value4, <span class="function"><span class="keyword">function</span>(<span class="params">value5</span>) </span>&#123;</span><br><span class="line">            <span class="comment">// value5를 사용하는 처리</span></span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;script&gt;</span><br><span class="line">    <span class="comment">// 비동기 함수</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">get</span>(<span class="params">url</span>) </span>&#123;</span><br><span class="line">      <span class="comment">// XMLHttpRequest 객체 생성</span></span><br><span class="line">      <span class="keyword">const</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line"></span><br><span class="line">      <span class="comment">// 서버 응답 시 호출될 이벤트 핸들러</span></span><br><span class="line">      xhr.onreadystatechange = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="comment">// 서버 응답 완료가 아니면 무시</span></span><br><span class="line">        <span class="keyword">if</span> (xhr.readyState !== XMLHttpRequest.DONE) <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (xhr.status === <span class="number">200</span>) &#123; <span class="comment">// 정상 응답</span></span><br><span class="line">          <span class="built_in">console</span>.log(xhr.response);</span><br><span class="line">          <span class="comment">// 비동기 함수의 결과에 대한 처리는 반환할 수 없다.</span></span><br><span class="line">          <span class="keyword">return</span> xhr.response; <span class="comment">// ①</span></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123; <span class="comment">// 비정상 응답</span></span><br><span class="line">          <span class="built_in">console</span>.log(<span class="string">'Error: '</span> + xhr.status);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;;</span><br><span class="line"></span><br><span class="line">      <span class="comment">// 비동기 방식으로 Request 오픈</span></span><br><span class="line">      xhr.open(<span class="string">'GET'</span>, url);</span><br><span class="line">      <span class="comment">// Request 전송</span></span><br><span class="line">      xhr.send();</span><br><span class="line">    &#125;</span><br><span class="line"> <span class="comment">// 비동기 함수 내의 readystatechange 이벤트 핸들러에서 처리 결과를 반환(①)하면 순서가 보장되지 않는다.</span></span><br><span class="line">    <span class="keyword">const</span> res = <span class="keyword">get</span>('http://jsonplaceholder.typicode.com/posts/1');</span><br><span class="line">    console.log(res); // ② undefined</span><br><span class="line">  &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<p>현재 실행 순서는 크게 다음 과 같다.</p>
+<p>get 함수 호출 -&gt; get함수 내부의 onreadystatechange 별도로 실행(콜백함수) -&gt; xhr.open호출 -&gt; xhr.send호출 -&gt; </p>
+<p>get함수 종료(return이 없으므로 undefined 반환) -&gt; console.log호출 -&gt; onreadystatechange호출 순이다.</p>
+<p>즉, get함수는 제대로된 값을 반환하지 못한다. get 함수의 반환 결과를 제대로 하기 위해서는 해당 비동기 함수(get)의 콜백함수(onreadystatechange) 내에서 처리를 해야한다. 이로 인해 <strong>콜백 헬( Callback Hell )이 발생</strong>한다.</p>
+<p>이러한 콜백 헬( Callback Hell )은 코드의 가독성을 나쁘게 하고 복잡도를 증가시켜 실수를 유발하는 원인이 되며 <strong>에러 처리가 곤란</strong>하다.</p>
+<br>
+
+<h4 id="2-에러-처리의-한계"><a href="#2-에러-처리의-한계" class="headerlink" title="2. 에러 처리의 한계"></a>2. 에러 처리의 한계</h4><p>콜백 방식의 비동기 처리가 갖는 문제점 중에서 가장 심각한 것은 에러 처리가 곤란하다는 것.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">  setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123; <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'Error!'</span>); &#125;, <span class="number">1000</span>);</span><br><span class="line">&#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'에러를 캐치하지 못한다..'</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(e);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><code>try</code> 블록 안에서 setTimeout 함수가 실행된다. (여기서 setTimeout은 비동기 함수다.)</li>
+<li>setTimeout함수는 호출 스택으로 들어가고 즉시 종료된다.</li>
+<li>tick 이벤트가 발생하면 콜백함수는 태스크 큐로 넘어간다.</li>
+<li>태스크큐에 있는 콜백함수는 호출 스택이 비워진 것을 확인하고 호출 스택으로 넘어가고 실행된다.</li>
+</ol>
+<p>이 때 예외처리는 호출자 방향( setTimeout 함수 ) 으로 전파된다. 강제로 <code>throw 에러</code>를 던져도 콜백함수가 호출 스택에 도착했을 때 이미 setTimeout은 호출스택에서 사라졌기 때문에 콜백함수를 호출 한 것은 setTimeout 함수가 아니라는 결론을 내리게된다. </p>
+<p>따라서 setTimeout 함수의 콜백 함수 내에서 발생시킨 에러는 catch 블록에서 캐치되지 않아 프로세스는 종료된다.</p>
+<br>
+
+<p>###프로미스의 생성 <a id="a1"></a></p>
+<blockquote>
+<p>프로미스는 Promise 생성자 함수를 통해 인스턴스화한다. </p>
+<p>비동기 작업을 수행할 콜백 함수를 인자로 전달 받는다. (resolve , reject)</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Promise 객체의 생성</span></span><br><span class="line"><span class="keyword">const</span> promise = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 비동기 작업을 수행한다.</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (<span class="comment">/* 비동기 작업 수행 성공 */</span>) &#123;</span><br><span class="line">    resolve(<span class="string">'result'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span> &#123; <span class="comment">/* 비동기 작업 수행 실패 */</span></span><br><span class="line">    reject(<span class="string">'failure reason'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>Promise는 비동기 처리가 성공(fulfilled)하였는지 또는 실패(rejected)하였는지 등의 상태(state) 정보를 갖는다.</p>
+<table>
+<thead>
+<tr>
+<th align="left">상태</th>
+<th align="left">의미</th>
+<th align="left">구현</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">pending</td>
+<td align="left">비동기 처리가 아직 수행되지 않은 상태</td>
+<td align="left">resolve 또는 reject 함수가 아직 호출되지 않은 상태</td>
+</tr>
+<tr>
+<td align="left"><strong>fulfilled</strong></td>
+<td align="left">비동기 처리가 수행된 상태 (성공)</td>
+<td align="left">resolve 함수가 호출된 상태</td>
+</tr>
+<tr>
+<td align="left"><strong>rejected</strong></td>
+<td align="left">비동기 처리가 수행된 상태 (실패)</td>
+<td align="left">reject 함수가 호출된 상태</td>
+</tr>
+<tr>
+<td align="left">settled</td>
+<td align="left">비동기 처리가 수행된 상태 (성공 또는 실패)</td>
+<td align="left">resolve 또는 reject 함수가 호출된 상태</td>
+</tr>
+</tbody></table>
+<p>Promise 함수가 인자(resolve, reject)로 전달 받은 콜백함수는 내부에서 비동기 처리 작업을 수행한다.</p>
+<p>비동기 처리가 성공시 resolve를 호출하고 ‘fullfilled’ 상태가 된다.</p>
+<p>비동기 처리가 실패시 reject를 호출하고 ‘rejected’ 상태가 된다.</p>
+<br>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> promiseAjax = <span class="function">(<span class="params">method, url, payload</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">    xhr.open(method, url);</span><br><span class="line">    xhr.setRequestHeader(<span class="string">'Content-type'</span>, <span class="string">'application/json'</span>);</span><br><span class="line">    xhr.send(<span class="built_in">JSON</span>.stringify(payload));</span><br><span class="line"></span><br><span class="line">    xhr.onreadystatechange = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="comment">// 서버 응답 완료가 아니면 무시</span></span><br><span class="line">      <span class="keyword">if</span> (xhr.readyState !== XMLHttpRequest.DONE) <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> (xhr.status &gt;= <span class="number">200</span> &amp;&amp; xhr.status &lt; <span class="number">400</span>) &#123;</span><br><span class="line">        <span class="comment">// resolve 메소드를 호출하면서 처리 결과를 전달</span></span><br><span class="line">        resolve(xhr.response); <span class="comment">// Success!</span></span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">// reject 메소드를 호출하면서 에러 메시지를 전달</span></span><br><span class="line">        reject(<span class="keyword">new</span> <span class="built_in">Error</span>(xhr.status)); <span class="comment">// Failed...</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>비동기 함수 내에서 Promise 객체를 생성하고 Promise 내부에서 비동기 처리를 구현한다.</li>
+<li>비동기 처리에 성공하면 resolve 메소드를 호출한다.  (실패하면 reject 메소드 호출)</li>
+<li>이 때, resolve 메소드의 인자로 비동기 처리를 전달힌다. (reject 메소드의 인자로 에러메시지 전달)</li>
+<li>처리 결과는 Promise 객체의 후속 처리 메소드로 전달된다. </li>
+</ol>
+<br>
+
+<h3 id="프로미스의-후속-처리-메소드"><a href="#프로미스의-후속-처리-메소드" class="headerlink" title="프로미스의 후속 처리 메소드 "></a>프로미스의 후속 처리 메소드 <a id="a2"></a></h3><blockquote>
+<p>Promise로 구현된 비동기 함수는 Promise 객체를 반환하여야 한다</p>
+<p>Promise로 구현된 비동기 함수를 호출하는 측(promise consumer)에서는 Promise 객체의 후속 처리 메소드(then, catch)를 통해 비동기 처리 결과 또는 에러 메시지를 전달받아 처리한다.</p>
+<p>Promise의 상태에 따라 후속 처리 메소드를 체이닝 방식으로 호출한다.</p>
+</blockquote>
+<ul>
+<li><p>then</p>
+<p>then 메소드는 두 개의 콜백 함수를 인자로 전달 받는다.<br>첫 번째 콜백 함수는 성공(fulfilled, resolve 함수가 호출된 상태) 시 호출된다.<br>두 번째 함수는 실패(rejected, reject 함수가 호출된 상태) 시 호출된다.<br><strong>then 메소드는 Promise를 반환한다.</strong></p>
+</li>
+<li><p>catch</p>
+<p>예외(비동기 처리에서 발생한 에러와 then 메소드에서 발생한 에러)가 발생하면 호출된다.<br>catch 메소드는 Promise를 반환한다.</p>
+</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">pre</span> <span class="attr">class</span>=<span class="string">"result"</span>&gt;</span><span class="tag">&lt;/<span class="name">pre</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> $result = <span class="built_in">document</span>.querySelector(<span class="string">'.result'</span>);</span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> render = <span class="function"><span class="params">content</span> =&gt;</span> &#123; $result.textContent = <span class="built_in">JSON</span>.stringify(content, <span class="literal">null</span>, <span class="number">2</span>); &#125;;</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> promiseAjax = <span class="function">(<span class="params">method, url, payload</span>) =&gt;</span> &#123;</span></span><br><span class="line"><span class="javascript">      <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span></span><br><span class="line"><span class="actionscript">        <span class="keyword">const</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span></span><br><span class="line">        xhr.open(method, url);</span><br><span class="line"><span class="actionscript">        xhr.setRequestHeader(<span class="string">'Content-type'</span>, <span class="string">'application/json'</span>);</span></span><br><span class="line"><span class="javascript">        xhr.send(<span class="built_in">JSON</span>.stringify(payload));</span></span><br><span class="line"></span><br><span class="line"><span class="actionscript">        xhr.onreadystatechange = <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">          <span class="keyword">if</span> (xhr.readyState !== XMLHttpRequest.DONE) <span class="keyword">return</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="actionscript">          <span class="keyword">if</span> (xhr.status &gt;= <span class="number">200</span> &amp;&amp; xhr.status &lt; <span class="number">400</span>) &#123;</span></span><br><span class="line"><span class="actionscript">            resolve(xhr.response); <span class="comment">// Success!</span></span></span><br><span class="line"><span class="actionscript">          &#125; <span class="keyword">else</span> &#123;</span></span><br><span class="line"><span class="javascript">            reject(<span class="keyword">new</span> <span class="built_in">Error</span>(xhr.status)); <span class="comment">// Failed...</span></span></span><br><span class="line">          &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    /*</span><br><span class="line"><span class="javascript">      비동기 함수 promiseAjax은 <span class="built_in">Promise</span> 객체를 반환한다.</span></span><br><span class="line"><span class="javascript">      <span class="built_in">Promise</span> 객체의 후속 메소드를 사용하여 비동기 처리 결과에 대한 후속 처리를 수행한다.</span></span><br><span class="line">    */</span><br><span class="line"><span class="actionscript">    promiseAjax(<span class="string">'GET'</span>, <span class="string">'http://jsonplaceholder.typicode.com/posts/1'</span>)</span></span><br><span class="line"><span class="javascript">      .then(<span class="built_in">JSON</span>.parse)</span></span><br><span class="line"><span class="vbscript">      .<span class="keyword">then</span>(</span></span><br><span class="line"><span class="actionscript">        <span class="comment">// 첫 번째 콜백 함수는 성공(fulfilled, resolve 함수가 호출된 상태) 시 호출된다.</span></span></span><br><span class="line">        render,</span><br><span class="line"><span class="actionscript">        <span class="comment">// 두 번째 함수는 실패(rejected, reject 함수가 호출된 상태) 시 호출된다.</span></span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.error</span></span><br><span class="line">      );</span><br><span class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p>###프로미스의 에러 처리 <a id="a3"></a></p>
+<p>위 예제의 비동기 함수 get은 Promise 객체를 반환한다. </p>
+<p>Promise 객체의 후속 처리 메소드를 사용하여 비동기 처리 결과에 대한 후속 처리를 수행한다. 비동기 처리 시 발생한 에러 메시지는 then 메소드의 두 번째 콜백 함수로 전달된다. </p>
+<p><strong>Promise 객체의 후속 처리 메소드 catch을 사용하여도 에러를 처리할 수 있다.</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">promiseAjax(<span class="string">'GET'</span>, <span class="string">'http://jsonplaceholder.typicode.com/posts/1'</span>)</span><br><span class="line">  .then(<span class="built_in">JSON</span>.parse)</span><br><span class="line">  .then(render)</span><br><span class="line">  .catch(<span class="built_in">console</span>.error);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>then 메소드의 두 번째 콜백 함수는 비동기 처리에서 발생한 에러( reject 함수가 호출된 상태 )만을 캐치한다. </li>
+<li>catch 메소드는 비동기 처리에서 발생한 에러( reject 함수가 호출된 상태 )뿐만 아니라 then 메소드 내부에서 발생한 에러도 캐치한다. <strong>따라서 에러 처리는 catch 메소드를 사용하는 편이 보다 효율적이다.</strong></li>
+</ul>
+<br>
+
+<h3 id="프로미스-체이닝"><a href="#프로미스-체이닝" class="headerlink" title="프로미스 체이닝 "></a>프로미스 체이닝 <a id="a4"></a></h3><p>비동기 함수의 처리 결과를 가지고 다른 비동기 함수를 호출해야 하는 경우, 함수의 호출이 중첩(nesting)이 되어 복잡도가 높아지는 콜백 헬이 발생한다. </p>
+<blockquote>
+<p>프로미스는 후속 처리 메소드를 체이닝(chainning)하여 여러 개의 프로미스를 연결하여 사용할 수 있다. </p>
+<p>이로써 콜백 헬을 해결한다.</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">pre</span> <span class="attr">class</span>=<span class="string">"result"</span>&gt;</span><span class="tag">&lt;/<span class="name">pre</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> $result = <span class="built_in">document</span>.querySelector(<span class="string">'.result'</span>);</span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> render = <span class="function"><span class="params">content</span> =&gt;</span> &#123; $result.textContent = <span class="built_in">JSON</span>.stringify(content, <span class="literal">null</span>, <span class="number">2</span>); &#125;;</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> promiseAjax = <span class="function">(<span class="params">method, url, payload</span>) =&gt;</span> &#123;</span></span><br><span class="line"><span class="javascript">      <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span></span><br><span class="line"><span class="actionscript">        <span class="keyword">const</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span></span><br><span class="line">        xhr.open(method, url);</span><br><span class="line"><span class="actionscript">        xhr.setRequestHeader(<span class="string">'Content-type'</span>, <span class="string">'application/json'</span>);</span></span><br><span class="line"><span class="javascript">        xhr.send(<span class="built_in">JSON</span>.stringify(payload));</span></span><br><span class="line"></span><br><span class="line"><span class="actionscript">        xhr.onreadystatechange = <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">          <span class="keyword">if</span> (xhr.readyState !== XMLHttpRequest.DONE) <span class="keyword">return</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="actionscript">          <span class="keyword">if</span> (xhr.status &gt;= <span class="number">200</span> &amp;&amp; xhr.status &lt; <span class="number">400</span>) &#123;</span></span><br><span class="line"><span class="actionscript">            resolve(xhr.response); <span class="comment">// Success!</span></span></span><br><span class="line"><span class="actionscript">          &#125; <span class="keyword">else</span> &#123;</span></span><br><span class="line"><span class="javascript">            reject(<span class="keyword">new</span> <span class="built_in">Error</span>(xhr.status)); <span class="comment">// Failed...</span></span></span><br><span class="line">          &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line"><span class="actionscript">    <span class="keyword">const</span> url = <span class="string">'http://jsonplaceholder.typicode.com/posts'</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="actionscript">    <span class="comment">// 포스트 id가 1인 포스트를 검색하고 프로미스를 반환한다.</span></span></span><br><span class="line"><span class="javascript">    promiseAjax(<span class="string">'GET'</span>, <span class="string">`<span class="subst">$&#123;url&#125;</span>/1`</span>)</span></span><br><span class="line"><span class="actionscript">      <span class="comment">// 포스트 id가 1인 포스트를 작성한 사용자의 아이디로 작성된 모든 포스트를 검색하고 프로미스를 반환한다.</span></span></span><br><span class="line"><span class="javascript">      .then(<span class="function"><span class="params">res</span> =&gt;</span> promiseAjax(<span class="string">'GET'</span>, <span class="string">`<span class="subst">$&#123;url&#125;</span>?userId=<span class="subst">$&#123;<span class="built_in">JSON</span>.parse(res).userId&#125;</span>`</span>))</span></span><br><span class="line"><span class="javascript">      .then(<span class="built_in">JSON</span>.parse)</span></span><br><span class="line"><span class="vbscript">      .<span class="keyword">then</span>(render)</span></span><br><span class="line"><span class="javascript">      .catch(<span class="built_in">console</span>.error);</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>Promise 객체를 반환한 비동기 함수는 프로미스 후속 처리 메소드인 then이나 catch 메소드를 사용할 수 있다. </p>
+<p>따라서 then 메소드가 Promise 객체를 반환하도록 하면(then 메소드는 기본적으로 Promise를 반환한다.) 여러 개의 프로미스를 연결하여 사용할 수 있다.</p>
+<br>
+
+<p>###프로미스의 정적 메소드 <a id="a5"></a></p>
+<p>Promise는 주로 생성자 함수로 사용되지만 함수도 객체이므로 메소드를 갖을 수 있다. </p>
+<p>Promise 객체는 4가지 정적 메소드를 제공한다. (resolve, reject, all, race)</p>
+<br>
+
+<h4 id="Promise-resolve-Promise-reject"><a href="#Promise-resolve-Promise-reject" class="headerlink" title="Promise.resolve / Promise.reject "></a>Promise.resolve / Promise.reject <a id="a6"></a></h4><p>Promise.resolve와 Promise.reject 메소드는 존재하는 값을 Promise로 래핑하기 위해 사용한다.</p>
+<p>정적 메소드 Promise.resolve 메소드는 인자로 전달된 값을 resolve하는 Promise를 생성한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> resolvedPromise = <span class="built_in">Promise</span>.resolve([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]);</span><br><span class="line">resolvedPromise.then(<span class="built_in">console</span>.log); <span class="comment">// [ 1, 2, 3 ]</span></span><br></pre></td></tr></table></figure>
+
+<p>위 예제는 아래 예제와 동일하게 동작한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> resolvedPromise = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">resolve</span> =&gt;</span> resolve([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]));</span><br><span class="line">resolvedPromise.then(<span class="built_in">console</span>.log); <span class="comment">// [ 1, 2, 3 ]</span></span><br></pre></td></tr></table></figure>
+
+<p>Promise.reject 메소드는 인자로 전달된 값을 reject하는 프로미스를 생성한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> rejectedPromise = <span class="built_in">Promise</span>.reject(<span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'Error!'</span>));</span><br><span class="line">rejectedPromise.catch(<span class="built_in">console</span>.log); <span class="comment">// Error: Error!</span></span><br></pre></td></tr></table></figure>
+
+<p>위 예제는 아래 예제와 동일하게 동작한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> rejectedPromise = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> reject(<span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'Error!'</span>)));</span><br><span class="line">rejectedPromise.catch(<span class="built_in">console</span>.log); <span class="comment">// Error: Error!</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="Promise-all"><a href="#Promise-all" class="headerlink" title="Promise.all "></a>Promise.all <a id="a7"></a></h4><p>Promise.all 메소드는 프로미스가 담겨 있는 배열 등의 <a href="https://poiemaweb.com/es6-iteration-for-of" target="_blank" rel="noopener">이터러블</a>을 인자로 전달 받는다.</p>
+<p> 전달받은 모든 프로미스를 병렬로 처리하고 그 처리 결과를 resolve하는 새로운 프로미스를 반환한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Promise</span>.all([</span><br><span class="line">  <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">resolve</span> =&gt;</span> setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> resolve(<span class="number">1</span>), <span class="number">3000</span>)), <span class="comment">// 1</span></span><br><span class="line">  <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">resolve</span> =&gt;</span> setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> resolve(<span class="number">2</span>), <span class="number">2000</span>)), <span class="comment">// 2</span></span><br><span class="line">  <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">resolve</span> =&gt;</span> setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> resolve(<span class="number">3</span>), <span class="number">1000</span>))  <span class="comment">// 3</span></span><br><span class="line">]).then(<span class="built_in">console</span>.log) <span class="comment">// [ 1, 2, 3 ]</span></span><br><span class="line">  .catch(<span class="built_in">console</span>.log);</span><br></pre></td></tr></table></figure>
+
+<p>Promise.all 메소드는 3개의 프로미스를 담은 배열을 전달받았다. 각각의 프로미스는 아래와 같이 동작한다.</p>
+<ul>
+<li>첫번째 프로미스는 3초 후에 1을 resolve하여 처리 결과를 반환한다.</li>
+<li>두번째 프로미스는 2초 후에 2을 resolve하여 처리 결과를 반환한다.</li>
+<li>세번째 프로미스는 1초 후에 3을 resolve하여 처리 결과를 반환한다.</li>
+</ul>
+<p><strong>Promise.all 메소드는 전달받은 모든 프로미스를 병렬로 처리한다.</strong> 이때 모든 프로미스의 처리가 종료될 때까지 기다린 후 아래와 모든 처리 결과를 resolve 또는 reject한다.</p>
+<ul>
+<li>모든 프로미스의 처리가 성공하면 <strong>각각의 프로미스가 resolve한 처리 결과를 배열에 담아 resolve하는 새로운 프로미스를 반환</strong>한다. </li>
+<li>첫번째 프로미스가 가장 나중에 처리되어도 Promise.all 메소드가 반환하는 프로미스는 첫번째 프로미스가 resolve한 처리 결과부터 차례대로 배열에 담아 그 배열을 resolve하는 새로운 프로미스를 반환한다. </li>
+<li>즉, <strong>처리 순서가 보장된다. Promise.all은 병렬로 처리한다. 다만 순서를 보장해주기 때문에 먼저 처리되어도 프로미스 순서대로 처리결과를 배열에 담는다.</strong> </li>
+<li>프로미스의 처리가 하나라도 실패하면 가장 먼저 실패한 프로미스가 reject한 에러를 reject하는 새로운 프로미스를 즉시 반환한다.</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Promise</span>.all([</span><br><span class="line">  <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> reject(<span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'Error 1!'</span>)), <span class="number">3000</span>)),</span><br><span class="line">  <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> reject(<span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'Error 2!'</span>)), <span class="number">2000</span>)),</span><br><span class="line">  <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> reject(<span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'Error 3!'</span>)), <span class="number">1000</span>))</span><br><span class="line">]).then(<span class="built_in">console</span>.log)</span><br><span class="line">  .catch(<span class="built_in">console</span>.log); <span class="comment">// Error: Error 3!</span></span><br></pre></td></tr></table></figure>
+
+<p>위 예제의 경우, 세번째 프로미스가 가장 먼저 실패하므로 세번째 프로미스가 reject한 에러가 catch 메소드로 전달된다.</p>
+<p>Promise.all 메소드는 전달 받은 이터러블의 요소가 프로미스가 아닌 경우, Promise.resolve 메소드를 통해 프로미스로 래핑된다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Promise</span>.all([</span><br><span class="line">  <span class="number">1</span>, <span class="comment">// =&gt; Promise.resolve(1)</span></span><br><span class="line">  <span class="number">2</span>, <span class="comment">// =&gt; Promise.resolve(2)</span></span><br><span class="line">  <span class="number">3</span>  <span class="comment">// =&gt; Promise.resolve(3)</span></span><br><span class="line">]).then(<span class="built_in">console</span>.log) <span class="comment">// [1, 2, 3]</span></span><br><span class="line">  .catch(<span class="built_in">console</span>.log);</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p>github id로 github 사용자 이름을 취득하는 예제이다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> githubIds = [<span class="string">'jeresig'</span>, <span class="string">'ahejlsberg'</span>, <span class="string">'ungmo2'</span>];</span><br><span class="line"></span><br><span class="line"><span class="built_in">Promise</span>.all(githubIds.map(<span class="function"><span class="params">id</span> =&gt;</span> fetch(<span class="string">`https://api.github.com/users/<span class="subst">$&#123;id&#125;</span>`</span>)))</span><br><span class="line">  <span class="comment">// [Response, Response, Response] =&gt; Promise</span></span><br><span class="line">  .then(<span class="function"><span class="params">responses</span> =&gt;</span> <span class="built_in">Promise</span>.all(responses.map(<span class="function"><span class="params">res</span> =&gt;</span> res.json())))</span><br><span class="line">  <span class="comment">// [user, user, user] =&gt; Promise</span></span><br><span class="line">  .then(<span class="function"><span class="params">users</span> =&gt;</span> users.map(<span class="function"><span class="params">user</span> =&gt;</span> user.name))</span><br><span class="line">  <span class="comment">// [ 'John Resig', 'Anders Hejlsberg', 'Ungmo Lee' ]</span></span><br><span class="line">  .then(<span class="built_in">console</span>.log)</span><br><span class="line">  .catch(<span class="built_in">console</span>.log);</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>Promise.all 메소드는 fetch 함수가 반환한 3개의 프로미스의 배열을 인수로 전달받고 이 프로미스들을 병렬 처리한다.</li>
+<li>모든 프로미스의 처리가 성공하면 Promise.all 메소드는 각각의 프로미스가 resolve한 3개의 Response 객체가 담긴 배열을 resolve하는 새로운 프로미스를 반환하고 후속 처리 메소드 then에는 3개의 Response 객체가 담긴 배열이 전달된다. </li>
+<li>이때 json 메소드는 프로미스를 반환하므로 한번 더 Promise.all 메소드를 호출해야 하는 것에 주의. 두번째 호출한 Promise.all 메소드는 github로 부터 취득한 3개의 사용자 정보 객체가 담긴 배열을 resolve하는 프로미스를 반환하고 후속 처리 메소드 then에는 3개의 사용자 정보 객체가 담긴 배열이 전달된다.</li>
+</ol>
+<br>
+
+<h4 id="Promise-race"><a href="#Promise-race" class="headerlink" title="Promise.race "></a>Promise.race <a id="a8"></a></h4><p>Promise.race 메소드는 Promise.all 메소드와 동일하게 프로미스가 담겨 있는 배열 등의 <a href="https://poiemaweb.com/es6-iteration-for-of" target="_blank" rel="noopener">이터러블</a>을 인자로 전달 받는다. </p>
+<ul>
+<li>Promise.race 메소드는 Promise.all 메소드처럼 모든 프로미스를 병렬 처리하는 것이 아니라 <strong>가장 먼저 처리된 프로미스가 resolve한 처리 결과를 resolve하는 새로운 프로미스를 반환</strong></li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Promise</span>.race([</span><br><span class="line">  <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">resolve</span> =&gt;</span> setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> resolve(<span class="number">1</span>), <span class="number">3000</span>)), <span class="comment">// 1</span></span><br><span class="line">  <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">resolve</span> =&gt;</span> setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> resolve(<span class="number">2</span>), <span class="number">2000</span>)), <span class="comment">// 2</span></span><br><span class="line">  <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">resolve</span> =&gt;</span> setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> resolve(<span class="number">3</span>), <span class="number">1000</span>))  <span class="comment">// 3</span></span><br><span class="line">]).then(<span class="built_in">console</span>.log) <span class="comment">// 3</span></span><br><span class="line">  .catch(<span class="built_in">console</span>.log);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>에러가 발생한 경우는 Promise.all 메소드와 동일하게 처리. </p>
+<p>Promise.race 메소드에 전달된 프로미스 처리가 하나라도 실패하면 <strong>가장 먼저 실패한 프로미스가 reject한 에러를 reject하는 새로운 프로미스를 즉시 반환</strong>한다.</p>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Promise</span>.race([</span><br><span class="line">  <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> reject(<span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'Error 1!'</span>)), <span class="number">3000</span>)),</span><br><span class="line">  <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> reject(<span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'Error 2!'</span>)), <span class="number">2000</span>)),</span><br><span class="line">  <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> reject(<span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'Error 3!'</span>)), <span class="number">1000</span>))</span><br><span class="line">]).then(<span class="built_in">console</span>.log)</span><br><span class="line">  .catch(<span class="built_in">console</span>.log); <span class="comment">// Error: Error 3!</span></span><br></pre></td></tr></table></figure>
+
+<br>
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="http://yoursite.com/2019/11/08/Promise/" data-id="ck2peqf9o0016esz08xr8pf5v" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2019/11/08/Promise/" data-id="ck2perfba001jiuz0zzdvcpks" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -253,15 +497,45 @@
             "name": "Jun Hyeok Kim"
         },
         "headline": "Promise",
-        "image": "http://yoursite.com",
+        "image": "http://yoursite.comhttps://user-images.githubusercontent.com/31315644/68408656-19bb9700-01c9-11ea-96d8-65e42b4d349d.jpg",
         "keywords": "hexo git Web coding developer algorithm HTML CSS javascript",
         "genre": "Develop Javascript",
         "datePublished": "2019-11-08",
         "dateCreated": "2019-11-08",
         "dateModified": "2019-11-08",
         "url": "http://yoursite.com/2019/11/08/Promise/",
-        "description": "",
-        "wordCount": 1
+        "description": "
+
+
+
+
+JavaScript 프로미스 ( Promise )
+프로미스 ( Promise )
+
+프로미스란?
+
+콜백 패턴의 단점
+
+콜백 헬
+에러 처리의 한계
+
+
+프로미스의 생성
+
+프로미스의 후속 처리 메소드
+
+프로미스의 에러 처리
+
+프로미스 체이닝
+
+프로미스의 정적 메소드
+
+Promise.resolve / Promise.reject
+
+Promise.all
+
+Pr",
+        "wordCount": 3519
     }
 </script>
 
@@ -345,7 +619,7 @@
                             <a href="/2019/11/08/Promise/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/68408656-19bb9700-01c9-11ea-96d8-65e42b4d349d.jpg)" alt="Promise" class="thumbnail-image"></span>
     
     
 </a>
