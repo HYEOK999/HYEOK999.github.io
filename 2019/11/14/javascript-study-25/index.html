@@ -12,15 +12,20 @@
     
         <meta name="keywords" content="hexo,git,Web,coding,developer,algorithm,HTML,CSS,javascript">
     
-    <meta name="keywords" content="hexo,git,Web,coding,developer,algorithm,HTML,CSS,javascript">
+    <meta name="description" content="JavaScript Study 25 프로미스 프로미스를 만드는 방법   프로미스 xhr , fetch, axios, async/await 프로미스 xhr fetch axios async/await   REST API JSON Server 와 POSTMAN GraphQL       용어 - ( 러버덕 ) 프로미스  fetch  axios  async/aw">
+<meta name="keywords" content="hexo,git,Web,coding,developer,algorithm,HTML,CSS,javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="javascript-study-25">
 <meta property="og:url" content="http://yoursite.com/2019/11/14/javascript-study-25/index.html">
 <meta property="og:site_name" content="HYEOK999&#39;s Blog">
+<meta property="og:description" content="JavaScript Study 25 프로미스 프로미스를 만드는 방법   프로미스 xhr , fetch, axios, async/await 프로미스 xhr fetch axios async/await   REST API JSON Server 와 POSTMAN GraphQL       용어 - ( 러버덕 ) 프로미스  fetch  axios  async/aw">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-13T17:30:46.541Z">
+<meta property="og:image" content="https://user-images.githubusercontent.com/31315644/65933403-536fe400-e44c-11e9-981d-c4e8c1f86998.png">
+<meta property="og:updated_time" content="2019-11-13T17:32:18.761Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javascript-study-25">
+<meta name="twitter:description" content="JavaScript Study 25 프로미스 프로미스를 만드는 방법   프로미스 xhr , fetch, axios, async/await 프로미스 xhr fetch axios async/await   REST API JSON Server 와 POSTMAN GraphQL       용어 - ( 러버덕 ) 프로미스  fetch  axios  async/aw">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/31315644/65933403-536fe400-e44c-11e9-981d-c4e8c1f86998.png">
     
 
     
@@ -77,7 +82,7 @@
                                     <a class="main-nav-list-link" href="/">Home</a>
                                 </li>
                             
-                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/">Develop</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/CSS/">CSS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/GIT/">GIT</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/TIL/">TIL</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Tips/">Tips</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/">TIL</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Algorithm-Quiz/">Algorithm & Quiz</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/GIT/">GIT</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/linux/">linux</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/etc/">etc</a></li></ul>
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/">Develop</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/CSS/">CSS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/GIT/">GIT</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Tips/">Tips</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/">TIL</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Algorithm-Quiz/">Algorithm & Quiz</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/GIT/">GIT</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/linux/">linux</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/etc/">etc</a></li></ul>
                                     
                                 <li class="main-nav-list-item" >
                                     <a class="main-nav-list-link" href="https://about.me/iasg2004">About</a>
@@ -136,7 +141,7 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/Develop/">Develop</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Develop/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Develop/TIL/Algorithm-Quiz/">Algorithm & Quiz</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Develop/TIL/Algorithm-Quiz/HTML/">HTML</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Develop/TIL/Algorithm-Quiz/HTML/CSS/">CSS</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Develop/TIL/Algorithm-Quiz/HTML/CSS/HTML-CSS/">HTML&CSS</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Develop/TIL/Algorithm-Quiz/HTML/CSS/HTML-CSS/Javascript/">Javascript</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Develop/TIL/Algorithm-Quiz/HTML/CSS/HTML-CSS/Javascript/Javascript-Preview/">Javascript-Preview</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Develop/TIL/Algorithm-Quiz/HTML/CSS/HTML-CSS/Javascript/Javascript-Preview/etc/">etc</a>
+    <a class="page-title-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/TIL/Javascript/">Javascript</a>
     </h1>
 </div>
 
@@ -175,14 +180,132 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <p><img src="https://user-images.githubusercontent.com/31315644/65933403-536fe400-e44c-11e9-981d-c4e8c1f86998.png" alt="JavaScriptBanner"></p>
+<hr>
+<h2 id="JavaScript-Study-25"><a href="#JavaScript-Study-25" class="headerlink" title="JavaScript Study 25"></a>JavaScript Study 25</h2><ul>
+<li>프로미스<ul>
+<li>프로미스를 만드는 방법</li>
+</ul>
+</li>
+<li>프로미스 xhr , fetch, axios, async/await<ul>
+<li>프로미스 xhr</li>
+<li>fetch</li>
+<li>axios</li>
+<li>async/await</li>
+</ul>
+</li>
+<li>REST API</li>
+<li>JSON Server 와 POSTMAN</li>
+<li>GraphQL</li>
+</ul>
+<br>
+
+<hr>
+<br>
+
+<h3 id="용어-러버덕"><a href="#용어-러버덕" class="headerlink" title="용어 - ( 러버덕 )"></a>용어 - ( 러버덕 )</h3><ul>
+<li><p>프로미스</p>
+</li>
+<li><p>fetch</p>
+</li>
+<li><p>axios</p>
+</li>
+<li><p>async/await</p>
+</li>
+<li><p>postman</p>
+</li>
+<li><p>REST API</p>
+<br>
+
+</li>
+</ul>
+<hr>
+<h3 id="프로미스"><a href="#프로미스" class="headerlink" title="프로미스"></a>프로미스</h3><blockquote>
+<p>비동기 처리에 대한 약속</p>
+</blockquote>
+<p>브라우저는 멀티 스레드가 맞으나 JS는 싱글 스레드이다. </p>
+<p><strong>프로미스 질문 시 나와야하는 단어 : 후속처리함수, 순서보장, 비동기처리에 대한 약속, 콜백패턴</strong></p>
+<p>콜백 패턴은 XHR(XMLHTTPRequset)의 readyState와 onreadystatechange 함수 내에서 후속처리를 해야만하는데 이는 가독성을 크게 감속시킨다. 또한 콜백헬이나 에러처리등의 문제를 가지고 있다.  추가로  비동기처리는 순서를 보장하지 않는다. 이러한 문제들을 해결하기 위해서 프로미스가 나왔다.</p>
+<p>기본 콜백패턴에서 에러처리를 해결하기 위해서는 실패에대한 콜백을 또 던져주어야한다. </p>
+<br>
+
+<h4 id="프로미스를-만드는-방법"><a href="#프로미스를-만드는-방법" class="headerlink" title="프로미스를 만드는 방법"></a>프로미스를 만드는 방법</h4><p><code>new Promise((resolve, reject) =&gt; { 비동기 처리 내용 })</code></p>
+<p>프로미스는 고차함수다. 고차함수는 인수로 함수를 받을 수 있다. </p>
+<p>프로미스는 내부에서 상태를 가지고 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 프로미스 객체는 인수 2개를 받을 수 있다. 성공-resolve, 실패-reject</span></span><br><span class="line"><span class="keyword">const</span> promise = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 여기서 비동기를 처리한다.</span></span><br><span class="line">  <span class="keyword">const</span> x = <span class="number">1</span>;</span><br><span class="line">  setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (x % <span class="number">2</span>) resolve(x);</span><br><span class="line">    <span class="keyword">else</span> reject(<span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'Error'</span>));</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> promise);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 프로미스 객체의 후속 처리 함수</span></span><br><span class="line">promise</span><br><span class="line">  .then(<span class="function">(<span class="params">res</span>) =&gt;</span> <span class="built_in">console</span>.log(res))</span><br><span class="line">  .catch(<span class="function">(<span class="params">err</span>) =&gt;</span> <span class="built_in">console</span>.log(err));</span><br></pre></td></tr></table></figure>
+
+<p>.then 은 무조건 promise를 return 한다.</p>
+<p>.then이 게속해서 이어지는 것을 프로미스 체인닝 이라 한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> p = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">	resolve(<span class="number">1</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">p.then(<span class="function">(<span class="params">num</span>) =&gt;</span> ++num)</span><br><span class="line"> .then(<span class="function">(<span class="params">num</span>) =&gt;</span> ++num)</span><br><span class="line"> .then(<span class="function">(<span class="params">num</span>) =&gt;</span> ++num)</span><br><span class="line"> .then(<span class="function">(<span class="params">num</span>) =&gt;</span> <span class="built_in">console</span>.log(num));</span><br></pre></td></tr></table></figure>
+
+<p>정답은 4가 나온다.</p>
+<br>
+
+<h3 id="프로미스-xhr-fetch-axios-async-await"><a href="#프로미스-xhr-fetch-axios-async-await" class="headerlink" title="프로미스 xhr , fetch, axios, async/await"></a>프로미스 xhr , fetch, axios, async/await</h3><h4 id="프로미스-xhr"><a href="#프로미스-xhr" class="headerlink" title="프로미스 xhr"></a>프로미스 xhr</h4><ul>
+<li>기본적으로 프로미스를 이용한 ajax통신을 위해서는 XMLHttpRequest 객체가 있어야만 사용할 수 있다.</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> ajax = <span class="function">(<span class="params">(</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> req = <span class="function">(<span class="params">method, url, payload</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">const</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">      xhr.open(method, url);</span><br><span class="line">      xhr.setRequestHeader(<span class="string">'content-type'</span>, <span class="string">'application/json'</span>);</span><br><span class="line">      xhr.send(<span class="built_in">JSON</span>.stringify(payload));</span><br><span class="line">      xhr.onload = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (xhr.status === <span class="number">200</span> || xhr.status === <span class="number">201</span>) &#123;</span><br><span class="line">          resolve(<span class="built_in">JSON</span>.parse(xhr.response));</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;;</span><br><span class="line">      xhr.onerror = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        reject(<span class="keyword">new</span> <span class="built_in">Error</span>(xhr.status));</span><br><span class="line">      &#125;;</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="keyword">get</span>(url) &#123;</span><br><span class="line">      <span class="keyword">return</span> req(<span class="string">'GET'</span>, url);</span><br><span class="line">    &#125;,</span><br><span class="line">    post(url, payload) &#123;</span><br><span class="line">      <span class="keyword">return</span> req(<span class="string">'POST'</span>, url, payload);</span><br><span class="line">    &#125;,</span><br><span class="line">    patch(url, payload) &#123;</span><br><span class="line">      <span class="keyword">return</span> req(<span class="string">'PATCH'</span>, url, payload);</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="keyword">delete</span>(url) &#123;</span><br><span class="line">      <span class="keyword">return</span> req(<span class="string">'DELETE'</span>, url);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ajax get 통신</span></span><br><span class="line">ajax.get(<span class="string">'/todos'</span>)</span><br><span class="line">  .then(<span class="function">(<span class="params">data</span>) =&gt;</span> <span class="built_in">Math</span>.max(<span class="number">0</span>, ...data.map(<span class="function">(<span class="params">a</span>) =&gt;</span> a.id)))</span><br><span class="line">  .then(<span class="function">(<span class="params">id</span>) =&gt;</span> ajax.delete(<span class="string">`/todos/<span class="subst">$&#123;id&#125;</span>`</span>))</span><br><span class="line">  .then(<span class="built_in">console</span>.log);</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="fetch를-사용했을-경우"><a href="#fetch를-사용했을-경우" class="headerlink" title="fetch를 사용했을 경우"></a>fetch를 사용했을 경우</h4><ul>
+<li>기본적인 베이스는 promise를 따라간다.</li>
+<li>fetch는 xhr 함수를 만들 필요가 없다. </li>
+<li>함수가 ajax 기능을 제공해주기 때문이다.</li>
+<li>다만 소스가 조금 가독성이 떨이지는 단점이 있다.</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">fetch(<span class="string">'/todos'</span>)</span><br><span class="line">  .then(<span class="function">(<span class="params">res</span>) =&gt;</span> res.json())</span><br><span class="line">  .then(<span class="function">(<span class="params">data</span>) =&gt;</span> <span class="built_in">Math</span>.max(<span class="number">0</span>, ...data.map(<span class="function">(<span class="params">a</span>) =&gt;</span> a.id)))</span><br><span class="line">  .then(<span class="function">(<span class="params">id</span>) =&gt;</span> fetch(<span class="string">`/todos/<span class="subst">$&#123;id&#125;</span>`</span>, &#123;</span><br><span class="line">    method: <span class="string">'DELETE'</span></span><br><span class="line">  &#125;))</span><br><span class="line">  .then(<span class="function">(<span class="params">res</span>) =&gt;</span> res.json())</span><br><span class="line">  .then(<span class="built_in">console</span>.log);</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="axios를-사용했을-경우"><a href="#axios를-사용했을-경우" class="headerlink" title="axios를 사용했을 경우"></a>axios를 사용했을 경우</h4><ul>
+<li>기본적인 베이스는 promise를 따라간다.</li>
+<li>axios 역시 fetch처럼 xhr함수를 만들 필요가 없다.</li>
+<li>fetch보다 훨씬 간결하고 가독성이 좋다.</li>
+<li>다만, html에서 axios의 API를 로드 해줘야만 한다.</li>
+</ul>
+<p>(CDN:   <code>&lt;script src=&quot;https://unpkg.com/axios/dist/axios.min.js&quot;&gt;&lt;/script&gt;</code>)</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">axios.get(<span class="string">'/todos'</span>)</span><br><span class="line">  .then(<span class="function">(<span class="params">res</span>) =&gt;</span> <span class="built_in">Math</span>.max(<span class="number">0</span>, ...(res.data).map(<span class="function">(<span class="params">a</span>) =&gt;</span> a.id)))</span><br><span class="line">  .then(<span class="function">(<span class="params">id</span>) =&gt;</span> ajax.delete(<span class="string">`/todos/<span class="subst">$&#123;id&#125;</span>`</span>))</span><br><span class="line">  .then(<span class="built_in">console</span>.log);</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="async-await를-사용했을-경우"><a href="#async-await를-사용했을-경우" class="headerlink" title="async, await를 사용했을 경우"></a>async, await를 사용했을 경우</h4><ul>
+<li>xhr , fetch, axios의 비동기 방식을 동기 방식 처럼 사용하기 위해서 사용한다.</li>
+<li>async 함수 내에 있어야만 반드시 순서가 보장된다. </li>
+<li>프로미스로 짠 코드들의 then은 전부다 async 안에 반드시 들어가 있어야한다!</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">async</span> () =&gt; &#123;</span><br><span class="line">  <span class="keyword">let</span> todos = <span class="keyword">await</span> ajax.get(<span class="string">'/todos'</span>);</span><br><span class="line">  <span class="keyword">const</span> id = <span class="built_in">Math</span>.max(<span class="number">0</span>, ...todos.map(<span class="function">(<span class="params">todo</span>) =&gt;</span> todo.id));</span><br><span class="line">  todos = <span class="keyword">await</span> ajax.delete(<span class="string">`/todos/<span class="subst">$&#123;id&#125;</span>`</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(todos);</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="REST-API"><a href="#REST-API" class="headerlink" title="REST API"></a>REST API</h3><blockquote>
+<p>REST란, 자원을 정의하고 자원에 대한 주소를 지정하는 방법의 모음</p>
+</blockquote>
+<ul>
+<li>백엔드가 개발이 늦을 경우 프론트는 짝퉁서버 Mock Server를 만들어서 사용할 수도 있다.<br>백엔드가 완료될 경우 프론트는 url만 백엔드 서버로 교체해서 사용한다.<br>MockServer를 만드는 방법은 여라가지가 있다. tool(JSON-Server)을 이용하여 사용할 수도 있다. </li>
+<li>백엔드가 개발이 빠를 경우 해당 백엔드가 잘되는지 테스트를 해야만한다. 여기서 프론트는 Postman과 같은 tool 을 이용하여 이를 테스트 할 수 있다.</li>
+</ul>
+<br>
+
+<h3 id="JSON-Server-와-POSTMAN"><a href="#JSON-Server-와-POSTMAN" class="headerlink" title="JSON Server 와 POSTMAN"></a>JSON Server 와 POSTMAN</h3><p>JSON.Server의 db.json에서 모든 프로퍼티 키는 반드시 쌍따옴표(<code>&quot;</code>)로 열고 닫는다. 그냥 따옴표(<code>&#39;</code>) 안된다. 반드시 쌍따옴표(<code>&quot;</code>)</p>
+<p>postman에서 테스트 주소를 작성할 때 반드시 <code>http://</code>를 적어주어야만 한다.</p>
+<p>POST  ➤  Body  ➤  raw  ➤  JSON 체크</p>
+<br>
+
+<h3 id="GraphQL"><a href="#GraphQL" class="headerlink" title="GraphQL"></a>GraphQL</h3><p>facebook이 만든 새로운 패러다임. REST API와는 달리 정해진 형태가 있지 않다. </p>
+<p>REST API 다음 차세대 데이터 질의어(SQL)로 각광을 받고 있으며 REST 및 부속 웹서비스 아키텍쳐를 대체할 수 있다. 클라이언트는 필요한 데이터의 구조를 지정할 수 있으며, 서버는 정확히 동일한 구조로 데이터를 반환한다.</p>
+<br>
+
+
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="http://yoursite.com/2019/11/14/javascript-study-25/" data-id="ck2xk95dt00cva8z0spvlefsl" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2019/11/14/javascript-study-25/" data-id="ck2xkbadk00d6g1z0vr06af02" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -253,15 +376,45 @@
             "name": "Jun Hyeok Kim"
         },
         "headline": "javascript-study-25",
-        "image": "http://yoursite.com",
+        "image": "http://yoursite.comhttps://user-images.githubusercontent.com/31315644/65933403-536fe400-e44c-11e9-981d-c4e8c1f86998.png",
         "keywords": "hexo git Web coding developer algorithm HTML CSS javascript",
-        "genre": "Develop TIL Algorithm & Quiz HTML CSS HTML&CSS Javascript Javascript-Preview etc",
+        "genre": "TIL Javascript",
         "datePublished": "2019-11-14",
         "dateCreated": "2019-11-14",
         "dateModified": "2019-11-14",
         "url": "http://yoursite.com/2019/11/14/javascript-study-25/",
-        "description": "",
-        "wordCount": 1
+        "description": "
+
+JavaScript Study 25
+프로미스
+프로미스를 만드는 방법
+
+
+프로미스 xhr , fetch, axios, async/await
+프로미스 xhr
+fetch
+axios
+async/await
+
+
+REST API
+JSON Server 와 POSTMAN
+GraphQL
+
+
+
+
+
+
+용어 - ( 러버덕 )
+프로미스
+
+fetch
+
+axios
+
+async/aw",
+        "wordCount": 1109
     }
 </script>
 
@@ -345,7 +498,7 @@
                             <a href="/2019/11/14/javascript-study-25/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/65933403-536fe400-e44c-11e9-981d-c4e8c1f86998.png)" alt="javascript-study-25" class="thumbnail-image"></span>
     
     
 </a>
@@ -353,7 +506,7 @@
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Develop/">Develop</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Develop/TIL/">TIL</a></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/Javascript/">Javascript</a></p>
                             <p class="item-title"><a href="/2019/11/14/javascript-study-25/" class="title">javascript-study-25</a></p>
                             <p class="item-date"><time datetime="2019-11-13T17:30:46.000Z" itemprop="datePublished">2019-11-14</time></p>
                         </div>
@@ -448,7 +601,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/">Develop</a><span class="category-list-count">27</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/CSS/">CSS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/GIT/">GIT</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Java/">Java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Javascript/">Javascript</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/TIL/">TIL</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/TIL/Algorithm-Quiz/">Algorithm & Quiz</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/TIL/Algorithm-Quiz/HTML/">HTML</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/TIL/Algorithm-Quiz/HTML/CSS/">CSS</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/TIL/Algorithm-Quiz/HTML/CSS/HTML-CSS/">HTML&CSS</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/TIL/Algorithm-Quiz/HTML/CSS/HTML-CSS/Javascript/">Javascript</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/TIL/Algorithm-Quiz/HTML/CSS/HTML-CSS/Javascript/Javascript-Preview/">Javascript-Preview</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/TIL/Algorithm-Quiz/HTML/CSS/HTML-CSS/Javascript/Javascript-Preview/etc/">etc</a><span class="category-list-count">1</span></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Tips/">Tips</a><span class="category-list-count">4</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/">TIL</a><span class="category-list-count">117</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Algorithm-Quiz/">Algorithm & Quiz</a><span class="category-list-count">47</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/GIT/">GIT</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript/">Javascript</a><span class="category-list-count">27</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a><span class="category-list-count">23</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/linux/">linux</a><span class="category-list-count">4</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/etc/">etc</a><span class="category-list-count">1</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/">Develop</a><span class="category-list-count">26</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/CSS/">CSS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/GIT/">GIT</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Java/">Java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Javascript/">Javascript</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Tips/">Tips</a><span class="category-list-count">4</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/">TIL</a><span class="category-list-count">118</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Algorithm-Quiz/">Algorithm & Quiz</a><span class="category-list-count">47</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/GIT/">GIT</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript/">Javascript</a><span class="category-list-count">28</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a><span class="category-list-count">23</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/linux/">linux</a><span class="category-list-count">4</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/etc/">etc</a><span class="category-list-count">1</span></li></ul>
         </div>
     </div>
 
