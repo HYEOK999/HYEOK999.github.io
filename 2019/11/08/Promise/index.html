@@ -91,14 +91,14 @@ ga('send', 'pageview');
                     <div class="nav-container-inner">
                         <ul id="main-nav">
                             
-                                <li class="main-nav-list-item" >
+                                <li class="main-nav-list-item">
                                     <a class="main-nav-list-link" href="/">Home</a>
                                 </li>
                             
                                         <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/">Develop</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/CSS/">CSS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/GIT/">GIT</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Project/">Project</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Tips/">Tips</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/">TIL</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Algorithm-Quiz/">Algorithm & Quiz</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/linux/">linux</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/etc/">etc</a></li></ul>
                                     
-                                <li class="main-nav-list-item" >
-                                    <a class="main-nav-list-link" href="https://about.me/iasg2004">About</a>
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="https://about.me/iasg2004" rel="external nofollow noopener noreferrer" target="_blank">About</a>
                                 </li>
                             
                         </ul>
@@ -106,14 +106,14 @@ ga('send', 'pageview');
                             <div id="search-form-wrap">
 
     <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
         <button type="submit" class="search-form-submit"></button>
     </form>
     <div class="ins-search">
     <div class="ins-search-mask"></div>
     <div class="ins-search-container">
         <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <input type="text" class="ins-search-input" placeholder="Type something...">
             <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="ins-section-wrapper">
@@ -381,7 +381,7 @@ ga('send', 'pageview');
 
 <br>
 
-<h4 id="Promise-all"><a href="#Promise-all" class="headerlink" title="Promise.all "></a>Promise.all <a id="a7"></a></h4><p>Promise.all 메소드는 프로미스가 담겨 있는 배열 등의 <a href="https://poiemaweb.com/es6-iteration-for-of" target="_blank" rel="noopener">이터러블</a>을 인자로 전달 받는다.</p>
+<h4 id="Promise-all"><a href="#Promise-all" class="headerlink" title="Promise.all "></a>Promise.all <a id="a7"></a></h4><p>Promise.all 메소드는 프로미스가 담겨 있는 배열 등의 <a href="https://poiemaweb.com/es6-iteration-for-of" rel="external nofollow noopener noreferrer" target="_blank">이터러블</a>을 인자로 전달 받는다.</p>
 <p> 전달받은 모든 프로미스를 병렬로 처리하고 그 처리 결과를 resolve하는 새로운 프로미스를 반환한다.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Promise</span>.all([</span><br><span class="line">  <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">resolve</span> =&gt;</span> setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> resolve(<span class="number">1</span>), <span class="number">3000</span>)), <span class="comment">// 1</span></span><br><span class="line">  <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">resolve</span> =&gt;</span> setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> resolve(<span class="number">2</span>), <span class="number">2000</span>)), <span class="comment">// 2</span></span><br><span class="line">  <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">resolve</span> =&gt;</span> setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> resolve(<span class="number">3</span>), <span class="number">1000</span>))  <span class="comment">// 3</span></span><br><span class="line">]).then(<span class="built_in">console</span>.log) <span class="comment">// [ 1, 2, 3 ]</span></span><br><span class="line">  .catch(<span class="built_in">console</span>.log);</span><br></pre></td></tr></table></figure>
 
@@ -416,7 +416,7 @@ ga('send', 'pageview');
 </ol>
 <br>
 
-<h4 id="Promise-race"><a href="#Promise-race" class="headerlink" title="Promise.race "></a>Promise.race <a id="a8"></a></h4><p>Promise.race 메소드는 Promise.all 메소드와 동일하게 프로미스가 담겨 있는 배열 등의 <a href="https://poiemaweb.com/es6-iteration-for-of" target="_blank" rel="noopener">이터러블</a>을 인자로 전달 받는다. </p>
+<h4 id="Promise-race"><a href="#Promise-race" class="headerlink" title="Promise.race "></a>Promise.race <a id="a8"></a></h4><p>Promise.race 메소드는 Promise.all 메소드와 동일하게 프로미스가 담겨 있는 배열 등의 <a href="https://poiemaweb.com/es6-iteration-for-of" rel="external nofollow noopener noreferrer" target="_blank">이터러블</a>을 인자로 전달 받는다. </p>
 <ul>
 <li>Promise.race 메소드는 Promise.all 메소드처럼 모든 프로미스를 병렬 처리하는 것이 아니라 <strong>가장 먼저 처리된 프로미스가 resolve한 처리 결과를 resolve하는 새로운 프로미스를 반환</strong></li>
 </ul>
@@ -436,7 +436,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="https://hyeok999.github.io/2019/11/08/Promise/" data-id="ck3msmwqq001jg1z01ipt66y6" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://hyeok999.github.io/2019/11/08/Promise/" data-id="ck3mt61d5001iqqz0268fr9dk" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -545,7 +545,7 @@ Promise.resolve / Promise.reject
 Promise.all
 
 Pr",
-        "wordCount": 3539
+        "wordCount": 3545
     }
 </script>
 
@@ -573,7 +573,7 @@ Pr",
             
                 
                 <li>
-                    <a class="social-tooltip" title="facebook" href="https://www.facebook.com/profile.php?id=100003801986180" target="_blank" rel="noopener">
+                    <a class="social-tooltip" title="facebook" href="https://www.facebook.com/profile.php?id=100003801986180" target="_blank" rel="external nofollow noopener noreferrer">
                         <i class="icon fa fa-facebook"></i>
                     </a>
                 </li>
@@ -581,7 +581,7 @@ Pr",
             
                 
                 <li>
-                    <a class="social-tooltip" title="github" href="https://github.com/HYEOK999" target="_blank" rel="noopener">
+                    <a class="social-tooltip" title="github" href="https://github.com/HYEOK999" target="_blank" rel="external nofollow noopener noreferrer">
                         <i class="icon fa fa-github"></i>
                     </a>
                 </li>
@@ -589,7 +589,7 @@ Pr",
             
                 
                 <li>
-                    <a class="social-tooltip" title="youtube" href="https://www.youtube.com" target="_blank" rel="noopener">
+                    <a class="social-tooltip" title="youtube" href="https://www.youtube.com" target="_blank" rel="external nofollow noopener noreferrer">
                         <i class="icon fa fa-youtube"></i>
                     </a>
                 </li>
@@ -631,7 +631,7 @@ Pr",
     <div class="widget-wrap">
         <h3 class="widget-title">recents</h3>
         <div class="widget">
-            <ul id="recent-post" class="">
+            <ul id="recent-post" class>
                 
                     <li>
                         
@@ -775,23 +775,23 @@ Pr",
             <ul>
                 
                     <li>
-                        <a href="http://github.com">github</a>
+                        <a href="http://github.com" rel="external nofollow noopener noreferrer" target="_blank">github</a>
                     </li>
                 
                     <li>
-                        <a href="http://hexo.io">Hexo</a>
+                        <a href="http://hexo.io" rel="external nofollow noopener noreferrer" target="_blank">Hexo</a>
                     </li>
                 
                     <li>
-                        <a href="http://www.naver.com">Naver</a>
+                        <a href="http://www.naver.com" rel="external nofollow noopener noreferrer" target="_blank">Naver</a>
                     </li>
                 
                     <li>
-                        <a href="https://google.com">Google</a>
+                        <a href="https://google.com" rel="external nofollow noopener noreferrer" target="_blank">Google</a>
                     </li>
                 
                     <li>
-                        <a href="https://www.youtube.com/">Youtube</a>
+                        <a href="https://www.youtube.com/" rel="external nofollow noopener noreferrer" target="_blank">Youtube</a>
                     </li>
                 
             </ul>
@@ -871,4 +871,4 @@ Pr",
 
     </div>
 </body>
-</html>
+

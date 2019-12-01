@@ -91,14 +91,14 @@ ga('send', 'pageview');
                     <div class="nav-container-inner">
                         <ul id="main-nav">
                             
-                                <li class="main-nav-list-item" >
+                                <li class="main-nav-list-item">
                                     <a class="main-nav-list-link" href="/">Home</a>
                                 </li>
                             
                                         <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/">Develop</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/CSS/">CSS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/GIT/">GIT</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Project/">Project</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Tips/">Tips</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/">TIL</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Algorithm-Quiz/">Algorithm & Quiz</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/linux/">linux</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/etc/">etc</a></li></ul>
                                     
-                                <li class="main-nav-list-item" >
-                                    <a class="main-nav-list-link" href="https://about.me/iasg2004">About</a>
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="https://about.me/iasg2004" rel="external nofollow noopener noreferrer" target="_blank">About</a>
                                 </li>
                             
                         </ul>
@@ -106,14 +106,14 @@ ga('send', 'pageview');
                             <div id="search-form-wrap">
 
     <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
         <button type="submit" class="search-form-submit"></button>
     </form>
     <div class="ins-search">
     <div class="ins-search-mask"></div>
     <div class="ins-search-container">
         <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <input type="text" class="ins-search-input" placeholder="Type something...">
             <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="ins-section-wrapper">
@@ -239,13 +239,13 @@ ga('send', 'pageview');
 </li>
 </ol>
 </blockquote>
-<p>[이를 적용한 대한항공 사이트] <a href="https://www.koreanair.com/content/koreanair/global/en.html/" target="_blank" rel="noopener">https://www.koreanair.com/content/koreanair/global/en.html/</a></p>
+<p>[이를 적용한 대한항공 사이트] <a href="https://www.koreanair.com/content/koreanair/global/en.html/" rel="external nofollow noopener noreferrer" target="_blank">https://www.koreanair.com/content/koreanair/global/en.html/</a></p>
 <h3 id="fieldset-태그의-버그"><a href="#fieldset-태그의-버그" class="headerlink" title="fieldset 태그의 버그"></a>fieldset 태그의 버그</h3><p>​    fieldset 태그는 보통 form 태그 내부에서 쓰인다.</p>
 <p>form - fieldset + legend + label + input 형식으로 많이 사용하는데, 여기서 fieldset 태그에 flex를 주게 될 경우, 크롬에서는 버그를 일으키게된다. ( 보통, form태그에 display:flex를 주면 크롬은 flex가 적용이 안되는 버그를 일으킨다. )</p>
 <p>해결법으로는 form - fieldset + legend + label + input 과 같은 형식에서</p>
 <p>form - fieldset - div + legend + label + input 과 같이 <div> 태그로 1번더 그룹핑한다. </div></p>
 <p>그리고 div에 flex관련 css 스타일을 주면 해결할 수 있다.</p>
-<p>[flex 관련 이슈] <a href="https://naradesign.github.io/article/flex-browser-compatibility.html" target="_blank" rel="noopener">https://naradesign.github.io/article/flex-browser-compatibility.html</a></p>
+<p>[flex 관련 이슈] <a href="https://naradesign.github.io/article/flex-browser-compatibility.html" rel="external nofollow noopener noreferrer" target="_blank">https://naradesign.github.io/article/flex-browser-compatibility.html</a></p>
 <h3 id="button-태그의-버그-왜-button-대신-a-role-”button”-을-이용하는가"><a href="#button-태그의-버그-왜-button-대신-a-role-”button”-을-이용하는가" class="headerlink" title="button 태그의 버그 (왜? button 대신 a role=”button” 을 이용하는가?)"></a>button 태그의 버그 (왜? button 대신 a role=”button” 을 이용하는가?)</h3><p>​    button 태그는 브라우저마다 padding , margin 영역이 다른 특성을 가지고 있다. </p>
 <p>따라서 a 태그와 WAI-ARIA를 이용하고 role=”button” 을 주어 이 부분을 해결할 수 있다.</p>
 <h3 id="vertical-align-text-align"><a href="#vertical-align-text-align" class="headerlink" title="vertical-align / text-align"></a>vertical-align / text-align</h3><ul>
@@ -285,7 +285,7 @@ ga('send', 'pageview');
 <p> 위 a링크는 aria-labelledby=”notice” 로 인해  id가 “notice”인것을 연결해준다.</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span> <span class="attr">class</span>=<span class="string">"tab"</span> <span class="attr">role</span>=<span class="string">"button"</span> <span class="attr">id</span>=<span class="string">"notice"</span>&gt;</span>공지사항<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="JavaScript-맛보기"><a href="#JavaScript-맛보기" class="headerlink" title="JavaScript 맛보기"></a>JavaScript 맛보기</h3><p>[defer 및 async] <a href="https://blog.asamaru.net/2017/05/04/script-async-defer/" target="_blank" rel="noopener">https://blog.asamaru.net/2017/05/04/script-async-defer/</a></p>
+<h3 id="JavaScript-맛보기"><a href="#JavaScript-맛보기" class="headerlink" title="JavaScript 맛보기"></a>JavaScript 맛보기</h3><p>[defer 및 async] <a href="https://blog.asamaru.net/2017/05/04/script-async-defer/" rel="external nofollow noopener noreferrer" target="_blank">https://blog.asamaru.net/2017/05/04/script-async-defer/</a></p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"./js/jquery.min.js"</span> <span class="attr">defer</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"./js/webcafe.js"</span> <span class="attr">defer</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> section = $(<span class="string">'.board section'</span>); <span class="comment">//jqeury lib에서 지원하는 선택 객체</span></span><br><span class="line"><span class="keyword">var</span> tab = $(<span class="string">'.tab'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// .on('이벤트명')</span></span><br><span class="line"><span class="comment">// tab.on('click keyup',function(e)&#123;</span></span><br><span class="line">tab.on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">  e.preventDefault();<span class="comment">// 기본 이벤트를 취소함. 예를들면 a의 속성 href의 이벤트를 취소함.</span></span><br><span class="line">  <span class="comment">// if((e.type === 'keyup' &amp;&amp; e.keyCode === 13) || e.type === 'click')&#123;</span></span><br><span class="line">  section.removeClass(<span class="string">'tab-act'</span>);</span><br><span class="line">  $(<span class="keyword">this</span>).parent().parent().addClass(<span class="string">'tab-act'</span>);</span><br><span class="line">&#125;)<span class="comment">//멀티 이벤트 바인딩 예-&gt; 클릭, 마우스온 등 다양한 환경 대응</span></span><br></pre></td></tr></table></figure>
@@ -313,7 +313,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="https://hyeok999.github.io/2019/09/12/html-css-study-06/" data-id="ck3msmwsm0077g1z0bkzyeo4n" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://hyeok999.github.io/2019/09/12/html-css-study-06/" data-id="ck3mt61f00079qqz0lpxx5vth" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -402,7 +402,7 @@ block 태그 안에서 여백을 주는 여러가지 방법들.
 글자 수 숨기기 (… 처리하기)
 fontello
 ar",
-        "wordCount": 827
+        "wordCount": 836
     }
 </script>
 
@@ -430,7 +430,7 @@ ar",
             
                 
                 <li>
-                    <a class="social-tooltip" title="facebook" href="https://www.facebook.com/profile.php?id=100003801986180" target="_blank" rel="noopener">
+                    <a class="social-tooltip" title="facebook" href="https://www.facebook.com/profile.php?id=100003801986180" target="_blank" rel="external nofollow noopener noreferrer">
                         <i class="icon fa fa-facebook"></i>
                     </a>
                 </li>
@@ -438,7 +438,7 @@ ar",
             
                 
                 <li>
-                    <a class="social-tooltip" title="github" href="https://github.com/HYEOK999" target="_blank" rel="noopener">
+                    <a class="social-tooltip" title="github" href="https://github.com/HYEOK999" target="_blank" rel="external nofollow noopener noreferrer">
                         <i class="icon fa fa-github"></i>
                     </a>
                 </li>
@@ -446,7 +446,7 @@ ar",
             
                 
                 <li>
-                    <a class="social-tooltip" title="youtube" href="https://www.youtube.com" target="_blank" rel="noopener">
+                    <a class="social-tooltip" title="youtube" href="https://www.youtube.com" target="_blank" rel="external nofollow noopener noreferrer">
                         <i class="icon fa fa-youtube"></i>
                     </a>
                 </li>
@@ -488,7 +488,7 @@ ar",
     <div class="widget-wrap">
         <h3 class="widget-title">recents</h3>
         <div class="widget">
-            <ul id="recent-post" class="">
+            <ul id="recent-post" class>
                 
                     <li>
                         
@@ -632,23 +632,23 @@ ar",
             <ul>
                 
                     <li>
-                        <a href="http://github.com">github</a>
+                        <a href="http://github.com" rel="external nofollow noopener noreferrer" target="_blank">github</a>
                     </li>
                 
                     <li>
-                        <a href="http://hexo.io">Hexo</a>
+                        <a href="http://hexo.io" rel="external nofollow noopener noreferrer" target="_blank">Hexo</a>
                     </li>
                 
                     <li>
-                        <a href="http://www.naver.com">Naver</a>
+                        <a href="http://www.naver.com" rel="external nofollow noopener noreferrer" target="_blank">Naver</a>
                     </li>
                 
                     <li>
-                        <a href="https://google.com">Google</a>
+                        <a href="https://google.com" rel="external nofollow noopener noreferrer" target="_blank">Google</a>
                     </li>
                 
                     <li>
-                        <a href="https://www.youtube.com/">Youtube</a>
+                        <a href="https://www.youtube.com/" rel="external nofollow noopener noreferrer" target="_blank">Youtube</a>
                     </li>
                 
             </ul>
@@ -728,4 +728,4 @@ ar",
 
     </div>
 </body>
-</html>
+

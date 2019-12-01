@@ -91,14 +91,14 @@ ga('send', 'pageview');
                     <div class="nav-container-inner">
                         <ul id="main-nav">
                             
-                                <li class="main-nav-list-item" >
+                                <li class="main-nav-list-item">
                                     <a class="main-nav-list-link" href="/">Home</a>
                                 </li>
                             
                                         <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/">Develop</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/CSS/">CSS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/GIT/">GIT</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Project/">Project</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Tips/">Tips</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/">TIL</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Algorithm-Quiz/">Algorithm & Quiz</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/linux/">linux</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/etc/">etc</a></li></ul>
                                     
-                                <li class="main-nav-list-item" >
-                                    <a class="main-nav-list-link" href="https://about.me/iasg2004">About</a>
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="https://about.me/iasg2004" rel="external nofollow noopener noreferrer" target="_blank">About</a>
                                 </li>
                             
                         </ul>
@@ -106,14 +106,14 @@ ga('send', 'pageview');
                             <div id="search-form-wrap">
 
     <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
         <button type="submit" class="search-form-submit"></button>
     </form>
     <div class="ins-search">
     <div class="ins-search-mask"></div>
     <div class="ins-search-container">
         <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <input type="text" class="ins-search-input" placeholder="Type something...">
             <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="ins-section-wrapper">
@@ -204,13 +204,13 @@ ga('send', 'pageview');
 <br>
 
 <h3 id="특정-요소의-프로퍼티-값-반전"><a href="#특정-요소의-프로퍼티-값-반전" class="headerlink" title="특정 요소의 프로퍼티 값 반전"></a>특정 요소의 프로퍼티 값 반전</h3><p>todos에서 대상 요소의 id를 인수로 전달하면 해당 요소의 completed 프로퍼티 값을 반전하는 함수를 작성하라.</p>
-<p>단, <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/assign" target="_blank" rel="noopener">Object.assign</a>를 사용하도록 한다.</p>
+<p>단, <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/assign" rel="external nofollow noopener noreferrer" target="_blank">Object.assign</a>를 사용하도록 한다.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 6. 특정 요소의 프로퍼티 값 반전</span></span><br><span class="line"><span class="keyword">const</span> todos = [</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="number">3</span>, <span class="attr">content</span>: <span class="string">'HTML'</span>, <span class="attr">completed</span>: <span class="literal">false</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="number">2</span>, <span class="attr">content</span>: <span class="string">'CSS'</span>, <span class="attr">completed</span>: <span class="literal">true</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="number">1</span>, <span class="attr">content</span>: <span class="string">'Javascript'</span>, <span class="attr">completed</span>: <span class="literal">false</span> &#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">toggleCompletedById</span>(<span class="params">id</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> result = todos.map(<span class="function">(<span class="params">todo</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (todo.id == id) todo.completed = !todo.completed;</span><br><span class="line">    <span class="keyword">return</span> todo;</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="built_in">Object</span>.assign(todos, result);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">toggleCompletedById(<span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(todos);</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">[</span></span><br><span class="line"><span class="comment">  &#123; id: 3, content: 'HTML', completed: false &#125;,</span></span><br><span class="line"><span class="comment">  &#123; id: 2, content: 'CSS', completed: false &#125;,</span></span><br><span class="line"><span class="comment">  &#123; id: 1, content: 'Javascript', completed: false &#125;</span></span><br><span class="line"><span class="comment">]</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
 
 <br>
 
 <h3 id="모든-요소의-completed-프로퍼티-값을-true로-설정"><a href="#모든-요소의-completed-프로퍼티-값을-true로-설정" class="headerlink" title="모든 요소의 completed 프로퍼티 값을 true로 설정"></a>모든 요소의 completed 프로퍼티 값을 true로 설정</h3><p>todos의 모든 요소의 completed 프로퍼티 값을 true로 설정하는 함수를 작성하라.</p>
-<p>단, <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/assign" target="_blank" rel="noopener">Object.assign</a>를 사용하도록 한다.</p>
+<p>단, <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/assign" rel="external nofollow noopener noreferrer" target="_blank">Object.assign</a>를 사용하도록 한다.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 7. 모든 요소의 completed 프로퍼티 값을 true로 설정</span></span><br><span class="line"><span class="keyword">let</span> todos = [</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="number">3</span>, <span class="attr">content</span>: <span class="string">'HTML'</span>, <span class="attr">completed</span>: <span class="literal">false</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="number">2</span>, <span class="attr">content</span>: <span class="string">'CSS'</span>, <span class="attr">completed</span>: <span class="literal">true</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="number">1</span>, <span class="attr">content</span>: <span class="string">'Javascript'</span>, <span class="attr">completed</span>: <span class="literal">false</span> &#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">toggleCompletedAll</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  todos = todos.map(<span class="function">(<span class="params">todo</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (!todo.completed) todo.completed = !todo.completed;</span><br><span class="line">    <span class="keyword">return</span> todo;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">toggleCompletedAll();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(todos);</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">[</span></span><br><span class="line"><span class="comment">  &#123; id: 3, content: 'HTML', completed: true &#125;,</span></span><br><span class="line"><span class="comment">  &#123; id: 2, content: 'CSS', completed: true &#125;,</span></span><br><span class="line"><span class="comment">  &#123; id: 1, content: 'Javascript', completed: true &#125;</span></span><br><span class="line"><span class="comment">]</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
 
 <br>
@@ -224,7 +224,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="https://hyeok999.github.io/2019/10/23/HOF-05-08/" data-id="ck3msmwqn001ag1z0n8cqk8aj" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://hyeok999.github.io/2019/10/23/HOF-05-08/" data-id="ck3mt61d20019qqz0mgvrlc8d" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -309,7 +309,7 @@ ga('send', 'pageview');
 
 특정 요소 삭제todos에서 삭제할 요소의 id를 인수로 전달하면 해당 요소를 삭제하는 함수를 작성하라.
 1234567891011121314151617181920// 5. 특정 요소 삭제let todos = [  &#123; id: 3, content: 'HTML', completed: false &#125;, ",
-        "wordCount": 751
+        "wordCount": 757
     }
 </script>
 
@@ -337,7 +337,7 @@ ga('send', 'pageview');
             
                 
                 <li>
-                    <a class="social-tooltip" title="facebook" href="https://www.facebook.com/profile.php?id=100003801986180" target="_blank" rel="noopener">
+                    <a class="social-tooltip" title="facebook" href="https://www.facebook.com/profile.php?id=100003801986180" target="_blank" rel="external nofollow noopener noreferrer">
                         <i class="icon fa fa-facebook"></i>
                     </a>
                 </li>
@@ -345,7 +345,7 @@ ga('send', 'pageview');
             
                 
                 <li>
-                    <a class="social-tooltip" title="github" href="https://github.com/HYEOK999" target="_blank" rel="noopener">
+                    <a class="social-tooltip" title="github" href="https://github.com/HYEOK999" target="_blank" rel="external nofollow noopener noreferrer">
                         <i class="icon fa fa-github"></i>
                     </a>
                 </li>
@@ -353,7 +353,7 @@ ga('send', 'pageview');
             
                 
                 <li>
-                    <a class="social-tooltip" title="youtube" href="https://www.youtube.com" target="_blank" rel="noopener">
+                    <a class="social-tooltip" title="youtube" href="https://www.youtube.com" target="_blank" rel="external nofollow noopener noreferrer">
                         <i class="icon fa fa-youtube"></i>
                     </a>
                 </li>
@@ -395,7 +395,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">recents</h3>
         <div class="widget">
-            <ul id="recent-post" class="">
+            <ul id="recent-post" class>
                 
                     <li>
                         
@@ -539,23 +539,23 @@ ga('send', 'pageview');
             <ul>
                 
                     <li>
-                        <a href="http://github.com">github</a>
+                        <a href="http://github.com" rel="external nofollow noopener noreferrer" target="_blank">github</a>
                     </li>
                 
                     <li>
-                        <a href="http://hexo.io">Hexo</a>
+                        <a href="http://hexo.io" rel="external nofollow noopener noreferrer" target="_blank">Hexo</a>
                     </li>
                 
                     <li>
-                        <a href="http://www.naver.com">Naver</a>
+                        <a href="http://www.naver.com" rel="external nofollow noopener noreferrer" target="_blank">Naver</a>
                     </li>
                 
                     <li>
-                        <a href="https://google.com">Google</a>
+                        <a href="https://google.com" rel="external nofollow noopener noreferrer" target="_blank">Google</a>
                     </li>
                 
                     <li>
-                        <a href="https://www.youtube.com/">Youtube</a>
+                        <a href="https://www.youtube.com/" rel="external nofollow noopener noreferrer" target="_blank">Youtube</a>
                     </li>
                 
             </ul>
@@ -635,4 +635,4 @@ ga('send', 'pageview');
 
     </div>
 </body>
-</html>
+
