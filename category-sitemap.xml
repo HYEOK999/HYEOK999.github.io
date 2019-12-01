@@ -2,104 +2,104 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
-        <loc>http://yoursite.com</loc>
+        <loc>https://hyeok999.github.io</loc>
         <changefreq>daily</changefreq>
         <priority>1</priority>
     </url>
 
     <url>
-        <loc>http://yoursite.com/categories/Develop/Project/</loc>
+        <loc>https://hyeok999.github.io/categories/Develop/Project/</loc>
         <lastmod>2019-11-30T17:15:15.401Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://yoursite.com/categories/Develop/</loc>
+        <loc>https://hyeok999.github.io/categories/Develop/</loc>
         <lastmod>2019-11-30T17:15:15.401Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://yoursite.com/categories/TIL/Algorithm-Quiz/</loc>
+        <loc>https://hyeok999.github.io/categories/TIL/Algorithm-Quiz/</loc>
         <lastmod>2019-11-30T17:14:41.351Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://yoursite.com/categories/TIL/</loc>
+        <loc>https://hyeok999.github.io/categories/TIL/</loc>
         <lastmod>2019-11-30T17:14:41.351Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://yoursite.com/categories/Develop/Javascript/</loc>
+        <loc>https://hyeok999.github.io/categories/Develop/Javascript/</loc>
         <lastmod>2019-11-30T17:14:13.335Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://yoursite.com/categories/TIL/linux/</loc>
+        <loc>https://hyeok999.github.io/categories/TIL/linux/</loc>
         <lastmod>2019-11-30T17:13:57.169Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://yoursite.com/categories/Develop/GIT/</loc>
+        <loc>https://hyeok999.github.io/categories/Develop/GIT/</loc>
         <lastmod>2019-11-30T17:06:44.672Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://yoursite.com/categories/Develop/Tips/</loc>
+        <loc>https://hyeok999.github.io/categories/Develop/Tips/</loc>
         <lastmod>2019-11-30T17:06:21.645Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://yoursite.com/categories/TIL/Javascript-Preview/</loc>
+        <loc>https://hyeok999.github.io/categories/TIL/Javascript-Preview/</loc>
         <lastmod>2019-11-30T17:05:59.881Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://yoursite.com/categories/TIL/Javascript/</loc>
+        <loc>https://hyeok999.github.io/categories/TIL/Javascript/</loc>
         <lastmod>2019-11-30T17:01:25.836Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://yoursite.com/categories/Develop/CSS/</loc>
+        <loc>https://hyeok999.github.io/categories/Develop/CSS/</loc>
         <lastmod>2019-11-30T16:54:45.258Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://yoursite.com/categories/etc/</loc>
+        <loc>https://hyeok999.github.io/categories/etc/</loc>
         <lastmod>2019-11-30T15:49:24.379Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://yoursite.com/categories/TIL/HTML-CSS/</loc>
+        <loc>https://hyeok999.github.io/categories/TIL/HTML-CSS/</loc>
         <lastmod>2019-11-30T15:48:08.731Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://yoursite.com/categories/Develop/Java/</loc>
+        <loc>https://hyeok999.github.io/categories/Develop/Java/</loc>
         <lastmod>2019-11-30T15:44:17.003Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
