@@ -230,7 +230,7 @@ body,
 }
 body {
   background: #eaeaea;
-  font: 15px NanumSquareRound, "Helvetica Neue", sans-serif;
+  font: 14px NanumSquareRound, "Helvetica Neue", sans-serif;
   -webkit-text-size-adjust: 100%;
 }
 code {
@@ -424,7 +424,7 @@ code {
   line-height: 20px;
   padding: 15px 14px;
   text-align: center;
-  font-size: 15px;
+  font-size: 14px;
   position: relative;
   cursor: pointer;
 }
@@ -765,7 +765,7 @@ code {
 .widget-list ol li {
   margin: 10px 0;
   padding-bottom: 10px;
-  font-size: 16px;
+  font-size: 15px;
   border-bottom: 1px solid #e4e4e4;
 }
 .widget-list ul li:last-child,
@@ -806,7 +806,7 @@ code {
   padding-bottom: 0;
 }
 .widget-float a {
-  font-size: 16px;
+  font-size: 15px;
 }
 #recent-post li {
   padding: 10px 0 10px 94px;
@@ -1216,7 +1216,7 @@ a.article-title:hover {
   font-family: 'FontAwesome';
 }
 .article-entry blockquote footer {
-  font-size: 15px;
+  font-size: 14px;
   margin: 1.6em 0;
   font-family: NanumSquareRound, "Helvetica Neue", sans-serif;
 }
@@ -1278,7 +1278,7 @@ a.article-title:hover {
   text-shadow: 0 1px #ff4747;
 }
 .article-footer {
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.6em;
   border-top: 1px solid #ddd;
   padding-top: 1.6em;
@@ -1513,7 +1513,7 @@ a.article-title:hover {
 }
 .archive-year-wrap {
   padding: 18px 30px 17px;
-  font-size: 17px;
+  font-size: 16px;
   color: #666;
   border-bottom: 1px solid #eee;
 }
@@ -1825,9 +1825,9 @@ i.icon:before {
   display: block;
   overflow-x: auto;
   padding: 15px 20px;
-  font-size: 15px;
+  font-size: 14px;
   font-family: "Source Code Pro", NanumSquareRound, Consolas;
-  line-height: 24px;
+  line-height: 22.400000000000002px;
 }
 .highlight table {
   margin: 0;
@@ -2057,7 +2057,7 @@ i.icon:before {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    font-size: 15px;
+    font-size: 14px;
   }
   #header .nav-container #main-nav .main-nav-list-item:before,
   #header .nav-container #main-nav .main-nav-list-link:before,
@@ -2101,10 +2101,10 @@ i.icon:before {
     float: none;
   }
   #header .nav-container #sub-nav .search-form:before {
-    font-size: 15px;
+    font-size: 14px;
   }
   #header .nav-container #sub-nav .search-form-input {
-    font-size: 15px;
+    font-size: 14px;
     width: 90%;
   }
   .main-body-inner {
