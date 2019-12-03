@@ -12,16 +12,19 @@
     
         <meta name="keywords" content="coding,TIL,algorithm,javascript,Programmers">
     
-    <meta name="keywords" content="coding,TIL,algorithm,javascript,Programmers">
+    <meta name="description" content="문제 출처 : 프로그래머스 [2020카카오공채] 문자열 압축문제 설명데이터 처리 전문가가 되고 싶은 어피치는 문자열을 압축하는 방법에 대해 공부를 하고 있습니다. 최근에 대량의 데이터 처리를 위한 간단한 비손실 압축 방법에 대해 공부를 하고 있는데, 문자열에서 같은 값이 연속해서 나타나는 것을 그 문자의 개수와 반복되는 값으로 표현하여 더 짧은 문자열로">
+<meta name="keywords" content="coding,TIL,algorithm,javascript,Programmers">
 <meta property="og:type" content="article">
 <meta property="og:title" content="daily_algorithm45">
 <meta property="og:url" content="https://hyeok999.github.io/2019/12/04/daily-algorithm45/index.html">
 <meta property="og:site_name" content="HYEOK999&#39;s Blog">
+<meta property="og:description" content="문제 출처 : 프로그래머스 [2020카카오공채] 문자열 압축문제 설명데이터 처리 전문가가 되고 싶은 어피치는 문자열을 압축하는 방법에 대해 공부를 하고 있습니다. 최근에 대량의 데이터 처리를 위한 간단한 비손실 압축 방법에 대해 공부를 하고 있는데, 문자열에서 같은 값이 연속해서 나타나는 것을 그 문자의 개수와 반복되는 값으로 표현하여 더 짧은 문자열로">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://images.velog.io/post-images/leejh3224/619516b0-e892-11e8-98f5-997ef3c38110/what-is-an-algorithm-featured.png">
-<meta property="og:updated_time" content="2019-12-03T15:54:58.677Z">
+<meta property="og:updated_time" content="2019-12-03T15:55:49.650Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="daily_algorithm45">
+<meta name="twitter:description" content="문제 출처 : 프로그래머스 [2020카카오공채] 문자열 압축문제 설명데이터 처리 전문가가 되고 싶은 어피치는 문자열을 압축하는 방법에 대해 공부를 하고 있습니다. 최근에 대량의 데이터 처리를 위한 간단한 비손실 압축 방법에 대해 공부를 하고 있는데, 문자열에서 같은 값이 연속해서 나타나는 것을 그 문자의 개수와 반복되는 값으로 표현하여 더 짧은 문자열로">
 <meta name="twitter:image" content="https://images.velog.io/post-images/leejh3224/619516b0-e892-11e8-98f5-997ef3c38110/what-is-an-algorithm-featured.png">
     
     <link rel="canonical" href="https://hyeok999.github.io/2019/12/04/daily-algorithm45/">
@@ -192,14 +195,64 @@ ga('send', 'pageview');
         <div class="article-entry" itemprop="articleBody">
             <p><img src="https://images.velog.io/post-images/leejh3224/619516b0-e892-11e8-98f5-997ef3c38110/what-is-an-algorithm-featured.png" alt></p>
 <hr>
+<p>문제 출처 : 프로그래머스</p>
+<h3 id="2020카카오공채-문자열-압축"><a href="#2020카카오공채-문자열-압축" class="headerlink" title="[2020카카오공채] 문자열 압축"></a>[2020카카오공채] 문자열 압축</h3><h6 id="문제-설명"><a href="#문제-설명" class="headerlink" title="문제 설명"></a>문제 설명</h6><p>데이터 처리 전문가가 되고 싶은 <strong>어피치</strong>는 문자열을 압축하는 방법에 대해 공부를 하고 있습니다. 최근에 대량의 데이터 처리를 위한 간단한 비손실 압축 방법에 대해 공부를 하고 있는데, 문자열에서 같은 값이 연속해서 나타나는 것을 그 문자의 개수와 반복되는 값으로 표현하여 더 짧은 문자열로 줄여서 표현하는 알고리즘을 공부하고 있습니다.<br>간단한 예로 aabbaccc의 경우 2a2ba3c(문자가 반복되지 않아 한번만 나타난 경우 1은 생략함)와 같이 표현할 수 있는데, 이러한 방식은 반복되는 문자가 적은 경우 압축률이 낮다는 단점이 있습니다. 예를 들면, abcabcdede와 같은 문자열은 전혀 압축되지 않습니다. 어피치는 이러한 단점을 해결하기 위해 문자열을 1개 이상의 단위로 잘라서 압축하여 더 짧은 문자열로 표현할 수 있는지 방법을 찾아보려고 합니다.</p>
+<p>예를 들어, ababcdcdababcdcd의 경우 문자를 1개 단위로 자르면 전혀 압축되지 않지만, 2개 단위로 잘라서 압축한다면 2ab2cd2ab2cd로 표현할 수 있습니다. 다른 방법으로 8개 단위로 잘라서 압축한다면 2ababcdcd로 표현할 수 있으며, 이때가 가장 짧게 압축하여 표현할 수 있는 방법입니다.</p>
+<p>다른 예로, abcabcdede와 같은 경우, 문자를 2개 단위로 잘라서 압축하면 abcabc2de가 되지만, 3개 단위로 자른다면 2abcdede가 되어 3개 단위가 가장 짧은 압축 방법이 됩니다. 이때 3개 단위로 자르고 마지막에 남는 문자열은 그대로 붙여주면 됩니다.</p>
+<p>압축할 문자열 s가 매개변수로 주어질 때, 위에 설명한 방법으로 1개 이상 단위로 문자열을 잘라 압축하여 표현한 문자열 중 가장 짧은 것의 길이를 return 하도록 solution 함수를 완성해주세요.</p>
+<h3 id="제한사항"><a href="#제한사항" class="headerlink" title="제한사항"></a>제한사항</h3><ul>
+<li>s의 길이는 1 이상 1,000 이하입니다.</li>
+<li>s는 알파벳 소문자로만 이루어져 있습니다.</li>
+</ul>
+<h5 id="입출력-예"><a href="#입출력-예" class="headerlink" title="입출력 예"></a>입출력 예</h5><table>
+<thead>
+<tr>
+<th>s</th>
+<th>result</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>&quot;aabbaccc&quot;</code></td>
+<td>7</td>
+</tr>
+<tr>
+<td><code>&quot;ababcdcdababcdcd&quot;</code></td>
+<td>9</td>
+</tr>
+<tr>
+<td><code>&quot;abcabcdede&quot;</code></td>
+<td>8</td>
+</tr>
+<tr>
+<td><code>&quot;abcabcabcabcdededededede&quot;</code></td>
+<td>14</td>
+</tr>
+<tr>
+<td><code>&quot;xababcdcdababcdcd&quot;</code></td>
+<td>17</td>
+</tr>
+</tbody></table>
+<h3 id="입출력-예에-대한-설명"><a href="#입출력-예에-대한-설명" class="headerlink" title="입출력 예에 대한 설명"></a>입출력 예에 대한 설명</h3><p><strong>입출력 예 #1</strong></p>
+<p>문자열을 1개 단위로 잘라 압축했을 때 가장 짧습니다.</p>
+<p><strong>입출력 예 #2</strong></p>
+<p>문자열을 8개 단위로 잘라 압축했을 때 가장 짧습니다.</p>
+<p><strong>입출력 예 #3</strong></p>
+<p>문자열을 3개 단위로 잘라 압축했을 때 가장 짧습니다.</p>
+<p><strong>입출력 예 #4</strong></p>
+<p>문자열을 2개 단위로 자르면 abcabcabcabc6de 가 됩니다.<br>문자열을 3개 단위로 자르면 4abcdededededede 가 됩니다.<br>문자열을 4개 단위로 자르면 abcabcabcabc3dede 가 됩니다.<br>문자열을 6개 단위로 자를 경우 2abcabc2dedede가 되며, 이때의 길이가 14로 가장 짧습니다.</p>
+<p><strong>입출력 예 #5</strong></p>
+<p>문자열은 제일 앞부터 정해진 길이만큼 잘라야 합니다.<br>따라서 주어진 문자열을 x / ababcdcd / ababcdcd 로 자르는 것은 불가능 합니다.<br>이 경우 어떻게 문자열을 잘라도 압축되지 않으므로 가장 짧은 길이는 17이 됩니다.</p>
+<hr>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">solution</span>(<span class="params">s</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> count = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">let</span> temp = <span class="string">''</span>;</span><br><span class="line">  <span class="keyword">let</span> obj = [];</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (s.length === <span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (count &gt;= <span class="built_in">Math</span>.floor(s.length / <span class="number">2</span>)) <span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line">    count++;</span><br><span class="line">    <span class="keyword">let</span> array = strToArr(s, count);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> coin = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; array.length - <span class="number">1</span>; i++) &#123;</span><br><span class="line">      <span class="keyword">if</span> (array[i] === array[i + <span class="number">1</span>]) &#123;</span><br><span class="line">        coin++;</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (coin === <span class="number">1</span>) temp += array[i];</span><br><span class="line">        <span class="keyword">else</span> temp += coin + array[i];</span><br><span class="line">        coin = <span class="number">1</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (coin === <span class="number">1</span>) temp += array[array.length - <span class="number">1</span>];</span><br><span class="line">    <span class="keyword">else</span> temp += coin + array[array.length - <span class="number">1</span>];</span><br><span class="line">    obj.push(temp.length);</span><br><span class="line">    temp = <span class="string">''</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 함수</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">strToArr</span>(<span class="params">str, counts</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> arr = str;</span><br><span class="line">    <span class="keyword">let</span> subArr = [];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">      subArr.push(arr.substring(<span class="number">0</span>, counts));</span><br><span class="line">      arr = arr.slice(-(arr.length) + counts);</span><br><span class="line">      <span class="keyword">if</span> (arr.length &lt;= counts || arr == <span class="string">''</span>) &#123;</span><br><span class="line">        subArr.push(arr);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> subArr;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 함수 끝</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Math</span>.min(...obj);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<br>
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="https://hyeok999.github.io/2019/12/04/daily-algorithm45/" data-id="ck3q1n1s9005fniz0fl52rk6f" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://hyeok999.github.io/2019/12/04/daily-algorithm45/" data-id="ck3q1o7j6005iqfz0l66fx229" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -279,8 +332,9 @@ ga('send', 'pageview');
         "url": "https://hyeok999.github.io/2019/12/04/daily-algorithm45/",
         "description": "
 
-",
-        "wordCount": 3
+문제 출처 : 프로그래머스
+[2020카카오공채] 문자열 압축문제 설명데이터 처리 전문가가 되고 싶은 어피치는 문자열을 압축하는 방법에 대해 공부를 하고 있습니다. 최근에 대량의 데이터 처리를 위한 간단한 비손실 압축 방법에 대해 공부를 하고 있는데, 문자열에서 같은 값이 연속해서 나타나는 것을 그 문자의 개수와 반복되는 값으로 표현하여 더 짧은 문자열로",
+        "wordCount": 770
     }
 </script>
 
