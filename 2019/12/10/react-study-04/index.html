@@ -12,18 +12,20 @@
     
         <meta name="keywords" content="git,Web,coding,develop,HTML,CSS,javascript,React">
     
-    <meta name="description" content="HYEOK999&apos;s IT Develop Blog">
+    <meta name="description" content="React Study 04 비동기 처리 fetch 단점 +then 대신 async/await +try - catch 비동기 코드 내 순회   YouTube Mini Clone 인수 기본값 설정하기. Axios , params 별도로 설정하기. debounce 함수 함수 컴포넌트 vs 클래스 컴포넌트 모든 상태를 하위 컴포넌트에게 전달하는법 HOC ( H">
 <meta name="keywords" content="git,Web,coding,develop,HTML,CSS,javascript,React">
 <meta property="og:type" content="article">
 <meta property="og:title" content="React 스터디 04">
 <meta property="og:url" content="https://hyeok999.github.io/2019/12/10/react-study-04/index.html">
 <meta property="og:site_name" content="HYEOK999&#39;s Blog">
-<meta property="og:description" content="HYEOK999&apos;s IT Develop Blog">
+<meta property="og:description" content="React Study 04 비동기 처리 fetch 단점 +then 대신 async/await +try - catch 비동기 코드 내 순회   YouTube Mini Clone 인수 기본값 설정하기. Axios , params 별도로 설정하기. debounce 함수 함수 컴포넌트 vs 클래스 컴포넌트 모든 상태를 하위 컴포넌트에게 전달하는법 HOC ( H">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-12-10T11:29:55.140Z">
+<meta property="og:image" content="https://user-images.githubusercontent.com/31315644/69938302-4345b500-1520-11ea-8436-26d69300e699.png">
+<meta property="og:updated_time" content="2019-12-10T11:31:29.111Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="React 스터디 04">
-<meta name="twitter:description" content="HYEOK999&apos;s IT Develop Blog">
+<meta name="twitter:description" content="React Study 04 비동기 처리 fetch 단점 +then 대신 async/await +try - catch 비동기 코드 내 순회   YouTube Mini Clone 인수 기본값 설정하기. Axios , params 별도로 설정하기. debounce 함수 함수 컴포넌트 vs 클래스 컴포넌트 모든 상태를 하위 컴포넌트에게 전달하는법 HOC ( H">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/31315644/69938302-4345b500-1520-11ea-8436-26d69300e699.png">
     
     <link rel="canonical" href="https://hyeok999.github.io/2019/12/10/react-study-04/">
     
@@ -191,14 +193,182 @@ ga('send', 'pageview');
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <p><img src="https://user-images.githubusercontent.com/31315644/69938302-4345b500-1520-11ea-8436-26d69300e699.png" alt="React"></p>
+<hr>
+<h1 id="React-Study-04"><a href="#React-Study-04" class="headerlink" title="React Study 04"></a>React Study 04</h1><ul>
+<li>비동기 처리<ul>
+<li>fetch 단점</li>
+<li>+then 대신 async/await</li>
+<li>+try - catch</li>
+<li>비동기 코드 내 순회</li>
+</ul>
+</li>
+<li>YouTube Mini Clone<ul>
+<li>인수 기본값 설정하기.</li>
+<li>Axios , params 별도로 설정하기.</li>
+<li>debounce 함수</li>
+<li>함수 컴포넌트 vs 클래스 컴포넌트</li>
+<li>모든 상태를 하위 컴포넌트에게 전달하는법</li>
+<li>HOC ( High Order Component )</li>
+<li>InfiniteScroll</li>
+<li>uuid</li>
+<li>defaultState 백업</li>
+<li>Update 이벤트</li>
+</ul>
+</li>
+</ul>
+<br>
+
+<hr>
+<br>
+
+<h3 id="용어-러버덕"><a href="#용어-러버덕" class="headerlink" title="용어 - ( 러버덕 )"></a>용어 - ( 러버덕 )</h3><ul>
+<li>fetch 단점</li>
+<li>try / catch</li>
+<li>인수 기본값 성저하기</li>
+<li>Axios, params 별도 설정</li>
+<li>debounce 함수</li>
+<li>HOC</li>
+<li>debounce , infiniteScroll, uuid</li>
+<li>Update 이벤트</li>
+</ul>
+<br>
+
+<hr>
+<h2 id="비동기-처리"><a href="#비동기-처리" class="headerlink" title="비동기 처리"></a>비동기 처리</h2><br>
+
+<h3 id="fetch-단점"><a href="#fetch-단점" class="headerlink" title="fetch 단점"></a>fetch 단점</h3><ul>
+<li>크로스 브라우징 이슈 </li>
+<li>쿠키를 포함하려면 특정 npm을 랩핑해줘야 한다.</li>
+<li>status가  response 체크를 받아야만 한다.</li>
+</ul>
+<p>fetch에 대한 별도의 핸들링 모듈을 전부 설치를 해주어야한다. </p>
+<p>어느 회사에 가느냐에 따라 사용하는 ajax가 다를 테지만 왠만하면 axios를 사용하는 것이 좋다.</p>
+<br>
+
+<h4 id="then-대신-async-await"><a href="#then-대신-async-await" class="headerlink" title="+ then 대신 async/await"></a>+ then 대신 async/await</h4><p>Promise 에서 then 을 게속 나열하는 것보다는 async / await를 사용하도록 한다.</p>
+<p>then을 지속적으로 나열하다보면 반복 순회( for )를 하기가 힘들어지며 가독성이 매우 심하게 떨어지기 때문이다.</p>
+<br>
+
+<h4 id="try-catch"><a href="#try-catch" class="headerlink" title="+ try - catch"></a>+ try - catch</h4><p>async / await 에서 에러처리를 할때는 try - catch를 사용한다.</p>
+<p> try - catch는 에러처리 뿐만 아니라 다음 순서를 보장해줄 수 있기 때문에 반드시 사용하는것을 권장한다.</p>
+<p>또한, try - catch 구문은 비동기 코드 별로 분리해서 설정해준다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      <span class="keyword">const</span> &#123; data &#125; = <span class="keyword">await</span> axios.get(<span class="string">'api주소'</span>,&#123; params &#125; )</span><br><span class="line">      <span class="keyword">this</span>.setState(&#123;<span class="attr">list</span> : data.items &#125;);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">      <span class="built_in">console</span>.error(error);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 위 try - catch 문이 에러를 일으켜도 지금 try - catch 문은 실행을 한다.</span></span><br><span class="line">	  <span class="keyword">try</span> &#123;</span><br><span class="line">      <span class="keyword">const</span> &#123; data &#125; = <span class="keyword">await</span> axios.get(<span class="string">'api주소'</span>,&#123; params &#125; )</span><br><span class="line">      <span class="keyword">this</span>.setState(&#123;<span class="attr">list</span> : data.items &#125;);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">      <span class="built_in">console</span>.error(error);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="비동기-코드-내-순회"><a href="#비동기-코드-내-순회" class="headerlink" title="비동기 코드 내 순회"></a>비동기 코드 내 순회</h4><p><strong>프로미스 체이닝 및 비동기 처리에는 forEach를 돌려서는 안된다. 실행순서를 보장받을 수 없다.</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> after1 = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">resolve</span> =&gt;</span> setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> resolve(<span class="number">1</span>),<span class="number">1000</span>))</span><br><span class="line"><span class="keyword">const</span> after2 = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">resolve</span> =&gt;</span> setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> resolve(<span class="number">2</span>),<span class="number">2000</span>))</span><br><span class="line"><span class="keyword">const</span> after3 = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">resolve</span> =&gt;</span> setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> resolve(<span class="number">3</span>),<span class="number">3000</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> main = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> tasks = [after3, after2, after1];</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 잘못된 예제</span></span><br><span class="line">  tasks.forEach(<span class="keyword">async</span> task =&gt; <span class="built_in">console</span>.log(<span class="keyword">await</span> (task)))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">main()</span><br></pre></td></tr></table></figure>
+
+<p>예상과 달리(after3, 2, 1순서로 진행) 결과값은 1 2 3이 나온다.</p>
+<ul>
+<li>비동기 처리된 배열을 forEach로 순회할 경우 순서가 보장되지 않는다.</li>
+</ul>
+<br>
+
+<p>만약 비동기 코드 내에서 for 순회를 하고 싶다면 for of를 사용한다. 실행순서는 보장받을 수 없다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> after1 = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">resolve</span> =&gt;</span> setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> resolve(<span class="number">1</span>),<span class="number">1000</span>))</span><br><span class="line"><span class="keyword">const</span> after2 = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">resolve</span> =&gt;</span> setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> resolve(<span class="number">2</span>),<span class="number">2000</span>))</span><br><span class="line"><span class="keyword">const</span> after3 = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">resolve</span> =&gt;</span> setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> resolve(<span class="number">3</span>),<span class="number">3000</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> main = <span class="keyword">async</span> () =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> tasks = [after3, after2, after1];</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 올바른 예제</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">const</span> t <span class="keyword">of</span> tasks) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">await</span> (t))</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">main();</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>비동기에서 순회가 필요할 경우 for…of를 사용해야 한다.</li>
+</ul>
+<br>
+
+<p>state를 초기화를 안하면 setState를 사용할 수 없다.</p>
+<p>state를 초기화하고 아무것도 정의를 안해도 setState에 적용된 내용을 삽입하고 state에 데이터가 있다면 setState를 통해 업데이트 된다. (UPSERT)</p>
+<br>
+
+<hr>
+<h2 id="YouTube-Mini-Clone"><a href="#YouTube-Mini-Clone" class="headerlink" title="YouTube Mini Clone"></a>YouTube Mini Clone</h2><p>UPSERT : Insert + Update를 혼합한 용어. 데이터가 없으면 생성, 있으면 업데이트 한다는 의미를 지닌다.</p>
+<br>
+
+<p>try / catch를 사용하지 않을 경우 오류 핸들링이 되지 않기 때문에 다음 코드가 실행되지 않는다.</p>
+<ul>
+<li>try / catch 사용시 에러를 잡고 나서도 다음 코드 실행이 보장된다.</li>
+<li>만약, 반드시 실행되어야 하는 중요한 비동기 작업이라면 각각 try / catch로 구분해서 관리하는 것이 좋다. </li>
+</ul>
+<br>
+
+<h3 id="인수-기본값-설정하기"><a href="#인수-기본값-설정하기" class="headerlink" title="인수 기본값 설정하기."></a>인수 기본값 설정하기.</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> getYoutubeData(query=<span class="string">'여행'</span>) &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="Axios-params-별도로-설정하기"><a href="#Axios-params-별도로-설정하기" class="headerlink" title="Axios , params 별도로 설정하기."></a>Axios , params 별도로 설정하기.</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> getYoutubeData(query=<span class="string">'여행'</span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> params = &#123;</span><br><span class="line">      key : <span class="string">''</span>,</span><br><span class="line">      q : query,</span><br><span class="line">      part : <span class="string">'snippet'</span>,</span><br><span class="line">      maxResults: <span class="number">10</span>,</span><br><span class="line">      pageToken: nextPageToken</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      <span class="keyword">const</span> &#123; data &#125; = <span class="keyword">await</span> axios.get(<span class="string">'https://www.googleapis.com/youtube/v3/search'</span>, &#123; params &#125;)</span><br><span class="line">      <span class="keyword">this</span>.setState(&#123;<span class="attr">list</span> : data.items &#125;);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">      <span class="built_in">console</span>.error(error);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<p>그대로 url을 전부 적게 될 경우 너무 길어지기 때문에 가장 기본 링크를 가져오고 params 객체를 별도로 선언한다. (가독성 ⇪)</p>
+<br>
+
+<h3 id="debounce-함수"><a href="#debounce-함수" class="headerlink" title="debounce 함수"></a>debounce 함수</h3><p>lodash가 관리하고 있는 메소드.</p>
+<p>다음으로 설치하고 import 하여 사용할 수 있다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm i lodash --save <span class="comment">// bash</span></span><br><span class="line"><span class="keyword">import</span> &#123; debounce &#125; <span class="keyword">from</span> <span class="string">'lodash'</span>; <span class="comment">// 코드 내 삽입</span></span><br><span class="line">&lt;SearchBar onSearchVideos=&#123;debounce(<span class="keyword">this</span>.getYoutubeData, <span class="number">500</span>) /&gt; <span class="comment">// 사용 예</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p>debounce 이벤트가 발생한 뒤부터 특정 시간 동안 기다린 이후에 이벤트가 발생한다.</p>
+<p>최소 500(ms 단위)은 해야 효과를 볼 수 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">debounce(<span class="keyword">this</span>.getYoutubeData, <span class="number">500</span>);</span><br></pre></td></tr></table></figure>
+
+<p>1인자 : debounce를 걸 함수</p>
+<p>2인자 : debounce 딜레이 지연시간 ms </p>
+<br>
+
+<h3 id="함수-컴포넌트-vs-클래스-컴포넌트"><a href="#함수-컴포넌트-vs-클래스-컴포넌트" class="headerlink" title="함수 컴포넌트 vs 클래스 컴포넌트"></a>함수 컴포넌트 vs 클래스 컴포넌트</h3><p>클래스 컴포넌트는 유상태인 컴포넌트에서 사용하는 것이 좋다.(state를 관리하는 컴포넌트)</p>
+<p>함수 컴포넌트는 무상태인 컴포넌트에서 사용한다. ( 유상태인 컴포넌트에게 props로 상태를 전달받아 이용한다. )</p>
+<p>일반적으로 최상위 컴포넌트는 state를 관리하고 있으며 하위 컴포넌트는 state가 없고, props로 전달받아 사용하는 것이 좋다.</p>
+<br>
+
+<h3 id="모든-상태를-하위-컴포넌트에게-전달하는법"><a href="#모든-상태를-하위-컴포넌트에게-전달하는법" class="headerlink" title="모든 상태를 하위 컴포넌트에게 전달하는법"></a>모든 상태를 하위 컴포넌트에게 전달하는법</h3><p><code>{...this.state}</code> 를 이용한다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;SearchBar &#123;...this.state&#125; /&gt; <span class="comment">// 예</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="HOC-High-Order-Component"><a href="#HOC-High-Order-Component" class="headerlink" title="HOC ( High Order Component )"></a>HOC ( High Order Component )</h3><p>함수 내에서 인수로 들어온 함수를 이용하는 것.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> handleEnter = <span class="function"><span class="params">search</span> =&gt;</span> <span class="function"><span class="params">e</span> =&gt;</span> &#123;</span><br><span class="line">	<span class="keyword">if</span>(e.key === <span class="string">'enter'</span>) &#123;</span><br><span class="line">		search(e.target.value)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>위 HOC를 풀면 아래처럼 된다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params">search</span>) </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">b</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(e.key === <span class="string">'enter'</span>) &#123;</span><br><span class="line">      search(e.target.value)</span><br><span class="line">    &#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="InfiniteScroll"><a href="#InfiniteScroll" class="headerlink" title="InfiniteScroll"></a>InfiniteScroll</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i react-infinite-scroller --save</span><br></pre></td></tr></table></figure>
+
+<p>loadMore : 실제로 데이터를 불러오는 함수 ( 무조건 화살표 함수 )</p>
+<p>hasMore : 기준점 (다음 페이지의 토큰이 있을 경우 등등)</p>
+<p>loader : 로딩중 보여줄 스피너등으로 표시함</p>
+<br>
+
+<h3 id="uuid"><a href="#uuid" class="headerlink" title="uuid"></a>uuid</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i uuid --save</span><br></pre></td></tr></table></figure>
+
+<p>고유한 랜덤 키 값을 생성하고자 할 때 사용한다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> uuid <span class="keyword">from</span> <span class="string">'uuid'</span>; </span><br><span class="line"></span><br><span class="line">&lt;div key=&#123;uuid.v4()&#125; /&gt; <span class="comment">// 코드 사용</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="defaultState-백업"><a href="#defaultState-백업" class="headerlink" title="defaultState 백업"></a>defaultState 백업</h3><p>검색어가 바뀌었을 때 화면이 바뀌는데, 기존상태로 돌아갈 경우 모든 속성을 초기화하는 것보다 초기 상태의 State로 바꾸는게 편리하다.하위 컴포넌트들은 상태를 갖고 있지 않고(가능하면 상태가 없는걸로 만듦) Props로 전달받아 사용한다.<br>또한, 가능하면 jsx코드 내에서는 리턴에서만 UI 보여주는게 좋다.</p>
+<br>
+
+<h3 id="Update-이벤트"><a href="#Update-이벤트" class="headerlink" title="Update 이벤트"></a>Update 이벤트</h3><ul>
+<li><p>3가지 방법으로 업데이트를 받을 것 : 즉시 업데이트, 엔터키 입력시 업데이트, 버튼 눌렀을 때 업데이트</p>
+</li>
+<li><p>onChange는 e를 받고 onKeyPress는 e를 받지 않았음 왜일까?</p>
+<ul>
+<li>결과적으론 같은데 다른 방법 두 가지를 나타낸 것</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;input</span><br><span class="line">     type=<span class="string">"search"</span></span><br><span class="line">     onChange=&#123;e =&gt; props.onSearchVideos(e.target.value)&#125;</span><br><span class="line">     onKeyPress=&#123;handleEvent(props.onSearchVideos)&#125;</span><br><span class="line">     className=<span class="string">"input-search"</span></span><br><span class="line">     placeholder=<span class="string">"검색어를 입력해주세요"</span></span><br><span class="line">     /&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>onKeyPress가 반환하는 것은 두번째 매개변수로 전달된 함수 전체. 즉 <code>props.onSearchVideos(e.target.value)</code></p>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> handleEvent = <span class="function"><span class="params">search</span> =&gt;</span> <span class="function"><span class="params">e</span> =&gt;</span> &#123;</span><br><span class="line">   <span class="keyword">if</span> (e.key === <span class="string">'Enter'</span>) &#123;</span><br><span class="line">     search(e.target.value)</span><br><span class="line">   &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="https://hyeok999.github.io/2019/12/10/react-study-04/" data-id="ck3zs9afh00fhinz0j2aqiv0u" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://hyeok999.github.io/2019/12/10/react-study-04/" data-id="ck3zsbb1j00fkmrz0wbz29on2" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -269,15 +439,31 @@ ga('send', 'pageview');
             "name": "Jun Hyeok Kim"
         },
         "headline": "React 스터디 04",
-        "image": "https://hyeok999.github.io",
+        "image": "https://hyeok999.github.iohttps://user-images.githubusercontent.com/31315644/69938302-4345b500-1520-11ea-8436-26d69300e699.png",
         "keywords": "git Web coding develop HTML CSS javascript React",
         "genre": "TIL React",
         "datePublished": "2019-12-10",
         "dateCreated": "2019-12-10",
         "dateModified": "2019-12-10",
         "url": "https://hyeok999.github.io/2019/12/10/react-study-04/",
-        "description": "",
-        "wordCount": 1
+        "description": "
+
+React Study 04
+비동기 처리
+fetch 단점
++then 대신 async/await
++try - catch
+비동기 코드 내 순회
+
+
+YouTube Mini Clone
+인수 기본값 설정하기.
+Axios , params 별도로 설정하기.
+debounce 함수
+함수 컴포넌트 vs 클래스 컴포넌트
+모든 상태를 하위 컴포넌트에게 전달하는법
+HOC ( H",
+        "wordCount": 1440
     }
 </script>
 
@@ -368,7 +554,7 @@ ga('send', 'pageview');
                             <a href="/2019/12/10/react-study-04/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/69938302-4345b500-1520-11ea-8436-26d69300e699.png)" alt="React 스터디 04" class="thumbnail-image"></span>
     
     
 </a>
