@@ -380,7 +380,7 @@ code {
   font-size: 45px;
   color: rgba(255,255,255,0.7);
   text-shadow: 0 1px rgba(0,0,0,0.2);
-  font-family: 'Cabin Sketch', cursive;
+  font-family: 'Cabin Sketch', Courier;
 }
 @media only screen and (max-width: 815px) {
   #header-title .subtitle {
