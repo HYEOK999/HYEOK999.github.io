@@ -3,71 +3,36 @@
 
 
     <url>
-        <loc>https://hyeok999.github.io/tags/React/</loc>
-        <lastmod>2019-12-11T10:45:50.544Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://hyeok999.github.io/tags/hexo/</loc>
-        <lastmod>2019-12-11T10:45:50.544Z</lastmod>
+        <loc>https://hyeok999.github.io/tags/Programmers/</loc>
+        <lastmod>2019-12-11T10:47:48.396Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://hyeok999.github.io/tags/javascript/</loc>
-        <lastmod>2019-12-11T10:45:50.544Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://hyeok999.github.io/tags/CSS/</loc>
-        <lastmod>2019-12-11T10:45:50.544Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://hyeok999.github.io/tags/HTML/</loc>
-        <lastmod>2019-12-11T10:45:50.544Z</lastmod>
+        <lastmod>2019-12-11T10:47:48.396Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://hyeok999.github.io/tags/algorithm/</loc>
-        <lastmod>2019-12-11T10:45:50.544Z</lastmod>
+        <lastmod>2019-12-11T10:47:48.396Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://hyeok999.github.io/tags/develop/</loc>
-        <lastmod>2019-12-11T10:45:50.544Z</lastmod>
+        <loc>https://hyeok999.github.io/tags/TIL/</loc>
+        <lastmod>2019-12-11T10:47:48.396Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://hyeok999.github.io/tags/coding/</loc>
-        <lastmod>2019-12-11T10:45:50.544Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://hyeok999.github.io/tags/Web/</loc>
-        <lastmod>2019-12-11T10:45:50.544Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://hyeok999.github.io/tags/git/</loc>
-        <lastmod>2019-12-11T10:45:50.544Z</lastmod>
+        <lastmod>2019-12-11T10:47:48.396Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -80,15 +45,43 @@
     </url>
 
     <url>
-        <loc>https://hyeok999.github.io/tags/Programmers/</loc>
-        <lastmod>2019-12-10T11:27:45.182Z</lastmod>
+        <loc>https://hyeok999.github.io/tags/React/</loc>
+        <lastmod>2019-12-10T12:16:27.237Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://hyeok999.github.io/tags/TIL/</loc>
-        <lastmod>2019-12-10T11:27:45.182Z</lastmod>
+        <loc>https://hyeok999.github.io/tags/CSS/</loc>
+        <lastmod>2019-12-10T12:16:27.237Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://hyeok999.github.io/tags/HTML/</loc>
+        <lastmod>2019-12-10T12:16:27.237Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://hyeok999.github.io/tags/develop/</loc>
+        <lastmod>2019-12-10T12:16:27.237Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://hyeok999.github.io/tags/Web/</loc>
+        <lastmod>2019-12-10T12:16:27.237Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://hyeok999.github.io/tags/git/</loc>
+        <lastmod>2019-12-10T11:31:29.111Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -586,6 +579,13 @@
     <url>
         <loc>https://hyeok999.github.io/tags/JAVA/</loc>
         <lastmod>2019-11-30T15:53:10.522Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://hyeok999.github.io/tags/hexo/</loc>
+        <lastmod>2019-11-30T15:49:24.379Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
