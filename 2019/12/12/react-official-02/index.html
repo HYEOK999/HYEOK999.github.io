@@ -12,18 +12,20 @@
     
         <meta name="keywords" content="Web,coding,develop,algorithm,HTML,CSS,javascript,React,React Official Document">
     
-    <meta name="description" content="HYEOK999&apos;s IT Develop Blog">
+    <meta name="description" content="React Official Document주요개념 : 엘리먼트(요소) 렌더링 React 엘리먼트(요소)란? DOM에 요소 렌더링하기 렌더링 된 요소 업데이트하기 React는 변경된 부분만 업데이트 한다.     React Official Document주요개념#2. 엘리먼트(요소) 렌더링React 엘리먼트(요소)란?  1const element = &amp;l">
 <meta name="keywords" content="Web,coding,develop,algorithm,HTML,CSS,javascript,React,React Official Document">
 <meta property="og:type" content="article">
 <meta property="og:title" content="엘리먼트(요소) 렌더링">
 <meta property="og:url" content="https://hyeok999.github.io/2019/12/12/react-official-02/index.html">
 <meta property="og:site_name" content="HYEOK999&#39;s Blog">
-<meta property="og:description" content="HYEOK999&apos;s IT Develop Blog">
+<meta property="og:description" content="React Official Document주요개념 : 엘리먼트(요소) 렌더링 React 엘리먼트(요소)란? DOM에 요소 렌더링하기 렌더링 된 요소 업데이트하기 React는 변경된 부분만 업데이트 한다.     React Official Document주요개념#2. 엘리먼트(요소) 렌더링React 엘리먼트(요소)란?  1const element = &amp;l">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-12-12T13:46:36.016Z">
+<meta property="og:image" content="https://user-images.githubusercontent.com/31315644/70387342-a2f00480-19e7-11ea-822c-0109f613aefd.png">
+<meta property="og:updated_time" content="2019-12-12T13:50:48.875Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="엘리먼트(요소) 렌더링">
-<meta name="twitter:description" content="HYEOK999&apos;s IT Develop Blog">
+<meta name="twitter:description" content="React Official Document주요개념 : 엘리먼트(요소) 렌더링 React 엘리먼트(요소)란? DOM에 요소 렌더링하기 렌더링 된 요소 업데이트하기 React는 변경된 부분만 업데이트 한다.     React Official Document주요개념#2. 엘리먼트(요소) 렌더링React 엘리먼트(요소)란?  1const element = &amp;l">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/31315644/70387342-a2f00480-19e7-11ea-822c-0109f613aefd.png">
     
     <link rel="canonical" href="https://hyeok999.github.io/2019/12/12/react-official-02/">
     
@@ -191,14 +193,62 @@ ga('send', 'pageview');
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <p><img src="https://user-images.githubusercontent.com/31315644/70387342-a2f00480-19e7-11ea-822c-0109f613aefd.png" alt="Study React Official Document"></p>
+<hr>
+<h2 id="React-Official-Document"><a href="#React-Official-Document" class="headerlink" title="React Official Document"></a>React Official Document</h2><h3 id="주요개념-엘리먼트-요소-렌더링"><a href="#주요개념-엘리먼트-요소-렌더링" class="headerlink" title="주요개념 : 엘리먼트(요소) 렌더링"></a>주요개념 : 엘리먼트(요소) 렌더링</h3><ul>
+<li>React 엘리먼트(요소)란?</li>
+<li>DOM에 요소 렌더링하기</li>
+<li>렌더링 된 요소 업데이트하기</li>
+<li>React는 변경된 부분만 업데이트 한다.</li>
+</ul>
+<br>
+
+<hr>
+<h1 id="React-Official-Document-1"><a href="#React-Official-Document-1" class="headerlink" title="React Official Document"></a><a href="https://ko.reactjs.org/" rel="external nofollow noopener noreferrer" target="_blank">React Official Document</a></h1><h2 id="주요개념"><a href="#주요개념" class="headerlink" title="주요개념"></a>주요개념</h2><h2 id="2-엘리먼트-요소-렌더링"><a href="#2-엘리먼트-요소-렌더링" class="headerlink" title="#2. 엘리먼트(요소) 렌더링"></a>#2. 엘리먼트(요소) 렌더링</h2><h3 id="React-엘리먼트-요소-란"><a href="#React-엘리먼트-요소-란" class="headerlink" title="React 엘리먼트(요소)란?"></a>React 엘리먼트(요소)란?</h3><br>
+
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> element = <span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello, world<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br></pre></td></tr></table></figure>
+
+<p>위와 같은 객체를 <strong>React Element(하위 요소)라 한다.</strong> </p>
+<p>React Element(요소)는 컴포넌트의 구성 요소 이며, React 앱의 가장 작은 단위이다.</p>
+<p>React는 React 요소를 읽은 후 DOM을 구성하고 최신으로 유지하는 데 React 요소를 사용한다.</p>
+<p>일반 DOM 요소와 달리 React 요소는 일반 객체이며 React DOM은 React 요소와 일치하도록 DOM을 업데이트 한다.</p>
+<br>
+
+<h3 id="DOM에-요소-렌더링하기"><a href="#DOM에-요소-렌더링하기" class="headerlink" title="DOM에 요소 렌더링하기"></a>DOM에 요소 렌더링하기</h3><p>HTML 파일에 <code>div</code> 태그가 있다고 가정해보자.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"root"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>위 태그의 하위로 들어가는 모든 요소는 React DOM에 의해 관리되므로 위의  태그를 <code>&quot;root&quot; DOM 노드</code> 라고 부른다.</p>
+<ul>
+<li>React로 구현된 애플리케이션은 일반적으로 하나의 루트 DOM 노드가 있다. </li>
+<li>React를 기존 앱에 통합하려는 경우 원하는 만큼 많은 수의 독립된 루트 DOM 노드를 만들 수 있다.</li>
+</ul>
+<br>
+
+<p>React 요소를 루트 DOM 노드에 렌더링하려면 둘 다 <code>ReactDOM.render()</code>로 전달하면 된다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> element = <span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello, world<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br><span class="line">ReactDOM.render(element, <span class="built_in">document</span>.getElementById(<span class="string">'root'</span>));</span><br><span class="line"><span class="comment">// ReactDOM.render(리액트 요소, 삽입할 DOM 노드 요소를 선택하는 이벤트 객체 함수 호출);</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="렌더링-된-요소-업데이트하기"><a href="#렌더링-된-요소-업데이트하기" class="headerlink" title="렌더링 된 요소 업데이트하기"></a>렌더링 된 요소 업데이트하기</h3><p>React 요소는 불변객체다. </p>
+<p>요소를 생성한 이후에는 해당 요소의 자식이나 속성을 변경할 수 없다. </p>
+<p>요소는 영화에서 하나의 프레임과 같이 특정 시점의 UI를 보여준다.</p>
+<p>지금까지 내용을 바탕으로 하면 UI를 업데이트하는 유일한 방법은 새로운 요소를 생성하고 이를 바뀔때마다 <code>ReactDOM.render()</code>로 전달하는 것 뿐이다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">tick</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> element = (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;h1&gt;Hello, world!<span class="xml"><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line">      &lt;h2&gt;It is &#123;<span class="keyword">new</span> <span class="built_in">Date</span>().toLocaleTimeString()&#125;.&lt;<span class="regexp">/h2&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>div&gt;</span><br><span class="line">  );</span><br><span class="line">  ReactDOM.render(element, <span class="built_in">document</span>.getElementById(<span class="string">'root'</span>));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">setInterval(tick, <span class="number">1000</span>);</span><br><span class="line"><span class="comment">// 1초마다 새로운 시간을 반환한다.</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>주의</strong> : 실제로 대부분의 React 앱은 <code>ReactDOM.render()</code>를 한 번만 호출한다. 위는 단지 예시일 뿐 이다.</p>
+<br>
+
+<h3 id="React는-변경된-부분만-업데이트-한다"><a href="#React는-변경된-부분만-업데이트-한다" class="headerlink" title="React는 변경된 부분만 업데이트 한다."></a>React는 변경된 부분만 업데이트 한다.</h3><p>React DOM은 해당 요소와 그 하위 요소를 이전의 요소와 비교하고 DOM을 원하는 상태로 만드는데 필요한 경우에만 DOM을 업데이트한다.</p>
+<p><img src="https://ko.reactjs.org/granular-dom-updates-c158617ed7cc0eac8f58330e49e48224.gif" alt="React 공식사이트 출처 : DOM inspector showing granular updates"></p>
+<p>위 그림을 보면 처음에만 전체가 렌더링 된 후 그 뒤 부터는 해당 텍스트부분만 지속적으로 바뀌는 것을 확인할 수 있다.</p>
+
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="https://hyeok999.github.io/2019/12/12/react-official-02/" data-id="ck42s3czr00fdr1z0zlxaf12x" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://hyeok999.github.io/2019/12/12/react-official-02/" data-id="ck42s80jb00ffx7z0visnwa1h" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -269,15 +319,28 @@ ga('send', 'pageview');
             "name": "Jun Hyeok Kim"
         },
         "headline": "엘리먼트(요소) 렌더링",
-        "image": "https://hyeok999.github.io",
+        "image": "https://hyeok999.github.iohttps://user-images.githubusercontent.com/31315644/70387342-a2f00480-19e7-11ea-822c-0109f613aefd.png",
         "keywords": "Web coding develop algorithm HTML CSS javascript React React Official Document",
         "genre": "Develop React",
         "datePublished": "2019-12-12",
         "dateCreated": "2019-12-12",
         "dateModified": "2019-12-12",
         "url": "https://hyeok999.github.io/2019/12/12/react-official-02/",
-        "description": "",
-        "wordCount": 1
+        "description": "
+
+React Official Document주요개념 : 엘리먼트(요소) 렌더링
+React 엘리먼트(요소)란?
+DOM에 요소 렌더링하기
+렌더링 된 요소 업데이트하기
+React는 변경된 부분만 업데이트 한다.
+
+
+
+
+React Official Document주요개념#2. 엘리먼트(요소) 렌더링React 엘리먼트(요소)란?
+
+1const element = &l",
+        "wordCount": 441
     }
 </script>
 
@@ -378,7 +441,7 @@ ga('send', 'pageview');
                             <a href="/2019/12/12/react-study-05/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/69938302-4345b500-1520-11ea-8436-26d69300e699.png)" alt="React 스터디 05" class="thumbnail-image"></span>
     
     
 </a>
@@ -398,7 +461,7 @@ ga('send', 'pageview');
                             <a href="/2019/12/12/react-official-02/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/70387342-a2f00480-19e7-11ea-822c-0109f613aefd.png)" alt="엘리먼트(요소) 렌더링" class="thumbnail-image"></span>
     
     
 </a>
