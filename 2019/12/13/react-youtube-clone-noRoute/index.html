@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+
+    
+
+    
+    <title>유튜브 미니 클론 (No Route) | HYEOK999&#39;s Blog</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="Web,coding,develop,algorithm,HTML,CSS,javascript,React">
+    
+    <meta name="description" content="Youtube Mini Clone React목차  Youtube Mini Clone 생성하기 기본 틀 짜기 유튜브 데이터 받아올 준비하기 유튜브 데이터 받아오기 Header 작성  ( 큰 틀 = 로고부분) Header 작성  ( 검색바 ) 입력 값 기본 정해두기 데이터 초기화 값 셋팅 Main 작성 ( VideoList + VideoPlayer ) 무한">
+<meta name="keywords" content="Web,coding,develop,algorithm,HTML,CSS,javascript,React">
+<meta property="og:type" content="article">
+<meta property="og:title" content="유튜브 미니 클론 (No Route)">
+<meta property="og:url" content="https://hyeok999.github.io/2019/12/13/react-youtube-clone-noRoute/index.html">
+<meta property="og:site_name" content="HYEOK999&#39;s Blog">
+<meta property="og:description" content="Youtube Mini Clone React목차  Youtube Mini Clone 생성하기 기본 틀 짜기 유튜브 데이터 받아올 준비하기 유튜브 데이터 받아오기 Header 작성  ( 큰 틀 = 로고부분) Header 작성  ( 검색바 ) 입력 값 기본 정해두기 데이터 초기화 값 셋팅 Main 작성 ( VideoList + VideoPlayer ) 무한">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://user-images.githubusercontent.com/31315644/70803414-59445700-1df7-11ea-99fd-d9fb4c637e36.png">
+<meta property="og:updated_time" content="2019-12-13T14:41:58.585Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="유튜브 미니 클론 (No Route)">
+<meta name="twitter:description" content="Youtube Mini Clone React목차  Youtube Mini Clone 생성하기 기본 틀 짜기 유튜브 데이터 받아올 준비하기 유튜브 데이터 받아오기 Header 작성  ( 큰 틀 = 로고부분) Header 작성  ( 검색바 ) 입력 값 기본 정해두기 데이터 초기화 값 셋팅 Main 작성 ( VideoList + VideoPlayer ) 무한">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/31315644/70803414-59445700-1df7-11ea-99fd-d9fb4c637e36.png">
+    
+    <link rel="canonical" href="https://hyeok999.github.io/2019/12/13/react-youtube-clone-noroute/">
+    
+
+    
+        <link rel="icon" href="/images/favicon_io/favicon.ico">
+    
+
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Architects+Daughter&display=swap" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin+Sketch&display=swap">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.css">
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-153647512-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+
+    
+    
+
+
+<link rel="alternate" href="/feed.xml" title="HYEOK999's Blog" type="application/atom+xml">
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">HYEOK999&#39;s Daily Develop</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/">Develop</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/CSS/">CSS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/GIT/">GIT</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/IT-Event/">IT Event</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Project/">Project</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/React/">React</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Tips/">Tips</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/">TIL</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Algorithm-Quiz/">Algorithm & Quiz</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/React/">React</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/React-Preview/">React-Preview</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/linux/">linux</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/etc/">etc</a></li></ul>
+                                    
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="https://about.me/iasg2004" rel="external nofollow noopener noreferrer" target="_blank">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/TIL/React/">React</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-react-youtube-clone-noRoute" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        유튜브 미니 클론 (No Route)
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/12/13/react-youtube-clone-noRoute/" class="article-date">
+            <time datetime="2019-12-13T14:40:42.000Z" itemprop="datePublished">2019-12-13</time>
+        </a>
+    </div>
+
+		
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/CSS/">CSS</a>, <a class="tag-link" href="/tags/HTML/">HTML</a>, <a class="tag-link" href="/tags/React/">React</a>, <a class="tag-link" href="/tags/Web/">Web</a>, <a class="tag-link" href="/tags/algorithm/">algorithm</a>, <a class="tag-link" href="/tags/coding/">coding</a>, <a class="tag-link" href="/tags/develop/">develop</a>, <a class="tag-link" href="/tags/javascript/">javascript</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p><img src="https://user-images.githubusercontent.com/31315644/70803414-59445700-1df7-11ea-99fd-d9fb4c637e36.png" alt="icon-1435485_1280"></p>
+<hr>
+<h1 id="Youtube-Mini-Clone-React"><a href="#Youtube-Mini-Clone-React" class="headerlink" title="Youtube Mini Clone React"></a>Youtube Mini Clone React</h1><p><strong>목차</strong></p>
+<ol>
+<li>Youtube Mini Clone 생성하기</li>
+<li>기본 틀 짜기</li>
+<li>유튜브 데이터 받아올 준비하기</li>
+<li>유튜브 데이터 받아오기</li>
+<li>Header 작성  ( 큰 틀 = 로고부분)</li>
+<li>Header 작성  ( 검색바 )</li>
+<li>입력 값 기본 정해두기</li>
+<li>데이터 초기화 값 셋팅</li>
+<li>Main 작성 ( VideoList + VideoPlayer )</li>
+<li>무한 스크롤</li>
+</ol>
+<hr>
+<h2 id="1-Youtube-Mini-Clone-생성하기"><a href="#1-Youtube-Mini-Clone-생성하기" class="headerlink" title="1. Youtube Mini Clone 생성하기"></a>1. Youtube Mini Clone 생성하기</h2><h3 id="1-1-프로젝트를-시작할-폴더에-들어가서-리액트-프로젝트를-생성한다"><a href="#1-1-프로젝트를-시작할-폴더에-들어가서-리액트-프로젝트를-생성한다" class="headerlink" title="1-1. 프로젝트를 시작할 폴더에 들어가서 리액트 프로젝트를 생성한다."></a>1-1. 프로젝트를 시작할 폴더에 들어가서 리액트 프로젝트를 생성한다.</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx create-react-app youtube-practice</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="1-2-VSCode로-해당-프로젝트-폴더를-따로-오픈한다"><a href="#1-2-VSCode로-해당-프로젝트-폴더를-따로-오픈한다" class="headerlink" title="1-2. VSCode로 해당 프로젝트 폴더를 따로 오픈한다."></a>1-2. VSCode로 해당 프로젝트 폴더를 따로 오픈한다.</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> youtube-practice</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="1-3-생성-당시-폴더-구조"><a href="#1-3-생성-당시-폴더-구조" class="headerlink" title="1-3. 생성 당시 폴더 구조"></a>1-3. 생성 당시 폴더 구조</h3><p><img src="https://user-images.githubusercontent.com/31315644/70688521-55c8a700-1cf5-11ea-8408-7ba700399fc3.jpeg" alt="folder-structure"></p>
+<br>
+
+<h2 id="2-기본-틀-짜기"><a href="#2-기본-틀-짜기" class="headerlink" title="2. 기본 틀 짜기"></a>2. 기본 틀 짜기</h2><p>처음 프로젝트 생성시 적혀진 내용들을 수정하고서 프로젝트를 시작하도록 한다.</p>
+<h3 id="2-1-src-App-css"><a href="#2-1-src-App-css" class="headerlink" title="2-1. src/App.css"></a>2-1. src/App.css</h3><p>내용 모두 지우고 아래 코드를 삽입한다.</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.main-content</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">1600px</span>;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">25px</span> auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="2-2-src-App-js"><a href="#2-2-src-App-js" class="headerlink" title="2-2. src/App.js"></a>2-2. src/App.js</h3><p>내용 모두 지우고 아래 코드를 삽입한다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'./App.css'</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">    <span class="keyword">super</span>(props);</span><br><span class="line">    <span class="keyword">this</span>.state = &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">    	&lt;div className = <span class="string">'App'</span>&gt;</span><br><span class="line">    	&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    )</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">export default App;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="2-3-src-index-css"><a href="#2-3-src-index-css" class="headerlink" title="2-3. src/index.css"></a>2-3. src/index.css</h3><p>CSS를 초기화를 미리 해두도록 한다. (reset.css 적용)</p>
+<p>나중에 시멘틱을 위해서 <code>a11y-hidden</code>도 정의한다.</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line">* &#123;</span><br><span class="line">  <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">html</span>, <span class="selector-tag">body</span>, <span class="selector-tag">div</span>, <span class="selector-tag">span</span>, <span class="selector-tag">applet</span>, <span class="selector-tag">object</span>, <span class="selector-tag">iframe</span>,</span><br><span class="line"><span class="selector-tag">h1</span>, <span class="selector-tag">h2</span>, <span class="selector-tag">h3</span>, <span class="selector-tag">h4</span>, <span class="selector-tag">h5</span>, <span class="selector-tag">h6</span>, <span class="selector-tag">p</span>, <span class="selector-tag">blockquote</span>, <span class="selector-tag">pre</span>,</span><br><span class="line"><span class="selector-tag">a</span>, <span class="selector-tag">abbr</span>, <span class="selector-tag">acronym</span>, <span class="selector-tag">address</span>, <span class="selector-tag">big</span>, <span class="selector-tag">cite</span>, <span class="selector-tag">code</span>,</span><br><span class="line"><span class="selector-tag">del</span>, <span class="selector-tag">dfn</span>, <span class="selector-tag">em</span>, <span class="selector-tag">img</span>, <span class="selector-tag">ins</span>, <span class="selector-tag">kbd</span>, <span class="selector-tag">q</span>, <span class="selector-tag">s</span>, <span class="selector-tag">samp</span>,</span><br><span class="line"><span class="selector-tag">small</span>, <span class="selector-tag">strike</span>, <span class="selector-tag">strong</span>, <span class="selector-tag">sub</span>, <span class="selector-tag">sup</span>, <span class="selector-tag">tt</span>, <span class="selector-tag">var</span>,</span><br><span class="line"><span class="selector-tag">b</span>, <span class="selector-tag">u</span>, <span class="selector-tag">i</span>, <span class="selector-tag">center</span>,</span><br><span class="line"><span class="selector-tag">dl</span>, <span class="selector-tag">dt</span>, <span class="selector-tag">dd</span>, <span class="selector-tag">ol</span>, <span class="selector-tag">ul</span>, <span class="selector-tag">li</span>,</span><br><span class="line"><span class="selector-tag">fieldset</span>, <span class="selector-tag">form</span>, <span class="selector-tag">label</span>, <span class="selector-tag">legend</span>,</span><br><span class="line"><span class="selector-tag">table</span>, <span class="selector-tag">caption</span>, <span class="selector-tag">tbody</span>, <span class="selector-tag">tfoot</span>, <span class="selector-tag">thead</span>, <span class="selector-tag">tr</span>, <span class="selector-tag">th</span>, <span class="selector-tag">td</span>,</span><br><span class="line"><span class="selector-tag">article</span>, <span class="selector-tag">aside</span>, <span class="selector-tag">canvas</span>, <span class="selector-tag">details</span>, <span class="selector-tag">embed</span>,</span><br><span class="line"><span class="selector-tag">figure</span>, <span class="selector-tag">figcaption</span>, <span class="selector-tag">footer</span>, <span class="selector-tag">header</span>, <span class="selector-tag">hgroup</span>,</span><br><span class="line"><span class="selector-tag">menu</span>, <span class="selector-tag">nav</span>, <span class="selector-tag">output</span>, <span class="selector-tag">ruby</span>, <span class="selector-tag">section</span>, <span class="selector-tag">summary</span>,</span><br><span class="line"><span class="selector-tag">time</span>, <span class="selector-tag">mark</span>, <span class="selector-tag">audio</span>, <span class="selector-tag">video</span> &#123;</span><br><span class="line">	<span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">	<span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">	<span class="attribute">border</span>: <span class="number">0</span>;</span><br><span class="line">	<span class="attribute">font-size</span>: <span class="number">100%</span>;</span><br><span class="line">	<span class="attribute">font</span>: inherit;</span><br><span class="line">	<span class="attribute">vertical-align</span>: baseline;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* HTML5 display-role reset for older browsers */</span></span><br><span class="line"><span class="selector-tag">article</span>, <span class="selector-tag">aside</span>, <span class="selector-tag">details</span>, <span class="selector-tag">figcaption</span>, <span class="selector-tag">figure</span>,</span><br><span class="line"><span class="selector-tag">footer</span>, <span class="selector-tag">header</span>, <span class="selector-tag">hgroup</span>, <span class="selector-tag">menu</span>, <span class="selector-tag">nav</span>, <span class="selector-tag">section</span> &#123;</span><br><span class="line">	<span class="attribute">display</span>: block;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">font-family</span>: -apple-system, BlinkMacSystemFont, <span class="string">'Segoe UI'</span>, <span class="string">'Roboto'</span>, <span class="string">'Oxygen'</span>,</span><br><span class="line">    <span class="string">'Ubuntu'</span>, <span class="string">'Cantarell'</span>, <span class="string">'Fira Sans'</span>, <span class="string">'Droid Sans'</span>, <span class="string">'Helvetica Neue'</span>,</span><br><span class="line">    sans-serif;</span><br><span class="line">  <span class="attribute">-webkit-font-smoothing</span>: antialiased;</span><br><span class="line">  <span class="attribute">-moz-osx-font-smoothing</span>: grayscale;</span><br><span class="line">	<span class="attribute">line-height</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">ol</span>, <span class="selector-tag">ul</span> &#123;</span><br><span class="line">	<span class="attribute">list-style</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">blockquote</span>, <span class="selector-tag">q</span> &#123;</span><br><span class="line">	<span class="attribute">quotes</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">blockquote</span><span class="selector-pseudo">:before</span>, <span class="selector-tag">blockquote</span><span class="selector-pseudo">:after</span>,</span><br><span class="line"><span class="selector-tag">q</span><span class="selector-pseudo">:before</span>, <span class="selector-tag">q</span><span class="selector-pseudo">:after</span> &#123;</span><br><span class="line">	<span class="attribute">content</span>: <span class="string">''</span>;</span><br><span class="line">	<span class="attribute">content</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">table</span> &#123;</span><br><span class="line">	<span class="attribute">border-collapse</span>: collapse;</span><br><span class="line">	<span class="attribute">border-spacing</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">code</span> &#123;</span><br><span class="line">  <span class="attribute">font-family</span>: source-code-pro, Menlo, Monaco, Consolas, <span class="string">'Courier New'</span>,</span><br><span class="line">    monospace;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*숨긴 콘텐츠*/</span></span><br><span class="line"><span class="selector-class">.a11y-hidden</span>, <span class="selector-tag">legend</span>&#123;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">1px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">1px</span>;</span><br><span class="line">  <span class="attribute">margin</span>: -<span class="number">1px</span>;</span><br><span class="line">  <span class="attribute">overflow</span>: hidden; <span class="comment">/* 넘치는 부분을 감쳐준다 */</span></span><br><span class="line">  <span class="attribute">clip</span>: <span class="built_in">rect</span>(0,0,0,0); <span class="comment">/* 선행조건 : position:absolute 해당 화면을 잘라내서 보여줌 */</span></span><br><span class="line">  <span class="attribute">white-space</span>: nowrap; <span class="comment">/* 줄바꿈을 하지않음. */</span></span><br><span class="line">  <span class="attribute">opacity</span>: <span class="number">0</span>; <span class="comment">/* 투명도  */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h2 id="3-유튜브-데이터-받아올-준비하기"><a href="#3-유튜브-데이터-받아올-준비하기" class="headerlink" title="3. 유튜브 데이터 받아올 준비하기"></a>3. 유튜브 데이터 받아올 준비하기</h2><p>유튜브 API로부터 데이터를 받아올 준비를 한다.</p>
+<h3 id="3-1-전역-URL-변수-생성"><a href="#3-1-전역-URL-변수-생성" class="headerlink" title="3-1. 전역 URL 변수 생성 "></a>3-1. 전역 URL 변수 생성 <a id="a1"></a></h3><p>유튜브의 기본 URL은 다음과 같다.</p>
+<p><code>https://www.googleapis.com/youtube/v3/search</code></p>
+<p><code>import</code> 코드 아래 작성해준다. </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> URL = <span class="string">'https://www.googleapis.com/youtube/v3/search'</span>;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="3-2-state-변경-값-설정"><a href="#3-2-state-변경-값-설정" class="headerlink" title="3-2. state 변경 값 설정"></a>3-2. state 변경 값 설정</h3><p>변경 될 수 있는 값들을 <code>this.state</code>에 미리 설정해준다.</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">this.state = &#123;</span><br><span class="line">  <span class="selector-tag">videoDatas</span> : <span class="selector-attr">[]</span>,</span><br><span class="line">  nextPageToken : '',</span><br><span class="line">  query : ''</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>videoDatas</code> : 유튜브 API를 통해 받아올 데이터를 담을 배열.</p>
+<p><code>nextPageToken</code> : 유튜브 API에서 보여지는 데이터는 5개씩으로 처리가 되어있다.</p>
+<p><code>query</code> : 입력한 값이 같은 지 다른 지에 따라 불러와야할 데이터가 다르므로 설정해둔다.</p>
+<br>
+
+<h2 id="4-유튜브-데이터-받아오기"><a href="#4-유튜브-데이터-받아오기" class="headerlink" title="4. 유튜브 데이터 받아오기"></a>4. 유튜브 데이터 받아오기</h2><p>본격적으로 유튜브 API를 만들도록 한다.</p>
+<br>
+
+<h3 id="4-1-axios-설치-및-적용"><a href="#4-1-axios-설치-및-적용" class="headerlink" title="4-1. axios 설치 및 적용"></a>4-1. axios 설치 및 적용</h3><p>먼저 데이터를 받아오기 위해 axios와 async / await를 이용한다.</p>
+<p>패키지를 다운 받을 필요가 없는 fetch를 쓰지 않은 이유는 fetch는 다음과 같은 문제를 내포하기 때문이다.</p>
+<ul>
+<li>크로스 브라우징 이슈</li>
+<li>쿠키를 포함하려면 특정 npm을 랩핑해줘야 한다.</li>
+<li>status가 response 체크를 받아야만 한다.</li>
+</ul>
+<p>따라서 axios를 먼저 <code>npm install</code> 한다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i axios --save</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p>패키지 다운이 완료되었다면 <code>import</code> 를 해준다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">'axios'</span>;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="4-2-유튜브-데이터-불러오는-메소드-정의하기"><a href="#4-2-유튜브-데이터-불러오는-메소드-정의하기" class="headerlink" title="4-2. 유튜브 데이터 불러오는 메소드 정의하기"></a>4-2. 유튜브 데이터 불러오는 메소드 정의하기</h3><p>로드 메소드는 class 내부 <code>constructor</code> 와 <code>render</code> 사이에 작성한다.</p>
+<p>입력 받은 <code>query</code>로 데이터를 불러온다. 해당 메소드는 <code>async/await</code>를 사용한다.</p>
+<ol>
+<li>먼저, 입력 값이 없을 경우 해당 메소드에 접근하지 못하도록 설정해야만 한다. </li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> getYoutube(query) &#123;</span><br><span class="line">   <span class="keyword">if</span> (!query) <span class="keyword">return</span>;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<ol start="2">
+<li><p>axios는 첫번쨰 인자로 <code>URL</code>, 두번째 인자로 <code>params</code> 객체를 받는다. URL은 <a href="#a1">3-1. 전역 URL 변수 생성</a>에서 만든 것을 활용한다.</p>
+<p>params는 <code>key</code>, <code>q</code>, <code>pageToken</code>, <code>part</code>를 정의해준다. 각각 API 키, 쿼리, 페이지 토큰 , 데이터 부분을 의미한다.</p>
+</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> params = &#123;</span><br><span class="line">  key : <span class="string">'유튜브 API키는 별도로 구하셔야 합니다.'</span>,</span><br><span class="line">  q : query,</span><br><span class="line">  pageToken : <span class="keyword">this</span>.state.nextPageToken,</span><br><span class="line">  part : <span class="string">'snippet'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> &#123; data &#125; = <span class="keyword">await</span> axios.get( URL, &#123; params &#125; );</span><br><span class="line">  <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">    videoDatas : [...this.state.videoDatas, ...data.items],</span><br><span class="line">    query : query,</span><br><span class="line">    nextPageToken : data.nextPageToken</span><br><span class="line">  &#125;,() =&gt; <span class="built_in">console</span>.log(data))</span><br><span class="line">&#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">  <span class="built_in">console</span>.error(<span class="string">'에러'</span>,error);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><code>axios.get</code>을 통해 받아온 데이터는 data 객체 안에 담겨져 있다. ( 그래서 디스트럭처링 해준다. )</li>
+<li>setState를 할 때, videoDatas 에 주는 데이터들을  <code>[...this.state.videoDatas, ...data.items]</code> 로 적은 이유는 어떠한 이유로 다음 페이지의 데이터들을 불러올 떄, 데이터를 추가로 더 해주기 위함이다. 위와 같이 코드를 작성하게 된다면 새로운 입력값이든, 추가로 입력한 값이든 모두 수용할 수 있다.</li>
+<li>qeury는 입력한 데이터를 그대로 받는다.</li>
+<li>nextPageToken 또한 get으로 받은 데이터에서 찾아서 값을 할당한다.</li>
+</ol>
+<br>
+
+<h2 id="5-Header-작성-큰-틀-로고부분"><a href="#5-Header-작성-큰-틀-로고부분" class="headerlink" title="5. Header 작성  ( 큰 틀 = 로고부분)"></a>5. Header 작성  ( 큰 틀 = 로고부분)</h2><p>유튜브 API를 활용해 유튜브 데이터를 들고오는 Search Bar를 작성한다.</p>
+<p><strong>최상위 컴포넌트 내의 하위 컴포넌트들은 함수형 컴포넌트로 작성한다.</strong></p>
+<br>
+
+<h4 id="5-1-Nav-컴포넌트-생성"><a href="#5-1-Nav-컴포넌트-생성" class="headerlink" title="5-1. Nav 컴포넌트 생성"></a>5-1. Nav 컴포넌트 생성</h4><p>src에 Nav 폴더 생성 한 후 각각 images 폴더, Nav.css, Nav.jsx 파일을 생성한다. </p>
+<p><img src="https://user-images.githubusercontent.com/31315644/70711189-3f860f80-1d24-11ea-9371-a95ec1068967.jpeg" alt="nav-folder-structure"></p>
+<p>images 폴더에 유튜뷰 로고 이미지를 넣는다. ( 이미지는 인터넷에서 별도로 구한다. )</p>
+<p>Nav.jsx에 아래 코드를 작성한다. ( src/Nav/Nav.jsx )</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'./Nav.css'</span>;</span><br><span class="line"><span class="keyword">import</span> YoutubeLogo <span class="keyword">from</span> <span class="string">'./images/YouTube.png'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> Nav = <span class="function">(<span class="params">props</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;header <span class="class"><span class="keyword">class</span></span>=<span class="string">'Nav'</span>&gt;</span><br><span class="line">      &lt;h1 className=<span class="string">'a11y-hidden'</span>&gt; 유튜브 &lt;<span class="regexp">/h1&gt;</span></span><br><span class="line"><span class="regexp">      &lt;a href='#'&gt;</span></span><br><span class="line"><span class="regexp">        &lt;img className='header-logo' src=&#123;YoutubeLogo&#125; alt="유튜브"/</span>&gt;</span><br><span class="line">      &lt;<span class="regexp">/a&gt;</span></span><br><span class="line"><span class="regexp">      &#123;props.children&#125;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>header&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> Nav;</span><br></pre></td></tr></table></figure>
+
+<p><code>props.children</code>은 추후 해당 컴포넌트에 <code>&lt;SearchBar onSearchVideo={this.getYoutube}&gt;&lt;/SearchBar&gt;</code>을 불러들이기 위함이다.</p>
+<br>
+
+<h4 id="5-2-Nav-컴포넌트-CSS-적용"><a href="#5-2-Nav-컴포넌트-CSS-적용" class="headerlink" title="5-2. Nav 컴포넌트 CSS 적용"></a>5-2. Nav 컴포넌트 CSS 적용</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.Nav</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="built_in">rgb</span>(48, 48, 48);</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">align-items</span>: center;</span><br><span class="line">  <span class="attribute">justify-content</span>: space-between;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.Nav</span><span class="selector-pseudo">::before</span> &#123;</span><br><span class="line">  <span class="attribute">content</span>: <span class="string">''</span>;</span><br><span class="line">  <span class="attribute">min-width</span>: <span class="number">286px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.Nav</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">  <span class="attribute">content</span>: <span class="string">''</span>;</span><br><span class="line">  <span class="attribute">min-width</span>: <span class="number">284px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.Nav</span> <span class="selector-tag">a</span>&#123;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">height</span>: auto;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">left </span>: <span class="number">30px</span>;</span><br><span class="line">  <span class="attribute">top </span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">translateY</span>(-50%);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.header-logo</span>&#123;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="5-3-src-App-js에서-Nav컴포넌트를-로드-한-후-커스텀-태그를-작성한다"><a href="#5-3-src-App-js에서-Nav컴포넌트를-로드-한-후-커스텀-태그를-작성한다" class="headerlink" title="5-3. src/App.js에서 Nav컴포넌트를 로드 한 후 커스텀 태그를 작성한다."></a>5-3. src/App.js에서 Nav컴포넌트를 로드 한 후 커스텀 태그를 작성한다.</h4><p>App.js 최상단에 import 한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Nav <span class="keyword">from</span> <span class="string">'./components/Nav/Nav'</span>;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p>class 최하단에 있는 render 메소드에 다음과 같이 작성한다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">render() &#123;</span><br><span class="line">	<span class="keyword">return</span> (</span><br><span class="line">		&lt;div className = <span class="string">'App'</span>&gt;</span><br><span class="line">      &lt;Nav&gt;</span><br><span class="line">        &lt;SearchBar onSearchVideo=&#123;<span class="keyword">this</span>.getYoutube&#125;&gt;<span class="xml"><span class="tag">&lt;/<span class="name">SearchBar</span>&gt;</span></span></span><br><span class="line">      &lt;<span class="regexp">/Nav&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>div&gt;</span><br><span class="line">  )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>추후에 만들 검색바를 통해서 입력을 받고 실시간으로 데이터를 불러와야 하므로 </p>
+<p><code>&lt;SearchBar onSearchVideo={this.getYoutube}&gt;&lt;/SearchBar&gt;</code>도 함께 작성한다.</p>
+<br>
+
+<h4 id="5-3-getYoutube-바인드"><a href="#5-3-getYoutube-바인드" class="headerlink" title="5-3. getYoutube 바인드"></a>5-3. getYoutube 바인드</h4><p><code>getYoutube</code> 함수가 this를 제대로 적용시키기 위해서 bind작업을 한다.</p>
+<p>코드는 class 내부 constructor 안 제일 아래에 작성한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">  <span class="keyword">super</span>(props);</span><br><span class="line">  <span class="keyword">this</span>.state = &#123;</span><br><span class="line">    videoDatas : [],</span><br><span class="line">    query : <span class="string">''</span>,</span><br><span class="line">    nextPageToken : <span class="string">''</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">this</span>.getYoutube = <span class="keyword">this</span>.getYoutube.bind(<span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h2 id="6-Header-작성-검색바"><a href="#6-Header-작성-검색바" class="headerlink" title="6. Header 작성  ( 검색바 )"></a>6. Header 작성  ( 검색바 )</h2><h4 id="6-1-SearchBar-컴포넌트-생성"><a href="#6-1-SearchBar-컴포넌트-생성" class="headerlink" title="6-1. SearchBar 컴포넌트 생성"></a>6-1. SearchBar 컴포넌트 생성</h4><p>src에 SearchBar 폴더 생성 한 후 각각 images 폴더, SearchBar.css, SearchBar.jsx 파일을 생성한다. </p>
+<p><img src="https://user-images.githubusercontent.com/31315644/70711754-917b6500-1d25-11ea-8454-1b4802235625.jpeg" alt="search-folder-structure"></p>
+<p>images 폴더에 돋보기 모양 이미지를 넣는다. ( 이미지는 인터넷에서 별도로 구한다. )</p>
+<p>SearchBar.jsx에 아래 코드를 작성한다. ( src/SearchBar/SearchBar.jsx )</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'./SearchBar.css'</span>;</span><br><span class="line"><span class="keyword">import</span> loupe <span class="keyword">from</span> <span class="string">'./images/loupe.png'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> keyHandler = <span class="function">(<span class="params">search</span>) =&gt;</span> <span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span>(e.key === <span class="string">'Enter'</span>) &#123;</span><br><span class="line">    search(e.target.value);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> SearchBar = <span class="function">(<span class="params">props</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">let</span> input = <span class="string">''</span>;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div</span><br><span class="line">    className=<span class="string">'search-wrapper'</span>&gt;</span><br><span class="line">      &lt;input</span><br><span class="line">        ref = &#123;(ref) =&gt; input = ref&#125; <span class="comment">// 2-1번</span></span><br><span class="line">        className=<span class="string">'search-bar'</span></span><br><span class="line">        type=<span class="string">'search'</span></span><br><span class="line">        placeholder=<span class="string">"검색어를 입력하세요"</span></span><br><span class="line">        autoFocus</span><br><span class="line">        onKeyPress = &#123;keyHandler(props.onSearchVideo)&#125; <span class="comment">// 1번</span></span><br><span class="line">      /&gt;</span><br><span class="line">      &lt;button className=<span class="string">'btn-search'</span> onClick=&#123;() =&gt; props.onSearchVideo(input)&#125; <span class="comment">/*2-2번*/</span>&gt; </span><br><span class="line">        &lt;img className=<span class="string">'search-icon'</span> src=&#123;loupe&#125; alt=<span class="string">"검색"</span> /&gt;</span><br><span class="line">      &lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>div&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> SearchBar;</span><br></pre></td></tr></table></figure>
+
+<p>1번 : <code>&lt;input /&gt;</code>의 <code>onKeyPress</code>는 어떤 키과 눌렸는지에 대해서 반응하도록 하는 이벤트 핸들러이다. 따라서 해당 이벤트를 처리하기 위해서 HOC(High Order Component)를 이용해서 콜백으로 뿌려준다.</p>
+<p>2-1번 : 엔터 입력 말고도 버튼으로 클릭해서 입력도 구현을 해야만한다. 문제는 인풋 내부의 <code>e.target.value</code>를 통해 실시간 입력값을 들고올수 없단는 것이다. 따라서 해당 코드(ref , 리액트에서만 사용)를 이용하여 입력값을 전달받은 후 미리 정의해놓은 변수에 할당한다.</p>
+<p>2-2번 : 할당받은 값을 토대로 이벤트를 호출한다.</p>
+<br>
+
+<h4 id="6-2-SearchBar-컴포넌트-CSS-적용"><a href="#6-2-SearchBar-컴포넌트-CSS-적용" class="headerlink" title="6-2. SearchBar 컴포넌트 CSS 적용"></a>6-2. SearchBar 컴포넌트 CSS 적용</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.search-wrapper</span> &#123;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">32px</span> <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">white-space</span>: nowrap;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.search-bar</span>&#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">450px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">36px</span>;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">0</span> auto;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#828282</span>;</span><br><span class="line">  <span class="attribute">vertical-align</span>: middle;</span><br><span class="line">  <span class="attribute">display</span>: inline-block;</span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">3px</span> <span class="number">0px</span> <span class="number">0px</span> <span class="number">3px</span>;</span><br><span class="line">  <span class="attribute">line-height</span>: <span class="number">1.5</span>;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">15px</span>;</span><br><span class="line">  <span class="attribute">outline</span>: none;</span><br><span class="line">  <span class="attribute">padding-left</span>: <span class="number">15px</span>;</span><br><span class="line">  <span class="attribute">text-decoration</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.btn-search</span>&#123;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">36px</span>;</span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">0px</span> <span class="number">3px</span> <span class="number">3px</span> <span class="number">0px</span>;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#828282</span>;</span><br><span class="line">  <span class="attribute">background</span>: <span class="number">#fff</span>;</span><br><span class="line">  <span class="attribute">margin-left</span>: -<span class="number">2px</span>;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">vertical-align</span>: middle;</span><br><span class="line">  <span class="attribute">display</span>: inline-block;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.search-icon</span>&#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">20px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="7-입력-값-기본-정해두기"><a href="#7-입력-값-기본-정해두기" class="headerlink" title="7. 입력 값 기본 정해두기"></a>7. 입력 값 기본 정해두기</h3><p>처음에 입력이 안되었어도 미리 특정 검색어로 초기화를 해두도록 하자.</p>
+<p>class 내부 <code>render</code>위 <code>componentWillMount()</code>메소드를 정의하고 작성한다.</p>
+<p>해당 함수는 순서를 보장 하기 위해서 <code>async / await</code>를 이용한다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> componentWillMount() &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">await</span> <span class="keyword">this</span>.setState(<span class="keyword">this</span>.getYoutube(<span class="string">'여행'</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="8-데이터-초기화-값-셋팅"><a href="#8-데이터-초기화-값-셋팅" class="headerlink" title="8. 데이터 초기화 값 셋팅"></a>8. 데이터 초기화 값 셋팅</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">videoDatas : [...this.state.videoDatas, ...data.items]</span><br></pre></td></tr></table></figure>
+
+<p>위 코드로 입력 값이 바뀔 경우에 데이터를 초기화 한 후 데이터가 쌓이도록 설정해두었다.</p>
+<p>따라서 데이터 초기화 값을 미리 셋팅하도록 하자.</p>
+<h4 id="8-1-초기화-변수-선언"><a href="#8-1-초기화-변수-선언" class="headerlink" title="8-1. 초기화 변수 선언"></a>8-1. 초기화 변수 선언</h4><p>class 내부 constructor 메소드 최하단에 작성한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">  <span class="keyword">super</span>(props);</span><br><span class="line">  <span class="keyword">this</span>.state = &#123;</span><br><span class="line">    videoDatas : [],</span><br><span class="line">    query : <span class="string">''</span>,</span><br><span class="line">    nextPageToken : <span class="string">''</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">this</span>.defaultState = <span class="keyword">this</span>.state; <span class="comment">// 초기화 default 작성</span></span><br><span class="line">  <span class="keyword">this</span>.getYoutube = <span class="keyword">this</span>.getYoutube.bind(<span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="8-2-초기화-로직-작성"><a href="#8-2-초기화-로직-작성" class="headerlink" title="8-2. 초기화 로직 작성"></a>8-2. 초기화 로직 작성</h4><p>기존의 쿼리와 입력받은 쿼리가 다를 경우 초기화 한 후 입력받은 쿼리를 적용시켜야 한다.</p>
+<p>따라서 초기화를 하는 로직을 구성한다.</p>
+<p>위치는 <code>getYoutube</code> 메소드 내부 if문 다음에 작성한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> getYoutube(query) &#123;</span><br><span class="line">  <span class="keyword">if</span> (!query) <span class="keyword">return</span>;</span><br><span class="line">  <span class="comment">// 여기 작성</span></span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">this</span>.state.query !== query) &#123;</span><br><span class="line">    <span class="keyword">this</span>.setState(<span class="keyword">this</span>.defaultState);</span><br><span class="line">  &#125; </span><br><span class="line">  </span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="9-Main-작성-VideoList-VideoPlayer"><a href="#9-Main-작성-VideoList-VideoPlayer" class="headerlink" title="9. Main 작성 ( VideoList + VideoPlayer )"></a>9. Main 작성 ( VideoList + VideoPlayer )</h3><p>VideoList를 작성하기에 앞서 현재 우리는 Router 설정을 안해주었다. 한가지의 URL 안에서 모든 것을 보여주어야 하기 떄문에 어떤 컴포넌트를 렌더링 할 것 인지 선택을 해야한다. 따라서 VideoPlayer를 보여주기 위해서는 videoId가 있어야한다. </p>
+<p>비디오 리스트에서 특정 비디오가 선택됬다면 해당 비디오의 videoId를 저장하고 선택이 되지 않았다면 기본적으로 null값 혹은 빈문자열을 지니도록 한다.</p>
+<p><code>constructor</code> 에서 <code>videoId 프로퍼티</code>를 추가하도록 하자.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">  <span class="keyword">super</span>(props);</span><br><span class="line">  <span class="keyword">this</span>.state = &#123;</span><br><span class="line">      videoDatas : [],</span><br><span class="line">      query : <span class="string">''</span>,</span><br><span class="line">      nextPageToken : <span class="string">''</span>,</span><br><span class="line">      videoId: <span class="string">''</span>  <span class="comment">// 추가</span></span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="9-1-VideoList-컴포넌트-구성하기"><a href="#9-1-VideoList-컴포넌트-구성하기" class="headerlink" title="9-1 VideoList 컴포넌트 구성하기"></a>9-1 VideoList 컴포넌트 구성하기</h4><p>먼저 VideoList 컴포넌트를 구성하다. 폴더구조는 다음과 같다.</p>
+<img src="https://user-images.githubusercontent.com/31315644/70806992-e7244000-1dff-11ea-8a61-186525e3d07a.jpeg" alt="video-list" style="zoom:50%;">
+
+<p>component/VideoList/VideoList.jsx</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="keyword">import</span> VideoListItems <span class="keyword">from</span> <span class="string">'./VideoListItems'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> VideoList = <span class="function">(<span class="params">props</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">      &lt;VideoListItems &#123;...props&#125;&gt;<span class="xml"><span class="tag">&lt;/<span class="name">VideoListItems</span>&gt;</span></span></span><br><span class="line">    &lt;<span class="regexp">/ul&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">export default VideoList;</span></span><br></pre></td></tr></table></figure>
+
+<p><code>list</code>별로 다른 리스트 썸네일과 제목을 보여주어야만 한다. 따라서 따로 하위 컴포넌트를 추가로 작성해준다.</p>
+<br>
+
+<p>component/VideoList/VideoListItems.jsx</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="keyword">import</span> uuid <span class="keyword">from</span> <span class="string">'uuid'</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">'./VideoList.css'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> VideoListItems = <span class="function">(<span class="params">props</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> videos = props.videoDatas.map(<span class="function"><span class="params">video</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">li</span> <span class="attr">className</span>=<span class="string">'video-list'</span> <span class="attr">key</span>=<span class="string">&#123;uuid.v4()&#125;</span> &gt;</span></span></span><br><span class="line">        &lt;figure&gt;</span><br><span class="line">          &lt;img src=&#123;video.snippet.thumbnails.high.url&#125; alt="영상이미지"/&gt;</span><br><span class="line">          &lt;figcaption&gt;&#123;video.snippet.title&#125;&lt;/figcaption&gt;</span><br><span class="line">        &lt;/figure&gt;</span><br><span class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="xml">  &#125;)</span></span><br><span class="line"><span class="xml">  return (</span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;&gt;</span></span></span><br><span class="line"><span class="xml">    &#123;videos&#125;</span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;/&gt;</span></span></span><br><span class="line"><span class="xml">  );</span></span><br><span class="line"><span class="xml">&#125;</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">export default VideoListItems;</span></span><br></pre></td></tr></table></figure>
+
+<p>여기서 <code>uuid</code>는 key를 고유한 랜덤키를 배포해주기 위한 npm 모듈이다. 다음으로 설치하고 작성한다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i uuid --save</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p>css를 구성한다.</p>
+<p>component/VideoList/VideoList.css</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.video-list</span> &#123;</span><br><span class="line">  <span class="attribute">margin </span>: <span class="number">30px</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.video-list</span> <span class="selector-tag">figure</span>&#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">align-items</span>: center;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.video-list</span> <span class="selector-tag">figcaption</span>&#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">800px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">300px</span>;</span><br><span class="line">  <span class="attribute">margin-bottom</span>: <span class="number">20px</span>;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="9-2-VideoPlayer-컴포넌트-구성하기"><a href="#9-2-VideoPlayer-컴포넌트-구성하기" class="headerlink" title="9-2 VideoPlayer 컴포넌트 구성하기"></a>9-2 VideoPlayer 컴포넌트 구성하기</h4><p>폴더구조는 다음과 같다.</p>
+<img src="https://user-images.githubusercontent.com/31315644/70805335-04efa600-1dfc-11ea-9858-ccd729635cb0.jpeg" alt="video-player" style="zoom:50%;">
+
+<p>먼저 css를 추가하도록 하자.</p>
+<p>component/VideoPlayer/VideoPlayer.css</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.video-player-wrap</span>&#123;</span><br><span class="line">  <span class="attribute">margin </span>: <span class="number">0</span> auto;</span><br><span class="line">  <span class="attribute">text-align</span>: center;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.video-player</span>&#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">960px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">640px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p>component/VideoPlayer/VideoPlayer.jsx</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">'./VideoPlayer.css'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> VideoPlayer = <span class="function">(<span class="params">props</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> url = <span class="string">`https://youtube.com/embed/<span class="subst">$&#123;props.videoId&#125;</span>`</span>;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div className=<span class="string">"video-player-wrap"</span>&gt;</span><br><span class="line">      &lt;iframe src=&#123;url&#125; title=&#123;props.videoId&#125; className=<span class="string">"video-player"</span> /&gt;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">export default VideoPlayer</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="9-3-App-js에-두-컴포넌트-작성"><a href="#9-3-App-js에-두-컴포넌트-작성" class="headerlink" title="9-3. App.js에 두 컴포넌트 작성"></a>9-3. App.js에 두 컴포넌트 작성</h4><p>App.js render 부분에 <code>&lt;main&gt;</code> 태그를 추가하고 videoId에 따라 어떤 컴포넌트를 렌더 할지 정한다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">render() &#123;</span><br><span class="line">   <span class="keyword">const</span> &#123; videoId &#125; = <span class="keyword">this</span>.state</span><br><span class="line">   <span class="keyword">return</span> (</span><br><span class="line">     &lt;div className = <span class="string">'App'</span>&gt;</span><br><span class="line">       &lt;Nav&gt;</span><br><span class="line">         &lt;SearchBar onSearchVideo=&#123;debounce(<span class="keyword">this</span>.getYoutube, <span class="number">500</span>)&#125;&gt;<span class="xml"><span class="tag">&lt;/<span class="name">SearchBar</span>&gt;</span></span></span><br><span class="line">       &lt;<span class="regexp">/Nav&gt;</span></span><br><span class="line"><span class="regexp">       &lt;main&gt;</span></span><br><span class="line"><span class="regexp">         &#123;</span></span><br><span class="line"><span class="regexp">         videoId</span></span><br><span class="line"><span class="regexp">           ? &lt;VideoPlayer videoId = &#123; videoId &#125;&gt;&lt;/</span>VideoPlayer&gt;</span><br><span class="line">           : <span class="xml"><span class="tag">&lt;<span class="name">VideoList</span></span></span></span><br><span class="line"><span class="xml">                 &#123;...this.state&#125;</span></span><br><span class="line"><span class="xml">               /&gt;</span></span><br><span class="line"><span class="xml">         &#125;</span></span><br><span class="line"><span class="xml">       <span class="tag">&lt;/<span class="name">main</span>&gt;</span></span></span><br><span class="line">     &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">   )</span></span><br><span class="line"><span class="regexp"> &#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>각 컴포넌트에서 필요한 값들을 props로 내려주기 위해 태그 옆에 정의를 해두었다.</p>
+<br>
+
+<h4 id="9-4-비디오-플레이어-표시하기"><a href="#9-4-비디오-플레이어-표시하기" class="headerlink" title="9-4. 비디오 플레이어 표시하기"></a>9-4. 비디오 플레이어 표시하기</h4><p>VideoList에서 Click 이벤트를 일으켜서 videoId를 바꿔 Player를 표시하는 작업을 하도록하자.</p>
+<p>먼저 App.js 에 videId를 바꿀 함수를 정의하고 <code>&lt;VideoList&gt;</code>에 props로 뿌려 click이벤트로 사용하도록 하자.</p>
+<p><code>render()</code> 함수 바로 위에 작성한다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">setVideoId(id) &#123;</span><br><span class="line">  <span class="keyword">this</span>.setState(&#123; <span class="attr">videoId</span> : id &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p><code>render()</code>  함수의 <code>&lt;VideoList&gt;</code> 애도 해당 함수를 호출시킬 속성을 작성한다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;VideoList</span><br><span class="line">      &#123;...this.state&#125;</span><br><span class="line">		  onSetVideoId = &#123;<span class="keyword">this</span>.setVideoId&#125; <span class="comment">// 추가</span></span><br><span class="line">/&gt;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p>constructor 내부에서 bind를 해준다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">   ...</span><br><span class="line">   <span class="keyword">this</span>.setVideoId = <span class="keyword">this</span>.setVideoId.bind(<span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p>VideoListItems.jsx</p>
+<p>컴포넌트 파일에 접근하여 li부분에 onClick 이벤트를 추가한다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="keyword">import</span> uuid <span class="keyword">from</span> <span class="string">'uuid'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> VideoListItems = <span class="function">(<span class="params">props</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> videos = props.videoDatas.map(<span class="function"><span class="params">video</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// li 부분 수정</span></span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">li</span> <span class="attr">key</span>=<span class="string">&#123;uuid.v4()&#125;</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> props.onSetVideoId(video.id.videoId)&#125; &gt;</span></span><br><span class="line">        &lt;figure&gt;</span><br><span class="line">          &lt;img src=&#123;video.snippet.thumbnails.default.url&#125; alt="영상이미지"/&gt;</span><br><span class="line">          &lt;figcaption&gt;&#123;video.snippet.title&#125;&lt;/figcaption&gt;</span><br><span class="line">        &lt;/figure&gt;</span><br><span class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="xml">  &#125;)</span></span><br><span class="line"><span class="xml">  return (</span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;&gt;</span></span></span><br><span class="line"><span class="xml">    &#123;videos&#125;</span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;/&gt;</span></span></span><br><span class="line"><span class="xml">  );</span></span><br><span class="line"><span class="xml">&#125;</span></span><br><span class="line"><span class="xml">export default VideoListItems;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="10-무한스크롤"><a href="#10-무한스크롤" class="headerlink" title="10. 무한스크롤"></a>10. 무한스크롤</h3><p>이제 무한 스크롤을 작성한다. </p>
+<p>우선 무한스크롤을 사용할 수 있도록 npm 을 설치하고, gif파일을 가지고 오도록하자(gif는 스피너 이미지. 구글로 구할것)</p>
+<br>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i react-infinite-scroller --save</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p>import 를 추가한다.</p>
+<p>App.js</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> InfiniteScroll <span class="keyword">from</span> <span class="string">'react-infinite-scroller'</span>;</span><br><span class="line"><span class="keyword">import</span> spinner <span class="keyword">from</span> <span class="string">'./components/images/spinner.gif'</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p>App.js 의 <code>&lt;main&gt;</code>부분을 다음과 같이 수정한다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;main&gt;</span><br><span class="line">  &#123;</span><br><span class="line">  videoId</span><br><span class="line">  ? <span class="xml"><span class="tag">&lt;<span class="name">VideoPlayer</span> <span class="attr">videoId</span> = <span class="string">&#123;</span> <span class="attr">videoId</span> &#125;&gt;</span><span class="tag">&lt;/<span class="name">VideoPlayer</span>&gt;</span></span></span><br><span class="line">  :</span><br><span class="line">    &lt;InfiniteScroll</span><br><span class="line">       loadMore = &#123;() =&gt; <span class="keyword">this</span>.getYoutube(<span class="keyword">this</span>.state.query)&#125;</span><br><span class="line">       hasMore = &#123;!!<span class="keyword">this</span>.state.nextPageToken&#125;</span><br><span class="line">       loader = &#123;</span><br><span class="line">           &lt;div key=&#123;uuid.v4()&#125;&gt;</span><br><span class="line">           	 &lt;img src=&#123;spinner&#125; alt=<span class="string">"로딩 중"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">img</span>&gt;</span></span></span><br><span class="line">           &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">       &#125;</span></span><br><span class="line"><span class="regexp">    &gt;</span></span><br><span class="line"><span class="regexp">       &lt;VideoList</span></span><br><span class="line"><span class="regexp">  		     &#123;...this.state&#125;</span></span><br><span class="line"><span class="regexp">            onSetVideoId = &#123;this.setVideoId&#125;</span></span><br><span class="line"><span class="regexp">       /</span>&gt;</span><br><span class="line">    &lt;<span class="regexp">/InfiniteScroll&gt;</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&lt;/m</span>ain&gt;</span><br></pre></td></tr></table></figure>
+
+<p><code>loadMore</code> : 스크롤이 끝까지 발생 시 어떤 일을 할 것인가를 정의한다.</p>
+<p><code>hasMore</code> : 스크롤이 끝까지 발생 시 어떤 일을 일으키는 조건을 정의</p>
+<p><code>loader</code>: <code>loadMore</code>이 일어나는 동안 수행할 일을 정의한다.</p>
+<br>
+
+<p>여기까지 하면 문제없이 잘 될 것이다.</p>
+<p>다음에는 Router 기능을 추가하도록 하겠다.</p>
+<p>현재 git .ignore로 설정을 해두어서 해당 프로젝트는 따로 관리를 해두지 않았다.</p>
+<p>단, 좀더 확장되고 정확한 소스는 아래 링크에서 확인이 가능하다.</p>
+<h3 id="Youtube-Mini-Clone"><a href="#Youtube-Mini-Clone" class="headerlink" title="Youtube Mini Clone"></a><a href="https://github.com/HYEOK999/TIL/tree/master/react/project/youtube-practice" rel="external nofollow noopener noreferrer" target="_blank">Youtube Mini Clone</a></h3>
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://hyeok999.github.io/2019/12/13/react-youtube-clone-noRoute/" data-id="ck449fwbw00g266z06nsmkps9" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Jun Hyeok Kim"
+        },
+        "headline": "유튜브 미니 클론 (No Route)",
+        "image": "https://hyeok999.github.iohttps://user-images.githubusercontent.com/31315644/70803414-59445700-1df7-11ea-99fd-d9fb4c637e36.png",
+        "keywords": "Web coding develop algorithm HTML CSS javascript React",
+        "genre": "TIL React",
+        "datePublished": "2019-12-13",
+        "dateCreated": "2019-12-13",
+        "dateModified": "2019-12-13",
+        "url": "https://hyeok999.github.io/2019/12/13/react-youtube-clone-noRoute/",
+        "description": "
+
+Youtube Mini Clone React목차
+
+Youtube Mini Clone 생성하기
+기본 틀 짜기
+유튜브 데이터 받아올 준비하기
+유튜브 데이터 받아오기
+Header 작성  ( 큰 틀 = 로고부분)
+Header 작성  ( 검색바 )
+입력 값 기본 정해두기
+데이터 초기화 값 셋팅
+Main 작성 ( VideoList + VideoPlayer )
+무한",
+        "wordCount": 4358
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="https://www.facebook.com/profile.php?id=100003801986180" target="_blank" rel="external nofollow noopener noreferrer">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/HYEOK999" target="_blank" rel="external nofollow noopener noreferrer">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="instagram" href="https://www.instagram.com/hyeok999/?hl=ko" target="_blank" rel="external nofollow noopener noreferrer">
+                        <i class="icon fa fa-instagram"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2019/12/13/react-study-06/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">React 스터디 06</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/">Develop</a><span class="category-list-count">36</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/CSS/">CSS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/GIT/">GIT</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/IT-Event/">IT Event</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Java/">Java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Javascript/">Javascript</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Project/">Project</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/React/">React</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Tips/">Tips</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/">TIL</a><span class="category-list-count">147</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Algorithm-Quiz/">Algorithm & Quiz</a><span class="category-list-count">65</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript/">Javascript</a><span class="category-list-count">30</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a><span class="category-list-count">23</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/React/">React</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/React-Preview/">React-Preview</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/linux/">linux</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/etc/">etc</a><span class="category-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/12/13/react-youtube-clone-noRoute/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/70803414-59445700-1df7-11ea-99fd-d9fb4c637e36.png)" alt="유튜브 미니 클론 (No Route)" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/React/">React</a></p>
+                            <p class="item-title"><a href="/2019/12/13/react-youtube-clone-noRoute/" class="title">유튜브 미니 클론 (No Route)</a></p>
+                            <p class="item-date"><time datetime="2019-12-13T14:40:42.000Z" itemprop="datePublished">2019-12-13</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/12/13/react-study-06/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/69938302-4345b500-1520-11ea-8436-26d69300e699.png)" alt="React 스터디 06" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/React/">React</a></p>
+                            <p class="item-title"><a href="/2019/12/13/react-study-06/" class="title">React 스터디 06</a></p>
+                            <p class="item-date"><time datetime="2019-12-13T12:43:45.000Z" itemprop="datePublished">2019-12-13</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/12/13/daily-algorithm54/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://images.velog.io/post-images/leejh3224/619516b0-e892-11e8-98f5-997ef3c38110/what-is-an-algorithm-featured.png)" alt="daily_algorithm54" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/Algorithm-Quiz/">Algorithm & Quiz</a></p>
+                            <p class="item-title"><a href="/2019/12/13/daily-algorithm54/" class="title">daily_algorithm54</a></p>
+                            <p class="item-date"><time datetime="2019-12-13T11:48:56.000Z" itemprop="datePublished">2019-12-13</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/12/12/react-study-05/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/69938302-4345b500-1520-11ea-8436-26d69300e699.png)" alt="React 스터디 05" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/React/">React</a></p>
+                            <p class="item-title"><a href="/2019/12/12/react-study-05/" class="title">React 스터디 05</a></p>
+                            <p class="item-date"><time datetime="2019-12-12T13:45:03.000Z" itemprop="datePublished">2019-12-12</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/12/12/react-official-02/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/70387342-a2f00480-19e7-11ea-822c-0109f613aefd.png)" alt="엘리먼트(요소) 렌더링" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Develop/">Develop</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Develop/React/">React</a></p>
+                            <p class="item-title"><a href="/2019/12/12/react-official-02/" class="title">엘리먼트(요소) 렌더링</a></p>
+                            <p class="item-date"><time datetime="2019-12-12T13:44:55.000Z" itemprop="datePublished">2019-12-12</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a><span class="archive-list-count">37</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a><span class="archive-list-count">86</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a><span class="archive-list-count">38</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Ajax/" style="font-size: 11.05px;">Ajax</a> <a href="/tags/Array/" style="font-size: 11.58px;">Array</a> <a href="/tags/Array-Method/" style="font-size: 10.53px;">Array Method</a> <a href="/tags/Arrow-Function/" style="font-size: 10px;">Arrow Function</a> <a href="/tags/Async/" style="font-size: 10px;">Async</a> <a href="/tags/Async-Await/" style="font-size: 10px;">Async Await</a> <a href="/tags/Axios/" style="font-size: 10px;">Axios</a> <a href="/tags/BAEKJOON/" style="font-size: 13.16px;">BAEKJOON</a> <a href="/tags/Browser/" style="font-size: 10px;">Browser</a> <a href="/tags/CSS/" style="font-size: 16.32px;">CSS</a> <a href="/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/tags/Class/" style="font-size: 10px;">Class</a> <a href="/tags/Closer/" style="font-size: 10.53px;">Closer</a> <a href="/tags/Constructor/" style="font-size: 10px;">Constructor</a> <a href="/tags/Core-JavaScript/" style="font-size: 10px;">Core JavaScript</a> <a href="/tags/DOM/" style="font-size: 10.53px;">DOM</a> <a href="/tags/Date/" style="font-size: 10px;">Date</a> <a href="/tags/Document-Object-Model/" style="font-size: 10.53px;">Document Object Model</a> <a href="/tags/ESLint/" style="font-size: 10px;">ESLint</a> <a href="/tags/Event/" style="font-size: 10.53px;">Event</a> <a href="/tags/Fetch/" style="font-size: 10px;">Fetch</a> <a href="/tags/Git-GUI/" style="font-size: 10.53px;">Git GUI</a> <a href="/tags/HOF/" style="font-size: 12.63px;">HOF</a> <a href="/tags/HTML/" style="font-size: 16.84px;">HTML</a> <a href="/tags/HotKey/" style="font-size: 10px;">HotKey</a> <a href="/tags/JAVA/" style="font-size: 13.68px;">JAVA</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/MarkUP/" style="font-size: 10px;">MarkUP</a> <a href="/tags/Math/" style="font-size: 10px;">Math</a> <a href="/tags/Method/" style="font-size: 11.58px;">Method</a> <a href="/tags/Module/" style="font-size: 10px;">Module</a> <a href="/tags/Number/" style="font-size: 10px;">Number</a> <a href="/tags/OS/" style="font-size: 12.11px;">OS</a> <a href="/tags/Object/" style="font-size: 12.11px;">Object</a> <a href="/tags/Poiema/" style="font-size: 15.26px;">Poiema</a> <a href="/tags/Primary-value/" style="font-size: 10px;">Primary value</a> <a href="/tags/Programmers/" style="font-size: 15.79px;">Programmers</a> <a href="/tags/Project/" style="font-size: 10.53px;">Project</a> <a href="/tags/Promise/" style="font-size: 11.58px;">Promise</a> <a href="/tags/Property/" style="font-size: 11.05px;">Property</a> <a href="/tags/Prototype/" style="font-size: 10px;">Prototype</a> <a href="/tags/Quiz/" style="font-size: 12.63px;">Quiz</a> <a href="/tags/REST/" style="font-size: 10.53px;">REST</a> <a href="/tags/REST-API/" style="font-size: 10px;">REST API</a> <a href="/tags/Rapper/" style="font-size: 10px;">Rapper</a> <a href="/tags/Rapper-Object/" style="font-size: 10px;">Rapper Object</a> <a href="/tags/React/" style="font-size: 14.74px;">React</a> <a href="/tags/React-Official-Document/" style="font-size: 10.53px;">React Official Document</a> <a href="/tags/RegExr/" style="font-size: 10.53px;">RegExr</a> <a href="/tags/Scope/" style="font-size: 10px;">Scope</a> <a href="/tags/Selector/" style="font-size: 10px;">Selector</a> <a href="/tags/SourceTree/" style="font-size: 10.53px;">SourceTree</a> <a href="/tags/Spread/" style="font-size: 10px;">Spread</a> <a href="/tags/Strict-Mode/" style="font-size: 10px;">Strict Mode</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Symbol/" style="font-size: 10px;">Symbol</a> <a href="/tags/TIL/" style="font-size: 18.42px;">TIL</a> <a href="/tags/Todo/" style="font-size: 14.74px;">Todo</a> <a href="/tags/VSCode/" style="font-size: 11.05px;">VSCode</a> <a href="/tags/VScode/" style="font-size: 10px;">VScode</a> <a href="/tags/VisualStudio-Code/" style="font-size: 11.05px;">VisualStudio Code</a> <a href="/tags/Web/" style="font-size: 18.95px;">Web</a> <a href="/tags/Web-Clone/" style="font-size: 10px;">Web Clone</a> <a href="/tags/Web-clone/" style="font-size: 10px;">Web clone</a> <a href="/tags/algorithm/" style="font-size: 17.37px;">algorithm</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/browser-operation/" style="font-size: 10px;">browser operation</a> <a href="/tags/coding/" style="font-size: 20px;">coding</a> <a href="/tags/daily-test/" style="font-size: 11.05px;">daily test</a> <a href="/tags/develop/" style="font-size: 17.89px;">develop</a> <a href="/tags/first-class-Object/" style="font-size: 10px;">first-class Object</a> <a href="/tags/flow/" style="font-size: 10px;">flow</a> <a href="/tags/function/" style="font-size: 10.53px;">function</a> <a href="/tags/git/" style="font-size: 14.21px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/inline-block/" style="font-size: 10px;">inline-block</a> <a href="/tags/interview/" style="font-size: 10px;">interview</a> <a href="/tags/iteration/" style="font-size: 10px;">iteration</a> <a href="/tags/javascript/" style="font-size: 19.47px;">javascript</a> <a href="/tags/linux/" style="font-size: 12.11px;">linux</a> <a href="/tags/linux-command/" style="font-size: 10px;">linux command</a> <a href="/tags/project/" style="font-size: 10px;">project</a> <a href="/tags/prototype/" style="font-size: 10px;">prototype</a> <a href="/tags/terminal/" style="font-size: 10px;">terminal</a> <a href="/tags/test/" style="font-size: 10.53px;">test</a> <a href="/tags/this/" style="font-size: 10px;">this</a> <a href="/tags/unix/" style="font-size: 11.58px;">unix</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://github.com" rel="external nofollow noopener noreferrer" target="_blank">github</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://hexo.io" rel="external nofollow noopener noreferrer" target="_blank">Hexo</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.naver.com" rel="external nofollow noopener noreferrer" target="_blank">Naver</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://google.com" rel="external nofollow noopener noreferrer" target="_blank">Google</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://www.youtube.com/" rel="external nofollow noopener noreferrer" target="_blank">Youtube</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2019 Jun Hyeok Kim</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'https://hyeok999.github.io/2019/12/13/react-youtube-clone-noRoute/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+
