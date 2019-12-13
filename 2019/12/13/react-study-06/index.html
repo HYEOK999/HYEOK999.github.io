@@ -6,24 +6,26 @@
     
 
     
-    <title>react-study-06 | HYEOK999&#39;s Blog</title>
+    <title>React 스터디 06 | HYEOK999&#39;s Blog</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="git,Web,coding,develop,algorithm,HTML,CSS,javascript,hexo,React">
+        <meta name="keywords" content="git,Web,coding,develop,HTML,CSS,javascript,React">
     
-    <meta name="description" content="HYEOK999&apos;s IT Develop Blog">
-<meta name="keywords" content="git,Web,coding,develop,algorithm,HTML,CSS,javascript,hexo,React">
+    <meta name="description" content="React Study 06 환경변수 정의하기 .evn 파일 생성 .gitignore에 .env 추가 번외 : .env 파일을 만들지 않고 npm start 할 때마다 키값 넘겨주기(권장하진 않음)   Router 파라미터를 넘기는 방법 2가지 쿼리 스트링 REST API   Switch 해결방법 1 : exact 해결방법 2 : 중요도가 높은 라우팅을">
+<meta name="keywords" content="git,Web,coding,develop,HTML,CSS,javascript,React">
 <meta property="og:type" content="article">
-<meta property="og:title" content="react-study-06">
+<meta property="og:title" content="React 스터디 06">
 <meta property="og:url" content="https://hyeok999.github.io/2019/12/13/react-study-06/index.html">
 <meta property="og:site_name" content="HYEOK999&#39;s Blog">
-<meta property="og:description" content="HYEOK999&apos;s IT Develop Blog">
+<meta property="og:description" content="React Study 06 환경변수 정의하기 .evn 파일 생성 .gitignore에 .env 추가 번외 : .env 파일을 만들지 않고 npm start 할 때마다 키값 넘겨주기(권장하진 않음)   Router 파라미터를 넘기는 방법 2가지 쿼리 스트링 REST API   Switch 해결방법 1 : exact 해결방법 2 : 중요도가 높은 라우팅을">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-12-13T12:43:45.269Z">
+<meta property="og:image" content="https://user-images.githubusercontent.com/31315644/69938302-4345b500-1520-11ea-8436-26d69300e699.png">
+<meta property="og:updated_time" content="2019-12-13T12:46:32.217Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="react-study-06">
-<meta name="twitter:description" content="HYEOK999&apos;s IT Develop Blog">
+<meta name="twitter:title" content="React 스터디 06">
+<meta name="twitter:description" content="React Study 06 환경변수 정의하기 .evn 파일 생성 .gitignore에 .env 추가 번외 : .env 파일을 만들지 않고 npm start 할 때마다 키값 넘겨주기(권장하진 않음)   Router 파라미터를 넘기는 방법 2가지 쿼리 스트링 REST API   Switch 해결방법 1 : exact 해결방법 2 : 중요도가 높은 라우팅을">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/31315644/69938302-4345b500-1520-11ea-8436-26d69300e699.png">
     
     <link rel="canonical" href="https://hyeok999.github.io/2019/12/13/react-study-06/">
     
@@ -152,7 +154,7 @@ ga('send', 'pageview');
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/Develop/">Develop</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Develop/IT-Event/">IT Event</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Develop/IT-Event/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Develop/IT-Event/TIL/Tips/">Tips</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Develop/IT-Event/TIL/Tips/Project/">Project</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Develop/IT-Event/TIL/Tips/Project/Algorithm-Quiz/">Algorithm & Quiz</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Develop/IT-Event/TIL/Tips/Project/Algorithm-Quiz/React/">React</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Develop/IT-Event/TIL/Tips/Project/Algorithm-Quiz/React/HTML/">HTML</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Develop/IT-Event/TIL/Tips/Project/Algorithm-Quiz/React/HTML/CSS/">CSS</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Develop/IT-Event/TIL/Tips/Project/Algorithm-Quiz/React/HTML/CSS/HTML-CSS/">HTML&CSS</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Develop/IT-Event/TIL/Tips/Project/Algorithm-Quiz/React/HTML/CSS/HTML-CSS/Javascript/">Javascript</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Develop/IT-Event/TIL/Tips/Project/Algorithm-Quiz/React/HTML/CSS/HTML-CSS/Javascript/Javascript-Preview/">Javascript-Preview</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Develop/IT-Event/TIL/Tips/Project/Algorithm-Quiz/React/HTML/CSS/HTML-CSS/Javascript/Javascript-Preview/etc/">etc</a>
+    <a class="page-title-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/TIL/React/">React</a>
     </h1>
 </div>
 
@@ -164,7 +166,7 @@ ga('send', 'pageview');
                 
     
         <h1 class="article-title" itemprop="name">
-        react-study-06
+        React 스터디 06
         </h1>
     
 
@@ -184,21 +186,268 @@ ga('send', 'pageview');
                 
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/CSS/">CSS</a>, <a class="tag-link" href="/tags/HTML/">HTML</a>, <a class="tag-link" href="/tags/React/">React</a>, <a class="tag-link" href="/tags/Web/">Web</a>, <a class="tag-link" href="/tags/algorithm/">algorithm</a>, <a class="tag-link" href="/tags/coding/">coding</a>, <a class="tag-link" href="/tags/develop/">develop</a>, <a class="tag-link" href="/tags/git/">git</a>, <a class="tag-link" href="/tags/hexo/">hexo</a>, <a class="tag-link" href="/tags/javascript/">javascript</a>
+        <a class="tag-link" href="/tags/CSS/">CSS</a>, <a class="tag-link" href="/tags/HTML/">HTML</a>, <a class="tag-link" href="/tags/React/">React</a>, <a class="tag-link" href="/tags/Web/">Web</a>, <a class="tag-link" href="/tags/coding/">coding</a>, <a class="tag-link" href="/tags/develop/">develop</a>, <a class="tag-link" href="/tags/git/">git</a>, <a class="tag-link" href="/tags/javascript/">javascript</a>
     </div>
 
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <p><img src="https://user-images.githubusercontent.com/31315644/69938302-4345b500-1520-11ea-8436-26d69300e699.png" alt="React"></p>
+<hr>
+<h1 id="React-Study-06"><a href="#React-Study-06" class="headerlink" title="React Study 06"></a>React Study 06</h1><ul>
+<li>환경변수 정의하기<ul>
+<li>.evn 파일 생성</li>
+<li>.gitignore에 .env 추가</li>
+<li>번외 : .env 파일을 만들지 않고 npm start 할 때마다 키값 넘겨주기(권장하진 않음)</li>
+</ul>
+</li>
+<li>Router</li>
+<li>파라미터를 넘기는 방법 2가지<ul>
+<li>쿼리 스트링</li>
+<li>REST API</li>
+</ul>
+</li>
+<li>Switch<ul>
+<li>해결방법 1 : exact</li>
+<li>해결방법 2 : 중요도가 높은 라우팅을 먼저 선언해준다.</li>
+</ul>
+</li>
+<li>실습 라우팅해보기<ul>
+<li>쿼리 스트링 사용하기</li>
+<li>REST API 사용하기</li>
+<li>REST API 와 쿼리스트링 둘 다 사용하기</li>
+</ul>
+</li>
+<li>URL(주소가) 바뀐 것처럼 보여주기. <ul>
+<li>리액트 DOM을 렌더링 해주기 위해서 <code>react-router-dom</code>을 설치한다.</li>
+<li>react-router-dom을 import 한다.</li>
+<li>URL history 추가하기</li>
+</ul>
+</li>
+<li>Call Stack 초과를 막는 법 -&gt; 모든 것을 비동기 코드로 돌린다.<ul>
+<li>setTimeout을 이용한다.</li>
+</ul>
+</li>
+</ul>
+<br>
+
+<hr>
+<br>
+
+<h3 id="용어-러버덕"><a href="#용어-러버덕" class="headerlink" title="용어 - ( 러버덕 )"></a>용어 - ( 러버덕 )</h3><ul>
+<li>환경변수 정의하는 법</li>
+<li>쿼리스트링</li>
+<li>REST API</li>
+<li>history 작성</li>
+<li>Call Stack 초과시 해결 요령</li>
+</ul>
+<br>
+
+<hr>
+<h3 id="환경변수-정의-하기"><a href="#환경변수-정의-하기" class="headerlink" title="환경변수 정의 하기"></a>환경변수 정의 하기</h3><ul>
+<li><p>환경 변수는 process.env 라는 예약어를 통해서 만든다.</p>
+</li>
+<li><p>Node.js에서는 process.env까지 예약어고, React에서는 process.env.REACT_APP_ 까지 예약어이다. </p>
+<p>그 후부터는 임의로 네이밍할 수 있는 변수.</p>
+</li>
+<li><p>변수는 최대한 자세하게 그리고 전부 대문자로 작성한다.</p>
+</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> params = &#123;</span><br><span class="line">  key: process.env.REACT_APP_YOUTUBE_API_KEY</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>process.env는 리액트가 실행될때 가지고 오기 때문에 .env 설정이 끝나면 재 실행해야한다.</strong></p>
+<br>
+
+<h4 id="evn-파일-생성"><a href="#evn-파일-생성" class="headerlink" title=".evn 파일 생성"></a>.evn 파일 생성</h4><p>.gitignore 와 같은 위치 .env 파일을 생성한다.</p>
+<p>그리고 다음과 같이 작성한다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">REACT_APP_YOUTUBE_API_KEY=키 값 작성</span><br></pre></td></tr></table></figure>
+
+<p><strong>값을 작성할 때 규칙</strong></p>
+<ul>
+<li><code>&#39;&#39;</code>의 형태로 문자열로 작성하면 안된다. </li>
+<li><code>;</code>을 적으면 안된다.</li>
+<li>다음 환경 변수를 작성하고 싶다면 엔터를 쳐서 다음 라인으로 넘어간다.</li>
+<li>주석은 <code>//</code>로 시작한다. (예 : // 주석입니다. )</li>
+</ul>
+<br>
+
+<h4 id="gitignore에-env-추가"><a href="#gitignore에-env-추가" class="headerlink" title=".gitignore에 .env 추가"></a>.gitignore에 .env 추가</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># misc</span><br><span class="line">.env <span class="comment">// 여기 추가</span></span><br><span class="line">.DS_Store</span><br><span class="line">.env.local <span class="comment">// 개발자가 보는 환경</span></span><br><span class="line">.env.development.local  <span class="comment">// 개발자가 보는 환경</span></span><br><span class="line">.env.test.local <span class="comment">// 아래는 테스팅 환경</span></span><br><span class="line">.env.production.local <span class="comment">// 실제 배포 환경</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="번외-env-파일을-만들지-않고-npm-start-할-때마다-키값-넘겨주기-권장하진-않음"><a href="#번외-env-파일을-만들지-않고-npm-start-할-때마다-키값-넘겨주기-권장하진-않음" class="headerlink" title="번외 : .env 파일을 만들지 않고 npm start 할 때마다 키값 넘겨주기(권장하진 않음)"></a>번외 : .env 파일을 만들지 않고 npm start 할 때마다 키값 넘겨주기(권장하진 않음)</h4><p>맥 , 리눅스 (유닉스 기반 OS)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">REACT_APP_KEY= 키내용 npm start</span><br></pre></td></tr></table></figure>
+
+<p>윈도우</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">($env:REACT_APP_key = &quot;키내용&quot;) -and (npm start)</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="Router"><a href="#Router" class="headerlink" title="Router"></a>Router</h3><p>라우터는 다음과 같은 이유로 사용한다.</p>
+<ul>
+<li>URL이 바뀌지 않아 특정 페이지를 공유할 수 없다.</li>
+<li>새로고침하면 상태를 유지하지 못해 처음 화면으로 돌아간다.</li>
+<li>각각의 페이지에 고유한 데이터를 넣을 수 있다.</li>
+</ul>
+<br>
+
+<p>URL 주소를 컴포넌트 단위로 분리시키고 주소에 해당되는 컴포넌트를 뿌려준다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i react-router-dom --save</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p>App.js</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;</span><br><span class="line">  BrowserRouter <span class="keyword">as</span> Router,</span><br><span class="line">  Switch,</span><br><span class="line">  Route</span><br><span class="line">&#125; <span class="keyword">from</span> <span class="string">'react-router-dom'</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> App = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;Router&gt;</span><br><span class="line">      &lt;Switch&gt;</span><br><span class="line">        &#123;<span class="comment">/* 쿼리스트링 */</span>&#125;</span><br><span class="line">        &lt;Route path=<span class="string">'/watch'</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">Route</span>&gt;</span></span>  </span><br><span class="line">        &#123;<span class="comment">/* REST API 전달 */</span>&#125;</span><br><span class="line">        &lt;Route path=<span class="string">'/watch/:id'</span> component=&#123;VideoPlayer&#125; /&gt;</span><br><span class="line">      &lt;<span class="regexp">/Switch&gt; </span></span><br><span class="line"><span class="regexp">    &lt;/</span>Router&gt;</span><br><span class="line">  )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>&lt;Router&gt;</code> : <code>Route</code> 를 하기위한 모든 컴포넌트들을 모아놓은 집합 태그.</p>
+<p><code>&lt;Switch&gt;&lt;/Switch&gt;</code> 자바스크립트의 조건 switch와 같다. (path가 조건이다. 조건에 해당되면 자동으로 break)</p>
+<p><code>&lt;Route path=&#39;/watch&#39;&gt;&lt;/Route&gt;</code> :  실질적으로 Component를 지정해주는 태그. path가 비교조건</p>
+<br>
+
+<h3 id="파라미터를-넘기는-방법-2가지"><a href="#파라미터를-넘기는-방법-2가지" class="headerlink" title="파라미터를 넘기는 방법 2가지"></a>파라미터를 넘기는 방법 2가지</h3><h4 id="쿼리-스트링"><a href="#쿼리-스트링" class="headerlink" title="쿼리 스트링"></a>쿼리 스트링</h4><p>Query String 이란 ? </p>
+<p>예시 : <code>https://www.youtube.com/watch?v=hHW1oY26kxQ</code></p>
+<p><code>https://www.youtube.com/watch</code>는 유튜브측에서 정의한 주소. 즉, 고정된 것.</p>
+<p><code>?뒤 부터는 변수명=변수값</code>이다. 이어줄때는 &amp;를 사용한다.</p>
+<p>?뒤부터 나오는 값들을 queryString이라 한다.</p>
+<p>변수 <code>&amp;</code>를 통해서 데이터를 연달아 보내는 것이 가능하다.</p>
+<p>사용자에게 쿼리를 설정하는 것이기 떄문에 라우팅 설정을 줄일 수 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 쿼리 스트링 전달</span></span><br><span class="line">https:<span class="comment">//www.youtube.com/watch?v=hHW1oY26kxQ</span></span><br><span class="line"><span class="comment">// 여러개 전달</span></span><br><span class="line">https:<span class="comment">//www.youtube.com/watch?v=hHW1oY26kxQ&amp;custume=data&amp;key=keykey</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="REST-API"><a href="#REST-API" class="headerlink" title="REST API"></a>REST API</h4><p>오직 1개의 데이터를 보낼 수 있다. 여러개를 연달아 보낼 수 없다. </p>
+<p>REST API의 경우 엄격하게 규칙을 지정하고 있다.</p>
+<p>하나하나 라우팅 설정을 모두 해야한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 일반적인 REST API 규격 정의</span></span><br><span class="line">https:<span class="comment">//www.youtube.com/watch/hHW1oY26kxQ</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="Switch"><a href="#Switch" class="headerlink" title="Switch"></a>Switch</h3><p>Switch에서 라우팅의 path가 일치한다면 바로 실행하고 끝낸다.</p>
+<p><code>path</code>가 <code>https://www.youtube.com/watch?id=hHW1oY26kxQ</code> 라고 가정하자.</p>
+<p>그리고 Switch가 이렇게 정의가 되어있다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;Router&gt;</span><br><span class="line">  &lt;Switch&gt;</span><br><span class="line">    &lt;Route path=<span class="string">'/watch'</span> component=&#123;VideoPlayer&#125; /&gt;</span><br><span class="line">    &lt;Route path=<span class="string">'/watch/:id'</span> component=&#123;VideoPlayer&#125; /&gt;</span><br><span class="line">  &lt;<span class="regexp">/Switch&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>Router&gt;</span><br></pre></td></tr></table></figure>
+
+<p>문제는 이렇게 될 경우 전체 path를 비교하는 데 부분으로 일치한다면 바로 실행하고 끝내버린다.</p>
+<p>즉, 1번째 <code>&lt;Route path=&#39;/watch&#39; component={VideoPlayer} /&gt;</code> 의 <code>path=&#39;/watch&#39;</code> 는 일치한다. 뒷부분은 무시하고 이 부분이 일치를 하기 때문에 바로 실행해버린다.</p>
+<p>따라서 2번째 <code>&lt;Route path=&#39;/watch/:id&#39; component={VideoPlayer} /&gt;</code>는 절대로 실행할 수 없게된다.</p>
+<br>
+
+<h4 id="해결방법-1-exact"><a href="#해결방법-1-exact" class="headerlink" title="해결방법 1 : exact"></a>해결방법 1 : exact</h4><p><code>path</code> 앞에 exact를 명시 해준다면 전체 다 비교를 한다.</p>
+<p>단, exact는 100%일치해야되기 때문에 값이 변하는 변수를 사용할 수 없다. </p>
+<p>id값이 게속 고정된다면 문제가 없지만 id값이 변한다면 <code>&lt;Route path=&#39;/watch/:id&#39; component={VideoPlayer} /&gt;</code>는 사용할 수 없다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;Switch&gt;</span><br><span class="line">  &lt;Route exact path=<span class="string">'/watch'</span> component=&#123;VideoPlayer&#125; /&gt;</span><br><span class="line">	&lt;Route path=<span class="string">'/watch/:id'</span> component=&#123;VideoPlayer&#125; /&gt;</span><br><span class="line">&lt;<span class="regexp">/Switch&gt;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="해결방법-2-중요도가-높은-라우팅을-먼저-선언해준다"><a href="#해결방법-2-중요도가-높은-라우팅을-먼저-선언해준다" class="headerlink" title="해결방법 2 : 중요도가 높은 라우팅을 먼저 선언해준다."></a>해결방법 2 : 중요도가 높은 라우팅을 먼저 선언해준다.</h4><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;Switch&gt;</span><br><span class="line">	&lt;Route path=<span class="string">'/watch/:id'</span> component=&#123;VideoPlayer&#125; /&gt;</span><br><span class="line">  &lt;Route path=<span class="string">'/watch'</span> component=&#123;VideoPlayer&#125; /&gt;</span><br><span class="line">&lt;<span class="regexp">/Switch&gt;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="실습-라우팅해보기"><a href="#실습-라우팅해보기" class="headerlink" title="실습 라우팅해보기"></a>실습 라우팅해보기</h3><p>전제 : 특정 버튼이나 링크를 클릭해서 URL 주소가 바뀌었다고 가정하자. (실제로는 바뀌지 않고 변경된 것처럼 보이는 것.)</p>
+<p>라우트 지정해주고, <code>&lt;Route&gt;</code> 에 component에 적어주기.</p>
+<p>App.js</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123;</span><br><span class="line">  BrowserRouter <span class="keyword">as</span> Router,</span><br><span class="line">  Switch,</span><br><span class="line">  Route</span><br><span class="line">&#125; <span class="keyword">from</span> <span class="string">'react-router-dom'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> VideoPlayer <span class="keyword">from</span> <span class="string">'./VideoPlayer'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> App = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;Router&gt;</span><br><span class="line">      &lt;Switch&gt;</span><br><span class="line">        &lt;Route path=<span class="string">'/watch/:id'</span> component=&#123;VideoPlayer&#125; /&gt;</span><br><span class="line">        &lt;Route path=<span class="string">'/watch'</span> component=&#123;VideoPlayer&#125; /&gt;</span><br><span class="line">      &lt;<span class="regexp">/Switch&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>Router&gt;</span><br><span class="line">  )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="쿼리-스트링-사용하기"><a href="#쿼리-스트링-사용하기" class="headerlink" title="쿼리 스트링 사용하기"></a>쿼리 스트링 사용하기</h4><ol>
+<li>npm 설치</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i query-string --save</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<ol start="2">
+<li><p>사용하고자 하는 <code>.jsx</code> 컴포넌트 파일에 접근한다.</p>
+<p>VideoPlayer.jsx</p>
+</li>
+</ol>
+<p>쿼리스트링을 import 한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> qs <span class="keyword">from</span> <span class="string">'query-string'</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<ol start="3">
+<li>쿼리 스트링 사용하기</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">qs.parse(props.location.search)</span><br></pre></td></tr></table></figure>
+
+<p><code>props.location.search</code>는 URL의 QueryString(? 뒤 내용) 들을 객체로 변환해준다.</p>
+<p>예를들어, <code>https://www.youtube.com/watch?id=hHW1oY26kxQ?custom=aaaa</code> 라는 URL이라 가정하면</p>
+<p><code>qs.parse(props.location.search)</code>로 객체화 되면</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  id : hHW1oY26kxQ,</span><br><span class="line">  custom : aaaa</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>이렇게 된다.</p>
+<p>이것을 상수로 받아준다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> VideoDetail = <span class="function"><span class="params">props</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// Query String</span></span><br><span class="line">  <span class="keyword">const</span> &#123;v&#125; = qs.parse(props.location.search)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div className=<span class="string">"video-detail"</span>&gt;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;;</span></span><br><span class="line"><span class="regexp">export default VideoDetail;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="REST-API-사용하기"><a href="#REST-API-사용하기" class="headerlink" title="REST API 사용하기"></a>REST API 사용하기</h4><p>사용하고자 하는 <code>.jsx</code> 컴포넌트 파일에 접근한다.</p>
+<p>  VideoPlayer.jsx</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> VideoDetail = <span class="function"><span class="params">props</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// REST API</span></span><br><span class="line">  <span class="keyword">const</span> &#123; id &#125; = props.match.params.id;</span><br><span class="line">  <span class="comment">// const id = props.match.params.id;</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div className=<span class="string">"video-detail"</span>&gt;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;;</span></span><br><span class="line"><span class="regexp">export default VideoDetail;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> id = props.match.params.id;</span><br></pre></td></tr></table></figure>
+
+<p><code>props.match.params</code> 뒤부터 적은 프로퍼티는 라우트에서 적은 값들을 적어준다.</p>
+<p> <code>path=&#39;/watch/:id&#39;</code>== <code>props.match.params.id</code></p>
+<br>
+
+<h4 id="REST-API-와-쿼리스트링-둘-다-사용하기"><a href="#REST-API-와-쿼리스트링-둘-다-사용하기" class="headerlink" title="REST API 와 쿼리스트링 둘 다 사용하기"></a>REST API 와 쿼리스트링 둘 다 사용하기</h4><p>  VideoPlayer.jsx</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">"react"</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">"./VideoPlayer.css"</span>;</span><br><span class="line"><span class="keyword">import</span> qs <span class="keyword">from</span> <span class="string">'query-string'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> VideoDetail = <span class="function"><span class="params">props</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// REST API</span></span><br><span class="line">  <span class="keyword">const</span> &#123; id &#125; = props.match.params.id;</span><br><span class="line">  <span class="comment">// const id = props.match.params.id;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// Query String</span></span><br><span class="line">  <span class="keyword">const</span> &#123;v&#125; = qs.parse(props.location.search)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> _id = id || v;</span><br><span class="line">  <span class="keyword">if</span> (!_id) <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">const</span> url = <span class="string">`https://youtube.com/embed/<span class="subst">$&#123;_id&#125;</span>`</span>;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div className=<span class="string">"video-detail"</span>&gt;</span><br><span class="line">      &lt;iframe src=&#123;url&#125; title=&#123;videoId&#125; className=<span class="string">"video-player"</span> /&gt;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;;</span></span><br><span class="line"><span class="regexp">export default VideoDetail;</span></span><br></pre></td></tr></table></figure>
+
+<p>REST로 받은 <code>id</code> 와 쿼리스트링으로 받은 <code>v</code> 모두 사용해서 넘겨준다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> url = <span class="string">`https://youtube.com/embed/<span class="subst">$&#123;id || v&#125;</span>`</span>;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="URL-주소가-바뀐-것처럼-보여주기"><a href="#URL-주소가-바뀐-것처럼-보여주기" class="headerlink" title="URL(주소가) 바뀐 것처럼 보여주기."></a>URL(주소가) 바뀐 것처럼 보여주기.</h3><p>URL이 바뀌는 것처럼 보여지나 브라우저 히스토리만 추가를 해서 실제로 바뀌지는 않는다. </p>
+<p>또한 히스토리를 추가해주면 브라우저의 <code>뒤로가기</code> 버튼도 사용이 가능해진다.</p>
+<h4 id="1-리액트-DOM을-렌더링-해주기-위해서-react-router-dom을-설치한다"><a href="#1-리액트-DOM을-렌더링-해주기-위해서-react-router-dom을-설치한다" class="headerlink" title="1. 리액트 DOM을 렌더링 해주기 위해서 react-router-dom을 설치한다."></a>1. 리액트 DOM을 렌더링 해주기 위해서 <code>react-router-dom</code>을 설치한다.</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i react-router-dom --save</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="2-react-router-dom을-import-한다"><a href="#2-react-router-dom을-import-한다" class="headerlink" title="2. react-router-dom을 import 한다."></a>2. react-router-dom을 import 한다.</h4><p>Main.js</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; withRouter &#125;<span class="keyword">from</span> <span class="string">"react-router-dom"</span>;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	소스 - 기존의 App.js 소스들 카피/페이스트</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> withRouter(App);</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="3-URL-history-추가하기"><a href="#3-URL-history-추가하기" class="headerlink" title="3. URL history 추가하기"></a>3. URL history 추가하기</h4><p><strong>SPA에서는 새로고침/페이지 이동은 금지시 한다.</strong> 따라서 <code>history</code>키워드를 통해서 URL에 쿼리나 REST API 값 전달이 가능하다.</p>
+<p>이제는 <code>this.setState</code>가 아니라 <code>this.props.history.push</code> 키워드를 통해 url을 변경한다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.props.history.push(<span class="string">`/watch?v=<span class="subst">$&#123;selectedVideo&#125;</span>`</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>SPA는 위와같이 url을 변경하여도 새로고침이 발생하지 않는다. </p>
+<ul>
+<li>여기서 single page는 주소가 single이 아니라 페이지가 single - 페이지 이동이 없는 것.</li>
+<li>리액트 라우터의 히스토리 푸시는 주소창에 주소만 바꿔줄뿐 페이지의 이동은 없기 때문에 console.log도 그대로 남고 모든 상태가 그대로 남음.</li>
+</ul>
+</li>
+<li><p><code>&lt;a href=&quot;http://&quot;&gt;</code> 하이퍼링크는 클릭하면 새 탭을 여는 역할 - 완전한 초기상태로 새로운 브라우저 탭을 만드는 것과 같다.</p>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 진짜 주소 이동</span></span><br><span class="line"><span class="built_in">window</span>.location.href</span><br><span class="line"></span><br><span class="line"><span class="comment">// 주소를 추가 - 페이지변경X</span></span><br><span class="line"><span class="keyword">this</span>.props.history.push</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="Call-Stack-초과를-막는-법-gt-모든-것을-비동기-코드로-돌린다"><a href="#Call-Stack-초과를-막는-법-gt-모든-것을-비동기-코드로-돌린다" class="headerlink" title="Call Stack 초과를 막는 법 -&gt; 모든 것을 비동기 코드로 돌린다."></a>Call Stack 초과를 막는 법 -&gt; 모든 것을 비동기 코드로 돌린다.</h3><h4 id="setTimeout을-이용한다"><a href="#setTimeout을-이용한다" class="headerlink" title="setTimeout을 이용한다."></a>setTimeout을 이용한다.</h4><p>콜스택 초과 오류날 때 setTimeout을 이용하면 대부분 해결된다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">this</span>.props.history.push(<span class="string">`/results?search_query=<span class="subst">$&#123;query&#125;</span>`</span>), <span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+
+<br>
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="https://hyeok999.github.io/2019/12/13/react-study-06/" data-id="ck4457mdx00g2ljz0cs38h1zf" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://hyeok999.github.io/2019/12/13/react-study-06/" data-id="ck445bh5h00fzq7z0ugv24g3s" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -268,16 +517,33 @@ ga('send', 'pageview');
             "@type": "Person",
             "name": "Jun Hyeok Kim"
         },
-        "headline": "react-study-06",
-        "image": "https://hyeok999.github.io",
-        "keywords": "git Web coding develop algorithm HTML CSS javascript hexo React",
-        "genre": "Develop IT Event TIL Tips Project Algorithm & Quiz React HTML CSS HTML&CSS Javascript Javascript-Preview etc",
+        "headline": "React 스터디 06",
+        "image": "https://hyeok999.github.iohttps://user-images.githubusercontent.com/31315644/69938302-4345b500-1520-11ea-8436-26d69300e699.png",
+        "keywords": "git Web coding develop HTML CSS javascript React",
+        "genre": "TIL React",
         "datePublished": "2019-12-13",
         "dateCreated": "2019-12-13",
         "dateModified": "2019-12-13",
         "url": "https://hyeok999.github.io/2019/12/13/react-study-06/",
-        "description": "",
-        "wordCount": 1
+        "description": "
+
+React Study 06
+환경변수 정의하기
+.evn 파일 생성
+.gitignore에 .env 추가
+번외 : .env 파일을 만들지 않고 npm start 할 때마다 키값 넘겨주기(권장하진 않음)
+
+
+Router
+파라미터를 넘기는 방법 2가지
+쿼리 스트링
+REST API
+
+
+Switch
+해결방법 1 : exact
+해결방법 2 : 중요도가 높은 라우팅을 ",
+        "wordCount": 1737
     }
 </script>
 
@@ -350,7 +616,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/">Develop</a><span class="category-list-count">37</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/CSS/">CSS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/GIT/">GIT</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/IT-Event/">IT Event</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/IT-Event/TIL/">TIL</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/IT-Event/TIL/Tips/">Tips</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/IT-Event/TIL/Tips/Project/">Project</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/IT-Event/TIL/Tips/Project/Algorithm-Quiz/">Algorithm & Quiz</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/IT-Event/TIL/Tips/Project/Algorithm-Quiz/React/">React</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/IT-Event/TIL/Tips/Project/Algorithm-Quiz/React/HTML/">HTML</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/IT-Event/TIL/Tips/Project/Algorithm-Quiz/React/HTML/CSS/">CSS</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/IT-Event/TIL/Tips/Project/Algorithm-Quiz/React/HTML/CSS/HTML-CSS/">HTML&CSS</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/IT-Event/TIL/Tips/Project/Algorithm-Quiz/React/HTML/CSS/HTML-CSS/Javascript/">Javascript</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/IT-Event/TIL/Tips/Project/Algorithm-Quiz/React/HTML/CSS/HTML-CSS/Javascript/Javascript-Preview/">Javascript-Preview</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/IT-Event/TIL/Tips/Project/Algorithm-Quiz/React/HTML/CSS/HTML-CSS/Javascript/Javascript-Preview/etc/">etc</a><span class="category-list-count">1</span></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Java/">Java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Javascript/">Javascript</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Project/">Project</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/React/">React</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Tips/">Tips</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/">TIL</a><span class="category-list-count">145</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Algorithm-Quiz/">Algorithm & Quiz</a><span class="category-list-count">65</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript/">Javascript</a><span class="category-list-count">30</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a><span class="category-list-count">23</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/React/">React</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/React-Preview/">React-Preview</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/linux/">linux</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/etc/">etc</a><span class="category-list-count">1</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/">Develop</a><span class="category-list-count">36</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/CSS/">CSS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/GIT/">GIT</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/IT-Event/">IT Event</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Java/">Java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Javascript/">Javascript</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Project/">Project</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/React/">React</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Tips/">Tips</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/">TIL</a><span class="category-list-count">146</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Algorithm-Quiz/">Algorithm & Quiz</a><span class="category-list-count">65</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript/">Javascript</a><span class="category-list-count">30</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a><span class="category-list-count">23</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/React/">React</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/React-Preview/">React-Preview</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/linux/">linux</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/etc/">etc</a><span class="category-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -368,7 +634,7 @@ ga('send', 'pageview');
                             <a href="/2019/12/13/react-study-06/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/69938302-4345b500-1520-11ea-8436-26d69300e699.png)" alt="React 스터디 06" class="thumbnail-image"></span>
     
     
 </a>
@@ -376,8 +642,8 @@ ga('send', 'pageview');
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Develop/">Develop</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Develop/IT-Event/">IT Event</a></p>
-                            <p class="item-title"><a href="/2019/12/13/react-study-06/" class="title">react-study-06</a></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/React/">React</a></p>
+                            <p class="item-title"><a href="/2019/12/13/react-study-06/" class="title">React 스터디 06</a></p>
                             <p class="item-date"><time datetime="2019-12-13T12:43:45.000Z" itemprop="datePublished">2019-12-13</time></p>
                         </div>
                     </li>
@@ -481,7 +747,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
-            <a href="/tags/Ajax/" style="font-size: 11.05px;">Ajax</a> <a href="/tags/Array/" style="font-size: 11.58px;">Array</a> <a href="/tags/Array-Method/" style="font-size: 10.53px;">Array Method</a> <a href="/tags/Arrow-Function/" style="font-size: 10px;">Arrow Function</a> <a href="/tags/Async/" style="font-size: 10px;">Async</a> <a href="/tags/Async-Await/" style="font-size: 10px;">Async Await</a> <a href="/tags/Axios/" style="font-size: 10px;">Axios</a> <a href="/tags/BAEKJOON/" style="font-size: 13.16px;">BAEKJOON</a> <a href="/tags/Browser/" style="font-size: 10px;">Browser</a> <a href="/tags/CSS/" style="font-size: 16.32px;">CSS</a> <a href="/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/tags/Class/" style="font-size: 10px;">Class</a> <a href="/tags/Closer/" style="font-size: 10.53px;">Closer</a> <a href="/tags/Constructor/" style="font-size: 10px;">Constructor</a> <a href="/tags/Core-JavaScript/" style="font-size: 10px;">Core JavaScript</a> <a href="/tags/DOM/" style="font-size: 10.53px;">DOM</a> <a href="/tags/Date/" style="font-size: 10px;">Date</a> <a href="/tags/Document-Object-Model/" style="font-size: 10.53px;">Document Object Model</a> <a href="/tags/ESLint/" style="font-size: 10px;">ESLint</a> <a href="/tags/Event/" style="font-size: 10.53px;">Event</a> <a href="/tags/Fetch/" style="font-size: 10px;">Fetch</a> <a href="/tags/Git-GUI/" style="font-size: 10.53px;">Git GUI</a> <a href="/tags/HOF/" style="font-size: 12.63px;">HOF</a> <a href="/tags/HTML/" style="font-size: 16.84px;">HTML</a> <a href="/tags/HotKey/" style="font-size: 10px;">HotKey</a> <a href="/tags/JAVA/" style="font-size: 13.68px;">JAVA</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/MarkUP/" style="font-size: 10px;">MarkUP</a> <a href="/tags/Math/" style="font-size: 10px;">Math</a> <a href="/tags/Method/" style="font-size: 11.58px;">Method</a> <a href="/tags/Module/" style="font-size: 10px;">Module</a> <a href="/tags/Number/" style="font-size: 10px;">Number</a> <a href="/tags/OS/" style="font-size: 12.11px;">OS</a> <a href="/tags/Object/" style="font-size: 12.11px;">Object</a> <a href="/tags/Poiema/" style="font-size: 15.26px;">Poiema</a> <a href="/tags/Primary-value/" style="font-size: 10px;">Primary value</a> <a href="/tags/Programmers/" style="font-size: 15.79px;">Programmers</a> <a href="/tags/Project/" style="font-size: 10.53px;">Project</a> <a href="/tags/Promise/" style="font-size: 11.58px;">Promise</a> <a href="/tags/Property/" style="font-size: 11.05px;">Property</a> <a href="/tags/Prototype/" style="font-size: 10px;">Prototype</a> <a href="/tags/Quiz/" style="font-size: 12.63px;">Quiz</a> <a href="/tags/REST/" style="font-size: 10.53px;">REST</a> <a href="/tags/REST-API/" style="font-size: 10px;">REST API</a> <a href="/tags/Rapper/" style="font-size: 10px;">Rapper</a> <a href="/tags/Rapper-Object/" style="font-size: 10px;">Rapper Object</a> <a href="/tags/React/" style="font-size: 14.21px;">React</a> <a href="/tags/React-Official-Document/" style="font-size: 10.53px;">React Official Document</a> <a href="/tags/RegExr/" style="font-size: 10.53px;">RegExr</a> <a href="/tags/Scope/" style="font-size: 10px;">Scope</a> <a href="/tags/Selector/" style="font-size: 10px;">Selector</a> <a href="/tags/SourceTree/" style="font-size: 10.53px;">SourceTree</a> <a href="/tags/Spread/" style="font-size: 10px;">Spread</a> <a href="/tags/Strict-Mode/" style="font-size: 10px;">Strict Mode</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Symbol/" style="font-size: 10px;">Symbol</a> <a href="/tags/TIL/" style="font-size: 18.42px;">TIL</a> <a href="/tags/Todo/" style="font-size: 14.74px;">Todo</a> <a href="/tags/VSCode/" style="font-size: 11.05px;">VSCode</a> <a href="/tags/VScode/" style="font-size: 10px;">VScode</a> <a href="/tags/VisualStudio-Code/" style="font-size: 11.05px;">VisualStudio Code</a> <a href="/tags/Web/" style="font-size: 18.95px;">Web</a> <a href="/tags/Web-Clone/" style="font-size: 10px;">Web Clone</a> <a href="/tags/Web-clone/" style="font-size: 10px;">Web clone</a> <a href="/tags/algorithm/" style="font-size: 17.37px;">algorithm</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/browser-operation/" style="font-size: 10px;">browser operation</a> <a href="/tags/coding/" style="font-size: 20px;">coding</a> <a href="/tags/daily-test/" style="font-size: 11.05px;">daily test</a> <a href="/tags/develop/" style="font-size: 17.89px;">develop</a> <a href="/tags/first-class-Object/" style="font-size: 10px;">first-class Object</a> <a href="/tags/flow/" style="font-size: 10px;">flow</a> <a href="/tags/function/" style="font-size: 10.53px;">function</a> <a href="/tags/git/" style="font-size: 14.21px;">git</a> <a href="/tags/hexo/" style="font-size: 10.53px;">hexo</a> <a href="/tags/inline-block/" style="font-size: 10px;">inline-block</a> <a href="/tags/interview/" style="font-size: 10px;">interview</a> <a href="/tags/iteration/" style="font-size: 10px;">iteration</a> <a href="/tags/javascript/" style="font-size: 19.47px;">javascript</a> <a href="/tags/linux/" style="font-size: 12.11px;">linux</a> <a href="/tags/linux-command/" style="font-size: 10px;">linux command</a> <a href="/tags/project/" style="font-size: 10px;">project</a> <a href="/tags/prototype/" style="font-size: 10px;">prototype</a> <a href="/tags/terminal/" style="font-size: 10px;">terminal</a> <a href="/tags/test/" style="font-size: 10.53px;">test</a> <a href="/tags/this/" style="font-size: 10px;">this</a> <a href="/tags/unix/" style="font-size: 11.58px;">unix</a>
+            <a href="/tags/Ajax/" style="font-size: 11.05px;">Ajax</a> <a href="/tags/Array/" style="font-size: 11.58px;">Array</a> <a href="/tags/Array-Method/" style="font-size: 10.53px;">Array Method</a> <a href="/tags/Arrow-Function/" style="font-size: 10px;">Arrow Function</a> <a href="/tags/Async/" style="font-size: 10px;">Async</a> <a href="/tags/Async-Await/" style="font-size: 10px;">Async Await</a> <a href="/tags/Axios/" style="font-size: 10px;">Axios</a> <a href="/tags/BAEKJOON/" style="font-size: 13.16px;">BAEKJOON</a> <a href="/tags/Browser/" style="font-size: 10px;">Browser</a> <a href="/tags/CSS/" style="font-size: 16.32px;">CSS</a> <a href="/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/tags/Class/" style="font-size: 10px;">Class</a> <a href="/tags/Closer/" style="font-size: 10.53px;">Closer</a> <a href="/tags/Constructor/" style="font-size: 10px;">Constructor</a> <a href="/tags/Core-JavaScript/" style="font-size: 10px;">Core JavaScript</a> <a href="/tags/DOM/" style="font-size: 10.53px;">DOM</a> <a href="/tags/Date/" style="font-size: 10px;">Date</a> <a href="/tags/Document-Object-Model/" style="font-size: 10.53px;">Document Object Model</a> <a href="/tags/ESLint/" style="font-size: 10px;">ESLint</a> <a href="/tags/Event/" style="font-size: 10.53px;">Event</a> <a href="/tags/Fetch/" style="font-size: 10px;">Fetch</a> <a href="/tags/Git-GUI/" style="font-size: 10.53px;">Git GUI</a> <a href="/tags/HOF/" style="font-size: 12.63px;">HOF</a> <a href="/tags/HTML/" style="font-size: 16.84px;">HTML</a> <a href="/tags/HotKey/" style="font-size: 10px;">HotKey</a> <a href="/tags/JAVA/" style="font-size: 13.68px;">JAVA</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/MarkUP/" style="font-size: 10px;">MarkUP</a> <a href="/tags/Math/" style="font-size: 10px;">Math</a> <a href="/tags/Method/" style="font-size: 11.58px;">Method</a> <a href="/tags/Module/" style="font-size: 10px;">Module</a> <a href="/tags/Number/" style="font-size: 10px;">Number</a> <a href="/tags/OS/" style="font-size: 12.11px;">OS</a> <a href="/tags/Object/" style="font-size: 12.11px;">Object</a> <a href="/tags/Poiema/" style="font-size: 15.26px;">Poiema</a> <a href="/tags/Primary-value/" style="font-size: 10px;">Primary value</a> <a href="/tags/Programmers/" style="font-size: 15.79px;">Programmers</a> <a href="/tags/Project/" style="font-size: 10.53px;">Project</a> <a href="/tags/Promise/" style="font-size: 11.58px;">Promise</a> <a href="/tags/Property/" style="font-size: 11.05px;">Property</a> <a href="/tags/Prototype/" style="font-size: 10px;">Prototype</a> <a href="/tags/Quiz/" style="font-size: 12.63px;">Quiz</a> <a href="/tags/REST/" style="font-size: 10.53px;">REST</a> <a href="/tags/REST-API/" style="font-size: 10px;">REST API</a> <a href="/tags/Rapper/" style="font-size: 10px;">Rapper</a> <a href="/tags/Rapper-Object/" style="font-size: 10px;">Rapper Object</a> <a href="/tags/React/" style="font-size: 14.21px;">React</a> <a href="/tags/React-Official-Document/" style="font-size: 10.53px;">React Official Document</a> <a href="/tags/RegExr/" style="font-size: 10.53px;">RegExr</a> <a href="/tags/Scope/" style="font-size: 10px;">Scope</a> <a href="/tags/Selector/" style="font-size: 10px;">Selector</a> <a href="/tags/SourceTree/" style="font-size: 10.53px;">SourceTree</a> <a href="/tags/Spread/" style="font-size: 10px;">Spread</a> <a href="/tags/Strict-Mode/" style="font-size: 10px;">Strict Mode</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Symbol/" style="font-size: 10px;">Symbol</a> <a href="/tags/TIL/" style="font-size: 18.42px;">TIL</a> <a href="/tags/Todo/" style="font-size: 14.74px;">Todo</a> <a href="/tags/VSCode/" style="font-size: 11.05px;">VSCode</a> <a href="/tags/VScode/" style="font-size: 10px;">VScode</a> <a href="/tags/VisualStudio-Code/" style="font-size: 11.05px;">VisualStudio Code</a> <a href="/tags/Web/" style="font-size: 18.95px;">Web</a> <a href="/tags/Web-Clone/" style="font-size: 10px;">Web Clone</a> <a href="/tags/Web-clone/" style="font-size: 10px;">Web clone</a> <a href="/tags/algorithm/" style="font-size: 17.37px;">algorithm</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/browser-operation/" style="font-size: 10px;">browser operation</a> <a href="/tags/coding/" style="font-size: 20px;">coding</a> <a href="/tags/daily-test/" style="font-size: 11.05px;">daily test</a> <a href="/tags/develop/" style="font-size: 17.89px;">develop</a> <a href="/tags/first-class-Object/" style="font-size: 10px;">first-class Object</a> <a href="/tags/flow/" style="font-size: 10px;">flow</a> <a href="/tags/function/" style="font-size: 10.53px;">function</a> <a href="/tags/git/" style="font-size: 14.21px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/inline-block/" style="font-size: 10px;">inline-block</a> <a href="/tags/interview/" style="font-size: 10px;">interview</a> <a href="/tags/iteration/" style="font-size: 10px;">iteration</a> <a href="/tags/javascript/" style="font-size: 19.47px;">javascript</a> <a href="/tags/linux/" style="font-size: 12.11px;">linux</a> <a href="/tags/linux-command/" style="font-size: 10px;">linux command</a> <a href="/tags/project/" style="font-size: 10px;">project</a> <a href="/tags/prototype/" style="font-size: 10px;">prototype</a> <a href="/tags/terminal/" style="font-size: 10px;">terminal</a> <a href="/tags/test/" style="font-size: 10.53px;">test</a> <a href="/tags/this/" style="font-size: 10px;">this</a> <a href="/tags/unix/" style="font-size: 11.58px;">unix</a>
         </div>
     </div>
 
