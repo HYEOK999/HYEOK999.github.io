@@ -12,18 +12,20 @@
     
         <meta name="keywords" content="Web,coding,develop,HTML,CSS,javascript,React">
     
-    <meta name="description" content="HYEOK999&apos;s IT Develop Blog">
+    <meta name="description" content="React with Velopert - 03 - props 를 통해 컴포넌트에게 값 전달하기  props 란 ?  props의 기본 사용법 여러개의 props, 비구조화 할당(디스트럭처링) defaultProps 로 기본값 설정 props.children     조건부 렌더링  예제 : 특정 props의 값이 true 또는 false 에 따라서 컴포넌트">
 <meta name="keywords" content="Web,coding,develop,HTML,CSS,javascript,React">
 <meta property="og:type" content="article">
 <meta property="og:title" content="props를 통해 컴포넌트에게 값 전달하기">
 <meta property="og:url" content="https://hyeok999.github.io/2019/12/17/react-velo-03/index.html">
 <meta property="og:site_name" content="HYEOK999&#39;s Blog">
-<meta property="og:description" content="HYEOK999&apos;s IT Develop Blog">
+<meta property="og:description" content="React with Velopert - 03 - props 를 통해 컴포넌트에게 값 전달하기  props 란 ?  props의 기본 사용법 여러개의 props, 비구조화 할당(디스트럭처링) defaultProps 로 기본값 설정 props.children     조건부 렌더링  예제 : 특정 props의 값이 true 또는 false 에 따라서 컴포넌트">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-12-17T13:57:56.350Z">
+<meta property="og:image" content="https://user-images.githubusercontent.com/31315644/70208176-328b7e00-1770-11ea-80d4-4658832d5d5f.jpg">
+<meta property="og:updated_time" content="2019-12-17T13:59:50.334Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="props를 통해 컴포넌트에게 값 전달하기">
-<meta name="twitter:description" content="HYEOK999&apos;s IT Develop Blog">
+<meta name="twitter:description" content="React with Velopert - 03 - props 를 통해 컴포넌트에게 값 전달하기  props 란 ?  props의 기본 사용법 여러개의 props, 비구조화 할당(디스트럭처링) defaultProps 로 기본값 설정 props.children     조건부 렌더링  예제 : 특정 props의 값이 true 또는 false 에 따라서 컴포넌트">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/31315644/70208176-328b7e00-1770-11ea-80d4-4658832d5d5f.jpg">
     
     <link rel="canonical" href="https://hyeok999.github.io/2019/12/17/react-velo-03/">
     
@@ -191,14 +193,128 @@ ga('send', 'pageview');
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <p><img src="https://user-images.githubusercontent.com/31315644/70208176-328b7e00-1770-11ea-80d4-4658832d5d5f.jpg" alt="atom"></p>
+<hr>
+<h2 id="React-with-Velopert-03"><a href="#React-with-Velopert-03" class="headerlink" title="React with Velopert - 03 -"></a>React with Velopert - 03 -</h2><ul>
+<li><p>props 를 통해 컴포넌트에게 값 전달하기</p>
+<ul>
+<li><p>props 란 ?</p>
+<ul>
+<li><a href="#b1">props의 기본 사용법</a></li>
+<li><a href="#b2">여러개의 props, 비구조화 할당(디스트럭처링)</a></li>
+<li><a href="#b3">defaultProps 로 기본값 설정</a></li>
+<li><a href="#b4">props.children</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>조건부 렌더링</p>
+<ul>
+<li><a href="#a0">예제 : 특정 props의 값이 true 또는 false 에 따라서 컴포넌트의 좌측에 *표시하기.</a></li>
+<li><a href="#a1">props 값 설정을 생략하면 ={true}</a></li>
+</ul>
+</li>
+</ul>
+<br>
+
+<hr>
+<h1 id="Chap-3-props-조건부-렌더링"><a href="#Chap-3-props-조건부-렌더링" class="headerlink" title="Chap 3. props , 조건부 렌더링"></a>Chap 3. props , 조건부 렌더링</h1><h2 id="props-를-통해-컴포넌트에게-값-전달하기"><a href="#props-를-통해-컴포넌트에게-값-전달하기" class="headerlink" title="props 를 통해 컴포넌트에게 값 전달하기"></a>props 를 통해 컴포넌트에게 값 전달하기</h2><br>
+
+<h3 id="props-란"><a href="#props-란" class="headerlink" title="props 란 ?"></a>props 란 ?</h3><blockquote>
+<p>properties의 줄임말 </p>
+<p>어떠한 값을 컴포넌트에게 전달할 때 사용.</p>
+</blockquote>
+<br>
+
+<h4 id="props의-기본-사용법"><a href="#props의-기본-사용법" class="headerlink" title="props의 기본 사용법 "></a>props의 기본 사용법 <a id="#b1"></a></h4><p><code>name</code> 속성 값 전달하기.</p>
+<p>App 컴포넌트 ⇢ Hello 컴포넌트 </p>
+<p>src &gt; App.js</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> Hello <span class="keyword">from</span> <span class="string">'./Hello'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">App</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;Hello name=<span class="string">"react"</span> /&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> App;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p>src &gt; Hello.js</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Hello</span>(<span class="params">props</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>안녕하세요 &#123;props.name&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> Hello;</span><br></pre></td></tr></table></figure>
+
+<p>컴포넌트에게 전달되는 props 는 파라미터를 통하여 조회 할 수 있다. </p>
+<p><strong>props 는 객체 형태로 전달</strong>되며, 만약 <code>name</code> 값을 조회하고 싶다면 <code>props.name</code> 을 조회하면 된다.</p>
+<p><img src="https://user-images.githubusercontent.com/31315644/70218498-6e314280-1786-11ea-81af-3977c884a99d.jpeg" alt="결과"></p>
+<br>
+
+<h4 id="여러개의-props-비구조화-할당-디스트럭처링"><a href="#여러개의-props-비구조화-할당-디스트럭처링" class="headerlink" title="여러개의 props, 비구조화 할당(디스트럭처링) "></a>여러개의 props, 비구조화 할당(디스트럭처링) <a id="#b2"></a></h4><p>App 컴포넌트 ⇢ Hello 컴포넌트 </p>
+<p>src &gt; App.js</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> Hello <span class="keyword">from</span> <span class="string">'./Hello'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">App</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;Hello name=<span class="string">"react"</span> color=<span class="string">"red"</span>/&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> App;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p>src &gt; Hello.js</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Hello</span>(<span class="params">&#123;color, name&#125;</span>) </span>&#123;</span><br><span class="line">  &#123;<span class="comment">/* 기본</span></span><br><span class="line"><span class="comment">  return &lt;div style=&#123;&#123; color: props.color &#125;&#125;&gt;안녕하세요 &#123;props.name&#125;&lt;/div&gt;  </span></span><br><span class="line"><span class="comment">  */</span>&#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&#123;&#123;</span> <span class="attr">color</span> &#125;&#125;&gt;</span>안녕하세요 &#123;name&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span> &#123;<span class="comment">/* 비구조화 할당 디스트럭처링 */</span>&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> Hello;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="defaultProps-로-기본값-설정"><a href="#defaultProps-로-기본값-설정" class="headerlink" title="defaultProps 로 기본값 설정 "></a>defaultProps 로 기본값 설정 <a id="#b3"></a></h4><p>App 컴포넌트 ⇢ Hello 컴포넌트 </p>
+<p>src &gt; App.js</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> Hello <span class="keyword">from</span> <span class="string">'./Hello'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">App</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;&gt;</span><br><span class="line">      &lt;Hello name=<span class="string">"react"</span> color=<span class="string">"red"</span>/&gt;</span><br><span class="line">      &lt;Hello color=<span class="string">"pink"</span>/&gt;</span><br><span class="line">    &lt;<span class="regexp">/&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">export default App;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p>src &gt; Hello.js</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Hello</span>(<span class="params">&#123; color, name &#125;</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&#123;&#123;</span> <span class="attr">color</span> &#125;&#125;&gt;</span>안녕하세요 &#123;name&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Hello.defaultProps = &#123;</span><br><span class="line">  name: <span class="string">'이름없음'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> Hello;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://user-images.githubusercontent.com/31315644/70218495-6d98ac00-1786-11ea-9c6e-ea7a5f5d1186.jpeg" alt="결과"></p>
+<br>
+
+<h4 id="props-children"><a href="#props-children" class="headerlink" title="props.children "></a>props.children <a id="#b4"></a></h4><p>컴포넌트 태그 사이에 넣은 값을 조회하고 싶을 땐, <code>props.children</code> 을 조회하면 된다.</p>
+<p><strong>먼저 아래와 같이 작성했을 경우 Hello Component가 보이지 않는다.</strong></p>
+<p>App 컴포넌트 ⇢ Hello 컴포넌트 </p>
+<p>src &gt; Wrapper.js</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Wrapper</span>(<span class="params">&#123; children &#125;</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> style = &#123;</span><br><span class="line">    border: <span class="string">'2px solid black'</span>,</span><br><span class="line">    padding: <span class="string">'16px'</span>,</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div style=&#123;style&#125;&gt;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  )</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">export default Wrapper;</span></span><br></pre></td></tr></table></figure>
+
+<p>src &gt; App.js</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> Hello <span class="keyword">from</span> <span class="string">'./Hello'</span>;</span><br><span class="line"><span class="keyword">import</span> Wrapper <span class="keyword">from</span> <span class="string">'./Wrapper'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">App</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;Wrapper&gt;</span><br><span class="line">      &lt;Hello name=<span class="string">"react"</span> color=<span class="string">"red"</span>/&gt;</span><br><span class="line">      &lt;Hello color=<span class="string">"pink"</span>/&gt;</span><br><span class="line">    &lt;<span class="regexp">/Wrapper&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">export default App;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p>내부의 내용이 보여지게 하기 위해서는 Wrapper 에서 <code>props.children</code> 을 렌더링 해야만 한다.</p>
+<p>src &gt; Wrapper.js</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Wrapper</span>(<span class="params">&#123; children &#125;</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> style = &#123;</span><br><span class="line">    border: <span class="string">'2px solid black'</span>,</span><br><span class="line">    padding: <span class="string">'16px'</span>,</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div style=&#123;style&#125;&gt;</span><br><span class="line">   		&#123;children&#125;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  )</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">export default Wrapper;</span></span><br></pre></td></tr></table></figure>
+
+<p>src &gt; App.js</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> Hello <span class="keyword">from</span> <span class="string">'./Hello'</span>;</span><br><span class="line"><span class="keyword">import</span> Wrapper <span class="keyword">from</span> <span class="string">'./Wrapper'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">App</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;Wrapper&gt;</span><br><span class="line">      &lt;Hello name=<span class="string">"react"</span> color=<span class="string">"red"</span>/&gt;</span><br><span class="line">      &lt;Hello color=<span class="string">"pink"</span>/&gt;</span><br><span class="line">    &lt;<span class="regexp">/Wrapper&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">export default App;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h2 id="조건부-렌더링"><a href="#조건부-렌더링" class="headerlink" title="조건부 렌더링"></a>조건부 렌더링</h2><blockquote>
+<p>특정 조건에 따라 다른 결과물을 렌더링 하는 것.</p>
+</blockquote>
+<h4 id="예제-특정-props의-값이-true-또는-false-에-따라서-컴포넌트의-좌측에-표시하기"><a href="#예제-특정-props의-값이-true-또는-false-에-따라서-컴포넌트의-좌측에-표시하기" class="headerlink" title="예제 : 특정 props의 값이 true 또는 false 에 따라서 컴포넌트의 좌측에 *표시하기."></a>예제 : 특정 props의 값이 true 또는 false 에 따라서 컴포넌트의 좌측에 *표시하기.<a id="a0"></a></h4><p>src &gt; App.js</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> Hello <span class="keyword">from</span> <span class="string">'./Hello'</span>;</span><br><span class="line"><span class="keyword">import</span> Wrapper <span class="keyword">from</span> <span class="string">'./Wrapper'</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">App</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;Wrapper&gt;</span><br><span class="line">      &lt;Hello name=<span class="string">"react"</span> color=<span class="string">"red"</span> isSpecial=&#123;<span class="literal">true</span>&#125;/&gt;</span><br><span class="line">      &lt;Hello color=<span class="string">"pink"</span> /&gt;</span><br><span class="line">    &lt;<span class="regexp">/Wrapper&gt;</span></span><br><span class="line"><span class="regexp">  )</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">export default App;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p>src &gt; Hello.js</p>
+<p>Hello 컴포넌트에서는 isSpecial 이 <code>true</code> 이냐 <code>false</code> 이냐에 따라서 컴포넌트의 좌측에 * 표시한다.</p>
+<p>참고로 JSX 에서 null, false, undefined 를 렌더링하게 된다면 아무것도 나타나지 않게 된다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Hello</span>(<span class="params">&#123; color, name, isSpecial &#125;</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div style=&#123;&#123; color &#125;&#125;&gt;</span><br><span class="line">      &#123; isSpecial ? <span class="xml"><span class="tag">&lt;<span class="name">b</span>&gt;</span>*<span class="tag">&lt;/<span class="name">b</span>&gt;</span></span> : <span class="literal">null</span> &#125;</span><br><span class="line">      안녕하세요 &#123;name&#125;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>보통 삼항연산자를 사용한 조건부 렌더링을 주로 특정 조건에 따라 보여줘야 하는 내용이 다를 때 사용</strong></p>
+<p>아래처럼 <code>&amp;&amp;</code>를 사용한 단축평가를 활용 할 수 도 있다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div style=&#123;&#123; color &#125;&#125;&gt;</span><br><span class="line">  &#123;isSpecial &amp;&amp; <span class="xml"><span class="tag">&lt;<span class="name">b</span>&gt;</span>*<span class="tag">&lt;/<span class="name">b</span>&gt;</span></span>&#125;</span><br><span class="line">  안녕하세요 &#123;name&#125;</span><br><span class="line">&lt;<span class="regexp">/div&gt;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="props-값-설정을-생략하면-true"><a href="#props-값-설정을-생략하면-true" class="headerlink" title="props 값 설정을 생략하면 ={true} "></a>props 값 설정을 생략하면 ={true} <a id="a1"></a></h4><p>컴포넌트의 props 값을 설정하게 될 때 만약 props 이름만 작성하고 값 설정을 생략한다면, 이를 <code>true</code> 로 설정한 것으로 간주한다.</p>
+<p>src &gt; App.js</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> Hello <span class="keyword">from</span> <span class="string">'./Hello'</span>;</span><br><span class="line"><span class="keyword">import</span> Wrapper <span class="keyword">from</span> <span class="string">'./Wrapper'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">App</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;Wrapper&gt;</span><br><span class="line">      &lt;Hello name=<span class="string">"react"</span> color=<span class="string">"red"</span> isSpecial /&gt;</span><br><span class="line">      &lt;Hello color=<span class="string">"pink"</span>/&gt;</span><br><span class="line">    &lt;<span class="regexp">/Wrapper&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">export default App;</span></span><br></pre></td></tr></table></figure>
+
+
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="https://hyeok999.github.io/2019/12/17/react-velo-03/" data-id="ck49xmknr01bemzz0tsyt9hk6" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://hyeok999.github.io/2019/12/17/react-velo-03/" data-id="ck49xoye600gvpzz03hpn5tmy" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -269,15 +385,32 @@ ga('send', 'pageview');
             "name": "Jun Hyeok Kim"
         },
         "headline": "props를 통해 컴포넌트에게 값 전달하기",
-        "image": "https://hyeok999.github.io",
+        "image": "https://hyeok999.github.iohttps://user-images.githubusercontent.com/31315644/70208176-328b7e00-1770-11ea-80d4-4658832d5d5f.jpg",
         "keywords": "Web coding develop HTML CSS javascript React",
         "genre": "TIL React-Preview",
         "datePublished": "2019-12-17",
         "dateCreated": "2019-12-17",
         "dateModified": "2019-12-17",
         "url": "https://hyeok999.github.io/2019/12/17/react-velo-03/",
-        "description": "",
-        "wordCount": 1
+        "description": "
+
+React with Velopert - 03 -
+props 를 통해 컴포넌트에게 값 전달하기
+
+props 란 ?
+
+props의 기본 사용법
+여러개의 props, 비구조화 할당(디스트럭처링)
+defaultProps 로 기본값 설정
+props.children
+
+
+
+
+조건부 렌더링
+
+예제 : 특정 props의 값이 true 또는 false 에 따라서 컴포넌트",
+        "wordCount": 1452
     }
 </script>
 
@@ -368,7 +501,7 @@ ga('send', 'pageview');
                             <a href="/2019/12/17/react-velo-03/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/70208176-328b7e00-1770-11ea-80d4-4658832d5d5f.jpg)" alt="props를 통해 컴포넌트에게 값 전달하기" class="thumbnail-image"></span>
     
     
 </a>
