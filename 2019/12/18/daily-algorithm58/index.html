@@ -12,18 +12,20 @@
     
         <meta name="keywords" content="coding,TIL,algorithm,javascript,Programmers">
     
-    <meta name="description" content="HYEOK999&apos;s IT Develop Blog">
+    <meta name="description" content="짝수와 홀수문제 설명정수 num이 짝수일 경우 Even을 반환하고 홀수인 경우 Odd를 반환하는 함수, solution을 완성해주세요. 제한 조건 num은 int 범위의 정수입니다. 0은 짝수입니다.  입출력 예   num return    3 Odd   4 Even    123function solution(num) &amp;#123;    return nu">
 <meta name="keywords" content="coding,TIL,algorithm,javascript,Programmers">
 <meta property="og:type" content="article">
 <meta property="og:title" content="daily_algorithm58">
 <meta property="og:url" content="https://hyeok999.github.io/2019/12/18/daily-algorithm58/index.html">
 <meta property="og:site_name" content="HYEOK999&#39;s Blog">
-<meta property="og:description" content="HYEOK999&apos;s IT Develop Blog">
+<meta property="og:description" content="짝수와 홀수문제 설명정수 num이 짝수일 경우 Even을 반환하고 홀수인 경우 Odd를 반환하는 함수, solution을 완성해주세요. 제한 조건 num은 int 범위의 정수입니다. 0은 짝수입니다.  입출력 예   num return    3 Odd   4 Even    123function solution(num) &amp;#123;    return nu">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-12-18T14:44:22.866Z">
+<meta property="og:image" content="https://images.velog.io/post-images/leejh3224/619516b0-e892-11e8-98f5-997ef3c38110/what-is-an-algorithm-featured.png">
+<meta property="og:updated_time" content="2019-12-18T14:46:53.598Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="daily_algorithm58">
-<meta name="twitter:description" content="HYEOK999&apos;s IT Develop Blog">
+<meta name="twitter:description" content="짝수와 홀수문제 설명정수 num이 짝수일 경우 Even을 반환하고 홀수인 경우 Odd를 반환하는 함수, solution을 완성해주세요. 제한 조건 num은 int 범위의 정수입니다. 0은 짝수입니다.  입출력 예   num return    3 Odd   4 Even    123function solution(num) &amp;#123;    return nu">
+<meta name="twitter:image" content="https://images.velog.io/post-images/leejh3224/619516b0-e892-11e8-98f5-997ef3c38110/what-is-an-algorithm-featured.png">
     
     <link rel="canonical" href="https://hyeok999.github.io/2019/12/18/daily-algorithm58/">
     
@@ -191,14 +193,73 @@ ga('send', 'pageview');
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <p><img src="https://images.velog.io/post-images/leejh3224/619516b0-e892-11e8-98f5-997ef3c38110/what-is-an-algorithm-featured.png" alt></p>
+<hr>
+<h3 id="짝수와-홀수"><a href="#짝수와-홀수" class="headerlink" title="짝수와 홀수"></a>짝수와 홀수</h3><h6 id="문제-설명"><a href="#문제-설명" class="headerlink" title="문제 설명"></a>문제 설명</h6><p>정수 num이 짝수일 경우 Even을 반환하고 홀수인 경우 Odd를 반환하는 함수, solution을 완성해주세요.</p>
+<h5 id="제한-조건"><a href="#제한-조건" class="headerlink" title="제한 조건"></a>제한 조건</h5><ul>
+<li>num은 int 범위의 정수입니다.</li>
+<li>0은 짝수입니다.</li>
+</ul>
+<h5 id="입출력-예"><a href="#입출력-예" class="headerlink" title="입출력 예"></a>입출력 예</h5><table>
+<thead>
+<tr>
+<th>num</th>
+<th align="center">return</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>3</td>
+<td align="center">Odd</td>
+</tr>
+<tr>
+<td>4</td>
+<td align="center">Even</td>
+</tr>
+</tbody></table>
+<hr>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">solution</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> num % <span class="number">2</span> ? <span class="string">'Odd'</span> : <span class="string">'Even'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<br>
+
+<br>
+
+<hr>
+<h3 id="평균-구하기"><a href="#평균-구하기" class="headerlink" title="평균 구하기"></a>평균 구하기</h3><h6 id="문제-설명-1"><a href="#문제-설명-1" class="headerlink" title="문제 설명"></a>문제 설명</h6><p>정수를 담고 있는 배열 arr의 평균값을 return하는 함수, solution을 완성해보세요.</p>
+<h4 id="제한사항"><a href="#제한사항" class="headerlink" title="제한사항"></a>제한사항</h4><ul>
+<li>arr은 길이 1 이상, 100 이하인 배열입니다.</li>
+<li>arr의 원소는 -10,000 이상 10,000 이하인 정수입니다.</li>
+</ul>
+<h4 id="입출력-예-1"><a href="#입출력-예-1" class="headerlink" title="입출력 예"></a>입출력 예</h4><table>
+<thead>
+<tr>
+<th>arr</th>
+<th align="center">return</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>[1,2,3,4]</td>
+<td align="center">2.5</td>
+</tr>
+<tr>
+<td>[5,5]</td>
+<td align="center">5</td>
+</tr>
+</tbody></table>
+<hr>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">solution</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function">(<span class="params">arr.reduce((sum,cur</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> sum + cur</span><br><span class="line">    &#125;)/arr.length);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="https://hyeok999.github.io/2019/12/18/daily-algorithm58/" data-id="ck4beq0pi006l4vz09wpr19yq" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://hyeok999.github.io/2019/12/18/daily-algorithm58/" data-id="ck4betahh006o7qz0dk2uyyqw" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -269,15 +330,39 @@ ga('send', 'pageview');
             "name": "Jun Hyeok Kim"
         },
         "headline": "daily_algorithm58",
-        "image": "https://hyeok999.github.io",
+        "image": "https://hyeok999.github.iohttps://images.velog.io/post-images/leejh3224/619516b0-e892-11e8-98f5-997ef3c38110/what-is-an-algorithm-featured.png",
         "keywords": "coding TIL algorithm javascript Programmers",
         "genre": "TIL Algorithm & Quiz",
         "datePublished": "2019-12-18",
         "dateCreated": "2019-12-18",
         "dateModified": "2019-12-18",
         "url": "https://hyeok999.github.io/2019/12/18/daily-algorithm58/",
-        "description": "",
-        "wordCount": 1
+        "description": "
+
+짝수와 홀수문제 설명정수 num이 짝수일 경우 Even을 반환하고 홀수인 경우 Odd를 반환하는 함수, solution을 완성해주세요.
+제한 조건
+num은 int 범위의 정수입니다.
+0은 짝수입니다.
+
+입출력 예
+
+
+num
+return
+
+
+
+3
+Odd
+
+
+4
+Even
+
+
+
+123function solution(num) &#123;    return nu",
+        "wordCount": 169
     }
 </script>
 
@@ -368,7 +453,7 @@ ga('send', 'pageview');
                             <a href="/2019/12/18/daily-algorithm58/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(https://images.velog.io/post-images/leejh3224/619516b0-e892-11e8-98f5-997ef3c38110/what-is-an-algorithm-featured.png)" alt="daily_algorithm58" class="thumbnail-image"></span>
     
     
 </a>
