@@ -12,18 +12,20 @@
     
         <meta name="keywords" content="git,Web,coding,develop,HTML,CSS,javascript,React">
     
-    <meta name="description" content="HYEOK999&apos;s IT Develop Blog">
+    <meta name="description" content="React Study 08 React에서 input 태그 value 와 defaultvalue 차이 Redux 리덕스 사용 이유 카운터 실습 폴더 구조 Actions 설정 src/actions/index.js   reducers 설정 카운터 리듀서 설정하기 src/reducers/counter.js   reducers 합치기 src/reducers/in">
 <meta name="keywords" content="git,Web,coding,develop,HTML,CSS,javascript,React">
 <meta property="og:type" content="article">
 <meta property="og:title" content="React 스터디 08">
 <meta property="og:url" content="https://hyeok999.github.io/2019/12/19/react-study-08/index.html">
 <meta property="og:site_name" content="HYEOK999&#39;s Blog">
-<meta property="og:description" content="HYEOK999&apos;s IT Develop Blog">
+<meta property="og:description" content="React Study 08 React에서 input 태그 value 와 defaultvalue 차이 Redux 리덕스 사용 이유 카운터 실습 폴더 구조 Actions 설정 src/actions/index.js   reducers 설정 카운터 리듀서 설정하기 src/reducers/counter.js   reducers 합치기 src/reducers/in">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-12-19T05:23:06.049Z">
+<meta property="og:image" content="https://user-images.githubusercontent.com/31315644/69938302-4345b500-1520-11ea-8436-26d69300e699.png">
+<meta property="og:updated_time" content="2019-12-19T05:24:57.561Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="React 스터디 08">
-<meta name="twitter:description" content="HYEOK999&apos;s IT Develop Blog">
+<meta name="twitter:description" content="React Study 08 React에서 input 태그 value 와 defaultvalue 차이 Redux 리덕스 사용 이유 카운터 실습 폴더 구조 Actions 설정 src/actions/index.js   reducers 설정 카운터 리듀서 설정하기 src/reducers/counter.js   reducers 합치기 src/reducers/in">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/31315644/69938302-4345b500-1520-11ea-8436-26d69300e699.png">
     
     <link rel="canonical" href="https://hyeok999.github.io/2019/12/19/react-study-08/">
     
@@ -191,14 +193,175 @@ ga('send', 'pageview');
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <p><img src="https://user-images.githubusercontent.com/31315644/69938302-4345b500-1520-11ea-8436-26d69300e699.png" alt="React"></p>
+<hr>
+<h1 id="React-Study-08"><a href="#React-Study-08" class="headerlink" title="React Study 08"></a>React Study 08</h1><ul>
+<li>React에서 input 태그 value 와 defaultvalue 차이</li>
+<li>Redux<ul>
+<li>리덕스 사용 이유</li>
+<li>카운터 실습<ul>
+<li>폴더 구조</li>
+<li>Actions 설정<ul>
+<li>src/actions/index.js</li>
+</ul>
+</li>
+<li>reducers 설정<ul>
+<li>카운터 리듀서 설정하기<ul>
+<li>src/reducers/counter.js</li>
+</ul>
+</li>
+<li>reducers 합치기<ul>
+<li>src/reducers/index.js</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>App.js 설정</li>
+<li>Counter.js 컴포넌트 구현<ul>
+<li>function mapStateToProps(state)</li>
+<li>function mapDispatchToProps(dispatch)</li>
+<li>connect(mapStateToProps, mapDispatchToProps)(Counter)<ul>
+<li>HOC</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>정리</li>
+<li>실행 순서</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Redux Dev Tools</li>
+</ul>
+<br>
+
+<hr>
+<br>
+
+<h3 id="용어-러버덕"><a href="#용어-러버덕" class="headerlink" title="용어 - ( 러버덕 )"></a>용어 - ( 러버덕 )</h3><ul>
+<li>Redux</li>
+<li>Actions</li>
+<li>Reducers</li>
+<li>Provider</li>
+<li>mapStateToProps(state)</li>
+<li>mapDispatchToProps(dispatch)</li>
+<li>HOC</li>
+<li>Redux Dev Tools</li>
+</ul>
+<br>
+
+<hr>
+<h3 id="React에서-input-태그-value-와-defaultvalue-차이"><a href="#React에서-input-태그-value-와-defaultvalue-차이" class="headerlink" title="React에서 input 태그 value 와 defaultvalue 차이"></a>React에서 input 태그 value 와 defaultvalue 차이</h3><p>기본 html에서 <code>&lt;input id=&#39;test&#39; value=&#39;hello&#39;&gt;</code> 라고 정의 했을 때, 여기에 ‘bye’라고 입력하여 value 값을 변경했다고 가정하자.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// input 값을 hello -&gt; bye 로 변환시</span></span><br><span class="line"><span class="keyword">var</span> test = <span class="built_in">document</span>.querySelector(<span class="string">'#test'</span>);</span><br><span class="line">test.value <span class="comment">// bye</span></span><br><span class="line">test.getAttribute(<span class="string">'value'</span>); <span class="comment">// hello</span></span><br></pre></td></tr></table></figure>
+
+<p><code>test.getAttribute(&#39;value&#39;);</code>를 찍었을 경우 초기값 <code>hello</code>가 나오게 된다.</p>
+<br>
+
+<p><strong>반면에 리액트에서는 다음과 같은 상태를 유지한다.</strong></p>
+<p><code>value</code> : 항상 최신의 값</p>
+<p><code>defaultValue</code> : 변경되기 전 최초의 값</p>
+<br>
+
+<h2 id="Redux"><a href="#Redux" class="headerlink" title="Redux"></a>Redux</h2><h3 id="리덕스-사용-이유"><a href="#리덕스-사용-이유" class="headerlink" title="리덕스 사용 이유"></a>리덕스 사용 이유</h3><p>컴포넌트 간의 데이터 교환의 필요성이 생김. </p>
+<p>따라서 리덕스라는 독립되어 있는 저장소(Redux)를 사용하기 위함.</p>
+<p>리덕스는 순수함수를 지향하기 때문에 Reducer라는 함수를 통해 순수함수를 유지하고자 함.</p>
+<p>스프레드 문법을 사용하여 기존의 상태를 유지한다.</p>
+<br>
+
+<h3 id="카운터-실습"><a href="#카운터-실습" class="headerlink" title="카운터 실습"></a>카운터 실습</h3><h4 id="폴더구조"><a href="#폴더구조" class="headerlink" title="폴더구조"></a>폴더구조</h4><img src="https://user-images.githubusercontent.com/31315644/71091816-3b0c9b80-21e9-11ea-881d-70b696d9bd1d.jpeg" alt="redux 폴더 구조" style="zoom:50%;">
+
+<h4 id="Actions-설정"><a href="#Actions-설정" class="headerlink" title="Actions 설정"></a>Actions 설정</h4><blockquote>
+<p>은행으로 가정했을 경우 입금명세표 등 할 일을 적어놓는 역할을 하는 Actions을 작성한다.</p>
+</blockquote>
+<p>App.js에서 실제로 사용하는 것은 리듀서가 아닌 리액트이다.</p>
+<h5 id="src-actions-index-js"><a href="#src-actions-index-js" class="headerlink" title="src/actions/index.js"></a>src/actions/index.js</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 리듀서에서 사용하기 위함.</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> ADD = <span class="string">'ADD'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 함수자체는 Action Creator, 실제로 사용하는 건 reducer가 아니라 특정 컴포넌트다. (예제 : counter)</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">val</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (&#123; <span class="attr">type</span> : ADD, val &#125;) <span class="comment">// &#123; type ~~~~~~ &#125;가 Action.</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>export const ADD = &#39;ADD&#39;;</code>는 Reducer에서 사용하기 위함이다. 이와같이 따로 export를 해두고 정의를 해주는 이유는 유지보수를 편하게 하기 위함이다.</p>
+<p>예를들어 <code>ADD</code> 가 변경될 경우 모든 곳에서 변경한다면 정말로 불편할 것이다. 따라서 action에서 정의만 바꿔주면 쉽게 유지보수할 수 있다.</p>
+<br>
+
+<h4 id="reducers-설정"><a href="#reducers-설정" class="headerlink" title="reducers 설정"></a>reducers 설정</h4><blockquote>
+<p>은행으로 가정했을 경우 Actions(입금 명세표)를 받아 일을 처리할 은행직원인 Reducers를 작성한다.</p>
+</blockquote>
+<br>
+
+<h5 id="카운터-리듀서-설정하기"><a href="#카운터-리듀서-설정하기" class="headerlink" title="카운터 리듀서 설정하기"></a>카운터 리듀서 설정하기</h5><h6 id="src-reducers-counter-js"><a href="#src-reducers-counter-js" class="headerlink" title="src/reducers/counter.js"></a>src/reducers/counter.js</h6><p>본격적으로 액션을 받아 데이터를 처리하는 카운팅 리듀서를 설정한다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; ADD &#125; <span class="keyword">from</span> <span class="string">'../actions'</span> <span class="comment">// 액션을 받아옴.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> INITIAL_STATE = &#123;</span><br><span class="line">  count: <span class="number">0</span>, <span class="comment">// 초기값</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">counter</span>(<span class="params">state = INITIAL_STATE, action</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">switch</span>(action.type) &#123;</span><br><span class="line">    <span class="keyword">case</span> ADD :</span><br><span class="line">      <span class="keyword">return</span> &#123;</span><br><span class="line">        ...state,</span><br><span class="line">        count: state.count + action.val</span><br><span class="line">      &#125; </span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">      <span class="keyword">return</span> state;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>특정 컴포넌트에서 <code>dispatch</code> 를 보내 받을 카운터 리듀서를 설정한다.</p>
+<br>
+
+<h5 id="reducers-합치기"><a href="#reducers-합치기" class="headerlink" title="reducers 합치기"></a>reducers 합치기</h5><h6 id="src-reducers-index-js"><a href="#src-reducers-index-js" class="headerlink" title="src/reducers/index.js"></a>src/reducers/index.js</h6><p>Reducers를 통합적으로 사용하기 위해 하나의 리듀서로 묶어서 사용한다. 즉, 통합된 리듀서들을 export해주기 위함이다.</p>
+<p>Reducers마다 불러내는 것을 방지하기 위해서 사용한다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; combineReducers &#125; <span class="keyword">from</span> <span class="string">'redux'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> counter <span class="keyword">from</span> <span class="string">'./counter'</span></span><br><span class="line"><span class="comment">// import video from './video'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 리듀서가 통합된다.</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> combineReducers(&#123;</span><br><span class="line">  counter, <span class="comment">// 리듀서명</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p><code>combineReducers</code>은 redux에서 제공된다. </p>
+<p>리듀서들을 모아 하나의 리듀서로 통합시킨다.</p>
+<br>
+
+<h4 id="App-js-설정"><a href="#App-js-설정" class="headerlink" title="App.js 설정"></a>App.js 설정</h4><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; Provider &#125; <span class="keyword">from</span> <span class="string">'react-redux'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; createStore &#125; <span class="keyword">from</span> <span class="string">'redux'</span>;</span><br><span class="line"><span class="keyword">import</span> reducers <span class="keyword">from</span> <span class="string">'./reducers'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> Counter <span class="keyword">from</span> <span class="string">'./Counter'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">App</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;Provider store=&#123;createStore(reducers, <span class="built_in">window</span>.__REDUX_DEVTOOLS_EXTENSION__ &amp;&amp; <span class="built_in">window</span>.__REDUX_DEVTOOLS_EXTENSION__())&#125;&gt;</span><br><span class="line">      &lt;Counter /&gt;</span><br><span class="line">    &lt;<span class="regexp">/Provider&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">export default App;</span></span><br></pre></td></tr></table></figure>
+
+<p>우선 Redux를 사용하기 앞서 Redux를 사용하기 위해 명시를 해주어야 한다. </p>
+<p><code>import { Provider } from &#39;react-redux&#39;;</code><br><code>import { createStore } from &#39;redux&#39;;</code></p>
+<p><code>Provider</code>는 하위 컴포넌트에게 Redux의 단일 저장소 store와 dispatch를 사용할 수 있게 해주는 <code>react-redux</code>라이브러리의 모듈이다. </p>
+<p>그리고 <code>redux</code>에서 제공하는 <code>createStore</code>함수를 통해 단일 저장소(Store)를 만들고 Store에 접근하기 위한 리듀서를 명시해준다. (은행으로 치면 통장개설)</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">createStore(</span><br><span class="line">  리듀서명, </span><br><span class="line">  <span class="built_in">window</span>.__REDUX_DEVTOOLS_EXTENSION__ &amp;&amp; <span class="built_in">window</span>.__REDUX_DEVTOOLS_EXTENSION__()</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<p>2번째 인자는 크롬 개발자도구의 Redux Dev Tools를 사용하기 위해 반드시 넣어줘야 한다.</p>
+<p>리듀서 명은 위에서 설정한 합쳐놓은 리듀서를 <code>import</code>하면 된다. ( 다른 리듀서를 해도 되지만, 유지보수가 힘듬 )</p>
+<p>통합된 리듀서는 다음과 같이 <code>import</code>한다.</p>
+<p><code>import reducers from &#39;./reducers&#39;;</code></p>
+<p>reducers는 폴더명 이므로 자동으로 index.js를 가지고 온다.</p>
+<p>마지막으로 실제로 구현할 <code>Counter.js</code>를 <code>import</code>하고 <code>&lt;Provider&gt;</code>태그 사이에 넣는다.</p>
+<br>
+
+<h4 id="Counter-js-컴포넌트-구현"><a href="#Counter-js-컴포넌트-구현" class="headerlink" title="Counter.js 컴포넌트 구현"></a>Counter.js 컴포넌트 구현</h4><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; connect &#125; <span class="keyword">from</span> <span class="string">'react-redux'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; bindActionCreators&#125; <span class="keyword">from</span> <span class="string">'redux'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; add &#125; <span class="keyword">from</span> <span class="string">'./actions'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> Counter = <span class="function">(<span class="params">props</span>) =&gt;</span> &#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &#123;<span class="comment">/* &lt;button onClick=&#123;() =&gt; props.dispatch.add(1)&#125;&gt; + &lt;/button&gt; */</span>&#125;</span><br><span class="line">      &#123;<span class="comment">/* 위와 같이 적을 필요가 없다. 밑에서 함수로 props에게 전달해주었기 때문 */</span>&#125;</span><br><span class="line">      &lt;button onClick=&#123;() =&gt; props.add(<span class="number">1</span>)&#125;&gt; + <span class="xml"><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line">      &#123; props.count &#125;</span><br><span class="line">      &lt;button onClick=&#123;() =&gt; props.add(<span class="number">-1</span>)&#125;&gt; - <span class="xml"><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/ 리덕스에 접근하기 위해서 사용한다.</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/ 리덕스 안에 있는 데이터를 Props로 맵핑해주는 함수.</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/ state는 Provider가 내려줌.</span></span><br><span class="line"><span class="regexp">function mapStateToProps(state) &#123;</span></span><br><span class="line"><span class="regexp">  return &#123;</span></span><br><span class="line"><span class="regexp">    /</span><span class="regexp">/ state.리듀서명.해당변수</span></span><br><span class="line"><span class="regexp">    /</span><span class="regexp">/ state : 리덕스의 state , counter : 리듀서(은행직원 이름), count : 변수</span></span><br><span class="line"><span class="regexp">    count : state.counter.count</span></span><br><span class="line"><span class="regexp">    /</span><span class="regexp">/ 여기서 선언한 count는 위에 있는 props.count와 동일해야한다.</span></span><br><span class="line"><span class="regexp">    /</span><span class="regexp">/ 즉, countaa = state.counter.count = props.countaa</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/ dispatch는 Provider가 내려줌.</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/ 리덕스의 dispatch는 원래 액션이 리듀서에게</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/ 전달하기 위해 store.dispatch(&#123;type: ~~~~&#125;)라고 적어야하는데</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/ 이 과정이 불편하기 때문에</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/ 리액트에서 편리하게 디스패치를 실행하는것처럼 보여주는 함수.</span></span><br><span class="line"><span class="regexp">function mapDispatchToProps(dispatch) &#123;</span></span><br><span class="line"><span class="regexp">  return bindActionCreators(&#123; /</span><span class="regexp">/ bindActionCreators : 액션크리에이터를 여기에 나열해준다.</span></span><br><span class="line"><span class="regexp">    /</span><span class="regexp">/ ++ actions의 add함수가 여기에 바인딩 되어야한다.</span></span><br><span class="line"><span class="regexp">    add</span></span><br><span class="line"><span class="regexp">  &#125;, dispatch)</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/ 순서중요 connect(mapStateToProps, mapDispatchToProps)(상태 전달 컴포넌트)</span></span><br><span class="line"><span class="regexp">export default connect(mapStateToProps, mapDispatchToProps)(Counter);</span></span><br></pre></td></tr></table></figure>
+
+<p>리액트의 컴포넌트는 기본적으로 하위 컴포넌트들에게 <code>props</code> 외에는 다른 것을 전달해줄 수 없다.</p>
+<p>따라서, 특정 방법을 이용해 상위 컴포넌트로부터 props 외의 데이터를 받아먄한다. </p>
+<p><code>App.js</code>에서 설정했던 <code>&lt;Provider&gt;</code>는 하위 컴포넌트에게 <code>dispatch</code> 와 <code>state(단일 - 복합리듀서)</code>를 전달 해준다.</p>
+<p>2개의 데이터를 전달 받아 사용하려면 아래처럼 2개의 함수를 정의하도록 하자. (커스텀이지만 기본적으로 이렇게 쓰인다.)</p>
+<br>
+
+<h5 id="function-mapStateToProps-state"><a href="#function-mapStateToProps-state" class="headerlink" title="function mapStateToProps(state)"></a>function mapStateToProps(state)</h5><p>→ Provider, Redux의 스토어에 저장되어있는 상태들, 프로퍼티를 컴포넌트의 props로 전달해주기 위한 함수.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">mapStateToProps</span>(<span class="params">state</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="comment">// state.리듀서명.해당변수</span></span><br><span class="line">    <span class="comment">// state : 리덕스의 state , counter : 리듀서(은행직원 이름), count : 변수</span></span><br><span class="line">    count : state.counter.count</span><br><span class="line">    <span class="comment">// 여기서 선언한 count는 위에 있는 props.count와 동일해야한다.</span></span><br><span class="line">    <span class="comment">// 즉, countaa 는 state.counter.count = props.countaa</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h5 id="function-mapDispatchToProps-dispatch"><a href="#function-mapDispatchToProps-dispatch" class="headerlink" title="function mapDispatchToProps(dispatch)"></a>function mapDispatchToProps(dispatch)</h5><p>→ Provider, Redux에서 사용되는 Action(상태를 변화시키기 위한 명세-함수)를 컴포넌트의 props로 전달해주기 위한 함수</p>
+<p>→ 리액트에서 편리하게 <code>dispatch</code> 할 수 있도록 지원해주는 함수다. (원래는 store.dispatch~~)</p>
+<p>→ <code>bindActionCreators({ 액션크레이어터명 }, dispatch)</code> 해당 액션크리에이터를 dispatch를 통해 리듀서에게 넘겨준다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 리덕스의 dispatch는 원래 액션이 리듀서에게 전달하기 위해 store.dispatch(&#123;type: ~~~~&#125;)라고 적어야하는데 이 과정이 불편하기 때문에 리액트에서 편리하게 디스패치를 실행하는것처럼 보여주는 함수.</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">mapDispatchToProps</span>(<span class="params">dispatch</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> bindActionCreators(&#123; <span class="comment">// bindActionCreators : 액션 크리에이터를 여기에 나열해준다.</span></span><br><span class="line">    <span class="comment">// ++ actions의 add함수가 여기에 바인딩 되어야한다.</span></span><br><span class="line">    add</span><br><span class="line">  &#125;, dispatch)</span><br><span class="line">&#125; <span class="comment">// dispatch는 Provider가 내려주었다.</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h5 id="connect-mapStateToProps-mapDispatchToProps-Counter"><a href="#connect-mapStateToProps-mapDispatchToProps-Counter" class="headerlink" title="connect(mapStateToProps, mapDispatchToProps)(Counter)"></a>connect(mapStateToProps, mapDispatchToProps)(Counter)</h5><p>위 2개의 함수 를 <code>connect()</code>에 인자로 차례대로 정의하면 props에 <code>state</code> 와 <code>dispatch</code>로 내린 함수(<code>add</code>)를 가질수 있게 된다. 즉, <code>connect</code>함수 최초 실행 시 두 인자를 통해 리턴된 결과물로 Counter를 실행시켜 최종값을 리턴한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 순서중요 connect(mapStateToProps, mapDispatchToProps)(상태 전달 컴포넌트)</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> connect(mapStateToProps, mapDispatchToProps)(Counter);</span><br></pre></td></tr></table></figure>
+
+<p>위와 같이 작성이 완료되고 <code>npm start</code> 를 해보면 작동이 될 것이다.</p>
+<br>
+
+<h6 id="HOC"><a href="#HOC" class="headerlink" title="HOC"></a>HOC</h6><p>위 <code>connect()</code> 함수가 어색하게 느껴질 수 있다.</p>
+<p>이는 HOC에 대한 이해가 필요하다.</p>
+<p>이러한 느낌이다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// HOC</span></span><br><span class="line"><span class="keyword">const</span> getDiscount = <span class="function"><span class="params">rate</span> =&gt;</span> <span class="function"><span class="params">price</span> =&gt;</span> (<span class="number">1</span> - rate) * price;</span><br><span class="line">getDiscount(<span class="number">0.1</span>)(<span class="number">1000</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> getDistcount = <span class="function"><span class="keyword">function</span> (<span class="params">rate</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">price</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (<span class="number">1</span> - rate) * price</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 첫 리턴은 rate를 받아 price =&gt; (1 - 0.1) * price을 실행한다.</span></span><br><span class="line"><span class="comment">// 2번째 리턴에서 price에 1000 이므로 리턴되는 값은 (1 - 0.1) * 1000</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="정리"><a href="#정리" class="headerlink" title="정리"></a>정리</h4><p><code>&lt;Provider store=&#39;store={createStore(reducers)&#39;&gt;</code>하는 역할 </p>
+<ul>
+<li>Redux의 단일 저장소(store)를 정의한다. (은행 통장을 개설한다.)</li>
+<li>하위 컴포넌트에게 <code>dispatch</code> , <code>state</code>(reducers에서 combineReducers로 합쳐진 단일 state)를 뿌려준다.</li>
+</ul>
+
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="https://hyeok999.github.io/2019/12/19/react-study-08/" data-id="ck4ca4kin00guroz0g9m65f08" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://hyeok999.github.io/2019/12/19/react-study-08/" data-id="ck4ca6vqe00guvjz01qeekiwg" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -269,15 +432,33 @@ ga('send', 'pageview');
             "name": "Jun Hyeok Kim"
         },
         "headline": "React 스터디 08",
-        "image": "https://hyeok999.github.io",
+        "image": "https://hyeok999.github.iohttps://user-images.githubusercontent.com/31315644/69938302-4345b500-1520-11ea-8436-26d69300e699.png",
         "keywords": "git Web coding develop HTML CSS javascript React",
         "genre": "TIL React",
         "datePublished": "2019-12-19",
         "dateCreated": "2019-12-19",
         "dateModified": "2019-12-19",
         "url": "https://hyeok999.github.io/2019/12/19/react-study-08/",
-        "description": "",
-        "wordCount": 1
+        "description": "
+
+React Study 08
+React에서 input 태그 value 와 defaultvalue 차이
+Redux
+리덕스 사용 이유
+카운터 실습
+폴더 구조
+Actions 설정
+src/actions/index.js
+
+
+reducers 설정
+카운터 리듀서 설정하기
+src/reducers/counter.js
+
+
+reducers 합치기
+src/reducers/in",
+        "wordCount": 1684
     }
 </script>
 
@@ -368,7 +549,7 @@ ga('send', 'pageview');
                             <a href="/2019/12/19/react-study-08/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/69938302-4345b500-1520-11ea-8436-26d69300e699.png)" alt="React 스터디 08" class="thumbnail-image"></span>
     
     
 </a>
