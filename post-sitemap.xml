@@ -8,6 +8,14 @@
     </url>
 
     <url>
+        <loc>https://hyeok999.github.io/2019/09/04/ETC-test/</loc>
+        <lastmod>2019-12-19T12:10:17.861Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://hyeok999.github.io/2019/12/19/react-study-08/</loc>
         <lastmod>2019-12-19T10:37:57.055Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -1362,14 +1370,6 @@
     <url>
         <loc>https://hyeok999.github.io/2019/09/30/daily-algorithm01/</loc>
         <lastmod>2019-11-30T15:51:43.134Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://hyeok999.github.io/2019/09/04/ETC-test/</loc>
-        <lastmod>2019-11-30T15:49:24.379Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
