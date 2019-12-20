@@ -6,24 +6,26 @@
     
 
     
-    <title>react-official-04 | HYEOK999&#39;s Blog</title>
+    <title>State and Lifecycle | HYEOK999&#39;s Blog</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content="Web,coding,develop,algorithm,HTML,CSS,javascript,React,React Official Document">
     
-    <meta name="description" content="HYEOK999&apos;s IT Develop Blog">
+    <meta name="description" content="React Official Document주요개념 : State and Lifecycle 함수에서 클래스로 변환하기 클래스에 지역 State 추가하기 생명주기 메서드를 클래스에 추가하기 componentDidMount() 메서드 구현 componentWillUnmount() 메서드 구현 tick() 함수 구현 호출 순서 요약   State 올바르게 사용">
 <meta name="keywords" content="Web,coding,develop,algorithm,HTML,CSS,javascript,React,React Official Document">
 <meta property="og:type" content="article">
-<meta property="og:title" content="react-official-04">
+<meta property="og:title" content="State and Lifecycle">
 <meta property="og:url" content="https://hyeok999.github.io/2019/12/20/react-official-04/index.html">
 <meta property="og:site_name" content="HYEOK999&#39;s Blog">
-<meta property="og:description" content="HYEOK999&apos;s IT Develop Blog">
+<meta property="og:description" content="React Official Document주요개념 : State and Lifecycle 함수에서 클래스로 변환하기 클래스에 지역 State 추가하기 생명주기 메서드를 클래스에 추가하기 componentDidMount() 메서드 구현 componentWillUnmount() 메서드 구현 tick() 함수 구현 호출 순서 요약   State 올바르게 사용">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-12-20T08:45:17.886Z">
+<meta property="og:image" content="https://user-images.githubusercontent.com/31315644/70387342-a2f00480-19e7-11ea-822c-0109f613aefd.png">
+<meta property="og:updated_time" content="2019-12-20T08:46:51.611Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="react-official-04">
-<meta name="twitter:description" content="HYEOK999&apos;s IT Develop Blog">
+<meta name="twitter:title" content="State and Lifecycle">
+<meta name="twitter:description" content="React Official Document주요개념 : State and Lifecycle 함수에서 클래스로 변환하기 클래스에 지역 State 추가하기 생명주기 메서드를 클래스에 추가하기 componentDidMount() 메서드 구현 componentWillUnmount() 메서드 구현 tick() 함수 구현 호출 순서 요약   State 올바르게 사용">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/31315644/70387342-a2f00480-19e7-11ea-822c-0109f613aefd.png">
     
     <link rel="canonical" href="https://hyeok999.github.io/2019/12/20/react-official-04/">
     
@@ -164,7 +166,7 @@ ga('send', 'pageview');
                 
     
         <h1 class="article-title" itemprop="name">
-        react-official-04
+        State and Lifecycle
         </h1>
     
 
@@ -191,14 +193,170 @@ ga('send', 'pageview');
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <p><img src="https://user-images.githubusercontent.com/31315644/70387342-a2f00480-19e7-11ea-822c-0109f613aefd.png" alt="Study React Official Document"></p>
+<hr>
+<h2 id="React-Official-Document"><a href="#React-Official-Document" class="headerlink" title="React Official Document"></a>React Official Document</h2><h3 id="주요개념-State-and-Lifecycle"><a href="#주요개념-State-and-Lifecycle" class="headerlink" title="주요개념 : State and Lifecycle"></a>주요개념 : State and Lifecycle</h3><ul>
+<li><a href="#a1">함수에서 클래스로 변환하기</a></li>
+<li><a href="#a2">클래스에 지역 State 추가하기</a></li>
+<li><a href="#a3">생명주기 메서드를 클래스에 추가하기</a><ol>
+<li><a href="#a4">componentDidMount() 메서드 구현</a></li>
+<li><a href="#a5">componentWillUnmount() 메서드 구현</a></li>
+<li><a href="#a6">tick() 함수 구현</a></li>
+<li><a href="#a7">호출 순서 요약</a></li>
+</ol>
+</li>
+<li>State 올바르게 사용하기<ul>
+<li>직접 State를 수정하지 않는다.</li>
+<li>State 업데이트는 비동기적 일 수도 있다.</li>
+<li>State 업데이트는 병합된다.</li>
+</ul>
+</li>
+<li>데이터는 아래로 흐른다.</li>
+</ul>
+<br>
+
+<hr>
+<h1 id="React-Official-Document-1"><a href="#React-Official-Document-1" class="headerlink" title="React Official Document"></a><a href="https://ko.reactjs.org/" rel="external nofollow noopener noreferrer" target="_blank">React Official Document</a></h1><h2 id="주요개념"><a href="#주요개념" class="headerlink" title="주요개념"></a>주요개념</h2><h2 id="4-State-and-Lifecycle"><a href="#4-State-and-Lifecycle" class="headerlink" title="#4. State and Lifecycle"></a>#4. State and Lifecycle</h2><p> ‘#2 엘리먼트 렌더링’ 에서는 UI를 업데이트하는 한 가지 방법만 배웠으며, 렌더링 된 출력값을 변경하기 위해 <code>ReactDOM.render()</code>를 호출했다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">tick</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> element = (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;h1&gt;Hello, world!<span class="xml"><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line">      &lt;h2&gt;It is &#123;<span class="keyword">new</span> <span class="built_in">Date</span>().toLocaleTimeString()&#125;.&lt;<span class="regexp">/h2&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>div&gt;</span><br><span class="line">  );</span><br><span class="line">  ReactDOM.render(</span><br><span class="line">    element,</span><br><span class="line">    <span class="built_in">document</span>.getElementById(<span class="string">'root'</span>)</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">setInterval(tick, <span class="number">1000</span>);</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p>이번에는 Clcok이라는 이름으로 컴포넌트를 만들어 사용하고 재사용,캡슐화를 해볼 것이다.</p>
+<p>또한 이 컴포넌트는 매번 render를 해주는게 아니라 스스로 타이머를 설정하고 업데이트 하도록 한다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Clock</span>(<span class="params">props</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">      &lt;h1&gt;Hello, world!<span class="xml"><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line">      &lt;h2&gt;It is &#123;props.date.toLocaleTimeString()&#125;.&lt;<span class="regexp">/h2&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>div&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">tick</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    ReactDOM.render(</span><br><span class="line">    &lt;Clcok date=&#123;<span class="keyword">new</span> <span class="built_in">Date</span>()&#125; /&gt;,</span><br><span class="line">    <span class="built_in">document</span>.getElementById(<span class="string">'root'</span>)</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">setInterval(tick, <span class="number">1000</span>);</span><br></pre></td></tr></table></figure>
+
+<p>위 처럼 사용할 경우, 컴포넌트화는 한게 맞지만 결론적으로는 tick 함수가 1초마다 실행이 되어 render로 게속한는 것에는 변함이 없다.</p>
+<p>따라서 Clock 컴포넌트가 타이머를 설정하고 매초 UI 업데이트하는 것이 Clock의 구현 세부사항이 되야만 한다.</p>
+<p><strong>이상적으로 한 번만 코드를 작성하고 <code>Clock</code>이 스스로 업데이트하도록 만들기 위해서 ‘state’를 추가해야만 한다.</strong></p>
+<p><strong>State는 props와 유사하지만, 비공개이고 컴포넌트에 의하여 완전히 제어된다.</strong></p>
+<br>
+
+<h3 id="함수에서-클래스로-변환하기"><a href="#함수에서-클래스로-변환하기" class="headerlink" title="함수에서 클래스로 변환하기 "></a>함수에서 클래스로 변환하기 <a id="a1"></a></h3><p>먼저 5단계로 Clock 과 같은 함수 컴포넌트를 클래스로 변환한다.</p>
+<ol>
+<li><code>React.Component</code>를 확장하는 동일한 이름의 <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Classes" rel="external nofollow noopener noreferrer" target="_blank">ES6 class</a>를 생성.</li>
+<li><code>render()</code>라고 불리는 빈 메서드를 추가.</li>
+<li>함수의 내용을 <code>render()</code> 메서드 안으로 옮긴다.</li>
+<li><code>render()</code> 내용 안에 있는 <code>props</code>를 <code>this.props</code>로 변경.</li>
+<li>남아있는 빈 함수 선언을 삭제.</li>
+</ol>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Clock</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;h1&gt;Hello, world!<span class="xml"><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line">        &lt;h2&gt;It is &#123;<span class="keyword">this</span>.props.date.toLocaleTimeString()&#125;.&lt;<span class="regexp">/h2&gt;</span></span><br><span class="line"><span class="regexp">      &lt;/</span>div&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>render</code> 메서드는 업데이트가 발생할 때마다 호출되지만, 같은 DOM 노드로 <code>&lt;Clock /&gt;</code>을 렌더링하는 경우 <code>Clock</code> 클래스의 단일 인스턴스만 사용된다. 이것은 지역 state 와 생명주기 메서드와 같은 부가적인 기능을 사용할 수 있게 해준다. </p>
+<br>
+
+<h3 id="클래스에-지역-State-추가하기"><a href="#클래스에-지역-State-추가하기" class="headerlink" title="클래스에 지역 State 추가하기 "></a>클래스에 지역 State 추가하기 <a id="a2"></a></h3><p>세 단계에 걸쳐서 <code>date</code>를 props에서 state로 이동해본다.</p>
+<ol>
+<li><code>render()</code> 메서드 안에 있는 <code>this.props.date</code>를 <code>this.state.date</code>로 변경.</li>
+<li>constructor 함수를 추가하고 super 설정, 초기 this를 설정한다.</li>
+<li><code>&lt;Clcok /&gt;</code>요소에서 date prop을 삭제한다.</li>
+</ol>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Clock</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</span><br><span class="line">  &#123;<span class="comment">/* 2번 */</span>&#125;</span><br><span class="line">  <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">    <span class="keyword">super</span>(props);</span><br><span class="line">    <span class="keyword">this</span>.state = &#123;<span class="attr">data</span>: <span class="keyword">new</span> Data()&#125;;</span><br><span class="line">	&#125;</span><br><span class="line">  </span><br><span class="line">	&#123;<span class="comment">/* 1번 */</span>&#125;</span><br><span class="line">  render()&#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">      	&lt;h1&gt;Hello, world!<span class="xml"><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line">      	&lt;h2&gt;It is &#123;props.date.toLocaleTimeString()&#125;.&lt;<span class="regexp">/h2&gt;</span></span><br><span class="line"><span class="regexp">    	&lt;/</span>div&gt;</span><br><span class="line">  	);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ReactDOM.render(</span><br><span class="line">  &lt;Clcok/&gt;,  &#123;<span class="comment">/* 3번 */</span>&#125;</span><br><span class="line">	<span class="built_in">document</span>.getElementById(<span class="string">'root'</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="생명주기-메서드를-클래스에-추가하기"><a href="#생명주기-메서드를-클래스에-추가하기" class="headerlink" title="생명주기 메서드를 클래스에 추가하기 "></a>생명주기 메서드를 클래스에 추가하기 <a id="a3"></a></h3><p>많은 컴포넌트가 있는 애플리케이션에서 컴포넌트가 삭제될 때 해당 컴포넌트가 사용 중이던 리소스를 확보하는 것이 중요하다.</p>
+<p>Clock 컴포넌트가 처음 DOM에 렌더링 될 때마다 타이머를 설정하려고 한다. 이것을 React에서는 <strong>‘마운팅’</strong> 이라 칭한다.</p>
+<p>반대로 Clcok에 의해서 생성된 DOM이 삭제될 때마다 타이머를 해체해야 한다. 이것을 React에서는 <strong>‘언마운팅’</strong> 이라 칭한다.</p>
+<p>이러한 시점을 정의해놓은 메서드들을 ‘생명주기 메서드’ 라고 부른다.</p>
+<p>두 작업은 각각 <code>componentDidMound()</code> , <code>componentWillUnmount()</code> 메서드를 이용한다.</p>
+<p>마지막으로 상태 변화를 반영하기 위한 <code>tick()</code>메서드를 구현한다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Clock</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">    <span class="keyword">super</span>(props);</span><br><span class="line">    <span class="keyword">this</span>.state = &#123;<span class="attr">date</span>: <span class="keyword">new</span> <span class="built_in">Date</span>()&#125;;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  componentDidMount() &#123;</span><br><span class="line">    &#123;<span class="comment">/* 1. componentDidMount() 메서드 구현 */</span>&#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  componentWillUnmount() &#123;</span><br><span class="line">    &#123;<span class="comment">/* 2. componentDidMount() 메서드 구현 */</span>&#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">	tick() &#123;</span><br><span class="line">    &#123;<span class="comment">/* 3. tick() 메서드 구현 */</span>&#125;</span><br><span class="line">  &#125;  </span><br><span class="line">  </span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;h1&gt;Hello, world!<span class="xml"><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line">        &lt;h2&gt;It is &#123;<span class="keyword">this</span>.state.date.toLocaleTimeString()&#125;.&lt;<span class="regexp">/h2&gt;</span></span><br><span class="line"><span class="regexp">      &lt;/</span>div&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="1-componentDidMount-메서드-구현"><a href="#1-componentDidMount-메서드-구현" class="headerlink" title="1. componentDidMount() 메서드 구현 "></a>1. componentDidMount() 메서드 구현 <a id="a4"></a></h4><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">componentDidMount()</span><br><span class="line">  <span class="keyword">this</span>.timerID = setInterval(</span><br><span class="line">    () =&gt; <span class="keyword">this</span>.tick(),</span><br><span class="line">    <span class="number">1000</span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>componentDidMount()</code> 메서드는<code>render()</code> 호출이 된 후에 실행된다. </p>
+<p><code>this</code> (<code>this.timerID</code>)에서 어떻게 타이머 ID를 제대로 저장하는지 주의해야 한다.</p>
+<p>timer ID의 경우 데이터 흐름에는 포함되지 않지만 따로 setInterval을 통해 변화되는 값을 보관해야만 한다.</p>
+<p>따라서 수동으로 부가적인 필드를 클래스에 추가한다.</p>
+<br>
+
+<h4 id="2-componentWillUnmount-메서드-구현"><a href="#2-componentWillUnmount-메서드-구현" class="headerlink" title="2. componentWillUnmount() 메서드 구현 "></a>2. componentWillUnmount() 메서드 구현 <a id="a5"></a></h4><p><code>Clock</code> 컴포넌트가 DOM으로부터 한 번이라도 삭제될 경우 타이머를 멈추기 위해 구현한다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">componentWillUnmount() &#123;</span><br><span class="line">  clearInterval(<span class="keyword">this</span>.timerID);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>setInterval를 해제시킴.</p>
+<br>
+
+<h4 id="3-tick-함수-구현"><a href="#3-tick-함수-구현" class="headerlink" title="3. tick() 함수 구현 "></a>3. tick() 함수 구현 <a id="a6"></a></h4><p>Component가 매초 작동하도록 tick 메서드를 구현한다.</p>
+<p>컴포넌트 지역 state를 업데이트하기 위해 <code>this.setState()</code>를 사용한다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Clock</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">    <span class="keyword">super</span>(props);</span><br><span class="line">    <span class="keyword">this</span>.state = &#123;<span class="attr">date</span>: <span class="keyword">new</span> <span class="built_in">Date</span>()&#125;;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  componentDidMount() &#123;</span><br><span class="line">    <span class="keyword">this</span>.timerID = setInterval(</span><br><span class="line">      () =&gt; <span class="keyword">this</span>.tick(),</span><br><span class="line">      <span class="number">1000</span></span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  componentWillUnmount() &#123;</span><br><span class="line">    clearInterval(<span class="keyword">this</span>.timerID);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  tick() &#123;</span><br><span class="line">    <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">      date: <span class="keyword">new</span> <span class="built_in">Date</span>()</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;h1&gt;Hello, world!<span class="xml"><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line">        &lt;h2&gt;It is &#123;<span class="keyword">this</span>.state.date.toLocaleTimeString()&#125;.&lt;<span class="regexp">/h2&gt;</span></span><br><span class="line"><span class="regexp">      &lt;/</span>div&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ReactDOM.render(</span><br><span class="line">  &lt;Clock /&gt;,</span><br><span class="line">  <span class="built_in">document</span>.getElementById(<span class="string">'root'</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="호출-순서-요약"><a href="#호출-순서-요약" class="headerlink" title="호출 순서 요약  "></a>호출 순서 요약  <a id="a7"></a></h4><ol>
+<li><code>&lt;Clock /&gt;</code>가 <code>ReactDOM.render()</code>로 전달되었을 때 React는 <code>Clock</code> 컴포넌트의 constructor를 호출한다. <code>Clock</code>이 현재 시각을 표시해야 하기 때문에 현재 시각이 포함된 객체로 <code>this.state</code>를 초기화한다. </li>
+<li>React는 <code>Clock</code> 컴포넌트의 <code>render()</code> 메서드를 호출한다. 이를 통해 React는 화면에 표시되어야 할 내용을 알게 된다. 그 다음 React는 <code>Clock</code>의 렌더링 출력값을 일치시키기 위해 DOM을 업데이트한다.</li>
+<li><code>Clock</code> 출력값이 DOM에 삽입되면, React는 <code>componentDidMount()</code> 생명주기 메서드를 호출한다. 그 안에서 <code>Clock</code> 컴포넌트는 매초 컴포넌트의 <code>tick()</code> 메서드를 호출하기 위한 타이머를 설정하도록 브라우저에 요청한다.</li>
+<li>매초 브라우저가 <code>tick()</code> 메서드를 호출한다. 그 안에서 <code>Clock</code> 컴포넌트는 <code>setState()</code>에 현재 시각을 포함하는 객체를 호출하면서 UI 업데이트를 진행한다. <code>setState()</code> 호출 덕분에 React는 state가 변경된 것을 인지하고 화면에 표시될 내용을 알아내기 위해 <code>render()</code> 메서드를 다시 호출한다. 이 때 <code>render()</code> 메서드 안의 <code>this.state.date</code>가 달라지고 렌더링 출력값은 업데이트된 시각을 포함한다. React는 이에 따라 DOM을 업데이트한다.</li>
+<li><code>Clock</code> 컴포넌트가 DOM으로부터 한 번이라도 삭제된 적이 있다면 React는 타이머를 멈추기 위해 <code>componentWillUnmount()</code> 생명주기 메서드를 호출한다.</li>
+</ol>
+<br>
+
+<h3 id="State-올바르게-사용하기"><a href="#State-올바르게-사용하기" class="headerlink" title="State 올바르게 사용하기"></a>State 올바르게 사용하기</h3><p><code>setState()</code>의 3가지 규칙</p>
+<h4 id="직접-State를-수정하지-않는다"><a href="#직접-State를-수정하지-않는다" class="headerlink" title="직접 State를 수정하지 않는다."></a>직접 State를 수정하지 않는다.</h4><p><code>state</code>에 직접적으로 값을 줄 경우 컴포넌트를 다싯 렌더링 하지 않는다. <code>setState()</code>를 이용해야만 한다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Wrong</span></span><br><span class="line"><span class="keyword">this</span>.state.comment = <span class="string">'Hello'</span>;</span><br><span class="line"><span class="comment">// Correct</span></span><br><span class="line"><span class="keyword">this</span>.setState(&#123;<span class="attr">comment</span>: <span class="string">'Hello'</span>&#125;);</span><br></pre></td></tr></table></figure>
+
+<p><code>this.state</code>를 지정할 수 있는 유일한 공간은 바로 constructor이다.</p>
+<br>
+
+<h4 id="State-업데이트는-비동기적-일-수도-있다"><a href="#State-업데이트는-비동기적-일-수도-있다" class="headerlink" title="State 업데이트는 비동기적 일 수도 있다."></a>State 업데이트는 비동기적 일 수도 있다.</h4><p>React는 성능을 위해 여러 <code>setState()</code> 호출을 단일 업데이트로 한꺼번에 처리할 수 있다.</p>
+<p><code>this.props</code>와 <code>this.state</code>가 비동기적으로 업데이트될 수 있기 때문에 다음 state를 계산할 때 해당 값에 의존해서는 안 된다.</p>
+<p>예를 들어, 다음 코드는 카운터 업데이트에 실패할 수 있다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Wrong</span></span><br><span class="line"><span class="keyword">this</span>.setState(&#123;</span><br><span class="line">  counter: <span class="keyword">this</span>.state.counter + <span class="keyword">this</span>.props.increment,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>이를 수정하기 위해 객체보다는 함수를 인자로 사용하는 다른 형태의 <code>setState()</code>를 사용한다. </p>
+<p>그 함수는 이전 state를 첫 번째 인자로 받아들일 것이고, 업데이트가 적용된 시점의 props를 두 번째 인자로 받아들인다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Correct</span></span><br><span class="line"><span class="keyword">this</span>.setState(<span class="function">(<span class="params">state, props</span>) =&gt;</span> (&#123;</span><br><span class="line">  counter: state.counter + props.increment</span><br><span class="line">&#125;));</span><br></pre></td></tr></table></figure>
+
+<p>위에서는 화살표 함수를 사용했지만, 일반적인 함수에서도 정상적으로 작동합니다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Correct</span></span><br><span class="line"><span class="keyword">this</span>.setState(<span class="function"><span class="keyword">function</span>(<span class="params">state, props</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    counter: state.counter + props.increment</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="State-업데이트는-병합된다"><a href="#State-업데이트는-병합된다" class="headerlink" title="State 업데이트는 병합된다."></a>State 업데이트는 병합된다.</h4><p><code>setState()</code>를 호출할 때 React는 제공한 객체를 현재 state로 병합한다.</p>
+<p>예를 들어, state는 다양한 독립적인 변수를 포함할 수 있다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">  <span class="keyword">super</span>(props);</span><br><span class="line">  <span class="keyword">this</span>.state = &#123;</span><br><span class="line">    posts: [],</span><br><span class="line">    comments: []</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>별도의 <code>setState()</code> 호출로 이러한 변수를 독립적으로 업데이트할 수 있다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">componentDidMount() &#123;</span><br><span class="line">  fetchPosts().then(<span class="function"><span class="params">response</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">      posts: response.posts</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  fetchComments().then(<span class="function"><span class="params">response</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">      comments: response.comments</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>병합은 얕게 이루어지기 때문에 <code>this.setState({comments})</code>는 <code>this.state.posts</code>에 영향을 주진 않지만 <code>this.state.comments</code>는 완전히 대체된다.( posts도 반대로 같다. )</p>
+<br>
+
+<h3 id="데이터는-아래로-흐른다"><a href="#데이터는-아래로-흐른다" class="headerlink" title="데이터는 아래로 흐른다."></a>데이터는 아래로 흐른다.</h3><blockquote>
+<p>부모 컴포넌트나 자식 컴포넌트 모두 특정 컴포넌트가 유상태인지 또는 무상태인지 알 수 없고, 그들이 함수나 클래스로 정의되었는지에 대해서 관심을 가질 필요가 없다.</p>
+</blockquote>
+<p>이 때문에 state는 종종 지역 또는 캡슐화라고 불린다.</p>
+<p>state가 소유하고 설정한 컴포넌트 이외에는 어떠한 컴포넌트에도 접근할 수 없다.</p>
+<p>컴포넌트는 자신의 state를 자식 컴포넌트에 props로 전달할 수 있다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;h2&gt;It is &#123;<span class="keyword">this</span>.state.date.toLocaleTimeString()&#125;.&lt;<span class="regexp">/h2&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>사용자 정의된 컴포넌트에도 적용 가능하다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;FormattedDate date=&#123;<span class="keyword">this</span>.state.date&#125; /&gt;</span><br></pre></td></tr></table></figure>
+
+<p><code>FormattedDate</code> 컴포넌트는 <code>date</code>를 자신의 props로 받을 것이고 이것이 <code>Clock</code>의 state로부터 왔는지, <code>Clock</code>의 props에서 왔는지, 수동으로 입력한 것인지 알지 못한다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">FormattedDate</span>(<span class="params">props</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>It is &#123;props.date.toLocaleTimeString()&#125;.<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p>일반적으로 이를 “하향식(top-down)” 또는 “단방향식” 데이터 흐름이라고 칭한다. </p>
+<p><strong>모든 state는 항상 특정한 컴포넌트가 소유하고 있으며 그 state로부터 파생된 UI 또는 데이터는 오직 트리구조에서 자신의 “아래”에 있는 컴포넌트에만 영향을 미친다.</strong></p>
+<p>트리구조가 props들의 폭포라고 상상하면 각 컴포넌트의 state는 임의의 점에서 만나지만 동시에 아래로 흐르는 부가적인 수원(water source)이라고 할 수 있다.</p>
+<p>모든 컴포넌트가 완전히 독립적이라는 것을 보여주기 위해 <code>App</code> 렌더링하는 세 개의 <code>&lt;Clock /&gt;</code>을 만들었다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">App</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;Clock /&gt;</span><br><span class="line">      &lt;Clock /&gt;</span><br><span class="line">      &lt;Clock /&gt;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">ReactDOM.render(</span></span><br><span class="line"><span class="regexp">  &lt;App /</span>&gt;,</span><br><span class="line">  <span class="built_in">document</span>.getElementById(<span class="string">'root'</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p>각 <code>Clock</code>은 자신만의 타이머를 설정하고 독립적으로 업데이트 한다.</p>
+<p>React 앱에서 컴포넌트가 유상태 또는 무상태에 대한 것은 시간이 지남에 따라 변경될 수 있는 구현 세부 사항으로 간주한다. </p>
+<p>유상태 컴포넌트 안에서 무상태 컴포넌트를 사용할 수 있으며, 그 반대 경우도 마찬가지로 사용할 수 있다.</p>
+<br>
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="https://hyeok999.github.io/2019/12/20/react-official-04/" data-id="ck4dws0p200g1ctz0iak5aod7" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://hyeok999.github.io/2019/12/20/react-official-04/" data-id="ck4dwtzqh00gahfz07iib20s5" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -268,16 +426,28 @@ ga('send', 'pageview');
             "@type": "Person",
             "name": "Jun Hyeok Kim"
         },
-        "headline": "react-official-04",
-        "image": "https://hyeok999.github.io",
+        "headline": "State and Lifecycle",
+        "image": "https://hyeok999.github.iohttps://user-images.githubusercontent.com/31315644/70387342-a2f00480-19e7-11ea-822c-0109f613aefd.png",
         "keywords": "Web coding develop algorithm HTML CSS javascript React React Official Document",
         "genre": "Develop React",
         "datePublished": "2019-12-20",
         "dateCreated": "2019-12-20",
         "dateModified": "2019-12-20",
         "url": "https://hyeok999.github.io/2019/12/20/react-official-04/",
-        "description": "",
-        "wordCount": 1
+        "description": "
+
+React Official Document주요개념 : State and Lifecycle
+함수에서 클래스로 변환하기
+클래스에 지역 State 추가하기
+생명주기 메서드를 클래스에 추가하기
+componentDidMount() 메서드 구현
+componentWillUnmount() 메서드 구현
+tick() 함수 구현
+호출 순서 요약
+
+
+State 올바르게 사용",
+        "wordCount": 2209
     }
 </script>
 
@@ -368,7 +538,7 @@ ga('send', 'pageview');
                             <a href="/2019/12/20/react-official-04/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/70387342-a2f00480-19e7-11ea-822c-0109f613aefd.png)" alt="State and Lifecycle" class="thumbnail-image"></span>
     
     
 </a>
@@ -377,7 +547,7 @@ ga('send', 'pageview');
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/Develop/">Develop</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Develop/React/">React</a></p>
-                            <p class="item-title"><a href="/2019/12/20/react-official-04/" class="title">react-official-04</a></p>
+                            <p class="item-title"><a href="/2019/12/20/react-official-04/" class="title">State and Lifecycle</a></p>
                             <p class="item-date"><time datetime="2019-12-20T08:44:58.000Z" itemprop="datePublished">2019-12-20</time></p>
                         </div>
                     </li>
