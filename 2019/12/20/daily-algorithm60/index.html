@@ -12,18 +12,20 @@
     
         <meta name="keywords" content="coding,TIL,algorithm,javascript,Programmers">
     
-    <meta name="description" content="HYEOK999&apos;s IT Develop Blog">
+    <meta name="description" content="하샤드 수문제 설명양의 정수 x가 하샤드 수이려면 x의 자릿수의 합으로 x가 나누어져야 합니다. 예를 들어 18의 자릿수 합은 1+8=9이고, 18은 9로 나누어 떨어지므로 18은 하샤드 수입니다. 자연수 x를 입력받아 x가 하샤드 수인지 아닌지 검사하는 함수, solution을 완성해주세요. 제한 조건 x는 1 이상, 10000 이하인 정수입니다.">
 <meta name="keywords" content="coding,TIL,algorithm,javascript,Programmers">
 <meta property="og:type" content="article">
 <meta property="og:title" content="daily_algorithm60">
 <meta property="og:url" content="https://hyeok999.github.io/2019/12/20/daily-algorithm60/index.html">
 <meta property="og:site_name" content="HYEOK999&#39;s Blog">
-<meta property="og:description" content="HYEOK999&apos;s IT Develop Blog">
+<meta property="og:description" content="하샤드 수문제 설명양의 정수 x가 하샤드 수이려면 x의 자릿수의 합으로 x가 나누어져야 합니다. 예를 들어 18의 자릿수 합은 1+8=9이고, 18은 9로 나누어 떨어지므로 18은 하샤드 수입니다. 자연수 x를 입력받아 x가 하샤드 수인지 아닌지 검사하는 함수, solution을 완성해주세요. 제한 조건 x는 1 이상, 10000 이하인 정수입니다.">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-12-20T08:41:32.086Z">
+<meta property="og:image" content="https://images.velog.io/post-images/leejh3224/619516b0-e892-11e8-98f5-997ef3c38110/what-is-an-algorithm-featured.png">
+<meta property="og:updated_time" content="2019-12-20T08:43:41.224Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="daily_algorithm60">
-<meta name="twitter:description" content="HYEOK999&apos;s IT Develop Blog">
+<meta name="twitter:description" content="하샤드 수문제 설명양의 정수 x가 하샤드 수이려면 x의 자릿수의 합으로 x가 나누어져야 합니다. 예를 들어 18의 자릿수 합은 1+8=9이고, 18은 9로 나누어 떨어지므로 18은 하샤드 수입니다. 자연수 x를 입력받아 x가 하샤드 수인지 아닌지 검사하는 함수, solution을 완성해주세요. 제한 조건 x는 1 이상, 10000 이하인 정수입니다.">
+<meta name="twitter:image" content="https://images.velog.io/post-images/leejh3224/619516b0-e892-11e8-98f5-997ef3c38110/what-is-an-algorithm-featured.png">
     
     <link rel="canonical" href="https://hyeok999.github.io/2019/12/20/daily-algorithm60/">
     
@@ -191,14 +193,51 @@ ga('send', 'pageview');
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <p><img src="https://images.velog.io/post-images/leejh3224/619516b0-e892-11e8-98f5-997ef3c38110/what-is-an-algorithm-featured.png" alt></p>
+<hr>
+<h3 id="하샤드-수"><a href="#하샤드-수" class="headerlink" title="하샤드 수"></a>하샤드 수</h3><h6 id="문제-설명"><a href="#문제-설명" class="headerlink" title="문제 설명"></a>문제 설명</h6><p>양의 정수 x가 하샤드 수이려면 x의 자릿수의 합으로 x가 나누어져야 합니다. 예를 들어 18의 자릿수 합은 1+8=9이고, 18은 9로 나누어 떨어지므로 18은 하샤드 수입니다. 자연수 x를 입력받아 x가 하샤드 수인지 아닌지 검사하는 함수, solution을 완성해주세요.</p>
+<h5 id="제한-조건"><a href="#제한-조건" class="headerlink" title="제한 조건"></a>제한 조건</h5><ul>
+<li><code>x</code>는 1 이상, 10000 이하인 정수입니다.</li>
+</ul>
+<h5 id="입출력-예"><a href="#입출력-예" class="headerlink" title="입출력 예"></a>입출력 예</h5><table>
+<thead>
+<tr>
+<th>arr</th>
+<th align="center">return</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>10</td>
+<td align="center">true</td>
+</tr>
+<tr>
+<td>12</td>
+<td align="center">true</td>
+</tr>
+<tr>
+<td>11</td>
+<td align="center">false</td>
+</tr>
+<tr>
+<td>13</td>
+<td align="center">false</td>
+</tr>
+</tbody></table>
+<h5 id="입출력-예-설명"><a href="#입출력-예-설명" class="headerlink" title="입출력 예 설명"></a>입출력 예 설명</h5><p><strong>입출력 예 #1</strong><br>10의 모든 자릿수의 합은 1입니다. 10은 1로 나누어 떨어지므로 10은 하샤드 수입니다.</p>
+<p><strong>입출력 예 #2</strong><br>12의 모든 자릿수의 합은 3입니다. 12는 3으로 나누어 떨어지므로 12는 하샤드 수입니다.</p>
+<p><strong>입출력 예 #3</strong><br>11의 모든 자릿수의 합은 2입니다. 11은 2로 나누어 떨어지지 않으므로 11는 하샤드 수가 아닙니다.</p>
+<p><strong>입출력 예 #4</strong><br>13의 모든 자릿수의 합은 4입니다. 13은 4로 나누어 떨어지지 않으므로 13은 하샤드 수가 아닙니다.</p>
+<hr>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">solution</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> NUMBER = <span class="built_in">String</span>(n);</span><br><span class="line">  <span class="keyword">let</span> result = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; NUMBER.length; i++) &#123;</span><br><span class="line">    result += +NUMBER[i];</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> NUMBER % result === <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="https://hyeok999.github.io/2019/12/20/daily-algorithm60/" data-id="ck4dwn306006r54z03e7n5yoh" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://hyeok999.github.io/2019/12/20/daily-algorithm60/" data-id="ck4dwpwik006s8lz0xgu5fg8q" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -269,15 +308,21 @@ ga('send', 'pageview');
             "name": "Jun Hyeok Kim"
         },
         "headline": "daily_algorithm60",
-        "image": "https://hyeok999.github.io",
+        "image": "https://hyeok999.github.iohttps://images.velog.io/post-images/leejh3224/619516b0-e892-11e8-98f5-997ef3c38110/what-is-an-algorithm-featured.png",
         "keywords": "coding TIL algorithm javascript Programmers",
         "genre": "TIL Algorithm & Quiz",
         "datePublished": "2019-12-20",
         "dateCreated": "2019-12-20",
         "dateModified": "2019-12-20",
         "url": "https://hyeok999.github.io/2019/12/20/daily-algorithm60/",
-        "description": "",
-        "wordCount": 1
+        "description": "
+
+하샤드 수문제 설명양의 정수 x가 하샤드 수이려면 x의 자릿수의 합으로 x가 나누어져야 합니다. 예를 들어 18의 자릿수 합은 1+8=9이고, 18은 9로 나누어 떨어지므로 18은 하샤드 수입니다. 자연수 x를 입력받아 x가 하샤드 수인지 아닌지 검사하는 함수, solution을 완성해주세요.
+제한 조건
+x는 1 이상, 10000 이하인 정수입니다.
+
+",
+        "wordCount": 210
     }
 </script>
 
@@ -368,7 +413,7 @@ ga('send', 'pageview');
                             <a href="/2019/12/20/daily-algorithm60/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(https://images.velog.io/post-images/leejh3224/619516b0-e892-11e8-98f5-997ef3c38110/what-is-an-algorithm-featured.png)" alt="daily_algorithm60" class="thumbnail-image"></span>
     
     
 </a>
