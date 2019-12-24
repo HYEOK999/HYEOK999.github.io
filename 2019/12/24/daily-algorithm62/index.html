@@ -12,18 +12,20 @@
     
         <meta name="keywords" content="coding,TIL,algorithm,javascript,Programmers">
     
-    <meta name="description" content="HYEOK999&apos;s IT Develop Blog">
+    <meta name="description" content="최대공약수와 최소공배수문제 설명두 수를 입력받아 두 수의 최대공약수와 최소공배수를 반환하는 함수, solution을 완성해 보세요. 배열의 맨 앞에 최대공약수, 그다음 최소공배수를 넣어 반환하면 됩니다. 예를 들어 두 수 3, 12의 최대공약수는 3, 최소공배수는 12이므로 solution(3, 12)는 [3, 12]를 반환해야 합니다. 제한 사항 두">
 <meta name="keywords" content="coding,TIL,algorithm,javascript,Programmers">
 <meta property="og:type" content="article">
 <meta property="og:title" content="daily_algorithm62">
 <meta property="og:url" content="https://hyeok999.github.io/2019/12/24/daily-algorithm62/index.html">
 <meta property="og:site_name" content="HYEOK999&#39;s Blog">
-<meta property="og:description" content="HYEOK999&apos;s IT Develop Blog">
+<meta property="og:description" content="최대공약수와 최소공배수문제 설명두 수를 입력받아 두 수의 최대공약수와 최소공배수를 반환하는 함수, solution을 완성해 보세요. 배열의 맨 앞에 최대공약수, 그다음 최소공배수를 넣어 반환하면 됩니다. 예를 들어 두 수 3, 12의 최대공약수는 3, 최소공배수는 12이므로 solution(3, 12)는 [3, 12]를 반환해야 합니다. 제한 사항 두">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-12-24T11:26:57.257Z">
+<meta property="og:image" content="https://images.velog.io/post-images/leejh3224/619516b0-e892-11e8-98f5-997ef3c38110/what-is-an-algorithm-featured.png">
+<meta property="og:updated_time" content="2019-12-24T11:28:24.493Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="daily_algorithm62">
-<meta name="twitter:description" content="HYEOK999&apos;s IT Develop Blog">
+<meta name="twitter:description" content="최대공약수와 최소공배수문제 설명두 수를 입력받아 두 수의 최대공약수와 최소공배수를 반환하는 함수, solution을 완성해 보세요. 배열의 맨 앞에 최대공약수, 그다음 최소공배수를 넣어 반환하면 됩니다. 예를 들어 두 수 3, 12의 최대공약수는 3, 최소공배수는 12이므로 solution(3, 12)는 [3, 12]를 반환해야 합니다. 제한 사항 두">
+<meta name="twitter:image" content="https://images.velog.io/post-images/leejh3224/619516b0-e892-11e8-98f5-997ef3c38110/what-is-an-algorithm-featured.png">
     
     <link rel="canonical" href="https://hyeok999.github.io/2019/12/24/daily-algorithm62/">
     
@@ -191,14 +193,44 @@ ga('send', 'pageview');
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <p><img src="https://images.velog.io/post-images/leejh3224/619516b0-e892-11e8-98f5-997ef3c38110/what-is-an-algorithm-featured.png" alt></p>
+<hr>
+<h3 id="최대공약수와-최소공배수"><a href="#최대공약수와-최소공배수" class="headerlink" title="최대공약수와 최소공배수"></a>최대공약수와 최소공배수</h3><h6 id="문제-설명"><a href="#문제-설명" class="headerlink" title="문제 설명"></a>문제 설명</h6><p>두 수를 입력받아 두 수의 최대공약수와 최소공배수를 반환하는 함수, solution을 완성해 보세요. 배열의 맨 앞에 최대공약수, 그다음 최소공배수를 넣어 반환하면 됩니다. 예를 들어 두 수 3, 12의 최대공약수는 3, 최소공배수는 12이므로 solution(3, 12)는 [3, 12]를 반환해야 합니다.</p>
+<h5 id="제한-사항"><a href="#제한-사항" class="headerlink" title="제한 사항"></a>제한 사항</h5><ul>
+<li>두 수는 1이상 1000000이하의 자연수입니다.</li>
+</ul>
+<h5 id="입출력-예"><a href="#입출력-예" class="headerlink" title="입출력 예"></a>입출력 예</h5><table>
+<thead>
+<tr>
+<th>n</th>
+<th>m</th>
+<th>return</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>3</td>
+<td>12</td>
+<td>[3, 12]</td>
+</tr>
+<tr>
+<td>2</td>
+<td>5</td>
+<td>[1, 10]</td>
+</tr>
+</tbody></table>
+<h5 id="입출력-예-설명"><a href="#입출력-예-설명" class="headerlink" title="입출력 예 설명"></a>입출력 예 설명</h5><p>입출력 예 #1<br>위의 설명과 같습니다.</p>
+<p>입출력 예 #2<br>자연수 2와 5의 최대공약수는 1, 최소공배수는 10이므로 [1, 10]을 리턴해야 합니다.</p>
+<hr>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">GCD</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">while</span> (b != <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> r = a % b;</span><br><span class="line">    a = b;</span><br><span class="line">    b = r;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> a;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">LCM</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (a * b) / GCD(a, b);</span><br><span class="line">&#125; <span class="comment">// 두수를 곱하고 최대공약수를 빼준다.</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">solution</span>(<span class="params">n, m</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> answer = [GCD(n, m), LCM(n, m)];</span><br><span class="line">  <span class="keyword">return</span> answer;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(solution(<span class="number">12</span>, <span class="number">3</span>));</span><br></pre></td></tr></table></figure>
+
+
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="https://hyeok999.github.io/2019/12/24/daily-algorithm62/" data-id="ck4jsb7t7006zc2z02z3mphgh" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://hyeok999.github.io/2019/12/24/daily-algorithm62/" data-id="ck4jsd54s006zgez05fg0oxds" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -269,15 +301,19 @@ ga('send', 'pageview');
             "name": "Jun Hyeok Kim"
         },
         "headline": "daily_algorithm62",
-        "image": "https://hyeok999.github.io",
+        "image": "https://hyeok999.github.iohttps://images.velog.io/post-images/leejh3224/619516b0-e892-11e8-98f5-997ef3c38110/what-is-an-algorithm-featured.png",
         "keywords": "coding TIL algorithm javascript Programmers",
         "genre": "TIL Algorithm & Quiz",
         "datePublished": "2019-12-24",
         "dateCreated": "2019-12-24",
         "dateModified": "2019-12-24",
         "url": "https://hyeok999.github.io/2019/12/24/daily-algorithm62/",
-        "description": "",
-        "wordCount": 1
+        "description": "
+
+최대공약수와 최소공배수문제 설명두 수를 입력받아 두 수의 최대공약수와 최소공배수를 반환하는 함수, solution을 완성해 보세요. 배열의 맨 앞에 최대공약수, 그다음 최소공배수를 넣어 반환하면 됩니다. 예를 들어 두 수 3, 12의 최대공약수는 3, 최소공배수는 12이므로 solution(3, 12)는 [3, 12]를 반환해야 합니다.
+제한 사항
+두 ",
+        "wordCount": 224
     }
 </script>
 
@@ -368,7 +404,7 @@ ga('send', 'pageview');
                             <a href="/2019/12/24/daily-algorithm62/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(https://images.velog.io/post-images/leejh3224/619516b0-e892-11e8-98f5-997ef3c38110/what-is-an-algorithm-featured.png)" alt="daily_algorithm62" class="thumbnail-image"></span>
     
     
 </a>
