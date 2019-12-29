@@ -8,6 +8,30 @@
     </url>
 
     <url>
+        <loc>https://hyeok999.github.io/2019/12/17/react-velo-03/</loc>
+        <lastmod>2019-12-29T16:57:12.151Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeok999.github.io/2019/12/09/react-velo-02/</loc>
+        <lastmod>2019-12-29T16:57:01.741Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeok999.github.io/2019/12/06/react-velo-01/</loc>
+        <lastmod>2019-12-29T16:56:49.736Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://hyeok999.github.io/2019/12/28/react-official-09/</loc>
         <lastmod>2019-12-29T16:49:33.986Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -168,14 +192,6 @@
     </url>
 
     <url>
-        <loc>https://hyeok999.github.io/2019/12/17/react-velo-03/</loc>
-        <lastmod>2019-12-17T13:59:50.334Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://hyeok999.github.io/2019/12/16/react-study-07/</loc>
         <lastmod>2019-12-16T14:46:55.183Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -242,14 +258,6 @@
     <url>
         <loc>https://hyeok999.github.io/2019/12/11/daily-algorithm52/</loc>
         <lastmod>2019-12-11T10:47:48.396Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://hyeok999.github.io/2019/12/09/react-velo-02/</loc>
-        <lastmod>2019-12-10T11:35:29.412Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -354,14 +362,6 @@
     <url>
         <loc>https://hyeok999.github.io/2019/11/15/daily40/</loc>
         <lastmod>2019-12-06T11:02:00.923Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://hyeok999.github.io/2019/12/06/react-velo-01/</loc>
-        <lastmod>2019-12-05T16:22:52.808Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
