@@ -6,24 +6,26 @@
     
 
     
-    <title>react-velo-05 | HYEOK999&#39;s Blog</title>
+    <title>useState를 통해 컴포넌트에서 바뀌는 값 관리하기 | HYEOK999&#39;s Blog</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="git,Web,coding,develop,TIL,algorithm,HTML,CSS,javascript,Programmers,React">
+        <meta name="keywords" content="Web,coding,develop,HTML,CSS,javascript,React">
     
-    <meta name="description" content="HYEOK999&apos;s IT Develop Blog">
-<meta name="keywords" content="git,Web,coding,develop,TIL,algorithm,HTML,CSS,javascript,Programmers,React">
+    <meta name="description" content="React with Velopert - 05 - useState 예제 : 버튼을 누르면 숫자가 바뀌는 Counter 컴포넌트 App.js Counter.js 이벤트 설정하기   동적인 값 끼얹기, useState 예제 : Counter.js에 Hook 사용해서 상태 관리해보기   정리 정리 - useReact  사용방법1 : 모듈 import 하기.">
+<meta name="keywords" content="Web,coding,develop,HTML,CSS,javascript,React">
 <meta property="og:type" content="article">
-<meta property="og:title" content="react-velo-05">
+<meta property="og:title" content="useState를 통해 컴포넌트에서 바뀌는 값 관리하기">
 <meta property="og:url" content="https://hyeok999.github.io/2020/01/02/react-velo-05/index.html">
 <meta property="og:site_name" content="HYEOK999&#39;s Blog">
-<meta property="og:description" content="HYEOK999&apos;s IT Develop Blog">
+<meta property="og:description" content="React with Velopert - 05 - useState 예제 : 버튼을 누르면 숫자가 바뀌는 Counter 컴포넌트 App.js Counter.js 이벤트 설정하기   동적인 값 끼얹기, useState 예제 : Counter.js에 Hook 사용해서 상태 관리해보기   정리 정리 - useReact  사용방법1 : 모듈 import 하기.">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-01-02T13:46:31.678Z">
+<meta property="og:image" content="https://user-images.githubusercontent.com/31315644/71559899-d84bb780-2aa6-11ea-9f44-1e87b42ebcfb.png">
+<meta property="og:updated_time" content="2020-01-02T13:50:59.767Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="react-velo-05">
-<meta name="twitter:description" content="HYEOK999&apos;s IT Develop Blog">
+<meta name="twitter:title" content="useState를 통해 컴포넌트에서 바뀌는 값 관리하기">
+<meta name="twitter:description" content="React with Velopert - 05 - useState 예제 : 버튼을 누르면 숫자가 바뀌는 Counter 컴포넌트 App.js Counter.js 이벤트 설정하기   동적인 값 끼얹기, useState 예제 : Counter.js에 Hook 사용해서 상태 관리해보기   정리 정리 - useReact  사용방법1 : 모듈 import 하기.">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/31315644/71559899-d84bb780-2aa6-11ea-9f44-1e87b42ebcfb.png">
     
     <link rel="canonical" href="https://hyeok999.github.io/2020/01/02/react-velo-05/">
     
@@ -93,7 +95,7 @@ ga('send', 'pageview');
                                     <a class="main-nav-list-link" href="/">Home</a>
                                 </li>
                             
-                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/CSS/">CSS</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/CSS/GIT/">GIT</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/">Develop</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/CSS/">CSS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/GIT/">GIT</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/IT-Event/">IT Event</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Project/">Project</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/React/">React</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Tips/">Tips</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/">TIL</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Algorithm-Quiz/">Algorithm & Quiz</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/React/">React</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/React-Preview/">React-Preview</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/linux/">linux</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/etc/">etc</a></li></ul>
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/">Develop</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/CSS/">CSS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/GIT/">GIT</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/IT-Event/">IT Event</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Project/">Project</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/React/">React</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Tips/">Tips</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/">TIL</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Algorithm-Quiz/">Algorithm & Quiz</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/React/">React</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/React-Preview/">React-Preview</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/linux/">linux</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/etc/">etc</a></li></ul>
                                     
                                 <li class="main-nav-list-item">
                                     <a class="main-nav-list-link" href="https://about.me/iasg2004" rel="external nofollow noopener noreferrer" target="_blank">About</a>
@@ -152,7 +154,7 @@ ga('send', 'pageview');
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/CSS/">CSS</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/">GIT</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/">IT Event</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/">Java</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/">Javascript</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/">Project</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/">React</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/">Tips</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/">Algorithm & Quiz</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/">HTML&CSS</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/">Javascript</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/Javascript-Preview/">Javascript-Preview</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/Javascript-Preview/React/">React</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/Javascript-Preview/React/React-Preview/">React-Preview</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/Javascript-Preview/React/React-Preview/linux/">linux</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/Javascript-Preview/React/React-Preview/linux/etc/">etc</a>
+    <a class="page-title-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/TIL/React-Preview/">React-Preview</a>
     </h1>
 </div>
 
@@ -164,7 +166,7 @@ ga('send', 'pageview');
                 
     
         <h1 class="article-title" itemprop="name">
-        react-velo-05
+        useState를 통해 컴포넌트에서 바뀌는 값 관리하기
         </h1>
     
 
@@ -184,21 +186,113 @@ ga('send', 'pageview');
                 
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/CSS/">CSS</a>, <a class="tag-link" href="/tags/HTML/">HTML</a>, <a class="tag-link" href="/tags/Programmers/">Programmers</a>, <a class="tag-link" href="/tags/React/">React</a>, <a class="tag-link" href="/tags/TIL/">TIL</a>, <a class="tag-link" href="/tags/Web/">Web</a>, <a class="tag-link" href="/tags/algorithm/">algorithm</a>, <a class="tag-link" href="/tags/coding/">coding</a>, <a class="tag-link" href="/tags/develop/">develop</a>, <a class="tag-link" href="/tags/git/">git</a>, <a class="tag-link" href="/tags/javascript/">javascript</a>
+        <a class="tag-link" href="/tags/CSS/">CSS</a>, <a class="tag-link" href="/tags/HTML/">HTML</a>, <a class="tag-link" href="/tags/React/">React</a>, <a class="tag-link" href="/tags/Web/">Web</a>, <a class="tag-link" href="/tags/coding/">coding</a>, <a class="tag-link" href="/tags/develop/">develop</a>, <a class="tag-link" href="/tags/javascript/">javascript</a>
     </div>
 
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <p><img src="https://user-images.githubusercontent.com/31315644/71559899-d84bb780-2aa6-11ea-9f44-1e87b42ebcfb.png" alt="React05"></p>
+<hr>
+<h2 id="React-with-Velopert-05"><a href="#React-with-Velopert-05" class="headerlink" title="React with Velopert - 05 -"></a>React with Velopert - 05 -</h2><ul>
+<li>useState<ul>
+<li>예제 : 버튼을 누르면 숫자가 바뀌는 Counter 컴포넌트<ul>
+<li>App.js</li>
+<li>Counter.js</li>
+<li><a href="#a1">이벤트 설정하기</a></li>
+</ul>
+</li>
+<li><a href="#a2">동적인 값 끼얹기, useState</a><ul>
+<li>예제 : Counter.js에 Hook 사용해서 상태 관리해보기</li>
+</ul>
+</li>
+<li><a href="#a3">정리</a><ul>
+<li>정리 - useReact  사용방법1 : 모듈 import 하기. </li>
+<li>정리 - useReact  사용방법2 : 함수 호출하여 사용하기.</li>
+<li>정리 - useReact  사용방법3 : 상태 변경 및 조회하기.</li>
+</ul>
+</li>
+<li><a href="#a4">함수형 업데이트</a><ul>
+<li>Counter.js</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<br>
+
+<hr>
+<h1 id="Chap-5-useState를-통해-컴포넌트에서-바뀌는-값-관리하기"><a href="#Chap-5-useState를-통해-컴포넌트에서-바뀌는-값-관리하기" class="headerlink" title="Chap 5. useState를 통해 컴포넌트에서 바뀌는 값 관리하기"></a>Chap 5. useState를 통해 컴포넌트에서 바뀌는 값 관리하기</h1><h2 id="useState"><a href="#useState" class="headerlink" title="useState"></a>useState</h2><blockquote>
+<p>리액트 16.8 이전 버전에서는 함수형 컴포넌트에서는 상태를 관리할 수 없었다. 하지만, 리액트 16.8 에서 Hooks 라는 기능이 도입되면서 함수형 컴포넌트에서도 상태를 관리할 수 있게 되었다. </p>
+<p>이번에는 useState 라는 함수를 사용해보게 되는데, 이게 바로 리액트의 Hooks 중 하나이다.</p>
+</blockquote>
+<br>
+
+<h3 id="예제-버튼을-누르면-숫자가-바뀌는-Counter-컴포넌트"><a href="#예제-버튼을-누르면-숫자가-바뀌는-Counter-컴포넌트" class="headerlink" title="예제 : 버튼을 누르면 숫자가 바뀌는 Counter 컴포넌트"></a>예제 : 버튼을 누르면 숫자가 바뀌는 Counter 컴포넌트</h3><h4 id="App-js"><a href="#App-js" class="headerlink" title="App.js"></a>App.js</h4><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> Counter <span class="keyword">from</span> <span class="string">'./Counter'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">App</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;Counter /&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> App;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="Counter-js"><a href="#Counter-js" class="headerlink" title="Counter.js"></a>Counter.js</h4><p><code>Counter</code>에서 버튼이 클릭되는 이벤트가 발생 했을 때, 특정 함수가 호출되도록 설정을 해보자.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Counter</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> onIncrease = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'+1'</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">const</span> onDecrease = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'-1'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;h1&gt;<span class="number">0</span>&lt;<span class="regexp">/h1&gt;</span></span><br><span class="line"><span class="regexp">      &lt;button onClick=&#123;onIncrease&#125;&gt;+1&lt;/</span>button&gt;</span><br><span class="line">      &lt;button onClick=&#123;onDecrease&#125;&gt;<span class="number">-1</span>&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>div&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> Counter;</span><br></pre></td></tr></table></figure>
+
+<p><code>onIncrease</code> 와 <code>onDecrease</code>라는 함수를 각각 만들고 이벤트를 설정 해주자.</p>
+<br>
+
+<h4 id="이벤트-설정하기"><a href="#이벤트-설정하기" class="headerlink" title="이벤트 설정하기 "></a>이벤트 설정하기 <a id="a1"></a></h4><p>리액트에서 엘리먼트에 이벤트를 설정해줄때에는 <code>on이벤트이름={실행하고싶은함수}</code> 형태로 설정해야 한다.</p>
+<p><strong>함수형태를 넣어주어야 하지, 함수를 다음과 같이 실행하면 안된다.</strong></p>
+<p>이유는 렌더링되는 시점에서 함수가 호출되버리기 때문이다.</p>
+<p>이벤트를 설정할때에는 함수타입의 값을 넣어주어야 한다는 것, 주의하자.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 틀린방식</span></span><br><span class="line">&lt;button onClick=&#123;onIncrease()&#125;&gt;+<span class="number">1</span>&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">&lt;button onClick=&#123;onDecrease()&#125;&gt;-1&lt;/</span>button&gt;</span><br><span class="line">      </span><br><span class="line"><span class="comment">// 올바른 방식1</span></span><br><span class="line">&lt;button onClick=&#123;onIncrease&#125;&gt;+<span class="number">1</span>&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">&lt;button onClick=&#123;onDecrease&#125;&gt;-1&lt;/</span>button&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 올바른 방식2 : 직접 Click 내부 화살표 함수로 구현해도 된다.</span></span><br><span class="line">&lt;button onClick=&#123;() =&gt; &#123;<span class="built_in">console</span>.log(<span class="string">'+1'</span>)&#125;&#125;&gt;+<span class="number">1</span>&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">&lt;button onClick=&#123;() =&gt; &#123;console.log('-1')&#125;&#125;&gt;-1&lt;/</span>button&gt;</span><br></pre></td></tr></table></figure>
+
+<img src="https://i.imgur.com/534RyIz.png" alt="img" style="zoom:50%;">
+
+<br>
+
+<h3 id="동적인-값-끼얹기-useState"><a href="#동적인-값-끼얹기-useState" class="headerlink" title="동적인 값 끼얹기, useState "></a>동적인 값 끼얹기, useState <a id="a2"></a></h3><p>컴포넌트에서 동적인 값을 상태(state)라고 칭한다.</p>
+<p>리액트에는 useState라는 함수가 있는데 컴포넌트에서 상태를 관리할 수 있게하는 함수다.</p>
+<p><strong>리액트 훅 함수를 사용할 때 훅을 포함하는 함수명에 주의를 해야만한다.</strong></p>
+<p><strong>Hook 함수는 자신을 포함하고 있는 함수가 컴포넌트인지 판별하는 기준은 첫글자가 대문자로 시작하는지 안하는지의 차이다.</strong></p>
+<p><strong>따라서 컴포넌트를 작성할 때는 반드시 대문자 네이밍인 파스칼케이스를 지키도록하자.</strong></p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 틀린 방법</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">counter</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> [number, setNumber] = useState(<span class="number">0</span>);</span><br><span class="line"> </span><br><span class="line">  <span class="keyword">return</span> ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 올바른 방법</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Counter</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> [number, setNumber] = useState(<span class="number">0</span>);</span><br><span class="line"> </span><br><span class="line">  <span class="keyword">return</span> ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="예제-Counter-js에-Hook-사용해서-상태-관리해보기"><a href="#예제-Counter-js에-Hook-사용해서-상태-관리해보기" class="headerlink" title="예제 : Counter.js에 Hook 사용해서 상태 관리해보기"></a>예제 : Counter.js에 Hook 사용해서 상태 관리해보기</h4><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; useState &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Counter</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> [number, setNumber] = useState(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> onIncrease = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    setNumber(number + <span class="number">1</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> onDecrease = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    setNumber(number - <span class="number">1</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;h1&gt;&#123;number&#125;&lt;<span class="regexp">/h1&gt;</span></span><br><span class="line"><span class="regexp">      &lt;button onClick=&#123;onIncrease&#125;&gt;+1&lt;/</span>button&gt;</span><br><span class="line">      &lt;button onClick=&#123;onDecrease&#125;&gt;<span class="number">-1</span>&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>div&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> Counter;</span><br></pre></td></tr></table></figure>
+
+<p>위와 같이 작성했다면 숫자가 변경이 될 것이다.</p>
+<img src="https://i.imgur.com/8LxuRm1.png" alt="img" style="zoom:50%;">
+
+<br>
+
+<h3 id="정리"><a href="#정리" class="headerlink" title="정리 "></a>정리 <a id="a3"></a></h3><h4 id="정리-useReact-사용방법1-모듈-import-하기"><a href="#정리-useReact-사용방법1-모듈-import-하기" class="headerlink" title="정리 - useReact  사용방법1 : 모듈 import 하기."></a>정리 - useReact  사용방법1 : 모듈 import 하기.</h4><p>사용하고자하는 파일에서 import 해준다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; useState &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="정리-useReact-사용방법2-함수-호출하여-사용하기"><a href="#정리-useReact-사용방법2-함수-호출하여-사용하기" class="headerlink" title="정리 - useReact  사용방법2 : 함수 호출하여 사용하기."></a>정리 - useReact  사용방법2 : 함수 호출하여 사용하기.</h4><p>useReact는 호출 시 배열을 반환하는 것을 이용하여 배열 비구조화 할당을 이용할 수 있다.</p>
+<p>첫번째 요소는 현재상태, 2번째 요소는 Setter함수이다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 기본적인 사용방법</span></span><br><span class="line"><span class="keyword">const</span> numberState = useState(<span class="number">0</span>);</span><br><span class="line"><span class="keyword">const</span> number = numberState[<span class="number">0</span>];</span><br><span class="line"><span class="keyword">const</span> setNumber = numberState[<span class="number">1</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 배열 비구조화 할당을 이용하여 쉽게 이용하기.</span></span><br><span class="line"><span class="keyword">const</span> [number, setNumber] = useState(<span class="number">0</span>);</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="정리-useReact-사용방법3-상태-변경-및-조회하기"><a href="#정리-useReact-사용방법3-상태-변경-및-조회하기" class="headerlink" title="정리 - useReact  사용방법3 : 상태 변경 및 조회하기."></a>정리 - useReact  사용방법3 : 상태 변경 및 조회하기.</h4><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">// 상태 변경 하기</span></span><br><span class="line"> <span class="keyword">const</span> onIncrease = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">   setNumber(number + <span class="number">1</span>);</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="keyword">const</span> onDecrease = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">   setNumber(number - <span class="number">1</span>);</span><br><span class="line"> &#125;</span><br><span class="line"> </span><br><span class="line"> <span class="comment">// 상태 조회하기</span></span><br><span class="line"><span class="keyword">return</span> (</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;h1&gt;&#123;number&#125;&lt;<span class="regexp">/h1&gt;</span></span><br><span class="line"><span class="regexp">    &lt;button onClick=&#123;onIncrease&#125;&gt;+1&lt;/</span>button&gt;</span><br><span class="line">    &lt;button onClick=&#123;onDecrease&#125;&gt;<span class="number">-1</span>&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">  &lt;/</span>div&gt;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="함수형-업데이트"><a href="#함수형-업데이트" class="headerlink" title="함수형 업데이트 "></a>함수형 업데이트 <a id="a4"></a></h3><p>Setter 함수를 사용 할 때, 업데이트 하고 싶은 새로운 값을 파라미터로 넣어주고 있다, 다른 방법으로는 기존 값을 어떻게 업데이트 할 지에 대한 함수를 등록하는 방식으로도 값을 업데이트 할 수 있다.</p>
+<h4 id="Counter-js-1"><a href="#Counter-js-1" class="headerlink" title="Counter.js"></a>Counter.js</h4><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; useState &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Counter</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> [number, setNumber] = useState(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> onIncrease = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    setNumber(<span class="function"><span class="params">prevNumber</span> =&gt;</span> prevNumber + <span class="number">1</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> onDecrease = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    setNumber(<span class="function"><span class="params">prevNumber</span> =&gt;</span> prevNumber - <span class="number">1</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;h1&gt;&#123;number&#125;&lt;<span class="regexp">/h1&gt;</span></span><br><span class="line"><span class="regexp">      &lt;button onClick=&#123;onIncrease&#125;&gt;+1&lt;/</span>button&gt;</span><br><span class="line">      &lt;button onClick=&#123;onDecrease&#125;&gt;<span class="number">-1</span>&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>div&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> Counter;</span><br></pre></td></tr></table></figure>
+
+<p><code>onIncrease</code> 와 <code>onDecrease</code> 에서 <code>setNumber</code> 를 사용 할 때 그 다음 상태를 파라미터로 넣어준것이 아니라, 값을 업데이트 하는 함수를 파라미터로 넣어주었다.</p>
+<p>함수형 업데이트는 주로 나중에 컴포넌트를 최적화를 하게 될 때 사용하게 된다.</p>
+<br>
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="https://hyeok999.github.io/2020/01/02/react-velo-05/" data-id="ck4ws9fvf00irqoz0mfvbha1c" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://hyeok999.github.io/2020/01/02/react-velo-05/" data-id="ck4wsfq1e00j0wez0m5yymsiq" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -268,16 +362,32 @@ ga('send', 'pageview');
             "@type": "Person",
             "name": "Jun Hyeok Kim"
         },
-        "headline": "react-velo-05",
-        "image": "https://hyeok999.github.io",
-        "keywords": "git Web coding develop TIL algorithm HTML CSS javascript Programmers React",
-        "genre": "CSS GIT IT Event Java Javascript Project React Tips TIL Algorithm & Quiz HTML&CSS Javascript Javascript-Preview React React-Preview linux etc",
+        "headline": "useState를 통해 컴포넌트에서 바뀌는 값 관리하기",
+        "image": "https://hyeok999.github.iohttps://user-images.githubusercontent.com/31315644/71559899-d84bb780-2aa6-11ea-9f44-1e87b42ebcfb.png",
+        "keywords": "Web coding develop HTML CSS javascript React",
+        "genre": "TIL React-Preview",
         "datePublished": "2020-01-02",
         "dateCreated": "2020-01-02",
         "dateModified": "2020-01-02",
         "url": "https://hyeok999.github.io/2020/01/02/react-velo-05/",
-        "description": "",
-        "wordCount": 1
+        "description": "
+
+React with Velopert - 05 -
+useState
+예제 : 버튼을 누르면 숫자가 바뀌는 Counter 컴포넌트
+App.js
+Counter.js
+이벤트 설정하기
+
+
+동적인 값 끼얹기, useState
+예제 : Counter.js에 Hook 사용해서 상태 관리해보기
+
+
+정리
+정리 - useReact  사용방법1 : 모듈 import 하기. 
+",
+        "wordCount": 1267
     }
 </script>
 
@@ -350,7 +460,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/">GIT</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/">IT Event</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/">Java</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/">Javascript</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/">Project</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/">React</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/">Tips</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/">TIL</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/">Algorithm & Quiz</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/">HTML&CSS</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/">Javascript</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/Javascript-Preview/">Javascript-Preview</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/Javascript-Preview/React/">React</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/Javascript-Preview/React/React-Preview/">React-Preview</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/Javascript-Preview/React/React-Preview/linux/">linux</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/Javascript-Preview/React/React-Preview/linux/etc/">etc</a><span class="category-list-count">1</span></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/">Develop</a><span class="category-list-count">45</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/CSS/">CSS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/GIT/">GIT</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/IT-Event/">IT Event</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Java/">Java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Javascript/">Javascript</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Project/">Project</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/React/">React</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Tips/">Tips</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/">TIL</a><span class="category-list-count">164</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Algorithm-Quiz/">Algorithm & Quiz</a><span class="category-list-count">74</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript/">Javascript</a><span class="category-list-count">30</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a><span class="category-list-count">23</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/React/">React</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/React-Preview/">React-Preview</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/linux/">linux</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/etc/">etc</a><span class="category-list-count">1</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/">Develop</a><span class="category-list-count">45</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/CSS/">CSS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/GIT/">GIT</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/IT-Event/">IT Event</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Java/">Java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Javascript/">Javascript</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Project/">Project</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/React/">React</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Tips/">Tips</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/">TIL</a><span class="category-list-count">165</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Algorithm-Quiz/">Algorithm & Quiz</a><span class="category-list-count">74</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript/">Javascript</a><span class="category-list-count">30</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a><span class="category-list-count">23</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/React/">React</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/React-Preview/">React-Preview</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/linux/">linux</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/etc/">etc</a><span class="category-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -368,7 +478,7 @@ ga('send', 'pageview');
                             <a href="/2020/01/02/react-velo-05/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/71559899-d84bb780-2aa6-11ea-9f44-1e87b42ebcfb.png)" alt="useState를 통해 컴포넌트에서 바뀌는 값 관리하기" class="thumbnail-image"></span>
     
     
 </a>
@@ -376,8 +486,8 @@ ga('send', 'pageview');
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/CSS/">CSS</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/CSS/GIT/">GIT</a></p>
-                            <p class="item-title"><a href="/2020/01/02/react-velo-05/" class="title">react-velo-05</a></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/React-Preview/">React-Preview</a></p>
+                            <p class="item-title"><a href="/2020/01/02/react-velo-05/" class="title">useState를 통해 컴포넌트에서 바뀌는 값 관리하기</a></p>
                             <p class="item-date"><time datetime="2020-01-02T13:46:31.000Z" itemprop="datePublished">2020-01-02</time></p>
                         </div>
                     </li>
