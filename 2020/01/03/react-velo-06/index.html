@@ -6,24 +6,26 @@
     
 
     
-    <title>react-velo-06 | HYEOK999&#39;s Blog</title>
+    <title>input 상태 관리하기 | HYEOK999&#39;s Blog</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="git,Web,coding,develop,TIL,algorithm,HTML,CSS,javascript,Programmers,React">
+        <meta name="keywords" content="Web,coding,develop,HTML,CSS,javascript,React">
     
-    <meta name="description" content="HYEOK999&apos;s IT Develop Blog">
-<meta name="keywords" content="git,Web,coding,develop,TIL,algorithm,HTML,CSS,javascript,Programmers,React">
+    <meta name="description" content="React with Velopert - 06 - input 상태 관리하기 예제 : input 박스 입력 및 초기화 버튼 만들기 App.js InputSample.js         Chap 6. input 상태 관리하기input 상태 관리하기 이번에는 리액트에서 사용자가 입력 할 수 있는 input 태그의 상태를 관리하는 방법을 알아보자.    예제 :">
+<meta name="keywords" content="Web,coding,develop,HTML,CSS,javascript,React">
 <meta property="og:type" content="article">
-<meta property="og:title" content="react-velo-06">
+<meta property="og:title" content="input 상태 관리하기">
 <meta property="og:url" content="https://hyeok999.github.io/2020/01/03/react-velo-06/index.html">
 <meta property="og:site_name" content="HYEOK999&#39;s Blog">
-<meta property="og:description" content="HYEOK999&apos;s IT Develop Blog">
+<meta property="og:description" content="React with Velopert - 06 - input 상태 관리하기 예제 : input 박스 입력 및 초기화 버튼 만들기 App.js InputSample.js         Chap 6. input 상태 관리하기input 상태 관리하기 이번에는 리액트에서 사용자가 입력 할 수 있는 input 태그의 상태를 관리하는 방법을 알아보자.    예제 :">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-01-03T12:55:35.750Z">
+<meta property="og:image" content="https://user-images.githubusercontent.com/31315644/71559900-d84bb780-2aa6-11ea-8fa8-c920fe4229f4.png">
+<meta property="og:updated_time" content="2020-01-03T12:57:09.529Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="react-velo-06">
-<meta name="twitter:description" content="HYEOK999&apos;s IT Develop Blog">
+<meta name="twitter:title" content="input 상태 관리하기">
+<meta name="twitter:description" content="React with Velopert - 06 - input 상태 관리하기 예제 : input 박스 입력 및 초기화 버튼 만들기 App.js InputSample.js         Chap 6. input 상태 관리하기input 상태 관리하기 이번에는 리액트에서 사용자가 입력 할 수 있는 input 태그의 상태를 관리하는 방법을 알아보자.    예제 :">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/31315644/71559900-d84bb780-2aa6-11ea-8fa8-c920fe4229f4.png">
     
     <link rel="canonical" href="https://hyeok999.github.io/2020/01/03/react-velo-06/">
     
@@ -93,7 +95,7 @@ ga('send', 'pageview');
                                     <a class="main-nav-list-link" href="/">Home</a>
                                 </li>
                             
-                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/CSS/">CSS</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/CSS/GIT/">GIT</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/">Develop</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/CSS/">CSS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/GIT/">GIT</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/IT-Event/">IT Event</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Project/">Project</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/React/">React</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Tips/">Tips</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/">TIL</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Algorithm-Quiz/">Algorithm & Quiz</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/React/">React</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/React-Preview/">React-Preview</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/linux/">linux</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/etc/">etc</a></li></ul>
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/">Develop</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/CSS/">CSS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/GIT/">GIT</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/IT-Event/">IT Event</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Project/">Project</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/React/">React</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Tips/">Tips</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/">TIL</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Algorithm-Quiz/">Algorithm & Quiz</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/React/">React</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/React-Preview/">React-Preview</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/linux/">linux</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/etc/">etc</a></li></ul>
                                     
                                 <li class="main-nav-list-item">
                                     <a class="main-nav-list-link" href="https://about.me/iasg2004" rel="external nofollow noopener noreferrer" target="_blank">About</a>
@@ -152,7 +154,7 @@ ga('send', 'pageview');
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/CSS/">CSS</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/">GIT</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/">IT Event</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/">Java</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/">Javascript</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/">Project</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/">React</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/">Tips</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/">Algorithm & Quiz</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/">HTML&CSS</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/">Javascript</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/Javascript-Preview/">Javascript-Preview</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/Javascript-Preview/React/">React</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/Javascript-Preview/React/React-Preview/">React-Preview</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/Javascript-Preview/React/React-Preview/linux/">linux</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/Javascript-Preview/React/React-Preview/linux/etc/">etc</a>
+    <a class="page-title-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/TIL/React-Preview/">React-Preview</a>
     </h1>
 </div>
 
@@ -164,7 +166,7 @@ ga('send', 'pageview');
                 
     
         <h1 class="article-title" itemprop="name">
-        react-velo-06
+        input 상태 관리하기
         </h1>
     
 
@@ -184,14 +186,46 @@ ga('send', 'pageview');
                 
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/CSS/">CSS</a>, <a class="tag-link" href="/tags/HTML/">HTML</a>, <a class="tag-link" href="/tags/Programmers/">Programmers</a>, <a class="tag-link" href="/tags/React/">React</a>, <a class="tag-link" href="/tags/TIL/">TIL</a>, <a class="tag-link" href="/tags/Web/">Web</a>, <a class="tag-link" href="/tags/algorithm/">algorithm</a>, <a class="tag-link" href="/tags/coding/">coding</a>, <a class="tag-link" href="/tags/develop/">develop</a>, <a class="tag-link" href="/tags/git/">git</a>, <a class="tag-link" href="/tags/javascript/">javascript</a>
+        <a class="tag-link" href="/tags/CSS/">CSS</a>, <a class="tag-link" href="/tags/HTML/">HTML</a>, <a class="tag-link" href="/tags/React/">React</a>, <a class="tag-link" href="/tags/Web/">Web</a>, <a class="tag-link" href="/tags/coding/">coding</a>, <a class="tag-link" href="/tags/develop/">develop</a>, <a class="tag-link" href="/tags/javascript/">javascript</a>
     </div>
 
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <p><img src="https://user-images.githubusercontent.com/31315644/71559900-d84bb780-2aa6-11ea-8fa8-c920fe4229f4.png" alt="React06"></p>
+<hr>
+<h2 id="React-with-Velopert-06"><a href="#React-with-Velopert-06" class="headerlink" title="React with Velopert - 06 -"></a>React with Velopert - 06 -</h2><ul>
+<li>input 상태 관리하기<ul>
+<li>예제 : input 박스 입력 및 초기화 버튼 만들기<ul>
+<li>App.js</li>
+<li>InputSample.js</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<br>
+
+<hr>
+<h1 id="Chap-6-input-상태-관리하기"><a href="#Chap-6-input-상태-관리하기" class="headerlink" title="Chap 6. input 상태 관리하기"></a>Chap 6. input 상태 관리하기</h1><h2 id="input-상태-관리하기"><a href="#input-상태-관리하기" class="headerlink" title="input 상태 관리하기"></a>input 상태 관리하기</h2><blockquote>
+<p>이번에는 리액트에서 사용자가 입력 할 수 있는 input 태그의 상태를 관리하는 방법을 알아보자.</p>
+</blockquote>
+<br>
+
+<h3 id="예제-input-박스-입력-및-초기화-버튼-만들기"><a href="#예제-input-박스-입력-및-초기화-버튼-만들기" class="headerlink" title="예제 : input 박스 입력 및 초기화 버튼 만들기"></a>예제 : input 박스 입력 및 초기화 버튼 만들기</h3><h4 id="App-js"><a href="#App-js" class="headerlink" title="App.js"></a>App.js</h4><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> InputSample <span class="keyword">from</span> <span class="string">'./InputSample'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">App</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;InputSample /&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> App;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="InputSample-js"><a href="#InputSample-js" class="headerlink" title="InputSample.js"></a>InputSample.js</h4><p><code>useState</code>를 사용해서 버튼을 초기화하는 작업을 해보도록한다.</p>
+<p>input의 <code>onChange</code> 이벤트를 사용하도록한다. 이벤트에 등록하는 함수에서는 이벤트객체(e)를 파라미터로 받아와서 사용하는데 </p>
+<p>e.target은 이벤트가 발생한 DOM인 input DOM을 가르키게 된다.</p>
+<p>DOM의 <code>value</code> 값 즉, <code>e.target.value</code>를 조회하면 현재 input에 입력한 값이 무엇인지 확인할 수 있다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; useState &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">InputSample</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> [text, setText] = useState(<span class="string">''</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> onChange = <span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</span><br><span class="line">    setText(e.target.value);</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> onReset = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    setText(<span class="string">''</span>);</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;input onChange=&#123;onChange&#125; value=&#123;text&#125;  /&gt;</span><br><span class="line">      &lt;button onClick=&#123;onReset&#125;&gt;초기화&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">      &lt;div&gt;</span></span><br><span class="line"><span class="regexp">        &lt;b&gt;값: &#123;text&#125;&lt;/</span>b&gt;</span><br><span class="line">      &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>div&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> InputSample;</span><br></pre></td></tr></table></figure>
+
+<p>input 의 상태를 관리할 때에는 input 태그의 <code>value</code> 값도 설정해주는 것이 중요하다. </p>
+<p>상태가 바뀌었을때 input 의 내용도 업데이트 된다.</p>
+
         </div>
         <footer class="article-footer">
             
@@ -268,16 +302,36 @@ ga('send', 'pageview');
             "@type": "Person",
             "name": "Jun Hyeok Kim"
         },
-        "headline": "react-velo-06",
-        "image": "https://hyeok999.github.io",
-        "keywords": "git Web coding develop TIL algorithm HTML CSS javascript Programmers React",
-        "genre": "CSS GIT IT Event Java Javascript Project React Tips TIL Algorithm & Quiz HTML&CSS Javascript Javascript-Preview React React-Preview linux etc",
+        "headline": "input 상태 관리하기",
+        "image": "https://hyeok999.github.iohttps://user-images.githubusercontent.com/31315644/71559900-d84bb780-2aa6-11ea-8fa8-c920fe4229f4.png",
+        "keywords": "Web coding develop HTML CSS javascript React",
+        "genre": "TIL React-Preview",
         "datePublished": "2020-01-03",
         "dateCreated": "2020-01-03",
         "dateModified": "2020-01-03",
         "url": "https://hyeok999.github.io/2020/01/03/react-velo-06/",
-        "description": "",
-        "wordCount": 1
+        "description": "
+
+React with Velopert - 06 -
+input 상태 관리하기
+예제 : input 박스 입력 및 초기화 버튼 만들기
+App.js
+InputSample.js
+
+
+
+
+
+
+
+
+Chap 6. input 상태 관리하기input 상태 관리하기
+이번에는 리액트에서 사용자가 입력 할 수 있는 input 태그의 상태를 관리하는 방법을 알아보자.
+
+
+
+예제 :",
+        "wordCount": 369
     }
 </script>
 
@@ -350,7 +404,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/">GIT</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/">IT Event</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/">Java</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/">Javascript</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/">Project</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/">React</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/">Tips</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/">TIL</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/">Algorithm & Quiz</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/">HTML&CSS</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/">Javascript</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/Javascript-Preview/">Javascript-Preview</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/Javascript-Preview/React/">React</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/Javascript-Preview/React/React-Preview/">React-Preview</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/Javascript-Preview/React/React-Preview/linux/">linux</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/Javascript-Preview/React/React-Preview/linux/etc/">etc</a><span class="category-list-count">1</span></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/">Develop</a><span class="category-list-count">45</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/CSS/">CSS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/GIT/">GIT</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/IT-Event/">IT Event</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Java/">Java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Javascript/">Javascript</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Project/">Project</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/React/">React</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Tips/">Tips</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/">TIL</a><span class="category-list-count">165</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Algorithm-Quiz/">Algorithm & Quiz</a><span class="category-list-count">74</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript/">Javascript</a><span class="category-list-count">30</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a><span class="category-list-count">23</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/React/">React</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/React-Preview/">React-Preview</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/linux/">linux</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/etc/">etc</a><span class="category-list-count">1</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/">Develop</a><span class="category-list-count">45</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/CSS/">CSS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/GIT/">GIT</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/IT-Event/">IT Event</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Java/">Java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Javascript/">Javascript</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Project/">Project</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/React/">React</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Tips/">Tips</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/">TIL</a><span class="category-list-count">166</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Algorithm-Quiz/">Algorithm & Quiz</a><span class="category-list-count">74</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript/">Javascript</a><span class="category-list-count">30</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a><span class="category-list-count">23</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/React/">React</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/React-Preview/">React-Preview</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/linux/">linux</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/etc/">etc</a><span class="category-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -368,7 +422,7 @@ ga('send', 'pageview');
                             <a href="/2020/01/03/react-velo-06/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/71559900-d84bb780-2aa6-11ea-8fa8-c920fe4229f4.png)" alt="input 상태 관리하기" class="thumbnail-image"></span>
     
     
 </a>
@@ -376,8 +430,8 @@ ga('send', 'pageview');
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/CSS/">CSS</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/CSS/GIT/">GIT</a></p>
-                            <p class="item-title"><a href="/2020/01/03/react-velo-06/" class="title">react-velo-06</a></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/React-Preview/">React-Preview</a></p>
+                            <p class="item-title"><a href="/2020/01/03/react-velo-06/" class="title">input 상태 관리하기</a></p>
                             <p class="item-date"><time datetime="2020-01-03T12:55:35.000Z" itemprop="datePublished">2020-01-03</time></p>
                         </div>
                     </li>
