@@ -12,18 +12,20 @@
     
         <meta name="keywords" content="Web,coding,develop,HTML,CSS,javascript,React">
     
-    <meta name="description" content="HYEOK999&apos;s IT Develop Blog">
+    <meta name="description" content="React with Velopert - 07 - 여러개 input 상태 관리하기 예제 : 여러 input 박스 입력 및 초기화 버튼 만들기 (상태 관리하기) App.js InputSample.js 주의점-불변성         Chap 7. 여러개의 input 상태 관리하기여러개 input 상태 관리하기 input 상태가 다수 일 경우 관리를 하는 방법을">
 <meta name="keywords" content="Web,coding,develop,HTML,CSS,javascript,React">
 <meta property="og:type" content="article">
 <meta property="og:title" content="여러개 input 상태 관리하기">
 <meta property="og:url" content="https://hyeok999.github.io/2020/01/04/react-velo-07/index.html">
 <meta property="og:site_name" content="HYEOK999&#39;s Blog">
-<meta property="og:description" content="HYEOK999&apos;s IT Develop Blog">
+<meta property="og:description" content="React with Velopert - 07 - 여러개 input 상태 관리하기 예제 : 여러 input 박스 입력 및 초기화 버튼 만들기 (상태 관리하기) App.js InputSample.js 주의점-불변성         Chap 7. 여러개의 input 상태 관리하기여러개 input 상태 관리하기 input 상태가 다수 일 경우 관리를 하는 방법을">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-01-04T12:07:08.155Z">
+<meta property="og:image" content="https://user-images.githubusercontent.com/31315644/71559901-d84bb780-2aa6-11ea-83cd-9a50a853e25f.png">
+<meta property="og:updated_time" content="2020-01-04T12:08:46.975Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="여러개 input 상태 관리하기">
-<meta name="twitter:description" content="HYEOK999&apos;s IT Develop Blog">
+<meta name="twitter:description" content="React with Velopert - 07 - 여러개 input 상태 관리하기 예제 : 여러 input 박스 입력 및 초기화 버튼 만들기 (상태 관리하기) App.js InputSample.js 주의점-불변성         Chap 7. 여러개의 input 상태 관리하기여러개 input 상태 관리하기 input 상태가 다수 일 경우 관리를 하는 방법을">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/31315644/71559901-d84bb780-2aa6-11ea-83cd-9a50a853e25f.png">
     
     <link rel="canonical" href="https://hyeok999.github.io/2020/01/04/react-velo-07/">
     
@@ -191,7 +193,54 @@ ga('send', 'pageview');
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <p><img src="https://user-images.githubusercontent.com/31315644/71559901-d84bb780-2aa6-11ea-83cd-9a50a853e25f.png" alt="React07"></p>
+<hr>
+<h2 id="React-with-Velopert-07"><a href="#React-with-Velopert-07" class="headerlink" title="React with Velopert - 07 -"></a>React with Velopert - 07 -</h2><ul>
+<li>여러개 input 상태 관리하기<ul>
+<li>예제 : 여러 input 박스 입력 및 초기화 버튼 만들기 (상태 관리하기)<ul>
+<li>App.js</li>
+<li>InputSample.js</li>
+<li><a href="#a1">주의점-불변성</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<br>
+
+<hr>
+<h1 id="Chap-7-여러개의-input-상태-관리하기"><a href="#Chap-7-여러개의-input-상태-관리하기" class="headerlink" title="Chap 7. 여러개의 input 상태 관리하기"></a>Chap 7. 여러개의 input 상태 관리하기</h1><h2 id="여러개-input-상태-관리하기"><a href="#여러개-input-상태-관리하기" class="headerlink" title="여러개 input 상태 관리하기"></a>여러개 input 상태 관리하기</h2><blockquote>
+<p>input 상태가 다수 일 경우 관리를 하는 방법을 알아보자.</p>
+</blockquote>
+<br>
+
+<h3 id="예제-여러-input-박스-입력-및-초기화-버튼-만들기-상태-관리하기"><a href="#예제-여러-input-박스-입력-및-초기화-버튼-만들기-상태-관리하기" class="headerlink" title="예제 : 여러 input 박스 입력 및 초기화 버튼 만들기 (상태 관리하기)"></a>예제 : 여러 input 박스 입력 및 초기화 버튼 만들기 (상태 관리하기)</h3><h4 id="App-js"><a href="#App-js" class="headerlink" title="App.js"></a>App.js</h4><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> InputSample <span class="keyword">from</span> <span class="string">'./InputSample'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">App</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;InputSample /&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> App;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="InputSample-js"><a href="#InputSample-js" class="headerlink" title="InputSample.js"></a>InputSample.js</h4><p>input 의 개수가 여러개가 됐을때는, 단순히 <code>useState</code> 를 여러번 사용하고 <code>onChange</code> 도 여러개 만들어서 구현 할 수 있다. </p>
+<p>하지만 그 방법은 가장 좋은 방법은 아니다. 더 좋은 방법은, input 에 <code>name</code> 을 설정하고 이벤트가 발생했을 때 이 값을 참조하는 것이다. </p>
+<p>그리고, <code>useState</code> 에서는 문자열이 아니라 객체 형태의 상태를 관리해주어야 한다.</p>
+<p>기존의 InputSample 컴포넌트를 다음과 같이 수정해보자.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; useState &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">InputSample</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> [inputs, setInputs] = useState(&#123;</span><br><span class="line">    name: <span class="string">''</span>,</span><br><span class="line">    nickname: <span class="string">''</span></span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> &#123; name, nickname &#125; = inputs; <span class="comment">// 비구조화 할당을 통해 값 추출</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> onChange = <span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; value, name &#125; = e.target; <span class="comment">// 우선 e.target 에서 name 과 value 를 추출</span></span><br><span class="line">    setInputs(&#123;</span><br><span class="line">      ...inputs, <span class="comment">// 기존의 input 객체를 복사한 뒤</span></span><br><span class="line">      [name]: value <span class="comment">// name 키를 가진 값을 value 로 설정</span></span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> onReset = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    setInputs(&#123;</span><br><span class="line">      name: <span class="string">''</span>,</span><br><span class="line">      nickname: <span class="string">''</span>,</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;input name=<span class="string">"name"</span> placeholder=<span class="string">"이름"</span> onChange=&#123;onChange&#125; value=&#123;name&#125; /&gt;</span><br><span class="line">      &lt;input name=<span class="string">"nickname"</span> placeholder=<span class="string">"닉네임"</span> onChange=&#123;onChange&#125; value=&#123;nickname&#125;/&gt;</span><br><span class="line">      &lt;button onClick=&#123;onReset&#125;&gt;초기화&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">      &lt;div&gt;</span></span><br><span class="line"><span class="regexp">        &lt;b&gt;값: &lt;/</span>b&gt;</span><br><span class="line">        &#123;name&#125; (&#123;nickname&#125;)</span><br><span class="line">      &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>div&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> InputSample;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="주의점-불변성"><a href="#주의점-불변성" class="headerlink" title="주의점-불변성 "></a>주의점-불변성 <a id="a1"></a></h4><p>React에서 객체 상태를 수정할 때는 다음과 같이 직접적으로 값을 할당해서는 안된다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">inputs[name] = value;</span><br></pre></td></tr></table></figure>
+
+<p><code>inputs[name] = value</code> 이런식으로 기존 상태를 직접 수정하게 되면, 값을 바꿔도 리렌더링이 되지 않는다.</p>
+<br>
+
+<p>React에서는 객체 내용을 수정할 때, 반드시 객체로 반환해야한다.</p>
+<p>여기서 주의점은 *<em>객체로 반환시 기존의 객체에 덮어씌우는 꼴이기 때문에 전의 내용은 유지를 할 수가 없다. *</em></p>
+<p><strong>전의 내용을 유지하고 싶다면 반드시 Spread(…)문법이나 Object.assign 함수등을 이용해 복사해야만 한다.</strong> </p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">setInputs(&#123;</span><br><span class="line">  ...inputs,</span><br><span class="line">  [name]: value</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>이러한 작업들은 ‘불변성’을 지키기 위함인데 리액트가 컴포넌트에서 상태가 업데이트가 됬음을 감지하고 이에 따라 필요한 렌더링을 진행할 수 있다.</p>
+<p>리액트에서는 불변성을 지켜주어야만 컴포넌트 업데이트 성능 최적화를 제대로 할 수 있다. </p>
+<p>참고로, Redux에서도 위와 같은 이유로 반드시 새로운 객체를 반환해야만 한다.</p>
+
         </div>
         <footer class="article-footer">
             
@@ -269,15 +318,32 @@ ga('send', 'pageview');
             "name": "Jun Hyeok Kim"
         },
         "headline": "여러개 input 상태 관리하기",
-        "image": "https://hyeok999.github.io",
+        "image": "https://hyeok999.github.iohttps://user-images.githubusercontent.com/31315644/71559901-d84bb780-2aa6-11ea-83cd-9a50a853e25f.png",
         "keywords": "Web coding develop HTML CSS javascript React",
         "genre": "TIL React-Preview",
         "datePublished": "2020-01-04",
         "dateCreated": "2020-01-04",
         "dateModified": "2020-01-04",
         "url": "https://hyeok999.github.io/2020/01/04/react-velo-07/",
-        "description": "",
-        "wordCount": 1
+        "description": "
+
+React with Velopert - 07 -
+여러개 input 상태 관리하기
+예제 : 여러 input 박스 입력 및 초기화 버튼 만들기 (상태 관리하기)
+App.js
+InputSample.js
+주의점-불변성
+
+
+
+
+
+
+
+
+Chap 7. 여러개의 input 상태 관리하기여러개 input 상태 관리하기
+input 상태가 다수 일 경우 관리를 하는 방법을",
+        "wordCount": 661
     }
 </script>
 
@@ -368,7 +434,7 @@ ga('send', 'pageview');
                             <a href="/2020/01/04/react-velo-07/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/71559901-d84bb780-2aa6-11ea-83cd-9a50a853e25f.png)" alt="여러개 input 상태 관리하기" class="thumbnail-image"></span>
     
     
 </a>
