@@ -12,18 +12,20 @@
     
         <meta name="keywords" content="Web,coding,develop,HTML,CSS,javascript,React">
     
-    <meta name="description" content="HYEOK999&apos;s IT Develop Blog">
+    <meta name="description" content="React with Velopert - 10 - useRef 로 컴포넌트 안의 변수 만들기  예제 : useRef 를 사용하여 변수를 만들기  UserList.js  App.js          Chap 10. useRef 로 컴포넌트 안의 변수 만들기useRef 로 컴포넌트 안의 변수 만들기  컴포넌트에서 특정 DOM 을 선택해야 할 때, ref 를">
 <meta name="keywords" content="Web,coding,develop,HTML,CSS,javascript,React">
 <meta property="og:type" content="article">
 <meta property="og:title" content="useRef 로 컴포넌트 안의 변수 만들기">
 <meta property="og:url" content="https://hyeok999.github.io/2020/01/07/react-velo-10/index.html">
 <meta property="og:site_name" content="HYEOK999&#39;s Blog">
-<meta property="og:description" content="HYEOK999&apos;s IT Develop Blog">
+<meta property="og:description" content="React with Velopert - 10 - useRef 로 컴포넌트 안의 변수 만들기  예제 : useRef 를 사용하여 변수를 만들기  UserList.js  App.js          Chap 10. useRef 로 컴포넌트 안의 변수 만들기useRef 로 컴포넌트 안의 변수 만들기  컴포넌트에서 특정 DOM 을 선택해야 할 때, ref 를">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-01-06T15:01:34.053Z">
+<meta property="og:image" content="https://user-images.githubusercontent.com/31315644/71559904-d8e44e00-2aa6-11ea-9801-87c58a6b08ae.png">
+<meta property="og:updated_time" content="2020-01-06T15:02:59.513Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="useRef 로 컴포넌트 안의 변수 만들기">
-<meta name="twitter:description" content="HYEOK999&apos;s IT Develop Blog">
+<meta name="twitter:description" content="React with Velopert - 10 - useRef 로 컴포넌트 안의 변수 만들기  예제 : useRef 를 사용하여 변수를 만들기  UserList.js  App.js          Chap 10. useRef 로 컴포넌트 안의 변수 만들기useRef 로 컴포넌트 안의 변수 만들기  컴포넌트에서 특정 DOM 을 선택해야 할 때, ref 를">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/31315644/71559904-d8e44e00-2aa6-11ea-9801-87c58a6b08ae.png">
     
     <link rel="canonical" href="https://hyeok999.github.io/2020/01/07/react-velo-10/">
     
@@ -191,14 +193,60 @@ ga('send', 'pageview');
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <p><img src="https://user-images.githubusercontent.com/31315644/71559904-d8e44e00-2aa6-11ea-9801-87c58a6b08ae.png" alt="React10"></p>
+<hr>
+<h2 id="React-with-Velopert-10"><a href="#React-with-Velopert-10" class="headerlink" title="React with Velopert - 10 -"></a>React with Velopert - 10 -</h2><ul>
+<li><p>useRef 로 컴포넌트 안의 변수 만들기</p>
+<ul>
+<li><p>예제 : <code>useRef</code> 를 사용하여 변수를 만들기</p>
+<ul>
+<li><p>UserList.js</p>
+</li>
+<li><p>App.js</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<br>
+
+<hr>
+<h1 id="Chap-10-useRef-로-컴포넌트-안의-변수-만들기"><a href="#Chap-10-useRef-로-컴포넌트-안의-변수-만들기" class="headerlink" title="Chap 10. useRef 로 컴포넌트 안의 변수 만들기"></a>Chap 10. useRef 로 컴포넌트 안의 변수 만들기</h1><h2 id="useRef-로-컴포넌트-안의-변수-만들기"><a href="#useRef-로-컴포넌트-안의-변수-만들기" class="headerlink" title="useRef 로 컴포넌트 안의 변수 만들기"></a>useRef 로 컴포넌트 안의 변수 만들기</h2><br>
+
+<p>컴포넌트에서 특정 DOM 을 선택해야 할 때, <code>ref</code> 를 사용해야 한다. </p>
+<p>그리고, 함수형 컴포넌트에서 이를 설정 할 때 <code>useRef</code> 를 사용하여 설정해야 한다.</p>
+<p>여기서 사용된 <code>useRef</code> Hook은 <strong>DOM을 선택하는 용도 외에도, 컴포넌트 안에서 조회 및 수정 할 수 있는 변수를 관리할 수 있다.</strong></p>
+<p><code>useRef</code>로 관리하는 변수는 값이 바뀐다고 해서 리렌더링 되지 않는다. 리액트 컴포넌트에서의 상태는 상태를 바꾸는 함수를 호출하고 나서 그 다음 렌더링 이후로 업데이트 된 상태를 조회 할 수 있는 반면에 <code>useRef</code>로 관리하고 있는 변수는 설정 후 바로 조회가 가능하다.</p>
+<p>이 변수를 사용하여 다음과 같은 값을 관리 할 수 있다.</p>
+<ul>
+<li><code>setTimeout</code>, <code>setInterval</code> 을 통해서 만들어진 <code>id</code></li>
+<li>외부 라이브러리를 사용하여 생성된 인스턴스</li>
+<li>scroll 위치</li>
+</ul>
+<p>우리는, App 컴포넌트에서 <code>useRef</code> 를 사용하여 변수를 관리해보자, 용도는 우리가 앞으로 배열에 새 항목을 추가할건데, 새 항목에서 사용 할 고유 <code>id</code> 를 관리하는 용도이다.</p>
+<p><code>useRef</code> 를 사용하여 변수를 관리하기 전에 해야 할 작업이 있다.</p>
+<p>지금은 우리가 UserList 컴포넌트 내부에서 배열을 직접 선언해서 사용을 하고 있는데, 이렇게 UserList 에서 선언해서 사용하는 대신에, 이 배열을 App 에서 선언하고 UserList 에게 <code>props</code> 로 전달 해주자.</p>
+<br>
+
+<h3 id="예제-useRef-를-사용하여-변수를-만들기"><a href="#예제-useRef-를-사용하여-변수를-만들기" class="headerlink" title="예제 : useRef 를 사용하여 변수를 만들기"></a>예제 : <code>useRef</code> 를 사용하여 변수를 만들기</h3><h4 id="UserList-js"><a href="#UserList-js" class="headerlink" title="UserList.js"></a>UserList.js</h4><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">User</span>(<span class="params">&#123; user &#125;</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;b&gt;&#123;user.username&#125;&lt;<span class="regexp">/b&gt; &lt;span&gt;(&#123;user.email&#125;)&lt;/</span>span&gt;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">function UserList(&#123; users &#125;) &#123;</span></span><br><span class="line"><span class="regexp">  return (</span></span><br><span class="line"><span class="regexp">    &lt;div&gt;</span></span><br><span class="line"><span class="regexp">      &#123;users.map(user =&gt; (</span></span><br><span class="line"><span class="regexp">        &lt;User user=&#123;user&#125; key=&#123;user.id&#125; /</span>&gt;</span><br><span class="line">      ))&#125;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">export default UserList;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="App-js"><a href="#App-js" class="headerlink" title="App.js"></a>App.js</h4><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; useRef &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> UserList <span class="keyword">from</span> <span class="string">'./UserList'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">App</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> users = [</span><br><span class="line">    &#123;</span><br><span class="line">      id: <span class="number">1</span>,</span><br><span class="line">      username: <span class="string">'velopert'</span>,</span><br><span class="line">      email: <span class="string">'public.velopert@gmail.com'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      id: <span class="number">2</span>,</span><br><span class="line">      username: <span class="string">'tester'</span>,</span><br><span class="line">      email: <span class="string">'tester@example.com'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      id: <span class="number">3</span>,</span><br><span class="line">      username: <span class="string">'liz'</span>,</span><br><span class="line">      email: <span class="string">'liz@example.com'</span></span><br><span class="line">    &#125;</span><br><span class="line">  ];</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> nextId = useRef(<span class="number">4</span>); <span class="comment">// current : 4</span></span><br><span class="line">  <span class="keyword">const</span> onCreate = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// 나중에 구현 할 배열에 항목 추가하는 로직</span></span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line"></span><br><span class="line">    nextId.current += <span class="number">1</span>; <span class="comment">// current : 5</span></span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">UserList</span> <span class="attr">users</span>=<span class="string">&#123;users&#125;</span> /&gt;</span>;</span></span><br><span class="line"><span class="xml">&#125;</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">export default App;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>여기서 알수 있는 것</strong></p>
+<p><code>useRef()</code> 를 사용 할 때 파라미터를 넣어주면, 이 값이 <code>.current</code> 값의 기본값이 된다.</p>
+<p>수정 할때에는 <code>.current</code> 값을 수정하면 되고 </p>
+<p>조회 할 때에는 <code>.current</code> 를 조회하면 된다.</p>
+<br>
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="https://hyeok999.github.io/2020/01/07/react-velo-10/" data-id="ck52kpd0i00j643z00goulcu1" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://hyeok999.github.io/2020/01/07/react-velo-10/" data-id="ck52krp5100j485z08ntakr9q" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -269,15 +317,36 @@ ga('send', 'pageview');
             "name": "Jun Hyeok Kim"
         },
         "headline": "useRef 로 컴포넌트 안의 변수 만들기",
-        "image": "https://hyeok999.github.io",
+        "image": "https://hyeok999.github.iohttps://user-images.githubusercontent.com/31315644/71559904-d8e44e00-2aa6-11ea-9801-87c58a6b08ae.png",
         "keywords": "Web coding develop HTML CSS javascript React",
         "genre": "TIL React-Preview",
         "datePublished": "2020-01-07",
         "dateCreated": "2020-01-07",
         "dateModified": "2020-01-07",
         "url": "https://hyeok999.github.io/2020/01/07/react-velo-10/",
-        "description": "",
-        "wordCount": 1
+        "description": "
+
+React with Velopert - 10 -
+useRef 로 컴포넌트 안의 변수 만들기
+
+예제 : useRef 를 사용하여 변수를 만들기
+
+UserList.js
+
+App.js
+
+
+
+
+
+
+
+
+
+Chap 10. useRef 로 컴포넌트 안의 변수 만들기useRef 로 컴포넌트 안의 변수 만들기
+
+컴포넌트에서 특정 DOM 을 선택해야 할 때, ref 를 ",
+        "wordCount": 672
     }
 </script>
 
@@ -368,7 +437,7 @@ ga('send', 'pageview');
                             <a href="/2020/01/07/react-velo-10/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/71559904-d8e44e00-2aa6-11ea-9801-87c58a6b08ae.png)" alt="useRef 로 컴포넌트 안의 변수 만들기" class="thumbnail-image"></span>
     
     
 </a>
