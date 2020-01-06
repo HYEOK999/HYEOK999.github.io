@@ -6,24 +6,26 @@
     
 
     
-    <title>react-velo-09 | HYEOK999&#39;s Blog</title>
+    <title>배열 렌더링하기 | HYEOK999&#39;s Blog</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="git,Web,coding,develop,TIL,algorithm,HTML,CSS,javascript,Programmers,React">
+        <meta name="keywords" content="Web,coding,develop,HTML,CSS,javascript,React">
     
-    <meta name="description" content="HYEOK999&apos;s IT Develop Blog">
-<meta name="keywords" content="git,Web,coding,develop,TIL,algorithm,HTML,CSS,javascript,Programmers,React">
+    <meta name="description" content="React with Velopert - 09 - 배열 렌더링하기 기본 배열 렌더링 UserList.js   map 함수를 이용한 배열 렌더링 UserList.js key 추가하기   key의 존재유무에 따른 업데이트 방식 key가 없을 시 key가 존재할 시         Chap 9. 배열 렌더링하기배열 렌더링하기  다음과 같은 배열이 있다고 가정해보">
+<meta name="keywords" content="Web,coding,develop,HTML,CSS,javascript,React">
 <meta property="og:type" content="article">
-<meta property="og:title" content="react-velo-09">
+<meta property="og:title" content="배열 렌더링하기">
 <meta property="og:url" content="https://hyeok999.github.io/2020/01/06/react-velo-09/index.html">
 <meta property="og:site_name" content="HYEOK999&#39;s Blog">
-<meta property="og:description" content="HYEOK999&apos;s IT Develop Blog">
+<meta property="og:description" content="React with Velopert - 09 - 배열 렌더링하기 기본 배열 렌더링 UserList.js   map 함수를 이용한 배열 렌더링 UserList.js key 추가하기   key의 존재유무에 따른 업데이트 방식 key가 없을 시 key가 존재할 시         Chap 9. 배열 렌더링하기배열 렌더링하기  다음과 같은 배열이 있다고 가정해보">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-01-06T14:57:56.936Z">
+<meta property="og:image" content="https://user-images.githubusercontent.com/31315644/71559903-d8e44e00-2aa6-11ea-8bce-7cd5289f492d.png">
+<meta property="og:updated_time" content="2020-01-06T14:59:42.073Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="react-velo-09">
-<meta name="twitter:description" content="HYEOK999&apos;s IT Develop Blog">
+<meta name="twitter:title" content="배열 렌더링하기">
+<meta name="twitter:description" content="React with Velopert - 09 - 배열 렌더링하기 기본 배열 렌더링 UserList.js   map 함수를 이용한 배열 렌더링 UserList.js key 추가하기   key의 존재유무에 따른 업데이트 방식 key가 없을 시 key가 존재할 시         Chap 9. 배열 렌더링하기배열 렌더링하기  다음과 같은 배열이 있다고 가정해보">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/31315644/71559903-d8e44e00-2aa6-11ea-8bce-7cd5289f492d.png">
     
     <link rel="canonical" href="https://hyeok999.github.io/2020/01/06/react-velo-09/">
     
@@ -93,7 +95,7 @@ ga('send', 'pageview');
                                     <a class="main-nav-list-link" href="/">Home</a>
                                 </li>
                             
-                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/CSS/">CSS</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/CSS/GIT/">GIT</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/">Develop</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/CSS/">CSS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/GIT/">GIT</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/IT-Event/">IT Event</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Project/">Project</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/React/">React</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Tips/">Tips</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/">TIL</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Algorithm-Quiz/">Algorithm & Quiz</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/React/">React</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/React-Preview/">React-Preview</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/linux/">linux</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/etc/">etc</a></li></ul>
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/">Develop</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/CSS/">CSS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/GIT/">GIT</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/IT-Event/">IT Event</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Project/">Project</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/React/">React</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Tips/">Tips</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/">TIL</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Algorithm-Quiz/">Algorithm & Quiz</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/React/">React</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/React-Preview/">React-Preview</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/linux/">linux</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/etc/">etc</a></li></ul>
                                     
                                 <li class="main-nav-list-item">
                                     <a class="main-nav-list-link" href="https://about.me/iasg2004" rel="external nofollow noopener noreferrer" target="_blank">About</a>
@@ -152,7 +154,7 @@ ga('send', 'pageview');
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/CSS/">CSS</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/">GIT</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/">IT Event</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/">Java</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/">Javascript</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/">Project</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/">React</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/">Tips</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/">Algorithm & Quiz</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/">HTML&CSS</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/">Javascript</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/Javascript-Preview/">Javascript-Preview</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/Javascript-Preview/React/">React</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/Javascript-Preview/React/React-Preview/">React-Preview</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/Javascript-Preview/React/React-Preview/linux/">linux</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/Javascript-Preview/React/React-Preview/linux/etc/">etc</a>
+    <a class="page-title-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/TIL/React-Preview/">React-Preview</a>
     </h1>
 </div>
 
@@ -164,7 +166,7 @@ ga('send', 'pageview');
                 
     
         <h1 class="article-title" itemprop="name">
-        react-velo-09
+        배열 렌더링하기
         </h1>
     
 
@@ -175,7 +177,7 @@ ga('send', 'pageview');
                 
     <div class="article-date">
         <a href="/2020/01/06/react-velo-09/" class="article-date">
-            <time datetime="2020-01-06T14:57:56.000Z" itemprop="datePublished">2020-01-06</time>
+            <time datetime="2020-01-06T11:27:56.000Z" itemprop="datePublished">2020-01-06</time>
         </a>
     </div>
 
@@ -184,14 +186,93 @@ ga('send', 'pageview');
                 
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/CSS/">CSS</a>, <a class="tag-link" href="/tags/HTML/">HTML</a>, <a class="tag-link" href="/tags/Programmers/">Programmers</a>, <a class="tag-link" href="/tags/React/">React</a>, <a class="tag-link" href="/tags/TIL/">TIL</a>, <a class="tag-link" href="/tags/Web/">Web</a>, <a class="tag-link" href="/tags/algorithm/">algorithm</a>, <a class="tag-link" href="/tags/coding/">coding</a>, <a class="tag-link" href="/tags/develop/">develop</a>, <a class="tag-link" href="/tags/git/">git</a>, <a class="tag-link" href="/tags/javascript/">javascript</a>
+        <a class="tag-link" href="/tags/CSS/">CSS</a>, <a class="tag-link" href="/tags/HTML/">HTML</a>, <a class="tag-link" href="/tags/React/">React</a>, <a class="tag-link" href="/tags/Web/">Web</a>, <a class="tag-link" href="/tags/coding/">coding</a>, <a class="tag-link" href="/tags/develop/">develop</a>, <a class="tag-link" href="/tags/javascript/">javascript</a>
     </div>
 
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <p><img src="https://user-images.githubusercontent.com/31315644/71559903-d8e44e00-2aa6-11ea-8bce-7cd5289f492d.png" alt="React09"></p>
+<hr>
+<h2 id="React-with-Velopert-09"><a href="#React-with-Velopert-09" class="headerlink" title="React with Velopert - 09 -"></a>React with Velopert - 09 -</h2><ul>
+<li>배열 렌더링하기<ul>
+<li><a href="#a1">기본 배열 렌더링</a><ul>
+<li>UserList.js</li>
+</ul>
+</li>
+<li><a href="#a2">map 함수를 이용한 배열 렌더링</a><ul>
+<li>UserList.js</li>
+<li>key 추가하기</li>
+</ul>
+</li>
+<li><a href="#a3">key의 존재유무에 따른 업데이트 방식</a><ul>
+<li><a href="#a4">key가 없을 시</a></li>
+<li><a href="#a5">key가 존재할 시</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<br>
+
+<hr>
+<h1 id="Chap-9-배열-렌더링하기"><a href="#Chap-9-배열-렌더링하기" class="headerlink" title="Chap 9. 배열 렌더링하기"></a>Chap 9. 배열 렌더링하기</h1><h2 id="배열-렌더링하기"><a href="#배열-렌더링하기" class="headerlink" title="배열 렌더링하기"></a>배열 렌더링하기</h2><br>
+
+<p>다음과 같은 배열이 있다고 가정해보자.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> users = [</span><br><span class="line">  &#123;</span><br><span class="line">    id: <span class="number">1</span>,</span><br><span class="line">    username: <span class="string">'velopert'</span>,</span><br><span class="line">    email: <span class="string">'public.velopert@gmail.com'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    id: <span class="number">2</span>,</span><br><span class="line">    username: <span class="string">'tester'</span>,</span><br><span class="line">    email: <span class="string">'tester@example.com'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    id: <span class="number">3</span>,</span><br><span class="line">    username: <span class="string">'liz'</span>,</span><br><span class="line">    email: <span class="string">'liz@example.com'</span></span><br><span class="line">  &#125;</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
+
+<p>위 배열을 렌더링하려면 가장 단순한 것은 그대로 코드를 작성하는 것인데…</p>
+<p>UserList.js</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">UserList</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> users = [</span><br><span class="line">    &#123;</span><br><span class="line">      id: <span class="number">1</span>,</span><br><span class="line">      username: <span class="string">'velopert'</span>,</span><br><span class="line">      email: <span class="string">'public.velopert@gmail.com'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      id: <span class="number">2</span>,</span><br><span class="line">      username: <span class="string">'tester'</span>,</span><br><span class="line">      email: <span class="string">'tester@example.com'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      id: <span class="number">3</span>,</span><br><span class="line">      username: <span class="string">'liz'</span>,</span><br><span class="line">      email: <span class="string">'liz@example.com'</span></span><br><span class="line">    &#125;</span><br><span class="line">  ];</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;b&gt;&#123;users[<span class="number">0</span>].username&#125;&lt;<span class="regexp">/b&gt; &lt;span&gt;(&#123;users[0].email&#125;)&lt;/</span>span&gt;</span><br><span class="line">      &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">      &lt;div&gt;</span></span><br><span class="line"><span class="regexp">        &lt;b&gt;&#123;users[1].username&#125;&lt;/</span>b&gt; <span class="xml"><span class="tag">&lt;<span class="name">span</span>&gt;</span>(&#123;users[1].email&#125;)<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br><span class="line">      &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">      &lt;div&gt;</span></span><br><span class="line"><span class="regexp">        &lt;b&gt;&#123;users[2].username&#125;&lt;/</span>b&gt; <span class="xml"><span class="tag">&lt;<span class="name">span</span>&gt;</span>(&#123;users[1].email&#125;)<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br><span class="line">      &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>div&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> UserList;</span><br></pre></td></tr></table></figure>
+
+<p>위와 같은 방법은 너무 중복된 코드가 많으므로 컴포넌트를 이용해 재사용 해보도록 하겠다.</p>
+<br>
+
+<h3 id="기본-배열-렌더링"><a href="#기본-배열-렌더링" class="headerlink" title="기본 배열 렌더링  "></a>기본 배열 렌더링  <a id="a1"></a></h3><h4 id="UserList-js"><a href="#UserList-js" class="headerlink" title="UserList.js"></a>UserList.js</h4><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">User</span>(<span class="params">&#123; user &#125;</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;b&gt;&#123;user.username&#125;&lt;<span class="regexp">/b&gt; &lt;span&gt;(&#123;user.email&#125;)&lt;/</span>span&gt;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">function UserList() &#123;</span></span><br><span class="line"><span class="regexp">  const users = [</span></span><br><span class="line"><span class="regexp">    &#123;</span></span><br><span class="line"><span class="regexp">      id: 1,</span></span><br><span class="line"><span class="regexp">      username: 'velopert',</span></span><br><span class="line"><span class="regexp">      email: 'public.velopert@gmail.com'</span></span><br><span class="line"><span class="regexp">    &#125;,</span></span><br><span class="line"><span class="regexp">    &#123;</span></span><br><span class="line"><span class="regexp">      id: 2,</span></span><br><span class="line"><span class="regexp">      username: 'tester',</span></span><br><span class="line"><span class="regexp">      email: 'tester@example.com'</span></span><br><span class="line"><span class="regexp">    &#125;,</span></span><br><span class="line"><span class="regexp">    &#123;</span></span><br><span class="line"><span class="regexp">      id: 3,</span></span><br><span class="line"><span class="regexp">      username: 'liz',</span></span><br><span class="line"><span class="regexp">      email: 'liz@example.com'</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">  ];</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">  return (</span></span><br><span class="line"><span class="regexp">    &lt;div&gt;</span></span><br><span class="line"><span class="regexp">      &lt;User user=&#123;users[0]&#125; /</span>&gt;</span><br><span class="line">      &lt;User user=&#123;users[<span class="number">1</span>]&#125; /&gt;</span><br><span class="line">      &lt;User user=&#123;users[<span class="number">2</span>]&#125; /&gt;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">export default UserList;</span></span><br></pre></td></tr></table></figure>
+
+<p>위와 같은 방식은 배열이 항상 고정적일 경우 나쁘지 않을 수도 있다. 하지만 배열이 수시로 늘어나고 적어짐에 따라 개발자는 배열이 늘어남과 동시에 수정할 곳이 늘어나는데 즉 유지보수성이 안 좋을 뿐더러 실수를 유발하는 원인이 될 수도 있고 실사용에서 이러한 실수는 치명적인 문제로 남을 수 있다.</p>
+<p>따라서, 동적인 배열을 렌더링할 때는 다음 방법을 이용해보도록 한다.</p>
+<br>
+
+<h3 id="map-함수를-이용한-배열-렌더링"><a href="#map-함수를-이용한-배열-렌더링" class="headerlink" title="map 함수를 이용한 배열 렌더링 "></a>map 함수를 이용한 배열 렌더링 <a id="a2"></a></h3><h4 id="UserList-js-1"><a href="#UserList-js-1" class="headerlink" title="UserList.js"></a>UserList.js</h4><p>동적인 배열을 렌더링하고자 할 때는 <code>map()</code>를 이용하도록 한다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">User</span>(<span class="params">&#123; user &#125;</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;b&gt;&#123;user.username&#125;&lt;<span class="regexp">/b&gt; &lt;span&gt;(&#123;user.email&#125;)&lt;/</span>span&gt;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">function UserList() &#123;</span></span><br><span class="line"><span class="regexp">  const users = [</span></span><br><span class="line"><span class="regexp">    &#123;</span></span><br><span class="line"><span class="regexp">      id: 1,</span></span><br><span class="line"><span class="regexp">      username: 'velopert',</span></span><br><span class="line"><span class="regexp">      email: 'public.velopert@gmail.com'</span></span><br><span class="line"><span class="regexp">    &#125;,</span></span><br><span class="line"><span class="regexp">    &#123;</span></span><br><span class="line"><span class="regexp">      id: 2,</span></span><br><span class="line"><span class="regexp">      username: 'tester',</span></span><br><span class="line"><span class="regexp">      email: 'tester@example.com'</span></span><br><span class="line"><span class="regexp">    &#125;,</span></span><br><span class="line"><span class="regexp">    &#123;</span></span><br><span class="line"><span class="regexp">      id: 3,</span></span><br><span class="line"><span class="regexp">      username: 'liz',</span></span><br><span class="line"><span class="regexp">      email: 'liz@example.com'</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">  ];</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">  return (</span></span><br><span class="line"><span class="regexp">    &lt;div&gt;</span></span><br><span class="line"><span class="regexp">      &#123;users.map(user =&gt; (</span></span><br><span class="line"><span class="regexp">        &lt;User user=&#123;user&#125; /</span>&gt;</span><br><span class="line">      ))&#125;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">export default UserList;</span></span><br></pre></td></tr></table></figure>
+
+<img src="https://user-images.githubusercontent.com/31315644/71560380-7f7f1d80-2aac-11ea-809e-feab8f927b4f.jpeg" alt="결과" style="zoom:50%;">
+
+<br>
+
+<h4 id="key-추가하기"><a href="#key-추가하기" class="headerlink" title="key 추가하기"></a>key 추가하기</h4><p>React에서 배열을 렌더링 할 때는 <code>key</code>라는 props를 상위 태그에 설정해주어야 한다.</p>
+<p><code>key</code>를 설정 안해줄 경우 렌더링시 경고를 띄우기도 하고 실제로 정렬시 문제를 일으킬 수도 있기 때문에 설정 해주는 것이 중요하다. </p>
+<p><code>key</code> 값은 각 원소들마다 가지고 있는 고유값으로 설정을 해야한다. </p>
+<p>지금의 경우엔 <code>id</code> 가 고유 값으로 사용할 수 있는데 이를 위한 모듈도 존재한다.(<code>uuid</code>) </p>
+<p>단, 자바스크립트가 지원하는 빌트인 함수인 렌더함수는 이용하면 안된다. 렌더함수는 고유값을 배포하는게 아니기 때문에 안전성면에서 약간 떨어지기 때문이다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> (</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &#123;users.map(<span class="function"><span class="params">user</span> =&gt;</span> (</span><br><span class="line">      &lt;User user=&#123;user&#125; key=&#123;user.id&#125; /&gt;</span><br><span class="line">    ))&#125;</span><br><span class="line">  &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">);</span></span><br></pre></td></tr></table></figure>
+
+<p>만약에 배열을 렌더링 할 때 <code>key</code> 설정을 하지 않게된다면 기본적으로 배열의 <code>index</code> 값을 <code>key</code> 로 사용하게 되고, 콘솔창에 경고 메시지가 뜨게 된다.</p>
+<br>
+
+<h3 id="key의-존재유무에-따른-업데이트-방식"><a href="#key의-존재유무에-따른-업데이트-방식" class="headerlink" title="key의 존재유무에 따른 업데이트 방식 "></a>key의 존재유무에 따른 업데이트 방식 <a id="a3"></a></h3><p>다음과 같은 배열이 있다고 가정하자.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> array = [</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="number">0</span>, <span class="attr">text</span>: <span class="string">'a'</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="number">1</span>, <span class="attr">text</span>: <span class="string">'b'</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="number">2</span>, <span class="attr">text</span>: <span class="string">'c'</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="number">3</span>, <span class="attr">text</span>: <span class="string">'d'</span> &#125;,</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="key가-없을-시"><a href="#key가-없을-시" class="headerlink" title="key가 없을 시 "></a>key가 없을 시 <a id="a4"></a></h4><p> 위 배열을 다음과 같이 렌더링한다고 가정해보자. <code>key</code>를 설정하지 않고 렌더링 한 것이다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">array.map(<span class="function"><span class="params">item</span> =&gt;</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;item.text&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>); <span class="comment">// key 미설정</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.imgur.com/3rkaiY1.gif" alt="img"></p>
+<p>위 배열의 b 와 c 사이에 z 를 삽입하게 된다면, 리렌더링을 하게 될 때 <code>b</code> 와 <code>c</code> 사이에 새 <code>div</code> 태그를 삽입을 하게 되는 것이 아니라, 기존의 c 가 z 로바뀌고, d 는 c 로 바뀌고, 맨 마지막에 d 가 새로 삽입된다.</p>
+<p>그 다음에 a 를 제거하게 된다면, 기존의 a 가 b 로 바뀌고, b 는 z 로 바뀌고, z는 c로 바뀌고, c는 d 로바뀌고, 맨 마지막에 있는 d 가 제거된다.</p>
+<br>
+
+<h4 id="key가-존재할-시"><a href="#key가-존재할-시" class="headerlink" title="key가 존재할 시 "></a>key가 존재할 시 <a id="a5"></a></h4><p>만약 <code>key</code>를 다음과 같이 설정 해준다면  이 작업은 개선된다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">array.map(<span class="function"><span class="params">item</span> =&gt;</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">key</span>=<span class="string">&#123;item.id&#125;</span>&gt;</span>&#123;item.text&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>); <span class="comment">// key 설정</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.imgur.com/yEUS6Bx.gif" alt="img"></p>
+<p>배열이 업데이트 될 떄 <code>key</code> 가 없을 때 처럼 비효율적으로 업데이트 하는 것이 아니라, 수정되지 않는 기존의 값은 그대로 두고 원하는 곳에 내용을 삽입하거나 삭제한다.</p>
+<p>때문에, 배열을 렌더링 할 때에는 고유한 <code>key</code> 값이 있는것이 중요하며, </p>
+<p>만약에 배열안에 중복되는 <code>key</code> 가 있거나 <code>key</code>가 아예 존재하지 않을 때에는 렌더링시에 오류메시지가 콘솔에 나타나게 되며, 업데이트가 제대로 이루어지지 않게 된다.</p>
+
         </div>
         <footer class="article-footer">
             
@@ -268,16 +349,42 @@ ga('send', 'pageview');
             "@type": "Person",
             "name": "Jun Hyeok Kim"
         },
-        "headline": "react-velo-09",
-        "image": "https://hyeok999.github.io",
-        "keywords": "git Web coding develop TIL algorithm HTML CSS javascript Programmers React",
-        "genre": "CSS GIT IT Event Java Javascript Project React Tips TIL Algorithm & Quiz HTML&CSS Javascript Javascript-Preview React React-Preview linux etc",
+        "headline": "배열 렌더링하기",
+        "image": "https://hyeok999.github.iohttps://user-images.githubusercontent.com/31315644/71559903-d8e44e00-2aa6-11ea-8bce-7cd5289f492d.png",
+        "keywords": "Web coding develop HTML CSS javascript React",
+        "genre": "TIL React-Preview",
         "datePublished": "2020-01-06",
         "dateCreated": "2020-01-06",
         "dateModified": "2020-01-06",
         "url": "https://hyeok999.github.io/2020/01/06/react-velo-09/",
-        "description": "",
-        "wordCount": 1
+        "description": "
+
+React with Velopert - 09 -
+배열 렌더링하기
+기본 배열 렌더링
+UserList.js
+
+
+map 함수를 이용한 배열 렌더링
+UserList.js
+key 추가하기
+
+
+key의 존재유무에 따른 업데이트 방식
+key가 없을 시
+key가 존재할 시
+
+
+
+
+
+
+
+
+Chap 9. 배열 렌더링하기배열 렌더링하기
+
+다음과 같은 배열이 있다고 가정해보",
+        "wordCount": 1581
     }
 </script>
 
@@ -350,7 +457,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/">GIT</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/">IT Event</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/">Java</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/">Javascript</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/">Project</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/">React</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/">Tips</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/">TIL</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/">Algorithm & Quiz</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/">HTML&CSS</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/">Javascript</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/Javascript-Preview/">Javascript-Preview</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/Javascript-Preview/React/">React</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/Javascript-Preview/React/React-Preview/">React-Preview</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/Javascript-Preview/React/React-Preview/linux/">linux</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/Javascript-Preview/React/React-Preview/linux/etc/">etc</a><span class="category-list-count">1</span></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/">Develop</a><span class="category-list-count">45</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/CSS/">CSS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/GIT/">GIT</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/IT-Event/">IT Event</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Java/">Java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Javascript/">Javascript</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Project/">Project</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/React/">React</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Tips/">Tips</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/">TIL</a><span class="category-list-count">169</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Algorithm-Quiz/">Algorithm & Quiz</a><span class="category-list-count">74</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript/">Javascript</a><span class="category-list-count">30</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a><span class="category-list-count">23</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/React/">React</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/React-Preview/">React-Preview</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/linux/">linux</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/etc/">etc</a><span class="category-list-count">1</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/">Develop</a><span class="category-list-count">45</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/CSS/">CSS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/GIT/">GIT</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/IT-Event/">IT Event</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Java/">Java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Javascript/">Javascript</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Project/">Project</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/React/">React</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Tips/">Tips</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/">TIL</a><span class="category-list-count">170</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Algorithm-Quiz/">Algorithm & Quiz</a><span class="category-list-count">74</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript/">Javascript</a><span class="category-list-count">30</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a><span class="category-list-count">23</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/React/">React</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/React-Preview/">React-Preview</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/linux/">linux</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/etc/">etc</a><span class="category-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -368,7 +475,7 @@ ga('send', 'pageview');
                             <a href="/2020/01/06/react-velo-09/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/71559903-d8e44e00-2aa6-11ea-8bce-7cd5289f492d.png)" alt="배열 렌더링하기" class="thumbnail-image"></span>
     
     
 </a>
@@ -376,9 +483,9 @@ ga('send', 'pageview');
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/CSS/">CSS</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/CSS/GIT/">GIT</a></p>
-                            <p class="item-title"><a href="/2020/01/06/react-velo-09/" class="title">react-velo-09</a></p>
-                            <p class="item-date"><time datetime="2020-01-06T14:57:56.000Z" itemprop="datePublished">2020-01-06</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/React-Preview/">React-Preview</a></p>
+                            <p class="item-title"><a href="/2020/01/06/react-velo-09/" class="title">배열 렌더링하기</a></p>
+                            <p class="item-date"><time datetime="2020-01-06T11:27:56.000Z" itemprop="datePublished">2020-01-06</time></p>
                         </div>
                     </li>
                 
