@@ -12,18 +12,20 @@
     
         <meta name="keywords" content="Web,coding,develop,HTML,CSS,javascript,React">
     
-    <meta name="description" content="HYEOK999&apos;s IT Develop Blog">
+    <meta name="description" content="React with Velopert - 12 - 배열에 항목 제거하기 예제 : 배열 항목 삭제하기 삭제 버튼 렌더링 : UserList.js 삭제 함수 onRemove 구현 및 전달 : App.js         Chap 12. 배열에 항목 제거하기배열에 항목 제거하기   UserList 에서 각 User 컴포넌트를 보여줄 때, 삭제 버튼을 렌더링해주자">
 <meta name="keywords" content="Web,coding,develop,HTML,CSS,javascript,React">
 <meta property="og:type" content="article">
 <meta property="og:title" content="배열에 항목 제거하기">
 <meta property="og:url" content="https://hyeok999.github.io/2020/01/11/react-velo-12/index.html">
 <meta property="og:site_name" content="HYEOK999&#39;s Blog">
-<meta property="og:description" content="HYEOK999&apos;s IT Develop Blog">
+<meta property="og:description" content="React with Velopert - 12 - 배열에 항목 제거하기 예제 : 배열 항목 삭제하기 삭제 버튼 렌더링 : UserList.js 삭제 함수 onRemove 구현 및 전달 : App.js         Chap 12. 배열에 항목 제거하기배열에 항목 제거하기   UserList 에서 각 User 컴포넌트를 보여줄 때, 삭제 버튼을 렌더링해주자">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-01-11T14:11:20.649Z">
+<meta property="og:image" content="https://user-images.githubusercontent.com/31315644/71559906-d8e44e00-2aa6-11ea-82ff-1864f189b0b8.png">
+<meta property="og:updated_time" content="2020-01-11T14:12:51.439Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="배열에 항목 제거하기">
-<meta name="twitter:description" content="HYEOK999&apos;s IT Develop Blog">
+<meta name="twitter:description" content="React with Velopert - 12 - 배열에 항목 제거하기 예제 : 배열 항목 삭제하기 삭제 버튼 렌더링 : UserList.js 삭제 함수 onRemove 구현 및 전달 : App.js         Chap 12. 배열에 항목 제거하기배열에 항목 제거하기   UserList 에서 각 User 컴포넌트를 보여줄 때, 삭제 버튼을 렌더링해주자">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/31315644/71559906-d8e44e00-2aa6-11ea-82ff-1864f189b0b8.png">
     
     <link rel="canonical" href="https://hyeok999.github.io/2020/01/11/react-velo-12/">
     
@@ -191,14 +193,47 @@ ga('send', 'pageview');
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <p><img src="https://user-images.githubusercontent.com/31315644/71559906-d8e44e00-2aa6-11ea-82ff-1864f189b0b8.png" alt="React12"></p>
+<hr>
+<h2 id="React-with-Velopert-12"><a href="#React-with-Velopert-12" class="headerlink" title="React with Velopert - 12 -"></a>React with Velopert - 12 -</h2><ul>
+<li>배열에 항목 제거하기<ul>
+<li>예제 : 배열 항목 삭제하기<ul>
+<li><a href="#a0">삭제 버튼 렌더링 : UserList.js</a></li>
+<li><a href="#a1">삭제 함수 onRemove 구현 및 전달 : App.js</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<br>
+
+<hr>
+<h1 id="Chap-12-배열에-항목-제거하기"><a href="#Chap-12-배열에-항목-제거하기" class="headerlink" title="Chap 12. 배열에 항목 제거하기"></a>Chap 12. 배열에 항목 제거하기</h1><h2 id="배열에-항목-제거하기"><a href="#배열에-항목-제거하기" class="headerlink" title="배열에 항목 제거하기"></a>배열에 항목 제거하기</h2><br>
+
+<p> UserList 에서 각 User 컴포넌트를 보여줄 때, 삭제 버튼을 렌더링해주자.</p>
+<br>
+
+<h3 id="예제-배열-항목-삭제하기"><a href="#예제-배열-항목-삭제하기" class="headerlink" title="예제 : 배열 항목 삭제하기"></a>예제 : 배열 항목 삭제하기</h3><h4 id="삭제-버튼-렌더링-UserList-js"><a href="#삭제-버튼-렌더링-UserList-js" class="headerlink" title="삭제 버튼 렌더링 : UserList.js "></a>삭제 버튼 렌더링 : UserList.js <a id="a0"></a></h4><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">User</span>(<span class="params">&#123; user, onRemove &#125;</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;b&gt;&#123;user.username&#125;&lt;<span class="regexp">/b&gt; &lt;span&gt;(&#123;user.email&#125;)&lt;/</span>span&gt;</span><br><span class="line">      &lt;button onClick=&#123;() =&gt; onRemove(user.id)&#125;&gt;삭제&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>div&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">UserList</span>(<span class="params">&#123; users, onRemove &#125;</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &#123;users.map(<span class="function"><span class="params">user</span> =&gt;</span> (</span><br><span class="line">        &lt;User user=&#123;user&#125; key=&#123;user.id&#125; onRemove=&#123;onRemove&#125; /&gt;</span><br><span class="line">      ))&#125;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">export default UserList;</span></span><br></pre></td></tr></table></figure>
+
+<p>User 컴포넌트의 삭제 버튼이 클릭 될 때는 <code>user.id</code> 값을 앞으로 props로 받아올 <code>onRemove</code> 함수의 파라미터로 넣어서 호출해야한다.</p>
+<br>
+
+<h4 id="삭제-함수-onRemove-구현-및-전달-App-js"><a href="#삭제-함수-onRemove-구현-및-전달-App-js" class="headerlink" title="삭제 함수 onRemove 구현 및 전달 : App.js "></a>삭제 함수 onRemove 구현 및 전달 : App.js <a id="a1"></a></h4><p>User 컴포넌트의 삭제 버튼이 클릭 될 때는 <code>user.id</code> 값을 앞으로 props 로 받아올 <code>onRemove</code> 함수의 파라미터로 넣어서 호출해야 한다.</p>
+<p>여기서 <code>onRemove</code> “id 가 __인 객체를 삭제해라” 라는 역할을 가지고 있는데  <code>onRemove</code> 함수는 UserList 에서도 전달 받을것이며, 이를 그대로 User 컴포넌트에게 전달해줄것이다.</p>
+<p>이제, <code>onRemove</code> 함수를 구현해자. 배열에 있는 항목을 제거할 때에는, 추가할 때 와 마찬가지로 불변성을 지켜가면서 업데이트를 해주어야 한다.</p>
+<p>불변성을 지키면서 특정 원소를 배열에서 제거하기 위해서는 <code>filter</code> 배열 내장 함수를 사용한다. </p>
+<p>이 함수는 배열에서 특정 조건이 만족하는 원소들만 추출하여 새로운 배열을 만들어준다.</p>
+<p><code>App</code> 컴포넌트에서 <code>onRemove</code> 를 다음과 같이 구현후, UserList 에게 전달해 보자.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; useRef, useState &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> UserList <span class="keyword">from</span> <span class="string">'./UserList'</span>;</span><br><span class="line"><span class="keyword">import</span> CreateUser <span class="keyword">from</span> <span class="string">'./CreateUser'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">App</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> [inputs, setInputs] = useState(&#123;</span><br><span class="line">    username: <span class="string">''</span>,</span><br><span class="line">    email: <span class="string">''</span></span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="keyword">const</span> &#123; username, email &#125; = inputs;</span><br><span class="line">  <span class="keyword">const</span> onChange = <span class="function"><span class="params">e</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; name, value &#125; = e.target;</span><br><span class="line">    setInputs(&#123;</span><br><span class="line">      ...inputs,</span><br><span class="line">      [name]: value</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">const</span> [users, setUsers] = useState([</span><br><span class="line">    &#123;</span><br><span class="line">      id: <span class="number">1</span>,</span><br><span class="line">      username: <span class="string">'velopert'</span>,</span><br><span class="line">      email: <span class="string">'public.velopert@gmail.com'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      id: <span class="number">2</span>,</span><br><span class="line">      username: <span class="string">'tester'</span>,</span><br><span class="line">      email: <span class="string">'tester@example.com'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      id: <span class="number">3</span>,</span><br><span class="line">      username: <span class="string">'liz'</span>,</span><br><span class="line">      email: <span class="string">'liz@example.com'</span></span><br><span class="line">    &#125;</span><br><span class="line">  ]);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> nextId = useRef(<span class="number">4</span>);</span><br><span class="line">  <span class="keyword">const</span> onCreate = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> user = &#123;</span><br><span class="line">      id: nextId.current,</span><br><span class="line">      username,</span><br><span class="line">      email</span><br><span class="line">    &#125;;</span><br><span class="line">    setUsers(users.concat(user));</span><br><span class="line"></span><br><span class="line">    setInputs(&#123;</span><br><span class="line">      username: <span class="string">''</span>,</span><br><span class="line">      email: <span class="string">''</span></span><br><span class="line">    &#125;);</span><br><span class="line">    nextId.current += <span class="number">1</span>;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> onRemove = <span class="function"><span class="params">id</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// user.id 가 파라미터로 일치하지 않는 원소만 추출해서 새로운 배열을 만듬</span></span><br><span class="line">    <span class="comment">// = user.id 가 id 인 것을 제거함</span></span><br><span class="line">    setUsers(users.filter(<span class="function"><span class="params">user</span> =&gt;</span> user.id !== id));</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;&gt;</span><br><span class="line">      &lt;CreateUser</span><br><span class="line">        username=&#123;username&#125;</span><br><span class="line">        email=&#123;email&#125;</span><br><span class="line">        onChange=&#123;onChange&#125;</span><br><span class="line">        onCreate=&#123;onCreate&#125;</span><br><span class="line">      /&gt;</span><br><span class="line">      &lt;UserList users=&#123;users&#125; onRemove=&#123;onRemove&#125; /&gt;</span><br><span class="line">    &lt;<span class="regexp">/&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">export default App;</span></span><br></pre></td></tr></table></figure>
+
+<br>
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="https://hyeok999.github.io/2020/01/11/react-velo-12/" data-id="ck59o40uw00k3s52bz5i8lo3v" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://hyeok999.github.io/2020/01/11/react-velo-12/" data-id="ck59o661o00k4vk2b7fr2h6yw" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -269,15 +304,32 @@ ga('send', 'pageview');
             "name": "Jun Hyeok Kim"
         },
         "headline": "배열에 항목 제거하기",
-        "image": "https://hyeok999.github.io",
+        "image": "https://hyeok999.github.iohttps://user-images.githubusercontent.com/31315644/71559906-d8e44e00-2aa6-11ea-82ff-1864f189b0b8.png",
         "keywords": "Web coding develop HTML CSS javascript React",
         "genre": "TIL React-Preview",
         "datePublished": "2020-01-11",
         "dateCreated": "2020-01-11",
         "dateModified": "2020-01-11",
         "url": "https://hyeok999.github.io/2020/01/11/react-velo-12/",
-        "description": "",
-        "wordCount": 1
+        "description": "
+
+React with Velopert - 12 -
+배열에 항목 제거하기
+예제 : 배열 항목 삭제하기
+삭제 버튼 렌더링 : UserList.js
+삭제 함수 onRemove 구현 및 전달 : App.js
+
+
+
+
+
+
+
+
+Chap 12. 배열에 항목 제거하기배열에 항목 제거하기
+
+ UserList 에서 각 User 컴포넌트를 보여줄 때, 삭제 버튼을 렌더링해주자",
+        "wordCount": 932
     }
 </script>
 
@@ -368,7 +420,7 @@ ga('send', 'pageview');
                             <a href="/2020/01/11/react-velo-12/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/71559906-d8e44e00-2aa6-11ea-82ff-1864f189b0b8.png)" alt="배열에 항목 제거하기" class="thumbnail-image"></span>
     
     
 </a>
