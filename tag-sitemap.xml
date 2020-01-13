@@ -4,49 +4,77 @@
 
     <url>
         <loc>https://hyeok999.github.io/tags/React/</loc>
-        <lastmod>2020-01-11T14:12:51.439Z</lastmod>
+        <lastmod>2020-01-13T12:26:29.119Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://hyeok999.github.io/tags/Programmers/</loc>
+        <lastmod>2020-01-13T12:26:29.119Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://hyeok999.github.io/tags/javascript/</loc>
-        <lastmod>2020-01-11T14:12:51.439Z</lastmod>
+        <lastmod>2020-01-13T12:26:29.119Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://hyeok999.github.io/tags/CSS/</loc>
-        <lastmod>2020-01-11T14:12:51.439Z</lastmod>
+        <lastmod>2020-01-13T12:26:29.119Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://hyeok999.github.io/tags/HTML/</loc>
-        <lastmod>2020-01-11T14:12:51.439Z</lastmod>
+        <lastmod>2020-01-13T12:26:29.119Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://hyeok999.github.io/tags/algorithm/</loc>
+        <lastmod>2020-01-13T12:26:29.119Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://hyeok999.github.io/tags/TIL/</loc>
+        <lastmod>2020-01-13T12:26:29.119Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://hyeok999.github.io/tags/develop/</loc>
-        <lastmod>2020-01-11T14:12:51.439Z</lastmod>
+        <lastmod>2020-01-13T12:26:29.119Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://hyeok999.github.io/tags/coding/</loc>
-        <lastmod>2020-01-11T14:12:51.439Z</lastmod>
+        <lastmod>2020-01-13T12:26:29.119Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://hyeok999.github.io/tags/Web/</loc>
-        <lastmod>2020-01-11T14:12:51.439Z</lastmod>
+        <lastmod>2020-01-13T12:26:29.119Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://hyeok999.github.io/tags/git/</loc>
+        <lastmod>2020-01-13T12:26:29.119Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -94,13 +122,6 @@
     </url>
 
     <url>
-        <loc>https://hyeok999.github.io/tags/git/</loc>
-        <lastmod>2020-01-09T18:38:19.894Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://hyeok999.github.io/tags/Class-Component/</loc>
         <lastmod>2020-01-08T18:56:54.220Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -117,27 +138,6 @@
     <url>
         <loc>https://hyeok999.github.io/tags/React-Official-Document/</loc>
         <lastmod>2020-01-01T13:12:34.219Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://hyeok999.github.io/tags/algorithm/</loc>
-        <lastmod>2020-01-01T13:12:34.219Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://hyeok999.github.io/tags/Programmers/</loc>
-        <lastmod>2019-12-31T07:38:36.088Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://hyeok999.github.io/tags/TIL/</loc>
-        <lastmod>2019-12-31T07:38:36.088Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
