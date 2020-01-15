@@ -6,24 +6,26 @@
     
 
     
-    <title>react-study-18 | HYEOK999&#39;s Blog</title>
+    <title>React 스터디 18 | HYEOK999&#39;s Blog</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="git,Web,coding,develop,algorithm,TIL,HTML,CSS,javascript,Programmers,React">
+        <meta name="keywords" content="git,Web,coding,develop,HTML,CSS,javascript,React">
     
-    <meta name="description" content="HYEOK999&apos;s IT Develop Blog">
-<meta name="keywords" content="git,Web,coding,develop,algorithm,TIL,HTML,CSS,javascript,Programmers,React">
+    <meta name="description" content="React Study 18 GraphQL 미니 프로젝트 백엔드 Resolver (middle-ware) input 키워드   프론트 mutation 작성 (src/graphql/mutation.js) Query 작성 (src/graphql/queries.js)   데이터 요청 - 컴포넌트방식(클래스기반) ‘npm i react-apollo’ &amp;lt; Q">
+<meta name="keywords" content="git,Web,coding,develop,HTML,CSS,javascript,React">
 <meta property="og:type" content="article">
-<meta property="og:title" content="react-study-18">
+<meta property="og:title" content="React 스터디 18">
 <meta property="og:url" content="https://hyeok999.github.io/2020/01/15/react-study-18/index.html">
 <meta property="og:site_name" content="HYEOK999&#39;s Blog">
-<meta property="og:description" content="HYEOK999&apos;s IT Develop Blog">
+<meta property="og:description" content="React Study 18 GraphQL 미니 프로젝트 백엔드 Resolver (middle-ware) input 키워드   프론트 mutation 작성 (src/graphql/mutation.js) Query 작성 (src/graphql/queries.js)   데이터 요청 - 컴포넌트방식(클래스기반) ‘npm i react-apollo’ &amp;lt; Q">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-01-15T14:37:28.250Z">
+<meta property="og:image" content="https://user-images.githubusercontent.com/31315644/69938302-4345b500-1520-11ea-8436-26d69300e699.png">
+<meta property="og:updated_time" content="2020-01-15T14:39:44.569Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="react-study-18">
-<meta name="twitter:description" content="HYEOK999&apos;s IT Develop Blog">
+<meta name="twitter:title" content="React 스터디 18">
+<meta name="twitter:description" content="React Study 18 GraphQL 미니 프로젝트 백엔드 Resolver (middle-ware) input 키워드   프론트 mutation 작성 (src/graphql/mutation.js) Query 작성 (src/graphql/queries.js)   데이터 요청 - 컴포넌트방식(클래스기반) ‘npm i react-apollo’ &amp;lt; Q">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/31315644/69938302-4345b500-1520-11ea-8436-26d69300e699.png">
     
     <link rel="canonical" href="https://hyeok999.github.io/2020/01/15/react-study-18/">
     
@@ -93,7 +95,7 @@ ga('send', 'pageview');
                                     <a class="main-nav-list-link" href="/">Home</a>
                                 </li>
                             
-                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/CSS/">CSS</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/CSS/GIT/">GIT</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/">Develop</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/CSS/">CSS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/GIT/">GIT</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/IT-Event/">IT Event</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Project/">Project</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/React/">React</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Tips/">Tips</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/">TIL</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Algorithm-Quiz/">Algorithm & Quiz</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/React/">React</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/React-Preview/">React-Preview</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/linux/">linux</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/etc/">etc</a></li></ul>
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/">Develop</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/CSS/">CSS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/GIT/">GIT</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/IT-Event/">IT Event</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Project/">Project</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/React/">React</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Tips/">Tips</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/">TIL</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Algorithm-Quiz/">Algorithm & Quiz</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/React/">React</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/React-Preview/">React-Preview</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/linux/">linux</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/etc/">etc</a></li></ul>
                                     
                                 <li class="main-nav-list-item">
                                     <a class="main-nav-list-link" href="https://about.me/iasg2004" rel="external nofollow noopener noreferrer" target="_blank">About</a>
@@ -152,7 +154,7 @@ ga('send', 'pageview');
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/CSS/">CSS</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/">GIT</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/">IT Event</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/">Java</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/">Javascript</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/">Project</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/">React</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/">Tips</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/">Algorithm & Quiz</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/">HTML&CSS</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/">Javascript</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/Javascript-Preview/">Javascript-Preview</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/Javascript-Preview/React/">React</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/Javascript-Preview/React/React-Preview/">React-Preview</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/Javascript-Preview/React/React-Preview/linux/">linux</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/Javascript-Preview/React/React-Preview/linux/etc/">etc</a>
+    <a class="page-title-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/TIL/React/">React</a>
     </h1>
 </div>
 
@@ -164,7 +166,7 @@ ga('send', 'pageview');
                 
     
         <h1 class="article-title" itemprop="name">
-        react-study-18
+        React 스터디 18
         </h1>
     
 
@@ -184,21 +186,156 @@ ga('send', 'pageview');
                 
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/CSS/">CSS</a>, <a class="tag-link" href="/tags/HTML/">HTML</a>, <a class="tag-link" href="/tags/Programmers/">Programmers</a>, <a class="tag-link" href="/tags/React/">React</a>, <a class="tag-link" href="/tags/TIL/">TIL</a>, <a class="tag-link" href="/tags/Web/">Web</a>, <a class="tag-link" href="/tags/algorithm/">algorithm</a>, <a class="tag-link" href="/tags/coding/">coding</a>, <a class="tag-link" href="/tags/develop/">develop</a>, <a class="tag-link" href="/tags/git/">git</a>, <a class="tag-link" href="/tags/javascript/">javascript</a>
+        <a class="tag-link" href="/tags/CSS/">CSS</a>, <a class="tag-link" href="/tags/HTML/">HTML</a>, <a class="tag-link" href="/tags/React/">React</a>, <a class="tag-link" href="/tags/Web/">Web</a>, <a class="tag-link" href="/tags/coding/">coding</a>, <a class="tag-link" href="/tags/develop/">develop</a>, <a class="tag-link" href="/tags/git/">git</a>, <a class="tag-link" href="/tags/javascript/">javascript</a>
     </div>
 
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <p><img src="https://user-images.githubusercontent.com/31315644/69938302-4345b500-1520-11ea-8436-26d69300e699.png" alt="React"></p>
+<hr>
+<h1 id="React-Study-18"><a href="#React-Study-18" class="headerlink" title="React Study 18"></a>React Study 18</h1><ul>
+<li>GraphQL 미니 프로젝트<ul>
+<li>백엔드<ul>
+<li>Resolver (middle-ware)</li>
+<li>input 키워드</li>
+</ul>
+</li>
+<li>프론트<ul>
+<li>mutation 작성 (src/graphql/mutation.js)</li>
+<li>Query 작성 (src/graphql/queries.js)</li>
+</ul>
+</li>
+<li>데이터 요청 - 컴포넌트방식(클래스기반) ‘npm i react-apollo’<ul>
+<li>&lt; Query &gt;</li>
+<li>&lt; Mutatation &gt;</li>
+</ul>
+</li>
+<li>데이터 요청 - 훅방식 ‘npm i apollo-boost’<ul>
+<li>useQuery</li>
+<li>useMutation </li>
+</ul>
+</li>
+<li>비동기 방식을 처리하는 방법들</li>
+</ul>
+</li>
+</ul>
+<br>
+
+<hr>
+<br>
+
+<h3 id="용어-러버덕"><a href="#용어-러버덕" class="headerlink" title="용어 - ( 러버덕 )"></a>용어 - ( 러버덕 )</h3><ul>
+<li>프론트</li>
+<li>백엔드</li>
+<li>데이터 요청 - 컴포넌트방식</li>
+<li>데이터 요청 - 훅방식</li>
+</ul>
+<br>
+
+<hr>
+<h2 id="GraphQL-미니-프로젝트"><a href="#GraphQL-미니-프로젝트" class="headerlink" title="GraphQL 미니 프로젝트"></a>GraphQL 미니 프로젝트</h2><blockquote>
+<p>프론트 개발 ← 쿼리, 뮤테이션 → Resovers ← 백엔드 개발자 → DB</p>
+</blockquote>
+<ul>
+<li>프론트엔드는 최소 백엔드에 정의된 Types을 해석할 수 있는 역량이 필요하다. </li>
+<li>즉, Types를 해석해서 Query 와 Mutation을 작성하는 능력이 필요함.</li>
+</ul>
+<br>
+
+<h3 id="백엔드"><a href="#백엔드" class="headerlink" title="백엔드"></a>백엔드</h3><ul>
+<li><code>Type</code>은 객체 형식 { 필드 : 값 }로 이루어졌다.</li>
+<li><code>Schema</code>는 타입들의 정의 와 백엔드 개발자가 만드는 resolver 정의를 포함하는 개념이다.<ul>
+<li><code>resolver</code>는 프론트가 보낸 요청을 처리하는 로직을 구현한 곳을 의미한다.</li>
+</ul>
+</li>
+</ul>
+<br>
+
+<h4 id="Resolver-middle-ware"><a href="#Resolver-middle-ware" class="headerlink" title="Resolver (middle-ware)"></a>Resolver (middle-ware)</h4><p>어떠한 프로그래밍 언에 대해 종속시키지 않기 위해서 Resolver라는 개념을 도입해 중간에 다리를 놓았음.</p>
+<p><code>resolver의 예</code> : <code>getPost</code> , <code>createPost</code>라는 요청이 들어왔을 때 처리 예시</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// FRONT 에서 데이터 요청(쿼리,뮤테이션)을 했을 떄 데이터를 직접적으로 처리하는 구간</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  Query: &#123;</span><br><span class="line">    getPost: <span class="function">(<span class="params">parent, args, &#123; models &#125;</span>) =&gt;</span> models.Post.findOne(args)</span><br><span class="line">  &#125;,</span><br><span class="line">  Mutation: &#123;</span><br><span class="line">    createPost: <span class="function">(<span class="params">parent, args, &#123; models, user &#125;</span>) =&gt;</span></span><br><span class="line">      models.Post.create(&#123; ...args.post, <span class="attr">by</span>: user &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>순서 : 프론트가 데이터 요청(쿼리, 뮤테이션) → Resolver(요청 해결) → DB → Resolver → 프론트</p>
+<p>NOSQL은 DB에 데이터가 정의가 되어 있지 않더라도 마치 있는 것처럼 업데이트를 할 수 있다.(SQL은 안된다.)</p>
+<br>
+
+<h4 id="input-키워드"><a href="#input-키워드" class="headerlink" title="input 키워드"></a>input 키워드</h4><blockquote>
+<p>input 키워드는 MUTATION에서만 사용된다. <strong>(페이로드에 해당됨)</strong></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">input iBy &#123;</span><br><span class="line">  username: String!</span><br><span class="line">  thumbnail: String</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">input iPost &#123;</span><br><span class="line">  desc: String</span><br><span class="line">  photo: String</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">type Mutation &#123;</span><br><span class="line">  createPost(post: iPost): Post! # 위에서 정의한 input이 사용됨.</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="프론트"><a href="#프론트" class="headerlink" title="프론트"></a>프론트</h3><h4 id="mutation-작성-src-graphql-mutation-js"><a href="#mutation-작성-src-graphql-mutation-js" class="headerlink" title="mutation 작성 (src/graphql/mutation.js)"></a>mutation 작성 (src/graphql/mutation.js)</h4><ul>
+<li>회원 가입을 위한 MUTATION (쓰기, 수정, 삭제) </li>
+<li>mutation의 이름(예제에서는 CreateUser)은 백엔드개발자가 어떤 mutation이 사용됬는지 로그확인용으로 사용되지 그 외의 사용용도는 없다. (이름이 없다면 익명함수의 느낌)</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 백엔드 파일의 타입상황</span></span><br><span class="line">type Mutation &#123;</span><br><span class="line">createUser(username: <span class="built_in">String</span>!, <span class="attr">password</span>: <span class="built_in">String</span>!, <span class="attr">fullname</span>: <span class="built_in">String</span>!, <span class="attr">email</span>: <span class="built_in">String</span>!):<span class="built_in">Boolean</span>!</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 프론트</span></span><br><span class="line"><span class="keyword">import</span> gql <span class="keyword">from</span> <span class="string">'graphql-tag'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  creatUser: gql<span class="string">`</span></span><br><span class="line"><span class="string">    mutation CreateUser(</span></span><br><span class="line"><span class="string">      $username: String!</span></span><br><span class="line"><span class="string">      $password: String!</span></span><br><span class="line"><span class="string">      $fullname: String!</span></span><br><span class="line"><span class="string">      $email: String!</span></span><br><span class="line"><span class="string">    ) &#123;</span></span><br><span class="line"><span class="string">      createUser(</span></span><br><span class="line"><span class="string">        username: $username</span></span><br><span class="line"><span class="string">        password: $password</span></span><br><span class="line"><span class="string">        fullname: $fullname</span></span><br><span class="line"><span class="string">        email: $email</span></span><br><span class="line"><span class="string">      )</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">  `</span>,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>위 작성된 mutation은 JS에 function과 비교하면 이러한 느낌이다. (동일하진 않지만 이런 느낌이다.)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">CreateUser</span>(<span class="params"></span></span></span><br><span class="line"><span class="function"><span class="params">	$username: String!, </span></span></span><br><span class="line"><span class="function"><span class="params">  $password: String!, </span></span></span><br><span class="line"><span class="function"><span class="params">  $fullname: String!, </span></span></span><br><span class="line"><span class="function"><span class="params">  $email: String!</span></span></span><br><span class="line"><span class="function"><span class="params"> 	</span>) </span>&#123;</span><br><span class="line">     createUser(</span><br><span class="line">     username: $username,</span><br><span class="line">     password: $password,</span><br><span class="line">     fullname: $fullname,</span><br><span class="line">     email: $email</span><br><span class="line">     )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="Query-작성-src-graphql-queries-js"><a href="#Query-작성-src-graphql-queries-js" class="headerlink" title="Query 작성 (src/graphql/queries.js)"></a>Query 작성 (src/graphql/queries.js)</h4><ul>
+<li>모든 유저 조회 및 특정 유저 조회을 위한 QUERY (읽기) </li>
+<li>query의 이름(예제에서는 AllUser, GetUser)은 백엔드개발자가 어떤 query가 사용됬는지 로그확인용으로 사용되지 그 외의 사용도는 없다. (이름이 없다면 익명함수의 느낌)</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 백앤드 쿼리</span></span><br><span class="line">	type User &#123;</span><br><span class="line">    _id: ID!</span><br><span class="line">    username: <span class="built_in">String</span>!</span><br><span class="line">    password: <span class="built_in">String</span>!</span><br><span class="line">    fullname: <span class="built_in">String</span>!</span><br><span class="line">    email: <span class="built_in">String</span>!</span><br><span class="line">    thumbnail: <span class="built_in">String</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  type Query &#123;</span><br><span class="line">    allUsers: [User]!</span><br><span class="line">    getUser(_id: ID!): User!</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 프론트</span></span><br><span class="line"><span class="keyword">import</span> gql <span class="keyword">from</span> <span class="string">'graphql-tag'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  allUsers: gql<span class="string">`</span></span><br><span class="line"><span class="string">    query AllUsers &#123;</span></span><br><span class="line"><span class="string">      allUsers &#123;</span></span><br><span class="line"><span class="string">        username</span></span><br><span class="line"><span class="string">        fullname</span></span><br><span class="line"><span class="string">        email</span></span><br><span class="line"><span class="string">        thumbnail</span></span><br><span class="line"><span class="string">      &#125;</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">  `</span>,</span><br><span class="line">  getUser: gql<span class="string">`</span></span><br><span class="line"><span class="string">    query GetUser($_id: ID!)&#123;</span></span><br><span class="line"><span class="string">      getUser(_id: $_id) &#123;</span></span><br><span class="line"><span class="string">        username</span></span><br><span class="line"><span class="string">        fullname</span></span><br><span class="line"><span class="string">        email</span></span><br><span class="line"><span class="string">			&#125;</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">  `</span>,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="데이터-요청-컴포넌트방식-클래스기반-‘npm-i-react-apollo’"><a href="#데이터-요청-컴포넌트방식-클래스기반-‘npm-i-react-apollo’" class="headerlink" title="데이터 요청 - 컴포넌트방식(클래스기반) ‘npm i react-apollo’"></a>데이터 요청 - 컴포넌트방식(클래스기반) ‘npm i react-apollo’</h3><blockquote>
+<p>반드시 클래스 기반에서 사용해야한다.</p>
+</blockquote>
+<h3 id="lt-Query-gt"><a href="#lt-Query-gt" class="headerlink" title="&lt; Query &gt;"></a>&lt; Query &gt;</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> gql <span class="keyword">from</span> <span class="string">"graphql-tag"</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; Query &#125; <span class="keyword">from</span> <span class="string">"react-apollo"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> GET_DOGS = gql<span class="string">`</span></span><br><span class="line"><span class="string">  &#123;</span></span><br><span class="line"><span class="string">    dogs &#123;</span></span><br><span class="line"><span class="string">      id</span></span><br><span class="line"><span class="string">      breed</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string">`</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> Dogs = <span class="function">(<span class="params">&#123; onDogSelected &#125;</span>) =&gt;</span> (</span><br><span class="line">  &lt;Query query=&#123;GET_DOGS&#125;&gt;</span><br><span class="line">    &#123;(&#123; loading, error, data &#125;) =&gt; &#123;</span><br><span class="line">      <span class="keyword">if</span> (loading) <span class="keyword">return</span> <span class="string">"Loading..."</span>;</span><br><span class="line">      <span class="keyword">if</span> (error) <span class="keyword">return</span> <span class="string">`Error! <span class="subst">$&#123;error.message&#125;</span>`</span>;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">return</span> (</span><br><span class="line">        &lt;select name=<span class="string">"dog"</span> onChange=&#123;onDogSelected&#125;&gt;</span><br><span class="line">          &#123;data.dogs.map(<span class="function"><span class="params">dog</span> =&gt;</span> (</span><br><span class="line">            &lt;option key=&#123;dog.id&#125; value=&#123;dog.breed&#125;&gt;</span><br><span class="line">              &#123;dog.breed&#125;</span><br><span class="line">            &lt;<span class="regexp">/option&gt;</span></span><br><span class="line"><span class="regexp">          ))&#125;</span></span><br><span class="line"><span class="regexp">        &lt;/</span>select&gt;</span><br><span class="line">      );</span><br><span class="line">    &#125;&#125;</span><br><span class="line">  &lt;<span class="regexp">/Query&gt;</span></span><br><span class="line"><span class="regexp">);</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="lt-Mutatation-gt"><a href="#lt-Mutatation-gt" class="headerlink" title="&lt; Mutatation &gt;"></a>&lt; Mutatation &gt;</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> gql <span class="keyword">from</span> <span class="string">"graphql-tag"</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; Mutation &#125; <span class="keyword">from</span> <span class="string">"react-apollo"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> ADD_TODO = gql<span class="string">`</span></span><br><span class="line"><span class="string">  mutation AddTodo($type: String!) &#123;</span></span><br><span class="line"><span class="string">    addTodo(type: $type) &#123;</span></span><br><span class="line"><span class="string">      id</span></span><br><span class="line"><span class="string">      type</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string">`</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> AddTodo = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">let</span> input;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;Mutation mutation=&#123;ADD_TODO&#125;&gt;</span><br><span class="line">      &#123;(addTodo, &#123; data &#125;) =&gt; (</span><br><span class="line">        &lt;div&gt;</span><br><span class="line">          &lt;form</span><br><span class="line">            onSubmit=&#123;e =&gt; &#123;</span><br><span class="line">              e.preventDefault();</span><br><span class="line">              addTodo(&#123; <span class="attr">variables</span>: &#123; <span class="attr">type</span>: input.value &#125; &#125;);</span><br><span class="line">              input.value = <span class="string">""</span>;</span><br><span class="line">            &#125;&#125;</span><br><span class="line">          &gt;</span><br><span class="line">            &lt;input</span><br><span class="line">              ref=&#123;node =&gt; &#123;</span><br><span class="line">                input = node;</span><br><span class="line">              &#125;&#125;</span><br><span class="line">            /&gt;</span><br><span class="line">            &lt;button type=<span class="string">"submit"</span>&gt;Add Todo&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">          &lt;/</span>form&gt;</span><br><span class="line">        &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">      )&#125;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>Mutation&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="데이터-요청-훅방식-‘npm-i-apollo-boost’"><a href="#데이터-요청-훅방식-‘npm-i-apollo-boost’" class="headerlink" title="데이터 요청 - 훅방식 ‘npm i apollo-boost’"></a>데이터 요청 - 훅방식 ‘npm i apollo-boost’</h3><blockquote>
+<p>반드시 함수 기반에서 사용해야한다.</p>
+</blockquote>
+<h4 id="useQuery"><a href="#useQuery" class="headerlink" title="useQuery"></a>useQuery</h4><ul>
+<li><code>useQuery</code>는 객체 구조 분해 방식.  <code>loading</code> : true || false / <code>error</code> : obj</li>
+<li><code>useQuery</code>는 선언만 해줘도 쿼리가 날라간다.</li>
+<li><code>loading</code>을 안적어줄 시 <code>undefined에러</code>를 일으킨다. (<code>loading</code> 을 쓰거나, &amp;&amp;로 유효성검사를 해야한다. )</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; useQuery &#125; <span class="keyword">from</span> <span class="string">'@apollo/react-hooks'</span>;</span><br><span class="line"><span class="keyword">import</span> gql <span class="keyword">from</span> <span class="string">'graphql-tag'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> GET_GREETING = gql<span class="string">`</span></span><br><span class="line"><span class="string">  query getGreeting($language: String!) &#123;</span></span><br><span class="line"><span class="string">    greeting(language: $language) &#123;</span></span><br><span class="line"><span class="string">      message</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string">`</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Hello</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> &#123; loading, error, data &#125; = useQuery(GET_GREETING, &#123;</span><br><span class="line">    variables: &#123; <span class="attr">language</span>: <span class="string">'english'</span> &#125;,</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="keyword">if</span> (loading) <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Loading ...<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span>;</span><br><span class="line">  <span class="comment">// if (!loading) &#123; &#123;data.greeting.message&#125; &#125; // 혹은 &amp;&amp;를 사용한다.</span></span><br><span class="line">  <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello &#123;data.greeting.message&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="useMutation"><a href="#useMutation" class="headerlink" title="useMutation"></a>useMutation</h4><ul>
+<li><code>useMutation</code>는 배열 구조 분해 방식.</li>
+<li><code>useMutation</code>의 경우, 선언만할 경우 <code>usequery</code>처럼 요청을 보내지는 않는다. </li>
+<li><code>useMutation</code> 의 첫번째 파라미터에 인자로 해당 graphql에서 정의한 변수를 객체 파라미터로 정의해주어야 요청을 보낸다.</li>
+<li><code>useMutation</code>의 첫번째 파라미터에 정의한 함수는 Promise이다.</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> gql <span class="keyword">from</span> <span class="string">'graphql-tag'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; useMutation &#125; <span class="keyword">from</span> <span class="string">'@apollo/react-hooks'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> ADD_TODO = gql<span class="string">`</span></span><br><span class="line"><span class="string">  mutation AddTodo($type: String!) &#123;</span></span><br><span class="line"><span class="string">    addTodo(type: $type) &#123;</span></span><br><span class="line"><span class="string">      id</span></span><br><span class="line"><span class="string">      type</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string">`</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">AddTodo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> input;</span><br><span class="line">  <span class="keyword">const</span> [addTodo, &#123; data &#125;] = useMutation(ADD_TODO);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;form</span><br><span class="line">        onSubmit=&#123;e =&gt; &#123;</span><br><span class="line">          e.preventDefault();</span><br><span class="line">          addTodo(&#123; <span class="attr">variables</span>: &#123; <span class="attr">type</span>: input.value &#125; &#125;);</span><br><span class="line">          input.value = <span class="string">''</span>;</span><br><span class="line">        &#125;&#125;</span><br><span class="line">      &gt;</span><br><span class="line">        &lt;input</span><br><span class="line">          ref=&#123;node =&gt; &#123;</span><br><span class="line">            input = node;</span><br><span class="line">          &#125;&#125;</span><br><span class="line">        /&gt;</span><br><span class="line">        &lt;button type=<span class="string">"submit"</span>&gt;Add Todo&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">      &lt;/</span>form&gt;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="비동기-방식을-처리하는-방법들"><a href="#비동기-방식을-처리하는-방법들" class="headerlink" title="비동기 방식을 처리하는 방법들"></a>비동기 방식을 처리하는 방법들</h3><ul>
+<li>폴링 방식 : <code>setInterval</code> 을 사용해서 비동기코드가 주기적으로 확인해서 완료가 되어있는지 아닌지 확인함.</li>
+<li>Event Emitter 방식 : 어떠한 작업에 대해서 이벤트를 정해두고 그 작업이 완료가 될 경우 그 이벤트가 완료가 되었다는 것을 전달한다.</li>
+</ul>
+<br>
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="https://hyeok999.github.io/2020/01/15/react-study-18/" data-id="ck5fet0p201ivbqz0bplgd83v" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://hyeok999.github.io/2020/01/15/react-study-18/" data-id="ck5few5q500iugiz0v2vib4ab" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -268,16 +405,31 @@ ga('send', 'pageview');
             "@type": "Person",
             "name": "Jun Hyeok Kim"
         },
-        "headline": "react-study-18",
-        "image": "https://hyeok999.github.io",
-        "keywords": "git Web coding develop algorithm TIL HTML CSS javascript Programmers React",
-        "genre": "CSS GIT IT Event Java Javascript Project React Tips TIL Algorithm & Quiz HTML&CSS Javascript Javascript-Preview React React-Preview linux etc",
+        "headline": "React 스터디 18",
+        "image": "https://hyeok999.github.iohttps://user-images.githubusercontent.com/31315644/69938302-4345b500-1520-11ea-8436-26d69300e699.png",
+        "keywords": "git Web coding develop HTML CSS javascript React",
+        "genre": "TIL React",
         "datePublished": "2020-01-15",
         "dateCreated": "2020-01-15",
         "dateModified": "2020-01-15",
         "url": "https://hyeok999.github.io/2020/01/15/react-study-18/",
-        "description": "",
-        "wordCount": 1
+        "description": "
+
+React Study 18
+GraphQL 미니 프로젝트
+백엔드
+Resolver (middle-ware)
+input 키워드
+
+
+프론트
+mutation 작성 (src/graphql/mutation.js)
+Query 작성 (src/graphql/queries.js)
+
+
+데이터 요청 - 컴포넌트방식(클래스기반) ‘npm i react-apollo’
+&lt; Q",
+        "wordCount": 2280
     }
 </script>
 
@@ -350,7 +502,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/">GIT</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/">IT Event</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/">Java</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/">Javascript</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/">Project</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/">React</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/">Tips</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/">TIL</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/">Algorithm & Quiz</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/">HTML&CSS</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/">Javascript</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/Javascript-Preview/">Javascript-Preview</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/Javascript-Preview/React/">React</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/Javascript-Preview/React/React-Preview/">React-Preview</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/Javascript-Preview/React/React-Preview/linux/">linux</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/Javascript-Preview/React/React-Preview/linux/etc/">etc</a><span class="category-list-count">1</span></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/">Develop</a><span class="category-list-count">45</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/CSS/">CSS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/GIT/">GIT</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/IT-Event/">IT Event</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Java/">Java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Javascript/">Javascript</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Project/">Project</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/React/">React</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Tips/">Tips</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/">TIL</a><span class="category-list-count">180</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Algorithm-Quiz/">Algorithm & Quiz</a><span class="category-list-count">74</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript/">Javascript</a><span class="category-list-count">30</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a><span class="category-list-count">23</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/React/">React</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/React-Preview/">React-Preview</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/linux/">linux</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/etc/">etc</a><span class="category-list-count">1</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/">Develop</a><span class="category-list-count">45</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/CSS/">CSS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/GIT/">GIT</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/IT-Event/">IT Event</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Java/">Java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Javascript/">Javascript</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Project/">Project</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/React/">React</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Tips/">Tips</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/">TIL</a><span class="category-list-count">181</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Algorithm-Quiz/">Algorithm & Quiz</a><span class="category-list-count">74</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript/">Javascript</a><span class="category-list-count">30</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a><span class="category-list-count">23</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/React/">React</a><span class="category-list-count">22</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/React-Preview/">React-Preview</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/linux/">linux</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/etc/">etc</a><span class="category-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -368,7 +520,7 @@ ga('send', 'pageview');
                             <a href="/2020/01/15/react-study-18/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/69938302-4345b500-1520-11ea-8436-26d69300e699.png)" alt="React 스터디 18" class="thumbnail-image"></span>
     
     
 </a>
@@ -376,8 +528,8 @@ ga('send', 'pageview');
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/CSS/">CSS</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/CSS/GIT/">GIT</a></p>
-                            <p class="item-title"><a href="/2020/01/15/react-study-18/" class="title">react-study-18</a></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/React/">React</a></p>
+                            <p class="item-title"><a href="/2020/01/15/react-study-18/" class="title">React 스터디 18</a></p>
                             <p class="item-date"><time datetime="2020-01-15T14:37:28.000Z" itemprop="datePublished">2020-01-15</time></p>
                         </div>
                     </li>
