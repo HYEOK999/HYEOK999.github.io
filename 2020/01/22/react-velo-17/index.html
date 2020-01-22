@@ -12,18 +12,20 @@
     
         <meta name="keywords" content="Web,coding,develop,HTML,CSS,javascript">
     
-    <meta name="description" content="HYEOK999&apos;s IT Develop Blog">
+    <meta name="description" content="React with Velopert - 17 - React.memo 를 사용한 컴포넌트 리렌더링 방지 CreateUser.js UserList.js 함수형 업데이트 기본 파라미터 방식 함수형 업데이트 방식 App.js         Chap 17. React.memo 를 사용한 컴포넌트 리렌더링 방지 컴포넌트의 props 가 바뀌지 않았다면, 리렌더링을">
 <meta name="keywords" content="Web,coding,develop,HTML,CSS,javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="React.memo 를 사용한 컴포넌트 리렌더링 방지">
 <meta property="og:url" content="https://hyeok999.github.io/2020/01/22/react-velo-17/index.html">
 <meta property="og:site_name" content="HYEOK999&#39;s Blog">
-<meta property="og:description" content="HYEOK999&apos;s IT Develop Blog">
+<meta property="og:description" content="React with Velopert - 17 - React.memo 를 사용한 컴포넌트 리렌더링 방지 CreateUser.js UserList.js 함수형 업데이트 기본 파라미터 방식 함수형 업데이트 방식 App.js         Chap 17. React.memo 를 사용한 컴포넌트 리렌더링 방지 컴포넌트의 props 가 바뀌지 않았다면, 리렌더링을">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-01-22T01:20:06.450Z">
+<meta property="og:image" content="https://user-images.githubusercontent.com/31315644/71559911-da157b00-2aa6-11ea-9426-96cf77fb95b8.png">
+<meta property="og:updated_time" content="2020-01-22T01:21:30.828Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="React.memo 를 사용한 컴포넌트 리렌더링 방지">
-<meta name="twitter:description" content="HYEOK999&apos;s IT Develop Blog">
+<meta name="twitter:description" content="React with Velopert - 17 - React.memo 를 사용한 컴포넌트 리렌더링 방지 CreateUser.js UserList.js 함수형 업데이트 기본 파라미터 방식 함수형 업데이트 방식 App.js         Chap 17. React.memo 를 사용한 컴포넌트 리렌더링 방지 컴포넌트의 props 가 바뀌지 않았다면, 리렌더링을">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/31315644/71559911-da157b00-2aa6-11ea-9426-96cf77fb95b8.png">
     
     <link rel="canonical" href="https://hyeok999.github.io/2020/01/22/react-velo-17/">
     
@@ -191,14 +193,81 @@ ga('send', 'pageview');
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <p><img src="https://user-images.githubusercontent.com/31315644/71559911-da157b00-2aa6-11ea-9426-96cf77fb95b8.png" alt="React17"></p>
+<hr>
+<h2 id="React-with-Velopert-17"><a href="#React-with-Velopert-17" class="headerlink" title="React with Velopert - 17 -"></a>React with Velopert - 17 -</h2><ul>
+<li>React.memo 를 사용한 컴포넌트 리렌더링 방지<ul>
+<li><a href="#a1">CreateUser.js</a></li>
+<li><a href="#a2">UserList.js</a></li>
+<li><a href="#a3">함수형 업데이트</a><ul>
+<li><a href="#a4">기본 파라미터 방식</a></li>
+<li><a href="#a5">함수형 업데이트 방식</a></li>
+<li><a href="#a6">App.js</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<br>
+
+<hr>
+<h1 id="Chap-17-React-memo-를-사용한-컴포넌트-리렌더링-방지"><a href="#Chap-17-React-memo-를-사용한-컴포넌트-리렌더링-방지" class="headerlink" title="Chap 17. React.memo 를 사용한 컴포넌트 리렌더링 방지"></a>Chap 17. React.memo 를 사용한 컴포넌트 리렌더링 방지</h1><blockquote>
+<p>컴포넌트의 props 가 바뀌지 않았다면, 리렌더링을 방지하여 컴포넌트의 리렌더링 성능 최적화를 해줄 수 있는 React.memo 라는 함수에 대해서 알아본다.</p>
+</blockquote>
+<p><strong>React.memo를 사용하면 컴포넌트에서 리렌더링이 필요한 상황에서만 리렌더링을 하도록 설정해줄 수 있다.</strong></p>
+<p>사용법은 굉장히 쉽다. 그냥, 감싸주면 된다.</p>
+<br>
+
+<h3 id="CreateUser-js"><a href="#CreateUser-js" class="headerlink" title="CreateUser.js "></a>CreateUser.js <a id="a1"></a></h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> CreateUser = <span class="function">(<span class="params">&#123; username, email, onChange, onCreate &#125;</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;input</span><br><span class="line">        name=<span class="string">"username"</span></span><br><span class="line">        placeholder=<span class="string">"계정명"</span></span><br><span class="line">        onChange=&#123;onChange&#125;</span><br><span class="line">        value=&#123;username&#125;</span><br><span class="line">      /&gt;</span><br><span class="line">      &lt;input</span><br><span class="line">        name=<span class="string">"email"</span></span><br><span class="line">        placeholder=<span class="string">"이메일"</span></span><br><span class="line">        onChange=&#123;onChange&#125;</span><br><span class="line">        value=&#123;email&#125;</span><br><span class="line">      /&gt;</span><br><span class="line">      &lt;button onClick=&#123;onCreate&#125;&gt;등록&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>div&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> React.memo(CreateUser); <span class="comment">// 추가</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="UserList-js"><a href="#UserList-js" class="headerlink" title="UserList.js "></a>UserList.js <a id="a2"></a></h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; useEffect &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> User = React.memo(<span class="function"><span class="keyword">function</span> <span class="title">User</span>(<span class="params">&#123; user, onRemove, onToggle &#125;</span>) </span>&#123; <span class="comment">// 추가</span></span><br><span class="line">  useEffect(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'user 값이 설정됨'</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(user);</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'user 가 바뀌기 전..'</span>);</span><br><span class="line">      <span class="built_in">console</span>.log(user);</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;, [user]);</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;b</span><br><span class="line">        style=&#123;&#123;</span><br><span class="line">          cursor: <span class="string">'pointer'</span>,</span><br><span class="line">          color: user.active ? <span class="string">'green'</span> : <span class="string">'black'</span></span><br><span class="line">        &#125;&#125;</span><br><span class="line">        onClick = &#123;() =&gt; onToggle(user.id)&#125;</span><br><span class="line">        &gt;</span><br><span class="line">        &#123;user.username&#125;</span><br><span class="line">      &lt;<span class="regexp">/b&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">      &lt;span&gt;(&#123;user.email&#125;)&lt;/</span>span&gt;</span><br><span class="line">      &lt;button onClick=&#123;() =&gt; onRemove(user.id)&#125;&gt; 삭제 &lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>div&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">UserList</span>(<span class="params">&#123; users, onRemove, onToggle &#125;</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &#123;users.map(<span class="function"><span class="params">user</span> =&gt;</span> (</span><br><span class="line">        &lt;User user=&#123;user&#125; key=&#123;user.id&#125; onRemove=&#123;onRemove&#125; onToggle=&#123;onToggle&#125; /&gt;</span><br><span class="line">      ))&#125;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">export default React.Memo(UserList); /</span><span class="regexp">/ 추가</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="함수형-업데이트"><a href="#함수형-업데이트" class="headerlink" title="함수형 업데이트  "></a>함수형 업데이트  <a id="a3"></a></h3><p>여기까지 적용이 완료되면 <code>input</code>박스의 내용을 추가하거나 수정해도 UserList가 리렌더링 되지 않는다.(오직 Input박스만 리렌더링)</p>
+<p>하지만, 추가적인 문제로는 User 중 하나라도 수정(user.active 변경)이 된다면 모든 User들이 리렌더링 되고 CreateUser도 리렌더링 된다는것이다. </p>
+<p><strong>왜 리렌더링이 될까?</strong> 그 이유는 아래처럼 <code>useCallback</code>을 사용할 때 2번째 파라미터로 넣어준 의존성 배열 <code>deps</code> 에 <code>users</code> 가 들어가 있기 때문이다. <code>users</code> 중 1개라도 변경이 된다면 <code>onCreate</code>, <code>onToggle</code>, <code>onRemove</code> 가 새로 만들어지므로 전부 리렌더링 되는 것이다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> onCreate = useCallback(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">...</span><br><span class="line">&#125;, [users, username, email]);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> onRemove = useCallback(</span><br><span class="line">id =&gt; &#123; ...</span><br><span class="line">&#125;,  [users]);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> onToggle = useCallback(</span><br><span class="line">id =&gt; &#123; ...</span><br><span class="line">&#125;,  [users]);</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p><strong>이 부분에서 사용할 수 있는 것이 바로 함수형 업데이트 이다.</strong></p>
+<p>예전(useState)를 잠깐 배웠을 때를 생각해보자.</p>
+<h4 id="기본-파라미터-방식"><a href="#기본-파라미터-방식" class="headerlink" title="기본 파라미터 방식  "></a>기본 파라미터 방식  <a id="a4"></a></h4><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> [number, setNumber] = useState(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> onIncrease = <span class="function"><span class="params">()</span> =&gt;</span> &#123; setNumber(number + <span class="number">1</span>); &#125;</span><br><span class="line"><span class="keyword">const</span> onDecrease = <span class="function"><span class="params">()</span> =&gt;</span> &#123; setNumber(number - <span class="number">1</span>); &#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="함수형-업데이트-방식"><a href="#함수형-업데이트-방식" class="headerlink" title="함수형 업데이트 방식  "></a>함수형 업데이트 방식  <a id="a5"></a></h4><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> [number, setNumber] = useState(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> onIncrease = <span class="function"><span class="params">()</span> =&gt;</span> &#123; setNumber(<span class="function"><span class="params">prevNumber</span> =&gt;</span> prevNumber + <span class="number">1</span>); &#125;</span><br><span class="line"><span class="keyword">const</span> onDecrease = <span class="function"><span class="params">()</span> =&gt;</span> &#123; setNumber(<span class="function"><span class="params">prevNumber</span> =&gt;</span> prevNumber - <span class="number">1</span>); &#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p>함수형 업데이트를 하게 되면, <code>setUsers</code> 에 등록하는 콜백함수의 파라미터에서 최신 <code>users</code> 를 참조 할 수 있기 때문에 <code>deps</code> 에 <code>users</code> 를 넣지 않아도 된다. ( onChange 의 경우엔 함수형 업데이트를 해도 영향은 가지 않는다 ).</p>
+<br>
+
+<h4 id="App-js"><a href="#App-js" class="headerlink" title="App.js  "></a>App.js  <a id="a6"></a></h4><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; useRef, useState, useMemo, useCallback &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> UserList <span class="keyword">from</span> <span class="string">'./UserList'</span>;</span><br><span class="line"><span class="keyword">import</span> CreateUser <span class="keyword">from</span> <span class="string">'./CreateUser'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">countActiveUsers</span>(<span class="params">users</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'활성 사용자 수를 세는중...'</span>);</span><br><span class="line">  <span class="keyword">return</span> users.filter(<span class="function"><span class="params">user</span> =&gt;</span> user.active).length;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">App</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> [inputs, setInputs] = useState(&#123;</span><br><span class="line">    username: <span class="string">''</span>,</span><br><span class="line">    email: <span class="string">''</span></span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="keyword">const</span> &#123; username, email &#125; = inputs;</span><br><span class="line">  <span class="keyword">const</span> onChange = useCallback(<span class="function"><span class="params">e</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; name, value &#125; = e.target;</span><br><span class="line">    setInputs(<span class="function"><span class="params">inputs</span> =&gt;</span> (&#123;</span><br><span class="line">      ...inputs,</span><br><span class="line">      [name]: value</span><br><span class="line">    &#125;));</span><br><span class="line">  &#125;, []);</span><br><span class="line">  <span class="keyword">const</span> [users, setUsers] = useState([</span><br><span class="line">    &#123;</span><br><span class="line">      id: <span class="number">1</span>,</span><br><span class="line">      username: <span class="string">'velopert'</span>,</span><br><span class="line">      email: <span class="string">'public.velopert@gmail.com'</span>,</span><br><span class="line">      active: <span class="literal">true</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      id: <span class="number">2</span>,</span><br><span class="line">      username: <span class="string">'tester'</span>,</span><br><span class="line">      email: <span class="string">'tester@example.com'</span>,</span><br><span class="line">      active: <span class="literal">false</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      id: <span class="number">3</span>,</span><br><span class="line">      username: <span class="string">'liz'</span>,</span><br><span class="line">      email: <span class="string">'liz@example.com'</span>,</span><br><span class="line">      active: <span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">  ]);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> nextId = useRef(<span class="number">4</span>);</span><br><span class="line">  <span class="keyword">const</span> onCreate = useCallback(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> user = &#123;</span><br><span class="line">      id: nextId.current,</span><br><span class="line">      username,</span><br><span class="line">      email</span><br><span class="line">    &#125;;</span><br><span class="line">    setUsers(<span class="function"><span class="params">users</span> =&gt;</span> users.concat(user));</span><br><span class="line"></span><br><span class="line">    setInputs(&#123;</span><br><span class="line">      username: <span class="string">''</span>,</span><br><span class="line">      email: <span class="string">''</span></span><br><span class="line">    &#125;);</span><br><span class="line">    nextId.current += <span class="number">1</span>;</span><br><span class="line">  &#125;, [username, email]);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> onRemove = useCallback(<span class="function"><span class="params">id</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// user.id 가 파라미터로 일치하지 않는 원소만 추출해서 새로운 배열을 만듬</span></span><br><span class="line">    <span class="comment">// = user.id 가 id 인 것을 제거함</span></span><br><span class="line">    setUsers(<span class="function"><span class="params">users</span> =&gt;</span> users.filter(<span class="function"><span class="params">user</span> =&gt;</span> user.id !== id));</span><br><span class="line">  &#125;, []);</span><br><span class="line">  <span class="keyword">const</span> onToggle = useCallback(<span class="function"><span class="params">id</span> =&gt;</span> &#123;</span><br><span class="line">    setUsers(<span class="function"><span class="params">users</span> =&gt;</span></span><br><span class="line">      users.map(<span class="function"><span class="params">user</span> =&gt;</span></span><br><span class="line">        user.id === id ? &#123; ...user, <span class="attr">active</span>: !user.active &#125; : user</span><br><span class="line">      )</span><br><span class="line">    );</span><br><span class="line">  &#125;, []);</span><br><span class="line">  <span class="keyword">const</span> count = useMemo(<span class="function"><span class="params">()</span> =&gt;</span> countActiveUsers(users), [users]);</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;&gt;</span><br><span class="line">      &lt;CreateUser</span><br><span class="line">        username=&#123;username&#125;</span><br><span class="line">        email=&#123;email&#125;</span><br><span class="line">        onChange=&#123;onChange&#125;</span><br><span class="line">        onCreate=&#123;onCreate&#125;</span><br><span class="line">      /&gt;</span><br><span class="line">      &lt;UserList users=&#123;users&#125; onRemove=&#123;onRemove&#125; onToggle=&#123;onToggle&#125; /&gt;</span><br><span class="line">      &lt;div&gt;활성사용자 수 : &#123;count&#125;&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> App;</span><br></pre></td></tr></table></figure>
+
+<p>여기까지 완료하면, 해당 항목만 리렌더링 될 것이다.</p>
+<p><code>deps</code>에 users를 넣었을 때는 users 값이 변경될 때 마다 함수가 재선언되어서 props가 변경되었다고 CreateUser 컴포넌트가 인지를 했기에 리렌더링이 되었었다. </p>
+<p>하지만 함수형 업데이트를 사용할 경우 users의 최신값이 보존되기 때문에 <code>deps</code>엔 따로 안넣어도 되니 함수가 재선언되지 않고 CreateUser 컴포넌트가 props가 변경되었다고 인지를 못한다. </p>
+<p>UserList와 User 컴포넌트는 users가 변함을 인지하고 리렌더링 되는 것이다.</p>
+<br>
+
+<p>리액트 개발을 할 때, <code>useCallback</code>, <code>useMemo</code>, <code>React.memo</code> 는 컴포넌트의 성능을 실제로 개선할수있는 상황에서만 진행하자.</p>
+<p>예를 들어서, User 컴포넌트에 <code>b</code> 와 <code>button</code> 에 <code>onClick</code> 으로 설정해준 함수들은, 해당 함수들을 <code>useCallback</code> 으로 재사용한다고 해서 리렌더링을 막을 수 있는것은 아니다.</p>
+<p>추가적으로, 렌더링 최적화 하지 않을 컴포넌트에 React.memo 를 사용하는것은, 불필요한 props 비교만 하는 것이기 때문에 실제로 렌더링을 방지할수있는 상황이 있는 경우에만 사용하자. React.memo 에서 두번째 파라미터에 <code>propsAreEqual</code> 이라는 함수를 사용하여 특정 값들만 비교를 하는 것도 가능하다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> React.memo(</span><br><span class="line">  UserList,</span><br><span class="line">  (prevProps, nextProps) =&gt; prevProps.users === nextProps.users</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p>하지만, 이걸 잘못사용한다면 오히려 의도치 않은 버그들이 발생하기 쉽다. 예를 들어, 함수형 업데이트로 전환을 안했는데 이렇게 users 만 비교를 하게 된다면, <code>onToggle</code> 과 <code>onRemove</code> 에서 최신 users 배열을 참조하지 않으므로 심각한 오류가 발생 할 수 있다.</p>
+
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="https://hyeok999.github.io/2020/01/22/react-velo-17/" data-id="ck5omemp500ksnvz0sevl7nfl" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://hyeok999.github.io/2020/01/22/react-velo-17/" data-id="ck5omgga600l2r7z094cecboq" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -269,15 +338,34 @@ ga('send', 'pageview');
             "name": "Jun Hyeok Kim"
         },
         "headline": "React.memo 를 사용한 컴포넌트 리렌더링 방지",
-        "image": "https://hyeok999.github.io",
+        "image": "https://hyeok999.github.iohttps://user-images.githubusercontent.com/31315644/71559911-da157b00-2aa6-11ea-9426-96cf77fb95b8.png",
         "keywords": "Web coding develop HTML CSS javascript",
         "genre": "TIL React-Preview",
         "datePublished": "2020-01-22",
         "dateCreated": "2020-01-22",
         "dateModified": "2020-01-22",
         "url": "https://hyeok999.github.io/2020/01/22/react-velo-17/",
-        "description": "",
-        "wordCount": 1
+        "description": "
+
+React with Velopert - 17 -
+React.memo 를 사용한 컴포넌트 리렌더링 방지
+CreateUser.js
+UserList.js
+함수형 업데이트
+기본 파라미터 방식
+함수형 업데이트 방식
+App.js
+
+
+
+
+
+
+
+
+Chap 17. React.memo 를 사용한 컴포넌트 리렌더링 방지
+컴포넌트의 props 가 바뀌지 않았다면, 리렌더링을",
+        "wordCount": 1863
     }
 </script>
 
@@ -368,7 +456,7 @@ ga('send', 'pageview');
                             <a href="/2020/01/22/react-velo-17/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/71559911-da157b00-2aa6-11ea-9426-96cf77fb95b8.png)" alt="React.memo 를 사용한 컴포넌트 리렌더링 방지" class="thumbnail-image"></span>
     
     
 </a>
