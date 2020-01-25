@@ -12,18 +12,20 @@
     
         <meta name="keywords" content="git,Web,coding,develop,HTML,CSS,javascript,React">
     
-    <meta name="description" content="HYEOK999&apos;s IT Develop Blog">
+    <meta name="description" content="React Re-Study : 1 리액트를 위한 JS 문법정리 에러는 에러 객체를 상속받아서 throw 한다. (throw new Error) let 은 변경 가능, const 는 불가능 arrow function 함수.bind(this) 디스트럭처링 callback Promise 객체 Generator 객체   React 프로젝트 프로젝트 구성 지식">
 <meta name="keywords" content="git,Web,coding,develop,HTML,CSS,javascript,React">
 <meta property="og:type" content="article">
 <meta property="og:title" content="다시 공부하는 React -01-">
 <meta property="og:url" content="https://hyeok999.github.io/2020/01/25/ReactStudy-01/index.html">
 <meta property="og:site_name" content="HYEOK999&#39;s Blog">
-<meta property="og:description" content="HYEOK999&apos;s IT Develop Blog">
+<meta property="og:description" content="React Re-Study : 1 리액트를 위한 JS 문법정리 에러는 에러 객체를 상속받아서 throw 한다. (throw new Error) let 은 변경 가능, const 는 불가능 arrow function 함수.bind(this) 디스트럭처링 callback Promise 객체 Generator 객체   React 프로젝트 프로젝트 구성 지식">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-01-25T15:53:07.709Z">
+<meta property="og:image" content="https://user-images.githubusercontent.com/31315644/72333302-e6ccdc80-36fe-11ea-9b80-e00b0d5f5847.png">
+<meta property="og:updated_time" content="2020-01-25T15:55:16.159Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="다시 공부하는 React -01-">
-<meta name="twitter:description" content="HYEOK999&apos;s IT Develop Blog">
+<meta name="twitter:description" content="React Re-Study : 1 리액트를 위한 JS 문법정리 에러는 에러 객체를 상속받아서 throw 한다. (throw new Error) let 은 변경 가능, const 는 불가능 arrow function 함수.bind(this) 디스트럭처링 callback Promise 객체 Generator 객체   React 프로젝트 프로젝트 구성 지식">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/31315644/72333302-e6ccdc80-36fe-11ea-9b80-e00b0d5f5847.png">
     
     <link rel="canonical" href="https://hyeok999.github.io/2020/01/25/reactstudy-01/">
     
@@ -191,14 +193,306 @@ ga('send', 'pageview');
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <p><img src="https://user-images.githubusercontent.com/31315644/72333302-e6ccdc80-36fe-11ea-9b80-e00b0d5f5847.png" alt="React2-Thumbnail"></p>
+<hr>
+<h1 id="React-Re-Study-1"><a href="#React-Re-Study-1" class="headerlink" title="React Re-Study : 1"></a>React Re-Study : 1</h1><ul>
+<li>리액트를 위한 JS 문법정리<ul>
+<li>에러는 에러 객체를 상속받아서 throw 한다. (<code>throw new Error</code>)</li>
+<li>let 은 변경 가능, const 는 불가능</li>
+<li>arrow function</li>
+<li>함수.bind(this)</li>
+<li>디스트럭처링</li>
+<li>callback</li>
+<li>Promise 객체</li>
+<li>Generator 객체</li>
+</ul>
+</li>
+<li>React 프로젝트<ul>
+<li>프로젝트 구성 지식</li>
+<li>프록젝트 구성하기</li>
+</ul>
+</li>
+<li>React 짧은 리뷰<ul>
+<li>React 핵심 모듈</li>
+<li>React Component 만드는 법</li>
+<li>props와 state</li>
+<li>Event Handling<ul>
+<li>인라인 함수를 작성하면 안되는 이유 </li>
+<li>해결방안</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<br>
+
+<hr>
+<h2 id="React-Study-with-Mark-리액트를-위한-JS-문법정리"><a href="#React-Study-with-Mark-리액트를-위한-JS-문법정리" class="headerlink" title="React Study with Mark - 리액트를 위한 JS 문법정리 -"></a>React Study with Mark - 리액트를 위한 JS 문법정리 -</h2><br>
+
+<h3 id="리액트를-위한-JS-문법정리"><a href="#리액트를-위한-JS-문법정리" class="headerlink" title="리액트를 위한 JS 문법정리"></a>리액트를 위한 JS 문법정리</h3><blockquote>
+<p>이 정도의 개념은 알고 있어야 최소한의 React 개발이 가능하다….</p>
+</blockquote>
+<ul>
+<li>에러</li>
+<li>const let</li>
+<li>template string</li>
+<li>arrow function</li>
+<li>.bind(this)</li>
+<li>const {children} = this.props;</li>
+<li>…props</li>
+<li>Promise</li>
+<li>async await</li>
+<li>Generator</li>
+</ul>
+<br>
+
+<h4 id="에러는-에러-객체를-상속받아서-throw-한다-throw-new-Error"><a href="#에러는-에러-객체를-상속받아서-throw-한다-throw-new-Error" class="headerlink" title="에러는 에러 객체를 상속받아서 throw 한다. (throw new Error)"></a>에러는 에러 객체를 상속받아서 throw 한다. (<code>throw new Error</code>)</h4><ul>
+<li>SyntaxError : 코드를 분석하는 중 잘못된 구문을 만났음을 나타내는 오류 </li>
+<li>ReferenceError : 잘못된 참조를 했음을 나타내는 오류</li>
+<li>TypeError : 변수나 매개변수가 유효한 자료형이 아님을 나타내는 오류</li>
+<li>RangeError : 숫자 변수나 매개변수가 유효한 범위를 벗어났음을 나타내는 오류 </li>
+</ul>
+<p>등등…</p>
+<br>
+
+<h4 id="let-은-변경-가능-const-는-불가능"><a href="#let-은-변경-가능-const-는-불가능" class="headerlink" title="let 은 변경 가능, const 는 불가능"></a>let 은 변경 가능, const 는 불가능</h4><ul>
+<li><em>Primitive</em> : 원시값 </li>
+<li><em>Reference</em> : 객체값</li>
+</ul>
+<br>
+
+<h4 id="arrow-function"><a href="#arrow-function" class="headerlink" title="arrow function"></a>arrow function</h4><ul>
+<li>자신의 this 를 만들지 않는다.</li>
+<li>생성자로 사용할 수 없다.</li>
+<li>항상 익명 함수</li>
+<li>리턴만 있으면, {} 생략</li>
+<li>인자가 하나면, () 생략</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// arrow.js</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = <span class="string">'Mark'</span>;</span><br><span class="line"></span><br><span class="line">  setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name); <span class="comment">// undefined</span></span><br><span class="line">  &#125;, <span class="number">1000</span>);</span><br><span class="line"></span><br><span class="line">  setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name); <span class="comment">// Mark</span></span><br><span class="line">  &#125;, <span class="number">1000</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> foo = <span class="keyword">new</span> Foo();</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="함수-bind-this"><a href="#함수-bind-this" class="headerlink" title="함수.bind(this)"></a>함수.bind(this)</h4><ul>
+<li>함수가 가르키는 this를 인자에 적히 this로 변경한다. </li>
+<li>호출은 하지 않는다. (호출 - apply, call)</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">hello</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">`안녕하세요 <span class="subst">$&#123;<span class="keyword">this</span>.name&#125;</span>`</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> mark = &#123;</span><br><span class="line">  name: <span class="string">'Mark'</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> helloMark = hello.bind(mark);</span><br><span class="line">helloMark();  <span class="comment">// 안녕하세요 Mark</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> anna = &#123;</span><br><span class="line">  name: <span class="string">'Anna'</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> helloAnna = hello.bind(anna);</span><br><span class="line">helloAnna(); <span class="comment">// 안녕하세요 Anna</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="디스트럭처링"><a href="#디스트럭처링" class="headerlink" title="디스트럭처링"></a>디스트럭처링</h4><ul>
+<li>구조 분해 할당 (객체 , 배열)</li>
+<li>디스트럭처링은 1레벨 깊이까지만 변화시킨다.</li>
+<li>딥카피의 제일 쉬운 방법은 json.stringify를 이용하여 문자열로 변환시켜 복사하는 방법이다. (단, 엄청 느리다.)</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj1 = &#123; <span class="attr">a</span>: &#123; <span class="attr">b</span>: <span class="number">100</span> &#125; &#125;;</span><br><span class="line"><span class="keyword">const</span> obj1Cloned = &#123; ...obj1 &#125;;</span><br><span class="line">obj1Cloned.a.b = <span class="number">200</span>;</span><br><span class="line"><span class="built_in">console</span>.log(obj1, obj1Cloned); <span class="comment">// 1레벨</span></span><br><span class="line"><span class="comment">// &#123; a: &#123;b: 200&#125; &#125; &#123; a: &#123;b: 200&#125; &#125; // &#123;b : 200&#125;으로 같이 변경되었음.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> obj2 = &#123; <span class="attr">a</span>: &#123; <span class="attr">b</span>: <span class="number">100</span> &#125; &#125;;</span><br><span class="line"><span class="keyword">const</span> obj2Cloned = &#123; ...obj2, <span class="attr">a</span>: &#123; ...obj2.a &#125; &#125;;</span><br><span class="line">obj2Cloned.a.b = <span class="number">200</span>; <span class="comment">// 2레벨 깊이까지 복사했기 때문에 독리접이다.</span></span><br><span class="line"><span class="built_in">console</span>.log(obj2, obj2Cloned); <span class="comment">// 2레벨</span></span><br><span class="line"><span class="comment">// &#123; a: &#123;b: 100&#125; &#125; &#123; a: &#123;b: 200&#125; &#125;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="callback"><a href="#callback" class="headerlink" title="callback"></a>callback</h4><ul>
+<li>비동기 처리를 위한 선택</li>
+<li>고차 함수 내부에서 호출하는 함수</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// callback.js</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">callback</span>) </span>&#123; <span class="comment">// foo는 고차함수다.</span></span><br><span class="line">  setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// 로직</span></span><br><span class="line">    callback();</span><br><span class="line">  &#125;, <span class="number">1000</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'end'</span>);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'이것이 먼저 실행'</span>);</span><br><span class="line"><span class="comment">// 이것이 먼저 실행</span></span><br><span class="line"><span class="comment">// undefined : 실행결과임</span></span><br><span class="line"><span class="comment">// end</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="Promise-객체"><a href="#Promise-객체" class="headerlink" title="Promise 객체"></a>Promise 객체</h4><ul>
+<li>Promise 객체를 만들고, 로직 처리 후 성공과 실패를 알려준다.</li>
+<li>then 과 catch 를 통해 메인 로직에 전달한다.</li>
+<li>Promise는 3가지 상태를 지닌다.<ul>
+<li>Pending(대기) : 비동기 처리 로직이 아직 완료되지 않은 상태</li>
+<li>Fulfilled(이행) : 비동기 처리가 완료되어 프로미스가 결과 값을 반환해준 상태 (<code>resolve</code>)</li>
+<li>Rejected(실패) : 비동기 처리가 실패하거나 오류가 발생한 상태 (<code>reject</code>)</li>
+</ul>
+</li>
+<li><code>new Promise()</code> 호출 시 Pending 상태가 된다.</li>
+<li><code>new Promise()</code> 메서드 호출 시 콜백함수의 인자로  <code>resolve</code> 혹은 <code>reject</code> 에 접근할 수 있다.</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Promise</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      resolve();</span><br><span class="line">    &#125;, <span class="number">1000</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo().then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'end'</span>);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'이것이 먼저 실행'</span>);</span><br><span class="line"><span class="comment">// 이것이 먼저 실행</span></span><br><span class="line"><span class="comment">// undefined : 실행결과임</span></span><br><span class="line"><span class="comment">// end</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="Generator-객체"><a href="#Generator-객체" class="headerlink" title="Generator 객체"></a>Generator 객체</h4><ul>
+<li><code>function</code>키워드 뒤에 <code>*</code>이 적혀진 함수를 호출해서 반환되는 객체다. ( Generator객체(표준 내장 객체) )</li>
+<li><code>function*</code> 에서<code>yield</code> 를 호출하여, 다시 제어권을 넘겨준다.</li>
+<li>제너레이터 객체에 <code>next()</code> 함수를 호출하면, 다음 <code>yield</code> 지점까지 간다.</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// generator.js</span></span><br><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">0.5</span>);</span><br><span class="line">  <span class="keyword">yield</span> <span class="number">1</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">1.5</span>);</span><br><span class="line">  <span class="keyword">yield</span> <span class="number">2</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">2.5</span>);</span><br><span class="line">  <span class="keyword">yield</span> <span class="number">3</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">3.5</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> g = foo(); <span class="comment">// g는 Generate 객체이다.</span></span><br><span class="line"><span class="built_in">console</span>.log(g.next().value); <span class="comment">// 0.5 1</span></span><br><span class="line"><span class="built_in">console</span>.log(g.next().value); <span class="comment">// 1.5 2</span></span><br><span class="line"><span class="built_in">console</span>.log(g.next().value); <span class="comment">// 3 3.5</span></span><br><span class="line"><span class="built_in">console</span>.log(g.next().value); <span class="comment">// undefined</span></span><br><span class="line"><span class="built_in">console</span>.log(g.next().value); <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>next()</code>는 두 개의 프로퍼티를 가진 객체를 반환한다.<ul>
+<li>done (boolean)<ul>
+<li>Iterator(반복자)가 마지막 반복 작업을 마쳤을 경우 <code>true</code>. 만약 iterator(반복자)에 <em>return 값</em>이 있다면 <code>value</code>의 값으로 지정된다.</li>
+<li>Iterator(반복자)의 작업이 남아있을 경우 <code>false</code>. Iterator(반복자)에 <code>done</code> 프로퍼티 자체를 특정짓지 않은 것과 동일하다.</li>
+</ul>
+</li>
+<li><code>value</code> <ul>
+<li>Iterator(반복자)으로부터 반환되는 모든 자바스크립트 값이며 <code>done</code>이 <code>true</code>일 경우 생략될 수 있다.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// generator.js</span></span><br><span class="line"><span class="comment">// 핸들</span></span><br><span class="line"><span class="keyword">let</span> handle = <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 비동기 함수</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    handle.next(<span class="string">'hello'</span>);</span><br><span class="line">  &#125;, <span class="number">1000</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 핸들을 통해 컨트롤을 넘기는 제너레이터 함수</span></span><br><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">baz</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> text = <span class="keyword">yield</span> bar();</span><br><span class="line">  <span class="built_in">console</span>.log(text); <span class="comment">// hello</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">handle = baz();</span><br><span class="line">handle.next(); <span class="comment">// &#123;value: undefined, done: false&#125;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<hr>
+<h3 id="React-프로젝트"><a href="#React-프로젝트" class="headerlink" title="React 프로젝트"></a>React 프로젝트</h3><h4 id="프로젝트-구성-지식"><a href="#프로젝트-구성-지식" class="headerlink" title="프로젝트 구성 지식"></a>프로젝트 구성 지식</h4><ul>
+<li><p><code>npm run build</code> : 실제 배포를 위한 명령어. (build 폴더를 만든다.)</p>
+</li>
+<li><p><code>npm install serve -g</code> : 파일들을 서버로 올릴 수 있도록 하는 패키지(<a href="https://zeit.co/" rel="external nofollow noopener noreferrer" target="_blank">ZEIT</a>)<br><code>serve -s build</code> : <code>-s</code>는 Singlepage Application 의 약자로 어떠한 라우팅에도 index.html을 응답함</p>
+</li>
+<li><p><code>npm test</code>: 테스트 파일 생성</p>
+</li>
+<li><p><code>npm run eject</code> : npx를 해제하여 수많은 패키지들이 나온다. </p>
+<p>예전에 SASS가 안될 때 사용했고, 세부적인 설정을 작업할 때 사용한다. 한번 실행 시 돌이킬 수 없다.</p>
+</li>
+<li><p>webpack은 bundler /  babel은 transfiler</p>
+</li>
+<li><p>이미지 파일 로딩 방법 2가지(퍼블릭 폴더에 넣는 방식, import로 불러오는 방식)</p>
+</li>
+<li><p><code>package-lock.json</code> 은 개발했던 마지막 상태를 의미한다. </p>
+<p>따라서 마지막 개발 상황을 똑같이 재현해야한다면 <code>npm i</code> 가 아니라 <code>npm ci</code>를 해야한다.</p>
+</li>
+<li><p>CRA : <code>npx create-react-app</code> 정말 간편하게 react프로젝트를 만들어준다.</p>
+</li>
+<li><p>ESLint : JS 혹은 JSX에서 플러그 가능한 Linting 유틸리티.( 문법검사를 더불어  코드 작성 추천 제시 )</p>
+</li>
+<li><p>Prettier : 코드 자동 정리 Formatter ( Beutify와 충돌이 난다. 1개만 선택할 것 )</p>
+</li>
+<li><p>husky : Git hooks 을 사용하기 쉽게 만들어주는 툴 (커밋시, ESLint와 Prettier를 적용시켜 올리게할 수 있다.)</p>
+</li>
+</ul>
+<br>
+
+<h4 id="프록젝트-구성하기"><a href="#프록젝트-구성하기" class="headerlink" title="프록젝트 구성하기"></a>프록젝트 구성하기</h4><ol>
+<li><p>npx create-react-app 프로젝트명 (ESLint 포함 설치됨)</p>
+</li>
+<li><p>npm i prettier -D</p>
+</li>
+<li><p>.prettierrc 파일 생성 및 설정</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// .prettierrc</span><br><span class="line">&#123;</span><br><span class="line">  <span class="attr">"trailingComma"</span>: <span class="string">"all"</span>,</span><br><span class="line">  <span class="attr">"tabWidth"</span>: <span class="number">2</span>,</span><br><span class="line">  <span class="attr">"semi"</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">"singleQuote"</span>: <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>npm i huskey -D</p>
+</li>
+<li><p>npm i lint-staged -D</p>
+</li>
+<li><p>package.json 파일 설정 추가</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">// package.json 의 scripts 객체 아래에 작성</span><br><span class="line">"husky": &#123;</span><br><span class="line">  "hooks": &#123;</span><br><span class="line">    "pre-commit": "lint-staged"</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br><span class="line">"lint-staged": &#123;</span><br><span class="line">  "**/*.js": [</span><br><span class="line">    "eslint --fix",</span><br><span class="line">    "prettier --write",</span><br><span class="line">    <span class="string">"git add"</span></span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<hr>
+<h3 id="React-짧은-리뷰"><a href="#React-짧은-리뷰" class="headerlink" title="React 짧은 리뷰"></a>React 짧은 리뷰</h3><ul>
+<li><p>View 라이브러리 (오직 렌더링 및 업데이트만 진행)</p>
+</li>
+<li><p>컴포넌트 단위 개발 : JS에 <a href="https://developer.mozilla.org/ko/docs/Web/Web_Components" rel="external nofollow noopener noreferrer" target="_blank">웹 컴포넌트</a>가 정의되어 있다.</p>
+</li>
+<li><p>Virtual DOM을 이용한 개발 (반대 : Svelte)</p>
+<p>State Chage → Compute Diff → Re-Render</p>
+</li>
+<li><p>JSX ( Templates은 String형태로 바뀌는 것. / JSX는 하나의 표기법, JS의 트랜스파일 )</p>
+</li>
+<li><p>CSR &amp; SSR (상황에 맞게 골라서 사용한다.)</p>
+<ul>
+<li>CSR(Client Side Rendering)<ul>
+<li>html, js파일을 전부 내려받을 때까지 loading상태.</li>
+<li>loading 완료 시 react가 execute후 보여진다. (JS작동 동시 실행)</li>
+</ul>
+</li>
+<li>SSR(Server Side Rendering)<ul>
+<li>html요청시 서버에 있는 리액트 앱이 컴포넌트들을 String으로 해서 html로 내려주고, 이게 html에 바로 보여짐(JS 작동은 내려받는 중이므로 동작은 되지 않는다.)</li>
+<li>JS 다운 완료 후 react가 execute된 후부터 작동 가능.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<br>
+
+<h3 id="React-핵심-모듈"><a href="#React-핵심-모듈" class="headerlink" title="React 핵심 모듈"></a>React 핵심 모듈</h3><ul>
+<li>‘react’ : JSX문법을 쓸 수 있도록 지원해준다.</li>
+<li>‘react-dom’ : 만들어진 리액트 컴포넌트를 실제 DOM 에 연결할 때 사용한다.</li>
+</ul>
+<br>
+
+<h3 id="React-Component-만드는-법"><a href="#React-Component-만드는-법" class="headerlink" title="React Component 만드는 법"></a>React Component 만드는 법</h3><ul>
+<li>class : 기존에 있는 메소드 render를 오버라이드 해서 사용 하는 것.<ul>
+<li>컴포넌트 내부 상태가 있다면 - class</li>
+<li>컴포넌트 내부 상태가 없지만 라이프사이클을 사용 - class</li>
+<li>컴포넌트 내부 상태가 없고 라이프사이클과 관련X - function</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// class</span></span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ClassComponent</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (<span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>Hello<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 사용</span></span><br><span class="line">&lt;ClassComponent /&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>hooks : 새로 도입된 React 패러다임. (All - function)</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// hooks</span></span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> FunctionComponent = <span class="function"><span class="params">()</span> =&gt;</span> (<span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>Hello<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 사용</span></span><br><span class="line">&lt;HooksComponent /&gt;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="props와-state"><a href="#props와-state" class="headerlink" title="props와 state"></a>props와 state</h3><ul>
+<li>Props 와 State는 를 바탕으로 컴포넌트를 그림</li>
+<li>Props 와 State 가 변경되면, 컴포넌트를 다시 그림</li>
+<li>컴포넌트를 그리는 방법을 기술하는 함수가 랜더 함수</li>
+<li>외부에서 보내는 데이터가 변화를 일으킬 경우에만 Props 사용.</li>
+<li>Props는 객체</li>
+<li><strong>State를 바로 변경하지 못하게 한 이유는?</strong> 스테이트가 변경되면 렌더를 다시해줘야 하므로 객체를 바로 변경하게(state.s = Apple) 하지 않고 this.setState를 통해 여기서 state가 바뀌니까 <strong>명시적으로 다시 렌더하라고 알려주는 것</strong></li>
+</ul>
+<br>
+
+<h3 id="Event-Handling"><a href="#Event-Handling" class="headerlink" title="Event Handling"></a>Event Handling</h3><ul>
+<li><p><em>HTML DOM 에 클릭하면 이벤트가 발생하고, 발생하면 그에 맞는 변경이 일어나도록 해야함.</em></p>
+</li>
+<li><p><em>JSX 에 이벤트를 설정할 수 있다.</em></p>
+</li>
+<li><p><strong>이벤트 핸들링시 인라인 함수를 작성해서는 안된다.</strong></p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;button onClick=&#123;() =&gt; <span class="built_in">console</span>.log(<span class="string">'abc'</span>)&#125;&gt;test&lt;<span class="regexp">/button&gt; /</span><span class="regexp">/ X</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>인라인 함수로 작성했을 경우, DOM에는 크게 문제가 없다.</p>
+</li>
+</ul>
+<br>
+
+<h4 id="인라인-함수를-작성하면-안되는-이유"><a href="#인라인-함수를-작성하면-안되는-이유" class="headerlink" title="인라인 함수를 작성하면 안되는 이유"></a>인라인 함수를 작성하면 안되는 이유</h4><blockquote>
+<p>인라인 함수로 작성했을 경우, DOM에는 크게 문제가 없다.</p>
+</blockquote>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;button onClick=&#123;() =&gt; <span class="built_in">console</span>.log(<span class="string">'abc'</span>)&#125;&gt;test&lt;<span class="regexp">/button&gt; /</span><span class="regexp">/ X</span></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><p>위와 같은 인라인 함수를 작성하게 될 경우 매 렌더링 시 새로운 익명함수를 만들어서 반환한다. (즉, 참조값이 달라진다.)</p>
+</li>
+<li><p>당장의 해당 컴포넌트에서 사용하기에는 전혀 문제가 없지만 props를 통해 자식 컴포넌트에게 내려주게 될 경우 큰 문제가 발생한다.</p>
+<ul>
+<li><p><strong>PureComponent 최적화 문제</strong></p>
+<p>기본적인 <code>React.Component</code> 의 경우 <code>props</code> 혹은 <code>state</code> 가 바뀔 때 마다, 하위 컴포넌트 역시 새롭게 렌더링한다.<code>React.PureComponent</code> 의 경우 내부에서 <code>props</code>와 <code>state</code>를 shallow level 안에서 비교 하여, 변경된 값이 있을 시에만 리렌더링 하도록 되어 있다. 문제는 새롭게 참조값을 매번 반환하므로 <code>PureComponent</code>의 의미가 전혀 없다.</p>
+</li>
+<li><p><strong>React.memo 최적화 문제</strong></p>
+<p><code>React.memo</code> 역시 동일한 문제를 가지고 있다. 컴퍼넌트를 렌더링(rendering) 한 뒤, 이전 렌더된 결과와 비교하여 DOM 업데이트를 결정한다. 여기서 결과상으로 같은 값을 props로 준 것 임에도 참조값이 다르므로 <code>React.memo</code> 역시 사용된 의미가 전혀없게 된다.</p>
+</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// App.js</span></span><br><span class="line">&lt;Person &#123;...p&#125; key=&#123;p.id&#125; onClick=&#123;() =&gt; &#123;&#125;&#125; /&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Person.js - PureComponent 최적화 문제</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">PureComponent</span> </span>&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"Person render"</span>);</span><br><span class="line">    <span class="keyword">const</span> &#123; name, age &#125; = <span class="keyword">this</span>.props;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;ul&gt;</span><br><span class="line">        &#123;name&#125; / &#123;age&#125;</span><br><span class="line">      &lt;<span class="regexp">/ul&gt;</span></span><br><span class="line"><span class="regexp">    );</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/ Person.js - React.memo 최적화 문제</span></span><br><span class="line"><span class="regexp">const Person = React.memo(props =&gt; &#123;</span></span><br><span class="line"><span class="regexp">  console.log("Person render");</span></span><br><span class="line"><span class="regexp">  const &#123; name, age &#125; = props;</span></span><br><span class="line"><span class="regexp">  return (</span></span><br><span class="line"><span class="regexp">    &lt;ul&gt;</span></span><br><span class="line"><span class="regexp">      &#123;name&#125; /</span> &#123;age&#125;</span><br><span class="line">    &lt;<span class="regexp">/ul&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;);</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<br>
+
+<h4 id="해결방안"><a href="#해결방안" class="headerlink" title="해결방안"></a>해결방안</h4><ol>
+<li><code>useCallback</code> 이용</li>
+<li>인라인 함수 말고 클래스면 맴버 함수를, 펑셔널이면 내부에 함수를 만들어서 넘겨준다.</li>
+</ol>
+
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="https://hyeok999.github.io/2020/01/25/ReactStudy-01/" data-id="ck5trwuz200214vz0hkq13fs3" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://hyeok999.github.io/2020/01/25/ReactStudy-01/" data-id="ck5ts00hu00228kz0b69lx94e" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -269,15 +563,31 @@ ga('send', 'pageview');
             "name": "Jun Hyeok Kim"
         },
         "headline": "다시 공부하는 React -01-",
-        "image": "https://hyeok999.github.io",
+        "image": "https://hyeok999.github.iohttps://user-images.githubusercontent.com/31315644/72333302-e6ccdc80-36fe-11ea-9b80-e00b0d5f5847.png",
         "keywords": "git Web coding develop HTML CSS javascript React",
         "genre": "TIL React",
         "datePublished": "2020-01-25",
         "dateCreated": "2020-01-25",
         "dateModified": "2020-01-26",
         "url": "https://hyeok999.github.io/2020/01/25/ReactStudy-01/",
-        "description": "",
-        "wordCount": 1
+        "description": "
+
+React Re-Study : 1
+리액트를 위한 JS 문법정리
+에러는 에러 객체를 상속받아서 throw 한다. (throw new Error)
+let 은 변경 가능, const 는 불가능
+arrow function
+함수.bind(this)
+디스트럭처링
+callback
+Promise 객체
+Generator 객체
+
+
+React 프로젝트
+프로젝트 구성 지식
+",
+        "wordCount": 2136
     }
 </script>
 
@@ -368,7 +678,7 @@ ga('send', 'pageview');
                             <a href="/2020/01/25/ReactStudy-01/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/72333302-e6ccdc80-36fe-11ea-9b80-e00b0d5f5847.png)" alt="다시 공부하는 React -01-" class="thumbnail-image"></span>
     
     
 </a>
