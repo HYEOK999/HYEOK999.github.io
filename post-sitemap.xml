@@ -8,6 +8,14 @@
     </url>
 
     <url>
+        <loc>https://hyeok999.github.io/2020/01/25/ReactStudy-01/</loc>
+        <lastmod>2020-01-25T15:53:07.709Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://hyeok999.github.io/2020/01/25/react-router-01/</loc>
         <lastmod>2020-01-25T15:49:01.073Z</lastmod>
         <changefreq>weekly</changefreq>
