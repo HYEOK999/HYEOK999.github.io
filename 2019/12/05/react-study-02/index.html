@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+
+    
+
+    
+    <title>React 스터디 02 | HYEOK999&#39;s Blog</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="coding,develop,Web,git,HTML,CSS,javascript,React">
+    
+    <meta name="description" content="React Study 02 JSX 란? JSX를 사용하는 이유 JSX 내부 작성 주의점   Virtual DOM  Virtual DOM(가상 돔)의 사용이유 Virtual DOM(가상 돔)의 장점 &amp;amp; 단점 VirtualDOM이 받는 파라미터 세가지 (type, props, …child)   ReactDOM.render() 함수 React 상태 업">
+<meta name="keywords" content="coding,develop,Web,git,HTML,CSS,javascript,React">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React 스터디 02">
+<meta property="og:url" content="https://hyeok999.github.io/2019/12/05/react-study-02/index.html">
+<meta property="og:site_name" content="HYEOK999&#39;s Blog">
+<meta property="og:description" content="React Study 02 JSX 란? JSX를 사용하는 이유 JSX 내부 작성 주의점   Virtual DOM  Virtual DOM(가상 돔)의 사용이유 Virtual DOM(가상 돔)의 장점 &amp;amp; 단점 VirtualDOM이 받는 파라미터 세가지 (type, props, …child)   ReactDOM.render() 함수 React 상태 업">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://user-images.githubusercontent.com/31315644/69938302-4345b500-1520-11ea-8436-26d69300e699.png">
+<meta property="og:updated_time" content="2019-12-09T14:45:07.290Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="React 스터디 02">
+<meta name="twitter:description" content="React Study 02 JSX 란? JSX를 사용하는 이유 JSX 내부 작성 주의점   Virtual DOM  Virtual DOM(가상 돔)의 사용이유 Virtual DOM(가상 돔)의 장점 &amp;amp; 단점 VirtualDOM이 받는 파라미터 세가지 (type, props, …child)   ReactDOM.render() 함수 React 상태 업">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/31315644/69938302-4345b500-1520-11ea-8436-26d69300e699.png">
+    
+    <link rel="canonical" href="https://hyeok999.github.io/2019/12/05/react-study-02/">
+    
+
+    
+        <link rel="icon" href="/images/favicon_io/favicon.ico">
+    
+
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Architects+Daughter&display=swap" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin+Sketch&display=swap">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.css">
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-153647512-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+
+    
+    
+
+
+<link rel="alternate" href="/feed.xml" title="HYEOK999's Blog" type="application/atom+xml">
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">HYEOK999&#39;s Daily Develop</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/CSS/">CSS</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/CSS/GIT/">GIT</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/">Develop</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/CSS/">CSS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/GIT/">GIT</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/GraphQL/">GraphQL</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/IT-Event/">IT Event</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Project/">Project</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/React/">React</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Tips/">Tips</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/">TIL</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Algorithm-Quiz/">Algorithm & Quiz</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/React/">React</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/React-Preview/">React-Preview</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/linux/">linux</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/etc/">etc</a></li></ul>
+                                    
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="https://about.me/iasg2004" rel="external nofollow noopener noreferrer" target="_blank">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/TIL/React/">React</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-react-study-02" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        React 스터디 02
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/12/05/react-study-02/" class="article-date">
+            <time datetime="2019-12-04T16:27:32.000Z" itemprop="datePublished">2019-12-05</time>
+        </a>
+    </div>
+
+		
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/CSS/">CSS</a>, <a class="tag-link" href="/tags/HTML/">HTML</a>, <a class="tag-link" href="/tags/React/">React</a>, <a class="tag-link" href="/tags/Web/">Web</a>, <a class="tag-link" href="/tags/coding/">coding</a>, <a class="tag-link" href="/tags/develop/">develop</a>, <a class="tag-link" href="/tags/git/">git</a>, <a class="tag-link" href="/tags/javascript/">javascript</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p><img src="https://user-images.githubusercontent.com/31315644/69938302-4345b500-1520-11ea-8436-26d69300e699.png" alt="React"></p>
+<hr>
+<h1 id="React-Study-02"><a href="#React-Study-02" class="headerlink" title="React Study 02"></a>React Study 02</h1><ul>
+<li>JSX 란?<ul>
+<li>JSX를 사용하는 이유</li>
+<li>JSX 내부 작성 주의점</li>
+</ul>
+</li>
+<li>Virtual DOM <ul>
+<li>Virtual DOM(가상 돔)의 사용이유</li>
+<li>Virtual DOM(가상 돔)의 장점 &amp; 단점</li>
+<li>VirtualDOM이 받는 파라미터 세가지 (type, props, …child)</li>
+</ul>
+</li>
+<li>ReactDOM.render() 함수<ul>
+<li>React 상태 업데이트 순서</li>
+</ul>
+</li>
+<li>import React 와 import ReactDOM 자세하게 알아보기.</li>
+<li>props 작성 규칙</li>
+<li>Component <ul>
+<li>Component를 정의하는 방법 2가지 </li>
+<li>Component 주의 사항 및 주요 코드</li>
+</ul>
+</li>
+<li>상태 변화<ul>
+<li>상태변화 사용 2가지 방법</li>
+</ul>
+</li>
+<li>초시계 만들어보기</li>
+<li>Mounting : Component 가 생성되고 DOM에 inject 되는 것.</li>
+</ul>
+<br>
+
+<hr>
+<br>
+
+<h3 id="용어-러버덕"><a href="#용어-러버덕" class="headerlink" title="용어 - ( 러버덕 )"></a>용어 - ( 러버덕 )</h3><ul>
+<li>JSX</li>
+<li>Virtual DOM</li>
+<li>Component</li>
+<li>Component 주의사항</li>
+<li>Reach 상태 변화</li>
+<li>props 작성 규칙</li>
+</ul>
+<br>
+
+<hr>
+<h3 id="JSX-란"><a href="#JSX-란" class="headerlink" title="JSX 란 ?"></a>JSX 란 ?</h3><blockquote>
+<p>Javascript xml의 약자이다.</p>
+<p>리액트 컴포넌트 파일에서 XML 형태로 코드를 작성하면 babel 이 JSX 를 JavaScript 로 변환을 해준다.</p>
+</blockquote>
+<p>예를들면, JSX로 다음과 같은 코드가 있다가 가정한다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"> &lt;div className=<span class="string">"App"</span>&gt;</span><br><span class="line">      &lt;header className=<span class="string">"App-header"</span>&gt;</span><br><span class="line">        &lt;img src=&#123;logo&#125; className=<span class="string">"App-logo"</span> alt=<span class="string">"logo"</span> /&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">          Edit &lt;code&gt;src/App.js&lt;<span class="regexp">/code&gt; and save to reload.</span></span><br><span class="line"><span class="regexp">        &lt;/</span>p&gt;</span><br><span class="line">        &lt;a</span><br><span class="line">          className=<span class="string">"App-link"</span></span><br><span class="line">          href=<span class="string">"https://reactjs.org"</span></span><br><span class="line">          target=<span class="string">"_blank"</span></span><br><span class="line">          rel=<span class="string">"noopener noreferrer"</span></span><br><span class="line">        &gt;</span><br><span class="line">          Learn React</span><br><span class="line">     		&lt;<span class="regexp">/a&gt;</span></span><br><span class="line"><span class="regexp">			&lt;/</span>header&gt;</span><br><span class="line">&lt;<span class="regexp">/div&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>위 코드가 실행될 때 <strong>transpiler</strong>인 Babel이 JS의 파서가 읽을 수 있게끔 변형 시켜준다.</p>
+<p>변형 시켜주면 다음과 같은 코드가 된다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">"use strict"</span>;</span><br><span class="line"></span><br><span class="line">React.createElement(<span class="string">"div"</span>, &#123;</span><br><span class="line">  className: <span class="string">"App"</span></span><br><span class="line">&#125;, React.createElement(<span class="string">"header"</span>, &#123;</span><br><span class="line">  className: <span class="string">"App-header"</span></span><br><span class="line">&#125;, React.createElement(<span class="string">"img"</span>, &#123;</span><br><span class="line">  src: logo,</span><br><span class="line">  className: <span class="string">"App-logo"</span>,</span><br><span class="line">  alt: <span class="string">"logo"</span></span><br><span class="line">&#125;), React.createElement(<span class="string">"p"</span>, <span class="literal">null</span>, <span class="string">"Edit "</span>, React.createElement(<span class="string">"code"</span>, <span class="literal">null</span>, <span class="string">"src/App.js"</span>), <span class="string">" and save to reload."</span>), React.createElement(<span class="string">"a"</span>, &#123;</span><br><span class="line">  className: <span class="string">"App-link"</span>,</span><br><span class="line">  href: <span class="string">"https://reactjs.org"</span>,</span><br><span class="line">  target: <span class="string">"_blank"</span>,</span><br><span class="line">  rel: <span class="string">"noopener noreferrer"</span></span><br><span class="line">&#125;, <span class="string">"Learn React"</span>)));</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="JSX를-사용하는-이유"><a href="#JSX를-사용하는-이유" class="headerlink" title="JSX를 사용하는 이유"></a>JSX를 사용하는 이유</h4><p><code>React.createElement(&quot;div&quot;,{ ... }, ...);</code>형태로 코드를 게속 작성한다면 아마도 React를 사용하지 않을 것이다.</p>
+<p>이유는 가독성면, 유지보수면 등등 사용하기가 너무나 불편한다.</p>
+<p>반면에 우리가 익숙한 HTML 코드를 js 위에서 사용하는 것은 크게 불편하지 않기 때문에 JSX를 사용한다.</p>
+<br>
+
+<h4 id="JSX-내부-작성-주의점"><a href="#JSX-내부-작성-주의점" class="headerlink" title="JSX 내부 작성 주의점"></a>JSX 내부 작성 주의점</h4><ol>
+<li><code>class</code> 가 아니라 <code>className</code> 으로 정의해야한다.</li>
+</ol>
+<p>html 시</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"App"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>jsx 시</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">"App"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<ol start="2">
+<li><code>&lt;img&gt;</code> 안에 무조건 alt 속성을 작성해야한다.</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&#123;logo&#125;</span> <span class="attr">className</span>=<span class="string">"App-logo"</span> <span class="attr">alt</span>=<span class="string">"logo"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<ol start="3">
+<li>변수를 값으로 대입할 수 있다.</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">logo = <span class="string">"http://localhost:3000/static/media/logo.25bf045c.svg"</span></span><br><span class="line"><span class="comment">// jsx 태그</span></span><br><span class="line">&lt;img src=&#123;logo&#125; className=<span class="string">"App-logo"</span> alt=<span class="string">"logo"</span> /&gt;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="Virtual-DOM"><a href="#Virtual-DOM" class="headerlink" title="Virtual DOM"></a>Virtual DOM</h3><p>React는 라이브러리다. 특정 DOM요소에 대해서 리액트 라이브러리를 적용하는 것이다.</p>
+<p>여기서 말하는 리액트 라이브러리는 Virtual DOM(가상 돔)을 이용한 리액트를 말하는데, 리액트는 실제 DOM이 아닌 Virtual DOM(가상 돔)을 이용한다.</p>
+<br>
+
+<h4 id="Virtual-DOM-가상-돔-의-사용이유"><a href="#Virtual-DOM-가상-돔-의-사용이유" class="headerlink" title="Virtual DOM(가상 돔)의 사용이유"></a>Virtual DOM(가상 돔)의 사용이유</h4><p>Vanilla JS 를 이용해 개발을 진행하다보면 게속적으로 DOM요소에 접근하기 위한 변수를 생성 하고 동적인 UI를 처리하기 위해서 이벤트 처리나 인터렉션이 지속적으로 늘어나고 유지보수가 점점 힘들어지게 된다.</p>
+<p>이러한 이유로, React는 특정 DOM요소에 대한 동적인 업데이트의 처리를 규칙으로 정하는게 아니라, 동적으로 바뀔때마다 지우고 새로 그려내자는 식으로 하게된다.</p>
+<p>여기서 문제는, 매번 새로 그린다면 속도 저하라는 문제가 생기는데 여기서 해결책으로 Virtual DOM(가상 돔)을 이용하게 된 것 이다.</p>
+<br>
+
+<h4 id="Virtual-DOM-가상-돔-의-장점-amp-단점"><a href="#Virtual-DOM-가상-돔-의-장점-amp-단점" class="headerlink" title="Virtual DOM(가상 돔)의 장점 &amp; 단점"></a>Virtual DOM(가상 돔)의 장점 &amp; 단점</h4><p><strong>Virtual DOM의 장점</strong> : 브라우저에 실제로 보여지는 DOM 이 아니라 그냥 메모리에 가상으로 존재하는 DOM 으로서 그냥 JavaScript 객체이기 때문에 작동 성능이 실제로 브라우저에서 DOM 을 보여주는 것 보다 속도가 훨씬 빠르다. </p>
+<p><strong>Virtual DOM의 단점(React의 단점)</strong> : 라이브러리를 만드는데 반드시 실제 DOM 요소 1가지(이상)를 필요로 한다.</p>
+<br>
+
+<h4 id="VirtualDOM이-받는-파라미터-세가지-type-props-…child"><a href="#VirtualDOM이-받는-파라미터-세가지-type-props-…child" class="headerlink" title="VirtualDOM이 받는 파라미터 세가지 (type, props, …child)"></a>VirtualDOM이 받는 파라미터 세가지 (type, props, …child)</h4><ul>
+<li>type : 어떠한 종료의 Virtual DOM인가 (태그인가)</li>
+<li>props : 해당 DOM에 어트리뷰트가 무엇인가 (속성)</li>
+<li>…child : 해당 Virtual DOM에 자식 요소가 무엇인가 ? ( REST파라미터로 배열로 받는다. )</li>
+</ul>
+<br>
+
+<h3 id="ReactDOM-render-함수"><a href="#ReactDOM-render-함수" class="headerlink" title="ReactDOM.render() 함수"></a>ReactDOM.render() 함수</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ReactDOM.render(<span class="xml"><span class="tag">&lt;<span class="name">App</span> /&gt;</span>, document.getElementById('root'));</span></span><br><span class="line"><span class="xml">ReactDOM.render( 가상 DOM, 실제 DOM);</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="React-상태-업데이트-순서"><a href="#React-상태-업데이트-순서" class="headerlink" title="React 상태 업데이트 순서"></a>React 상태 업데이트 순서</h4><ol>
+<li>React는 상태가 업데이트 되면, 업데이트가 필요한 곳의 UI 를 Virtual DOM 을 통해서 렌더링한다. </li>
+<li>React가 제공하는 비교 알고리즘을 통하여 실제 브라우저에 보여지고 있는 DOM 과  Virtual DOM을 비교 한 후, 차이가 있는 곳을 감지하여 이를 실제 DOM 에 패치킨다. </li>
+</ol>
+<br>
+
+<h3 id="import-React-와-import-ReactDOM-자세하게-알아보기"><a href="#import-React-와-import-ReactDOM-자세하게-알아보기" class="headerlink" title="import React 와 import ReactDOM 자세하게 알아보기."></a>import React 와 import ReactDOM 자세하게 알아보기.</h3><p>App.js ▾</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> ReactDOM <span class="keyword">from</span> <span class="string">'react-dom'</span>;</span><br></pre></td></tr></table></figure>
+
+<p>위 두 코드를 대체하는 코드 ▾</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 주석이 아니라 리액트 함수 말고 내가만든 커스텀 함수를 쓰겠다는 뜻</span></span><br><span class="line"><span class="comment">/** @jsx customDOM */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">customDOM</span> (<span class="params">...props</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> props</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> App =  <span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">"App"</span>&gt;</span> // 1번</span></span><br><span class="line">  &lt;header className="App-header"&gt;</span><br><span class="line">    &lt;p&gt;</span><br><span class="line">      Edit &lt;code&gt;src/App.js&lt;/code&gt; and save to reload.</span><br><span class="line">    &lt;/p&gt;</span><br><span class="line">    &lt;a</span><br><span class="line">      className="App-link"</span><br><span class="line">      href="https://reactjs.org"</span><br><span class="line">      target="_blank"</span><br><span class="line">      rel="noopener noreferrer"</span><br><span class="line">    &gt;</span><br><span class="line">      Learn React</span><br><span class="line">    &lt;/a&gt;</span><br><span class="line"><span class="xml">  <span class="tag">&lt;/<span class="name">header</span>&gt;</span></span></span><br><span class="line"><span class="xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  <span class="keyword">export</span> <span class="keyword">default</span> App</span><br></pre></td></tr></table></figure>
+
+<p>1번 <code>const App</code> 안에 html으로 보이는 태그들은 실제 html 태그가 아닌 가상 DOM 요소이다.</p>
+<br>
+
+<h3 id="props-작성-규칙"><a href="#props-작성-규칙" class="headerlink" title="props 작성 규칙"></a>props 작성 규칙</h3><p>카멜 케이스를 사용한다.</p>
+<ul>
+<li>예) className, onClick, onLoad….</li>
+</ul>
+<br>
+
+<h3 id="Component"><a href="#Component" class="headerlink" title="Component"></a>Component</h3><blockquote>
+<p>UI를 재사용 가능한 개별적인 부분들로 분리한다.</p>
+<p>유지보수, 가독성이 좋다.</p>
+</blockquote>
+<p>Component는 데이터가 들어있는 props를 받고, React Element들을 return 한다.</p>
+<br>
+
+<h4 id="Component를-정의하는-방법-2가지"><a href="#Component를-정의하는-방법-2가지" class="headerlink" title="Component를 정의하는 방법 2가지"></a>Component를 정의하는 방법 2가지</h4><ul>
+<li><p>함수로 정의 </p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Welcom</span>(<span class="params">props</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span> Hello, &#123;props.name&#125; <span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>ES6 class로 정의</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Welcome</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">    <span class="keyword">super</span>(props)</span><br><span class="line">    <span class="keyword">this</span>.state = &#123;</span><br><span class="line">      counter: <span class="number">0</span>,</span><br><span class="line">      className: <span class="string">'App-header'</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">this</span>.add = <span class="keyword">this</span>.add.bind(<span class="keyword">this</span>)</span><br><span class="line">    <span class="keyword">this</span>.minus = <span class="keyword">this</span>.minus.bind(<span class="keyword">this</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">	render() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span> Hello, &#123;this.props.name&#125; <span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<br>
+
+<h4 id="Component-주의-사항-및-주요-코드"><a href="#Component-주의-사항-및-주요-코드" class="headerlink" title="Component 주의 사항 및 주요 코드"></a>Component 주의 사항 및 주요 코드</h4><ul>
+<li>중복된 코드를 반복하지 않고 컴포넌트를 작성한다.</li>
+<li>임의의로 선언하는 모든 컴포넌트(커스텀 컴포넌트)의 명칭의 시작은 <strong>무조건 대문자</strong>로 시작한다.</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 대문자</span></span><br><span class="line"><span class="keyword">const</span> Header = <span class="function"><span class="params">props</span> =&gt;</span> <span class="xml"><span class="tag">&lt;<span class="name">header</span>&gt;</span>&#123;props.children&#125;<span class="tag">&lt;/<span class="name">header</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">App</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div className=<span class="string">"App"</span>&gt;</span><br><span class="line">      &lt;Header className=<span class="string">"App-header"</span>&gt;</span><br><span class="line">        &lt;img src=&#123;logo&#125; className=<span class="string">"App-logo"</span> alt=<span class="string">"logo"</span> /&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">          Edit &lt;code&gt;src/App.js&lt;<span class="regexp">/code&gt; and save to reload.</span></span><br><span class="line"><span class="regexp">        &lt;/</span>p&gt;</span><br><span class="line">        &lt;a</span><br><span class="line">          className=<span class="string">"App-link"</span></span><br><span class="line">          href=<span class="string">"https://reactjs.org"</span></span><br><span class="line">          target=<span class="string">"_blank"</span></span><br><span class="line">          rel=<span class="string">"noopener noreferrer"</span></span><br><span class="line">        &gt;</span><br><span class="line">          Learn React</span><br><span class="line">        &lt;<span class="regexp">/a&gt;</span></span><br><span class="line"><span class="regexp">      &lt;/</span>Header&gt;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>header ➤ type</p>
+</li>
+<li><p>className ➤ props</p>
+<ul>
+<li>prop은 property의 줄임말, 변수 선언문 뒤에 나오는 모든 속성 태그들</li>
+</ul>
+</li>
+<li><p>children ➤ 헤더 태그 사이의 (하위)자식 요소들</p>
+<ul>
+<li>props.children으로 모두 들어감</li>
+</ul>
+</li>
+</ul>
+<p>상태 변화가 없는 컴포넌트 : Stateless Component</p>
+<p>상태 변화가 있는 컴포넌트 : State Component</p>
+<br>
+
+<h3 id="상태-변화"><a href="#상태-변화" class="headerlink" title="상태 변화"></a>상태 변화</h3><blockquote>
+<p>setState( )함수를 이용한다.</p>
+</blockquote>
+<p><code>setState()</code>는 비동기 함수로, state가 반영된 상태에서 무언가를 하고 싶을 때 2번째 인수를 콜백함수로 전달한다.</p>
+<br>
+
+<h4 id="상태변화-사용-2가지-방법"><a href="#상태변화-사용-2가지-방법" class="headerlink" title="상태변화 사용 2가지 방법"></a>상태변화 사용 2가지 방법</h4><ul>
+<li>React element에 이벤트를 닫아 함수를 연결할 때, 파라미터를 전달하는 경우 화살표함수를 사용해야 한다.</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;button onClick = &#123; () =&gt;  <span class="keyword">this</span>.calc(<span class="number">100</span>)&#125;&gt; + <span class="xml"><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<ul>
+<li>파라미터를 전달하지 않은 경우에는 this를 바인딩 해줘야 한다.</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">    <span class="keyword">super</span>(props)</span><br><span class="line">    <span class="keyword">this</span>.state = &#123;</span><br><span class="line">      counter: <span class="number">0</span>,</span><br><span class="line">      className: <span class="string">'App-header'</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">this</span>.add = <span class="keyword">this</span>.add.bind(<span class="keyword">this</span>)</span><br><span class="line">    <span class="keyword">this</span>.minus = <span class="keyword">this</span>.minus.bind(<span class="keyword">this</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">   <span class="comment">// render 이후에 실행됨.</span></span><br><span class="line">  componentDidMount() &#123;</span><br><span class="line">    setInterval(<span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">      counter : <span class="keyword">this</span>.state.counter + <span class="number">1</span></span><br><span class="line">    &#125;),<span class="number">1000</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  add() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">    <span class="keyword">this</span>.setState(&#123;<span class="attr">counter</span>: <span class="keyword">this</span>.state.counter + <span class="number">100</span>&#125;)</span><br><span class="line">  &#125;</span><br><span class="line">  minus() &#123;</span><br><span class="line">    <span class="keyword">this</span>.setState(&#123;<span class="attr">counter</span>: <span class="keyword">this</span>.state.counter - <span class="number">100</span>&#125;)</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">render()&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div className=<span class="string">"App"</span>&gt;		</span><br><span class="line">			&lt;button onClick=&#123;<span class="keyword">this</span>.add&#125;&gt;+<span class="xml"><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="초시계-만들어보기"><a href="#초시계-만들어보기" class="headerlink" title="초시계 만들어보기"></a>초시계 만들어보기</h3><blockquote>
+<p><strong>setState</strong>(중요한 메소드)를 써서 데이터의 상태 변화를 사용할 수 있다.</p>
+</blockquote>
+<p><strong>주의사항</strong> : <code>this.state.counter = 1</code> 이런식으로 직접적으로 state를 바꿔서는 절대 안된다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">componentDidMount() &#123;</span><br><span class="line">  setInterval(<span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">    counter: ++<span class="keyword">this</span>.state.counter 			<span class="comment">// 절대로 이런식으로 사용해선 안된다.</span></span><br><span class="line">    counter: <span class="keyword">this</span>.state.counter + <span class="number">1</span>			<span class="comment">// 이렇게 사용해야 함</span></span><br><span class="line">  &#125;)</span><br><span class="line">)&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>React에서는 상태 변화를 직접적으로 변경 해서는 안된다. ( 오직 setState만 사용하여야 함 )</p>
+</li>
+<li><p>setState는 비동기함수. 콜백함수를 전달받을 수 있다.</p>
+</li>
+<li><p>정의하지 않았는데 자동으로 뜨는것들은 전부 오버라이드 하는 것.</p>
+</li>
+</ul>
+<p>➤ 예) componentDidMount( React.Component ) 같은 것.</p>
+<ul>
+<li><p>함수에 setState를 사용하기 위해서는 바인드로 this를 넘겨줘야 함.</p>
+<p>➤ constructor에서 <code>this.add = thid.add.bind(this)</code></p>
+<p>➤ 화살표 함수로 이벤트를 넘기면 바인딩이 필요 없음 - this에 대한 바인딩 필요없이 함수를 무조건 호출하고 리턴하는 것.</p>
+</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">add (val) &#123;</span><br><span class="line">  <span class="keyword">this</span>.setState(&#123; <span class="attr">counter</span>: <span class="keyword">this</span>.state.counter + val &#125;)</span><br><span class="line">&#125;</span><br><span class="line">&lt;button onClick=&#123;() =&gt; <span class="keyword">this</span>.add(<span class="number">100</span>)&#125;&gt;+<span class="xml"><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span> <span class="comment">// componentDidMount 에 작성</span></span><br><span class="line"></span><br><span class="line">add () &#123;</span><br><span class="line">  <span class="keyword">this</span>.setState(&#123; <span class="attr">counter</span>: <span class="keyword">this</span>.state.counter + <span class="number">100</span> &#125;)</span><br><span class="line">&#125;</span><br><span class="line">&lt;button onClick=&#123;<span class="keyword">this</span>.add&#125;&gt;+<span class="xml"><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span> <span class="comment">// componentDidMount 에 작성</span></span><br><span class="line"><span class="keyword">this</span>.add = <span class="keyword">this</span>.add.bind(<span class="keyword">this</span>) <span class="comment">// class App 에 작성</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>특정한 인자 값을 넘길때만 화살표 함수를 사용하는 것이 좋고, 아래쪽처럼 바인딩 하는것이 좋은 방법(메모리상의 이유).</p>
+</li>
+<li><p><code>this</code>라는 건 결국 객체.</p>
+</li>
+<li><p>바인딩해야할 함수가 수백 수천개일 경우에는?</p>
+<ul>
+<li><code>Object.keys()</code> 를 이용한다.</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  name: <span class="string">'dahee'</span>,</span><br><span class="line">  email: <span class="string">'a@a.a'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.keys(obj))</span><br><span class="line"><span class="comment">// [ 'name', 'email' ]</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>위를 이용하여 만든 바인드 코드</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.add = <span class="keyword">this</span>.add.bind(<span class="keyword">this</span>) <span class="comment">// 일일이 사용해서 불편하다.</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Objectt.key를 이용해 간편히 이용한다.</span></span><br><span class="line"><span class="built_in">Object</span>.keys(<span class="keyword">this</span>).forEach(<span class="function"><span class="params">key</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="keyword">this</span>[key] === <span class="string">'function'</span>) &#123;</span><br><span class="line">    <span class="keyword">this</span>[key] = <span class="keyword">this</span>[key].bind(<span class="keyword">this</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="Mounting-Component-가-생성되고-DOM에-inject-되는-것"><a href="#Mounting-Component-가-생성되고-DOM에-inject-되는-것" class="headerlink" title="Mounting : Component 가 생성되고 DOM에 inject 되는 것."></a>Mounting : Component 가 생성되고 DOM에 inject 되는 것.</h3><ol>
+<li><code>constructor()</code></li>
+<li><code>static getDerivedStateFromProps()</code></li>
+<li><code>render()</code></li>
+<li><code>componentDidMount()</code> </li>
+</ol>
+<p>마운팅 할 때 위 순서대로 메소드들이 실행된다.</p>
+<br>
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://hyeok999.github.io/2019/12/05/react-study-02/" data-id="ck5xtzdao00ikhxz0g5s4iqs4" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Jun Hyeok Kim"
+        },
+        "headline": "React 스터디 02",
+        "image": "https://hyeok999.github.iohttps://user-images.githubusercontent.com/31315644/69938302-4345b500-1520-11ea-8436-26d69300e699.png",
+        "keywords": "coding develop Web git HTML CSS javascript React",
+        "genre": "TIL React",
+        "datePublished": "2019-12-05",
+        "dateCreated": "2019-12-05",
+        "dateModified": "2019-12-09",
+        "url": "https://hyeok999.github.io/2019/12/05/react-study-02/",
+        "description": "
+
+React Study 02
+JSX 란?
+JSX를 사용하는 이유
+JSX 내부 작성 주의점
+
+
+Virtual DOM 
+Virtual DOM(가상 돔)의 사용이유
+Virtual DOM(가상 돔)의 장점 &amp; 단점
+VirtualDOM이 받는 파라미터 세가지 (type, props, …child)
+
+
+ReactDOM.render() 함수
+React 상태 업",
+        "wordCount": 2210
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="https://www.facebook.com/profile.php?id=100003801986180" target="_blank" rel="external nofollow noopener noreferrer">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/HYEOK999" target="_blank" rel="external nofollow noopener noreferrer">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="instagram" href="https://www.instagram.com/hyeok999/?hl=ko" target="_blank" rel="external nofollow noopener noreferrer">
+                        <i class="icon fa fa-instagram"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2019/12/05/daily-algorithm46/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            daily_algorithm46
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2019/12/04/tada-web/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">타다 사이트 클론하기 (모바일 구현완료)</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/">GIT</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/">IT Event</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/">Java</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/">Javascript</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/">Project</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/">React</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/">Tips</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/">TIL</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/">Algorithm & Quiz</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/">HTML&CSS</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/">Javascript</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/Javascript-Preview/">Javascript-Preview</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/Javascript-Preview/React/">React</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/Javascript-Preview/React/React-Preview/">React-Preview</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/Javascript-Preview/React/React-Preview/linux/">linux</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/Javascript-Preview/React/React-Preview/linux/etc/">etc</a><span class="category-list-count">1</span></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/">Develop</a><span class="category-list-count">49</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/CSS/">CSS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/GIT/">GIT</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/GraphQL/">GraphQL</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/IT-Event/">IT Event</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Java/">Java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Javascript/">Javascript</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Project/">Project</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/React/">React</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Tips/">Tips</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/">TIL</a><span class="category-list-count">191</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Algorithm-Quiz/">Algorithm & Quiz</a><span class="category-list-count">74</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript/">Javascript</a><span class="category-list-count">30</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a><span class="category-list-count">23</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/React/">React</a><span class="category-list-count">25</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/React-Preview/">React-Preview</a><span class="category-list-count">19</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/linux/">linux</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/etc/">etc</a><span class="category-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/01/28/react-router-03/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/CSS/">CSS</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/CSS/GIT/">GIT</a></p>
+                            <p class="item-title"><a href="/2020/01/28/react-router-03/" class="title">react-router-03</a></p>
+                            <p class="item-date"><time datetime="2020-01-28T12:02:12.000Z" itemprop="datePublished">2020-01-28</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/01/27/react-router-02/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/71559788-b43ba680-2aa5-11ea-880f-cf46861a5f75.png)" alt="파라미터와 쿼리 [2]" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Develop/">Develop</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Develop/React/">React</a></p>
+                            <p class="item-title"><a href="/2020/01/27/react-router-02/" class="title">파라미터와 쿼리 [2]</a></p>
+                            <p class="item-date"><time datetime="2020-01-27T00:46:50.000Z" itemprop="datePublished">2020-01-27</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/01/27/ReactStudy-02/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/72333302-e6ccdc80-36fe-11ea-9b80-e00b0d5f5847.png)" alt="다시 공부하는 React -02-" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/React/">React</a></p>
+                            <p class="item-title"><a href="/2020/01/27/ReactStudy-02/" class="title">다시 공부하는 React -02-</a></p>
+                            <p class="item-date"><time datetime="2020-01-27T00:41:37.000Z" itemprop="datePublished">2020-01-27</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/01/25/ReactStudy-01/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/72333302-e6ccdc80-36fe-11ea-9b80-e00b0d5f5847.png)" alt="다시 공부하는 React -01-" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/React/">React</a></p>
+                            <p class="item-title"><a href="/2020/01/25/ReactStudy-01/" class="title">다시 공부하는 React -01-</a></p>
+                            <p class="item-date"><time datetime="2020-01-25T13:51:32.000Z" itemprop="datePublished">2020-01-25</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/01/25/react-router-01/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/71559787-b43ba680-2aa5-11ea-822a-b8a1660c923d.png)" alt="SPA 와 react-router [1]" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Develop/">Develop</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Develop/React/">React</a></p>
+                            <p class="item-title"><a href="/2020/01/25/react-router-01/" class="title">SPA 와 react-router [1]</a></p>
+                            <p class="item-date"><time datetime="2020-01-25T11:25:35.000Z" itemprop="datePublished">2020-01-25</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a><span class="archive-list-count">35</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a><span class="archive-list-count">47</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a><span class="archive-list-count">37</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a><span class="archive-list-count">86</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a><span class="archive-list-count">38</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Ajax/" style="font-size: 11.05px;">Ajax</a> <a href="/tags/Array/" style="font-size: 11.58px;">Array</a> <a href="/tags/Array-Method/" style="font-size: 10.53px;">Array Method</a> <a href="/tags/Arrow-Function/" style="font-size: 10px;">Arrow Function</a> <a href="/tags/Async/" style="font-size: 10px;">Async</a> <a href="/tags/Async-Await/" style="font-size: 10px;">Async Await</a> <a href="/tags/Axios/" style="font-size: 10px;">Axios</a> <a href="/tags/BAEKJOON/" style="font-size: 13.16px;">BAEKJOON</a> <a href="/tags/Browser/" style="font-size: 10px;">Browser</a> <a href="/tags/CSS/" style="font-size: 16.84px;">CSS</a> <a href="/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/tags/Class/" style="font-size: 10px;">Class</a> <a href="/tags/Class-Component/" style="font-size: 10px;">Class Component</a> <a href="/tags/Closer/" style="font-size: 10.53px;">Closer</a> <a href="/tags/Constructor/" style="font-size: 10px;">Constructor</a> <a href="/tags/Core-JavaScript/" style="font-size: 10px;">Core JavaScript</a> <a href="/tags/Custom-Hook/" style="font-size: 10px;">Custom Hook</a> <a href="/tags/DOM/" style="font-size: 10.53px;">DOM</a> <a href="/tags/Date/" style="font-size: 10px;">Date</a> <a href="/tags/Document-Object-Model/" style="font-size: 10.53px;">Document Object Model</a> <a href="/tags/ESLint/" style="font-size: 10px;">ESLint</a> <a href="/tags/Event/" style="font-size: 10.53px;">Event</a> <a href="/tags/Fetch/" style="font-size: 10px;">Fetch</a> <a href="/tags/Functional-Component/" style="font-size: 10.53px;">Functional Component</a> <a href="/tags/Git-GUI/" style="font-size: 10.53px;">Git GUI</a> <a href="/tags/GraphQL/" style="font-size: 10.53px;">GraphQL</a> <a href="/tags/HOF/" style="font-size: 12.63px;">HOF</a> <a href="/tags/HTML/" style="font-size: 17.37px;">HTML</a> <a href="/tags/Hook/" style="font-size: 10.53px;">Hook</a> <a href="/tags/HotKey/" style="font-size: 10px;">HotKey</a> <a href="/tags/JAVA/" style="font-size: 13.68px;">JAVA</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/MarkUP/" style="font-size: 10px;">MarkUP</a> <a href="/tags/Math/" style="font-size: 10px;">Math</a> <a href="/tags/Method/" style="font-size: 11.58px;">Method</a> <a href="/tags/Module/" style="font-size: 10px;">Module</a> <a href="/tags/Mutation/" style="font-size: 10px;">Mutation</a> <a href="/tags/Number/" style="font-size: 10px;">Number</a> <a href="/tags/OS/" style="font-size: 12.11px;">OS</a> <a href="/tags/Object/" style="font-size: 12.11px;">Object</a> <a href="/tags/Poiema/" style="font-size: 14.74px;">Poiema</a> <a href="/tags/Primary-value/" style="font-size: 10px;">Primary value</a> <a href="/tags/Programmers/" style="font-size: 15.79px;">Programmers</a> <a href="/tags/Project/" style="font-size: 10.53px;">Project</a> <a href="/tags/Promise/" style="font-size: 11.58px;">Promise</a> <a href="/tags/Property/" style="font-size: 11.05px;">Property</a> <a href="/tags/Prototype/" style="font-size: 10px;">Prototype</a> <a href="/tags/Query/" style="font-size: 10px;">Query</a> <a href="/tags/Quiz/" style="font-size: 12.63px;">Quiz</a> <a href="/tags/REST/" style="font-size: 10.53px;">REST</a> <a href="/tags/REST-API/" style="font-size: 10px;">REST API</a> <a href="/tags/Rapper/" style="font-size: 10px;">Rapper</a> <a href="/tags/Rapper-Object/" style="font-size: 10px;">Rapper Object</a> <a href="/tags/React/" style="font-size: 16.32px;">React</a> <a href="/tags/React-Hook/" style="font-size: 10px;">React Hook</a> <a href="/tags/React-Official-Document/" style="font-size: 14.21px;">React Official Document</a> <a href="/tags/RegExr/" style="font-size: 10.53px;">RegExr</a> <a href="/tags/Router/" style="font-size: 10.53px;">Router</a> <a href="/tags/Schema/" style="font-size: 10px;">Schema</a> <a href="/tags/Scope/" style="font-size: 10px;">Scope</a> <a href="/tags/Selector/" style="font-size: 10px;">Selector</a> <a href="/tags/SourceTree/" style="font-size: 10.53px;">SourceTree</a> <a href="/tags/Spread/" style="font-size: 10px;">Spread</a> <a href="/tags/Strict-Mode/" style="font-size: 10px;">Strict Mode</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Symbol/" style="font-size: 10px;">Symbol</a> <a href="/tags/TIL/" style="font-size: 17.89px;">TIL</a> <a href="/tags/Todo/" style="font-size: 14.21px;">Todo</a> <a href="/tags/Todo-List/" style="font-size: 10.53px;">Todo List</a> <a href="/tags/Type/" style="font-size: 10px;">Type</a> <a href="/tags/VSCode/" style="font-size: 11.05px;">VSCode</a> <a href="/tags/VScode/" style="font-size: 10px;">VScode</a> <a href="/tags/VisualStudio-Code/" style="font-size: 11.05px;">VisualStudio Code</a> <a href="/tags/Web/" style="font-size: 18.95px;">Web</a> <a href="/tags/Web-Clone/" style="font-size: 10px;">Web Clone</a> <a href="/tags/Web-clone/" style="font-size: 10px;">Web clone</a> <a href="/tags/algorithm/" style="font-size: 17.89px;">algorithm</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/browser-operation/" style="font-size: 10px;">browser operation</a> <a href="/tags/coding/" style="font-size: 20px;">coding</a> <a href="/tags/daily-test/" style="font-size: 11.05px;">daily test</a> <a href="/tags/develop/" style="font-size: 18.42px;">develop</a> <a href="/tags/first-class-Object/" style="font-size: 10px;">first-class Object</a> <a href="/tags/flow/" style="font-size: 10px;">flow</a> <a href="/tags/function/" style="font-size: 10.53px;">function</a> <a href="/tags/git/" style="font-size: 15.26px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/inline-block/" style="font-size: 10px;">inline-block</a> <a href="/tags/interview/" style="font-size: 10px;">interview</a> <a href="/tags/iteration/" style="font-size: 10px;">iteration</a> <a href="/tags/javascript/" style="font-size: 19.47px;">javascript</a> <a href="/tags/linux/" style="font-size: 12.11px;">linux</a> <a href="/tags/linux-command/" style="font-size: 10px;">linux command</a> <a href="/tags/project/" style="font-size: 10px;">project</a> <a href="/tags/prototype/" style="font-size: 10px;">prototype</a> <a href="/tags/terminal/" style="font-size: 10px;">terminal</a> <a href="/tags/test/" style="font-size: 10.53px;">test</a> <a href="/tags/this/" style="font-size: 10px;">this</a> <a href="/tags/unix/" style="font-size: 11.58px;">unix</a> <a href="/tags/useCallback/" style="font-size: 10px;">useCallback</a> <a href="/tags/useReducer/" style="font-size: 10px;">useReducer</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://github.com" rel="external nofollow noopener noreferrer" target="_blank">github</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://hexo.io" rel="external nofollow noopener noreferrer" target="_blank">Hexo</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.naver.com" rel="external nofollow noopener noreferrer" target="_blank">Naver</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://google.com" rel="external nofollow noopener noreferrer" target="_blank">Google</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://www.youtube.com/" rel="external nofollow noopener noreferrer" target="_blank">Youtube</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2020 Jun Hyeok Kim</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'https://hyeok999.github.io/2019/12/05/react-study-02/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+
