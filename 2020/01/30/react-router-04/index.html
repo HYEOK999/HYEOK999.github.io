@@ -12,18 +12,20 @@
     
         <meta name="keywords" content="Web,coding,develop,HTML,CSS,javascript,React,Router">
     
-    <meta name="description" content="HYEOK999&apos;s IT Develop Blog">
+    <meta name="description" content="React Router with Velopert - 04 - history 객체 src/HistorySample.js  src/App.js   withRouter HoC src/WithRouterSample.js src/Profiles.jsx   Switch src/App.js   NavLink src/Profiles.js   기타     Chap 4.">
 <meta name="keywords" content="Web,coding,develop,HTML,CSS,javascript,React,Router">
 <meta property="og:type" content="article">
 <meta property="og:title" content="라우터 부가기능 [4]">
 <meta property="og:url" content="https://hyeok999.github.io/2020/01/30/react-router-04/index.html">
 <meta property="og:site_name" content="HYEOK999&#39;s Blog">
-<meta property="og:description" content="HYEOK999&apos;s IT Develop Blog">
+<meta property="og:description" content="React Router with Velopert - 04 - history 객체 src/HistorySample.js  src/App.js   withRouter HoC src/WithRouterSample.js src/Profiles.jsx   Switch src/App.js   NavLink src/Profiles.js   기타     Chap 4.">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-01-29T15:01:35.847Z">
+<meta property="og:image" content="https://user-images.githubusercontent.com/31315644/71559790-b43ba680-2aa5-11ea-97e2-606184036149.png">
+<meta property="og:updated_time" content="2020-01-29T15:03:10.845Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="라우터 부가기능 [4]">
-<meta name="twitter:description" content="HYEOK999&apos;s IT Develop Blog">
+<meta name="twitter:description" content="React Router with Velopert - 04 - history 객체 src/HistorySample.js  src/App.js   withRouter HoC src/WithRouterSample.js src/Profiles.jsx   Switch src/App.js   NavLink src/Profiles.js   기타     Chap 4.">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/31315644/71559790-b43ba680-2aa5-11ea-97e2-606184036149.png">
     
     <link rel="canonical" href="https://hyeok999.github.io/2020/01/30/react-router-04/">
     
@@ -191,14 +193,101 @@ ga('send', 'pageview');
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <p><img src="https://user-images.githubusercontent.com/31315644/71559790-b43ba680-2aa5-11ea-97e2-606184036149.png" alt="React-Router04"></p>
+<hr>
+<h2 id="React-Router-with-Velopert-04"><a href="#React-Router-with-Velopert-04" class="headerlink" title="React Router with Velopert - 04 -"></a>React Router with Velopert - 04 -</h2><ul>
+<li><a href="#a1">history 객체</a><ul>
+<li>src/HistorySample.js </li>
+<li>src/App.js</li>
+</ul>
+</li>
+<li><a href="#a2">withRouter HoC</a><ul>
+<li>src/WithRouterSample.js</li>
+<li>src/Profiles.jsx</li>
+</ul>
+</li>
+<li><a href="#a3">Switch</a><ul>
+<li>src/App.js</li>
+</ul>
+</li>
+<li><a href="#a4">NavLink</a><ul>
+<li>src/Profiles.js</li>
+</ul>
+</li>
+<li>기타</li>
+</ul>
+<br>
+
+<hr>
+<h1 id="Chap-4-리액트-라우터-부가기능"><a href="#Chap-4-리액트-라우터-부가기능" class="headerlink" title="Chap 4. 리액트 라우터 부가기능"></a>Chap 4. 리액트 라우터 부가기능</h1><br>
+
+<h3 id="history-객체"><a href="#history-객체" class="headerlink" title="history 객체 "></a>history 객체 <a id="a1"></a></h3><blockquote>
+<p>history 객체는 라우트로 사용된 컴포넌트에게 match, location 과 함께 전달되는 props 중 하나.</p>
+</blockquote>
+<p>이 객체는, URL에 쿼리나 파라미터를 넘겨줌으로써(push) , 뒤로가기, 특정 경로로 이동, 이탈 방지 등 을 수행할 수 있다.</p>
+<p>즉, 이 객체를 통해 컴포넌트 내에 구현하는 메소드에서 라우터에 직접 접근할 수 있다.</p>
+<h4 id="src-HistorySample-js"><a href="#src-HistorySample-js" class="headerlink" title="src/HistorySample.js"></a>src/HistorySample.js</h4><p><code>useEffect</code> 는 리액트 컴포넌트가 렌더링 될 때마다 특정 작업을 수행하도록 설정 할 수 있는 Hook 이다. </p>
+<p>클래스형 컴포넌트의 componentDidMount 와 componentDidUpdate 를 합친 형태로 보아도 무방함.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; useEffect &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">HistorySample</span>(<span class="params">&#123; history &#125;</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> goBack = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    history.goBack();</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> goHome = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    history.push(<span class="string">'/'</span>);</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  useEffect(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(history);</span><br><span class="line">    <span class="keyword">const</span> unblock = history.block(<span class="string">'정말 떠나실건가요?'</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      unblock();</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;, [history]);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;button onClick=&#123;goBack&#125;&gt;뒤로가기&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">      &lt;button onClick=&#123;goHome&#125;&gt;홈으로&lt;/</span>button&gt;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">export default HistorySample;</span></span><br></pre></td></tr></table></figure>
+
+<p>위 컴포넌트 예제를 App.js에 넣고 실행해보면 이탈방지 팝업창을 띄우게 된다.</p>
+<br>
+
+<h4 id="src-App-js"><a href="#src-App-js" class="headerlink" title="src/App.js"></a>src/App.js</h4><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; Route, Link &#125; <span class="keyword">from</span> <span class="string">'react-router-dom'</span>;</span><br><span class="line"><span class="keyword">import</span> About <span class="keyword">from</span> <span class="string">'./About'</span>;</span><br><span class="line"><span class="keyword">import</span> Home <span class="keyword">from</span> <span class="string">'./Home'</span>;</span><br><span class="line"><span class="keyword">import</span> Profiles <span class="keyword">from</span> <span class="string">'./Profiles'</span>;</span><br><span class="line"><span class="keyword">import</span> HistorySample <span class="keyword">from</span> <span class="string">'./HistorySample'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> App = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;ul&gt;</span><br><span class="line">        &lt;li&gt;</span><br><span class="line">          &lt;Link to=<span class="string">"/"</span>&gt;홈&lt;<span class="regexp">/Link&gt;</span></span><br><span class="line"><span class="regexp">        &lt;/</span>li&gt;</span><br><span class="line">        &lt;li&gt;</span><br><span class="line">          &lt;Link to=<span class="string">"/about"</span>&gt;소개&lt;<span class="regexp">/Link&gt;</span></span><br><span class="line"><span class="regexp">        &lt;/</span>li&gt;</span><br><span class="line">        &lt;li&gt;</span><br><span class="line">          &lt;Link to=<span class="string">"/profiles"</span>&gt;프로필 목록&lt;<span class="regexp">/Link&gt;</span></span><br><span class="line"><span class="regexp">        &lt;/</span>li&gt;</span><br><span class="line">        &lt;li&gt;</span><br><span class="line">          &lt;Link to=<span class="string">"/history"</span>&gt;예제&lt;<span class="regexp">/Link&gt; /</span><span class="regexp">/여기</span></span><br><span class="line"><span class="regexp">        &lt;/</span>li&gt;</span><br><span class="line">      &lt;<span class="regexp">/ul&gt;</span></span><br><span class="line"><span class="regexp">      &lt;hr /</span>&gt;</span><br><span class="line">      &lt;Route path=<span class="string">"/"</span> exact=&#123;<span class="literal">true</span>&#125; component=&#123;Home&#125; /&gt;</span><br><span class="line">      &lt;Route path=<span class="string">"/about"</span> component=&#123;About&#125; /&gt;</span><br><span class="line">      &lt;Route path=<span class="string">"/profiles"</span> component=&#123;Profiles&#125; /&gt;</span><br><span class="line">      &lt;Route path=<span class="string">"/history"</span> component=&#123;HistorySample&#125; /&gt;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="withRouter-HoC"><a href="#withRouter-HoC" class="headerlink" title="withRouter HoC "></a>withRouter HoC <a id="a2"></a></h3><blockquote>
+<p>withRouter HoC는 라우터 컴포넌트가 아닌 곳에서 match / location / history를 사용해야할 떄 사용된다.</p>
+</blockquote>
+<h4 id="src-WithRouterSample-js"><a href="#src-WithRouterSample-js" class="headerlink" title="src/WithRouterSample.js"></a>src/WithRouterSample.js</h4><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; withRouter &#125; <span class="keyword">from</span> <span class="string">'react-router-dom'</span>;</span><br><span class="line"><span class="keyword">const</span> WithRouterSample = <span class="function">(<span class="params">&#123; location, match, history &#125;</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;h4&gt;location&lt;<span class="regexp">/h4&gt;</span></span><br><span class="line"><span class="regexp">      &lt;textarea value=&#123;JSON.stringify(location, null, 2)&#125; readOnly /</span>&gt;</span><br><span class="line">      &lt;h4&gt;match&lt;<span class="regexp">/h4&gt;</span></span><br><span class="line"><span class="regexp">      &lt;textarea value=&#123;JSON.stringify(match, null, 2)&#125; readOnly /</span>&gt;</span><br><span class="line">      &lt;button onClick=&#123;() =&gt; history.push(<span class="string">'/'</span>)&#125;&gt;홈으로&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>div&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> withRouter(WithRouterSample);</span><br></pre></td></tr></table></figure>
+
+<p>위와 같이 작성이 완료되면, 타 컴포넌트에서 <code>&lt;Route&gt;</code>태그를 이용하지 않더라도 match 와 location을 전달할 수 있다.</p>
+<br>
+
+<h4 id="src-Profiles-jsx"><a href="#src-Profiles-jsx" class="headerlink" title="src/Profiles.jsx"></a>src/Profiles.jsx</h4><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="keyword">import</span> Profile <span class="keyword">from</span> <span class="string">'./Profile'</span></span><br><span class="line"><span class="keyword">import</span> &#123; Link, Route &#125; <span class="keyword">from</span> <span class="string">'react-router-dom'</span></span><br><span class="line"><span class="keyword">import</span> WithRouterSample <span class="keyword">from</span> <span class="string">'./WithRouterSample'</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> Profiles = <span class="function">(<span class="params">props</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;h3&gt;사용자 목록&lt;<span class="regexp">/h3&gt;</span></span><br><span class="line"><span class="regexp">      &lt;ul&gt;</span></span><br><span class="line"><span class="regexp">        &lt;li&gt;&lt;Link to='/</span>profiles/hyeok999<span class="string">'&gt;혁999&lt;/Link&gt;&lt;/li&gt;</span></span><br><span class="line"><span class="string">        &lt;li&gt;&lt;Link to='</span>/profiles/homer<span class="string">'&gt;homer&lt;/Link&gt;&lt;/li&gt;</span></span><br><span class="line"><span class="string">      &lt;/ul&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    &lt;Route path='</span>/profiles<span class="string">' exact render=&#123;() =&gt; &lt;div&gt;사용자를 선택해주세요.&lt;/div&gt;&#125;&gt;&lt;/Route&gt;</span></span><br><span class="line"><span class="string">    &lt;Route path='</span>/profiles/:username<span class="string">' component=&#123;Profile&#125; /&gt;</span></span><br><span class="line"><span class="string">    &lt;WithRouterSample&gt;&lt;/WithRouterSample&gt;</span></span><br><span class="line"><span class="string">    &lt;/div&gt;</span></span><br><span class="line"><span class="string">  );</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">export default Profiles;</span></span><br></pre></td></tr></table></figure>
+
+<p>단, <code>match</code>는 문제가 한가지 있다.</p>
+<p>우선 App.js에서 <code>Profiles</code> 컴포넌트를 라우팅할 때 다음과 같은 path로 불러낸다.</p>
+<p><code>&lt;Route path=&#39;/profiles&#39; component={Profiles} /&gt;</code></p>
+<p><code>match</code>는 라우터를 해주는 컴포넌트에서 path에 있는 파라미터를 보여주는데 App.js → Profiles.jsx 를 라우팅할때 파라미터가 설정되어있지 않으니 match의 결과는 빈배열이 나타나게 된다. </p>
+<p>쉽게 이해하면 withRouter에서 match는 부모 라우터의 파라미터값을 의미한다는 것이다.</p>
+<p>따라서 이 상황에서는 <code>Profiles.jsx</code>에서 <code>&lt;WithRouterSample&gt;</code>태그를 사용하는 것보다는 </p>
+<p><code>Profiles.jsx</code>에 <code>&lt;Route path=&#39;/profiles/:username&#39; component={Profile} /&gt;</code>가 정의가 되어있기 때문에, <code>Profile.jsx</code> 컴포넌트에 정의하면 match값을 확인할 수 있다.</p>
+<br>
+
+<h3 id="Switch"><a href="#Switch" class="headerlink" title="Switch "></a>Switch <a id="a3"></a></h3><blockquote>
+<p>Switch는 여러 Route들을 감싸는 규칙중 하나이다.</p>
+<p>Switch 를 사용하면, 아무것도 일치하지 않았을때 보여줄 Not Found 페이지를 구현 할 수도 있다.</p>
+</blockquote>
+<h4 id="src-App-js-1"><a href="#src-App-js-1" class="headerlink" title="src/App.js"></a>src/App.js</h4><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; Switch, Route, Link &#125; <span class="keyword">from</span> <span class="string">'react-router-dom'</span>;</span><br><span class="line"><span class="keyword">import</span> About <span class="keyword">from</span> <span class="string">'./About'</span>;</span><br><span class="line"><span class="keyword">import</span> Home <span class="keyword">from</span> <span class="string">'./Home'</span>;</span><br><span class="line"><span class="keyword">import</span> Profiles <span class="keyword">from</span> <span class="string">'./Profiles'</span>;</span><br><span class="line"><span class="keyword">import</span> HistorySample <span class="keyword">from</span> <span class="string">'./HistorySample'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> App = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;ul&gt;</span><br><span class="line">        &lt;li&gt;</span><br><span class="line">          &lt;Link to=<span class="string">"/"</span>&gt;홈&lt;<span class="regexp">/Link&gt;</span></span><br><span class="line"><span class="regexp">        &lt;/</span>li&gt;</span><br><span class="line">        &lt;li&gt;</span><br><span class="line">          &lt;Link to=<span class="string">"/about"</span>&gt;소개&lt;<span class="regexp">/Link&gt;</span></span><br><span class="line"><span class="regexp">        &lt;/</span>li&gt;</span><br><span class="line">        &lt;li&gt;</span><br><span class="line">          &lt;Link to=<span class="string">"/profiles"</span>&gt;프로필 목록&lt;<span class="regexp">/Link&gt;</span></span><br><span class="line"><span class="regexp">        &lt;/</span>li&gt;</span><br><span class="line">        &lt;li&gt;</span><br><span class="line">          &lt;Link to=<span class="string">"/history"</span>&gt;예제&lt;<span class="regexp">/Link&gt;</span></span><br><span class="line"><span class="regexp">        &lt;/</span>li&gt;</span><br><span class="line">      &lt;<span class="regexp">/ul&gt;</span></span><br><span class="line"><span class="regexp">      &lt;hr /</span>&gt;</span><br><span class="line">      &lt;Switch&gt;</span><br><span class="line">        &lt;Route path=<span class="string">"/"</span> exact=&#123;<span class="literal">true</span>&#125; component=&#123;Home&#125; /&gt;</span><br><span class="line">        &lt;Route path=<span class="string">"/about"</span> component=&#123;About&#125; /&gt;</span><br><span class="line">        &lt;Route path=<span class="string">"/profiles"</span> component=&#123;Profiles&#125; /&gt;</span><br><span class="line">        &lt;Route path=<span class="string">"/history"</span> component=&#123;HistorySample&#125; /&gt;</span><br><span class="line">        &lt;Route</span><br><span class="line">          <span class="comment">// path 를 따로 정의하지 않으면 모든 상황에 렌더링됨</span></span><br><span class="line">          render=&#123;(&#123; location &#125;) =&gt; (</span><br><span class="line">            &lt;div&gt;</span><br><span class="line">              &lt;h2&gt;이 페이지는 존재하지 않습니다:<span class="xml"><span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span></span><br><span class="line">              &lt;p&gt;&#123;location.pathname&#125;&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">            &lt;/</span>div&gt;</span><br><span class="line">          )&#125;</span><br><span class="line">        /&gt;</span><br><span class="line">      &lt;<span class="regexp">/Switch&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>div&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> App;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="NavLink"><a href="#NavLink" class="headerlink" title="NavLink "></a>NavLink <a id="a4"></a></h3><p>NavLink 는 Link 랑 비슷한데, 만약 현재 경로와 Link 에서 사용하는 경로가 일치하는 경우 특정 스타일 혹은 클래스를 적용 할 수 있는 컴포넌트이다. </p>
+<p>쉽게 말해서 Link에 스타일 혹은 클래스를 줄 수 있는 것.</p>
+<p>만약에 인라인 스타일이 아니라 CSS 클래스를 적용하시고 싶으면 <code>activeStyle</code> 대신 <code>activeClassName</code> 을 사용하면 된다.</p>
+<p><code>Profiles.jsx</code> 애서 사용하는 컴포넌트에서 Link 대신 NavLink 를 사용해보자.</p>
+<h4 id="src-Profiles-js"><a href="#src-Profiles-js" class="headerlink" title="src/Profiles.js"></a>src/Profiles.js</h4><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; Route, NavLink &#125; <span class="keyword">from</span> <span class="string">'react-router-dom'</span>;</span><br><span class="line"><span class="keyword">import</span> Profile <span class="keyword">from</span> <span class="string">'./Profile'</span>;</span><br><span class="line"><span class="keyword">import</span> WithRouterSample <span class="keyword">from</span> <span class="string">'./WithRouterSample'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> Profiles = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;h3&gt;유저 목록:<span class="xml"><span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span></span><br><span class="line">      &lt;ul&gt;</span><br><span class="line">        &lt;li&gt;</span><br><span class="line">          &lt;NavLink</span><br><span class="line">            to=<span class="string">"/profiles/velopert"</span></span><br><span class="line">            <span class="comment">// 인라인 스타일 적용</span></span><br><span class="line">            activeStyle=&#123;&#123; <span class="attr">background</span>: <span class="string">'black'</span>, <span class="attr">color</span>: <span class="string">'white'</span> &#125;&#125;</span><br><span class="line">          &gt;</span><br><span class="line">            velopert</span><br><span class="line">          &lt;<span class="regexp">/NavLink&gt;</span></span><br><span class="line"><span class="regexp">        &lt;/</span>li&gt;</span><br><span class="line">        &lt;li&gt;</span><br><span class="line">          &lt;NavLink</span><br><span class="line">            to=<span class="string">"/profiles/gildong"</span></span><br><span class="line">            <span class="comment">// 인라인 스타일 적용</span></span><br><span class="line">            activeStyle=&#123;&#123; <span class="attr">background</span>: <span class="string">'black'</span>, <span class="attr">color</span>: <span class="string">'white'</span> &#125;&#125;</span><br><span class="line">          &gt;</span><br><span class="line">            gildong</span><br><span class="line">          &lt;<span class="regexp">/NavLink&gt;</span></span><br><span class="line"><span class="regexp">        &lt;/</span>li&gt;</span><br><span class="line">      &lt;<span class="regexp">/ul&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">      &lt;Route</span></span><br><span class="line"><span class="regexp">        path="/</span>profiles<span class="string">"</span></span><br><span class="line"><span class="string">        exact</span></span><br><span class="line"><span class="string">        render=&#123;() =&gt; &lt;div&gt;유저를 선택해주세요.&lt;/div&gt;&#125;</span></span><br><span class="line"><span class="string">      /&gt;</span></span><br><span class="line"><span class="string">      &lt;Route path="</span>/profiles/:username<span class="string">" component=&#123;Profile&#125; /&gt;</span></span><br><span class="line"><span class="string">      &lt;WithRouterSample /&gt;</span></span><br><span class="line"><span class="string">    &lt;/div&gt;</span></span><br><span class="line"><span class="string">  );</span></span><br><span class="line"><span class="string">&#125;;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">export default Profiles;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="기타"><a href="#기타" class="headerlink" title="기타"></a>기타</h3><p>이 외에도 다른 기능들</p>
+<ul>
+<li><strong><a href="https://reacttraining.com/react-router/web/example/auth-workflow" rel="external nofollow noopener noreferrer" target="_blank">Redirect</a></strong>: 페이지를 리디렉트 하는 컴포넌트</li>
+<li><strong><a href="https://reacttraining.com/react-router/web/example/preventing-transitions" rel="external nofollow noopener noreferrer" target="_blank">Prompt</a></strong>: 이전에 사용했던 history.block 의 컴포넌트 버전</li>
+<li><strong><a href="https://reacttraining.com/react-router/web/example/route-config" rel="external nofollow noopener noreferrer" target="_blank">Route Config</a></strong>: JSX 형태로 라우트를 선언하는 것이 아닌 Angular 나 Vue 처럼 배열/객체를 사용하여 라우트 정의하기</li>
+<li><strong><a href="https://reacttraining.com/react-router/web/api/MemoryRouter" rel="external nofollow noopener noreferrer" target="_blank">Memory Router</a></strong> 실제로 주소는 존재하지는 않는 라우터. 리액트 네이티브나, 임베디드 웹앱에서 사용하면 유용하다.</li>
+</ul>
+<p>그 외의 것들은 <a href="https://reacttraining.com/react-router/web/guides/philosophy" rel="external nofollow noopener noreferrer" target="_blank">공식 매뉴얼</a> 을 참고.</p>
+
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="https://hyeok999.github.io/2020/01/30/react-router-04/" data-id="ck5zfu06500hyp4z0p91j0qdl" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://hyeok999.github.io/2020/01/30/react-router-04/" data-id="ck5zfw6l400igsoz02plg1h4p" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -269,15 +358,41 @@ ga('send', 'pageview');
             "name": "Jun Hyeok Kim"
         },
         "headline": "라우터 부가기능 [4]",
-        "image": "https://hyeok999.github.io",
+        "image": "https://hyeok999.github.iohttps://user-images.githubusercontent.com/31315644/71559790-b43ba680-2aa5-11ea-97e2-606184036149.png",
         "keywords": "Web coding develop HTML CSS javascript React Router",
         "genre": "Develop React",
         "datePublished": "2020-01-30",
         "dateCreated": "2020-01-30",
         "dateModified": "2020-01-30",
         "url": "https://hyeok999.github.io/2020/01/30/react-router-04/",
-        "description": "",
-        "wordCount": 1
+        "description": "
+
+React Router with Velopert - 04 -
+history 객체
+src/HistorySample.js 
+src/App.js
+
+
+withRouter HoC
+src/WithRouterSample.js
+src/Profiles.jsx
+
+
+Switch
+src/App.js
+
+
+NavLink
+src/Profiles.js
+
+
+기타
+
+
+
+
+Chap 4.",
+        "wordCount": 2164
     }
 </script>
 
@@ -368,7 +483,7 @@ ga('send', 'pageview');
                             <a href="/2020/01/30/react-router-04/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/71559790-b43ba680-2aa5-11ea-97e2-606184036149.png)" alt="라우터 부가기능 [4]" class="thumbnail-image"></span>
     
     
 </a>
