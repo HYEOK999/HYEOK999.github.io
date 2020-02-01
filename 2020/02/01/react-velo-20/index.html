@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+
+    
+
+    
+    <title>Context API를 사용한 전역 값 관리 | HYEOK999&#39;s Blog</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="Web,coding,develop,HTML,CSS,javascript,React">
+    
+    <meta name="description" content="React with Velopert - 20 - Context API를 사용한 전역 값 관리 Context API 만들어보기 App.js UserList.js 수정하기 CreateUser.js 수정하기       Chap 20. Context API를 사용한 전역 값 관리Context API를 사용한 전역 값 관리 현재 프로젝트들은 App 컴포넌트에서">
+<meta name="keywords" content="Web,coding,develop,HTML,CSS,javascript,React">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Context API를 사용한 전역 값 관리">
+<meta property="og:url" content="https://hyeok999.github.io/2020/02/01/react-velo-20/index.html">
+<meta property="og:site_name" content="HYEOK999&#39;s Blog">
+<meta property="og:description" content="React with Velopert - 20 - Context API를 사용한 전역 값 관리 Context API 만들어보기 App.js UserList.js 수정하기 CreateUser.js 수정하기       Chap 20. Context API를 사용한 전역 값 관리Context API를 사용한 전역 값 관리 현재 프로젝트들은 App 컴포넌트에서">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://user-images.githubusercontent.com/31315644/71559914-daae1180-2aa6-11ea-96b5-c7dd3b8f8856.png">
+<meta property="og:updated_time" content="2020-02-01T14:46:33.453Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Context API를 사용한 전역 값 관리">
+<meta name="twitter:description" content="React with Velopert - 20 - Context API를 사용한 전역 값 관리 Context API 만들어보기 App.js UserList.js 수정하기 CreateUser.js 수정하기       Chap 20. Context API를 사용한 전역 값 관리Context API를 사용한 전역 값 관리 현재 프로젝트들은 App 컴포넌트에서">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/31315644/71559914-daae1180-2aa6-11ea-96b5-c7dd3b8f8856.png">
+    
+    <link rel="canonical" href="https://hyeok999.github.io/2020/02/01/react-velo-20/">
+    
+
+    
+        <link rel="icon" href="/images/favicon_io/favicon.ico">
+    
+
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Architects+Daughter&display=swap" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin+Sketch&display=swap">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.css">
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-153647512-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+
+    
+    
+
+
+<link rel="alternate" href="/feed.xml" title="HYEOK999's Blog" type="application/atom+xml">
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">HYEOK999&#39;s Daily Develop</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/">Develop</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/CSS/">CSS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/GIT/">GIT</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/GraphQL/">GraphQL</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/IT-Event/">IT Event</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Project/">Project</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/React/">React</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Tips/">Tips</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/">TIL</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Algorithm-Quiz/">Algorithm & Quiz</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/React/">React</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/React-Preview/">React-Preview</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/linux/">linux</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/etc/">etc</a></li></ul>
+                                    
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="https://about.me/iasg2004" rel="external nofollow noopener noreferrer" target="_blank">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/TIL/React-Preview/">React-Preview</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-react-velo-20" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Context API를 사용한 전역 값 관리
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2020/02/01/react-velo-20/" class="article-date">
+            <time datetime="2020-02-01T14:45:56.000Z" itemprop="datePublished">2020-02-01</time>
+        </a>
+    </div>
+
+		
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/CSS/">CSS</a>, <a class="tag-link" href="/tags/HTML/">HTML</a>, <a class="tag-link" href="/tags/React/">React</a>, <a class="tag-link" href="/tags/Web/">Web</a>, <a class="tag-link" href="/tags/coding/">coding</a>, <a class="tag-link" href="/tags/develop/">develop</a>, <a class="tag-link" href="/tags/javascript/">javascript</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p><img src="https://user-images.githubusercontent.com/31315644/71559914-daae1180-2aa6-11ea-96b5-c7dd3b8f8856.png" alt="React20"></p>
+<hr>
+<h2 id="React-with-Velopert-20"><a href="#React-with-Velopert-20" class="headerlink" title="React with Velopert - 20 -"></a>React with Velopert - 20 -</h2><ul>
+<li><a href="#a1">Context API를 사용한 전역 값 관리</a><ul>
+<li><a href="#a2">Context API 만들어보기</a></li>
+<li><a href="#a3">App.js</a></li>
+<li><a href="#a4">UserList.js 수정하기</a></li>
+<li><a href="#a5">CreateUser.js 수정하기</a></li>
+</ul>
+</li>
+</ul>
+<br>
+
+<hr>
+<h1 id="Chap-20-Context-API를-사용한-전역-값-관리"><a href="#Chap-20-Context-API를-사용한-전역-값-관리" class="headerlink" title="Chap 20. Context API를 사용한 전역 값 관리"></a>Chap 20. Context API를 사용한 전역 값 관리</h1><h3 id="Context-API를-사용한-전역-값-관리"><a href="#Context-API를-사용한-전역-값-관리" class="headerlink" title="Context API를 사용한 전역 값 관리 "></a>Context API를 사용한 전역 값 관리 <a id="a1"></a></h3><p>현재 프로젝트들은 App 컴포넌트에서 <code>onToggle</code>, <code>onRemove</code> 가 구현이 되어있고 이 함수들은 UserList 컴포넌트를 거쳐서 각 User 컴포넌트들에게 전달 되는 방식으로 구현되어 있다.</p>
+<p>여기서 UserList 컴포넌트의 경우에는 <code>onToggle</code> 과 <code>onRemove</code> 를 전달하기 위하여 중간 다리역할만 한다.</p>
+<p>UserList.js</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">UserList</span>(<span class="params">&#123; users, onRemove, onToggle &#125;</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &#123;users.map(<span class="function"><span class="params">user</span> =&gt;</span> (</span><br><span class="line">        &lt;User</span><br><span class="line">          user=&#123;user&#125;</span><br><span class="line">          key=&#123;user.id&#125;</span><br><span class="line">          onRemove=&#123;onRemove&#125;</span><br><span class="line">          onToggle=&#123;onToggle&#125;</span><br><span class="line">        /&gt;</span><br><span class="line">      ))&#125;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>UserList 에서는 해당 함수들을 직접 사용하는 일도 없다.</p>
+<p>특정 함수를 특정 컴포넌트를 거쳐서 원하는 컴포넌트에게 전달하는 작업은 리액트로 개발을 하다보면 자주 발생 할 수 있는 작업이다. 컴포넌트 한개정도를 거쳐서 전달하는건 사실 그렇게 큰 불편함도 없지만, 만약 3~4개 이상의 컴포넌트를 거쳐서 전달을 해야 하는 일이 발생하게 된다면 이는 매우 번거로울 것이다.</p>
+<p>그럴 땐, 리액트의 Context API 와 이전 섹션에서 배웠던 dispatch 를 함께 사용하면 이러한 복잡한 구조를 해결 할 수 있다. 리액트의 Context API 를 사용하면, 프로젝트 안에서 전역적으로 사용 할 수 있는 값을 관리 할 수 있다.</p>
+<p>여기서 “상태” 가 아닌 “값” 이라고 언급을 했는데, 이 값은 꼭 상태를 가르키지 않아도 된다. 이 값은 함수일수도 있고, 어떤 외부 라이브러리 인스턴스일수도 있고 심지어 DOM 일 수도 있다.</p>
+<p>물론, Context API 를 사용해서 프로젝트의 상태를 전역적으로 관리 할 수도 있긴한데, 이에 대해서는 나중에 더 자세히 알아보도록 한다.</p>
+<p>우선, Context API 를 사용해여 새로운 Context 를 만드는 방법을 알아보자.</p>
+<br>
+
+<h4 id="Context-API-만들어보기"><a href="#Context-API-만들어보기" class="headerlink" title="Context API 만들어보기 "></a>Context API 만들어보기 <a id="a2"></a></h4><p>Context 를 만들 땐 다음과 같이 <code>React.createContext()</code> 라는 함수를 사용한다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> UserDispatch = React.createContext(<span class="literal">null</span>);</span><br></pre></td></tr></table></figure>
+
+<p><strong><code>createContext</code> 의 파라미터에는 Context 의 기본값을 설정할 수 있다.</strong> </p>
+<p>여기서 설정하는 값은 Context 를 쓸 때 값을 따로 지정하지 않을 경우 사용되는 기본 값이다.</p>
+<p><strong>Context 를 만들면, Context 안에 Provider 라는 컴포넌트가 들어있는데 이 컴포넌트를 통하여 Context 의 값을 정할 수 있다.</strong> 이 컴포넌트를 사용할 때, <strong><code>value</code> 라는 값을 설정</strong>해주면 된다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;UserDispatch.Provider value=&#123;dispatch&#125;&gt;...&lt;<span class="regexp">/UserDispatch.Provider&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>설정 후 Provider 에 의하여 감싸진 컴포넌트 중 어디서든지 Context 의 값을 다른 곳에서 바로 조회해서 사용 할 수 있다. </p>
+<p>App 컴포넌트 에서 Context 를 만들고, 사용하고, 내보내는 작업을 해보자.</p>
+<br>
+
+<h4 id="App-js"><a href="#App-js" class="headerlink" title="App.js "></a>App.js <a id="a3"></a></h4><ol>
+<li><p>UserDispatch 라는 Context만들기. (어디서든지 <code>dispatch</code>를 꺼내 쓸 수 있도록 준비)</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// UserDispatch 라는 이름으로 내보낸다.</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> UserDispatch = React.createContext(<span class="literal">null</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 나중에 사용하고 싶을 때 다음과 같이 불러와서 사용 할 수 있다.</span></span><br><span class="line"><span class="keyword">import</span> &#123; UserDispatch &#125; <span class="keyword">from</span> <span class="string">'./App'</span>;</span><br></pre></td></tr></table></figure>
+
+<br>
+</li>
+<li><p>Context 를 다 만들었으면, App 에서 <code>onToggle</code> 과 <code>onRemove</code> 를 지우고, UserList 에게 props를 전달하는것도 지운다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; useRef, useReducer, useMemo, useCallback &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> UserList <span class="keyword">from</span> <span class="string">'./UserList'</span>;</span><br><span class="line"><span class="keyword">import</span> CreateUser <span class="keyword">from</span> <span class="string">'./CreateUser'</span>;</span><br><span class="line"><span class="keyword">import</span> useInputs <span class="keyword">from</span> <span class="string">'./hooks/useInputs'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">countActiveUsers</span>(<span class="params">users</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'활성 사용자 수를 세는중...'</span>);</span><br><span class="line">  <span class="keyword">return</span> users.filter(<span class="function"><span class="params">user</span> =&gt;</span> user.active).length;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> initialState = &#123;</span><br><span class="line">  users: [</span><br><span class="line">    &#123;</span><br><span class="line">      id: <span class="number">1</span>,</span><br><span class="line">      username: <span class="string">'velopert'</span>,</span><br><span class="line">      email: <span class="string">'public.velopert@gmail.com'</span>,</span><br><span class="line">      active: <span class="literal">true</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      id: <span class="number">2</span>,</span><br><span class="line">      username: <span class="string">'tester'</span>,</span><br><span class="line">      email: <span class="string">'tester@example.com'</span>,</span><br><span class="line">      active: <span class="literal">false</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      id: <span class="number">3</span>,</span><br><span class="line">      username: <span class="string">'liz'</span>,</span><br><span class="line">      email: <span class="string">'liz@example.com'</span>,</span><br><span class="line">      active: <span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">reducer</span>(<span class="params">state, action</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">switch</span> (action.type) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'CREATE_USER'</span> :</span><br><span class="line">      <span class="keyword">return</span> &#123;</span><br><span class="line">        inputs: initialState.inputs,</span><br><span class="line">        users: state.users.concat(action.user)</span><br><span class="line">      &#125;;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'TOGGLE_USER'</span> :</span><br><span class="line">      <span class="keyword">return</span> &#123;</span><br><span class="line">        ...state,</span><br><span class="line">        users: state.users.map(<span class="function"><span class="params">user</span> =&gt;</span></span><br><span class="line">          user.id === action.id ? &#123;...user, <span class="attr">active</span>: !user.active&#125; : user</span><br><span class="line">        )</span><br><span class="line">      &#125;;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'REMOVE_USER'</span> :</span><br><span class="line">      <span class="keyword">return</span> &#123;</span><br><span class="line">        ...state,</span><br><span class="line">        users : state.users.filter(<span class="function"><span class="params">user</span> =&gt;</span> user.id !== action.id)</span><br><span class="line">      &#125;;</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">      <span class="keyword">return</span> state;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// UserDispatch 라는 이름으로 내보내보낸다.</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> UserDispatch = React.createContext(<span class="literal">null</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">App</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> [state, dispatch] = useReducer(reducer, initialState);</span><br><span class="line">  <span class="keyword">const</span> nextId = useRef(<span class="number">4</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> &#123; users &#125; = state;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> [&#123; username, email &#125;, onChange, reset] = useInputs(&#123;</span><br><span class="line">    username : <span class="string">''</span>,</span><br><span class="line">    email : <span class="string">''</span></span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> onCreate = useCallback(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    dispatch(&#123;</span><br><span class="line">      type: <span class="string">'CREATE_USER'</span>,</span><br><span class="line">      user: &#123;</span><br><span class="line">        id: nextId.current,</span><br><span class="line">        username,</span><br><span class="line">        email</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    reset();</span><br><span class="line">    nextId.current += <span class="number">1</span>;</span><br><span class="line">  &#125;, [username, email, reset]);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// const onToggle = useCallback(id =&gt; &#123;</span></span><br><span class="line">  <span class="comment">//   dispatch(&#123;</span></span><br><span class="line">  <span class="comment">//     type: 'TOGGLE_USER',</span></span><br><span class="line">  <span class="comment">//     id</span></span><br><span class="line">  <span class="comment">//   &#125;);</span></span><br><span class="line">  <span class="comment">// &#125;, []);</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// const onRemove = useCallback(id =&gt; &#123;</span></span><br><span class="line">  <span class="comment">//   dispatch(&#123;</span></span><br><span class="line">  <span class="comment">//     type: 'REMOVE_USER',</span></span><br><span class="line">  <span class="comment">//     id</span></span><br><span class="line">  <span class="comment">//   &#125;);</span></span><br><span class="line">  <span class="comment">// &#125;, []);</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> count = useMemo(<span class="function"><span class="params">()</span> =&gt;</span> countActiveUsers(users), [users]);</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;UserDispatch.Provider value=&#123;dispatch&#125;&gt; </span><br><span class="line">      &lt;CreateUser username=&#123;username&#125; email=&#123;email&#125; onChange=&#123;onChange&#125; onCreate=&#123;onCreate&#125; /&gt;</span><br><span class="line">      &#123;<span class="comment">/* &lt;UserList users=&#123;users&#125; onToggle=&#123;onToggle&#125; onRemove=&#123;onRemove&#125; /&gt; */</span>&#125;</span><br><span class="line">      &lt;UserList users=&#123;users&#125; /&gt;</span><br><span class="line">      &lt;div&gt;활성사용자 수 : &#123;count&#125;&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>UserDispatch.Provider&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> App;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+</li>
+</ol>
+<h4 id="UserList-js-수정하기"><a href="#UserList-js-수정하기" class="headerlink" title="UserList.js 수정하기 "></a>UserList.js 수정하기 <a id="a4"></a></h4><ol>
+<li><p>UserList 컴포넌트에서 에서 <code>onToggle</code> 과 <code>onRemove</code> 와 관련된 코드들을 지운다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> User = React.memo(<span class="function"><span class="keyword">function</span> <span class="title">User</span>(<span class="params">&#123; user &#125;</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;b</span><br><span class="line">        style=&#123;&#123;</span><br><span class="line">          cursor: <span class="string">'pointer'</span>,</span><br><span class="line">          color: user.active ? <span class="string">'green'</span> : <span class="string">'black'</span></span><br><span class="line">        &#125;&#125;</span><br><span class="line">        onClick=&#123;() =&gt; &#123;&#125;&#125;</span><br><span class="line">      &gt;</span><br><span class="line">        &#123;user.username&#125;</span><br><span class="line">      &lt;<span class="regexp">/b&gt;</span></span><br><span class="line"><span class="regexp">      &amp;nbsp;</span></span><br><span class="line"><span class="regexp">      &lt;span&gt;(&#123;user.email&#125;)&lt;/</span>span&gt;</span><br><span class="line">      &lt;button onClick=&#123;() =&gt; &#123;&#125;&#125;&gt;삭제&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>div&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">UserList</span>(<span class="params">&#123; users &#125;</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &#123;users.map(<span class="function"><span class="params">user</span> =&gt;</span> (</span><br><span class="line">        &lt;User user=&#123;user&#125; key=&#123;user.id&#125; /&gt;</span><br><span class="line">      ))&#125;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">export default React.memo(UserList);</span></span><br></pre></td></tr></table></figure>
+
+<br>
+</li>
+<li><p>User 컴포넌트에서 <code>dispatch</code> 를 사용 하도록 한다.<br><code>dispatch</code>를 사용하기 위해서는 <code>useContext</code> 라는 Hook 을 사용해서 전에 만든 UserDispatch Context 를 조회해야한다.</p>
+ <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; useContext &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; UserDispatch &#125; <span class="keyword">from</span> <span class="string">'./App'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> User = React.memo(<span class="function"><span class="keyword">function</span> <span class="title">User</span>(<span class="params">&#123; user &#125;</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> dispatch = useContext(UserDispatch);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;b</span><br><span class="line">        style=&#123;&#123;</span><br><span class="line">          cursor: <span class="string">'pointer'</span>,</span><br><span class="line">          color: user.active ? <span class="string">'green'</span> : <span class="string">'black'</span></span><br><span class="line">        &#125;&#125;</span><br><span class="line">        onClick=&#123;() =&gt; &#123;</span><br><span class="line">          dispatch(&#123; <span class="attr">type</span>: <span class="string">'TOGGLE_USER'</span>, <span class="attr">id</span>: user.id &#125;);</span><br><span class="line">        &#125;&#125;</span><br><span class="line">      &gt;</span><br><span class="line">        &#123;user.username&#125;</span><br><span class="line">      &lt;<span class="regexp">/b&gt;</span></span><br><span class="line"><span class="regexp">      &amp;nbsp;</span></span><br><span class="line"><span class="regexp">      &lt;span&gt;(&#123;user.email&#125;)&lt;/</span>span&gt;</span><br><span class="line">      &lt;button</span><br><span class="line">        onClick=&#123;() =&gt; &#123;</span><br><span class="line">          dispatch(&#123; <span class="attr">type</span>: <span class="string">'REMOVE_USER'</span>, <span class="attr">id</span>: user.id &#125;);</span><br><span class="line">        &#125;&#125;</span><br><span class="line">      &gt;</span><br><span class="line">        삭제</span><br><span class="line">      &lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>div&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">UserList</span>(<span class="params">&#123; users &#125;</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &#123;users.map(<span class="function"><span class="params">user</span> =&gt;</span> (</span><br><span class="line">        &lt;User user=&#123;user&#125; key=&#123;user.id&#125; /&gt;</span><br><span class="line">      ))&#125;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">export default React.memo(UserList);</span></span><br></pre></td></tr></table></figure>
+
+<p>  결과적으로 Context API 를 사용해서 <code>dispatch</code> 를 어디서든지 조회해서 사용할 수 있게 되었다. </p>
+ <br>
+
+</li>
+</ol>
+<h4 id="CreateUser-js-수정하기"><a href="#CreateUser-js-수정하기" class="headerlink" title="CreateUser.js 수정하기 "></a>CreateUser.js 수정하기 <a id="a5"></a></h4><p><code>CreateUser.js</code>에도 Context API를 적용해본다.</p>
+<p><strong>조건</strong></p>
+<ul>
+<li>CreateUser 에게는 어떤 props 도 전달하지 않을 것.</li>
+<li>CreateUser 컴포넌트 내부에서 useInputs 를 사용.</li>
+<li>useRef 를 사용한 <code>nextId</code> 값을 CreateUser 에서 관리할 것.</li>
+</ul>
+<ol>
+<li><p>App.js 에서 CreateUser 컴포넌트와 연관된 props , action들을 지운다. ref관리도 CreateUser에서 한다.</p>
+<p>App.js</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; useRef, useReducer, useMemo, useCallback &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> UserList <span class="keyword">from</span> <span class="string">'./UserList'</span>;</span><br><span class="line"><span class="keyword">import</span> CreateUser <span class="keyword">from</span> <span class="string">'./CreateUser'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">countActiveUsers</span>(<span class="params">users</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'활성 사용자 수를 세는중...'</span>);</span><br><span class="line">  <span class="keyword">return</span> users.filter(<span class="function"><span class="params">user</span> =&gt;</span> user.active).length;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> initialState = &#123;</span><br><span class="line">  users: [</span><br><span class="line">    &#123;</span><br><span class="line">      id: <span class="number">1</span>,</span><br><span class="line">      username: <span class="string">'velopert'</span>,</span><br><span class="line">      email: <span class="string">'public.velopert@gmail.com'</span>,</span><br><span class="line">      active: <span class="literal">true</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      id: <span class="number">2</span>,</span><br><span class="line">      username: <span class="string">'tester'</span>,</span><br><span class="line">      email: <span class="string">'tester@example.com'</span>,</span><br><span class="line">      active: <span class="literal">false</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      id: <span class="number">3</span>,</span><br><span class="line">      username: <span class="string">'liz'</span>,</span><br><span class="line">      email: <span class="string">'liz@example.com'</span>,</span><br><span class="line">      active: <span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">reducer</span>(<span class="params">state, action</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">switch</span> (action.type) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'CREATE_USER'</span> :</span><br><span class="line">      <span class="keyword">return</span> &#123;</span><br><span class="line">        inputs: initialState.inputs,</span><br><span class="line">        users: state.users.concat(action.user)</span><br><span class="line">      &#125;;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'TOGGLE_USER'</span> :</span><br><span class="line">      <span class="keyword">return</span> &#123;</span><br><span class="line">        ...state,</span><br><span class="line">        users: state.users.map(<span class="function"><span class="params">user</span> =&gt;</span></span><br><span class="line">          user.id === action.id ? &#123;...user, <span class="attr">active</span>: !user.active&#125; : user</span><br><span class="line">        )</span><br><span class="line">      &#125;;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'REMOVE_USER'</span> :</span><br><span class="line">      <span class="keyword">return</span> &#123;</span><br><span class="line">        ...state,</span><br><span class="line">        users : state.users.filter(<span class="function"><span class="params">user</span> =&gt;</span> user.id !== action.id)</span><br><span class="line">      &#125;;</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">      <span class="keyword">return</span> state;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// UserDispatch 라는 이름으로 내보내줍니다.</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> UserDispatch = React.createContext(<span class="literal">null</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">App</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> [state, dispatch] = useReducer(reducer, initialState);</span><br><span class="line">  <span class="keyword">const</span> &#123; users &#125; = state;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// const onCreate = useCallback(() =&gt; &#123;</span></span><br><span class="line">  <span class="comment">//   dispatch(&#123;</span></span><br><span class="line">  <span class="comment">//     type: 'CREATE_USER',</span></span><br><span class="line">  <span class="comment">//     user: &#123;</span></span><br><span class="line">  <span class="comment">//       id: nextId.current,</span></span><br><span class="line">  <span class="comment">//       username,</span></span><br><span class="line">  <span class="comment">//       email</span></span><br><span class="line">  <span class="comment">//     &#125;</span></span><br><span class="line">  <span class="comment">//   &#125;);</span></span><br><span class="line">  <span class="comment">//   reset();</span></span><br><span class="line">  <span class="comment">//   nextId.current += 1;</span></span><br><span class="line">  <span class="comment">// &#125;, [username, email, reset]);</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// const onToggle = useCallback(id =&gt; &#123;</span></span><br><span class="line">  <span class="comment">//   dispatch(&#123;</span></span><br><span class="line">  <span class="comment">//     type: 'TOGGLE_USER',</span></span><br><span class="line">  <span class="comment">//     id</span></span><br><span class="line">  <span class="comment">//   &#125;);</span></span><br><span class="line">  <span class="comment">// &#125;, []);</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// const onRemove = useCallback(id =&gt; &#123;</span></span><br><span class="line">  <span class="comment">//   dispatch(&#123;</span></span><br><span class="line">  <span class="comment">//     type: 'REMOVE_USER',</span></span><br><span class="line">  <span class="comment">//     id</span></span><br><span class="line">  <span class="comment">//   &#125;);</span></span><br><span class="line">  <span class="comment">// &#125;, []);</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> count = useMemo(<span class="function"><span class="params">()</span> =&gt;</span> countActiveUsers(users), [users]);</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;UserDispatch.Provider value=&#123;dispatch&#125;&gt;</span><br><span class="line">      &#123;<span class="comment">/* &lt;CreateUser username=&#123;username&#125; email=&#123;email&#125; onChange=&#123;onChange&#125; onCreate=&#123;onCreate&#125; /&gt; */</span>&#125;</span><br><span class="line">      &lt;CreateUser/&gt;</span><br><span class="line">      &#123;<span class="comment">/* &lt;UserList users=&#123;users&#125; onToggle=&#123;onToggle&#125; onRemove=&#123;onRemove&#125; /&gt; */</span>&#125;</span><br><span class="line">      &lt;UserList users=&#123;users&#125; /&gt;</span><br><span class="line">      &lt;div&gt;활성사용자 수 : &#123;count&#125;&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>UserDispatch.Provider&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> App;</span><br></pre></td></tr></table></figure>
+
+<br>
+</li>
+<li><p>CreateUser에서 UserDispatch를 통해 받은 값들을 이용하여 dispatch를 구성한다.</p>
+<p>또한 useRef를 여기서 사용하여 다음 Id값을 관리하기 시작한다.</p>
+<p>CreateUser.js</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; useRef, useContext &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; UserDispatch &#125; <span class="keyword">from</span> <span class="string">'./App'</span>;</span><br><span class="line"><span class="keyword">import</span> useInputs <span class="keyword">from</span> <span class="string">'../20/hooks/useInputs'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">CreateUser</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> dispatch = useContext(UserDispatch);</span><br><span class="line">  <span class="keyword">const</span> nextId = useRef(<span class="number">4</span>);</span><br><span class="line">  <span class="keyword">const</span> [&#123; username, email &#125;, onChange, reset] = useInputs(&#123;</span><br><span class="line">    username : <span class="string">''</span>,</span><br><span class="line">    email : <span class="string">''</span></span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;input</span><br><span class="line">        name=<span class="string">"username"</span></span><br><span class="line">        placeholder=<span class="string">"계정명"</span></span><br><span class="line">        onChange=&#123;onChange&#125;</span><br><span class="line">        value=&#123;username&#125;</span><br><span class="line">      /&gt;</span><br><span class="line">      &lt;input</span><br><span class="line">        name=<span class="string">"email"</span></span><br><span class="line">        placeholder=<span class="string">"이메일"</span></span><br><span class="line">        onChange=&#123;onChange&#125;</span><br><span class="line">        value=&#123;email&#125;</span><br><span class="line">      /&gt;</span><br><span class="line">      &lt;button onClick=&#123;() =&gt; &#123;</span><br><span class="line">        dispatch(&#123; <span class="attr">type</span>: <span class="string">'CREATE_USER'</span>,</span><br><span class="line">          user: &#123;</span><br><span class="line">            id: nextId.current,</span><br><span class="line">            username,</span><br><span class="line">            email</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        reset();</span><br><span class="line">        nextId.current += <span class="number">1</span>;&#125;</span><br><span class="line">      &#125;</span><br><span class="line">      &gt;등록&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>div&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> React.memo(CreateUser);</span><br></pre></td></tr></table></figure>
+
+<br></li>
+</ol>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://hyeok999.github.io/2020/02/01/react-velo-20/" data-id="ck63pme1f00mh8m2bptcvpyz5" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Jun Hyeok Kim"
+        },
+        "headline": "Context API를 사용한 전역 값 관리",
+        "image": "https://hyeok999.github.iohttps://user-images.githubusercontent.com/31315644/71559914-daae1180-2aa6-11ea-96b5-c7dd3b8f8856.png",
+        "keywords": "Web coding develop HTML CSS javascript React",
+        "genre": "TIL React-Preview",
+        "datePublished": "2020-02-01",
+        "dateCreated": "2020-02-01",
+        "dateModified": "2020-02-01",
+        "url": "https://hyeok999.github.io/2020/02/01/react-velo-20/",
+        "description": "
+
+React with Velopert - 20 -
+Context API를 사용한 전역 값 관리
+Context API 만들어보기
+App.js
+UserList.js 수정하기
+CreateUser.js 수정하기
+
+
+
+
+
+
+Chap 20. Context API를 사용한 전역 값 관리Context API를 사용한 전역 값 관리 현재 프로젝트들은 App 컴포넌트에서 ",
+        "wordCount": 3474
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="https://www.facebook.com/profile.php?id=100003801986180" target="_blank" rel="external nofollow noopener noreferrer">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/HYEOK999" target="_blank" rel="external nofollow noopener noreferrer">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="instagram" href="https://www.instagram.com/hyeok999/?hl=ko" target="_blank" rel="external nofollow noopener noreferrer">
+                        <i class="icon fa fa-instagram"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2020/02/01/react-router-05/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">useReactRouter Hook [5]</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/">Develop</a><span class="category-list-count">52</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/CSS/">CSS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/GIT/">GIT</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/GraphQL/">GraphQL</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/IT-Event/">IT Event</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Java/">Java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Javascript/">Javascript</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Project/">Project</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/React/">React</a><span class="category-list-count">16</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Tips/">Tips</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/">TIL</a><span class="category-list-count">194</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Algorithm-Quiz/">Algorithm & Quiz</a><span class="category-list-count">74</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript/">Javascript</a><span class="category-list-count">30</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a><span class="category-list-count">23</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/React/">React</a><span class="category-list-count">27</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/React-Preview/">React-Preview</a><span class="category-list-count">20</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/linux/">linux</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/etc/">etc</a><span class="category-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/02/01/react-velo-20/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/71559914-daae1180-2aa6-11ea-96b5-c7dd3b8f8856.png)" alt="Context API를 사용한 전역 값 관리" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/React-Preview/">React-Preview</a></p>
+                            <p class="item-title"><a href="/2020/02/01/react-velo-20/" class="title">Context API를 사용한 전역 값 관리</a></p>
+                            <p class="item-date"><time datetime="2020-02-01T14:45:56.000Z" itemprop="datePublished">2020-02-01</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/02/01/react-router-05/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/71559791-b4d43d00-2aa5-11ea-9b89-d5a3f93c015f.png)" alt="useReactRouter Hook [5]" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Develop/">Develop</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Develop/React/">React</a></p>
+                            <p class="item-title"><a href="/2020/02/01/react-router-05/" class="title">useReactRouter Hook [5]</a></p>
+                            <p class="item-date"><time datetime="2020-02-01T09:22:55.000Z" itemprop="datePublished">2020-02-01</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/01/30/react-router-04/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/71559790-b43ba680-2aa5-11ea-97e2-606184036149.png)" alt="라우터 부가기능 [4]" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Develop/">Develop</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Develop/React/">React</a></p>
+                            <p class="item-title"><a href="/2020/01/30/react-router-04/" class="title">라우터 부가기능 [4]</a></p>
+                            <p class="item-date"><time datetime="2020-01-29T15:01:02.000Z" itemprop="datePublished">2020-01-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/01/29/ReactStudy-04/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/72333302-e6ccdc80-36fe-11ea-9b80-e00b0d5f5847.png)" alt="다시 공부하는 React -04-" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/React/">React</a></p>
+                            <p class="item-title"><a href="/2020/01/29/ReactStudy-04/" class="title">다시 공부하는 React -04-</a></p>
+                            <p class="item-date"><time datetime="2020-01-29T10:26:38.000Z" itemprop="datePublished">2020-01-29</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/01/28/ReactStudy-03/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/72333302-e6ccdc80-36fe-11ea-9b80-e00b0d5f5847.png)" alt="다시 공부하는 React -03-" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/React/">React</a></p>
+                            <p class="item-title"><a href="/2020/01/28/ReactStudy-03/" class="title">다시 공부하는 React -03-</a></p>
+                            <p class="item-date"><time datetime="2020-01-28T12:09:12.000Z" itemprop="datePublished">2020-01-28</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a><span class="archive-list-count">38</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a><span class="archive-list-count">47</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a><span class="archive-list-count">37</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a><span class="archive-list-count">86</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a><span class="archive-list-count">38</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Ajax/" style="font-size: 11.05px;">Ajax</a> <a href="/tags/Array/" style="font-size: 11.58px;">Array</a> <a href="/tags/Array-Method/" style="font-size: 10.53px;">Array Method</a> <a href="/tags/Arrow-Function/" style="font-size: 10px;">Arrow Function</a> <a href="/tags/Async/" style="font-size: 10px;">Async</a> <a href="/tags/Async-Await/" style="font-size: 10px;">Async Await</a> <a href="/tags/Axios/" style="font-size: 10px;">Axios</a> <a href="/tags/BAEKJOON/" style="font-size: 13.16px;">BAEKJOON</a> <a href="/tags/Browser/" style="font-size: 10px;">Browser</a> <a href="/tags/CSS/" style="font-size: 17.37px;">CSS</a> <a href="/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/tags/Class/" style="font-size: 10px;">Class</a> <a href="/tags/Class-Component/" style="font-size: 10px;">Class Component</a> <a href="/tags/Closer/" style="font-size: 10.53px;">Closer</a> <a href="/tags/Constructor/" style="font-size: 10px;">Constructor</a> <a href="/tags/Core-JavaScript/" style="font-size: 10px;">Core JavaScript</a> <a href="/tags/Custom-Hook/" style="font-size: 10px;">Custom Hook</a> <a href="/tags/DOM/" style="font-size: 10.53px;">DOM</a> <a href="/tags/Date/" style="font-size: 10px;">Date</a> <a href="/tags/Document-Object-Model/" style="font-size: 10.53px;">Document Object Model</a> <a href="/tags/ESLint/" style="font-size: 10px;">ESLint</a> <a href="/tags/Event/" style="font-size: 10.53px;">Event</a> <a href="/tags/Fetch/" style="font-size: 10px;">Fetch</a> <a href="/tags/Functional-Component/" style="font-size: 10.53px;">Functional Component</a> <a href="/tags/Git-GUI/" style="font-size: 10.53px;">Git GUI</a> <a href="/tags/GraphQL/" style="font-size: 10.53px;">GraphQL</a> <a href="/tags/HOF/" style="font-size: 12.63px;">HOF</a> <a href="/tags/HTML/" style="font-size: 17.89px;">HTML</a> <a href="/tags/Hook/" style="font-size: 10.53px;">Hook</a> <a href="/tags/HotKey/" style="font-size: 10px;">HotKey</a> <a href="/tags/JAVA/" style="font-size: 13.68px;">JAVA</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/MarkUP/" style="font-size: 10px;">MarkUP</a> <a href="/tags/Math/" style="font-size: 10px;">Math</a> <a href="/tags/Method/" style="font-size: 11.58px;">Method</a> <a href="/tags/Module/" style="font-size: 10px;">Module</a> <a href="/tags/Mutation/" style="font-size: 10px;">Mutation</a> <a href="/tags/Number/" style="font-size: 10px;">Number</a> <a href="/tags/OS/" style="font-size: 12.11px;">OS</a> <a href="/tags/Object/" style="font-size: 12.11px;">Object</a> <a href="/tags/Poiema/" style="font-size: 14.74px;">Poiema</a> <a href="/tags/Primary-value/" style="font-size: 10px;">Primary value</a> <a href="/tags/Programmers/" style="font-size: 15.79px;">Programmers</a> <a href="/tags/Project/" style="font-size: 10.53px;">Project</a> <a href="/tags/Promise/" style="font-size: 11.58px;">Promise</a> <a href="/tags/Property/" style="font-size: 11.05px;">Property</a> <a href="/tags/Prototype/" style="font-size: 10px;">Prototype</a> <a href="/tags/Query/" style="font-size: 10px;">Query</a> <a href="/tags/Quiz/" style="font-size: 12.63px;">Quiz</a> <a href="/tags/REST/" style="font-size: 10.53px;">REST</a> <a href="/tags/REST-API/" style="font-size: 10px;">REST API</a> <a href="/tags/Rapper/" style="font-size: 10px;">Rapper</a> <a href="/tags/Rapper-Object/" style="font-size: 10px;">Rapper Object</a> <a href="/tags/React/" style="font-size: 16.32px;">React</a> <a href="/tags/React-Hook/" style="font-size: 10px;">React Hook</a> <a href="/tags/React-Official-Document/" style="font-size: 14.21px;">React Official Document</a> <a href="/tags/RegExr/" style="font-size: 10.53px;">RegExr</a> <a href="/tags/Router/" style="font-size: 12.11px;">Router</a> <a href="/tags/Schema/" style="font-size: 10px;">Schema</a> <a href="/tags/Scope/" style="font-size: 10px;">Scope</a> <a href="/tags/Selector/" style="font-size: 10px;">Selector</a> <a href="/tags/SourceTree/" style="font-size: 10.53px;">SourceTree</a> <a href="/tags/Spread/" style="font-size: 10px;">Spread</a> <a href="/tags/Strict-Mode/" style="font-size: 10px;">Strict Mode</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Symbol/" style="font-size: 10px;">Symbol</a> <a href="/tags/TIL/" style="font-size: 16.84px;">TIL</a> <a href="/tags/Todo/" style="font-size: 14.21px;">Todo</a> <a href="/tags/Todo-List/" style="font-size: 10.53px;">Todo List</a> <a href="/tags/Type/" style="font-size: 10px;">Type</a> <a href="/tags/VSCode/" style="font-size: 11.05px;">VSCode</a> <a href="/tags/VScode/" style="font-size: 10px;">VScode</a> <a href="/tags/VisualStudio-Code/" style="font-size: 11.05px;">VisualStudio Code</a> <a href="/tags/Web/" style="font-size: 18.95px;">Web</a> <a href="/tags/Web-Clone/" style="font-size: 10px;">Web Clone</a> <a href="/tags/Web-clone/" style="font-size: 10px;">Web clone</a> <a href="/tags/algorithm/" style="font-size: 16.84px;">algorithm</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/browser-operation/" style="font-size: 10px;">browser operation</a> <a href="/tags/coding/" style="font-size: 20px;">coding</a> <a href="/tags/daily-test/" style="font-size: 11.05px;">daily test</a> <a href="/tags/develop/" style="font-size: 18.42px;">develop</a> <a href="/tags/first-class-Object/" style="font-size: 10px;">first-class Object</a> <a href="/tags/flow/" style="font-size: 10px;">flow</a> <a href="/tags/function/" style="font-size: 10.53px;">function</a> <a href="/tags/git/" style="font-size: 15.26px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/inline-block/" style="font-size: 10px;">inline-block</a> <a href="/tags/interview/" style="font-size: 10px;">interview</a> <a href="/tags/iteration/" style="font-size: 10px;">iteration</a> <a href="/tags/javascript/" style="font-size: 19.47px;">javascript</a> <a href="/tags/linux/" style="font-size: 12.11px;">linux</a> <a href="/tags/linux-command/" style="font-size: 10px;">linux command</a> <a href="/tags/project/" style="font-size: 10px;">project</a> <a href="/tags/prototype/" style="font-size: 10px;">prototype</a> <a href="/tags/terminal/" style="font-size: 10px;">terminal</a> <a href="/tags/test/" style="font-size: 10.53px;">test</a> <a href="/tags/this/" style="font-size: 10px;">this</a> <a href="/tags/unix/" style="font-size: 11.58px;">unix</a> <a href="/tags/useCallback/" style="font-size: 10px;">useCallback</a> <a href="/tags/useReducer/" style="font-size: 10px;">useReducer</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://github.com" rel="external nofollow noopener noreferrer" target="_blank">github</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://hexo.io" rel="external nofollow noopener noreferrer" target="_blank">Hexo</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.naver.com" rel="external nofollow noopener noreferrer" target="_blank">Naver</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://google.com" rel="external nofollow noopener noreferrer" target="_blank">Google</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://www.youtube.com/" rel="external nofollow noopener noreferrer" target="_blank">Youtube</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2020 Jun Hyeok Kim</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'https://hyeok999.github.io/2020/02/01/react-velo-20/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+
