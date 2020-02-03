@@ -12,19 +12,19 @@
     
         <meta name="keywords" content="Web,coding,develop,HTML,CSS,javascript,React">
     
-    <meta name="description" content="React with Velopert - 21 - Immer 불변성의 예 Immer 미사용의 경우, Immer 사용의 경우, Immer 기본 사용법 리듀서에서 Immer 사용하기 [Immer 와 함수형 업데이트](">
+    <meta name="description" content="React with Velopert - 21 - Immer 불변성의 예 Immer 미사용의 경우, Immer 사용의 경우, Immer 기본 사용법 리듀서에서 Immer 사용하기 Immer 와 함수형 업데이트         Chap 21. Immer를 사용한 더 쉬운 불변성 관리Immer 리액트에서는 배열이나 객체를 업데이트 해야 할 때에는 직접 수정하면">
 <meta name="keywords" content="Web,coding,develop,HTML,CSS,javascript,React">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Immer를 사용한 더 쉬운 불변성 관리">
 <meta property="og:url" content="https://hyeok999.github.io/2020/02/03/react-velo-21/index.html">
 <meta property="og:site_name" content="HYEOK999&#39;s Blog">
-<meta property="og:description" content="React with Velopert - 21 - Immer 불변성의 예 Immer 미사용의 경우, Immer 사용의 경우, Immer 기본 사용법 리듀서에서 Immer 사용하기 [Immer 와 함수형 업데이트](">
+<meta property="og:description" content="React with Velopert - 21 - Immer 불변성의 예 Immer 미사용의 경우, Immer 사용의 경우, Immer 기본 사용법 리듀서에서 Immer 사용하기 Immer 와 함수형 업데이트         Chap 21. Immer를 사용한 더 쉬운 불변성 관리Immer 리액트에서는 배열이나 객체를 업데이트 해야 할 때에는 직접 수정하면">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://user-images.githubusercontent.com/31315644/71559914-daae1180-2aa6-11ea-96b5-c7dd3b8f8856.png">
-<meta property="og:updated_time" content="2020-02-03T14:17:53.604Z">
+<meta property="og:updated_time" content="2020-02-03T14:21:13.865Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Immer를 사용한 더 쉬운 불변성 관리">
-<meta name="twitter:description" content="React with Velopert - 21 - Immer 불변성의 예 Immer 미사용의 경우, Immer 사용의 경우, Immer 기본 사용법 리듀서에서 Immer 사용하기 [Immer 와 함수형 업데이트](">
+<meta name="twitter:description" content="React with Velopert - 21 - Immer 불변성의 예 Immer 미사용의 경우, Immer 사용의 경우, Immer 기본 사용법 리듀서에서 Immer 사용하기 Immer 와 함수형 업데이트         Chap 21. Immer를 사용한 더 쉬운 불변성 관리Immer 리액트에서는 배열이나 객체를 업데이트 해야 할 때에는 직접 수정하면">
 <meta name="twitter:image" content="https://user-images.githubusercontent.com/31315644/71559914-daae1180-2aa6-11ea-96b5-c7dd3b8f8856.png">
     
     <link rel="canonical" href="https://hyeok999.github.io/2020/02/03/react-velo-21/">
@@ -194,6 +194,7 @@ ga('send', 'pageview');
         
         <div class="article-entry" itemprop="articleBody">
             <p><img src="https://user-images.githubusercontent.com/31315644/71559914-daae1180-2aa6-11ea-96b5-c7dd3b8f8856.png" alt="React20"></p>
+<hr>
 <h2 id="React-with-Velopert-21"><a href="#React-with-Velopert-21" class="headerlink" title="React with Velopert - 21 -"></a>React with Velopert - 21 -</h2><ul>
 <li>Immer<ul>
 <li><a href="#a2">불변성의 예</a></li>
@@ -201,12 +202,92 @@ ga('send', 'pageview');
 <li><a href="#a4">Immer 사용의 경우,</a><ul>
 <li>Immer 기본 사용법</li>
 <li><a href="#a5">리듀서에서 Immer 사용하기</a></li>
-<li>[Immer 와 함수형 업데이트](</li>
+<li><a href="#a6">Immer 와 함수형 업데이트</a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
+<br>
+
+<hr>
+<h1 id="Chap-21-Immer를-사용한-더-쉬운-불변성-관리"><a href="#Chap-21-Immer를-사용한-더-쉬운-불변성-관리" class="headerlink" title="Chap 21. Immer를 사용한 더 쉬운 불변성 관리"></a>Chap 21. Immer를 사용한 더 쉬운 불변성 관리</h1><h3 id="Immer"><a href="#Immer" class="headerlink" title="Immer"></a>Immer</h3><blockquote>
+<p>리액트에서는 배열이나 객체를 업데이트 해야 할 때에는 직접 수정하면 안되고 불변성을 지켜주면서 업데이트를 해야 한다.</p>
+</blockquote>
+<br>
+
+<h4 id="불변성의-예"><a href="#불변성의-예" class="headerlink" title="불변성의 예  "></a>불변성의 예  <a id="a2"></a></h4><p>잘못된 경우,</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> object = &#123;</span><br><span class="line">  a: <span class="number">1</span>,</span><br><span class="line">  b: <span class="number">2</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">object.b = <span class="number">3</span>;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p>올바른 경우,</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> object = &#123;</span><br><span class="line">  a: <span class="number">1</span>,</span><br><span class="line">  b: <span class="number">2</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> nextObject = &#123;</span><br><span class="line">  ...object, <span class="comment">// 객체를 스프레드문법을 이용해 분해하고 있다. </span></span><br><span class="line">  b: <span class="number">3</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p>배열도 마찬가지로, <code>push</code>, <code>pop</code>, <code>shift</code>, <code>unshift</code>, <code>splice</code> 등의 함수를 사용하거나 n 번째 항목을 직접 수정하면 안되고 다음과 같이 <code>concat</code>, <code>filter</code>, <code>map</code> 등의 함수를 사용해야 한다. (원본을 해손하지않고 새로운 배열을 반환하는 함수들)</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> todos = [</span><br><span class="line">  &#123;</span><br><span class="line">    id: <span class="number">1</span>,</span><br><span class="line">    text: <span class="string">'할 일 #1'</span>,</span><br><span class="line">    done: <span class="literal">true</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    id: <span class="number">2</span></span><br><span class="line">    text: <span class="string">'할 일 #2'</span>,</span><br><span class="line">    done: <span class="literal">false</span></span><br><span class="line">  &#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> inserted = todos.concat(&#123;</span><br><span class="line">  id: <span class="number">3</span>,</span><br><span class="line">  text: <span class="string">'할 일 #3'</span>,</span><br><span class="line">  done: <span class="literal">false</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> filtered = todos.filter(<span class="function"><span class="params">todo</span> =&gt;</span> todo.id !== <span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> toggled = todos.map(</span><br><span class="line">  todo =&gt; todo.id === <span class="number">2</span></span><br><span class="line">    ? &#123;</span><br><span class="line">      ...todo,</span><br><span class="line">      done: !todo.done,</span><br><span class="line">    &#125;</span><br><span class="line">    : todo</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p>대부분의 경우 <code>... 연산자</code> 또는 배열 내장함수를 사용하는건 그렇게 어렵지는 않지만 데이터의 구조가 조금 까다로워지면 불변성을 지켜가면서 새로운 데이터를 생성해내는 코드가 조금 복잡해진다.</p>
+<br>
+
+<h4 id="Immer-미사용의-경우"><a href="#Immer-미사용의-경우" class="headerlink" title="Immer 미사용의 경우,  "></a>Immer 미사용의 경우,  <a id="a3"></a></h4><p>다음과 같은 객체가 있다고 가정하자.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> state = &#123;</span><br><span class="line">  posts: [</span><br><span class="line">    &#123;</span><br><span class="line">      id: <span class="number">1</span>,</span><br><span class="line">      title: <span class="string">'제목입니다.'</span>,</span><br><span class="line">      body: <span class="string">'내용입니다.'</span>,</span><br><span class="line">      comments: [</span><br><span class="line">        &#123;</span><br><span class="line">          id: <span class="number">1</span>,</span><br><span class="line">          text: <span class="string">'와 정말 잘 읽었습니다.'</span></span><br><span class="line">        &#125;</span><br><span class="line">      ]</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      id: <span class="number">2</span>,</span><br><span class="line">      title: <span class="string">'제목입니다.'</span>,</span><br><span class="line">      body: <span class="string">'내용입니다.'</span>,</span><br><span class="line">      comments: [</span><br><span class="line">        &#123;</span><br><span class="line">          id: <span class="number">2</span>,</span><br><span class="line">          text: <span class="string">'또 다른 댓글 어쩌고 저쩌고'</span></span><br><span class="line">        &#125;</span><br><span class="line">      ]</span><br><span class="line">    &#125;</span><br><span class="line">  ],</span><br><span class="line">  selectedId: <span class="number">1</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><code>posts</code>배열 내에 있는 <code>id</code>가 1인 <code>post</code>객체를 찾아서, <code>comments</code>에 새로운 댓글 객체를 추가해줘야 한다고 가정해보자.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> nextState = &#123;</span><br><span class="line">  ...state, <span class="comment">// 불변성을 유지하기 위해 기존의 값을 스프레드로 뿌려주었다.</span></span><br><span class="line">  posts: state.posts.map(<span class="function"><span class="params">post</span> =&gt;</span></span><br><span class="line">    post.id === <span class="number">1</span></span><br><span class="line">      ? &#123;</span><br><span class="line">          ...post,</span><br><span class="line">          comments: post.comments.concat(&#123;</span><br><span class="line">            id: <span class="number">3</span>,</span><br><span class="line">            text: <span class="string">'새로운 댓글'</span></span><br><span class="line">          &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">      : post</span><br><span class="line">  )</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>만약 immer 라이브러리를 이용할 경우, 다음처럼 더 쉽게 작업이 가능하다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> nextState = produce(state, draft =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> post = draft.posts.find(<span class="function"><span class="params">post</span> =&gt;</span> post.id === <span class="number">1</span>);</span><br><span class="line">  post.comments.push(&#123;</span><br><span class="line">    id: <span class="number">3</span>,</span><br><span class="line">    text: <span class="string">'와 정말 쉽다!'</span></span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p> Immer 를 사용하면 우리가 상태를 업데이트 할 때, 불변성을 신경쓰지 않으면서 업데이트를 해주면 Immer 가 불변성 관리를 대신 해준다.</p>
+<br>
+
+<h4 id="Immer-사용의-경우"><a href="#Immer-사용의-경우" class="headerlink" title="Immer 사용의 경우,  "></a>Immer 사용의 경우,  <a id="a4"></a></h4><h5 id="Immer-기본-사용법"><a href="#Immer-기본-사용법" class="headerlink" title="Immer 기본 사용법"></a>Immer 기본 사용법</h5><p>기존에 만들었던 사용자 관리 프로젝트에 Immer 를 적용해보면서 Immer 의 사용법을 알아보자.</p>
+<p><code>immer</code> 설치하기</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install immer --save</span><br></pre></td></tr></table></figure>
+
+<p><code>immer</code> 불러오기</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> produce <span class="keyword">from</span> <span class="string">'immer'</span>;</span><br></pre></td></tr></table></figure>
+
+<p><code>produce</code> 함수를 사용 시 </p>
+<ul>
+<li>첫번째 파라미터 : 수정하고 싶은 상태</li>
+<li>두번째 파라미터 : 어떻게 업데이트하고 싶을지 정의하는 함수</li>
+</ul>
+<p>두번째 파라미터에 넣는 함수에서는 불변성에 대해서 신경쓰지 않고 그냥 업데이트 해주면 다 알아서 해준다. (완전 편리하다. ++)</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> state = &#123;</span><br><span class="line">  number: <span class="number">1</span>,</span><br><span class="line">  dontChangeMe: <span class="number">2</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> nextState = produce(state, draft =&gt; &#123;</span><br><span class="line">  draft.number += <span class="number">1</span>;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(nextState);</span><br><span class="line"><span class="comment">// &#123; number: 2, dontChangeMe: 2 &#125;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h5 id="리듀서에서-Immer-사용하기"><a href="#리듀서에서-Immer-사용하기" class="headerlink" title="리듀서에서 Immer 사용하기  "></a>리듀서에서 Immer 사용하기  <a id="a5"></a></h5><p>참고로, Immer를 사용한다 해서 무조건 코드가 짧아지고 좋아지는 것은 아니다.  Immer 를 사용해서 간단해지는 업데이트가 있고, 오히려 코드가 길어지는 업데이트 들이 있다.</p>
+<p>예를들어서 전에 만들었던 프로젝트의 상태의 경우 <code>users</code> 배열이 객체의 깊은곳에 위치하지 않기 때문에 새 항목을 추가하거나 제거 할 때는 Immer 를 사용하는 것 보다 <code>concat</code> 과 <code>filter</code> 를 사용하는것이 더 코드가 짧고 편하다.</p>
+<p>우선, 학습을 위해 이번 업데이트는  Immer 를 사용하여 처리를 해보자.</p>
+<p><strong>App.js</strong> </p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; useReducer, useMemo &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> UserList <span class="keyword">from</span> <span class="string">'./UserList'</span>;</span><br><span class="line"><span class="keyword">import</span> CreateUser <span class="keyword">from</span> <span class="string">'./CreateUser'</span>;</span><br><span class="line"><span class="keyword">import</span> produce <span class="keyword">from</span> <span class="string">'immer'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">countActiveUsers</span>(<span class="params">users</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'활성 사용자 수를 세는중...'</span>);</span><br><span class="line">  <span class="keyword">return</span> users.filter(<span class="function"><span class="params">user</span> =&gt;</span> user.active).length;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> initialState = &#123;</span><br><span class="line">  users: [</span><br><span class="line">    &#123;</span><br><span class="line">      id: <span class="number">1</span>,</span><br><span class="line">      username: <span class="string">'velopert'</span>,</span><br><span class="line">      email: <span class="string">'public.velopert@gmail.com'</span>,</span><br><span class="line">      active: <span class="literal">true</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      id: <span class="number">2</span>,</span><br><span class="line">      username: <span class="string">'tester'</span>,</span><br><span class="line">      email: <span class="string">'tester@example.com'</span>,</span><br><span class="line">      active: <span class="literal">false</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      id: <span class="number">3</span>,</span><br><span class="line">      username: <span class="string">'liz'</span>,</span><br><span class="line">      email: <span class="string">'liz@example.com'</span>,</span><br><span class="line">      active: <span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">reducer</span>(<span class="params">state, action</span>) </span>&#123; </span><br><span class="line">  <span class="comment">// immer 적용하기</span></span><br><span class="line">  <span class="keyword">switch</span> (action.type) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'CREATE_USER'</span>:</span><br><span class="line">      <span class="keyword">return</span> produce(state, draft =&gt; &#123;</span><br><span class="line">        draft.users.push(action.user);</span><br><span class="line">      &#125;);</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'TOGGLE_USER'</span>:</span><br><span class="line">      <span class="keyword">return</span> produce(state, draft =&gt; &#123;</span><br><span class="line">        <span class="keyword">const</span> user = draft.users.find(<span class="function"><span class="params">user</span> =&gt;</span> user.id === action.id);</span><br><span class="line">        user.active = !user.active;</span><br><span class="line">      &#125;);</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'REMOVE_USER'</span>:</span><br><span class="line">      <span class="keyword">return</span> produce(state, draft =&gt; &#123;</span><br><span class="line">        <span class="keyword">const</span> index = draft.users.findIndex(<span class="function"><span class="params">user</span> =&gt;</span> user.id === action.id);</span><br><span class="line">        draft.users.splice(index, <span class="number">1</span>);</span><br><span class="line">      &#125;);</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">      <span class="keyword">return</span> state;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> UserDispatch = React.createContext(<span class="literal">null</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">App</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> [state, dispatch] = useReducer(reducer, initialState);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> &#123; users &#125; = state;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> count = useMemo(<span class="function"><span class="params">()</span> =&gt;</span> countActiveUsers(users), [users]);</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;UserDispatch.Provider value=&#123;dispatch&#125;&gt;</span><br><span class="line">      &lt;CreateUser /&gt;</span><br><span class="line">      &lt;UserList users=&#123;users&#125; /&gt;</span><br><span class="line">      &lt;div&gt;활성사용자 수 : &#123;count&#125;&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>UserDispatch.Provider&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> App;</span><br></pre></td></tr></table></figure>
+
+<p><code>TOGGLE_USER</code> 액션의 경우엔 확실히 Immer 를 사용하니 코드가 깔끔해졌지만 나머지의 경우에는 오히려 코드가 좀 복잡해졌다. 상황에 따라 잘 선택하여 사용해야 한다. Immer 를 사용한다고 해서 모든 업데이트 로직에서 사용을 하실 필요는 없다.</p>
+<br>
+
+<h5 id="Immer-와-함수형-업데이트"><a href="#Immer-와-함수형-업데이트" class="headerlink" title="Immer 와 함수형 업데이트  "></a>Immer 와 함수형 업데이트  <a id="a6"></a></h5><p>이전에 <code>useState</code> 를 사용 할 때 함수형 업데이트란걸 할 수 있다고 배웠다. </p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> [todo, setTodo] = useState(&#123;</span><br><span class="line">  text: <span class="string">'Hello'</span>,</span><br><span class="line">  done: <span class="literal">false</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> onClick = useCallback(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  setTodo(<span class="function"><span class="params">todo</span> =&gt;</span> (&#123;</span><br><span class="line">    ...todo,</span><br><span class="line">    done: !todo.done</span><br><span class="line">  &#125;));</span><br><span class="line">&#125;, []);</span><br></pre></td></tr></table></figure>
+
+<p>함수에 업데이트를 해주는 함수를 넣음으로써, 만약 <code>useCallback</code> 을 사용하는 경우 두번째 파라미터인 <code>deps</code> 배열에 <code>todo</code> 를 넣지 않아도 된다.</p>
+<p>위 처럼, 함수형 업데이트를 하는 경우에, Immer 를 사용하면 상황에 따라 더 편하게 코드를 작성 할 수 있다.</p>
+<p>만약에 <code>produce</code> 함수에 두개의 파라미터를 넣게 된다면, 첫번째 파라미터에 넣은 상태를 불변성을 유지하면서 새로운 상태를 만들어주지만, 만약에 첫번째 파라미터를 생략하고 바로 업데이트 함수를 넣어주게 된다면, 반환 값은 새로운 상태가 아닌 상태를 업데이트 해주는 함수가 된다. </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> todo = &#123;</span><br><span class="line">  text: <span class="string">'Hello'</span>,</span><br><span class="line">  done: <span class="literal">false</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> updater = produce(<span class="function"><span class="params">draft</span> =&gt;</span> &#123;</span><br><span class="line">  draft.done = !draft.done;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> nextTodo = updater(todo);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(nextTodo);</span><br><span class="line"><span class="comment">// &#123; text: 'Hello', done: true &#125;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>결국 <code>produce</code> 가 반환하는것이 업데이트 함수가 되기 때문에 <code>useState</code> 의 업데이트 함수를 사용 할 떄 다음과 같이 구현 할 수 있게 된다. (즉 <code>produce</code>가 반환하는 것은 함수이므로 화살표 함수를 반환한것과 같다는 것 - Immer는 함수형 업데이트 )</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> [todo, setTodo] = useState(&#123;</span><br><span class="line">  text: <span class="string">'Hello'</span>,</span><br><span class="line">  done: <span class="literal">false</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> onClick = useCallback(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  setTodo(</span><br><span class="line">    produce(<span class="function"><span class="params">draft</span> =&gt;</span> &#123;</span><br><span class="line">      draft.done = !draft.done;</span><br><span class="line">    &#125;)</span><br><span class="line">  );</span><br><span class="line">&#125;, []);</span><br></pre></td></tr></table></figure>
+
+<p>이러한 속성을 잘 알아두시고, 나중에 필요할때 잘 사용하시면 되겠습니다.</p>
+<p>Immer 은 분명히 정말 편한 라이브러리이다. </p>
+<p>하지만, 확실히 알아둘 점은, 성능적으로는 Immer 를 사용하지 않은 코드가 조금 더 빠르다는 점 이다.</p>
+<p>조사 결과, 50,000개의 원소중에서 5,000 개의 원소를 업데이트 하는 코드를 비교 했을때의 결과로, Immer 의 경우 31ms 걸리는 작업이 (map 을 사용하는) Native Reducer 에서는 6ms 걸린 것을 확인 할 수 있다. (생각보다 차이가 있다.)</p>
+<p>추가로, Immer 는 JavaScript 엔진의 <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Proxy" rel="external nofollow noopener noreferrer" target="_blank">Proxy</a> 라는 기능을 사용하는데, 구형 브라우저 및 react-native 같은 환경에서는 지원되지 않으므로 (Proxy 처럼 작동하지만 Proxy는 아닌) ES5 fallback 을 사용하게 된다. ES5 fallback 을 사용하게 되는경우는 191ms 정도로, 꽤나 느려지게 되는데, 여전히 데이터가 별로 없다면 크게 걱정 할 필요는 없다.</p>
+<p>Immer 라이브러리는 확실히 편하기 때문에, 데이터의 구조가 복잡해져서 불변성을 유지하면서 업데이트하려면 코드가 복잡해지는 상황이 온다면, 이를 사용하는 것을 권장한다.</p>
+<p>다만, 무조건 사용을 하진 마시고, 가능하면 데이터의 구조가 복잡해지게 되는 것을 방지하자. 어쩔 수 없을 때에만 Immer 를 사용하는것이 좋다. Immer 를 사용한다고 해도, 필요한곳에만 쓰고, 간단히 처리 될 수 있는 곳에서는 그냥 일반 JavaScript 로 구현하는 것을 권한다.</p>
 
         </div>
         <footer class="article-footer">
@@ -214,7 +295,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="https://hyeok999.github.io/2020/02/03/react-velo-21/" data-id="ck66j8d6c021bvfz0wbuj3q76" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://hyeok999.github.io/2020/02/03/react-velo-21/" data-id="ck66jliw700mk7zz0r1b72f71" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -293,6 +374,7 @@ ga('send', 'pageview');
         "dateModified": "2020-02-03",
         "url": "https://hyeok999.github.io/2020/02/03/react-velo-21/",
         "description": "
+
 React with Velopert - 21 -
 Immer
 불변성의 예
@@ -300,14 +382,18 @@ Immer 미사용의 경우,
 Immer 사용의 경우,
 Immer 기본 사용법
 리듀서에서 Immer 사용하기
-[Immer 와 함수형 업데이트](
+Immer 와 함수형 업데이트
 
 
 
 
 
-",
-        "wordCount": 33
+
+
+
+Chap 21. Immer를 사용한 더 쉬운 불변성 관리Immer
+리액트에서는 배열이나 객체를 업데이트 해야 할 때에는 직접 수정하면",
+        "wordCount": 2248
     }
 </script>
 
