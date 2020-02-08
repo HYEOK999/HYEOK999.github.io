@@ -6,24 +6,26 @@
     
 
     
-    <title>type-script-01 | HYEOK999&#39;s Blog</title>
+    <title>타입 스크립트 [01] | HYEOK999&#39;s Blog</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="git,Web,coding,develop,TIL,algorithm,HTML,CSS,javascript,React,Programmers">
+        <meta name="keywords" content="git,Web,coding,develop,TIL,algorithm,HTML,CSS,javascript,React,Programmers,typescript">
     
-    <meta name="description" content="HYEOK999&apos;s IT Develop Blog">
-<meta name="keywords" content="git,Web,coding,develop,TIL,algorithm,HTML,CSS,javascript,React,Programmers">
+    <meta name="description" content="TypeScript - 01 -목차 동적 타입 언어 vs 정적 타입 언어 자바스크립트의 특징 자바스크립트의 배열   타입스크립트 타입스크립트 설치 타입스크립트 타입 타입 추론     동적 타입 언어 vs 정적 타입 언어 JavaScript는 동적 타입 언어이다. 변수에는 타입이 없고 값이 할당되면 타입 추론으로 타입이 정해진다. 재할당이 가능한 경우,">
+<meta name="keywords" content="git,Web,coding,develop,TIL,algorithm,HTML,CSS,javascript,React,Programmers,typescript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="type-script-01">
+<meta property="og:title" content="타입 스크립트 [01]">
 <meta property="og:url" content="https://hyeok999.github.io/2020/02/08/type-script-01/index.html">
 <meta property="og:site_name" content="HYEOK999&#39;s Blog">
-<meta property="og:description" content="HYEOK999&apos;s IT Develop Blog">
+<meta property="og:description" content="TypeScript - 01 -목차 동적 타입 언어 vs 정적 타입 언어 자바스크립트의 특징 자바스크립트의 배열   타입스크립트 타입스크립트 설치 타입스크립트 타입 타입 추론     동적 타입 언어 vs 정적 타입 언어 JavaScript는 동적 타입 언어이다. 변수에는 타입이 없고 값이 할당되면 타입 추론으로 타입이 정해진다. 재할당이 가능한 경우,">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-02-08T10:01:03.200Z">
+<meta property="og:image" content="https://user-images.githubusercontent.com/31315644/73456658-9f5c7680-43b5-11ea-941a-cdf06e74b9c2.png">
+<meta property="og:updated_time" content="2020-02-08T10:04:58.550Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="type-script-01">
-<meta name="twitter:description" content="HYEOK999&apos;s IT Develop Blog">
+<meta name="twitter:title" content="타입 스크립트 [01]">
+<meta name="twitter:description" content="TypeScript - 01 -목차 동적 타입 언어 vs 정적 타입 언어 자바스크립트의 특징 자바스크립트의 배열   타입스크립트 타입스크립트 설치 타입스크립트 타입 타입 추론     동적 타입 언어 vs 정적 타입 언어 JavaScript는 동적 타입 언어이다. 변수에는 타입이 없고 값이 할당되면 타입 추론으로 타입이 정해진다. 재할당이 가능한 경우,">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/31315644/73456658-9f5c7680-43b5-11ea-941a-cdf06e74b9c2.png">
     
     <link rel="canonical" href="https://hyeok999.github.io/2020/02/08/type-script-01/">
     
@@ -93,7 +95,7 @@ ga('send', 'pageview');
                                     <a class="main-nav-list-link" href="/">Home</a>
                                 </li>
                             
-                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/CSS/">CSS</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/CSS/GIT/">GIT</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/">Develop</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/CSS/">CSS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/GIT/">GIT</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/GraphQL/">GraphQL</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/IT-Event/">IT Event</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Project/">Project</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/React/">React</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Tips/">Tips</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/">TIL</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Algorithm-Quiz/">Algorithm & Quiz</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/React/">React</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/React-Preview/">React-Preview</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/linux/">linux</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/etc/">etc</a></li></ul>
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/">Develop</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/CSS/">CSS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/GIT/">GIT</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/GraphQL/">GraphQL</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/IT-Event/">IT Event</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Project/">Project</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/React/">React</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Tips/">Tips</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/TypeScript/">TypeScript</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/">TIL</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Algorithm-Quiz/">Algorithm & Quiz</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/React/">React</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/React-Preview/">React-Preview</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/linux/">linux</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/etc/">etc</a></li></ul>
                                     
                                 <li class="main-nav-list-item">
                                     <a class="main-nav-list-link" href="https://about.me/iasg2004" rel="external nofollow noopener noreferrer" target="_blank">About</a>
@@ -152,7 +154,7 @@ ga('send', 'pageview');
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/CSS/">CSS</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/">GIT</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/">IT Event</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/">Java</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/">Javascript</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/">Project</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/">React</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/">Tips</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/">Algorithm & Quiz</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/">HTML&CSS</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/">Javascript</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/Javascript-Preview/">Javascript-Preview</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/Javascript-Preview/React/">React</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/Javascript-Preview/React/React-Preview/">React-Preview</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/Javascript-Preview/React/React-Preview/linux/">linux</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/Javascript-Preview/React/React-Preview/linux/etc/">etc</a>
+    <a class="page-title-link" href="/categories/Develop/">Develop</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Develop/TypeScript/">TypeScript</a>
     </h1>
 </div>
 
@@ -164,7 +166,7 @@ ga('send', 'pageview');
                 
     
         <h1 class="article-title" itemprop="name">
-        type-script-01
+        타입 스크립트 [01]
         </h1>
     
 
@@ -175,7 +177,7 @@ ga('send', 'pageview');
                 
     <div class="article-date">
         <a href="/2020/02/08/type-script-01/" class="article-date">
-            <time datetime="2020-02-08T10:01:03.000Z" itemprop="datePublished">2020-02-08</time>
+            <time datetime="2020-02-08T08:41:33.000Z" itemprop="datePublished">2020-02-08</time>
         </a>
     </div>
 
@@ -184,14 +186,276 @@ ga('send', 'pageview');
                 
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/CSS/">CSS</a>, <a class="tag-link" href="/tags/HTML/">HTML</a>, <a class="tag-link" href="/tags/Programmers/">Programmers</a>, <a class="tag-link" href="/tags/React/">React</a>, <a class="tag-link" href="/tags/TIL/">TIL</a>, <a class="tag-link" href="/tags/Web/">Web</a>, <a class="tag-link" href="/tags/algorithm/">algorithm</a>, <a class="tag-link" href="/tags/coding/">coding</a>, <a class="tag-link" href="/tags/develop/">develop</a>, <a class="tag-link" href="/tags/git/">git</a>, <a class="tag-link" href="/tags/javascript/">javascript</a>
+        <a class="tag-link" href="/tags/CSS/">CSS</a>, <a class="tag-link" href="/tags/HTML/">HTML</a>, <a class="tag-link" href="/tags/Programmers/">Programmers</a>, <a class="tag-link" href="/tags/React/">React</a>, <a class="tag-link" href="/tags/TIL/">TIL</a>, <a class="tag-link" href="/tags/Web/">Web</a>, <a class="tag-link" href="/tags/algorithm/">algorithm</a>, <a class="tag-link" href="/tags/coding/">coding</a>, <a class="tag-link" href="/tags/develop/">develop</a>, <a class="tag-link" href="/tags/git/">git</a>, <a class="tag-link" href="/tags/javascript/">javascript</a>, <a class="tag-link" href="/tags/typescript/">typescript</a>
     </div>
 
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <p><img src="https://user-images.githubusercontent.com/31315644/73456658-9f5c7680-43b5-11ea-941a-cdf06e74b9c2.png" alt="Type Script"></p>
+<hr>
+<h1 id="TypeScript-01"><a href="#TypeScript-01" class="headerlink" title="TypeScript - 01 -"></a>TypeScript - 01 -</h1><h2 id="목차"><a href="#목차" class="headerlink" title="목차"></a>목차</h2><ul>
+<li><a href="#a1">동적 타입 언어 vs 정적 타입 언어</a></li>
+<li><a href="#a2">자바스크립트의 특징</a><ul>
+<li><a href="#a3">자바스크립트의 배열</a></li>
+</ul>
+</li>
+<li><a href="#a4">타입스크립트</a></li>
+<li><a href="#a5">타입스크립트 설치</a></li>
+<li><a href="#a6">타입스크립트 타입</a></li>
+<li><a href="#a7">타입 추론</a></li>
+</ul>
+<br>
+
+<hr>
+<h3 id="동적-타입-언어-vs-정적-타입-언어"><a href="#동적-타입-언어-vs-정적-타입-언어" class="headerlink" title="동적 타입 언어 vs 정적 타입 언어 "></a>동적 타입 언어 vs 정적 타입 언어 <a id="a1"></a></h3><p>JavaScript는 동적 타입 언어이다. 변수에는 타입이 없고 값이 할당되면 타입 추론으로 타입이 정해진다.</p>
+<p>재할당이 가능한 경우, 재할당하면 타입 추론을 다시 하게 됨</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x; <span class="comment">// 타입이 없다.</span></span><br><span class="line">x = <span class="number">1</span>; <span class="comment">// 숫자 타입.</span></span><br><span class="line"><span class="keyword">var</span> y = <span class="string">'abc'</span> <span class="comment">// 문자열 타입.</span></span><br><span class="line"><span class="keyword">var</span> z = <span class="number">5</span>; <span class="comment">// 숫자 타입.</span></span><br><span class="line">z = <span class="string">'abcd'</span> <span class="comment">// 문자열타입으로 변경됨.</span></span><br></pre></td></tr></table></figure>
+
+<p>정적인 언어에서는 위와 같이 동적으로 타입이 결정되지 않는다. </p>
+<p><strong>정적 타입 언어에서 타입을 정해주는 이유는 메모리에 값을 집어넣기 위해 얼마만큼의 공간이 필요한가를 알기 위함이다.</strong></p>
+<p>아래의 경우는 Java에서 변수를 선언할 때 예이다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">5</span>;</span><br><span class="line">String b = <span class="string">'abc'</span>;</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>타입</th>
+<th>Java</th>
+<th>JS</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>int</td>
+<td>4바이트</td>
+<td>x (부동소수점 8바이트로 대체)</td>
+</tr>
+<tr>
+<td>float</td>
+<td>4바이트</td>
+<td>8바이트 부동소수점(정수 없음)</td>
+</tr>
+<tr>
+<td>double</td>
+<td>8바이트</td>
+<td>8바이트 부동소수점(정수 없음)</td>
+</tr>
+<tr>
+<td>char</td>
+<td>2바이트</td>
+<td>x (String타입이 대신 존재한다. - 2바이트)</td>
+</tr>
+</tbody></table>
+<ul>
+<li>자바스크립트의 숫자타입은 정수가 없다.</li>
+<li>자바스크립트에서 문자열을 원시값이라고 배웠지만, 실제로 문자열은 원시값이 아니라 한 개 이상의 문자로 이루어진 배열이다.</li>
+<li>char형은 본래 1바이트이지만 한글등 여러 나라 언어를 표기하는 문제로 인해 유니코드를 사용한다.(2바이트)</li>
+<li>이모지 2~4 바이트</li>
+<li>현대 자바스크립트는 애플리케이션 개발 언어가 되었다.</li>
+<li>자바스크립트는 암묵적 처리가 많아 대규모 작업시 오히려 이해하기가 어려워졌다.</li>
+</ul>
+<br>
+
+<h3 id="자바스크립트의-특징"><a href="#자바스크립트의-특징" class="headerlink" title="자바스크립트의 특징 "></a>자바스크립트의 특징 <a id="a2"></a></h3><ul>
+<li><a href="https://poiemaweb.com/js-prototype" rel="external nofollow noopener noreferrer" target="_blank">Prototype-based Object Oriented Language</a></li>
+<li><a href="https://poiemaweb.com/js-scope" rel="external nofollow noopener noreferrer" target="_blank">Scope</a>와 <a href="https://poiemaweb.com/js-this" rel="external nofollow noopener noreferrer" target="_blank">this</a></li>
+<li><a href="https://poiemaweb.com/js-data-type-variable" rel="external nofollow noopener noreferrer" target="_blank">동적 타입(dynamic typed) 언어 혹은 느슨한 타입(loosely typed) 언어</a></li>
+</ul>
+<h4 id="자바스크립트의-배열"><a href="#자바스크립트의-배열" class="headerlink" title="자바스크립트의 배열  "></a>자바스크립트의 배열  <a id="a3"></a></h4><blockquote>
+<p> 배열을 getOwnPropertyDescriptor로 확인할 경우 객체임을 확인할 수있다.(유사배열)</p>
+</blockquote>
+<ul>
+<li>원론적인 의미의 배열과 자바스크립트의 배열은 다르다,</li>
+<li>원론적으로 요소의 타입이 통일되어 있어야 한다,(메모리 공간이 연속되어 있도록-접근이 빠르다)</li>
+<li>자바스크립트에서는 단지 프로퍼티의 value이므로 [100, ‘apple’, true]와 같이 모든 값이 올 수 있다.(엄밀히 말하면 배열이 아니다.)</li>
+</ul>
+<br>
+
+<h3 id="타입스크립트"><a href="#타입스크립트" class="headerlink" title="타입스크립트  "></a>타입스크립트  <a id="a4"></a></h3><blockquote>
+<p>JS는 대규모 프로젝트에서 코드가 복잡해질 수 있고 디버그와 테스트 공수가 증가하는 등의 문제를 일으킬 수 있다.</p>
+</blockquote>
+<ol>
+<li><p><strong>타입스크립트 = 자바스크립트의 Superset(상위확장)</strong></p>
+<ul>
+<li><p>TypeScript 또한 자바스크립트 대체 언어의 하나로써 <strong>자바스크립트(ES5)의 Superset(상위확장)</strong></p>
+</li>
+<li><p>ES6(ECMAScript 2015)의 클래스, 모듈 등과 ES7의 Decorator 등을 지원한다.</p>
+</li>
+<li><p><a href="https://babeljs.io/" rel="external nofollow noopener noreferrer" target="_blank">Babel</a>과 같은 별도 트랜스파일러(Transpiler)를 사용하지 않아도 ES6의 새로운 기능을 기존의 자바스크립트 엔진(현재의 브라우저 또는 Node.js)에서 실행할 수 있다.</p>
+</li>
+<li><p><strong>모든 기존 코드를 호환한다.(단, 클래스는 타입스크립트 문법을 따라야 한다.)</strong></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 클래스는 TS문법을 따라야한다.</span></span><br><span class="line"><span class="keyword">class</span> Person &#123;</span><br><span class="line">  name: <span class="built_in">string</span>;</span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params">name: <span class="built_in">string</span></span>) &#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><strong>에디터와의 호환성</strong></p>
+<ul>
+<li>JS에 경우 값을 할당하고나서 타입 추론으로 에디터를 통해 코드 어시스트를 받지만, 정적 타입은 변수 선언부터 에디터의 코드 어시스트, 타입 체크, 리펙토링 을 받을 수 있다.</li>
+</ul>
+</li>
+<li><p><strong>강력한 객체지향 프로그래밍 지원</strong></p>
+<ul>
+<li>대규포 프로젝트에서 자주 사용되는 객체 프로그래밍을 지원받을 수 있다.</li>
+<li>인터페이스</li>
+<li>제네릭</li>
+</ul>
+</li>
+</ol>
+<br>
+
+<h3 id="타입스크립트-설치"><a href="#타입스크립트-설치" class="headerlink" title="타입스크립트 설치  "></a>타입스크립트 설치  <a id="a5"></a></h3><ol>
+<li><p>npm 전역 설치</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g typescript</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>버전확인</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ tsc -v</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>타입스크립트 컴파일</p>
+<p>파일명.ts -&gt; 파일명.js로 분리함.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ tsc 파일명</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>config 설정</p>
+<ul>
+<li><code>config</code>파일 생성 (<code>tsconfig.json</code>)</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ tsc --init</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>“target” : “es5” (컴파일 할 버전)</li>
+<li>“module” : “commonjs”</li>
+<li>config 설정 완료 후 <code>tsc</code>만 입력해도 컴파일이 됨. (모든 ts파일 자동 컴파일)</li>
+<li><code>tsc 파일명</code> 작성 시 <code>tsconfig.json</code> 설정 무시하고 해당 명령어 우선 실행</li>
+</ul>
+</li>
+<li><p>코드 저장 시 자동 <code>tsc</code> 명령 설정 ( <code>tsconfig.json</code> 있어야함. )</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ tsc -w</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<br>
+
+<h3 id="타입스크립트-타입"><a href="#타입스크립트-타입" class="headerlink" title="타입스크립트 타입  "></a>타입스크립트 타입  <a id="a6"></a></h3><ol>
+<li><p><code>any[]</code> : 배열 내부에 어떤 값이 와도 된다. (<code>number[]</code> -&gt; 배열 내부에 숫자타입만 허용된다.)</p>
+</li>
+<li><p><code>tuple</code> : 만드는 배열의 요소 개수를 정하고, 요소의 타입을 fix한다.</p>
+</li>
+<li><p><code>enum</code> : [키 : 값] 형태에서 키는 값의 이름으로서 중요성을 나타내지만 <code>enum</code>은 키의 이름 자체에 의미를 두는것.</p>
+<p>대표적인 예로 조이스틱의 UP, DOWN, LEFT, RIGHT 등이 있다.</p>
+</li>
+<li><p><code>never</code>: 함수에 리턴 값이 없을 때 사용. (생략 가능)</p>
+</li>
+<li><p>특정 객체 타입을 지정해줄 때는 앞글자를 대문자로 한다. (Date, String 등등)</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> objectStr: <span class="built_in">String</span>;</span><br><span class="line">objectStr = <span class="string">'hello'</span>; <span class="comment">// OK</span></span><br><span class="line">objectStr = <span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">'hello'</span>); <span class="comment">// OK</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+</li>
+</ol>
+<p>TypeScript는 ES5, ES6의 Superset(상위확장)이므로 <a href="https://poiemaweb.com/js-data-type-variable#1-데이터-타입" rel="external nofollow noopener noreferrer" target="_blank">자바스크립트의 타입</a>을 그대로 사용할 수 있다. </p>
+<p>자바스크립트의 타입 이외에도 TypeScript 고유의 타입이 추가로 제공된다.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Type</th>
+<th align="center">JS</th>
+<th align="center">TS</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">boolean</td>
+<td align="center">◯</td>
+<td align="center">◯</td>
+<td align="left">true와 false</td>
+</tr>
+<tr>
+<td align="left">null</td>
+<td align="center">◯</td>
+<td align="center">◯</td>
+<td align="left">값이 없다는 것을 명시</td>
+</tr>
+<tr>
+<td align="left">undefined</td>
+<td align="center">◯</td>
+<td align="center">◯</td>
+<td align="left">값을 할당하지 않은 변수의 초기값</td>
+</tr>
+<tr>
+<td align="left">number</td>
+<td align="center">◯</td>
+<td align="center">◯</td>
+<td align="left">숫자(정수와 실수, Infinity, NaN)</td>
+</tr>
+<tr>
+<td align="left">string</td>
+<td align="center">◯</td>
+<td align="center">◯</td>
+<td align="left">문자열</td>
+</tr>
+<tr>
+<td align="left">symbol</td>
+<td align="center">◯</td>
+<td align="center">◯</td>
+<td align="left">고유하고 수정 불가능한 데이터 타입이며 주로 객체 프로퍼티들의 식별자로 사용(ES6에서 추가)</td>
+</tr>
+<tr>
+<td align="left">object</td>
+<td align="center">◯</td>
+<td align="center">◯</td>
+<td align="left">객체형(참조형)</td>
+</tr>
+<tr>
+<td align="left">array</td>
+<td align="center"></td>
+<td align="center">◯</td>
+<td align="left">배열</td>
+</tr>
+<tr>
+<td align="left">tuple</td>
+<td align="center"></td>
+<td align="center">◯</td>
+<td align="left">고정된 요소수 만큼의 타입을 미리 선언후 배열을 표현</td>
+</tr>
+<tr>
+<td align="left">enum</td>
+<td align="center"></td>
+<td align="center">◯</td>
+<td align="left">열거형. 숫자값 집합에 이름을 지정한 것이다.</td>
+</tr>
+<tr>
+<td align="left">any</td>
+<td align="center"></td>
+<td align="center">◯</td>
+<td align="left">타입 추론(type inference)할 수 없거나 타입 체크가 필요없는 변수에 사용. var 키워드로 선언한 변수와 같이 어떤 타입의 값이라도 할당 가능.</td>
+</tr>
+<tr>
+<td align="left">void</td>
+<td align="center"></td>
+<td align="center">◯</td>
+<td align="left">일반적으로 함수에서 반환값이 없을 경우 사용한다.</td>
+</tr>
+<tr>
+<td align="left">never</td>
+<td align="center"></td>
+<td align="center">◯</td>
+<td align="left">결코 발생하지 않는 값</td>
+</tr>
+</tbody></table>
+<p>다양한 타입을 사전 선언하는 방법.</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// boolean</span></span><br><span class="line"><span class="keyword">let</span> isDone: <span class="built_in">boolean</span> = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// null</span></span><br><span class="line"><span class="keyword">let</span> n: <span class="literal">null</span> = <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// undefined</span></span><br><span class="line"><span class="keyword">let</span> u: <span class="literal">undefined</span> = <span class="literal">undefined</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// number</span></span><br><span class="line"><span class="keyword">let</span> decimal: <span class="built_in">number</span> = <span class="number">6</span>;</span><br><span class="line"><span class="keyword">let</span> hex: <span class="built_in">number</span> = <span class="number">0xf00d</span>;</span><br><span class="line"><span class="keyword">let</span> binary: <span class="built_in">number</span> = <span class="number">0b1010</span>;</span><br><span class="line"><span class="keyword">let</span> octal: <span class="built_in">number</span> = <span class="number">0o744</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// string</span></span><br><span class="line"><span class="keyword">let</span> color: <span class="built_in">string</span> = <span class="string">"blue"</span>;</span><br><span class="line">color = <span class="string">'red'</span>;</span><br><span class="line"><span class="keyword">let</span> myName: <span class="built_in">string</span> = <span class="string">`Lee`</span>; <span class="comment">// ES6 템플릿 문자열</span></span><br><span class="line"><span class="keyword">let</span> greeting: <span class="built_in">string</span> = <span class="string">`Hello, my name is <span class="subst">$&#123; myName &#125;</span>.`</span>; <span class="comment">// ES6 템플릿 대입문</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// object</span></span><br><span class="line"><span class="keyword">const</span> obj: object = &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// array</span></span><br><span class="line"><span class="keyword">let</span> list1: <span class="built_in">any</span>[] = [<span class="number">1</span>, <span class="string">'two'</span>, <span class="literal">true</span>];</span><br><span class="line"><span class="keyword">let</span> list2: <span class="built_in">number</span>[] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"><span class="keyword">let</span> list3: <span class="built_in">Array</span>&lt;<span class="built_in">number</span>&gt; = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]; <span class="comment">// 제네릭 배열 타입</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// tuple : 고정된 요소수 만큼의 타입을 미리 선언후 배열을 표현</span></span><br><span class="line"><span class="keyword">let</span> tuple: [<span class="built_in">string</span>, <span class="built_in">number</span>];</span><br><span class="line">tuple = [<span class="string">'hello'</span>, <span class="number">10</span>]; <span class="comment">// OK</span></span><br><span class="line">tuple = [<span class="number">10</span>, <span class="string">'hello'</span>]; <span class="comment">// Error</span></span><br><span class="line">tuple = [<span class="string">'hello'</span>, <span class="number">10</span>, <span class="string">'world'</span>, <span class="number">100</span>]; <span class="comment">// Error</span></span><br><span class="line">tuple.push(<span class="literal">true</span>); <span class="comment">// Error</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// enum : 열거형은 숫자값 집합에 이름을 지정한 것이다.</span></span><br><span class="line"><span class="keyword">enum</span> Color1 &#123;Red, Green, Blue&#125;;</span><br><span class="line"><span class="keyword">let</span> c1: Color1 = Color1.Green;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(c1); <span class="comment">// 1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">enum</span> Color2 &#123;Red = <span class="number">1</span>, Green, Blue&#125;;</span><br><span class="line"><span class="keyword">let</span> c2: Color2 = Color2.Green;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(c2); <span class="comment">// 2</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">enum</span> Color3 &#123;Red = <span class="number">1</span>, Green = <span class="number">2</span>, Blue = <span class="number">4</span>&#125;;</span><br><span class="line"><span class="keyword">let</span> c3: Color3 = Color3.Blue;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(c3); <span class="comment">// 4</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">any: 타입 추론(type inference)할 수 없거나 타입 체크가 필요 없는 변수에 사용한다.</span></span><br><span class="line"><span class="comment">var 키워드로 선언한 변수와 같이 어떤 타입의 값이라도 할당할 수 있다.</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">let</span> notSure: <span class="built_in">any</span> = <span class="number">4</span>;</span><br><span class="line">notSure = <span class="string">'maybe a string instead'</span>;</span><br><span class="line">notSure = <span class="literal">false</span>; <span class="comment">// okay, definitely a boolean</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// void : 일반적으로 함수에서 반환값이 없을 경우 사용한다.</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">warnUser</span>(<span class="params"></span>): <span class="title">void</span> </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"This is my warning message"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// never : 결코 발생하지 않는 값</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">infiniteLoop</span>(<span class="params"></span>): <span class="title">never</span> </span>&#123;</span><br><span class="line">  <span class="keyword">while</span> (<span class="literal">true</span>) &#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">error</span>(<span class="params">message: <span class="built_in">string</span></span>): <span class="title">never</span> </span>&#123;</span><br><span class="line">  <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(message);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="타입-추론"><a href="#타입-추론" class="headerlink" title="타입 추론  "></a>타입 추론  <a id="a7"></a></h3><p>만약 타입 선언을 생략하면 값이 할당되는 과정에서 동적으로 타입이 결정된다. </p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> foo = <span class="number">123</span>; <span class="comment">// foo는 number 타입</span></span><br></pre></td></tr></table></figure>
+
+<p>위 코드를 보면 변수 foo에 타입을 선언하지 않았으나 타입 추론에 의해 변수의 타입이 결정되었다. 동적 타입 언어는 타입 추론에 의해 변수의 타입이 결정된 후에도 같은 변수에 여러 타입의 값을 교차하여 할당할 수 있다. </p>
+<p>하지만 정적 타입 언어는 타입이 결정된 후에는 타입을 변경할 수 없다. </p>
+<p>TypeScript는 정적 타입 언어이므로 타입 추론으로 타입이 결정된 이후, 다른 타입의 값을 할당하면 에러가 발생한다.</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> foo = <span class="number">123</span>; <span class="comment">// foo는 number 타입</span></span><br><span class="line">foo = <span class="string">'hi'</span>;    <span class="comment">// error: Type '"hi"' is not assignable to type 'number'.</span></span><br></pre></td></tr></table></figure>
+
+<br>
         </div>
         <footer class="article-footer">
             
@@ -268,16 +532,33 @@ ga('send', 'pageview');
             "@type": "Person",
             "name": "Jun Hyeok Kim"
         },
-        "headline": "type-script-01",
-        "image": "https://hyeok999.github.io",
-        "keywords": "git Web coding develop TIL algorithm HTML CSS javascript React Programmers",
-        "genre": "CSS GIT IT Event Java Javascript Project React Tips TIL Algorithm & Quiz HTML&CSS Javascript Javascript-Preview React React-Preview linux etc",
+        "headline": "타입 스크립트 [01]",
+        "image": "https://hyeok999.github.iohttps://user-images.githubusercontent.com/31315644/73456658-9f5c7680-43b5-11ea-941a-cdf06e74b9c2.png",
+        "keywords": "git Web coding develop TIL algorithm HTML CSS javascript React Programmers typescript",
+        "genre": "Develop TypeScript",
         "datePublished": "2020-02-08",
         "dateCreated": "2020-02-08",
         "dateModified": "2020-02-08",
         "url": "https://hyeok999.github.io/2020/02/08/type-script-01/",
-        "description": "",
-        "wordCount": 1
+        "description": "
+
+TypeScript - 01 -목차
+동적 타입 언어 vs 정적 타입 언어
+자바스크립트의 특징
+자바스크립트의 배열
+
+
+타입스크립트
+타입스크립트 설치
+타입스크립트 타입
+타입 추론
+
+
+
+
+동적 타입 언어 vs 정적 타입 언어 JavaScript는 동적 타입 언어이다. 변수에는 타입이 없고 값이 할당되면 타입 추론으로 타입이 정해진다.
+재할당이 가능한 경우, ",
+        "wordCount": 1469
     }
 </script>
 
@@ -350,7 +631,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/">GIT</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/">IT Event</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/">Java</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/">Javascript</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/">Project</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/">React</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/">Tips</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/">TIL</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/">Algorithm & Quiz</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/">HTML&CSS</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/">Javascript</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/Javascript-Preview/">Javascript-Preview</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/Javascript-Preview/React/">React</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/Javascript-Preview/React/React-Preview/">React-Preview</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/Javascript-Preview/React/React-Preview/linux/">linux</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/Javascript-Preview/React/React-Preview/linux/etc/">etc</a><span class="category-list-count">1</span></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/">Develop</a><span class="category-list-count">52</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/CSS/">CSS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/GIT/">GIT</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/GraphQL/">GraphQL</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/IT-Event/">IT Event</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Java/">Java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Javascript/">Javascript</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Project/">Project</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/React/">React</a><span class="category-list-count">16</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Tips/">Tips</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/">TIL</a><span class="category-list-count">195</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Algorithm-Quiz/">Algorithm & Quiz</a><span class="category-list-count">74</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript/">Javascript</a><span class="category-list-count">30</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a><span class="category-list-count">23</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/React/">React</a><span class="category-list-count">27</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/React-Preview/">React-Preview</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/linux/">linux</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/etc/">etc</a><span class="category-list-count">1</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/">Develop</a><span class="category-list-count">53</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/CSS/">CSS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/GIT/">GIT</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/GraphQL/">GraphQL</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/IT-Event/">IT Event</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Java/">Java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Javascript/">Javascript</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Project/">Project</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/React/">React</a><span class="category-list-count">16</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Tips/">Tips</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/TypeScript/">TypeScript</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/">TIL</a><span class="category-list-count">195</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Algorithm-Quiz/">Algorithm & Quiz</a><span class="category-list-count">74</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript/">Javascript</a><span class="category-list-count">30</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a><span class="category-list-count">23</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/React/">React</a><span class="category-list-count">27</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/React-Preview/">React-Preview</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/linux/">linux</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/etc/">etc</a><span class="category-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -368,7 +649,7 @@ ga('send', 'pageview');
                             <a href="/2020/02/08/type-script-01/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/73456658-9f5c7680-43b5-11ea-941a-cdf06e74b9c2.png)" alt="타입 스크립트 [01]" class="thumbnail-image"></span>
     
     
 </a>
@@ -376,9 +657,9 @@ ga('send', 'pageview');
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/CSS/">CSS</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/CSS/GIT/">GIT</a></p>
-                            <p class="item-title"><a href="/2020/02/08/type-script-01/" class="title">type-script-01</a></p>
-                            <p class="item-date"><time datetime="2020-02-08T10:01:03.000Z" itemprop="datePublished">2020-02-08</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/Develop/">Develop</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Develop/TypeScript/">TypeScript</a></p>
+                            <p class="item-title"><a href="/2020/02/08/type-script-01/" class="title">타입 스크립트 [01]</a></p>
+                            <p class="item-date"><time datetime="2020-02-08T08:41:33.000Z" itemprop="datePublished">2020-02-08</time></p>
                         </div>
                     </li>
                 
@@ -481,7 +762,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
-            <a href="/tags/Ajax/" style="font-size: 11.05px;">Ajax</a> <a href="/tags/Array/" style="font-size: 11.58px;">Array</a> <a href="/tags/Array-Method/" style="font-size: 10.53px;">Array Method</a> <a href="/tags/Arrow-Function/" style="font-size: 10px;">Arrow Function</a> <a href="/tags/Async/" style="font-size: 10px;">Async</a> <a href="/tags/Async-Await/" style="font-size: 10px;">Async Await</a> <a href="/tags/Axios/" style="font-size: 10px;">Axios</a> <a href="/tags/BAEKJOON/" style="font-size: 13.16px;">BAEKJOON</a> <a href="/tags/Browser/" style="font-size: 10px;">Browser</a> <a href="/tags/CSS/" style="font-size: 17.37px;">CSS</a> <a href="/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/tags/Class/" style="font-size: 10px;">Class</a> <a href="/tags/Class-Component/" style="font-size: 10px;">Class Component</a> <a href="/tags/Closer/" style="font-size: 10.53px;">Closer</a> <a href="/tags/Constructor/" style="font-size: 10px;">Constructor</a> <a href="/tags/Core-JavaScript/" style="font-size: 10px;">Core JavaScript</a> <a href="/tags/Custom-Hook/" style="font-size: 10px;">Custom Hook</a> <a href="/tags/DOM/" style="font-size: 10.53px;">DOM</a> <a href="/tags/Date/" style="font-size: 10px;">Date</a> <a href="/tags/Document-Object-Model/" style="font-size: 10.53px;">Document Object Model</a> <a href="/tags/ESLint/" style="font-size: 10px;">ESLint</a> <a href="/tags/Event/" style="font-size: 10.53px;">Event</a> <a href="/tags/Fetch/" style="font-size: 10px;">Fetch</a> <a href="/tags/Functional-Component/" style="font-size: 10.53px;">Functional Component</a> <a href="/tags/Git-GUI/" style="font-size: 10.53px;">Git GUI</a> <a href="/tags/GraphQL/" style="font-size: 10.53px;">GraphQL</a> <a href="/tags/HOF/" style="font-size: 12.63px;">HOF</a> <a href="/tags/HTML/" style="font-size: 17.89px;">HTML</a> <a href="/tags/Hook/" style="font-size: 10.53px;">Hook</a> <a href="/tags/HotKey/" style="font-size: 10px;">HotKey</a> <a href="/tags/JAVA/" style="font-size: 13.68px;">JAVA</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/MarkUP/" style="font-size: 10px;">MarkUP</a> <a href="/tags/Math/" style="font-size: 10px;">Math</a> <a href="/tags/Method/" style="font-size: 11.58px;">Method</a> <a href="/tags/Module/" style="font-size: 10px;">Module</a> <a href="/tags/Mutation/" style="font-size: 10px;">Mutation</a> <a href="/tags/Number/" style="font-size: 10px;">Number</a> <a href="/tags/OS/" style="font-size: 12.11px;">OS</a> <a href="/tags/Object/" style="font-size: 12.11px;">Object</a> <a href="/tags/Poiema/" style="font-size: 14.74px;">Poiema</a> <a href="/tags/Primary-value/" style="font-size: 10px;">Primary value</a> <a href="/tags/Programmers/" style="font-size: 15.79px;">Programmers</a> <a href="/tags/Project/" style="font-size: 10.53px;">Project</a> <a href="/tags/Promise/" style="font-size: 11.58px;">Promise</a> <a href="/tags/Property/" style="font-size: 11.05px;">Property</a> <a href="/tags/Prototype/" style="font-size: 10px;">Prototype</a> <a href="/tags/Query/" style="font-size: 10px;">Query</a> <a href="/tags/Quiz/" style="font-size: 12.63px;">Quiz</a> <a href="/tags/REST/" style="font-size: 10.53px;">REST</a> <a href="/tags/REST-API/" style="font-size: 10px;">REST API</a> <a href="/tags/Rapper/" style="font-size: 10px;">Rapper</a> <a href="/tags/Rapper-Object/" style="font-size: 10px;">Rapper Object</a> <a href="/tags/React/" style="font-size: 16.32px;">React</a> <a href="/tags/React-Hook/" style="font-size: 10px;">React Hook</a> <a href="/tags/React-Official-Document/" style="font-size: 14.21px;">React Official Document</a> <a href="/tags/RegExr/" style="font-size: 10.53px;">RegExr</a> <a href="/tags/Router/" style="font-size: 12.11px;">Router</a> <a href="/tags/Schema/" style="font-size: 10px;">Schema</a> <a href="/tags/Scope/" style="font-size: 10px;">Scope</a> <a href="/tags/Selector/" style="font-size: 10px;">Selector</a> <a href="/tags/SourceTree/" style="font-size: 10.53px;">SourceTree</a> <a href="/tags/Spread/" style="font-size: 10px;">Spread</a> <a href="/tags/Strict-Mode/" style="font-size: 10px;">Strict Mode</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Symbol/" style="font-size: 10px;">Symbol</a> <a href="/tags/TIL/" style="font-size: 16.84px;">TIL</a> <a href="/tags/Todo/" style="font-size: 14.21px;">Todo</a> <a href="/tags/Todo-List/" style="font-size: 10.53px;">Todo List</a> <a href="/tags/Type/" style="font-size: 10px;">Type</a> <a href="/tags/VSCode/" style="font-size: 11.05px;">VSCode</a> <a href="/tags/VScode/" style="font-size: 10px;">VScode</a> <a href="/tags/VisualStudio-Code/" style="font-size: 11.05px;">VisualStudio Code</a> <a href="/tags/Web/" style="font-size: 18.95px;">Web</a> <a href="/tags/Web-Clone/" style="font-size: 10px;">Web Clone</a> <a href="/tags/Web-clone/" style="font-size: 10px;">Web clone</a> <a href="/tags/algorithm/" style="font-size: 16.84px;">algorithm</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/browser-operation/" style="font-size: 10px;">browser operation</a> <a href="/tags/coding/" style="font-size: 20px;">coding</a> <a href="/tags/daily-test/" style="font-size: 11.05px;">daily test</a> <a href="/tags/develop/" style="font-size: 18.42px;">develop</a> <a href="/tags/first-class-Object/" style="font-size: 10px;">first-class Object</a> <a href="/tags/flow/" style="font-size: 10px;">flow</a> <a href="/tags/function/" style="font-size: 10.53px;">function</a> <a href="/tags/git/" style="font-size: 15.26px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/inline-block/" style="font-size: 10px;">inline-block</a> <a href="/tags/interview/" style="font-size: 10px;">interview</a> <a href="/tags/iteration/" style="font-size: 10px;">iteration</a> <a href="/tags/javascript/" style="font-size: 19.47px;">javascript</a> <a href="/tags/linux/" style="font-size: 12.11px;">linux</a> <a href="/tags/linux-command/" style="font-size: 10px;">linux command</a> <a href="/tags/project/" style="font-size: 10px;">project</a> <a href="/tags/prototype/" style="font-size: 10px;">prototype</a> <a href="/tags/terminal/" style="font-size: 10px;">terminal</a> <a href="/tags/test/" style="font-size: 10.53px;">test</a> <a href="/tags/this/" style="font-size: 10px;">this</a> <a href="/tags/unix/" style="font-size: 11.58px;">unix</a> <a href="/tags/useCallback/" style="font-size: 10px;">useCallback</a> <a href="/tags/useReducer/" style="font-size: 10px;">useReducer</a>
+            <a href="/tags/Ajax/" style="font-size: 11.05px;">Ajax</a> <a href="/tags/Array/" style="font-size: 11.58px;">Array</a> <a href="/tags/Array-Method/" style="font-size: 10.53px;">Array Method</a> <a href="/tags/Arrow-Function/" style="font-size: 10px;">Arrow Function</a> <a href="/tags/Async/" style="font-size: 10px;">Async</a> <a href="/tags/Async-Await/" style="font-size: 10px;">Async Await</a> <a href="/tags/Axios/" style="font-size: 10px;">Axios</a> <a href="/tags/BAEKJOON/" style="font-size: 13.16px;">BAEKJOON</a> <a href="/tags/Browser/" style="font-size: 10px;">Browser</a> <a href="/tags/CSS/" style="font-size: 17.37px;">CSS</a> <a href="/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/tags/Class/" style="font-size: 10px;">Class</a> <a href="/tags/Class-Component/" style="font-size: 10px;">Class Component</a> <a href="/tags/Closer/" style="font-size: 10.53px;">Closer</a> <a href="/tags/Constructor/" style="font-size: 10px;">Constructor</a> <a href="/tags/Core-JavaScript/" style="font-size: 10px;">Core JavaScript</a> <a href="/tags/Custom-Hook/" style="font-size: 10px;">Custom Hook</a> <a href="/tags/DOM/" style="font-size: 10.53px;">DOM</a> <a href="/tags/Date/" style="font-size: 10px;">Date</a> <a href="/tags/Document-Object-Model/" style="font-size: 10.53px;">Document Object Model</a> <a href="/tags/ESLint/" style="font-size: 10px;">ESLint</a> <a href="/tags/Event/" style="font-size: 10.53px;">Event</a> <a href="/tags/Fetch/" style="font-size: 10px;">Fetch</a> <a href="/tags/Functional-Component/" style="font-size: 10.53px;">Functional Component</a> <a href="/tags/Git-GUI/" style="font-size: 10.53px;">Git GUI</a> <a href="/tags/GraphQL/" style="font-size: 10.53px;">GraphQL</a> <a href="/tags/HOF/" style="font-size: 12.63px;">HOF</a> <a href="/tags/HTML/" style="font-size: 17.89px;">HTML</a> <a href="/tags/Hook/" style="font-size: 10.53px;">Hook</a> <a href="/tags/HotKey/" style="font-size: 10px;">HotKey</a> <a href="/tags/JAVA/" style="font-size: 13.68px;">JAVA</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/MarkUP/" style="font-size: 10px;">MarkUP</a> <a href="/tags/Math/" style="font-size: 10px;">Math</a> <a href="/tags/Method/" style="font-size: 11.58px;">Method</a> <a href="/tags/Module/" style="font-size: 10px;">Module</a> <a href="/tags/Mutation/" style="font-size: 10px;">Mutation</a> <a href="/tags/Number/" style="font-size: 10px;">Number</a> <a href="/tags/OS/" style="font-size: 12.11px;">OS</a> <a href="/tags/Object/" style="font-size: 12.11px;">Object</a> <a href="/tags/Poiema/" style="font-size: 14.74px;">Poiema</a> <a href="/tags/Primary-value/" style="font-size: 10px;">Primary value</a> <a href="/tags/Programmers/" style="font-size: 15.79px;">Programmers</a> <a href="/tags/Project/" style="font-size: 10.53px;">Project</a> <a href="/tags/Promise/" style="font-size: 11.58px;">Promise</a> <a href="/tags/Property/" style="font-size: 11.05px;">Property</a> <a href="/tags/Prototype/" style="font-size: 10px;">Prototype</a> <a href="/tags/Query/" style="font-size: 10px;">Query</a> <a href="/tags/Quiz/" style="font-size: 12.63px;">Quiz</a> <a href="/tags/REST/" style="font-size: 10.53px;">REST</a> <a href="/tags/REST-API/" style="font-size: 10px;">REST API</a> <a href="/tags/Rapper/" style="font-size: 10px;">Rapper</a> <a href="/tags/Rapper-Object/" style="font-size: 10px;">Rapper Object</a> <a href="/tags/React/" style="font-size: 16.32px;">React</a> <a href="/tags/React-Hook/" style="font-size: 10px;">React Hook</a> <a href="/tags/React-Official-Document/" style="font-size: 14.21px;">React Official Document</a> <a href="/tags/RegExr/" style="font-size: 10.53px;">RegExr</a> <a href="/tags/Router/" style="font-size: 12.11px;">Router</a> <a href="/tags/Schema/" style="font-size: 10px;">Schema</a> <a href="/tags/Scope/" style="font-size: 10px;">Scope</a> <a href="/tags/Selector/" style="font-size: 10px;">Selector</a> <a href="/tags/SourceTree/" style="font-size: 10.53px;">SourceTree</a> <a href="/tags/Spread/" style="font-size: 10px;">Spread</a> <a href="/tags/Strict-Mode/" style="font-size: 10px;">Strict Mode</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Symbol/" style="font-size: 10px;">Symbol</a> <a href="/tags/TIL/" style="font-size: 16.84px;">TIL</a> <a href="/tags/Todo/" style="font-size: 14.21px;">Todo</a> <a href="/tags/Todo-List/" style="font-size: 10.53px;">Todo List</a> <a href="/tags/Type/" style="font-size: 10px;">Type</a> <a href="/tags/VSCode/" style="font-size: 11.05px;">VSCode</a> <a href="/tags/VScode/" style="font-size: 10px;">VScode</a> <a href="/tags/VisualStudio-Code/" style="font-size: 11.05px;">VisualStudio Code</a> <a href="/tags/Web/" style="font-size: 18.95px;">Web</a> <a href="/tags/Web-Clone/" style="font-size: 10px;">Web Clone</a> <a href="/tags/Web-clone/" style="font-size: 10px;">Web clone</a> <a href="/tags/algorithm/" style="font-size: 16.84px;">algorithm</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/browser-operation/" style="font-size: 10px;">browser operation</a> <a href="/tags/coding/" style="font-size: 20px;">coding</a> <a href="/tags/daily-test/" style="font-size: 11.05px;">daily test</a> <a href="/tags/develop/" style="font-size: 18.42px;">develop</a> <a href="/tags/first-class-Object/" style="font-size: 10px;">first-class Object</a> <a href="/tags/flow/" style="font-size: 10px;">flow</a> <a href="/tags/function/" style="font-size: 10.53px;">function</a> <a href="/tags/git/" style="font-size: 15.26px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/inline-block/" style="font-size: 10px;">inline-block</a> <a href="/tags/interview/" style="font-size: 10px;">interview</a> <a href="/tags/iteration/" style="font-size: 10px;">iteration</a> <a href="/tags/javascript/" style="font-size: 19.47px;">javascript</a> <a href="/tags/linux/" style="font-size: 12.11px;">linux</a> <a href="/tags/linux-command/" style="font-size: 10px;">linux command</a> <a href="/tags/project/" style="font-size: 10px;">project</a> <a href="/tags/prototype/" style="font-size: 10px;">prototype</a> <a href="/tags/terminal/" style="font-size: 10px;">terminal</a> <a href="/tags/test/" style="font-size: 10.53px;">test</a> <a href="/tags/this/" style="font-size: 10px;">this</a> <a href="/tags/typescript/" style="font-size: 10px;">typescript</a> <a href="/tags/unix/" style="font-size: 11.58px;">unix</a> <a href="/tags/useCallback/" style="font-size: 10px;">useCallback</a> <a href="/tags/useReducer/" style="font-size: 10px;">useReducer</a>
         </div>
     </div>
 
