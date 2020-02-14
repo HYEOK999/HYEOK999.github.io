@@ -6,24 +6,26 @@
     
 
     
-    <title>ReactStudy-05 | HYEOK999&#39;s Blog</title>
+    <title>다시 공부하는 React -05- | HYEOK999&#39;s Blog</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="git,Web,coding,develop,TIL,algorithm,HTML,CSS,javascript,React,Programmers">
+        <meta name="keywords" content="git,Web,coding,develop,HTML,CSS,javascript,React">
     
-    <meta name="description" content="HYEOK999&apos;s IT Develop Blog">
-<meta name="keywords" content="git,Web,coding,develop,TIL,algorithm,HTML,CSS,javascript,React,Programmers">
+    <meta name="description" content="React Re-Study : 5 클래스형 컴포넌트의 단점 Basic Hooks useState useEffect 의존성 배열과 cleanup 의존성 배열을 안쓰고 인자 받기     Custom Hooks useHasMounted vs withHasMounted HOC Hook   Additional Hooks - 추가 훅 useReducer useMe">
+<meta name="keywords" content="git,Web,coding,develop,HTML,CSS,javascript,React">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ReactStudy-05">
+<meta property="og:title" content="다시 공부하는 React -05-">
 <meta property="og:url" content="https://hyeok999.github.io/2020/02/14/ReactStudy-05/index.html">
 <meta property="og:site_name" content="HYEOK999&#39;s Blog">
-<meta property="og:description" content="HYEOK999&apos;s IT Develop Blog">
+<meta property="og:description" content="React Re-Study : 5 클래스형 컴포넌트의 단점 Basic Hooks useState useEffect 의존성 배열과 cleanup 의존성 배열을 안쓰고 인자 받기     Custom Hooks useHasMounted vs withHasMounted HOC Hook   Additional Hooks - 추가 훅 useReducer useMe">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-02-14T14:12:51.619Z">
+<meta property="og:image" content="https://user-images.githubusercontent.com/31315644/72333302-e6ccdc80-36fe-11ea-9b80-e00b0d5f5847.png">
+<meta property="og:updated_time" content="2020-02-14T14:18:48.271Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ReactStudy-05">
-<meta name="twitter:description" content="HYEOK999&apos;s IT Develop Blog">
+<meta name="twitter:title" content="다시 공부하는 React -05-">
+<meta name="twitter:description" content="React Re-Study : 5 클래스형 컴포넌트의 단점 Basic Hooks useState useEffect 의존성 배열과 cleanup 의존성 배열을 안쓰고 인자 받기     Custom Hooks useHasMounted vs withHasMounted HOC Hook   Additional Hooks - 추가 훅 useReducer useMe">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/31315644/72333302-e6ccdc80-36fe-11ea-9b80-e00b0d5f5847.png">
     
     <link rel="canonical" href="https://hyeok999.github.io/2020/02/14/reactstudy-05/">
     
@@ -93,7 +95,7 @@ ga('send', 'pageview');
                                     <a class="main-nav-list-link" href="/">Home</a>
                                 </li>
                             
-                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/CSS/">CSS</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/CSS/GIT/">GIT</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/">Develop</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/CSS/">CSS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/GIT/">GIT</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/GraphQL/">GraphQL</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/IT-Event/">IT Event</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Project/">Project</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/React/">React</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Tips/">Tips</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/TypeScript/">TypeScript</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/">TIL</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Algorithm-Quiz/">Algorithm & Quiz</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/React/">React</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/React-Preview/">React-Preview</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/linux/">linux</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/etc/">etc</a></li></ul>
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/">Develop</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/CSS/">CSS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/GIT/">GIT</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/GraphQL/">GraphQL</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/IT-Event/">IT Event</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Project/">Project</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/React/">React</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Tips/">Tips</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/TypeScript/">TypeScript</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/">TIL</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Algorithm-Quiz/">Algorithm & Quiz</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/React/">React</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/React-Preview/">React-Preview</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/linux/">linux</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/etc/">etc</a></li></ul>
                                     
                                 <li class="main-nav-list-item">
                                     <a class="main-nav-list-link" href="https://about.me/iasg2004" rel="external nofollow noopener noreferrer" target="_blank">About</a>
@@ -152,7 +154,7 @@ ga('send', 'pageview');
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/CSS/">CSS</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/">GIT</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/">IT Event</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/">Java</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/">Javascript</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/">Project</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/">React</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/">Tips</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/">Algorithm & Quiz</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/">HTML&CSS</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/">Javascript</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/Javascript-Preview/">Javascript-Preview</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/Javascript-Preview/React/">React</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/Javascript-Preview/React/React-Preview/">React-Preview</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/Javascript-Preview/React/React-Preview/linux/">linux</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/Javascript-Preview/React/React-Preview/linux/etc/">etc</a>
+    <a class="page-title-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/TIL/React/">React</a>
     </h1>
 </div>
 
@@ -164,7 +166,7 @@ ga('send', 'pageview');
                 
     
         <h1 class="article-title" itemprop="name">
-        ReactStudy-05
+        다시 공부하는 React -05-
         </h1>
     
 
@@ -175,7 +177,7 @@ ga('send', 'pageview');
                 
     <div class="article-date">
         <a href="/2020/02/14/ReactStudy-05/" class="article-date">
-            <time datetime="2020-02-14T14:12:51.000Z" itemprop="datePublished">2020-02-14</time>
+            <time datetime="2020-02-14T11:42:53.000Z" itemprop="datePublished">2020-02-14</time>
         </a>
     </div>
 
@@ -184,14 +186,343 @@ ga('send', 'pageview');
                 
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/CSS/">CSS</a>, <a class="tag-link" href="/tags/HTML/">HTML</a>, <a class="tag-link" href="/tags/Programmers/">Programmers</a>, <a class="tag-link" href="/tags/React/">React</a>, <a class="tag-link" href="/tags/TIL/">TIL</a>, <a class="tag-link" href="/tags/Web/">Web</a>, <a class="tag-link" href="/tags/algorithm/">algorithm</a>, <a class="tag-link" href="/tags/coding/">coding</a>, <a class="tag-link" href="/tags/develop/">develop</a>, <a class="tag-link" href="/tags/git/">git</a>, <a class="tag-link" href="/tags/javascript/">javascript</a>
+        <a class="tag-link" href="/tags/CSS/">CSS</a>, <a class="tag-link" href="/tags/HTML/">HTML</a>, <a class="tag-link" href="/tags/React/">React</a>, <a class="tag-link" href="/tags/Web/">Web</a>, <a class="tag-link" href="/tags/coding/">coding</a>, <a class="tag-link" href="/tags/develop/">develop</a>, <a class="tag-link" href="/tags/git/">git</a>, <a class="tag-link" href="/tags/javascript/">javascript</a>
     </div>
 
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <p><img src="https://user-images.githubusercontent.com/31315644/72333302-e6ccdc80-36fe-11ea-9b80-e00b0d5f5847.png" alt="React2-Thumbnail"></p>
+<hr>
+<h1 id="React-Re-Study-5"><a href="#React-Re-Study-5" class="headerlink" title="React Re-Study : 5"></a>React Re-Study : 5</h1><ul>
+<li><a href="#a1">클래스형 컴포넌트의 단점</a></li>
+<li><a href="#a2">Basic Hooks</a><ul>
+<li><a href="#a3">useState</a></li>
+<li><a href="#a4">useEffect</a><ul>
+<li><a href="#a5">의존성 배열과 cleanup</a></li>
+<li><a href="#a6">의존성 배열을 안쓰고 인자 받기</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#a7">Custom Hooks</a></li>
+<li><a href="#a8">useHasMounted vs withHasMounted</a><ul>
+<li><a href="#a9">HOC</a></li>
+<li><a href="#a10">Hook</a></li>
+</ul>
+</li>
+<li><a href="#a11">Additional <em>Hooks</em> - 추가 훅</a><ul>
+<li><a href="#a12">useReducer</a></li>
+<li><a href="#a13">useMemo</a></li>
+<li><a href="#a14">ReactMemo &amp; useCallback</a></li>
+<li><a href="#a15">createRef vs useRef</a></li>
+</ul>
+</li>
+<li><a href="#a16">하위 컴포넌트를 변경하기</a></li>
+<li><a href="#a17">상위 컴포넌트를 변경하기</a></li>
+<li><a href="#a18">하위 컴포넌트 전체에 데이터를 공유하는 법</a><ul>
+<li><a href="#a19">Context API, useContext</a></li>
+<li><a href="#a20">Set - 최상위 컴포넌트</a></li>
+<li><a href="#a21">Get - Consumer</a></li>
+<li><a href="#a22">Get - 클래스로 하는 방법</a></li>
+<li><a href="#c1">Get - functional로 하는 방법 (hook)</a></li>
+</ul>
+</li>
+</ul>
+<br>
+
+<hr>
+<h2 id="React-Study-with-Mark-Hooks-amp-Context"><a href="#React-Study-with-Mark-Hooks-amp-Context" class="headerlink" title="React Study with Mark - Hooks &amp; Context -"></a>React Study with Mark - Hooks &amp; Context -</h2><br>
+
+<h3 id="클래스형-컴포넌트의-단점"><a href="#클래스형-컴포넌트의-단점" class="headerlink" title="클래스형 컴포넌트의 단점 "></a>클래스형 컴포넌트의 단점 <a id="a1"></a></h3><ul>
+<li>컴포넌트 사이에서 상태와 관련된 로직을 재사용하기 어렵다.<ul>
+<li>컨테이너 방식 말고, 상태와 관련된 로직</li>
+</ul>
+</li>
+<li>복잡한 컴포넌트들은 이해하기 어렵다.</li>
+<li>Class 는 사람과 기계를 혼동시킨다.<ul>
+<li>컴파일 단계에서 코드를 최적화하기 어렵게 만든다.</li>
+</ul>
+</li>
+<li><code>this.state</code> 는 로직에서 레퍼런스를 공유하기 때문에 문제가 발생할 수 있다.</li>
+</ul>
+<br>
+
+<h3 id="Basic-Hooks"><a href="#Basic-Hooks" class="headerlink" title="Basic Hooks "></a>Basic Hooks <a id="a2"></a></h3><ul>
+<li>useState</li>
+<li>useEffect</li>
+<li><a href="#c1">useContext</a></li>
+</ul>
+<p>Hook이 나오기 전에는</p>
+<ul>
+<li><strong>Functional Component = Stateless Component</strong></li>
+</ul>
+<p>Hook이 나온 이후에는</p>
+<ul>
+<li><p><strong>Functional Component != Stateless Component</strong></p>
+</li>
+<li><p><strong>Stateless Component =&gt; Stateless Functional Component</strong></p>
+</li>
+</ul>
+<br>
+
+<h4 id="useState"><a href="#useState" class="headerlink" title="useState "></a>useState <a id="a3"></a></h4><blockquote>
+<p>state 를 대체 할 수 있다.</p>
+</blockquote>
+<ol>
+<li>숫자, 문자열등의 원시값을 상태로 가지고 있을 경우</li>
+</ol>
+<p><code>const [count, setCount] = useState(0);</code></p>
+<p><code>const [스테이트 값, 스테이트 변경 함수] = useState(스테이트 초기값);</code></p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; useState &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> Example2 = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> [count, setCount] = useState(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">click</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    setCount(count + <span class="number">1</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;p&gt;You clicked &#123;count&#125; times&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">      &lt;button onClick=&#123;click&#125;&gt;Click me&lt;/</span>button&gt;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">export default Example2;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<ol start="2">
+<li>객체나 배열등의 참조값을 상태로 가지고 있을 경우</li>
+</ol>
+<p><code>const [state, setState] = useState({count: 0});</code></p>
+<p><code>const [스테이트 값, 스테이트 변경 함수] = useState(스테이트 초기값);</code></p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; useState &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> Example3 = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> [state, setState] = useState(&#123; <span class="attr">count</span>: <span class="number">0</span> &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">click</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    setState(&#123; <span class="attr">count</span>: state.count + <span class="number">1</span> &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;p&gt;You clicked &#123;state.count&#125; times&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">      &lt;button onClick=&#123;click&#125;&gt;Click me&lt;/</span>button&gt;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">export default Example3;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="useEffect"><a href="#useEffect" class="headerlink" title="useEffect "></a>useEffect <a id="a4"></a></h4><blockquote>
+<p>라이프 사이클 훅을 대체 할 수 있다.</p>
+</blockquote>
+<ul>
+<li>componentDidMount : 렌더 직후</li>
+<li>componentDidUpdate :state, props가 변경되었을 때</li>
+<li>componentWillUnmount : 최초 마운트 됐을 때</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; useState, useEffect &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> Example5 = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> [count, setCount] = useState(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">  useEffect(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'componentDidMount &amp; componentDidUpdate'</span>, count); <span class="comment">// ComponentDidMount</span></span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">click</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    setCount(count + <span class="number">1</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;p&gt;You clicked &#123;count&#125; times&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">      &lt;button onClick=&#123;click&#125;&gt;Click me&lt;/</span>button&gt;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">export default Example5;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h5 id="의존성-배열과-cleanup"><a href="#의존성-배열과-cleanup" class="headerlink" title="의존성 배열과 cleanup "></a>의존성 배열과 cleanup <a id="a5"></a></h5><ul>
+<li>props가 바뀌거나 state가 바뀔 경우에만 다시 렌더되므로 dependency 배열 안에는 props 와 state를 넣을 수 있다.</li>
+<li>dependency로 관리하므로 componentDidUpdate와 완전히 같지는 않다.<ul>
+<li>depenency는 배열 형태로 작성한다.</li>
+<li>빈배열(<code>[]</code>)일 때는 렌더 될 때 useEffect가 게속 일어난다.</li>
+<li>아예 dependency를 작성하지 않을 경우 어떠한 변경이 일어나도 useEffect는 한 번밖에 실행이 안되므로 cleanup이 단 한 번만 일어남</li>
+</ul>
+</li>
+<li>return 내부를 componentWillUnmount처럼 사용할 경우에는 의존성 배열이 빈 배열이어야 한다.</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">  useEffect(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="comment">// componentDidUpdate</span></span><br><span class="line">  &#125;, [count])</span><br><span class="line"></span><br><span class="line"><span class="comment">// cleanup 단 한 번만 실행</span></span><br><span class="line">  useEffect(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="comment">// componentDidMount &amp; componentDidUpdate</span></span><br><span class="line">      <span class="keyword">return</span> <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="comment">// cleanup</span></span><br><span class="line">      &#125;</span><br><span class="line">  &#125;, [])</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h5 id="의존성-배열을-안쓰고-인자-받기"><a href="#의존성-배열을-안쓰고-인자-받기" class="headerlink" title="의존성 배열을 안쓰고 인자 받기 "></a>의존성 배열을 안쓰고 인자 받기 <a id="a6"></a></h5><ul>
+<li>기존에는 의존성 배열을 입력하라는 warning이 뜬다.</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> [count, setCount] = useState(<span class="number">0</span>);</span><br><span class="line">useEffect(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">	setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">		setCount(count + <span class="number">1</span>); <span class="comment">// 이렇게 쓸 경우</span></span><br><span class="line">	&#125;, <span class="number">1000</span>)</span><br><span class="line">&#125;, [count]) <span class="comment">// count를 의존성 배열로 넣어줘야만 한다.</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>의존성 배열을 쓰지 않으려면 다음과 같이 한다.</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> [count, setCount] = useState(<span class="number">0</span>);</span><br><span class="line">useEffect(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">	setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">		setCount(<span class="function"><span class="params">count</span> =&gt;</span> count + <span class="number">1</span>); <span class="comment">// 이렇게 쓸 경우</span></span><br><span class="line">	&#125;, <span class="number">1000</span>)</span><br><span class="line">&#125;, []) <span class="comment">// count를 의존성 배열로 넣지 않아도 됨</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="Custom-Hooks"><a href="#Custom-Hooks" class="headerlink" title="Custom Hooks "></a>Custom Hooks <a id="a7"></a></h3><p><code>useSomething</code></p>
+<blockquote>
+<p>리액트를 사용할 수 있는 곳 : 컴포넌트 안, 훅 안</p>
+</blockquote>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// hooks/useWindowWidth.jsx</span></span><br><span class="line"><span class="keyword">import</span> &#123; useState, useEffect &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 현재 켜져있는 브라우저의 가로 길이를 알아본다.</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">useWindowWidth</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 여기서 초기화</span></span><br><span class="line">  <span class="comment">// 초기 가로값 설정</span></span><br><span class="line">  <span class="keyword">const</span> [width, setWidth] = useState(<span class="built_in">window</span>.innerWidth);</span><br><span class="line">  <span class="comment">// 한 번만 실행되도록</span></span><br><span class="line">  useEffect(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> resize = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      setWidth(<span class="built_in">window</span>.innerWidth);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">window</span>.addEventListener(<span class="string">'resize'</span>, resize);</span><br><span class="line">    <span class="comment">// 더 이상 사용되지 않을 때 처리.</span></span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">window</span>.removeEventListener(<span class="string">'resize'</span>, resize)</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;, []);</span><br><span class="line">  <span class="keyword">return</span> width;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// App.js</span></span><br><span class="line"><span class="keyword">const</span> width = useWindowWidth();</span><br><span class="line">&lt;p&gt;&#123;width&#125;&lt;<span class="regexp">/p&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>Q : 의존성 배열이 빈칸이므로 단 한 번만 실행되는데 어떻게 브라우저 창이 바뀔때마다 width값이 바뀌는가?</p>
+<p>A :<code>window.addEventListner</code> 와 같은 이벤트 핸들러는 React가 아니라 DOM에 <code>addEventListener</code>를 걸어놨으므로 DOM이 변경되면 적용 된다.</p>
+<br>
+
+<h3 id="useHasMounted-vs-withHasMounted"><a href="#useHasMounted-vs-withHasMounted" class="headerlink" title="useHasMounted vs withHasMounted "></a>useHasMounted vs withHasMounted <a id="a8"></a></h3><blockquote>
+<p>Hook 과 HOC의 차이점을 알아본다.</p>
+</blockquote>
+<h4 id="HOC"><a href="#HOC" class="headerlink" title="HOC "></a>HOC <a id="a9"></a></h4><p>HOC는 컴포넌트를 받아서 새로운 컴포넌트를 리턴 한다.(선물세트)</p>
+<ul>
+<li>App을 withHasMounted로 감쌀 경우 App이 선물세트 안에 들어있다.</li>
+<li>HOC의 단점 : Wrapper Hell을 볼 가능성이 높다.</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// withHasMount.js</span></span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">withHasMounted</span>(<span class="params">Component</span>) </span>&#123;</span><br><span class="line">  <span class="class"><span class="keyword">class</span> <span class="title">WrappedComponent</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">    state = &#123; <span class="attr">hasMounted</span>: <span class="literal">false</span> &#125;;</span><br><span class="line"></span><br><span class="line">    componentDidMount() &#123;</span><br><span class="line">      <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">        hasMounted: <span class="literal">true</span></span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    render() &#123;</span><br><span class="line">      <span class="keyword">const</span> &#123; hasMounted &#125; = <span class="keyword">this</span>.state;</span><br><span class="line">      <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">Component</span> &#123;<span class="attr">...this.props</span>&#125; <span class="attr">hasMounted</span>=<span class="string">&#123;hasMounted&#125;</span> /&gt;</span></span></span><br><span class="line"><span class="xml">    &#125;</span></span><br><span class="line"><span class="xml">  &#125;</span></span><br><span class="line"><span class="xml">  WrappedComponent.displayName = `WrappedComponent($&#123;Component.name&#125;)`;</span></span><br><span class="line"><span class="xml">  return WrappedComponent;</span></span><br><span class="line"><span class="xml">&#125;</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">// App.js</span></span><br><span class="line"><span class="xml">function App(&#123; hasMounted &#125;) &#123;</span></span><br><span class="line"><span class="xml">		...</span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;hasMounted &amp;&amp; 'Mounted'&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="xml">		...    </span></span><br><span class="line"><span class="xml">&#125;</span></span><br><span class="line"><span class="xml">export default withHasMounted(App);</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="Hook"><a href="#Hook" class="headerlink" title="Hook "></a>Hook <a id="a10"></a></h4><ul>
+<li>HOC의 단점 : Wrapper Hell을 볼 가능성이 높다.</li>
+<li>따라서, Hook을 사용한다.</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// useHasMount.js</span></span><br><span class="line"><span class="keyword">import</span> &#123; useState, useEffect &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">useHasMounted</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 초기화</span></span><br><span class="line">  <span class="keyword">const</span> [HasMounted, setHasMounted] = useState(<span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 변경점</span></span><br><span class="line">  useEffect(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// componentDidMount와 같은 시점에 작동</span></span><br><span class="line">    setHasMounted(<span class="literal">true</span>);</span><br><span class="line">  &#125;, []);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> HasMounted;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// App.js</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">App</span>(<span class="params">&#123; hasMounted &#125;</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">const</span> hasMounted2 = useHasMounted();</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">  ....</span><br><span class="line">     &lt;p&gt;&#123;hasMounted2 &amp;&amp; <span class="string">'Mounted'</span>&#125;&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">	)</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="Additional-Hooks-추가-훅"><a href="#Additional-Hooks-추가-훅" class="headerlink" title="Additional Hooks - 추가 훅 "></a>Additional Hooks - 추가 훅 <a id="a11"></a></h3><ul>
+<li>useReducer</li>
+<li>useCallback, useMemo</li>
+<li>useRef</li>
+</ul>
+<br>
+
+<h4 id="useReducer"><a href="#useReducer" class="headerlink" title="useReducer "></a>useReducer <a id="a12"></a></h4><p>다음의 경우 사용된다.</p>
+<ol>
+<li>다수의 하윗값을 포함하는 복잡한 정적 로직을 만드는 경우</li>
+<li>다음 state가 이전 state에 의존적인 경우</li>
+</ol>
+<ul>
+<li><code>reducer</code> 는 즉시 실행 순수 함수</li>
+<li>외부환경에 영향을 받지않는다.</li>
+<li>상태가 일정해야한다.</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; useReducer &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 여기서 인자로 받는 state는 previous state(이전 상태 값)</span></span><br><span class="line"><span class="keyword">const</span> reducer = <span class="function">(<span class="params">state, action</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (action.type === <span class="string">'PLUS'</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      ...state,</span><br><span class="line">      count: state.count + <span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> state;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> initialState = &#123;</span><br><span class="line">  count: <span class="number">0</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> Example8 = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> [state, dispatch] = useReducer(reducer, initialState);</span><br><span class="line">  <span class="comment">// reducer는 함수고, 즉시 실행 순수 함수이다.</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">click</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    dispatch(&#123;</span><br><span class="line">      type: <span class="string">'PLUS'</span></span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;p&gt;&#123;state.count&#125;&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">      &lt;button onClick=&#123;click&#125;&gt;Click me&lt;/</span>button&gt;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">export default Example8;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="useMemo"><a href="#useMemo" class="headerlink" title="useMemo   "></a>useMemo   <a id="a13"></a></h4><ul>
+<li>최적화할 때 주로 사용된다.</li>
+<li>의존성을 통해 특정 값에 대한 변화의 조건을 줄 수있다.</li>
+<li>전달된 함수는 렌더링 중에 실행된다는 것.</li>
+<li>React.memo와 다르다. </li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 리듀서 + 최적화</span></span><br><span class="line"><span class="keyword">import</span> React, &#123; useState, useMemo &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> Example9 = <span class="function"><span class="params">props</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// input 태그는 컨트롤드 컴포넌트로 이용</span></span><br><span class="line">  <span class="keyword">const</span> [value, setValue] = useState(<span class="string">''</span>);</span><br><span class="line">  <span class="keyword">const</span> [persons] = useState([</span><br><span class="line">    &#123; <span class="attr">name</span>: <span class="string">'Kim'</span>, <span class="attr">age</span>: <span class="number">26</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">name</span>: <span class="string">'June'</span>, <span class="attr">age</span>: <span class="number">27</span> &#125;,</span><br><span class="line">  ]);</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">change</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">    setValue(e.target.value);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">getSum</span>(<span class="params">persons</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(persons));</span><br><span class="line">    <span class="keyword">return</span> persons.map(<span class="function"><span class="params">person</span> =&gt;</span> person.age).reduce(<span class="function">(<span class="params">l, r</span>) =&gt;</span> l + r, <span class="number">0</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// const sum = getSum(persons);</span></span><br><span class="line">  <span class="keyword">const</span> sum = useMemo(<span class="function"><span class="params">()</span> =&gt;</span> getSum(persons), [persons]); <span class="comment">// 의존성 배열 입력</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;br /&gt;</span><br><span class="line">      &lt;input value=&#123;value&#125; onChange=&#123;change&#125; /&gt;</span><br><span class="line">      &lt;p&gt;&#123;sum&#125;&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>div&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> Example9;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="React-Memo-amp-useCallback"><a href="#React-Memo-amp-useCallback" class="headerlink" title="React.Memo &amp; useCallback   "></a>React.Memo &amp; useCallback   <a id="a14"></a></h4><ul>
+<li>함수가 매번 새로 생성되는 경우, 최적화의 어려움</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; useState &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> Person = <span class="function">(<span class="params">&#123; name, age &#125;</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(name, age);</span><br><span class="line">  <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">li</span>&gt;</span>&#123;name&#125; &#123;age&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> Example10 = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// input을 controlled component로 관리할 것</span></span><br><span class="line">  <span class="keyword">const</span> [value, setValue] = useState(<span class="string">''</span>);</span><br><span class="line">  <span class="keyword">const</span> [persons] = useState([</span><br><span class="line">    &#123; <span class="attr">name</span>: <span class="string">'Kim'</span>, <span class="attr">age</span>: <span class="number">27</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">name</span>: <span class="string">'JH'</span>, <span class="attr">age</span>: <span class="number">29</span> &#125;</span><br><span class="line">  ]);</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">change</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">    setValue(e.target.value);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;input value=&#123;value&#125; onChange=&#123;change&#125; /&gt;</span><br><span class="line">      &lt;ul&gt;</span><br><span class="line">        &#123;persons.map(<span class="function">(<span class="params">person, i</span>) =&gt;</span> <span class="xml"><span class="tag">&lt;<span class="name">Person</span> <span class="attr">key</span>=<span class="string">&#123;i&#125;</span> <span class="attr">name</span>=<span class="string">&#123;person.name&#125;</span> <span class="attr">age</span>=<span class="string">&#123;person.age&#125;/</span>&gt;</span>)&#125;</span></span><br><span class="line"><span class="xml">      <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span></span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">export default Example10;</span></span><br></pre></td></tr></table></figure>
+
+<p>onChange이벤트를 걸어서 input에 입력하여 Person내부에 써놓은 콘솔로그를 계속 찍는다.</p>
+<ul>
+<li>Person에게 주는 input이 게속 바뀌니까 콘솔이 찍히는 상황 (props가 변경되었다고 판단했기 때문)</li>
+<li>따라서 React.memo를 사용한다.</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Person = React.memo(<span class="function">(<span class="params">&#123; name, age &#125;</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(name, age);</span><br><span class="line">  <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">li</span>&gt;</span>&#123;name&#125;, &#123;age&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>React.memo를 사용하면 함수 자체를 비교를 한다.</li>
+<li>React.memo는 파라미터로 받은 함수가 하나로 변경이 될 경우 실행해버린다.</li>
+<li>문제는, input에 특정 값을 입력할 경우 set에 의해 객체가 변경된다.</li>
+<li>객체는 참조값이기 떄문에 한개만 변경되어도 객체 자체가 새롭게 메모리에 작성되기 때문에 콘솔이 게속 찍히게 된다.</li>
+<li>따라서 useCallback을 이용하여 값이 같을 경우 변경을 막고 <code>&lt;li&gt;</code>부분만 보여주도록 하게 해보자.</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">  <span class="comment">// function click() &#123;&#125; // 로그 계속 찍힘</span></span><br><span class="line">  <span class="keyword">const</span> click = useCallback(<span class="function"><span class="params">index</span> =&gt;</span> &#123;</span><br><span class="line">    setPersons(<span class="function"><span class="params">persons</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">const</span> newPersons = [...persons];</span><br><span class="line">      newPersons[index].age = newPersons[index].age + <span class="number">1</span>;</span><br><span class="line">      <span class="keyword">return</span> newPersons;</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;, []); </span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> (</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;input value=&#123;value&#125; onChange=&#123;change&#125; /&gt;</span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">      &#123;persons.map(<span class="function">(<span class="params">person, i</span>) =&gt;</span> <span class="xml"><span class="tag">&lt;<span class="name">Person</span> <span class="attr">index</span>=<span class="string">&#123;i&#125;</span> <span class="attr">key</span>=<span class="string">&#123;i&#125;</span> <span class="attr">name</span>=<span class="string">&#123;person.name&#125;</span> <span class="attr">age</span>=<span class="string">&#123;person.age&#125;</span> <span class="attr">click</span>=<span class="string">&#123;click&#125;/</span>&gt;</span>)&#125;</span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span></span><br><span class="line">  &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">);</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="createRef-vs-useRef"><a href="#createRef-vs-useRef" class="headerlink" title="createRef vs useRef   "></a>createRef vs useRef   <a id="a15"></a></h4><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; useRef, useEffect, useState &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> Example11 = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> [count, setCount] = useState(<span class="number">0</span>);</span><br><span class="line">  <span class="keyword">const</span> inputCreateRef = React.createRef();</span><br><span class="line">  <span class="keyword">const</span> inputUseRef = useRef();</span><br><span class="line">  <span class="built_in">console</span>.log(inputCreateRef.current);</span><br><span class="line">  <span class="built_in">console</span>.log(inputUseRef.current);</span><br><span class="line">  useEffect(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      setCount(<span class="function"><span class="params">count</span> =&gt;</span> count + <span class="number">1</span>);</span><br><span class="line">    &#125;, <span class="number">1000</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;p&gt;&#123;count&#125;&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">      &lt;input ref=&#123;inputCreateRef&#125; /</span>&gt;</span><br><span class="line">      &lt;input ref=&#123;inputUseRef&#125; /&gt;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">export default Example11;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>count를 변경시키면 return이 전부 재 렌더됨</p>
+</li>
+<li><p>둘다 DOM요소등을 직접 참조할 수 있다.</p>
+</li>
+<li><p>차이점</p>
+<p><strong>useRef는</strong></p>
+<ol>
+<li>current가 변경이 되어도 re-render가 되지 않는다.</li>
+<li>컴포넌트가 마운트 될 때 참조값을 그대로 유지한다.</li>
+<li>재 렌더링 되더라도 이전 reference를 가지고 있다.</li>
+</ol>
+<p><strong>createRef는</strong> </p>
+<ol>
+<li>current가 변경이 되면 re-render가 된다.</li>
+<li>컴포넌트가 마운트 될 때마다 참조값을 새롭게 할당하고, 언마운트 될 경우 null이 들어간다.</li>
+</ol>
+</li>
+</ul>
+<br>
+
+<h3 id="하위-컴포넌트를-변경하기"><a href="#하위-컴포넌트를-변경하기" class="headerlink" title="하위 컴포넌트를 변경하기   "></a>하위 컴포넌트를 변경하기   <a id="a16"></a></h3><blockquote>
+<p>A - B - C - D - E</p>
+</blockquote>
+<ul>
+<li><p>A 의 button 를 클릭하여 E 를 변경하기</p>
+<ol>
+<li>컴포넌트에서 button 에 onClick 이벤트를 만들고,</li>
+<li>button 을 클릭하면,  의 state 를 변경하여,  로 내려주는 props 를 변경</li>
+<li>B의 props 가 변경되면,  의 props 에 전달</li>
+<li>C의 props 가 변경되면,  의 props 로 전달</li>
+<li>D의 props 가 변경되면,  의 props 로 전달</li>
+</ol>
+<br>
+
+</li>
+</ul>
+<h3 id="상위-컴포넌트를-변경하기"><a href="#상위-컴포넌트를-변경하기" class="headerlink" title="상위 컴포넌트를 변경하기   "></a>상위 컴포넌트를 변경하기   <a id="a17"></a></h3><blockquote>
+<p>A - B - C - D - E</p>
+</blockquote>
+<ul>
+<li>E 의 button 를 클릭하여 A 의 p 를 변경하려면<ol>
+<li>A에 함수를 만들고, 그 함수 안에 state 를 변경하도록 구현, 그 변경으로 인해 p 안의 내용을 변경.</li>
+<li>만들어진 함수를 props 에 넣어서,  로 전달</li>
+<li>B의 props 의 함수를  의 props 로 전달</li>
+<li>C의 props 의 함수를  의 props 로 전달</li>
+<li>D의 Props 의 함수를  의 props 로 전달,  에서 클릭하면 props 로 받은 함수를 실행</li>
+</ol>
+</li>
+</ul>
+<br>
+
+<h3 id="하위-컴포넌트-전체에-데이터를-공유하는-법"><a href="#하위-컴포넌트-전체에-데이터를-공유하는-법" class="headerlink" title="하위 컴포넌트 전체에 데이터를 공유하는 법   "></a>하위 컴포넌트 전체에 데이터를 공유하는 법   <a id="a18"></a></h3><h4 id="Context-API-useContext"><a href="#Context-API-useContext" class="headerlink" title="Context API, useContext    "></a>Context API, useContext    <a id="a19"></a></h4><blockquote>
+<p>하위 컴포넌트 전체에 데이터를 공유하기</p>
+</blockquote>
+<ul>
+<li>데이터를 Set하는 것<ul>
+<li>가장 상위 컴포넌트 → 프로바이더</li>
+</ul>
+</li>
+<li>데이터를 get하는 것<ul>
+<li>모든 하위 컴포넌트에서 접근 가능<ol>
+<li>컨슈머로 하는 방법</li>
+<li>클래스 컴포넌트의 this.context로 하는 방법</li>
+<li>펑셔널 컴포넌트의 useContext로 하는 방법</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<br>
+
+<h4 id="Set-최상위-컴포넌트"><a href="#Set-최상위-컴포넌트" class="headerlink" title="Set - 최상위 컴포넌트   "></a>Set - 최상위 컴포넌트   <a id="a20"></a></h4><ol>
+<li>일단 컨텍스트를 생성한다.</li>
+<li>컨텍스트, 프로바이더 를 사용한다.</li>
+<li>value 를 사용</li>
+</ol>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// /contexts/PersonContext.js</span></span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> PersonContext = React.createContext();</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> PersonContext;</span><br><span class="line"></span><br><span class="line"><span class="comment">// index.js</span></span><br><span class="line"><span class="keyword">const</span> persons = [</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="number">0</span>, <span class="attr">name</span>: <span class="string">'Mark'</span>, <span class="attr">age</span>: <span class="number">38</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="number">1</span>, <span class="attr">name</span>: <span class="string">'Hanna'</span>, <span class="attr">age</span>: <span class="number">27</span> &#125;,</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line">ReactDOM.render(</span><br><span class="line">  &lt;PersonContext.Provider value=&#123;persons&#125;&gt;</span><br><span class="line">    &lt;App /&gt;</span><br><span class="line">  &lt;<span class="regexp">/PersonContext.Provider&gt;</span></span><br><span class="line"><span class="regexp">, document.getElementById('root'));</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="Get-Consumer"><a href="#Get-Consumer" class="headerlink" title="Get - Consumer   "></a>Get - Consumer   <a id="a21"></a></h4><ol>
+<li>컨텍스트를 가져온다.</li>
+<li>컨텍스트.컨슈머를 사용한다.</li>
+<li>value 를 사용</li>
+</ol>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ./components/Example1.js</span></span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> PersonContext <span class="keyword">from</span> <span class="string">'../contexts/PersonContext'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> Example1 = <span class="function"><span class="params">()</span> =&gt;</span> (</span><br><span class="line">  &lt;PersonContext.Consumer&gt;</span><br><span class="line">    &#123;value =&gt; <span class="xml"><span class="tag">&lt;<span class="name">ul</span>&gt;</span>&#123;JSON.stringify(value)&#125;<span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span>&#125;</span><br><span class="line">  &lt;<span class="regexp">/PersonContext.Consumer&gt;</span></span><br><span class="line"><span class="regexp">);</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">export default Example1;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/ index.js</span></span><br><span class="line"><span class="regexp">import React from 'react';</span></span><br><span class="line"><span class="regexp">import Example1 from './</span>components/Example1<span class="string">';</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">function App() &#123;</span></span><br><span class="line"><span class="string">  return (</span></span><br><span class="line"><span class="string">    &lt;div className="App"&gt;</span></span><br><span class="line"><span class="string">      &lt;header className="App-header"&gt;</span></span><br><span class="line"><span class="string">        &lt;Example1 /&gt;</span></span><br><span class="line"><span class="string">      &lt;/header&gt;</span></span><br><span class="line"><span class="string">    &lt;/div&gt;</span></span><br><span class="line"><span class="string">  );</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">export default App;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="Get-클래스로-하는-방법"><a href="#Get-클래스로-하는-방법" class="headerlink" title="Get - 클래스로 하는 방법    "></a>Get - 클래스로 하는 방법    <a id="a22"></a></h4><ol>
+<li>static contextType 에 컨텍스트를 설정한다.</li>
+<li>this.context =&gt; value 이다.</li>
+</ol>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ./components/Example2.js</span></span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> PersonContext <span class="keyword">from</span> <span class="string">'../contexts/PersonContext'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">Example2</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">static</span> contextType = PersonContext;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">ul</span>&gt;</span>&#123;JSON.stringify(this.context)&#125;<span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 5번째 줄 대신 이렇게 사용할 수도 있음</span></span><br><span class="line"><span class="comment">// Example2.contextType = PersonContext;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// index.js</span></span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> Example2 <span class="keyword">from</span> <span class="string">'./components/Example2'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">App</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div className=<span class="string">"App"</span>&gt;</span><br><span class="line">      &lt;header className=<span class="string">"App-header"</span>&gt;</span><br><span class="line">        &lt;Example2 /&gt;</span><br><span class="line">      &lt;<span class="regexp">/header&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>div&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> App;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>치명적인 단점 : 하나밖에 못 쓴다.<ul>
+<li>HOC를 활용하면 여러개를 사용할 수 있지만 번거롭다.</li>
+</ul>
+</li>
+</ul>
+<br>
+
+<h4 id="Get-functional로-하는-방법-hook"><a href="#Get-functional로-하는-방법-hook" class="headerlink" title="Get - functional로 하는 방법 (hook) "></a>Get - functional로 하는 방법 (hook) <a id="c1"></a></h4><ol>
+<li>useContext 로 컨텍스트를 인자로 호출한다.</li>
+<li>useContext 의 리턴이 value 이다.</li>
+</ol>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ./components/Example3.js</span></span><br><span class="line"><span class="keyword">import</span> React, &#123; useContext &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> PersonContext <span class="keyword">from</span> <span class="string">'../contexts/PersonContext'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> Example3 = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> value = useContext(PersonContext);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">ul</span>&gt;</span>&#123;JSON.stringify(value)&#125;<span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> Example3;</span><br><span class="line"></span><br><span class="line"><span class="comment">// index.js</span></span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> Example3 <span class="keyword">from</span> <span class="string">'./components/Example3'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">App</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div className=<span class="string">"App"</span>&gt;</span><br><span class="line">      &lt;header className=<span class="string">"App-header"</span>&gt;</span><br><span class="line">        &lt;Example3 /&gt;</span><br><span class="line">      &lt;<span class="regexp">/header&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>div&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> App;</span><br></pre></td></tr></table></figure>
+
+<br>
         </div>
         <footer class="article-footer">
             
@@ -268,16 +599,37 @@ ga('send', 'pageview');
             "@type": "Person",
             "name": "Jun Hyeok Kim"
         },
-        "headline": "ReactStudy-05",
-        "image": "https://hyeok999.github.io",
-        "keywords": "git Web coding develop TIL algorithm HTML CSS javascript React Programmers",
-        "genre": "CSS GIT IT Event Java Javascript Project React Tips TIL Algorithm & Quiz HTML&CSS Javascript Javascript-Preview React React-Preview linux etc",
+        "headline": "다시 공부하는 React -05-",
+        "image": "https://hyeok999.github.iohttps://user-images.githubusercontent.com/31315644/72333302-e6ccdc80-36fe-11ea-9b80-e00b0d5f5847.png",
+        "keywords": "git Web coding develop HTML CSS javascript React",
+        "genre": "TIL React",
         "datePublished": "2020-02-14",
         "dateCreated": "2020-02-14",
         "dateModified": "2020-02-14",
         "url": "https://hyeok999.github.io/2020/02/14/ReactStudy-05/",
-        "description": "",
-        "wordCount": 1
+        "description": "
+
+React Re-Study : 5
+클래스형 컴포넌트의 단점
+Basic Hooks
+useState
+useEffect
+의존성 배열과 cleanup
+의존성 배열을 안쓰고 인자 받기
+
+
+
+
+Custom Hooks
+useHasMounted vs withHasMounted
+HOC
+Hook
+
+
+Additional Hooks - 추가 훅
+useReducer
+useMe",
+        "wordCount": 3883
     }
 </script>
 
@@ -337,7 +689,7 @@ ga('send', 'pageview');
         <strong class="article-nav-caption">newer</strong>
         <p class="article-nav-title">
         
-            ReactStudy-06
+            다시 공부하는 React -06-
         
         </p>
         <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
@@ -360,7 +712,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/">GIT</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/">IT Event</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/">Java</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/">Javascript</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/">Project</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/">React</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/">Tips</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/">TIL</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/">Algorithm & Quiz</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/">HTML&CSS</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/">Javascript</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/Javascript-Preview/">Javascript-Preview</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/Javascript-Preview/React/">React</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/Javascript-Preview/React/React-Preview/">React-Preview</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/Javascript-Preview/React/React-Preview/linux/">linux</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/GIT/IT-Event/Java/Javascript/Project/React/Tips/TIL/Algorithm-Quiz/HTML-CSS/Javascript/Javascript-Preview/React/React-Preview/linux/etc/">etc</a><span class="category-list-count">2</span></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/">Develop</a><span class="category-list-count">54</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/CSS/">CSS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/GIT/">GIT</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/GraphQL/">GraphQL</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/IT-Event/">IT Event</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Java/">Java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Javascript/">Javascript</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Project/">Project</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/React/">React</a><span class="category-list-count">16</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Tips/">Tips</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/TypeScript/">TypeScript</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/">TIL</a><span class="category-list-count">195</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Algorithm-Quiz/">Algorithm & Quiz</a><span class="category-list-count">74</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript/">Javascript</a><span class="category-list-count">30</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a><span class="category-list-count">23</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/React/">React</a><span class="category-list-count">27</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/React-Preview/">React-Preview</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/linux/">linux</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/etc/">etc</a><span class="category-list-count">1</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/">Develop</a><span class="category-list-count">54</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/CSS/">CSS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/GIT/">GIT</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/GraphQL/">GraphQL</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/IT-Event/">IT Event</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Java/">Java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Javascript/">Javascript</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Project/">Project</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/React/">React</a><span class="category-list-count">16</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Tips/">Tips</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/TypeScript/">TypeScript</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/">TIL</a><span class="category-list-count">197</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Algorithm-Quiz/">Algorithm & Quiz</a><span class="category-list-count">74</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript/">Javascript</a><span class="category-list-count">30</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a><span class="category-list-count">23</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/React/">React</a><span class="category-list-count">29</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/React-Preview/">React-Preview</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/linux/">linux</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/etc/">etc</a><span class="category-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -386,8 +738,8 @@ ga('send', 'pageview');
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/CSS/">CSS</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/CSS/GIT/">GIT</a></p>
-                            <p class="item-title"><a href="/2020/02/14/ReactStudy-06/" class="title">ReactStudy-06</a></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/React/">React</a></p>
+                            <p class="item-title"><a href="/2020/02/14/ReactStudy-06/" class="title">다시 공부하는 React -06-</a></p>
                             <p class="item-date"><time datetime="2020-02-14T14:14:42.000Z" itemprop="datePublished">2020-02-14</time></p>
                         </div>
                     </li>
@@ -398,7 +750,7 @@ ga('send', 'pageview');
                             <a href="/2020/02/14/ReactStudy-05/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/72333302-e6ccdc80-36fe-11ea-9b80-e00b0d5f5847.png)" alt="다시 공부하는 React -05-" class="thumbnail-image"></span>
     
     
 </a>
@@ -406,9 +758,9 @@ ga('send', 'pageview');
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/CSS/">CSS</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/CSS/GIT/">GIT</a></p>
-                            <p class="item-title"><a href="/2020/02/14/ReactStudy-05/" class="title">ReactStudy-05</a></p>
-                            <p class="item-date"><time datetime="2020-02-14T14:12:51.000Z" itemprop="datePublished">2020-02-14</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/React/">React</a></p>
+                            <p class="item-title"><a href="/2020/02/14/ReactStudy-05/" class="title">다시 공부하는 React -05-</a></p>
+                            <p class="item-date"><time datetime="2020-02-14T11:42:53.000Z" itemprop="datePublished">2020-02-14</time></p>
                         </div>
                     </li>
                 
