@@ -12,18 +12,20 @@
     
         <meta name="keywords" content="git,Web,coding,develop,HTML,CSS,javascript,React">
     
-    <meta name="description" content="HYEOK999&apos;s IT Develop Blog">
+    <meta name="description" content="React Re-Study : 6 Flux  문제점   해결책  Redux 개요  Redux 만들기  Action - 액션  액션 생성자 리덕스의 액션은 어떤 일을 하는가? 액션의 준비과정   Reducer - 리듀서  createStore - 스토어를 만드는 함수  store 사용법   로직을 추가하기  action을 정의  action 생성자를 생성">
 <meta name="keywords" content="git,Web,coding,develop,HTML,CSS,javascript,React">
 <meta property="og:type" content="article">
 <meta property="og:title" content="다시 공부하는 React -06-">
 <meta property="og:url" content="https://hyeok999.github.io/2020/02/14/ReactStudy-06/index.html">
 <meta property="og:site_name" content="HYEOK999&#39;s Blog">
-<meta property="og:description" content="HYEOK999&apos;s IT Develop Blog">
+<meta property="og:description" content="React Re-Study : 6 Flux  문제점   해결책  Redux 개요  Redux 만들기  Action - 액션  액션 생성자 리덕스의 액션은 어떤 일을 하는가? 액션의 준비과정   Reducer - 리듀서  createStore - 스토어를 만드는 함수  store 사용법   로직을 추가하기  action을 정의  action 생성자를 생성">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-02-14T14:18:14.231Z">
+<meta property="og:image" content="https://user-images.githubusercontent.com/31315644/72333302-e6ccdc80-36fe-11ea-9b80-e00b0d5f5847.png">
+<meta property="og:updated_time" content="2020-02-14T14:21:54.138Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="다시 공부하는 React -06-">
-<meta name="twitter:description" content="HYEOK999&apos;s IT Develop Blog">
+<meta name="twitter:description" content="React Re-Study : 6 Flux  문제점   해결책  Redux 개요  Redux 만들기  Action - 액션  액션 생성자 리덕스의 액션은 어떤 일을 하는가? 액션의 준비과정   Reducer - 리듀서  createStore - 스토어를 만드는 함수  store 사용법   로직을 추가하기  action을 정의  action 생성자를 생성">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/31315644/72333302-e6ccdc80-36fe-11ea-9b80-e00b0d5f5847.png">
     
     <link rel="canonical" href="https://hyeok999.github.io/2020/02/14/reactstudy-06/">
     
@@ -191,14 +193,375 @@ ga('send', 'pageview');
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <p><img src="https://user-images.githubusercontent.com/31315644/72333302-e6ccdc80-36fe-11ea-9b80-e00b0d5f5847.png" alt="React2-Thumbnail"></p>
+<hr>
+<h1 id="React-Re-Study-6"><a href="#React-Re-Study-6" class="headerlink" title="React Re-Study : 6"></a>React Re-Study : 6</h1><ul>
+<li><p><a href="#a28">Flux</a></p>
+<ul>
+<li><a href="#a27">문제점</a></li>
+</ul>
+</li>
+<li><p><a href="#a26">해결책</a></p>
+</li>
+<li><p><a href="#a25">Redux 개요</a></p>
+</li>
+<li><p><a href="#a24">Redux 만들기</a></p>
+</li>
+<li><p><a href="#a23">Action - 액션</a></p>
+<ul>
+<li><a href="#a22">액션 생성자</a></li>
+<li><a href="#a21">리덕스의 액션은 어떤 일을 하는가?</a></li>
+<li><a href="#a20">액션의 준비과정</a></li>
+</ul>
+</li>
+<li><p><a href="#a19">Reducer - 리듀서</a></p>
+</li>
+<li><p><a href="#a18">createStore - 스토어를 만드는 함수</a></p>
+<ul>
+<li><a href="#a17">store 사용법</a></li>
+</ul>
+</li>
+<li><p><a href="#a16">로직을 추가하기</a></p>
+<ol>
+<li><p><a href="#a15">action을 정의</a></p>
+</li>
+<li><p><a href="#a14">action 생성자를 생성</a></p>
+</li>
+<li><p><a href="#a13">reducer를 수정</a></p>
+</li>
+<li><p><a href="#a12">dispatch ( 액션 → 리듀서 : 액션을 리듀서에게 전달하는 함수 )</a></p>
+</li>
+</ol>
+<ul>
+<li><a href="#a11">추가로 - 애플리케이션 확장 → state의 복잡성 증가</a></li>
+</ul>
+</li>
+<li><p><a href="#a10">한번에 모두 처리하는 리듀서</a></p>
+</li>
+<li><p><a href="#a9">분리된 리듀서 + 리듀서 합치기</a></p>
+</li>
+<li><p><a href="#a8">combineReducers</a></p>
+</li>
+<li><p><a href="#a7">React에 적용하기</a></p>
+</li>
+<li><p><a href="#a6">react-redux 사용하기</a></p>
+<ul>
+<li><a href="#a5">간단 예제</a></li>
+</ul>
+</li>
+<li><p><a href="#a4">Provider Component from react-redux</a></p>
+</li>
+<li><p><a href="#a3">Consumer from react-redux</a></p>
+</li>
+<li><p><a href="#a2">connect function from react-redux</a></p>
+</li>
+<li><p><a href="#a1">HOC(connect)가 아닌 hook을 사용한 Redux</a></p>
+</li>
+</ul>
+<br>
+
+<hr>
+<h2 id="React-Study-with-Mark-Redux-Basic"><a href="#React-Study-with-Mark-Redux-Basic" class="headerlink" title="React Study with Mark - Redux Basic -"></a>React Study with Mark - Redux Basic -</h2><br>
+
+<h3 id="Flux"><a href="#Flux" class="headerlink" title="Flux   "></a>Flux   <a id="a28"></a></h3><blockquote>
+<p> Flux는 애플리케이션에서 데이터를 취급하기 위한 패턴의 일종</p>
+<p> Flux는 개념, redux와 같지 않다.</p>
+</blockquote>
+<h4 id="문제점"><a href="#문제점" class="headerlink" title="문제점   "></a>문제점   <a id="a27"></a></h4><ul>
+<li>페이스북의 알림 버그를 해결하기 위한 개념으로 성장했다.</li>
+<li>기존의 어플리케이션 방식은 모델 → 뷰로 흐르는 방식</li>
+<li>사용자와의 상호작용은 오직 뷰에서 일어났는데 뷰가 가끔씩 모델을 업데이트해야할 필요성이 생김(사용자의 입력)</li>
+<li>여기서 특정 모델의 업데이트는  의존성에 의해 다른 모델을 추가로 업데이트 시켜야하는 경우가 생김</li>
+<li>이런 현상이 무수히 많아지게 되면서 결국 데이터의 흐름을 잡기가 어려워짐 ( +비동기 )</li>
+</ul>
+<p>위와 같은 문제들로 인하여 <strong>Flux</strong> 라는 개념이 등장함.</p>
+<br>
+
+<h4 id="해결책"><a href="#해결책" class="headerlink" title="해결책   "></a>해결책   <a id="a26"></a></h4><blockquote>
+<p>데이터 흐름을 단방향으로 만들기</p>
+<p>Action → Dispatcher → Store → View → Action … 반복</p>
+</blockquote>
+<br>
+
+<h3 id="Redux-개요"><a href="#Redux-개요" class="headerlink" title="Redux 개요   "></a>Redux 개요   <a id="a25"></a></h3><ul>
+<li>기존의 React State 접근 방식</li>
+</ul>
+<img src="https://user-images.githubusercontent.com/31315644/74180398-c56dfa80-4c82-11ea-978f-632dc6efd5d1.jpeg" alt="1" style="zoom:50%;">
+
+<br>
+
+<ul>
+<li>Redux Store를 이용한 React State 접근 방식</li>
+</ul>
+<img src="https://user-images.githubusercontent.com/31315644/74180405-c737be00-4c82-11ea-8b7b-3cc0405c1f32.jpeg" alt="2" style="zoom:50%;">
+
+<ul>
+<li>MobX는 전역 Store가 여러개다. Redux는 단일 전역 Store</li>
+</ul>
+<br>
+
+<h3 id="Redux-만들기"><a href="#Redux-만들기" class="headerlink" title="Redux 만들기   "></a>Redux 만들기   <a id="a24"></a></h3><ol>
+<li><strong>단일 스토어</strong>를 만드는 법</li>
+<li>리액트에서 스토어 사용하는 법을 익히는 시간</li>
+</ol>
+<p>[만들기] 단일 스토어 사용 준비하기</p>
+<ul>
+<li><code>import redux</code></li>
+<li>액션을 정의하고,</li>
+<li>액션을 사용하는, 리듀서를 만들고,</li>
+<li>리듀서들을 합치기</li>
+<li>최종 합쳐진 리듀서를 인자로, 단일 스토어를 만든다.</li>
+</ul>
+<p>[사용하기] 준비한 스토어를 리액트 컴포넌트에서 사용하기</p>
+<ul>
+<li><code>import react-redux</code></li>
+<li>connect 함수(HOC)를 이용해서 컴포넌트에 연결<ul>
+<li>최근에는 HOC가 훅(Redux Hook)으로 대체되고 있는 상황</li>
+</ul>
+</li>
+<li>스토어가 너무 커지고 복잡하면 쪼개서 사용함</li>
+</ul>
+<br>
+
+<h3 id="Action-액션"><a href="#Action-액션" class="headerlink" title="Action - 액션  "></a>Action - 액션  <a id="a23"></a></h3><ul>
+<li><p>액션은 명세표의 역할 리듀서에게 행해야할 일을 적은 명세서.</p>
+</li>
+<li><p>코드 관점에서 보았을 때, 액션은 단순 그냥 Object(객체) 다.</p>
+</li>
+<li><p>두 가지 형태의 액션이 존재한다.</p>
+<ul>
+<li><code>{ type: &#39;TEST&#39; }</code> - payload 없는 액션</li>
+<li><code>{ type: &#39;TEST&#39;, params: &#39;hello&#39; }</code> - payload 있는 액션</li>
+<li>type 만이 필수 프로퍼티이며, type 은 문자열</li>
+</ul>
+</li>
+</ul>
+<br>
+
+<h4 id="액션-생성자"><a href="#액션-생성자" class="headerlink" title="액션 생성자  "></a>액션 생성자  <a id="a22"></a></h4><blockquote>
+<p>액션을 생성하는 함수를 “액션 생성자 (Action Creator)” 라고 한다.<br><strong><em>함수를 통해 액션을 생성해서, 액션 객체를 리턴</em></strong></p>
+</blockquote>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> 액션생성자(<span class="params">...args</span>) </span>&#123; <span class="keyword">return</span> 액션; &#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="리덕스의-액션은-어떤-일을-하는가"><a href="#리덕스의-액션은-어떤-일을-하는가" class="headerlink" title="리덕스의 액션은 어떤 일을 하는가?  "></a>리덕스의 액션은 어떤 일을 하는가?  <a id="a21"></a></h4><ul>
+<li>액션 생성자를 통해 액션 생성</li>
+<li>만들어낸 액션 객체를 리덕스 스토어에 보냄</li>
+<li>리덕스 스토어가 액션 객체를 받으면 스토어의 상태 값이 변경</li>
+<li>변경된 상태 값에 의해 상태를 이용하고 있는 컴포넌트가 변경</li>
+<li>액션은 스토어에 보내는 일종의 인풋이라 생각할 수 있음</li>
+</ul>
+<br>
+
+<h4 id="액션의-준비과정"><a href="#액션의-준비과정" class="headerlink" title="액션의 준비과정  "></a>액션의 준비과정  <a id="a20"></a></h4><ol>
+<li><p><em>액션의 타입을 정의하여 변수로 빼는 단계</em></p>
+<ul>
+<li>강제는 아님(옵션)</li>
+<li>그냥 타입을 문자열로 넣기에는 실수를 유발할 가능성이 크다</li>
+<li>미리 정의한 변수를 사용하면, 스펠링에 주의를 덜 기울여도 된다.</li>
+</ul>
+</li>
+<li><p><em>액션 객체를 만들어 내는 함수를 만드는 단계</em></p>
+<ul>
+<li>하나의 액션 객체를 만들기 위해 하나의 함수를 만들어낸다.</li>
+<li>액션의 타입은 미리 정의한 타입 변수로 부터 가져와서 사용한다.</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 액션의 type 정의</span></span><br><span class="line"><span class="comment">// 액션의 타입 =&gt; 액션 생성자 이름</span></span><br><span class="line"><span class="comment">// ADD_TODO =&gt; addTodo</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> ADD_TODO = <span class="string">'ADD_TODO'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 액션 생산자</span></span><br><span class="line"><span class="comment">// 액션의 타입은 미리 정의한 타입으로 부터 가져와서 사용하며, 사용자가 인자로 주지 않는다.</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">addTodo</span>(<span class="params">text</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123; <span class="attr">type</span>: ADD_TODO, text &#125;; <span class="comment">// &#123; type: ADD_TODO, text: text &#125;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="Reducer-리듀서"><a href="#Reducer-리듀서" class="headerlink" title="Reducer - 리듀서  "></a>Reducer - 리듀서  <a id="a19"></a></h3><ul>
+<li><p>액션을 주면, 그 액션이 적용되어 달라진 결과를 만들어냄. (액션에 따라 값이 그대로인 결과를 만들수도 있다.)</p>
+</li>
+<li><p>코드 관점에 보았을 때  단순 그냥 Function(함수) 다.</p>
+<ul>
+<li><p><strong>Pure Function</strong></p>
+</li>
+<li><p><strong>Immutable</strong></p>
+<ul>
+<li>리듀서를 통해 스테이트가 달라졌음을 리덕스가 인지하는 방식.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> 리듀서(<span class="params">previousState, action</span>) </span>&#123; </span><br><span class="line">  <span class="keyword">return</span> newState;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>액션을 받아서 스테이트를 리턴하는 구조</li>
+<li>인자로 들어오는 previousState 와 리턴되는 newState 는 다른 참조를 가져야 한다.</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// reducers.js</span></span><br><span class="line"><span class="keyword">import</span> &#123; ADD_TODO &#125; <span class="keyword">from</span> <span class="string">'./actions'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">todoApp</span>(<span class="params">previousState, action</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (previousState === <span class="literal">undefined</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> [];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (action.type === ADD_TODO) &#123;</span><br><span class="line">    <span class="keyword">return</span> [...previousState, &#123; <span class="attr">text</span>: action.text &#125;];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> previousState;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="createStore-스토어를-만드는-함수"><a href="#createStore-스토어를-만드는-함수" class="headerlink" title="createStore - 스토어를 만드는 함수  "></a>createStore - 스토어를 만드는 함수  <a id="a18"></a></h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> store = createStore(리듀서);</span><br></pre></td></tr></table></figure>
+
+<p><code>createStore(</code>reducer: Reducer,<code></code>preloadedState: S,<code></code>enhancer?: StoreEnhancer<code>): Store;</code></p>
+<p>물음표는 옵션을 의미한다.</p>
+<ul>
+<li>스토어 생성 -&gt; Subscribe : 구독(함수 안은 실행되지 않음)  -&gt; 액션 추가 하면 -&gt; 스테이트가 변했으므로 console.log(subscribe)가 실행 -&gt; 구독을 하지 않을 순간이 오면 unsubscribe(); 실행</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// store.js</span></span><br><span class="line"><span class="keyword">import</span> &#123; todoApp &#125; <span class="keyword">from</span> <span class="string">'./reducers'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; createStore &#125; <span class="keyword">from</span> <span class="string">'redux'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; addTodo &#125; <span class="keyword">from</span> <span class="string">'./actions'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> store = createStore(todoApp);</span><br><span class="line"><span class="built_in">console</span>.log(store);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(store.getState());</span><br><span class="line"></span><br><span class="line">setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  store.dispatch(addTodo(<span class="string">'hello'</span>));</span><br><span class="line">&#125;, <span class="number">1000</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> store;</span><br><span class="line"></span><br><span class="line"><span class="comment">// index.js</span></span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> ReactDOM <span class="keyword">from</span> <span class="string">'react-dom'</span>;</span><br><span class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">'./App'</span>;</span><br><span class="line"><span class="keyword">import</span> store <span class="keyword">from</span> <span class="string">'./store'</span>;</span><br><span class="line"></span><br><span class="line">store.subscribe(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> state = store.getState();</span><br><span class="line"></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'store changed'</span>, state);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">ReactDOM.render(<span class="xml"><span class="tag">&lt;<span class="name">App</span> /&gt;</span>, document.getElementById('root'));</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="store-사용법"><a href="#store-사용법" class="headerlink" title="store 사용법  "></a>store 사용법  <a id="a17"></a></h4><ol>
+<li>store.getState();</li>
+<li>store.dispatch(액션명); / store.dispatch(액션생성자());</li>
+<li>const unsubscribe = store.subscribe(() =&gt; {});<ul>
+<li>리턴이 unsubscribe 라는 것에 주의.<ul>
+<li>store.subscribe의 리턴값은 함수로 unsubscribe에 담아줌</li>
+</ul>
+</li>
+<li>unsubscribe( ); 하면 제거<ul>
+<li>unsubscribe는 구독을 끊을 때 사용, (대상이 없는데 계속 구독하는)메모리 누수를 막기 위해</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>store.replaceReducer(다른 리듀서);</li>
+</ol>
+<br>
+
+<h3 id="로직을-추가하기"><a href="#로직을-추가하기" class="headerlink" title="로직을 추가하기  "></a>로직을 추가하기  <a id="a16"></a></h3><blockquote>
+<p>action 을 정의하고,<br>action 생성자를 만들고,<br>reducer 를 수정</p>
+</blockquote>
+<h4 id="1-action을-정의"><a href="#1-action을-정의" class="headerlink" title="1. action을 정의  "></a>1. action을 정의  <a id="a15"></a></h4><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// actions.js</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 액션의 type 정의</span></span><br><span class="line"><span class="comment">// 액션의 타입 =&gt; 액션 생성자 이름</span></span><br><span class="line"><span class="comment">// ADD_TODO =&gt; addTodo</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> ADD_TODO = <span class="string">'ADD_TODO'</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> COMPLETE_TODO = <span class="string">'COMPLETE_TODO'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 액션 생산자</span></span><br><span class="line"><span class="comment">// 액션의 타입은 미리 정의한 타입으로 부터 가져와서 사용하며,</span></span><br><span class="line"><span class="comment">// 사용자가 인자로 주지 않습니다.</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">addTodo</span>(<span class="params">text</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123; <span class="attr">type</span>: ADD_TODO, text &#125;; <span class="comment">// &#123; type: ADD_TODO, text: text &#125;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="2-action-생성자를-생성"><a href="#2-action-생성자를-생성" class="headerlink" title="2. action 생성자를 생성  "></a>2. action 생성자를 생성  <a id="a14"></a></h4><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// actions.js</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 액션의 type 정의</span></span><br><span class="line"><span class="comment">// 액션의 타입 =&gt; 액션 생성자 이름</span></span><br><span class="line"><span class="comment">// ADD_TODO =&gt; addTodo</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> ADD_TODO = <span class="string">'ADD_TODO'</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> COMPLETE_TODO = <span class="string">'COMPLETE_TODO'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 액션 생산자</span></span><br><span class="line"><span class="comment">// 액션의 타입은 미리 정의한 타입으로 부터 가져와서 사용하며,</span></span><br><span class="line"><span class="comment">// 사용자가 인자로 주지 않습니다.</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">addTodo</span>(<span class="params">text</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123; <span class="attr">type</span>: ADD_TODO, text &#125;; <span class="comment">// &#123; type: ADD_TODO, text: text &#125;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">completeTodo</span>(<span class="params">index</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123; <span class="attr">type</span>: COMPLETE_TODO, index &#125;; <span class="comment">// &#123; type: COMPLETE_TODO, index: index&#125;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="3-reducer를-수정"><a href="#3-reducer를-수정" class="headerlink" title="3. reducer를 수정  "></a>3. reducer를 수정  <a id="a13"></a></h4><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; ADD_TODO, COMPLETE_TODO &#125; <span class="keyword">from</span> <span class="string">'./actions'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">todoApp</span>(<span class="params">previousState, action</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (previousState === <span class="literal">undefined</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> [];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (action.type === ADD_TODO) &#123;</span><br><span class="line">    <span class="keyword">return</span> [...previousState, &#123; <span class="attr">text</span>: action.text, <span class="attr">completed</span>: <span class="literal">false</span> &#125;];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (action.type === COMPLETE_TODO) &#123;</span><br><span class="line">    <span class="keyword">const</span> newState = [];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; previousState.length; i++) &#123;</span><br><span class="line">      newState.push(</span><br><span class="line">        i === action.index</span><br><span class="line">          ? &#123; ...previousState[i], <span class="attr">completed</span>: <span class="literal">true</span> &#125;</span><br><span class="line">          : &#123; ...previousState[i] &#125;,</span><br><span class="line">      );</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> newState;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> previousState;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="4-dispatch-액션-→-리듀서-액션을-리듀서에게-전달하는-함수"><a href="#4-dispatch-액션-→-리듀서-액션을-리듀서에게-전달하는-함수" class="headerlink" title="4. dispatch ( 액션 → 리듀서 : 액션을 리듀서에게 전달하는 함수 )  "></a>4. dispatch ( 액션 → 리듀서 : 액션을 리듀서에게 전달하는 함수 )  <a id="a12"></a></h4><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// store.js</span></span><br><span class="line"><span class="keyword">import</span> &#123; todoApp &#125; <span class="keyword">from</span> <span class="string">'./reducers'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; createStore &#125; <span class="keyword">from</span> <span class="string">'redux'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; addTodo, completeTodo &#125; <span class="keyword">from</span> <span class="string">'./actions'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> store = createStore(todoApp);</span><br><span class="line"><span class="built_in">console</span>.log(store);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(store.getState());</span><br><span class="line"></span><br><span class="line">setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  store.dispatch(addTodo(<span class="string">'hello'</span>));</span><br><span class="line">  setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    store.dispatch(completeTodo(<span class="number">0</span>));</span><br><span class="line">  &#125;, <span class="number">1000</span>);</span><br><span class="line">&#125;, <span class="number">1000</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> store;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="추가로-애플리케이션-확장-→-state의-복잡성-증가"><a href="#추가로-애플리케이션-확장-→-state의-복잡성-증가" class="headerlink" title="추가로 - 애플리케이션 확장 → state의 복잡성 증가  "></a>추가로 - 애플리케이션 확장 → state의 복잡성 증가  <a id="a11"></a></h4><ul>
+<li>리듀서를 크게 만들고, state 를 변경하는 모든 로직을 담을 수도 있다.</li>
+<li>리듀서를 분할해서 만들고, 합치는 방법을 사용할 수 있다.<ul>
+<li>todos 만 변경하는 <strong>액션들</strong>을 처리하는 A 라는 리듀서 함수를 만들고,</li>
+<li>filter 만을  변경하는 <strong>액션들</strong>을 처리하는 B 라는 리듀서 함수를 만들고,</li>
+<li>A 와 B 를 합친다.</li>
+</ul>
+</li>
+</ul>
+<br>
+
+<h3 id="한번에-모두-처리하는-리듀서"><a href="#한번에-모두-처리하는-리듀서" class="headerlink" title="한번에 모두 처리하는 리듀서  "></a>한번에 모두 처리하는 리듀서  <a id="a10"></a></h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; ADD_TODO, COMPLETE_TODO &#125; <span class="keyword">from</span> <span class="string">'./actions'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">todoApp</span>(<span class="params">previousState, action</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (previousState === <span class="literal">undefined</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123; <span class="attr">todos</span>: [], <span class="attr">filter</span>: <span class="string">'SHOW_ALL'</span> &#125;;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (action.type === ADD_TODO) &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      todos: [...previousState.todos, &#123; <span class="attr">text</span>: action.text, <span class="attr">completed</span>: <span class="literal">false</span> &#125;],</span><br><span class="line">      filter: previousState.filter,</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (action.type === COMPLETE_TODO) &#123;</span><br><span class="line">    <span class="keyword">const</span> todos = [];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; previousState.todos.length; i++) &#123;</span><br><span class="line">      todos.push(</span><br><span class="line">        i === action.index</span><br><span class="line">          ? &#123; ...previousState.todos[i], <span class="attr">completed</span>: <span class="literal">true</span> &#125;</span><br><span class="line">          : &#123; ...previousState.todos[i] &#125;,</span><br><span class="line">      );</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> &#123; todos, <span class="attr">filter</span>: previousState.filter &#125;;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> previousState;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="분리된-리듀서-리듀서-합치기"><a href="#분리된-리듀서-리듀서-합치기" class="headerlink" title="분리된 리듀서 + 리듀서 합치기  "></a>분리된 리듀서 + 리듀서 합치기  <a id="a9"></a></h3><ol>
+<li>리듀서 분리</li>
+</ol>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">todos</span>(<span class="params">previousState, action</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (previousState === <span class="literal">undefined</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> [];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (action.type === ADD_TODO) &#123;</span><br><span class="line">    <span class="keyword">return</span> [...previousState.todos, &#123; <span class="attr">text</span>: action.text, <span class="attr">completed</span>: <span class="literal">false</span> &#125;];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (action.type === COMPLETE_TODO) &#123;</span><br><span class="line">    <span class="keyword">const</span> newState = [];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; previousState.length; i++) &#123;</span><br><span class="line">      newState.push(</span><br><span class="line">        i === action.index</span><br><span class="line">          ? &#123; ...previousState[i], <span class="attr">completed</span>: <span class="literal">true</span> &#125;</span><br><span class="line">          : &#123; ...previousState[i] &#125;,</span><br><span class="line">      );</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> newState;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> previousState;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">filter</span>(<span class="params">previousState, action</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (previousState === <span class="literal">undefined</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'SHOW_ALL'</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> previousState;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>리듀서 합치기</li>
+</ol>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">todoApp</span>(<span class="params">previousState = &#123;&#125;, action</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    todos: todos(previousState.todos, action),</span><br><span class="line">    filter: filter(previousState.filter, action),</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="combineReducers"><a href="#combineReducers" class="headerlink" title="combineReducers "></a>combineReducers <a id="a8"></a></h3><blockquote>
+<p> 리덕스에서 제공하는 combineReducers 사용</p>
+</blockquote>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; combineReducers &#125; <span class="keyword">from</span> <span class="string">'redux'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> todoApp = combineReducers(&#123;</span><br><span class="line">  todos,</span><br><span class="line">  filter,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="React에-적용하기"><a href="#React에-적용하기" class="headerlink" title="React에 적용하기 "></a>React에 적용하기 <a id="a7"></a></h3><ul>
+<li><p>useEffect에서 리덕스 </p>
+<ul>
+<li><p>스토어가 변하는 것. (스토어의 state가 변하는게 아니다.)</p>
+</li>
+<li><p>cleanup 시점에 구독이 끊긴다.</p>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">useEffect(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> unsubscribe = store.subscribe(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    setTodos(store.getState().todos);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    unsubscribe();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;, [store]);</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="react-redux-사용하기"><a href="#react-redux-사용하기" class="headerlink" title="react-redux 사용하기  "></a>react-redux 사용하기  <a id="a6"></a></h3><ul>
+<li><p><code>npm i react-redux</code></p>
+</li>
+<li><p>Provider 컴포넌트를 제공해준다.</p>
+</li>
+<li><p><code>connect</code> 함수를 통해 “컨테이너”를 만들어준다.</p>
+</li>
+<li><p>컨테이너는 스토어의 <strong>state</strong> 와 <strong>dispatch(액션)</strong> 를 연결한 컴포넌트에 props 로 넣어주는 역할을 한다.</p>
+<ul>
+<li>그렇다면 필요한 것은 ?<ul>
+<li>어떤 state 를 어떤 props 에 연결할 것인지에 대한 정의</li>
+<li>어떤 dispatch(액션) 을 어떤 props 에 연결할 것인지에 대한 정의</li>
+<li>그 props 를 보낼 컴포넌트를 정의</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<br>
+
+<h4 id="간단-예제"><a href="#간단-예제" class="headerlink" title="간단 예제  "></a>간단 예제  <a id="a5"></a></h4><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// index.js</span></span><br><span class="line">ReactDOM.render(</span><br><span class="line">  &lt;Provider store=&#123;store&#125;&gt;</span><br><span class="line">    &lt;App /&gt;</span><br><span class="line">  &lt;<span class="regexp">/Provider&gt;,</span></span><br><span class="line"><span class="regexp">  document.getElementById('root')</span></span><br><span class="line"><span class="regexp">);</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/ App.js</span></span><br><span class="line"><span class="regexp">import &#123; connect &#125; from 'react-redux';</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>state가 방대해지면, 그 중에 이 컴포넌트에서 사용할 것만 사용하겠다고 설정을 해줘야 한다. (Provider)</li>
+<li>connect 설정<ol>
+<li>connect(App, option);</li>
+<li>const fn = connect(option); fn(App);</li>
+<li>connect(option)(App);</li>
+</ol>
+</li>
+<li>store의 state를 → App의 props로 변경</li>
+<li>store의 dispatch를 → App의 props로 변경</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> mapStateToProps = <span class="function">(<span class="params">state</span>) =&gt;</span> (&#123;</span><br><span class="line">  todos: state.todos</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> mapDispatchToProps = <span class="function">(<span class="params">dispatch</span>) =&gt;</span> (&#123;</span><br><span class="line">  addTodo: <span class="function">(<span class="params">text</span>) =&gt;</span> &#123;</span><br><span class="line">    dispatch(addTodo(text)); <span class="comment">// App에서 호출할 때 넣어주므로 인자를 전달</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> connect(mapStateToProps, mapDispatchToProps)(App); <span class="comment">// 보낼 컴포넌트 설정.</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// App 컴포넌트에서 인자로 todos와 addTodo를 받을 수 있다.</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">App</span>(<span class="params">&#123; todos, addTodo &#125;</span>) </span>&#123;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="Provider-Component-from-react-redux"><a href="#Provider-Component-from-react-redux" class="headerlink" title="Provider Component from react-redux "></a>Provider Component from react-redux <a id="a4"></a></h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// index.js</span></span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> ReactDOM <span class="keyword">from</span> <span class="string">'react-dom'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'./index.css'</span>;</span><br><span class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">'./App'</span>;</span><br><span class="line"><span class="keyword">import</span> store <span class="keyword">from</span> <span class="string">'./store'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; Provider &#125; <span class="keyword">from</span> <span class="string">'react-redux'</span>;</span><br><span class="line"></span><br><span class="line">ReactDOM.render(</span><br><span class="line">  &lt;Provider store=&#123;store&#125;&gt;</span><br><span class="line">    &lt;App /&gt;</span><br><span class="line">  &lt;<span class="regexp">/Provider&gt;,</span></span><br><span class="line"><span class="regexp">  document.getElementById('root'),</span></span><br><span class="line"><span class="regexp">);</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="Consumer-from-react-redux"><a href="#Consumer-from-react-redux" class="headerlink" title="Consumer from react-redux "></a>Consumer from react-redux <a id="a3"></a></h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; useContext, useEffect, useState &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; ReactReduxContext &#125; <span class="keyword">from</span> <span class="string">'react-redux'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'./App.css'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; addTodo &#125; <span class="keyword">from</span> <span class="string">'./actions'</span>;</span><br><span class="line"><span class="keyword">import</span> Button <span class="keyword">from</span> <span class="string">'./Button'</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.props);</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div className=<span class="string">"App"</span>&gt;</span><br><span class="line">        &lt;header className=<span class="string">"App-header"</span>&gt;</span><br><span class="line">          &lt;p&gt;&#123;<span class="built_in">JSON</span>.stringify(<span class="keyword">this</span>.props.todos)&#125;&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">          &lt;Button add=&#123;this.props.add&#125; /</span>&gt;</span><br><span class="line">        &lt;<span class="regexp">/header&gt;</span></span><br><span class="line"><span class="regexp">      &lt;/</span>div&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">Button</span>(<span class="params">&#123; add &#125;</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> add('hello')&#125;&gt;추가<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// App 컨테이너</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">AppContainer</span>(<span class="params">props</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> &#123; store &#125; = useContext(ReactReduxContext);</span><br><span class="line">  <span class="keyword">const</span> [state, setState] = useState(store.getState());</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">text, dispatch</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(text, dispatch);</span><br><span class="line">    dispatch(addTodo(text));</span><br><span class="line">  &#125;</span><br><span class="line">  useEffect(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> _unsubscribe = store.subscribe(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      setState(store.getState());</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      _unsubscribe();</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;App</span><br><span class="line">      &#123;...props&#125;</span><br><span class="line">      todos=&#123;state.todos&#125;</span><br><span class="line">      add=&#123;text =&gt; add(text, store.dispatch)&#125;</span><br><span class="line">    /&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> AppContainer;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="connect-function-from-react-redux"><a href="#connect-function-from-react-redux" class="headerlink" title="connect function from react-redux "></a>connect function from react-redux <a id="a2"></a></h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'./App.css'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; addTodo &#125; <span class="keyword">from</span> <span class="string">'./actions'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; connect &#125; <span class="keyword">from</span> <span class="string">'react-redux'</span>;</span><br><span class="line"><span class="keyword">import</span> Button <span class="keyword">from</span> <span class="string">'./Button'</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div className=<span class="string">"App"</span>&gt;</span><br><span class="line">        &lt;header className=<span class="string">"App-header"</span>&gt;</span><br><span class="line">          &lt;p&gt;&#123;<span class="built_in">JSON</span>.stringify(<span class="keyword">this</span>.props.todos)&#125;&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">          &lt;Button add=&#123;this.props.add&#125; /</span>&gt;</span><br><span class="line">        &lt;<span class="regexp">/header&gt;</span></span><br><span class="line"><span class="regexp">      &lt;/</span>div&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// mapStateToProps, mapDispatchToProps</span></span><br><span class="line"><span class="keyword">const</span> mapStateToProps = <span class="function"><span class="params">state</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123; <span class="attr">todos</span>: state.todos &#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> mapDispatchToProps = <span class="function"><span class="params">dispatch</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    add: <span class="function"><span class="params">text</span> =&gt;</span> &#123;</span><br><span class="line">      dispatch(addTodo(text));</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> AppContainer = connect(</span><br><span class="line">  mapStateToProps,</span><br><span class="line">  mapDispatchToProps,</span><br><span class="line">)(App);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> AppContainer;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="HOC-connect-가-아닌-hook을-사용한-Redux"><a href="#HOC-connect-가-아닌-hook을-사용한-Redux" class="headerlink" title="HOC(connect)가 아닌 hook을 사용한 Redux  "></a>HOC(connect)가 아닌 <a href="https://react-redux.js.org/api/hooks" rel="external nofollow noopener noreferrer" target="_blank">hook</a>을 사용한 Redux  <a id="a1"></a></h4><ul>
+<li>props로 꽂히지 않음<ul>
+<li><code>useSelector</code>를 사용하여 값을 가져온다.(mapStateToProps)</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> todos = useSelector(<span class="function"><span class="params">state</span> =&gt;</span> state.todos);</span><br><span class="line"><span class="keyword">const</span> loading = useSelector(<span class="function"><span class="params">state</span> =&gt;</span> state.loading);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>useDispatch를 통해 dispatch를 한다.</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> dispatch = useDispatch();</span><br></pre></td></tr></table></figure>
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="https://hyeok999.github.io/2020/02/14/ReactStudy-06/" data-id="ck6m97abc002i5tz0ly5f0pdy" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://hyeok999.github.io/2020/02/14/ReactStudy-06/" data-id="ck6m9gudc002id8z0xpoutas3" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -269,15 +632,47 @@ ga('send', 'pageview');
             "name": "Jun Hyeok Kim"
         },
         "headline": "다시 공부하는 React -06-",
-        "image": "https://hyeok999.github.io",
+        "image": "https://hyeok999.github.iohttps://user-images.githubusercontent.com/31315644/72333302-e6ccdc80-36fe-11ea-9b80-e00b0d5f5847.png",
         "keywords": "git Web coding develop HTML CSS javascript React",
         "genre": "TIL React",
         "datePublished": "2020-02-14",
         "dateCreated": "2020-02-14",
         "dateModified": "2020-02-14",
         "url": "https://hyeok999.github.io/2020/02/14/ReactStudy-06/",
-        "description": "",
-        "wordCount": 1
+        "description": "
+
+React Re-Study : 6
+Flux
+
+문제점
+
+
+해결책
+
+Redux 개요
+
+Redux 만들기
+
+Action - 액션
+
+액션 생성자
+리덕스의 액션은 어떤 일을 하는가?
+액션의 준비과정
+
+
+Reducer - 리듀서
+
+createStore - 스토어를 만드는 함수
+
+store 사용법
+
+
+로직을 추가하기
+
+action을 정의
+
+action 생성자를 생성",
+        "wordCount": 3501
     }
 </script>
 
@@ -368,7 +763,7 @@ ga('send', 'pageview');
                             <a href="/2020/02/14/ReactStudy-06/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/72333302-e6ccdc80-36fe-11ea-9b80-e00b0d5f5847.png)" alt="다시 공부하는 React -06-" class="thumbnail-image"></span>
     
     
 </a>
