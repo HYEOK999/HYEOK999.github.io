@@ -12,18 +12,20 @@
     
         <meta name="keywords" content="git,Web,coding,develop,HTML,CSS,javascript,React">
     
-    <meta name="description" content="HYEOK999&apos;s IT Develop Blog">
+    <meta name="description" content="React Re-Study : 7 시작하기 앞서 정리하기 프리젠테이셜 컴포넌트 와 컨테이너 컴포넌트 프리젠테이셔널 컴포넌트 컨테이너 컴포넌트 이 구조의 장점 어떤걸 컨테이너로 만들어야할까?   Async Action with Redux 비동기 처리를 위한 액션 추가 및 dispatch (예시)   리덕스 미들웨어 미들웨어 만들어보기   Redux Dev">
 <meta name="keywords" content="git,Web,coding,develop,HTML,CSS,javascript,React">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ReactStudy-07">
 <meta property="og:url" content="https://hyeok999.github.io/2020/02/25/ReactStudy-07/index.html">
 <meta property="og:site_name" content="HYEOK999&#39;s Blog">
-<meta property="og:description" content="HYEOK999&apos;s IT Develop Blog">
+<meta property="og:description" content="React Re-Study : 7 시작하기 앞서 정리하기 프리젠테이셜 컴포넌트 와 컨테이너 컴포넌트 프리젠테이셔널 컴포넌트 컨테이너 컴포넌트 이 구조의 장점 어떤걸 컨테이너로 만들어야할까?   Async Action with Redux 비동기 처리를 위한 액션 추가 및 dispatch (예시)   리덕스 미들웨어 미들웨어 만들어보기   Redux Dev">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-03-10T11:48:28.172Z">
+<meta property="og:image" content="https://user-images.githubusercontent.com/31315644/72333302-e6ccdc80-36fe-11ea-9b80-e00b0d5f5847.png">
+<meta property="og:updated_time" content="2020-03-10T11:58:15.283Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ReactStudy-07">
-<meta name="twitter:description" content="HYEOK999&apos;s IT Develop Blog">
+<meta name="twitter:description" content="React Re-Study : 7 시작하기 앞서 정리하기 프리젠테이셜 컴포넌트 와 컨테이너 컴포넌트 프리젠테이셔널 컴포넌트 컨테이너 컴포넌트 이 구조의 장점 어떤걸 컨테이너로 만들어야할까?   Async Action with Redux 비동기 처리를 위한 액션 추가 및 dispatch (예시)   리덕스 미들웨어 미들웨어 만들어보기   Redux Dev">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/31315644/72333302-e6ccdc80-36fe-11ea-9b80-e00b0d5f5847.png">
     
     <link rel="canonical" href="https://hyeok999.github.io/2020/02/25/reactstudy-07/">
     
@@ -191,7 +193,212 @@ ga('send', 'pageview');
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <p><img src="https://user-images.githubusercontent.com/31315644/72333302-e6ccdc80-36fe-11ea-9b80-e00b0d5f5847.png" alt="React2-Thumbnail"></p>
+<hr>
+<h1 id="React-Re-Study-7"><a href="#React-Re-Study-7" class="headerlink" title="React Re-Study : 7"></a>React Re-Study : 7</h1><ul>
+<li><a href="#a1">시작하기 앞서 정리하기</a></li>
+<li><a href="#a2">프리젠테이셜 컴포넌트 와 컨테이너 컴포넌트</a><ul>
+<li><a href="#a3">프리젠테이셔널 컴포넌트</a></li>
+<li><a href="#a4">컨테이너 컴포넌트</a></li>
+<li><a href="#a5">이 구조의 장점</a></li>
+<li><a href="#a6">어떤걸 컨테이너로 만들어야할까?</a></li>
+</ul>
+</li>
+<li><a href="#a7">Async Action with Redux</a><ul>
+<li><a href="#a8">비동기 처리를 위한 액션 추가 및 dispatch (예시)</a></li>
+</ul>
+</li>
+<li><a href="#a9">리덕스 미들웨어</a><ul>
+<li><a href="#a10">미들웨어 만들어보기</a></li>
+</ul>
+</li>
+<li><a href="#a11">Redux Dev Tools</a></li>
+<li><a href="#a12">redux-thunk</a><ul>
+<li><a href="#a13">실습</a></li>
+</ul>
+</li>
+<li><a href="#a14">서비스 분리</a></li>
+<li><a href="#a15">HOC에 옵션을 주는 방법</a></li>
+</ul>
+<br>
+
+<hr>
+<h2 id="React-Study-with-Mark-Redux-Advanced-1"><a href="#React-Study-with-Mark-Redux-Advanced-1" class="headerlink" title="React Study with Mark - Redux Advanced (1) -"></a>React Study with Mark - Redux Advanced (1) -</h2><h3 id="시작하기-앞서-정리하기"><a href="#시작하기-앞서-정리하기" class="headerlink" title="시작하기 앞서 정리하기 "></a>시작하기 앞서 정리하기 <a id="a1"></a></h3><p>컴포넌트의 모습을 결정하는 요인 2가지</p>
+<ul>
+<li><code>props</code></li>
+<li><code>state</code></li>
+<li>만약 다른것에 의해 컴포넌트가 다른 모습을 띈다면 컴포넌트를 신뢰할 수 없음(ex. error)</li>
+</ul>
+<p>side effect</p>
+<ul>
+<li>side effect란 ? </li>
+<li>함수가 일관된 결과를 보장하지 못하거나, 함수 외부 어디든지 조금이라도 영향을 주는 경우 모두 사이드 이펙트를 갖는 것</li>
+<li><code>history.push</code> 역시 side effect → React Re-Study : 8에서 디스패치로 해겨한다.</li>
+</ul>
+<br>
+
+<h3 id="프리젠테이셜-컴포넌트-와-컨테이너-컴포넌트"><a href="#프리젠테이셜-컴포넌트-와-컨테이너-컴포넌트" class="headerlink" title="프리젠테이셜 컴포넌트 와 컨테이너 컴포넌트 "></a>프리젠테이셜 컴포넌트 와 컨테이너 컴포넌트 <a id="a2"></a></h3><blockquote>
+<p>리덕스를 사용하는 프로젝트에서 자주 사용되는 구조</p>
+<p>Dumb 컴포넌트와 Smart 컴포넌트로도 알려져있다.</p>
+</blockquote>
+<h4 id="프리젠테이셔널-컴포넌트"><a href="#프리젠테이셔널-컴포넌트" class="headerlink" title="프리젠테이셔널 컴포넌트 "></a>프리젠테이셔널 컴포넌트 <a id="a3"></a></h4><ul>
+<li>프리젠테이셔널 컴포넌트는 오직 뷰만을 담당하는 컴포넌트이다. </li>
+<li>DOM 엘리먼트, 스타일을 갖고 있으며, 프리젠테이셔널 컴포넌트나 컨테이너 컴포넌트를 가지고 있을 수도 있다. </li>
+<li>하지만, 리덕스의 스토어에는 직접적인 접근 권한이 없으며 오직 props 로만 데이터를 가져올수 있다. </li>
+<li>또한, 대부분의 경우 state 를 갖고있지 않으며, 갖고 있을 경우엔 데이터에 관련된 것이 아니라 UI 에 관련된 것이어야 한다.</li>
+</ul>
+<p>주로 함수형 컴포넌트로 작성되며, state 를 갖고있어야하거나, 최적화를 위해 LifeCycle 이 필요해질때 클래스형 컴포넌트로 작성된다.</p>
+<br>
+
+<h4 id="컨테이너-컴포넌트"><a href="#컨테이너-컴포넌트" class="headerlink" title="컨테이너 컴포넌트 "></a>컨테이너 컴포넌트 <a id="a4"></a></h4><ul>
+<li>프리젠테이셔널 컴포넌트들과 컨테이너 컴포넌트들을 관리하는것을 담당한다. </li>
+<li>주로 내부에 DOM 엘리먼트가 직접적으로 사용되는 경우는 적으며 사용되는 경우는 감싸는 용도일때만 사용 된다. </li>
+<li>스타일을 가지고있지 않아야 한다. </li>
+<li>스타일들은 모두 프리젠테이셔널 컴포넌트에서 정의되어야 한다. </li>
+<li>상태를 가지고 있을 때가 많으며, 리덕스에 직접적으로 접근 할 수 있다.</li>
+</ul>
+<br>
+
+<h4 id="이-구조의-장점"><a href="#이-구조의-장점" class="headerlink" title="이 구조의 장점 "></a>이 구조의 장점 <a id="a5"></a></h4><p>UI 쪽과 Data 쪽이 분리되어 프로젝트를 이해하기가 쉬워지며, 컴포넌트의 재사용률을 높여준다.</p>
+<br>
+
+<h4 id="어떤걸-컨테이너로-만들어야할까"><a href="#어떤걸-컨테이너로-만들어야할까" class="headerlink" title="어떤걸 컨테이너로 만들어야할까? "></a>어떤걸 컨테이너로 만들어야할까? <a id="a6"></a></h4><ul>
+<li>페이지</li>
+<li>리스트</li>
+<li>헤더</li>
+<li>사이드바</li>
+<li>내부의 컴포넌트 때문에 props가 여러 컴포넌트를 거쳐야 하는 경우</li>
+</ul>
+<br>
+
+<h3 id="Async-Action-with-Redux"><a href="#Async-Action-with-Redux" class="headerlink" title="Async Action with Redux "></a>Async Action with Redux <a id="a7"></a></h3><p>Q : 비동기 작업을 어디서 하느냐 ? </p>
+<p>A : <strong>dispatch 를 할 때</strong> 해준다.</p>
+<ul>
+<li>당연히 리듀서는 동기적인 것 → Pure</li>
+<li>dispatch 도 동기적인 것</li>
+</ul>
+<br>
+
+<h4 id="비동기-처리를-위한-액션-추가-및-dispatch-예시"><a href="#비동기-처리를-위한-액션-추가-및-dispatch-예시" class="headerlink" title="비동기 처리를 위한 액션 추가 및 dispatch (예시) "></a>비동기 처리를 위한 액션 추가 및 dispatch (예시) <a id="a8"></a></h4><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 액션 정의</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> START_RECEIVE_BOOKS = <span class="string">'START_RECEIVE_BOOKS'</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> END_RECEIVE_BOOKS = <span class="string">'END_RECEIVE_BOOKS'</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> ERROR_RECEIVE_BOOKS = <span class="string">'ERROR_RECEIVE_BOOKS'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 액션 생성자 함수</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">startReceiveBooks</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    type: START_RECEIVE_BOOKS,</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">endReceiveBooks</span>(<span class="params">books</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    type: END_RECEIVE_BOOKS,</span><br><span class="line">    books,</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">errorReceiveBooks</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    type: ERROR_RECEIVE_BOOKS,</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// mapDispatchToProps =&gt; dispatch</span></span><br><span class="line"><span class="comment">// 위치 : 컨테이너 혹은 해당 페이지</span></span><br><span class="line"><span class="keyword">const</span> mapDispatchToProps = <span class="function"><span class="params">dispatch</span> =&gt;</span> (&#123;</span><br><span class="line">  requestBooks: <span class="keyword">async</span> token =&gt; &#123;</span><br><span class="line">    dispatch(startLoading());</span><br><span class="line">    dispatch(clearError());</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      <span class="keyword">const</span> res = <span class="keyword">await</span> axios.get(<span class="string">"https://api.marktube.tv/v1/book"</span>, &#123;</span><br><span class="line">        headers: &#123;</span><br><span class="line">          Authorization: <span class="string">`Bearer <span class="subst">$&#123;token&#125;</span>`</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;);</span><br><span class="line">      dispatch(setBooks(res.data));</span><br><span class="line">      dispatch(endLoading());</span><br><span class="line">    &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(error);</span><br><span class="line">      dispatch(setError(error));</span><br><span class="line">      dispatch(endLoading());</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Book.jsx 컴포넌트</span></span><br><span class="line"><span class="keyword">import</span> React, &#123; useEffect &#125; <span class="keyword">from</span> <span class="string">"react"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> Book = <span class="function"><span class="params">props</span> =&gt;</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>title : &#123;props.title&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> Books = <span class="function">(<span class="params">&#123; token, loading, error, books, requestBooks &#125;</span>) =&gt;</span> &#123;</span><br><span class="line">  useEffect(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    requestBooks(token); <span class="comment">// 컨테이너로 로직을 옮겼음.</span></span><br><span class="line">  &#125;, [token, requestBooks]);</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &#123;loading &amp;&amp; <span class="xml"><span class="tag">&lt;<span class="name">p</span>&gt;</span>loading...<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span>&#125;</span><br><span class="line">      &#123;error !== <span class="literal">null</span> &amp;&amp; <span class="xml"><span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;error.message&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span>&#125;</span><br><span class="line">      &#123;books.map(<span class="function"><span class="params">book</span> =&gt;</span> (</span><br><span class="line">        &lt;Book title=&#123;book.title&#125; key=&#123;book.bookId&#125; /&gt;</span><br><span class="line">      ))&#125;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">export default Books;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="리덕스-미들웨어"><a href="#리덕스-미들웨어" class="headerlink" title="리덕스 미들웨어 "></a>리덕스 미들웨어 <a id="a9"></a></h3><ul>
+<li><p><code>dispatch</code>가 일어나는 순간 <code>dispatch</code>의 앞과 뒤에 코드를 추가할 수 있게 해주는 것.</p>
+</li>
+<li><p>미들웨어는 보통 행동이 일어나는 앞 뒤에 해야할 일을 붙여준다.</p>
+</li>
+<li><p>미들웨어가 여러개면 <strong>순차적으로 실행</strong></p>
+</li>
+<li><p>만드는 방법 2가지</p>
+<ol>
+<li><p>스토어를 만들 때 미들웨어를 설정한다.</p>
+<p>(<code>{createStore, applyMiddleware} from redux</code>)</p>
+</li>
+<li><p><code>dispatch</code>가 호출될 때 실제로 미들웨어를 통과하는 부분(직접 미들웨어를 만들 때 사용)</p>
+</li>
+</ol>
+</li>
+</ul>
+<br>
+
+<h4 id="미들웨어-만들어보기"><a href="#미들웨어-만들어보기" class="headerlink" title="미들웨어 만들어보기 "></a>미들웨어 만들어보기 <a id="a10"></a></h4><ul>
+<li><p><code>createStore</code>에는 인자가 3개 들어갈 수 있다. (reducer, initialState, applyMiddleware)</p>
+<p>initialState를 설정안하고 applyMiddleware를 삽입해도 인식한다.</p>
+</li>
+<li><p><code>dispatch</code>를 안했는데 뜬다면 → 초기화할 때 실행되는 것.</p>
+</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> middleware1 = <span class="function"><span class="params">store</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(store); <span class="comment">// &#123;getState: ƒ, dispatch: ƒ&#125;</span></span><br><span class="line">  <span class="keyword">return</span> <span class="function">(<span class="params">next</span>) =&gt;</span> &#123;&#125;; <span class="comment">// next는 함수</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 코드를 이렇게 추가해보자</span></span><br><span class="line"><span class="keyword">const</span> middleware1 = <span class="function"><span class="params">store</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(store);</span><br><span class="line">  <span class="keyword">return</span> <span class="function">(<span class="params">next</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="params">action</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'middleware1'</span>, <span class="number">1</span>, action);</span><br><span class="line">      <span class="keyword">const</span> value = next(action); <span class="comment">// next는 dispatch</span></span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'middleware1'</span>, <span class="number">2</span>, action);</span><br><span class="line">      <span class="keyword">return</span> value;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> middleware2 = <span class="function"><span class="params">store</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(store);</span><br><span class="line">  <span class="keyword">return</span> <span class="function">(<span class="params">next</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="params">action</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'middleware2'</span>, <span class="number">1</span>, action);</span><br><span class="line">      <span class="keyword">const</span> value = next(action); <span class="comment">// next는 dispatch</span></span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'middleware2'</span>, <span class="number">2</span>, action);</span><br><span class="line">      <span class="keyword">return</span> value;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">create</span>(<span class="params">initialState</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> createStore(reducer, initialState, applyMiddleware(middleware1, middleware2));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="Redux-Dev-Tools"><a href="#Redux-Dev-Tools" class="headerlink" title="Redux Dev Tools "></a>Redux Dev Tools <a id="a11"></a></h3><p><code>npm install --save redux-devtools-extension</code></p>
+<blockquote>
+<p>현재 리덕스 관리하고 있는 상태 및 Action들을 크롬 개발자 도구를 통해 확인할 수 있는 툴</p>
+</blockquote>
+<img width="1792" alt="redux-dev-tools" src="https://user-images.githubusercontent.com/31315644/74051879-2e076e00-4a1c-11ea-8dfe-066f8c603fb2.png">
+
+<br>
+
+<h3 id="redux-thunk"><a href="#redux-thunk" class="headerlink" title="redux-thunk "></a>redux-thunk <a id="a12"></a></h3><ul>
+<li><p>리덕스 미들웨어</p>
+</li>
+<li><p>리덕스를 만든 사람이 만듬(Dan)</p>
+</li>
+<li><p>리덕스에서 비동기 처리를 위한 라이브러리</p>
+</li>
+<li><p>액션 생성자를 활용하여 비동기를 처리한다. (컨테이너에 있던 비동기 함수를 액션으로 이동)</p>
+</li>
+<li><p>액션 생성자가 액션을 리턴하지 않고, 함수를 리턴함.</p>
+</li>
+<li><p><code>thunk</code>는 인자로 1. dispatch 2.현재 스테이트 를 받아올 수 있다.</p>
+<p>export const setBooksThunk = token =&gt; async dispatch, getState </p>
+</li>
+<li><p>즉, 컨테이너에서도 dispatch를 제거한다.</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>—-</th>
+<th>기존</th>
+<th>redux-thunk</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>container</td>
+<td>redux의 state, dispatch 처리</td>
+<td>redux의 state, thunk를 사용</td>
+</tr>
+<tr>
+<td>Action</td>
+<td>action 타입, 생성자 정의</td>
+<td>action 타입, 생성자 정의, thunk를 정의(dispatch)</td>
+</tr>
+</tbody></table>
+<br>
+
+<h4 id="실습"><a href="#실습" class="headerlink" title="실습 "></a>실습 <a id="a13"></a></h4><p><code>npm i redux-thunk</code></p>
+<ol>
+<li><code>Books</code>에서 직접 데이터를 가져온다.</li>
+<li>프리젠테이션 컴포넌트에서 하지 않는다 → 컨테이너로 이동</li>
+<li><code>thunk</code>로 <code>action</code>을 넘겨서 깔끔하게 처리함.</li>
+<li><code>action</code>에 비동기 로직을 모두 포함한다.</li>
+</ol>
+<br>
+
+<p><strong>redux-thunk 설정</strong></p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createStore, applyMiddleware &#125; <span class="keyword">from</span> <span class="string">"redux"</span>;</span><br><span class="line"><span class="keyword">import</span> reducers <span class="keyword">from</span> <span class="string">"./reducers"</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; composeWithDevTools &#125; <span class="keyword">from</span> <span class="string">"redux-devtools-extension"</span>;</span><br><span class="line"><span class="keyword">import</span> thunk <span class="keyword">from</span> <span class="string">"redux-thunk"</span>; <span class="comment">// import</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> store = createStore(</span><br><span class="line">  reducers,</span><br><span class="line">  composeWithDevTools(applyMiddleware(thunk)) <span class="comment">// 미들웨어 설정</span></span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> store;</span><br></pre></td></tr></table></figure>
+
+<p><strong>Before Using thunk</strong></p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// BooksContainer.jsx , dispatch를 컨테이너에서 설정함.</span></span><br><span class="line"><span class="keyword">const</span> mapDispatchToProps = <span class="function"><span class="params">dispatch</span> =&gt;</span> (&#123;</span><br><span class="line">  requestBooks: <span class="keyword">async</span> token =&gt; &#123;</span><br><span class="line">    dispatch(startLoading());</span><br><span class="line">    dispatch(clearError());</span><br><span class="line">    <span class="keyword">try</span> &#123; </span><br><span class="line">      <span class="keyword">const</span> res = <span class="keyword">await</span> axios.get(<span class="string">"https://api.marktube.tv/v1/book"</span>, &#123;</span><br><span class="line">        headers: &#123;</span><br><span class="line">          Authorization: <span class="string">`Bearer <span class="subst">$&#123;token&#125;</span>`</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;);</span><br><span class="line">      dispatch(setBooks(res.data));</span><br><span class="line">      dispatch(endLoading());</span><br><span class="line">    &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(error);</span><br><span class="line">      dispatch(setError(error));</span><br><span class="line">      dispatch(endLoading());</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p><strong>Use thunk</strong></p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"> BooksContainer.jsx</span><br><span class="line"><span class="keyword">const</span> mapDispatchToProps = <span class="function"><span class="params">dispatch</span> =&gt;</span> (&#123;</span><br><span class="line">  requestBooks: <span class="keyword">async</span> token =&gt; &#123;...&#125;,</span><br><span class="line">  requestBooksThunk: <span class="function"><span class="params">token</span> =&gt;</span> &#123;</span><br><span class="line">    dispatch(setBooksThunk(token)); <span class="comment">// thunk만 로드</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// actions/index.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> setBooksThunk = <span class="function"><span class="params">token</span> =&gt;</span> <span class="keyword">async</span> dispatch =&gt; &#123;</span><br><span class="line">  dispatch(startLoading());</span><br><span class="line">  dispatch(clearError());</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> res = <span class="keyword">await</span> axios.get(<span class="string">"https://api.marktube.tv/v1/book"</span>, &#123;</span><br><span class="line">      headers: &#123;</span><br><span class="line">        Authorization: <span class="string">`Bearer <span class="subst">$&#123;token&#125;</span>`</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    dispatch(setBooks(res.data));</span><br><span class="line">    dispatch(endLoading());</span><br><span class="line">  &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(error);</span><br><span class="line">    dispatch(setError(error));</span><br><span class="line">    dispatch(endLoading());</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="서비스-분리"><a href="#서비스-분리" class="headerlink" title="서비스 분리 "></a>서비스 분리 <a id="a14"></a></h3><ul>
+<li>HTTP Request 통신 코드들만 모아놓는다. (<code>axios</code>, <code>promise</code> …) </li>
+<li>특정한 <code>side effect</code>의 관심사들을 모아놓은 계층.</li>
+<li>타 컨테이너나 컴포넌트에서 사용하던 <code>axios</code>의 의존성을 제거해줄 수 있다.</li>
+<li>Dependency injection</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// src/services/UserService.js</span></span><br><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">'axios'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> USER_API_URL = <span class="string">'https://api.marktube.tv/v1/me'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">UserService</span> </span>&#123;</span><br><span class="line">  <span class="keyword">static</span> login(email, password) &#123;</span><br><span class="line">    <span class="keyword">return</span> axios.post(USER_API_URL, &#123;</span><br><span class="line">      email,</span><br><span class="line">      password,</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">static</span> logout(token) &#123;</span><br><span class="line">    <span class="keyword">return</span> axios.delete(USER_API_URL, &#123;</span><br><span class="line">      headers: &#123;</span><br><span class="line">        Authorization: <span class="string">`Bearer <span class="subst">$&#123;token&#125;</span>`</span>,</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="HOC에-옵션을-주는-방법"><a href="#HOC에-옵션을-주는-방법" class="headerlink" title="HOC에 옵션을 주는 방법  "></a>HOC에 옵션을 주는 방법  <a id="a15"></a></h3><ul>
+<li>withRouter(Component), createFragment(Component, option), connect(option)(Component)</li>
+<li>언마운트 직전의 리퀘스트를 날려야 한다. (로그인 되는데 로그아웃하면 안되기 때문)</li>
+<li>로그인, 로그아웃을 하나의 서비스로 처리한다.</li>
+</ul>
+
         </div>
         <footer class="article-footer">
             
@@ -269,15 +476,34 @@ ga('send', 'pageview');
             "name": "Jun Hyeok Kim"
         },
         "headline": "ReactStudy-07",
-        "image": "https://hyeok999.github.io",
+        "image": "https://hyeok999.github.iohttps://user-images.githubusercontent.com/31315644/72333302-e6ccdc80-36fe-11ea-9b80-e00b0d5f5847.png",
         "keywords": "git Web coding develop HTML CSS javascript React",
         "genre": "TIL React",
         "datePublished": "2020-02-25",
         "dateCreated": "2020-02-25",
         "dateModified": "2020-03-10",
         "url": "https://hyeok999.github.io/2020/02/25/ReactStudy-07/",
-        "description": "",
-        "wordCount": 1
+        "description": "
+
+React Re-Study : 7
+시작하기 앞서 정리하기
+프리젠테이셜 컴포넌트 와 컨테이너 컴포넌트
+프리젠테이셔널 컴포넌트
+컨테이너 컴포넌트
+이 구조의 장점
+어떤걸 컨테이너로 만들어야할까?
+
+
+Async Action with Redux
+비동기 처리를 위한 액션 추가 및 dispatch (예시)
+
+
+리덕스 미들웨어
+미들웨어 만들어보기
+
+
+Redux Dev",
+        "wordCount": 2001
     }
 </script>
 
@@ -398,7 +624,7 @@ ga('send', 'pageview');
                             <a href="/2020/02/25/ReactStudy-07/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/72333302-e6ccdc80-36fe-11ea-9b80-e00b0d5f5847.png)" alt="ReactStudy-07" class="thumbnail-image"></span>
     
     
 </a>
