@@ -9,7 +9,15 @@
 
     <url>
         <loc>https://hyeok999.github.io/2020/03/11/books-review06/</loc>
-        <lastmod>2020-03-12T11:01:45.879Z</lastmod>
+        <lastmod>2020-03-12T11:04:52.898Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeok999.github.io/2020/03/10/cas-react-main/</loc>
+        <lastmod>2020-03-12T11:04:24.373Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -26,14 +34,6 @@
     <url>
         <loc>https://hyeok999.github.io/2020/03/11/books-review05/</loc>
         <lastmod>2020-03-12T10:57:34.378Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://hyeok999.github.io/2020/03/10/cas-react-main/</loc>
-        <lastmod>2020-03-12T10:52:30.104Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
