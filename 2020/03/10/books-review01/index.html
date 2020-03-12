@@ -12,18 +12,20 @@
     
         <meta name="keywords" content="git,Web,coding,develop,TIL,algorithm,HTML,CSS,javascript,React,Redux">
     
-    <meta name="description" content="HYEOK999&apos;s IT Develop Blog">
+    <meta name="description" content="개발 서적 평가 서비스-라우팅 설정하기-목차  프로젝트 생성 라이브러리 인스톨하기 nvm 설정파일 생성하기 package.json 설정 추가하기 prettier 설정파일 생성하기 라우터 설정하기 pages 폴더 만들고 컴포넌트 설정하기   프로젝트 생성 1npx create-react-app books-review    라이브러리 인스톨하기  1234c">
 <meta name="keywords" content="git,Web,coding,develop,TIL,algorithm,HTML,CSS,javascript,React,Redux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Books Review - 라우팅 설정하기 -">
 <meta property="og:url" content="https://hyeok999.github.io/2020/03/10/books-review01/index.html">
 <meta property="og:site_name" content="HYEOK999&#39;s Blog">
-<meta property="og:description" content="HYEOK999&apos;s IT Develop Blog">
+<meta property="og:description" content="개발 서적 평가 서비스-라우팅 설정하기-목차  프로젝트 생성 라이브러리 인스톨하기 nvm 설정파일 생성하기 package.json 설정 추가하기 prettier 설정파일 생성하기 라우터 설정하기 pages 폴더 만들고 컴포넌트 설정하기   프로젝트 생성 1npx create-react-app books-review    라이브러리 인스톨하기  1234c">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-03-12T10:10:48.530Z">
+<meta property="og:image" content="https://user-images.githubusercontent.com/31315644/76512138-8c9a8e80-6497-11ea-84e7-fab97dc9cdcd.png">
+<meta property="og:updated_time" content="2020-03-12T10:28:59.693Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Books Review - 라우팅 설정하기 -">
-<meta name="twitter:description" content="HYEOK999&apos;s IT Develop Blog">
+<meta name="twitter:description" content="개발 서적 평가 서비스-라우팅 설정하기-목차  프로젝트 생성 라이브러리 인스톨하기 nvm 설정파일 생성하기 package.json 설정 추가하기 prettier 설정파일 생성하기 라우터 설정하기 pages 폴더 만들고 컴포넌트 설정하기   프로젝트 생성 1npx create-react-app books-review    라이브러리 인스톨하기  1234c">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/31315644/76512138-8c9a8e80-6497-11ea-84e7-fab97dc9cdcd.png">
     
     <link rel="canonical" href="https://hyeok999.github.io/2020/03/10/books-review01/">
     
@@ -191,7 +193,72 @@ ga('send', 'pageview');
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <p><img src="https://user-images.githubusercontent.com/31315644/76512138-8c9a8e80-6497-11ea-84e7-fab97dc9cdcd.png" alt="book-review-thumb-img"></p>
+<hr>
+<h1 id="개발-서적-평가-서비스"><a href="#개발-서적-평가-서비스" class="headerlink" title="개발 서적 평가 서비스"></a>개발 서적 평가 서비스</h1><h2 id="라우팅-설정하기"><a href="#라우팅-설정하기" class="headerlink" title="-라우팅 설정하기-"></a>-라우팅 설정하기-</h2><p><strong>목차</strong></p>
+<ol>
+<li><a href="#a1">프로젝트 생성</a></li>
+<li><a href="#a2">라이브러리 인스톨하기</a></li>
+<li><a href="#a3">nvm 설정파일 생성하기</a></li>
+<li><a href="#a4">package.json 설정 추가하기</a></li>
+<li><a href="#a5">prettier 설정파일 생성하기</a></li>
+<li><a href="#a6">라우터 설정하기</a></li>
+<li><a href="#a7">pages 폴더 만들고 컴포넌트 설정하기</a></li>
+</ol>
+<hr>
+<h3 id="프로젝트-생성"><a href="#프로젝트-생성" class="headerlink" title="프로젝트 생성 "></a>프로젝트 생성 <a id="a1"></a></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx create-react-app books-review</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="라이브러리-인스톨하기"><a href="#라이브러리-인스톨하기" class="headerlink" title="라이브러리 인스톨하기  "></a>라이브러리 인스톨하기  <a id="a2"></a></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> books-review</span><br><span class="line">npm i react-router-dom</span><br><span class="line">npm i react-error-boundary</span><br><span class="line">npm i prettier eslint-config-prettier husky lint-staged -D</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="nvm-설정파일-생성하기"><a href="#nvm-설정파일-생성하기" class="headerlink" title="nvm 설정파일 생성하기 "></a>nvm 설정파일 생성하기 <a id="a3"></a></h3><p><strong>.nvmrc</strong> 파일 생성 (위치 : .gitignore 랑 같은 위치)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">12.11</span><span class="number">.1</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="package-json-설정-추가하기"><a href="#package-json-설정-추가하기" class="headerlink" title="package.json 설정 추가하기 "></a>package.json 설정 추가하기 <a id="a4"></a></h3><p><code>&quot;scripts&quot;: {...}</code> 아래에 삽입</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">"eslintConfig": &#123;</span><br><span class="line">  "extends": [</span><br><span class="line">    "react-app",</span><br><span class="line">    <span class="string">"prettier"</span></span><br><span class="line">  ]</span><br><span class="line">&#125;,</span><br><span class="line">"husky": &#123;</span><br><span class="line">  "hooks": &#123;</span><br><span class="line">    "pre-commit": "lint-staged"</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br><span class="line">"lint-staged": &#123;</span><br><span class="line">  "**/*.&#123;js,jsx&#125;": [</span><br><span class="line">    "eslint --fix",</span><br><span class="line">    "prettier --write",</span><br><span class="line">    <span class="string">"git add"</span></span><br><span class="line">  ]</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="prettier-설정파일-생성하기"><a href="#prettier-설정파일-생성하기" class="headerlink" title="prettier 설정파일 생성하기 "></a>prettier 설정파일 생성하기 <a id="a5"></a></h3><p><strong>.prettierrc</strong> 파일 생성 (위치 : .gitignore 랑 같은 위치)</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"trailingComma"</span>: <span class="string">"all"</span>,</span><br><span class="line">  <span class="attr">"singleQuote"</span>: <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="라우터-설정하기"><a href="#라우터-설정하기" class="headerlink" title="라우터 설정하기 "></a>라우터 설정하기 <a id="a6"></a></h3><ol>
+<li><p>path 에러가 날 경우 특정 컴포넌트로 이동하도록  </p>
+<p><code>&lt;ErrorBoundary FallbackComponent={ErrorFallbackComponent}&gt;</code>를 설정한다.</p>
+</li>
+<li><p>BrowserRouter 로 Route 들을 감싸준다. (브라우저 라우팅을 위한 react-router-dom에서 지원해주는 jsx 태그)</p>
+</li>
+<li><p>브라우저에서 요청한 경로에 Route 의 path 가 들어있으면(매치가 되면) 해당 component 를 보여준다.</p>
+</li>
+<li><p><code>exact</code> :  주어진 경로와 정확히 맞아 떨어져야만 설정한 컴포넌트를 보여준다.</p>
+</li>
+<li><p><code>&lt;Link&gt;</code> 리액트에서 사용되는 <code>&lt;a&gt;</code> (단, 서버와 통신을 하지않고 단순히 URL을 바꾸는 역할)</p>
+</li>
+<li><p><code>Switch</code> 컴포넌트에 감싸면 매칭되는 첫번째 라우트만 보여주고 나머지는 보여주지 않는다.</p>
+</li>
+</ol>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// App.js</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; BrowserRouter, Switch, Route, Link &#125; <span class="keyword">from</span> <span class="string">'react-router-dom'</span>;</span><br><span class="line"><span class="keyword">import</span> Home <span class="keyword">from</span> <span class="string">'./pages/Home'</span>;</span><br><span class="line"><span class="keyword">import</span> Signin <span class="keyword">from</span> <span class="string">'./pages/Signin'</span>;</span><br><span class="line"><span class="keyword">import</span> NotFound <span class="keyword">from</span> <span class="string">'./pages/NotFound'</span>;</span><br><span class="line"><span class="keyword">import</span> ErrorBoundary <span class="keyword">from</span> <span class="string">'react-error-boundary'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> ErrorFallbackComponent = <span class="function">(<span class="params">&#123; error &#125;</span>) =&gt;</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;error.message&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> App = <span class="function"><span class="params">()</span> =&gt;</span> (</span><br><span class="line">  &lt;ErrorBoundary FallbackComponent=&#123;ErrorFallbackComponent&#125;&gt;</span><br><span class="line">    &lt;BrowserRouter&gt;</span><br><span class="line">      &lt;ul&gt;</span><br><span class="line">        &lt;li&gt;</span><br><span class="line">          &lt;Link to=<span class="string">"/"</span>&gt;홈&lt;<span class="regexp">/Link&gt;</span></span><br><span class="line"><span class="regexp">        &lt;/</span>li&gt;</span><br><span class="line">        &lt;li&gt;</span><br><span class="line">          &lt;Link to=<span class="string">"/signin"</span>&gt;로그인&lt;<span class="regexp">/Link&gt;</span></span><br><span class="line"><span class="regexp">        &lt;/</span>li&gt;</span><br><span class="line">      &lt;<span class="regexp">/ul&gt;</span></span><br><span class="line"><span class="regexp">      &lt;Switch&gt;</span></span><br><span class="line"><span class="regexp">        &lt;Route exact path="/</span>signin<span class="string">" component=&#123;Signin&#125; /&gt;</span></span><br><span class="line"><span class="string">        &lt;Route exact path="</span>/<span class="string">" component=&#123;Home&#125; /&gt;</span></span><br><span class="line"><span class="string">        &lt;Route component=&#123;NotFound&#125; /&gt;</span></span><br><span class="line"><span class="string">      &lt;/Switch&gt;</span></span><br><span class="line"><span class="string">    &lt;/BrowserRouter&gt;</span></span><br><span class="line"><span class="string">  &lt;/ErrorBoundary&gt;</span></span><br><span class="line"><span class="string">);</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">export default App;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="pages-폴더-만들고-컴포넌트-설정하기"><a href="#pages-폴더-만들고-컴포넌트-설정하기" class="headerlink" title="pages 폴더 만들고 컴포넌트 설정하기 "></a>pages 폴더 만들고 컴포넌트 설정하기 <a id="a7"></a></h3><p><img src="https://user-images.githubusercontent.com/31315644/72698830-3856ea80-3b89-11ea-9a39-84c5684e6b26.jpeg" alt="dev01"></p>
+<ul>
+<li>구체적으로 설정은 안하고 초기 설정만 해준다.</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Home.jsx</span></span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> Home = <span class="function"><span class="params">props</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>Home<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> Home;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// NotFound.jsx</span></span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> NotFound = <span class="function"><span class="params">props</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>NotFound<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> NotFound;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Signin.jsx</span></span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> Signin = <span class="function"><span class="params">props</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>Signin<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> Signin;</span><br></pre></td></tr></table></figure>
+
+<br>
         </div>
         <footer class="article-footer">
             
@@ -269,15 +336,32 @@ ga('send', 'pageview');
             "name": "Jun Hyeok Kim"
         },
         "headline": "Books Review - 라우팅 설정하기 -",
-        "image": "https://hyeok999.github.io",
+        "image": "https://hyeok999.github.iohttps://user-images.githubusercontent.com/31315644/76512138-8c9a8e80-6497-11ea-84e7-fab97dc9cdcd.png",
         "keywords": "git Web coding develop TIL algorithm HTML CSS javascript React Redux",
         "genre": "Develop Project",
         "datePublished": "2020-03-10",
         "dateCreated": "2020-03-10",
         "dateModified": "2020-03-12",
         "url": "https://hyeok999.github.io/2020/03/10/books-review01/",
-        "description": "",
-        "wordCount": 1
+        "description": "
+
+개발 서적 평가 서비스-라우팅 설정하기-목차
+
+프로젝트 생성
+라이브러리 인스톨하기
+nvm 설정파일 생성하기
+package.json 설정 추가하기
+prettier 설정파일 생성하기
+라우터 설정하기
+pages 폴더 만들고 컴포넌트 설정하기
+
+
+프로젝트 생성 1npx create-react-app books-review
+
+
+
+라이브러리 인스톨하기  1234c",
+        "wordCount": 781
     }
 </script>
 
@@ -368,7 +452,7 @@ ga('send', 'pageview');
                             <a href="/2020/03/10/books-review01/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/76512138-8c9a8e80-6497-11ea-84e7-fab97dc9cdcd.png)" alt="Books Review - 라우팅 설정하기 -" class="thumbnail-image"></span>
     
     
 </a>
