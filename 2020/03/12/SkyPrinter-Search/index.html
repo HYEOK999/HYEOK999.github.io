@@ -12,18 +12,20 @@
     
         <meta name="keywords" content="TIL,git,Web,coding,develop,algorithm,HTML,CSS,javascript,React,Redux">
     
-    <meta name="description" content="HYEOK999&apos;s IT Develop Blog">
+    <meta name="description" content="SearchBox 항공권(국가, 도시, 지역) 검색영역 SkyPrinter 검색 영역     SkyPrinter 바로가기  목차 SearchBox 폴더구조  Search API 알아보기 - List Places -   Redux Module 파악하기  places module  PlacesContainer    SearchBox 컴포넌트 파악하기  상태">
 <meta name="keywords" content="TIL,git,Web,coding,develop,algorithm,HTML,CSS,javascript,React,Redux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SkyPrinter - Search -">
 <meta property="og:url" content="https://hyeok999.github.io/2020/03/12/SkyPrinter-Search/index.html">
 <meta property="og:site_name" content="HYEOK999&#39;s Blog">
-<meta property="og:description" content="HYEOK999&apos;s IT Develop Blog">
+<meta property="og:description" content="SearchBox 항공권(국가, 도시, 지역) 검색영역 SkyPrinter 검색 영역     SkyPrinter 바로가기  목차 SearchBox 폴더구조  Search API 알아보기 - List Places -   Redux Module 파악하기  places module  PlacesContainer    SearchBox 컴포넌트 파악하기  상태">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-03-13T12:24:12.683Z">
+<meta property="og:image" content="https://user-images.githubusercontent.com/31315644/74633709-9507ee00-51a5-11ea-9ba8-95acd1c1e0e3.jpeg">
+<meta property="og:updated_time" content="2020-03-13T12:27:44.025Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SkyPrinter - Search -">
-<meta name="twitter:description" content="HYEOK999&apos;s IT Develop Blog">
+<meta name="twitter:description" content="SearchBox 항공권(국가, 도시, 지역) 검색영역 SkyPrinter 검색 영역     SkyPrinter 바로가기  목차 SearchBox 폴더구조  Search API 알아보기 - List Places -   Redux Module 파악하기  places module  PlacesContainer    SearchBox 컴포넌트 파악하기  상태">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/31315644/74633709-9507ee00-51a5-11ea-9ba8-95acd1c1e0e3.jpeg">
     
     <link rel="canonical" href="https://hyeok999.github.io/2020/03/12/skyprinter-search/">
     
@@ -191,7 +193,198 @@ ga('send', 'pageview');
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <p><img src="https://user-images.githubusercontent.com/31315644/74633709-9507ee00-51a5-11ea-9ba8-95acd1c1e0e3.jpeg" alt="SearchBoxImg"></p>
+<hr>
+<h1 id="SearchBox-항공권-국가-도시-지역-검색영역"><a href="#SearchBox-항공권-국가-도시-지역-검색영역" class="headerlink" title="SearchBox 항공권(국가, 도시, 지역) 검색영역"></a>SearchBox 항공권(국가, 도시, 지역) 검색영역</h1><blockquote>
+<p>SkyPrinter 검색 영역 </p>
+</blockquote>
+<br>
+
+<h3 id="SkyPrinter-바로가기"><a href="#SkyPrinter-바로가기" class="headerlink" title="SkyPrinter 바로가기"></a><a href="https://github.com/HYEOK999/skyprinter" rel="external nofollow noopener noreferrer" target="_blank">SkyPrinter 바로가기</a></h3><br>
+
+<h2 id="목차"><a href="#목차" class="headerlink" title="목차"></a>목차</h2><ol>
+<li><p><a href="#b1">SearchBox 폴더구조</a></p>
+</li>
+<li><p><a href="#b2">Search API 알아보기 - List Places - </a></p>
+</li>
+<li><p><a href="#b3">Redux Module 파악하기</a></p>
+<ul>
+<li><p><a href="#b4">places module</a></p>
+</li>
+<li><p><a href="#b5">PlacesContainer</a></p>
+</li>
+</ul>
+</li>
+<li><p><a href="#b6">SearchBox 컴포넌트 파악하기</a></p>
+<ul>
+<li><a href="#b7">상태 정리</a></li>
+</ul>
+</li>
+<li><p><a href="#b8">결과</a></p>
+<ul>
+<li><a href="#b9">검색 리스트 불러오기 및 하이라이팅 처리</a></li>
+<li><a href="#b10">국가, 도시, 공항 기준 이미지 및 CSS 적용하기</a></li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="SearchBox-폴더-구조"><a href="#SearchBox-폴더-구조" class="headerlink" title="SearchBox 폴더 구조 "></a>SearchBox 폴더 구조 <a id="b1"></a></h3><ul>
+<li>index.jsx</li>
+<li>BoundSearchBox.jsx</li>
+<li>RenderPlaceList.jsx</li>
+<li>ParseWord.jsx</li>
+<li>BoundChangeBox.jsx</li>
+<li>CheckBox.jsx</li>
+</ul>
+<br>
+
+<h3 id="Search-API-알아보기-List-Places"><a href="#Search-API-알아보기-List-Places" class="headerlink" title="Search API 알아보기 - List Places -"></a>Search API 알아보기 - List Places -<a id="b2"></a></h3><p>사용자 입력한 검색어를 통해 API를 호출하여 출발지와 도착지의 리스트를 보여줍니다. </p>
+<p><code>country : 국가</code><br><code>language: 언어</code><br><code>area : 입력한 장소</code><br><code>isDestination : 출발지 도착지 여부</code></p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">'axios'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> SELECT_AREA_API_URL =</span><br><span class="line">  <span class="string">'https://www.skyscanner.co.kr/g/autosuggest-flights'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">SearchService</span> </span>&#123;</span><br><span class="line">  <span class="keyword">static</span> <span class="keyword">async</span> SelectArea(country, language, area, isDestination) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">await</span> axios.get(</span><br><span class="line">      <span class="string">`<span class="subst">$&#123;SELECT_AREA_API_URL&#125;</span>/<span class="subst">$&#123;country&#125;</span>/<span class="subst">$&#123;language&#125;</span>/<span class="subst">$&#123;area&#125;</span>`</span>,</span><br><span class="line">      &#123;</span><br><span class="line">        isDestination: isDestination, <span class="comment">// 출발지 도착지 여부</span></span><br><span class="line">        enable_general_search_v2: <span class="literal">true</span>,</span><br><span class="line">      &#125;,</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://user-images.githubusercontent.com/32444914/74079428-b4eb3380-4a7a-11ea-8059-1bfca77820f3.PNG" alt="img"></p>
+<br>
+
+<h3 id="Redux-Module-파악하기"><a href="#Redux-Module-파악하기" class="headerlink" title="Redux Module 파악하기 "></a>Redux Module 파악하기 <a id="b3"></a></h3><blockquote>
+<p>비동기 처리(유효성 검사)가 필요한 부분은 미들웨어(Redux Saga)로 처리를 하였습니다.</p>
+</blockquote>
+<h4 id="places-module"><a href="#places-module" class="headerlink" title="places module "></a>places module <a id="b4"></a></h4><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// src/redux/modules/places.jsx</span></span><br><span class="line"><span class="keyword">import</span> &#123; takeEvery, put, select &#125; <span class="keyword">from</span> <span class="string">'redux-saga/effects'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; SET_ERROR &#125; <span class="keyword">from</span> <span class="string">'./error'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ACTIONS</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> SET_PLACE = <span class="string">'skyprinter/places/SET_PLACE'</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> FETCH_PLACE = <span class="string">'skyprinter/places/FETCH_PLACE'</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> SWITCH_PLACES = <span class="string">'skyprinter/places/SWITCH_PLACES'</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> INITIALIZE_PLACES = <span class="string">'skyprinter/places/INITIALIZE_PLACES'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ACTION CREATORS</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> initializePlaces = <span class="function"><span class="params">()</span> =&gt;</span> (&#123;</span><br><span class="line">  type: INITIALIZE_PLACES</span><br><span class="line">&#125;);</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> setPlace = <span class="function"><span class="params">places</span> =&gt;</span> (&#123; <span class="attr">type</span>: SET_PLACE, places &#125;);</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> switchPlaces = <span class="function"><span class="params">()</span> =&gt;</span> (&#123; <span class="attr">type</span>: SWITCH_PLACES &#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span>* <span class="title">fetchPlaces</span>(<span class="params">action</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> error = <span class="keyword">yield</span> select(<span class="function"><span class="params">state</span> =&gt;</span> state.error);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">yield</span> put(&#123;</span><br><span class="line">      type: FETCH_PLACE,</span><br><span class="line">      places: action.places</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 유효성 검사</span></span><br><span class="line">    <span class="keyword">if</span> (error.errorOccurred) &#123;</span><br><span class="line">      <span class="keyword">const</span> places = <span class="keyword">yield</span> select(<span class="function"><span class="params">state</span> =&gt;</span> state.places);</span><br><span class="line">      <span class="keyword">let</span> newErrors = error.errors;</span><br><span class="line">      <span class="keyword">if</span> (newErrors !== <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (places.inBoundId &amp;&amp; places.outBoundId) &#123;</span><br><span class="line">          newErrors = newErrors.filter(<span class="function"><span class="params">e</span> =&gt;</span> e.type !== <span class="string">'Incorrect places'</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (places.inBoundId !== places.outBoundId) &#123;</span><br><span class="line">          newErrors = newErrors.filter(<span class="function"><span class="params">e</span> =&gt;</span> e.type !== <span class="string">'PlaceId is same'</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (places.inBoundId.length !== <span class="number">2</span> &amp;&amp; places.outBoundId.length !== <span class="number">2</span>) &#123;</span><br><span class="line">          newErrors = newErrors.filter(<span class="function"><span class="params">e</span> =&gt;</span> e.type !== <span class="string">'No Country'</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        newErrors.length === <span class="number">0</span> || newErrors === <span class="literal">null</span></span><br><span class="line">          ? <span class="keyword">yield</span> put(&#123; <span class="attr">type</span>: SET_ERROR, <span class="attr">errors</span>: <span class="literal">null</span> &#125;)</span><br><span class="line">          : <span class="keyword">yield</span> put(&#123; <span class="attr">type</span>: SET_ERROR, <span class="attr">errors</span>: newErrors &#125;);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(error);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ROOT SAGA</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span>* <span class="title">placesSaga</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">yield</span> takeEvery(SET_PLACE, fetchPlaces);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// INIITIAL STATE</span></span><br><span class="line"><span class="keyword">const</span> initialState = &#123;</span><br><span class="line">  inBoundId: <span class="string">''</span>,</span><br><span class="line">  inBoundName: <span class="string">''</span>,</span><br><span class="line">  outBoundId: <span class="string">''</span>,</span><br><span class="line">  outBoundName: <span class="string">''</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// REDUCER</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">places</span>(<span class="params">state = initialState, action</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">switch</span> (action.type) &#123;</span><br><span class="line">    <span class="keyword">case</span> INITIALIZE_PLACES:</span><br><span class="line">      <span class="keyword">return</span> initialState;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">case</span> FETCH_PLACE:</span><br><span class="line">      <span class="keyword">const</span> &#123; places &#125; = action;</span><br><span class="line">      <span class="keyword">if</span> (places.type === <span class="string">'inBound'</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">          inBoundId: places.PlaceId,</span><br><span class="line">          inBoundName: places.PlaceName,</span><br><span class="line">          outBoundId: state.outBoundId,</span><br><span class="line">          outBoundName: state.outBoundName</span><br><span class="line">        &#125;;</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">          inBoundId: state.inBoundId,</span><br><span class="line">          inBoundName: state.inBoundName,</span><br><span class="line">          outBoundId: places.PlaceId,</span><br><span class="line">          outBoundName: places.PlaceName</span><br><span class="line">        &#125;;</span><br><span class="line">      &#125;</span><br><span class="line">    <span class="keyword">case</span> SWITCH_PLACES:</span><br><span class="line">      <span class="keyword">return</span> &#123;</span><br><span class="line">        inBoundId: state.outBoundId,</span><br><span class="line">        inBoundName: state.outBoundName,</span><br><span class="line">        outBoundId: state.inBoundId,</span><br><span class="line">        outBoundName: state.inBoundName</span><br><span class="line">      &#125;;</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">      <span class="keyword">return</span> state;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="PlacesContainer"><a href="#PlacesContainer" class="headerlink" title="PlacesContainer "></a>PlacesContainer <a id="b5"></a></h4><blockquote>
+<p>컨테이너를 두어 리덕스의 상태와 액션들을 실제로 사용할 컴포넌트에게 전달해줍니다.</p>
+</blockquote>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// src/containers/PlacesContainer.jsx</span></span><br><span class="line"><span class="keyword">import</span> &#123; connect &#125; <span class="keyword">from</span> <span class="string">'react-redux'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; switchPlaces, setPlace &#125; <span class="keyword">from</span> <span class="string">'../redux/modules/places'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> SearchBox <span class="keyword">from</span> <span class="string">'../components/Main/SearchBox'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> mapStateToProps = <span class="function"><span class="params">state</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    places: state.places,</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> mapDispatchToProps = <span class="function"><span class="params">dispatch</span> =&gt;</span> (&#123;</span><br><span class="line">  setPlace: <span class="function"><span class="params">places</span> =&gt;</span> &#123;</span><br><span class="line">    dispatch(setPlace(places));</span><br><span class="line">  &#125;,</span><br><span class="line">  switchPlaces: <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    dispatch(switchPlaces());</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> connect(mapStateToProps, mapDispatchToProps)(SearchBox);</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="SearchBox-컴포넌트-파악하기"><a href="#SearchBox-컴포넌트-파악하기" class="headerlink" title="SearchBox 컴포넌트 파악하기 "></a>SearchBox 컴포넌트 파악하기 <a id="b6"></a></h3><ul>
+<li><a href="#a1">index.jsx</a><ul>
+<li><a href="#a2">BoundSearchBox.jsx - 출발지</a><ul>
+<li><a href="#a3">RenderPlaceList.jsx</a><ul>
+<li><a href="#a4">ParsePlaceList.jsx</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#a5">BoundChangeBox.jsx</a></li>
+<li>BoundSearchBox.jsx - 도착지 (출발지와 동일)<ul>
+<li>RenderPlaceList.jsx<ul>
+<li>ParseWord.jsx</li>
+</ul>
+</li>
+<li>CheckBox.jsx</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="상태-정리"><a href="#상태-정리" class="headerlink" title="상태 정리 "></a>상태 정리 <a id="b7"></a></h4><h5 id="index-jsx"><a href="#index-jsx" class="headerlink" title="index.jsx "></a>index.jsx <a id="a1"></a></h5><ul>
+<li><p>선언한 상태</p>
+<p>➤ <strong>bound</strong> → BoundSearchBox.jsx</p>
+<ul>
+<li><p>초기값 : 리덕스에는 Name, Id를 모두 저장합니다. Name만 지역 상태로 만든 이유는 <code>switch</code>한 결과를 props를 통해 내려주고  BoundSearchBox에서 라이브러리가 확인할 수 있게 하기 위함입니다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> [bound, setBound] = useState(&#123;</span><br><span class="line">  inBoundName: places.inBoundName,</span><br><span class="line">  outBoundName: places.outBoundName,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>상태 변경 함수 : <strong>selectBound</strong> → BoundSearchBox.jsx</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> selectBound = <span class="function">(<span class="params">PlaceId, PlaceName, type</span>) =&gt;</span> &#123;</span><br><span class="line">    setPlace(&#123; PlaceId, PlaceName, type &#125;); <span class="comment">// 컨테이너에서 전달받은 액션</span></span><br><span class="line">  &#125;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>상태 변경 함수 : <strong>changeBound</strong> → BoundChangeBox.jsx</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> changeBound = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  setBound(&#123; <span class="comment">// 컨테이너에서 전달받은 액션</span></span><br><span class="line">    inBoundName: places.outBoundName,</span><br><span class="line">    outBoundName: places.inBoundName,</span><br><span class="line">  &#125;);</span><br><span class="line">  switchPlaces(); <span class="comment">// boundName을 서로 교환해줍니다.</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+<br>
+
+<h5 id="BoundSearchBox-출발지-도착지"><a href="#BoundSearchBox-출발지-도착지" class="headerlink" title="BoundSearchBox (출발지/도착지)  "></a>BoundSearchBox (출발지/도착지)  <a id="a2"></a></h5><ul>
+<li><p>선언한 상태</p>
+<p>➤ <strong>suggestions</strong> → RenderPlaceList.jsx</p>
+<ul>
+<li><p>초기값</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>상태 변경 함수 : <strong>searchPlace</strong> → BoundSearchBox.jsx</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> searchPlace = <span class="keyword">async</span> value =&gt; &#123;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; data &#125; = <span class="keyword">await</span> SearchService.SelectArea(</span><br><span class="line">      <span class="string">'KR'</span>,</span><br><span class="line">      <span class="string">'ko-KR'</span>,</span><br><span class="line">      value,</span><br><span class="line">      isDestination,</span><br><span class="line">    );</span><br><span class="line">    setSuggestions(data);</span><br><span class="line">  &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">    <span class="built_in">console</span>.error(e);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<br>
+</li>
+</ul>
+</li>
+<li><p>물려받은 상태 및 물려받은 상태 변경 함수</p>
+<p>➤ index.jsx : <strong>bound</strong> , Fn: <strong>selectBound</strong> </p>
+<br>
+</li>
+<li><p>사용 서비스</p>
+<p>➤ <strong>SearchService</strong></p>
+</li>
+<li><p>사용 라이브러리</p>
+<p>➤ <strong>AutoSuggest</strong></p>
+</li>
+<li><p>키보드 접근성 엔터키 추가하기</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> pressEnter = <span class="function">(<span class="params">e, type</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (e.keyCode === <span class="number">13</span> &amp;&amp; e.target.nodeName === <span class="string">'INPUT'</span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> form = e.target.form;</span><br><span class="line">    <span class="keyword">const</span> index = <span class="built_in">Array</span>.prototype.indexOf.call(form, e.target);</span><br><span class="line">    type === <span class="string">'inBound'</span></span><br><span class="line">      ? form.elements[index + <span class="number">3</span>].focus()</span><br><span class="line">      : form.elements[index + <span class="number">2</span>].focus();</span><br><span class="line">    e.preventDefault();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<br>
+
+<h5 id="RenderPlaceList"><a href="#RenderPlaceList" class="headerlink" title="RenderPlaceList  "></a>RenderPlaceList  <a id="a3"></a></h5><ul>
+<li><p>선언한 상태</p>
+<p>없음</p>
+<br>
+</li>
+<li><p>물려받은 상태 및 물려받은 상태 변경 함수</p>
+<p>➤ BoundSearchBox.jsx : <strong>suggestions</strong> </p>
+</li>
+<li><p>사용 라이브러리</p>
+<p>➤ <strong>dompurify</strong> : 검색어 하이라이팅을 적용하기 위해서 사용하였습니다. </p>
+<p>처음에는 for문을 반복해서 하이라이팅의 배열에 적혀있는 문자열을 파싱해오고 그 결과를 따로 저장해서 화면에 뿌려주는 방식을 채택했으나 비정상적으로 많은 반복문을 돌게 되면서 프로그램의 성능저하가 우려되 <code>dompurify</code>를 이용하여 <code>innerHTML</code>을 채택하는 방식을 사용했습니다. XSS스크립트 공격을 방지하면서 <code>dangerouslySetInnerHTML</code> 속성을 이용할 수 있습니다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> sanitizer = dompurify.sanitize;</span><br><span class="line"><span class="keyword">const</span> Result = ParsePlaceList(place, suggestion);</span><br><span class="line">...</span><br><span class="line">&lt;span</span><br><span class="line">  dangerouslySetInnerHTML=&#123;&#123;</span><br><span class="line">  	__html: sanitizer(Result.CountryName),</span><br><span class="line">	&#125;&#125;</span><br><span class="line">/&gt;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<br>
+
+<h4 id="ParsePlaceList-jsx"><a href="#ParsePlaceList-jsx" class="headerlink" title="ParsePlaceList.jsx   "></a>ParsePlaceList.jsx   <a id="a4"></a></h4><blockquote>
+<p><code>RenderPlaceList</code>에서 가져온 장소명을 하이라이팅 처리해주는 함수입니다</p>
+<p>하이라이팅 처리가된 배열에게 <code>&lt;strong&gt;&lt;/strong&gt;</code> 태그를 앞 뒤로 삽입합니다.</p>
+</blockquote>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> ParsePlaceList = <span class="function">(<span class="params">place, suggestion</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> Result = &#123;&#125;;</span><br><span class="line">  <span class="keyword">const</span> insertTag = <span class="function">(<span class="params">highlightings, str</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> starts = [];</span><br><span class="line">    <span class="keyword">const</span> ends = [];</span><br><span class="line"></span><br><span class="line">    highlightings.forEach(<span class="function"><span class="params">highlighting</span> =&gt;</span> &#123;</span><br><span class="line">      starts.push(highlighting[<span class="number">0</span>]);</span><br><span class="line">      ends.push(highlighting[<span class="number">1</span>]);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> str</span><br><span class="line">      .split(<span class="string">''</span>)</span><br><span class="line">      .map(<span class="function">(<span class="params">chr, pos</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (starts.indexOf(pos) !== <span class="number">-1</span>) chr = <span class="string">'&lt;strong&gt;'</span> + chr;</span><br><span class="line">        <span class="keyword">if</span> (ends.indexOf(pos) !== <span class="number">-1</span>) chr = <span class="string">'&lt;/strong&gt;'</span> + chr;</span><br><span class="line">        <span class="keyword">return</span> chr;</span><br><span class="line">      &#125;)</span><br><span class="line">      .join(<span class="string">''</span>);</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> WordArray = insertTag(</span><br><span class="line">    suggestion.Highlighting,</span><br><span class="line">    suggestion.ResultingPhrase,</span><br><span class="line">  );</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (place === <span class="string">'Country'</span>) &#123;</span><br><span class="line">    Result.CountryName = WordArray.split(<span class="string">'|'</span>);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> ResultingArray = WordArray.split(<span class="string">'|'</span>);</span><br><span class="line">    Result.PlaceName = ResultingArray[<span class="number">0</span>].includes(<span class="string">','</span>)</span><br><span class="line">      ? ResultingArray[<span class="number">0</span>].split(<span class="string">','</span>)[<span class="number">0</span>].split(<span class="string">'('</span>)[<span class="number">0</span>]</span><br><span class="line">      : ResultingArray[<span class="number">0</span>];</span><br><span class="line">    Result.CountryName = ResultingArray[ResultingArray.length - <span class="number">1</span>];</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> Result;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> ParsePlaceList;</span><br><span class="line"><span class="keyword">const</span> ParsePlaceList = <span class="function">(<span class="params">place, suggestion</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> Result = &#123;&#125;;</span><br><span class="line">  <span class="keyword">const</span> insertTag = <span class="function">(<span class="params">highlightings, str</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> starts = [];</span><br><span class="line">    <span class="keyword">const</span> ends = [];</span><br><span class="line"></span><br><span class="line">    highlightings.forEach(<span class="function"><span class="params">highlighting</span> =&gt;</span> &#123;</span><br><span class="line">      starts.push(highlighting[<span class="number">0</span>]);</span><br><span class="line">      ends.push(highlighting[<span class="number">1</span>]);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> str</span><br><span class="line">      .split(<span class="string">''</span>)</span><br><span class="line">      .map(<span class="function">(<span class="params">chr, pos</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (starts.indexOf(pos) !== <span class="number">-1</span>) chr = <span class="string">'&lt;strong&gt;'</span> + chr;</span><br><span class="line">        <span class="keyword">if</span> (ends.indexOf(pos) !== <span class="number">-1</span>) chr = <span class="string">'&lt;/strong&gt;'</span> + chr;</span><br><span class="line">        <span class="keyword">return</span> chr;</span><br><span class="line">      &#125;)</span><br><span class="line">      .join(<span class="string">''</span>);</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> WordArray = insertTag(</span><br><span class="line">    suggestion.Highlighting,</span><br><span class="line">    suggestion.ResultingPhrase,</span><br><span class="line">  );</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (place === <span class="string">'Country'</span>) &#123;</span><br><span class="line">    Result.CountryName = WordArray.split(<span class="string">'|'</span>);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> ResultingArray = WordArray.split(<span class="string">'|'</span>);</span><br><span class="line">    Result.PlaceName = ResultingArray[<span class="number">0</span>].includes(<span class="string">','</span>)</span><br><span class="line">      ? ResultingArray[<span class="number">0</span>].split(<span class="string">','</span>)[<span class="number">0</span>].split(<span class="string">'('</span>)[<span class="number">0</span>]</span><br><span class="line">      : ResultingArray[<span class="number">0</span>];</span><br><span class="line">    Result.CountryName = ResultingArray[ResultingArray.length - <span class="number">1</span>];</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> Result;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> ParsePlaceList;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h5 id="BoundChangeBox-jsx"><a href="#BoundChangeBox-jsx" class="headerlink" title="BoundChangeBox.jsx  "></a>BoundChangeBox.jsx  <a id="a5"></a></h5><ul>
+<li><p>선언한 상태 </p>
+<p>없음</p>
+<br>
+</li>
+<li><p>물려받은 상태 및 물려받은 상태 변경 함수</p>
+<p>➤ index.jsx : Fn: <strong>changeBound</strong> </p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> changeBound = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (!(bound.inBoundName || bound.outBoundName)) <span class="keyword">return</span>;\</span><br><span class="line">  setBound(&#123;</span><br><span class="line">    inBoundId: bound.outBoundId,</span><br><span class="line">    outBoundId: bound.inBoundId,</span><br><span class="line">    inBoundName: bound.outBoundName,</span><br><span class="line">    outBoundName: bound.inBoundName,</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<br>
+
+<h3 id="결과"><a href="#결과" class="headerlink" title="결과 "></a>결과 <a id="b8"></a></h3><h4 id="검색-리스트-불러오기-및-하이라이팅-처리"><a href="#검색-리스트-불러오기-및-하이라이팅-처리" class="headerlink" title="검색 리스트 불러오기 및 하이라이팅 처리 "></a>검색 리스트 불러오기 및 하이라이팅 처리 <a id="b9"></a></h4><ul>
+<li>입력한 내용에 따라 자동으로 리스트를 불러오기</li>
+<li>입력한 내용에 맞춰 글자가 굵어지는 하이라이팅 처리</li>
+<li>키보드 접근성 준수(화살표 방향키, Tab키, 엔터키)</li>
+</ul>
+<p><img src="https://user-images.githubusercontent.com/31315644/74634836-0f397200-51a8-11ea-80d2-6a7437d13bf3.jpeg" alt="SearchList"></p>
+<br>
+
+<h4 id="국가-도시-공항-기준-이미지-및-CSS-적용하기"><a href="#국가-도시-공항-기준-이미지-및-CSS-적용하기" class="headerlink" title="국가, 도시, 공항 기준 이미지 및 CSS 적용하기 "></a>국가, 도시, 공항 기준 이미지 및 CSS 적용하기 <a id="b10"></a></h4><ul>
+<li>국가는 깃발모양, 도시는 건물모양, 공항역은 비행기모양의 svg 이미지가 각각 렌더링 됩니다.</li>
+</ul>
+<p><img src="https://user-images.githubusercontent.com/31315644/74635032-7fe08e80-51a8-11ea-95eb-ef8ad80502e1.jpeg" alt="SeparateCountry"></p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// src/components/Main/SearchBox/BoundSearchBox.jsx</span></span><br><span class="line"><span class="comment">// 도시 예</span></span><br><span class="line">...</span><br><span class="line"><span class="keyword">const</span> CityName = useRef(<span class="literal">null</span>);</span><br><span class="line">...</span><br><span class="line"><span class="keyword">return</span> (</span><br><span class="line">   &lt;RenderPlaceList</span><br><span class="line">      place=<span class="string">"AirStation"</span></span><br><span class="line">      suggestion=&#123;suggestion&#125;</span><br><span class="line">      hasCity=&#123;suggestion.CityId === CityName.current&#125;</span><br><span class="line">   /&gt;</span><br><span class="line">);</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// src/components/Main/SearchBox/RenderPlaceList.jsx</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">switch</span> (place) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'Country'</span>: &#123;</span><br><span class="line">      <span class="keyword">return</span> (</span><br><span class="line">        &lt;ListSection&gt;</span><br><span class="line">					...</span><br><span class="line">        &lt;<span class="regexp">/ListSection&gt;</span></span><br><span class="line"><span class="regexp">      );</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">    case 'City': &#123;</span></span><br><span class="line"><span class="regexp">      return (</span></span><br><span class="line"><span class="regexp">        &lt;ListSection&gt;</span></span><br><span class="line"><span class="regexp">					...</span></span><br><span class="line"><span class="regexp">        &lt;/</span>ListSection&gt;</span><br><span class="line">      );</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">default</span>: &#123; <span class="comment">// AirPort</span></span><br><span class="line">      <span class="keyword">return</span> (</span><br><span class="line">        &lt;ListSection hasCity=&#123;hasCity&#125;&gt;</span><br><span class="line"> 					...</span><br><span class="line">        &lt;<span class="regexp">/ListSection&gt;</span></span><br><span class="line"><span class="regexp">      );</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;);</span></span><br></pre></td></tr></table></figure>
+
+
         </div>
         <footer class="article-footer">
             
@@ -269,15 +462,39 @@ ga('send', 'pageview');
             "name": "Jun Hyeok Kim"
         },
         "headline": "SkyPrinter - Search -",
-        "image": "https://hyeok999.github.io",
+        "image": "https://hyeok999.github.iohttps://user-images.githubusercontent.com/31315644/74633709-9507ee00-51a5-11ea-9ba8-95acd1c1e0e3.jpeg",
         "keywords": "TIL git Web coding develop algorithm HTML CSS javascript React Redux",
         "genre": "Develop Project",
         "datePublished": "2020-03-12",
         "dateCreated": "2020-03-12",
         "dateModified": "2020-03-13",
         "url": "https://hyeok999.github.io/2020/03/12/SkyPrinter-Search/",
-        "description": "",
-        "wordCount": 1
+        "description": "
+
+SearchBox 항공권(국가, 도시, 지역) 검색영역
+SkyPrinter 검색 영역 
+
+
+
+SkyPrinter 바로가기
+
+목차
+SearchBox 폴더구조
+
+Search API 알아보기 - List Places - 
+
+Redux Module 파악하기
+
+places module
+
+PlacesContainer
+
+
+
+SearchBox 컴포넌트 파악하기
+
+상태",
+        "wordCount": 2984
     }
 </script>
 
@@ -368,7 +585,7 @@ ga('send', 'pageview');
                             <a href="/2020/03/12/SkyPrinter-Search/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/74633709-9507ee00-51a5-11ea-9ba8-95acd1c1e0e3.jpeg)" alt="SkyPrinter - Search -" class="thumbnail-image"></span>
     
     
 </a>
