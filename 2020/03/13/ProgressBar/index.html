@@ -12,18 +12,20 @@
     
         <meta name="keywords" content="git,Web,coding,develop,TIL,algorithm,HTML,CSS,javascript,React,Redux">
     
-    <meta name="description" content="HYEOK999&apos;s IT Develop Blog">
+    <meta name="description" content="프로그레스 바 - 검색 진행 상황 알림 session의 상태를 UI로 표시    SkyPrinter 바로가기  목차 ProgressBar 구현 로직 ProgressBar 퍼블리싱   ProgressBar 구현 로직프로그레스바는 poll한 데이터에 담겨져있는 Agent객체에 UpdatesComplete가 전부 됬는지를 판단합니다. (Poll 자체가 아닌">
 <meta name="keywords" content="git,Web,coding,develop,TIL,algorithm,HTML,CSS,javascript,React,Redux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SkyPrinter-ProgressBar">
 <meta property="og:url" content="https://hyeok999.github.io/2020/03/13/ProgressBar/index.html">
 <meta property="og:site_name" content="HYEOK999&#39;s Blog">
-<meta property="og:description" content="HYEOK999&apos;s IT Develop Blog">
+<meta property="og:description" content="프로그레스 바 - 검색 진행 상황 알림 session의 상태를 UI로 표시    SkyPrinter 바로가기  목차 ProgressBar 구현 로직 ProgressBar 퍼블리싱   ProgressBar 구현 로직프로그레스바는 poll한 데이터에 담겨져있는 Agent객체에 UpdatesComplete가 전부 됬는지를 판단합니다. (Poll 자체가 아닌">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-03-14T08:19:40.593Z">
+<meta property="og:image" content="https://user-images.githubusercontent.com/31315644/76087540-b5370a00-5ff9-11ea-8a1c-06ae79291a87.jpeg">
+<meta property="og:updated_time" content="2020-03-14T08:22:29.128Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SkyPrinter-ProgressBar">
-<meta name="twitter:description" content="HYEOK999&apos;s IT Develop Blog">
+<meta name="twitter:description" content="프로그레스 바 - 검색 진행 상황 알림 session의 상태를 UI로 표시    SkyPrinter 바로가기  목차 ProgressBar 구현 로직 ProgressBar 퍼블리싱   ProgressBar 구현 로직프로그레스바는 poll한 데이터에 담겨져있는 Agent객체에 UpdatesComplete가 전부 됬는지를 판단합니다. (Poll 자체가 아닌">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/31315644/76087540-b5370a00-5ff9-11ea-8a1c-06ae79291a87.jpeg">
     
     <link rel="canonical" href="https://hyeok999.github.io/2020/03/13/progressbar/">
     
@@ -191,7 +193,34 @@ ga('send', 'pageview');
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <p><img src="https://user-images.githubusercontent.com/31315644/76087540-b5370a00-5ff9-11ea-8a1c-06ae79291a87.jpeg" alt="ProgressBar"></p>
+<hr>
+<h1 id="프로그레스-바-검색-진행-상황-알림"><a href="#프로그레스-바-검색-진행-상황-알림" class="headerlink" title="프로그레스 바 - 검색 진행 상황 알림"></a>프로그레스 바 - 검색 진행 상황 알림</h1><blockquote>
+<p>session의 상태를 UI로 표시</p>
+</blockquote>
+<br>
+
+<h3 id="SkyPrinter-바로가기"><a href="#SkyPrinter-바로가기" class="headerlink" title="SkyPrinter 바로가기"></a><a href="https://github.com/HYEOK999/skyprinter" rel="external nofollow noopener noreferrer" target="_blank">SkyPrinter 바로가기</a></h3><br>
+
+<h2 id="목차"><a href="#목차" class="headerlink" title="목차"></a>목차</h2><ol>
+<li>ProgressBar 구현 로직</li>
+<li>ProgressBar 퍼블리싱</li>
+</ol>
+<hr>
+<h3 id="ProgressBar-구현-로직"><a href="#ProgressBar-구현-로직" class="headerlink" title="ProgressBar 구현 로직"></a>ProgressBar 구현 로직</h3><p>프로그레스바는 poll한 데이터에 담겨져있는 <code>Agent</code>객체에 <code>UpdatesComplete</code>가 전부 됬는지를 판단합니다. (Poll 자체가 아닌 Agent 객체의 상태 입니다.)</p>
+<p>Agent가 모두  <code>UpdatesComplete</code>상태라면 progressBar는 화면에서 제거 될 것이고, 아니라면 백분율 퍼센트로 계산하여 화면에 렌더링합니다.</p>
+<p>프로그레스 퍼센트 비율을 Redux Store에 저장하여 어디서든 참조 가능하도록 합니다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// /src/redux/modules/session.js</span></span><br><span class="line"><span class="keyword">const</span> &#123; Agents &#125; = data;</span><br><span class="line"><span class="keyword">const</span> AllAgents = Agents.length;</span><br><span class="line"><span class="keyword">const</span> PendingAgents = Agents.filter(</span><br><span class="line">   Agent =&gt; Agent.Status === <span class="string">'UpdatesComplete'</span></span><br><span class="line">).length;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> progressNum = (PendingAgents / AllAgents) * <span class="number">100</span>;</span><br><span class="line"><span class="keyword">yield</span> put(&#123;</span><br><span class="line">   type: SET_PROGRESS_RESULT,</span><br><span class="line">   progress: <span class="built_in">Math</span>.floor(progressNum)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="ProgressBar-퍼블리싱"><a href="#ProgressBar-퍼블리싱" class="headerlink" title="ProgressBar 퍼블리싱"></a>ProgressBar 퍼블리싱</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;ProgressDiv&gt;</span><br><span class="line">	&lt;Progress percent=&#123;session.progress&#125; showInfo=&#123;<span class="literal">false</span>&#125; /&gt; </span><br><span class="line">&lt;<span class="regexp">/ProgressDiv&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><code>percent</code>속성에 위 로직에서 계산한 퍼센트를 대입합니다.</p>
+<p><code>Progress</code> 자체는 <code>antd</code>의 progress를 사용했기 때문에 실제 skyscanner처럼 보여지기 위해 커스텀 합니다.</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">export const ProgressDiv = styled.div.attrs(&#123;&#125;)`</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">3rem</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">680px</span>;</span><br><span class="line"></span><br><span class="line">  <span class="selector-class">.ant-progress-inner</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: rgb(<span class="number">215</span>, <span class="number">215</span>, <span class="number">225</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="selector-class">.ant-progress-bg</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: rgb(<span class="number">1</span>, <span class="number">102</span>, <span class="number">218</span>);</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">6px</span> <span class="meta">!important</span>;</span><br><span class="line">  &#125;</span><br><span class="line">`;</span><br></pre></td></tr></table></figure>
+
+
         </div>
         <footer class="article-footer">
             
@@ -269,15 +298,29 @@ ga('send', 'pageview');
             "name": "Jun Hyeok Kim"
         },
         "headline": "SkyPrinter-ProgressBar",
-        "image": "https://hyeok999.github.io",
+        "image": "https://hyeok999.github.iohttps://user-images.githubusercontent.com/31315644/76087540-b5370a00-5ff9-11ea-8a1c-06ae79291a87.jpeg",
         "keywords": "git Web coding develop TIL algorithm HTML CSS javascript React Redux",
         "genre": "Develop Project",
         "datePublished": "2020-03-13",
         "dateCreated": "2020-03-13",
         "dateModified": "2020-03-14",
         "url": "https://hyeok999.github.io/2020/03/13/ProgressBar/",
-        "description": "",
-        "wordCount": 1
+        "description": "
+
+프로그레스 바 - 검색 진행 상황 알림
+session의 상태를 UI로 표시
+
+
+
+SkyPrinter 바로가기
+
+목차
+ProgressBar 구현 로직
+ProgressBar 퍼블리싱
+
+
+ProgressBar 구현 로직프로그레스바는 poll한 데이터에 담겨져있는 Agent객체에 UpdatesComplete가 전부 됬는지를 판단합니다. (Poll 자체가 아닌 ",
+        "wordCount": 290
     }
 </script>
 
@@ -418,7 +461,7 @@ ga('send', 'pageview');
                             <a href="/2020/03/13/ProgressBar/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/76087540-b5370a00-5ff9-11ea-8a1c-06ae79291a87.jpeg)" alt="SkyPrinter-ProgressBar" class="thumbnail-image"></span>
     
     
 </a>
