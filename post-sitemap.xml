@@ -8,16 +8,8 @@
     </url>
 
     <url>
-        <loc>https://hyeok999.github.io/2020/03/13/ProgressBar/</loc>
-        <lastmod>2020-03-14T08:22:29.128Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://hyeok999.github.io/2020/03/14/CreateSession/</loc>
-        <lastmod>2020-03-14T08:20:27.568Z</lastmod>
+        <loc>https://hyeok999.github.io/2020/03/13/CreateSession/</loc>
+        <lastmod>2020-03-14T08:25:38.104Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -25,7 +17,15 @@
 
     <url>
         <loc>https://hyeok999.github.io/2020/03/13/FilterArea/</loc>
-        <lastmod>2020-03-14T08:19:30.482Z</lastmod>
+        <lastmod>2020-03-14T08:24:56.114Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeok999.github.io/2020/03/13/ProgressBar/</loc>
+        <lastmod>2020-03-14T08:22:29.128Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
