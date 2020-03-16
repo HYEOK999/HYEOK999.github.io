@@ -3,35 +3,63 @@
 
 
     <url>
-        <loc>https://hyeok999.github.io/tags/Redux/</loc>
-        <lastmod>2020-03-14T08:32:33.344Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://hyeok999.github.io/tags/React/</loc>
-        <lastmod>2020-03-14T08:32:33.344Z</lastmod>
+        <lastmod>2020-03-16T14:17:06.882Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://hyeok999.github.io/tags/javascript/</loc>
-        <lastmod>2020-03-14T08:32:33.344Z</lastmod>
+        <lastmod>2020-03-16T14:17:06.882Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://hyeok999.github.io/tags/CSS/</loc>
-        <lastmod>2020-03-14T08:32:33.344Z</lastmod>
+        <lastmod>2020-03-16T14:17:06.882Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://hyeok999.github.io/tags/HTML/</loc>
+        <lastmod>2020-03-16T14:17:06.882Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://hyeok999.github.io/tags/develop/</loc>
+        <lastmod>2020-03-16T14:17:06.882Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://hyeok999.github.io/tags/coding/</loc>
+        <lastmod>2020-03-16T14:17:06.882Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://hyeok999.github.io/tags/Web/</loc>
+        <lastmod>2020-03-16T14:17:06.882Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://hyeok999.github.io/tags/git/</loc>
+        <lastmod>2020-03-16T14:17:06.882Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://hyeok999.github.io/tags/Redux/</loc>
         <lastmod>2020-03-14T08:32:33.344Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -46,34 +74,6 @@
 
     <url>
         <loc>https://hyeok999.github.io/tags/TIL/</loc>
-        <lastmod>2020-03-14T08:32:33.344Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://hyeok999.github.io/tags/develop/</loc>
-        <lastmod>2020-03-14T08:32:33.344Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://hyeok999.github.io/tags/coding/</loc>
-        <lastmod>2020-03-14T08:32:33.344Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://hyeok999.github.io/tags/Web/</loc>
-        <lastmod>2020-03-14T08:32:33.344Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://hyeok999.github.io/tags/git/</loc>
         <lastmod>2020-03-14T08:32:33.344Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
