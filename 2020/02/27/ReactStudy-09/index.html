@@ -12,18 +12,20 @@
     
         <meta name="keywords" content="git,Web,coding,develop,HTML,CSS,javascript,React">
     
-    <meta name="description" content="HYEOK999&apos;s IT Develop Blog">
+    <meta name="description" content="React Re-Study : 9 Unit Test facebook/jest jest 3가지 문법 it (= test), describe, expect .not.to jest는 기본으로 한 테스트가 5초로 설정되어 있다.   react-component-test 실습 컴포넌트 테스트 짜보기 Button 컴포넌트     enzyme 컨테이너 테스트">
 <meta name="keywords" content="git,Web,coding,develop,HTML,CSS,javascript,React">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ReactStudy-09">
 <meta property="og:url" content="https://hyeok999.github.io/2020/02/27/ReactStudy-09/index.html">
 <meta property="og:site_name" content="HYEOK999&#39;s Blog">
-<meta property="og:description" content="HYEOK999&apos;s IT Develop Blog">
+<meta property="og:description" content="React Re-Study : 9 Unit Test facebook/jest jest 3가지 문법 it (= test), describe, expect .not.to jest는 기본으로 한 테스트가 5초로 설정되어 있다.   react-component-test 실습 컴포넌트 테스트 짜보기 Button 컴포넌트     enzyme 컨테이너 테스트">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-03-16T14:17:06.882Z">
+<meta property="og:image" content="https://user-images.githubusercontent.com/31315644/72333302-e6ccdc80-36fe-11ea-9b80-e00b0d5f5847.png">
+<meta property="og:updated_time" content="2020-03-16T14:19:19.149Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ReactStudy-09">
-<meta name="twitter:description" content="HYEOK999&apos;s IT Develop Blog">
+<meta name="twitter:description" content="React Re-Study : 9 Unit Test facebook/jest jest 3가지 문법 it (= test), describe, expect .not.to jest는 기본으로 한 테스트가 5초로 설정되어 있다.   react-component-test 실습 컴포넌트 테스트 짜보기 Button 컴포넌트     enzyme 컨테이너 테스트">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/31315644/72333302-e6ccdc80-36fe-11ea-9b80-e00b0d5f5847.png">
     
     <link rel="canonical" href="https://hyeok999.github.io/2020/02/27/reactstudy-09/">
     
@@ -191,14 +193,226 @@ ga('send', 'pageview');
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <p><img src="https://user-images.githubusercontent.com/31315644/72333302-e6ccdc80-36fe-11ea-9b80-e00b0d5f5847.png" alt="React2-Thumbnail"></p>
+<hr>
+<h1 id="React-Re-Study-9"><a href="#React-Re-Study-9" class="headerlink" title="React Re-Study : 9"></a>React Re-Study : 9</h1><ul>
+<li><a href="#a1">Unit Test</a></li>
+<li><a href="#a2">facebook/jest</a><ul>
+<li>jest 3가지 문법</li>
+<li>it (= test), describe, expect</li>
+<li>.not.to</li>
+<li>jest는 기본으로 한 테스트가 5초로 설정되어 있다.</li>
+</ul>
+</li>
+<li><a href="#a3">react-component-test</a><ul>
+<li><a href="#a4">실습 컴포넌트 테스트 짜보기</a><ul>
+<li><a href="#a5">Button 컴포넌트</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#a6">enzyme</a></li>
+<li><a href="#a7">컨테이너 테스트</a></li>
+</ul>
+<br>
+
+<hr>
+<h2 id="React-Study-with-Mark-React-Testing"><a href="#React-Study-with-Mark-React-Testing" class="headerlink" title="React Study with Mark - React Testing -"></a>React Study with Mark - React Testing -</h2><ul>
+<li>JavaScript Unit Test</li>
+<li>Jest </li>
+<li>리액트 컴포넌트 테스트</li>
+<li>react-testing-library 활용하기</li>
+<li>리덕스 / 비동기작업의 테스트</li>
+</ul>
+<br>
+
+<h3 id="Unit-Test"><a href="#Unit-Test" class="headerlink" title="Unit Test   "></a>Unit Test   <a id="a1"></a></h3><blockquote>
+<p>TDD : Test Driven Development - 테스트 주도 개발<br>→ 코딩이 아니라 테스트코드를 먼저 작성 하는 개발 방식.</p>
+</blockquote>
+<ul>
+<li>통합테스트에 비해 빠르고 쉽다.</li>
+<li>통합테스트를 진행하기 전에 문제를 찾아낼 수 있다.</li>
+<li>그렇다고, 통합테스트가 성공하리란 보장은 없다.</li>
+<li>테스트 코드가 살아있는(동작을 설명하는) 명세가 된다.</li>
+<li>테스트를 읽고 어떻게 동작하는지도 예측 가능하다.</li>
+<li>(선 코딩 후, (몰아서) 단위테스트가 아닌…) 소프트웨어 장인이 되려면 TDD를 해야한다. </li>
+</ul>
+<br>
+
+<h3 id="facebook-jest"><a href="#facebook-jest" class="headerlink" title="facebook/jest  "></a>facebook/jest  <a id="a2"></a></h3><blockquote>
+<p>Jest : Test Runner (실행)</p>
+</blockquote>
+<ul>
+<li>Mocha에 비해 느리지만, npx로 만든 react프로젝트를 생성할 경우 기본 탑재되어있다.</li>
+<li>리액트의 영향이 크겠지만 가장 핫한 테스트 도구</li>
+<li>👩🏻‍💻 Easy Setup</li>
+<li>🏃🏽 Instant Feedback<ul>
+<li>고친 파일만 빠르게 테스트 다시 해주는 기능 등</li>
+</ul>
+</li>
+<li>📸 Snapshot Testing<ul>
+<li>컴포넌트 테스트에 중요한 역할을 하는 스냅샷</li>
+</ul>
+</li>
+</ul>
+<br>
+
+<h4 id="jest-3가지-문법"><a href="#jest-3가지-문법" class="headerlink" title="jest 3가지 문법"></a>jest 3가지 문법</h4><ul>
+<li>assert.equal(a, b); → node.js의 내장 API</li>
+<li>expect(a).toBe(b); → jest는 기본적으로 expect 제공</li>
+<li>a.should.be(b); → Chai 라이브러리</li>
+</ul>
+<br>
+
+<h4 id="it-test-describe-expect"><a href="#it-test-describe-expect" class="headerlink" title="it (= test), describe, expect"></a>it (= test), describe, expect</h4><ul>
+<li>테스트의 단위 설정</li>
+<li>describe는 카테고리화를 의미한다.</li>
+<li><code>expect().toBe()</code>는 원시값. </li>
+<li><code>expect().toEqual()</code>는 참조값.(객체) </li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">describe(<span class="string">'expect test'</span>, () =&gt; &#123;</span><br><span class="line">  it(<span class="string">'37 to equal 37'</span>, () =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> received = <span class="number">37</span>;</span><br><span class="line">    <span class="keyword">const</span> expected = <span class="number">37</span>;</span><br><span class="line">    expect(received).toBe(expected);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  it(<span class="string">'&#123;age: 37&#125; to equal &#123;age: 37&#125;'</span>, () =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> received = &#123;</span><br><span class="line">      age: <span class="number">37</span>,</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">const</span> expected = &#123;</span><br><span class="line">      age: <span class="number">37</span>,</span><br><span class="line">    &#125;;</span><br><span class="line">    expect(received).toBe(expected);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  it(<span class="string">'&#123;age: 37&#125; to equal &#123;age: 37&#125;'</span>, () =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> received = &#123;</span><br><span class="line">      age: <span class="number">37</span>,</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">const</span> expected = &#123;</span><br><span class="line">      age: <span class="number">37</span>,</span><br><span class="line">    &#125;;</span><br><span class="line">    expect(received).toEqual(expected);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="not-to"><a href="#not-to" class="headerlink" title=".not.to"></a>.not.to</h4><ul>
+<li>의미상으로 37은 36이 아니어야 한다/37은 36이 아니다가 다름</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">describe(<span class="string">'.not.to~ test'</span>, () =&gt; &#123;</span><br><span class="line">  it(<span class="string">'.not.toBe'</span>, () =&gt; &#123;</span><br><span class="line">    expect(<span class="number">37</span>).not.toBe(<span class="number">36</span>);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  it(<span class="string">'.not.toBeFalsy'</span>, () =&gt; &#123;</span><br><span class="line">    expect(<span class="literal">true</span>).not.toBeFalsy();</span><br><span class="line">    expect(<span class="number">1</span>).not.toBeFalsy();</span><br><span class="line">    expect(<span class="string">'hello'</span>).not.toBeFalsy();</span><br><span class="line">    expect(&#123;&#125;).not.toBeFalsy();</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  it(<span class="string">'.not.toBeGreaterThan'</span>, () =&gt; &#123;</span><br><span class="line">    expect(<span class="number">10</span>).not.toBeGreaterThan(<span class="number">10</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="jest는-기본으로-한-테스트가-5초로-설정되어-있다"><a href="#jest는-기본으로-한-테스트가-5초로-설정되어-있다" class="headerlink" title="jest는 기본으로 한 테스트가 5초로 설정되어 있다."></a>jest는 기본으로 한 테스트가 5초로 설정되어 있다.</h4><ul>
+<li>그 이상을 원할 경우 <code>jest.setTimeout(30000)</code>과 같이 별도의 값을 설정해야 한다.</li>
+</ul>
+<br>
+
+<h3 id="react-component-test"><a href="#react-component-test" class="headerlink" title="react-component-test  "></a>react-component-test  <a id="a3"></a></h3><ul>
+<li><p>마틴 파울러, 켄트 백, Kent C. Dodde(<a href="https://testing-library.com/" rel="external nofollow noopener noreferrer" target="_blank">테스팅 라이브러리</a>) </p>
+</li>
+<li><p>테스트를 통과하는 최소한의 행동만 함.</p>
+<ul>
+<li>‘버튼이 눌렸다’ 같은 행동은 <code>onClick</code>같은 이벤트 핸들러를 생각 하면 안된다. (일단은 텍스트만 넣고 다음 단계로 넘어가면서 문제가 생길 때 해결해야 한다.)</li>
+</ul>
+</li>
+<li><p>5초 지난 후 워닝 메시지가 뜰 경우,</p>
+<ul>
+<li><p>timer를 null로 초기화.</p>
+</li>
+<li><p>처음 클릭할 때 넘어가서 메시지 셋팅되고 셋타임아웃을 한 인티저가 들어가서 언마운트 될 때 인티저(넘버)면 clearTimeout을 해준다.</p>
+</li>
+<li><p>functinal conponent안에 let을 써서 해결하는 경우는 없다.(let timer XXXX → ref를 이용해서 해결)</p>
+</li>
+<li><p>앞의 렌더와 뒤의 렌더는 서로 공유될 수 없다.</p>
+</li>
+<li><p>렌더가 다시 되어도 Referrence가 유지되어야 한다 -&gt; useRef</p>
+</li>
+</ul>
+</li>
+<li><p>테스트 종료 후 코드를 수정할 때 앞의 테스트가 깨지지 않으면 된다.(회귀 테스트)</p>
+</li>
+</ul>
+<br>
+
+<h4 id="실습-컴포넌트-테스트-짜보기"><a href="#실습-컴포넌트-테스트-짜보기" class="headerlink" title="실습 컴포넌트 테스트 짜보기  "></a>실습 컴포넌트 테스트 짜보기  <a id="a4"></a></h4><blockquote>
+<p> Given - When - Then 으로 작성한다.</p>
+<p> bash 명령어 : npm test</p>
+<p> “scripts”: { … , “test”: “react-scripts test”, … }</p>
+</blockquote>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 예시</span></span><br><span class="line">  it(<span class="string">`버튼을 클릭하면, p 태그 안에 "버튼이 방금 눌렸다." 라고 쓰여진다.`</span>, () =&gt; &#123;</span><br><span class="line">    <span class="comment">// Given</span></span><br><span class="line">    <span class="keyword">const</span> &#123; getByText &#125; = render(<span class="xml"><span class="tag">&lt;<span class="name">Button</span> /&gt;</span>);</span></span><br><span class="line"><span class="xml">    const button = getByText('button');</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">    // When</span></span><br><span class="line"><span class="xml">    fireEvent.click(button);</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">    // Then</span></span><br><span class="line"><span class="xml">    const p = getByText('버튼이 방금 눌렸다.');</span></span><br><span class="line"><span class="xml">    expect(p).toBeInstanceOf(HTMLParagraphElement);</span></span><br><span class="line"><span class="xml">  &#125;);</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h5 id="Button-컴포넌트"><a href="#Button-컴포넌트" class="headerlink" title="Button 컴포넌트 "></a>Button 컴포넌트 <a id="a5"></a></h5><ol>
+<li><a href="#c1"><em>컴포넌트가 정상적으로 생성된다.</em></a></li>
+<li><a href="#c2">*”button” 이라고 쓰여있는 엘리먼트는 HTMLButtonElement 이다.*</a></li>
+<li><a href="#c3"><em>버튼을 클릭하면, p 태그 안에 “버튼이 방금 눌렸다.” 라고 쓰여진다.</em></a></li>
+<li><a href="#c4"><em>버튼을 클릭하기 전에는, p 태그 안에 “버튼이 눌리지 않았다.” 라고 쓰여진다.</em></a></li>
+<li><a href="#c5"><em>버튼을 클릭하고 5초 뒤에는, p 태그 안에 “버튼이 눌리지 않았다.” 라고 쓰여진다.</em></a></li>
+<li><a href="#c6"><em>버튼을 클릭하면, 5초 동안 버튼이 비활성화 된다.</em></a></li>
+</ol>
+<br>
+
+<ol>
+<li><em>컴포넌트가 정상적으로 생성된다.</em>  <a id="c1"></a></li>
+</ol>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// src/components/Button.test.js</span></span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">"react"</span>;</span><br><span class="line"><span class="keyword">import</span> Button <span class="keyword">from</span> <span class="string">"./Button"</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; render &#125; <span class="keyword">from</span> <span class="string">"@testing-library/react"</span>;</span><br><span class="line"></span><br><span class="line">describe(<span class="string">"Button 컴포넌트 (@testing-library/react)"</span>, () =&gt; &#123;</span><br><span class="line">  it(<span class="string">"컴포넌트가 정상적으로 생성된다."</span>, <span class="keyword">async</span> () =&gt; &#123;</span><br><span class="line">    render(<span class="xml"><span class="tag">&lt;<span class="name">Button</span> /&gt;</span>);</span></span><br><span class="line"><span class="xml">  &#125;);</span></span><br><span class="line"><span class="xml">&#125;);</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">// src/components/Button.jsx</span></span><br><span class="line"><span class="xml">import React from "react";</span></span><br><span class="line"><span class="xml">const Button = () =&gt; <span class="tag">&lt;&gt;</span><span class="tag">&lt;/&gt;</span>;</span></span><br><span class="line"><span class="xml">export default Button;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<ol start="2">
+<li>*”button” 이라고 쓰여있는 엘리먼트는 HTMLButtonElement 이다.* <a id="c2"></a></li>
+</ol>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// src/components/Button.test.js</span></span><br><span class="line">describe(<span class="string">"Button 컴포넌트"</span>, () =&gt; &#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">  </span><br><span class="line">  it(<span class="string">`"button" 이라고 쓰여있는 엘리먼트는 HTMLButtonElement 이다.`</span>, () =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; getByText &#125; = render(<span class="xml"><span class="tag">&lt;<span class="name">Button</span> /&gt;</span>);</span></span><br><span class="line"><span class="xml">    const buttonElement = getByText("button");</span></span><br><span class="line"><span class="xml">    expect(buttonElement).toBeInstanceOf(HTMLButtonElement);</span></span><br><span class="line"><span class="xml">  &#125;);</span></span><br><span class="line"><span class="xml">&#125;);</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">// src/components/Button.jsx</span></span><br><span class="line"><span class="xml">import React from "react";</span></span><br><span class="line"><span class="xml">const Button = () =&gt; <span class="tag">&lt;<span class="name">button</span>&gt;</span>button<span class="tag">&lt;/<span class="name">button</span>&gt;</span>;</span></span><br><span class="line"><span class="xml">export default Button;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<ol start="3">
+<li><em>버튼을 클릭하면, p 태그 안에 “버튼이 방금 눌렸다.” 라고 쓰여진다.</em>  <a id="c3"></a></li>
+</ol>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// src/components/Button.test.js</span></span><br><span class="line">describe(<span class="string">"Button 컴포넌트 (@testing-library/react)"</span>, () =&gt; &#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">  </span><br><span class="line">  it(<span class="string">`버튼을 클릭하면, p 태그 안에 "버튼이 방금 눌렸다." 라고 쓰여진다.`</span>, () =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; getByText &#125; = render(<span class="xml"><span class="tag">&lt;<span class="name">Button</span> /&gt;</span>);</span></span><br><span class="line"><span class="xml">    const button = getByText("button");</span></span><br><span class="line"><span class="xml">    fireEvent.click(button);</span></span><br><span class="line"><span class="xml">    const p = getByText("버튼이 방금 눌렸다.");</span></span><br><span class="line"><span class="xml">    expect(p).not.toBeNull();</span></span><br><span class="line"><span class="xml">    expect(p).toBeInstanceOf(HTMLParagraphElement);</span></span><br><span class="line"><span class="xml">  &#125;);</span></span><br><span class="line"><span class="xml">&#125;);</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">// src/components/Button.jsx</span></span><br><span class="line"><span class="xml">import React from "react";</span></span><br><span class="line"><span class="xml">const Button = () =&gt; (</span></span><br><span class="line"><span class="xml">  <span class="tag">&lt;&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">button</span>&gt;</span>button<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>버튼이 방금 눌렸다.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="xml">  <span class="tag">&lt;/&gt;</span></span></span><br><span class="line"><span class="xml">);</span></span><br><span class="line"><span class="xml">export default Button;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<ol start="4">
+<li><em>버튼을 클릭하기 전에는, p 태그 안에 “버튼이 눌리지 않았다.” 라고 쓰여진다.</em>  <a id="c4"></a></li>
+</ol>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// src/components/Button.test.js</span></span><br><span class="line">describe(<span class="string">"Button 컴포넌트 (@testing-library/react)"</span>, () =&gt; &#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">  </span><br><span class="line">  it(<span class="string">`버튼을 클릭하기 전에는, p 태그 안에 "버튼이 눌리지 않았다." 라고 쓰여진다.`</span>, () =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; getByText &#125; = render(<span class="xml"><span class="tag">&lt;<span class="name">Button</span> /&gt;</span>);</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">    const p = getByText("버튼이 눌리지 않았다.");</span></span><br><span class="line"><span class="xml">    expect(p).not.toBeNull();</span></span><br><span class="line"><span class="xml">    expect(p).toBeInstanceOf(HTMLParagraphElement);</span></span><br><span class="line"><span class="xml">  &#125;);</span></span><br><span class="line"><span class="xml">&#125;);</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">// src/components/Button.jsx</span></span><br><span class="line"><span class="xml">import React, &#123; useState &#125; from "react";</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">const Button = () =&gt; &#123;</span></span><br><span class="line"><span class="xml">  const [message, setMessage] = useState("버튼이 눌리지 않았다.");</span></span><br><span class="line"><span class="xml">  function click() &#123;</span></span><br><span class="line"><span class="xml">    setMessage("버튼이 방금 눌렸다.");</span></span><br><span class="line"><span class="xml">  &#125;</span></span><br><span class="line"><span class="xml">  return (</span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;&gt;</span></span></span><br><span class="line"><span class="xml">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;click&#125;</span>&gt;</span>button<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="xml">      <span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;message&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;/&gt;</span></span></span><br><span class="line"><span class="xml">  );</span></span><br><span class="line"><span class="xml">&#125;;</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">export default Button;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<ol start="5">
+<li><em>버튼을 클릭하고 5초 뒤에는, p 태그 안에 “버튼이 눌리지 않았다.” 라고 쓰여진다.</em>  <a id="c5"></a></li>
+</ol>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// src/components/Button.test.js</span></span><br><span class="line">jest.useFakeTimers();</span><br><span class="line"></span><br><span class="line">describe(<span class="string">"Button 컴포넌트 (@testing-library/react)"</span>, () =&gt; &#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">  </span><br><span class="line">  it(<span class="string">`버튼을 클릭하고 5초 뒤에는, p 태그 안에 "버튼이 눌리지 않았다." 라고 쓰여진다.`</span>, <span class="keyword">async</span> () =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; getByText &#125; = render(<span class="xml"><span class="tag">&lt;<span class="name">Button</span> /&gt;</span>);</span></span><br><span class="line"><span class="xml">    const button = getByText("button");</span></span><br><span class="line"><span class="xml">    fireEvent.click(button);</span></span><br><span class="line"><span class="xml">    act(() =&gt; &#123;</span></span><br><span class="line"><span class="xml">      jest.advanceTimersByTime(5000);</span></span><br><span class="line"><span class="xml">    &#125;);</span></span><br><span class="line"><span class="xml">    const p = getByText("버튼이 눌리지 않았다.");</span></span><br><span class="line"><span class="xml">    expect(p).not.toBeNull();</span></span><br><span class="line"><span class="xml">    expect(p).toBeInstanceOf(HTMLParagraphElement);</span></span><br><span class="line"><span class="xml">  &#125;);</span></span><br><span class="line"><span class="xml">&#125;);</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">// src/components/Button.jsx</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">import React, &#123; useState, useEffect, useRef &#125; from "react";</span></span><br><span class="line"><span class="xml">const Button = () =&gt; &#123;</span></span><br><span class="line"><span class="xml">  const [message, setMessage] = useState("버튼이 눌리지 않았다.");</span></span><br><span class="line"><span class="xml">  const timer = useRef(null);</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">  function click() &#123;</span></span><br><span class="line"><span class="xml">    if (timer.current !== null) clearTimeout(timer);</span></span><br><span class="line"><span class="xml">    setMessage("버튼이 방금 눌렸다.");</span></span><br><span class="line"><span class="xml">    timer.current = setTimeout(() =&gt; &#123;</span></span><br><span class="line"><span class="xml">      setMessage("버튼이 눌리지 않았다.");</span></span><br><span class="line"><span class="xml">    &#125;, 5000);</span></span><br><span class="line"><span class="xml">  &#125;</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">  useEffect(() =&gt; &#123;</span></span><br><span class="line"><span class="xml">    return () =&gt; &#123;</span></span><br><span class="line"><span class="xml">      if (timer.current !== null) clearTimeout(timer.current);</span></span><br><span class="line"><span class="xml">    &#125;;</span></span><br><span class="line"><span class="xml">  &#125;, []);</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">  return (</span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;&gt;</span></span></span><br><span class="line"><span class="xml">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;click&#125;</span>&gt;</span>button<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="xml">      <span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;message&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;/&gt;</span></span></span><br><span class="line"><span class="xml">  );</span></span><br><span class="line"><span class="xml">&#125;;</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">export default Button;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<ol start="6">
+<li><em>버튼을 클릭하면, 5초 동안 버튼이 비활성화 된다.</em>  <a id="c6"></a></li>
+</ol>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// src/components/Button.test.js</span></span><br><span class="line">jest.useFakeTimers();</span><br><span class="line"></span><br><span class="line">describe(<span class="string">"Button 컴포넌트 (@testing-library/react)"</span>, () =&gt; &#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">  </span><br><span class="line">  it(<span class="string">`버튼을 클릭하면, 5초 동안 버튼이 비활성화 된다.`</span>, () =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; getByText &#125; = render(<span class="xml"><span class="tag">&lt;<span class="name">Button</span> /&gt;</span>);</span></span><br><span class="line"><span class="xml">    const button = getByText("button");</span></span><br><span class="line"><span class="xml">    fireEvent.click(button);</span></span><br><span class="line"><span class="xml">    // expect(button).toBeDisabled();</span></span><br><span class="line"><span class="xml">    expect(button.disabled).toBeTruthy(); </span></span><br><span class="line"><span class="xml">    act(() =&gt; &#123;</span></span><br><span class="line"><span class="xml">      jest.advanceTimersByTime(5000);</span></span><br><span class="line"><span class="xml">    &#125;);</span></span><br><span class="line"><span class="xml">    // expect(button).not.toBeDisabled();</span></span><br><span class="line"><span class="xml">    expect(button.disabled).toBeFalsy(); </span></span><br><span class="line"><span class="xml">  &#125;);</span></span><br><span class="line"><span class="xml">&#125;);</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">// src/components/Button.jsx</span></span><br><span class="line"><span class="xml">import React, &#123; useState, useEffect, useRef &#125; from "react";</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">const Button = () =&gt; &#123;</span></span><br><span class="line"><span class="xml">  const [message, setMessage] = useState("버튼이 눌리지 않았다.");</span></span><br><span class="line"><span class="xml">  const timer = useRef(null);</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">  function click() &#123;</span></span><br><span class="line"><span class="xml">    if (timer.current !== null) clearTimeout(timer);</span></span><br><span class="line"><span class="xml">    setMessage("버튼이 방금 눌렸다.");</span></span><br><span class="line"><span class="xml">    timer.current = setTimeout(() =&gt; &#123;</span></span><br><span class="line"><span class="xml">      setMessage("버튼이 눌리지 않았다.");</span></span><br><span class="line"><span class="xml">    &#125;, 5000);</span></span><br><span class="line"><span class="xml">  &#125;</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">  useEffect(() =&gt; &#123;</span></span><br><span class="line"><span class="xml">    return () =&gt; &#123;</span></span><br><span class="line"><span class="xml">      if (timer.current !== null) clearTimeout(timer.current);</span></span><br><span class="line"><span class="xml">    &#125;;</span></span><br><span class="line"><span class="xml">  &#125;, []);</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">  return (</span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;&gt;</span></span></span><br><span class="line">      &lt;button onClick=&#123;click&#125; disabled=&#123;message === "버튼이 방금 눌렸다."&#125;&gt;</span><br><span class="line">        button</span><br><span class="line"><span class="xml">      <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="xml">      <span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;message&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;/&gt;</span></span></span><br><span class="line"><span class="xml">  );</span></span><br><span class="line"><span class="xml">&#125;;</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">export default Button;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="enzyme"><a href="#enzyme" class="headerlink" title="enzyme  "></a>enzyme  <a id="a6"></a></h3><ul>
+<li><p>렌더를 시킨다음에 렌더된 결과물을 래퍼라고 하는 클래스형태로 래퍼해놓은 다른 데이터 객체를 사용</p>
+<ul>
+<li>리액트 버전에 따라 래핑된 데이터 구조가 다를 수 있기 때문에 리액트 버전을 맞춰 주어야 함</li>
+</ul>
+</li>
+<li><p>jest는 테스트 프레임워크</p>
+</li>
+<li><p>enzyme는 테스트 라이브러리</p>
+</li>
+<li><p><strong>enzyme</strong>에는 adapter를 적용하는 configure를 제외하면 크게 세 가지 메소드가 있다. </p>
+<ul>
+<li><p>shallow, mount, render (<a href="http://airbnb.io/enzyme/docs/api/" rel="external nofollow noopener noreferrer" target="_blank">API</a>) </p>
+</li>
+<li><p>shallow: 간단한 컴포넌트를 메모리 상에 렌더링한다. 단일 컴포넌트를 테스트할 때 유용하다.</p>
+</li>
+<li><p>mount: HOC나 자식 컴포넌트까지 전부 렌더링한다. 다른 컴포넌트와의 관계를 테스트할 때 유용하다.</p>
+</li>
+<li><p>render: 컴포넌트를 정적인 html로 렌더링한다. 컴포넌트가 브라우저에 붙었을 때 html로 어떻게 되는지 판단할 때 사용한다.</p>
+</li>
+</ul>
+<br>
+
+</li>
+</ul>
+<h3 id="컨테이너-테스트"><a href="#컨테이너-테스트" class="headerlink" title="컨테이너 테스트  "></a>컨테이너 테스트  <a id="a7"></a></h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">"react"</span>;</span><br><span class="line"><span class="keyword">import</span> Enzyme, &#123; mount &#125; <span class="keyword">from</span> <span class="string">"enzyme"</span>;</span><br><span class="line"><span class="keyword">import</span> BooksContainer <span class="keyword">from</span> <span class="string">"./BooksContainer"</span>;</span><br><span class="line"><span class="keyword">import</span> configureMockStore <span class="keyword">from</span> <span class="string">"redux-mock-store"</span>;</span><br><span class="line"><span class="keyword">import</span> Adapter <span class="keyword">from</span> <span class="string">"enzyme-adapter-react-16"</span>;</span><br><span class="line"></span><br><span class="line">Enzyme.configure(&#123; <span class="attr">adapter</span>: <span class="keyword">new</span> Adapter() &#125;);</span><br><span class="line"></span><br><span class="line">describe(<span class="string">"BookContainer"</span>, () =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> mockStore = configureMockStore();</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 가짜 스토어 만들기</span></span><br><span class="line">  <span class="keyword">let</span> store = mockStore(&#123;</span><br><span class="line">    books: [],</span><br><span class="line">    loading: <span class="literal">false</span>,</span><br><span class="line">    error: <span class="literal">null</span>,</span><br><span class="line">    token: <span class="string">""</span>,</span><br><span class="line">    router: &#123;</span><br><span class="line">      location: &#123;</span><br><span class="line">        pathname: <span class="string">"/"</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  it(<span class="string">"renders properly"</span>, () =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> component = mount(<span class="xml"><span class="tag">&lt;<span class="name">BooksContainer</span> <span class="attr">store</span>=<span class="string">&#123;store&#125;</span> /&gt;</span>);</span></span><br><span class="line"><span class="xml">    expect(component).toMatchSnapshot();</span></span><br><span class="line"><span class="xml">  &#125;);</span></span><br><span class="line"><span class="xml">&#125;);</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Jest Snapshot v1, https://goo.gl/fbAQLP</span></span><br><span class="line"></span><br><span class="line">exports[<span class="string">`BookContainer renders properly 1`</span>] = <span class="string">`</span></span><br><span class="line"><span class="string">&lt;Connect(Books)</span></span><br><span class="line"><span class="string">  store=&#123;</span></span><br><span class="line"><span class="string">    Object &#123;</span></span><br><span class="line"><span class="string">      "clearActions": [Function],</span></span><br><span class="line"><span class="string">      "dispatch": [Function],</span></span><br><span class="line"><span class="string">      "getActions": [Function],</span></span><br><span class="line"><span class="string">      "getState": [Function],</span></span><br><span class="line"><span class="string">      "replaceReducer": [Function],</span></span><br><span class="line"><span class="string">      "subscribe": [Function],</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string">&gt;</span></span><br><span class="line"><span class="string">  &lt;Books</span></span><br><span class="line"><span class="string">    books=&#123;Array []&#125;</span></span><br><span class="line"><span class="string">    error=&#123;null&#125;</span></span><br><span class="line"><span class="string">    loading=&#123;false&#125;</span></span><br><span class="line"><span class="string">    requestBooksPromise=&#123;[Function]&#125;</span></span><br><span class="line"><span class="string">    requestBooksSaga=&#123;[Function]&#125;</span></span><br><span class="line"><span class="string">    requestBooksThunk=&#123;[Function]&#125;</span></span><br><span class="line"><span class="string">    store=&#123;</span></span><br><span class="line"><span class="string">      Object &#123;</span></span><br><span class="line"><span class="string">        "clearActions": [Function],</span></span><br><span class="line"><span class="string">        "dispatch": [Function],</span></span><br><span class="line"><span class="string">        "getActions": [Function],</span></span><br><span class="line"><span class="string">        "getState": [Function],</span></span><br><span class="line"><span class="string">        "replaceReducer": [Function],</span></span><br><span class="line"><span class="string">        "subscribe": [Function],</span></span><br><span class="line"><span class="string">      &#125;</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">  &gt;</span></span><br><span class="line"><span class="string">    &lt;div /&gt;</span></span><br><span class="line"><span class="string">  &lt;/Books&gt;</span></span><br><span class="line"><span class="string">&lt;/Connect(Books)&gt;</span></span><br><span class="line"><span class="string">`</span>;</span><br></pre></td></tr></table></figure>
+
+
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="https://hyeok999.github.io/2020/02/27/ReactStudy-09/" data-id="ck7ujxseh002ymj2bayudwvde" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://hyeok999.github.io/2020/02/27/ReactStudy-09/" data-id="ck7uk0vdw0035qi2bka1zh1ml" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -269,15 +483,38 @@ ga('send', 'pageview');
             "name": "Jun Hyeok Kim"
         },
         "headline": "ReactStudy-09",
-        "image": "https://hyeok999.github.io",
+        "image": "https://hyeok999.github.iohttps://user-images.githubusercontent.com/31315644/72333302-e6ccdc80-36fe-11ea-9b80-e00b0d5f5847.png",
         "keywords": "git Web coding develop HTML CSS javascript React",
         "genre": "TIL React",
         "datePublished": "2020-02-27",
         "dateCreated": "2020-02-27",
         "dateModified": "2020-03-16",
         "url": "https://hyeok999.github.io/2020/02/27/ReactStudy-09/",
-        "description": "",
-        "wordCount": 1
+        "description": "
+
+React Re-Study : 9
+Unit Test
+facebook/jest
+jest 3가지 문법
+it (= test), describe, expect
+.not.to
+jest는 기본으로 한 테스트가 5초로 설정되어 있다.
+
+
+react-component-test
+실습 컴포넌트 테스트 짜보기
+Button 컴포넌트
+
+
+
+
+enzyme
+컨테이너 테스트
+
+
+
+",
+        "wordCount": 2911
     }
 </script>
 
