@@ -12,18 +12,20 @@
     
         <meta name="keywords" content="git,Web,coding,develop,HTML,CSS,javascript,React">
     
-    <meta name="description" content="HYEOK999&apos;s IT Develop Blog">
+    <meta name="description" content="React Re-Study : 10 SPA 프로젝트 배포 이해하기 serve 패키지로 React Wep App 배포하기 AWS S3 버킷 에 React Wep App 배포하기 node.js express로 React Wep App 배포하기 NginX 서버사이드 렌더링 이해하기 Optimizing Performance     React Study with">
 <meta name="keywords" content="git,Web,coding,develop,HTML,CSS,javascript,React">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ReactStudy-10">
 <meta property="og:url" content="https://hyeok999.github.io/2020/02/28/ReactStudy-10/index.html">
 <meta property="og:site_name" content="HYEOK999&#39;s Blog">
-<meta property="og:description" content="HYEOK999&apos;s IT Develop Blog">
+<meta property="og:description" content="React Re-Study : 10 SPA 프로젝트 배포 이해하기 serve 패키지로 React Wep App 배포하기 AWS S3 버킷 에 React Wep App 배포하기 node.js express로 React Wep App 배포하기 NginX 서버사이드 렌더링 이해하기 Optimizing Performance     React Study with">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-03-17T14:25:56.572Z">
+<meta property="og:image" content="https://user-images.githubusercontent.com/31315644/72333302-e6ccdc80-36fe-11ea-9b80-e00b0d5f5847.png">
+<meta property="og:updated_time" content="2020-03-17T14:29:39.724Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ReactStudy-10">
-<meta name="twitter:description" content="HYEOK999&apos;s IT Develop Blog">
+<meta name="twitter:description" content="React Re-Study : 10 SPA 프로젝트 배포 이해하기 serve 패키지로 React Wep App 배포하기 AWS S3 버킷 에 React Wep App 배포하기 node.js express로 React Wep App 배포하기 NginX 서버사이드 렌더링 이해하기 Optimizing Performance     React Study with">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/31315644/72333302-e6ccdc80-36fe-11ea-9b80-e00b0d5f5847.png">
     
     <link rel="canonical" href="https://hyeok999.github.io/2020/02/28/reactstudy-10/">
     
@@ -191,7 +193,134 @@ ga('send', 'pageview');
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <p><img src="https://user-images.githubusercontent.com/31315644/72333302-e6ccdc80-36fe-11ea-9b80-e00b0d5f5847.png" alt="React2-Thumbnail"></p>
+<hr>
+<h1 id="React-Re-Study-10"><a href="#React-Re-Study-10" class="headerlink" title="React Re-Study : 10"></a>React Re-Study : 10</h1><ul>
+<li><a href="#a1">SPA 프로젝트 배포 이해하기</a></li>
+<li><a href="#a2">serve 패키지로 React Wep App 배포하기</a></li>
+<li><a href="#a3">AWS S3 버킷 에 React Wep App 배포하기</a></li>
+<li><a href="#a4">node.js express로 React Wep App 배포하기</a></li>
+<li><a href="#a5">NginX</a></li>
+<li><a href="#a6">서버사이드 렌더링 이해하기</a></li>
+<li><a href="#a7">Optimizing Performance</a></li>
+</ul>
+<br>
+
+<hr>
+<h2 id="React-Study-with-Mark-Deploy-amp-Optimizing-Performance"><a href="#React-Study-with-Mark-Deploy-amp-Optimizing-Performance" class="headerlink" title="React Study with Mark - Deploy &amp; Optimizing Performance -"></a>React Study with Mark - Deploy &amp; Optimizing Performance -</h2><ul>
+<li><em>SPA 프로젝트 배포 이해하기</em></li>
+<li><em>serve 패키지로 React Wep App 배포하기</em></li>
+<li><em>AWS S3 에 React Wep App 배포하기</em></li>
+<li><em>node.js express 로 React Wep App 배포하기</em></li>
+<li><em>NginX 로 React Wep App 배포하기</em></li>
+<li><em>서버사이드 렌더링 이해하기</em></li>
+</ul>
+<p>모든 배포에는 <code>build 폴더</code>가 필요하다.</p>
+<ul>
+<li><code>npm run build</code></li>
+<li>폴더에 <code>build 폴더</code>가 생긴다.</li>
+<li><code>build 폴더</code>는 배포용, 나머지는 파일들은 개발자용</li>
+<li>build 된 파일들을 웹서버를 통해 사용자가 접근할 수 있도록 처리</li>
+<li></li>
+</ul>
+<br>
+
+<h3 id="SPA-프로젝트-배포-이해하기"><a href="#SPA-프로젝트-배포-이해하기" class="headerlink" title="SPA 프로젝트 배포 이해하기 "></a>SPA 프로젝트 배포 이해하기 <a id="a1"></a></h3><ul>
+<li>모든 요청을 서버에 하고 받아오는 형태가 아니다.</li>
+<li>라우팅 경로에 상관없이 리액트 App을 받아서 실행한다.</li>
+<li>라우팅은 받아온 리액트 App을 실행 후 적용한다.</li>
+<li>static파일을 제외한 모든 요청을 Index.html로 응답해주도록 작업한다.<ul>
+<li><strong>serve -s build</strong></li>
+<li>AWS S3에 배포</li>
+<li>node.js express</li>
+<li>NginX</li>
+</ul>
+</li>
+</ul>
+<br>
+
+<h3 id="serve-패키지로-React-Wep-App-배포하기"><a href="#serve-패키지로-React-Wep-App-배포하기" class="headerlink" title="serve 패키지로 React Wep App 배포하기 "></a>serve 패키지로 React Wep App 배포하기 <a id="a2"></a></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install serve -g</span><br><span class="line">serve -s build</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>serve 라는 패키지를 전역으로 설치한다.</li>
+<li>serve 명령어를 -s 옵션으로 build 폴더를 지정하여 실행한다.<ul>
+<li>-s 옵션은 어떤 라우팅으로 요청해도 index.html 을 응답하도록 한다.</li>
+</ul>
+</li>
+</ul>
+<br>
+
+<h3 id="AWS-S3-버킷-에-React-Wep-App-배포하기"><a href="#AWS-S3-버킷-에-React-Wep-App-배포하기" class="headerlink" title="AWS S3 버킷 에 React Wep App 배포하기 "></a>AWS S3 버킷 에 React Wep App 배포하기 <a id="a3"></a></h3><p><a href="https://s3.console.aws.amazon.com/s3/home?region=ap-northeast-2#" rel="external nofollow noopener noreferrer" target="_blank">Amazon S3 버킷 정적 웹 사이트 호스팅</a></p>
+<h4 id="버킷-정책-설정"><a href="#버킷-정책-설정" class="headerlink" title="버킷 정책 설정"></a>버킷 정책 설정</h4><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"Version"</span>: <span class="string">"2012-10-17"</span>,</span><br><span class="line">  <span class="attr">"Statement"</span>: [</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">"Sid"</span>: <span class="string">"PublicReadGetObject"</span>,</span><br><span class="line">      <span class="attr">"Effect"</span>: <span class="string">"Allow"</span>,</span><br><span class="line">	  <span class="attr">"Principal"</span>: <span class="string">"*"</span>,</span><br><span class="line">      <span class="attr">"Action"</span>: [</span><br><span class="line">        <span class="string">"s3:GetObject"</span></span><br><span class="line">      ],</span><br><span class="line">      <span class="attr">"Resource"</span>: [</span><br><span class="line">        <span class="string">"arn:aws:s3:::s3버킷명/*"</span></span><br><span class="line">      ]</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="node-js-express로-React-Wep-App-배포하기"><a href="#node-js-express로-React-Wep-App-배포하기" class="headerlink" title="node.js express로 React Wep App 배포하기 "></a>node.js express로 React Wep App 배포하기 <a id="a4"></a></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i express</span><br></pre></td></tr></table></figure>
+
+<p><code>package.json</code> 에 <code>script</code> 추가</p>
+<ul>
+<li>“start:server”: “node server.js”</li>
+<li><a href="https://nestjs.com/" rel="external nofollow noopener noreferrer" target="_blank">Nest.js</a> </li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>);</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"><span class="keyword">const</span> app = express();</span><br><span class="line"></span><br><span class="line">app.use(express.static(path.join(__dirname, <span class="string">'build'</span>)));</span><br><span class="line"></span><br><span class="line"><span class="comment">// app.get('/', function(req, res) &#123;</span></span><br><span class="line">app.get(<span class="string">'*'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">  res.sendFile(path.join(__dirname, <span class="string">'build'</span>, <span class="string">'index.html'</span>));</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.listen(<span class="number">9000</span>);</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="NginX"><a href="#NginX" class="headerlink" title="NginX "></a>NginX <a id="a5"></a></h3><ul>
+<li>Nginx는 웹 서버 소프트웨어 </li>
+<li>가벼움과 높은 성능을 목표로 한다.</li>
+<li>트래픽을 최초로 받아주는 문지기 역할</li>
+<li>리눅스 계열 , 도커, AWS EC2 등등에서 많이 사용됨.</li>
+</ul>
+<br>
+
+<h3 id="서버사이드-렌더링-이해하기"><a href="#서버사이드-렌더링-이해하기" class="headerlink" title="서버사이드 렌더링 이해하기 "></a>서버사이드 렌더링 이해하기 <a id="a6"></a></h3><ul>
+<li>차이점: 동작은 안되지만 잠깐 먼저 보이는 것 - 리액트 앱이 실행되는 순간 리액트 앱에 따라 바뀜</li>
+<li>서버에서 응답을 가져올때, 기존 처럼 static file 만을 가져오는 것이 아니고, 먼저 서버에서 응답 값을 만들어서 내려주고, 그 후에 static file 을 내려준다.</li>
+<li>static file 을 다 내려받고, 리액트 앱을 브라우저에서 실행한 뒤에는 SPA 처럼 동작하게 된다.</li>
+<li><a href="https://nextjs.org/learn/basics/getting-started" rel="external nofollow noopener noreferrer" target="_blank">Next.js</a></li>
+<li>isomorphic javascript : 서버와 클라이언트 모두에서 돌 수 있는 자바스크립트여야 한다.</li>
+</ul>
+<br>
+
+<h4 id="React-Server-Side-Rendering"><a href="#React-Server-Side-Rendering" class="headerlink" title="React Server Side Rendering"></a><em>React Server Side Rendering</em></h4><ul>
+<li>React Component 를 브라우저가 아니라 Node.js 에서 사용</li>
+<li><code>ReactDOMServer.renderToString();</code></li>
+<li>결과가 문자열 -&gt; 응답으로 내려준다.</li>
+<li>라우팅, 리덕스 와 같은 처리를 서버에서 진행하고 내려준다.(복잡하고 어려움)</li>
+<li>JSX 가 포함된 리액트 코드를 서버에서 읽을 수 있도록 babel 설정을 해야 한다.</li>
+<li><a href="https://nextjs.org/learn/basics/getting-started" rel="external nofollow noopener noreferrer" target="_blank">Next.js</a> 추후 학습을 꼭 해볼 것.</li>
+</ul>
+<br>
+
+<h3 id="Optimizing-Performance"><a href="#Optimizing-Performance" class="headerlink" title="Optimizing Performance "></a>Optimizing Performance <a id="a7"></a></h3><blockquote>
+<p>필요할 때만 렌더하도록 하자. (예 - 값을 메모라이징 하여 비교후 변경될 경우 렌더링한다.)</p>
+</blockquote>
+<h4 id="Reconciliation"><a href="#Reconciliation" class="headerlink" title="Reconciliation"></a>Reconciliation</h4><ul>
+<li>서로 다른 타입의 두 엘리먼트는 서로 다른 트리를 만들어 낸다.</li>
+<li>개발자가 key prop을 통해, 여러 렌더링 사이에서 어떤 자식 엘리먼트가 변경되지 않아야 할지 표시해줄 수 있음<ul>
+<li>다른 엘리먼트일 때</li>
+<li>같은 엘리먼트일 때</li>
+<li>같은 컴포넌트일 때</li>
+</ul>
+</li>
+<li>렌더가 다시되는 경우<ul>
+<li>props가 바뀔 때</li>
+<li>state가 바뀔 때</li>
+<li>부모가 바뀔 때(첫번째와 동일하지만 상황이 다름)</li>
+</ul>
+</li>
+<li>자식에 대한 재귀적 처리(2)와 같은 상황 때문에 key를 씀<ul>
+<li>리액트는 맨 위에 추가된건지 마지막에 추가된건지 구분을 못하므로</li>
+<li>shouldComponentUpdate에서 기존에 있던 컴포넌트는 또 렌더를 하지 않도록<ul>
+<li>리턴 타입 : boolean 타입</li>
+</ul>
+</li>
+<li>요즘은 useMemo</li>
+</ul>
+</li>
+</ul>
+
         </div>
         <footer class="article-footer">
             
@@ -269,15 +398,29 @@ ga('send', 'pageview');
             "name": "Jun Hyeok Kim"
         },
         "headline": "ReactStudy-10",
-        "image": "https://hyeok999.github.io",
+        "image": "https://hyeok999.github.iohttps://user-images.githubusercontent.com/31315644/72333302-e6ccdc80-36fe-11ea-9b80-e00b0d5f5847.png",
         "keywords": "git Web coding develop HTML CSS javascript React",
         "genre": "TIL React",
         "datePublished": "2020-02-28",
         "dateCreated": "2020-02-28",
         "dateModified": "2020-03-17",
         "url": "https://hyeok999.github.io/2020/02/28/ReactStudy-10/",
-        "description": "",
-        "wordCount": 1
+        "description": "
+
+React Re-Study : 10
+SPA 프로젝트 배포 이해하기
+serve 패키지로 React Wep App 배포하기
+AWS S3 버킷 에 React Wep App 배포하기
+node.js express로 React Wep App 배포하기
+NginX
+서버사이드 렌더링 이해하기
+Optimizing Performance
+
+
+
+
+React Study with",
+        "wordCount": 722
     }
 </script>
 
