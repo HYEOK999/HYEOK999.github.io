@@ -12,18 +12,20 @@
     
         <meta name="keywords" content="Web,coding,develop,HTML,CSS,javascript,React,자바스크립트,typescript,타입스크립트">
     
-    <meta name="description" content="HYEOK999&apos;s IT Develop Blog">
+    <meta name="description" content="타입스크립트 기초 연습하기 (타입 별명, 제네릭)목차 Type Alias 사용하기 Generics 함수에서 Generics 사용하기 interface 에서 Generics 사용하기 Type Alias 에서 Generics 사용하기 클래스에서 Generics 사용하기       Type Alias 사용하기  type은 특정 타입에 별칭을 붙이는 용도로 사">
 <meta name="keywords" content="Web,coding,develop,HTML,CSS,javascript,React,자바스크립트,typescript,타입스크립트">
 <meta property="og:type" content="article">
 <meta property="og:title" content="타입스크립트 기초 연습하기 (타입 별명, 제네릭)">
 <meta property="og:url" content="https://hyeok999.github.io/2020/03/31/TypeScript-03/index.html">
 <meta property="og:site_name" content="HYEOK999&#39;s Blog">
-<meta property="og:description" content="HYEOK999&apos;s IT Develop Blog">
+<meta property="og:description" content="타입스크립트 기초 연습하기 (타입 별명, 제네릭)목차 Type Alias 사용하기 Generics 함수에서 Generics 사용하기 interface 에서 Generics 사용하기 Type Alias 에서 Generics 사용하기 클래스에서 Generics 사용하기       Type Alias 사용하기  type은 특정 타입에 별칭을 붙이는 용도로 사">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-03-31T14:42:56.422Z">
+<meta property="og:image" content="https://user-images.githubusercontent.com/31315644/77824045-edd28b00-7142-11ea-83d8-b88e7cb6c97d.png">
+<meta property="og:updated_time" content="2020-03-31T14:45:45.296Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="타입스크립트 기초 연습하기 (타입 별명, 제네릭)">
-<meta name="twitter:description" content="HYEOK999&apos;s IT Develop Blog">
+<meta name="twitter:description" content="타입스크립트 기초 연습하기 (타입 별명, 제네릭)목차 Type Alias 사용하기 Generics 함수에서 Generics 사용하기 interface 에서 Generics 사용하기 Type Alias 에서 Generics 사용하기 클래스에서 Generics 사용하기       Type Alias 사용하기  type은 특정 타입에 별칭을 붙이는 용도로 사">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/31315644/77824045-edd28b00-7142-11ea-83d8-b88e7cb6c97d.png">
     
     <link rel="canonical" href="https://hyeok999.github.io/2020/03/31/typescript-03/">
     
@@ -191,7 +193,73 @@ ga('send', 'pageview');
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <p><img src="https://user-images.githubusercontent.com/31315644/77824045-edd28b00-7142-11ea-83d8-b88e7cb6c97d.png" alt="React with TypeScript"></p>
+<hr>
+<h1 id="타입스크립트-기초-연습하기-타입-별명-제네릭"><a href="#타입스크립트-기초-연습하기-타입-별명-제네릭" class="headerlink" title="타입스크립트 기초 연습하기 (타입 별명, 제네릭)"></a>타입스크립트 기초 연습하기 (타입 별명, 제네릭)</h1><h2 id="목차"><a href="#목차" class="headerlink" title="목차"></a>목차</h2><ul>
+<li><a href="#a1">Type Alias 사용하기</a></li>
+<li><a href="#a2">Generics</a><ul>
+<li><a href="#a3">함수에서 Generics 사용하기</a></li>
+<li><a href="#a4">interface 에서 Generics 사용하기</a></li>
+<li><a href="#a5">Type Alias 에서 Generics 사용하기</a></li>
+<li><a href="#a6">클래스에서 Generics 사용하기</a></li>
+</ul>
+</li>
+</ul>
+<br>
+
+<hr>
+<h3 id="Type-Alias-사용하기"><a href="#Type-Alias-사용하기" class="headerlink" title="Type Alias 사용하기 "></a>Type Alias 사용하기 <a id="a1"></a></h3><blockquote>
+<p><code>type</code>은 특정 타입에 별칭을 붙이는 용도로 사용한다. </p>
+<p>객체를, 배열, 또는 그 어떤 타입이던 별칭을 지어줄 수 있다.</p>
+</blockquote>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Person = &#123;</span><br><span class="line">  name: <span class="built_in">string</span>;</span><br><span class="line">  age?: <span class="built_in">number</span>; <span class="comment">// 물음표가 들어갔다는 것은, 설정을 해도 되고 안해도 되는 값이라는 것을 의미한다.</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// &amp; 는 Intersection 으로서 두개 이상의 타입들을 합쳐준다.</span></span><br><span class="line"><span class="comment">// 참고: https://www.typescriptlang.org/docs/handbook/advanced-types.html#intersection-types</span></span><br><span class="line"><span class="keyword">type</span> Developer = Person &amp; &#123;</span><br><span class="line">  skills: <span class="built_in">string</span>[];</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> person: Person = &#123;</span><br><span class="line">  name: <span class="string">'김사람'</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> expert: Developer = &#123;</span><br><span class="line">  name: <span class="string">'김개발'</span>,</span><br><span class="line">  skills: [<span class="string">'javascript'</span>, <span class="string">'react'</span>]</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> People = Person[]; <span class="comment">// Person[] 를 이제 앞으로 People 이라는 타입으로 사용 할 수 있습니다.</span></span><br><span class="line"><span class="keyword">const</span> people: People = [person, expert];</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Color = <span class="string">'red'</span> | <span class="string">'orange'</span> | <span class="string">'yellow'</span>;</span><br><span class="line"><span class="keyword">const</span> color: Color = <span class="string">'red'</span>;</span><br><span class="line"><span class="keyword">const</span> colors: Color[] = [<span class="string">'red'</span>, <span class="string">'orange'</span>];</span><br></pre></td></tr></table></figure>
+
+<p><strong>Q . 위 코드를 보았을 때 interface와 많이 유사하다. 그렇다면 어떤 무엇을 쓰는게 정답일까?</strong></p>
+<p><strong>A . 정답은 어떤 것을 이용하던 상관없다. 단, 일관성 있게 사용하는 것이 중요하다.</strong></p>
+<p>구버전의 타입스크립트에서는 <code>type</code> 과 <code>interface</code> 의 차이가 많이 존재했었는데 이제는 큰 차이는 없다. </p>
+<p>다만 라이브러리를 작성하거나 다른 라이브러리를 위한 타입 지원 파일을 작성하게 될 때는 <code>interface</code>를 사용하는것이 권장 되고 있다.</p>
+<br>
+
+<h3 id="Generics"><a href="#Generics" class="headerlink" title="Generics  "></a>Generics  <a id="a2"></a></h3><blockquote>
+<p> 제네릭(Generics)은 타입스크립트에서 <code>함수</code>,<code>클래스</code>, <code>interface</code>, <code>type</code>을 사용하게 될 때 여러 종류의 타입에 대하여 호환을 맞춰야 하는 상황에서 사용하는 문법이다.</p>
+</blockquote>
+<h4 id="함수에서-Generics-사용하기"><a href="#함수에서-Generics-사용하기" class="headerlink" title="함수에서 Generics 사용하기  "></a>함수에서 Generics 사용하기  <a id="a3"></a></h4><p>객체 A 와 객체 B를 합쳐주는 <code>merge</code> 라는 함수를 만든다고 가정하자.</p>
+<p>이럴 경우, 객체 A와 객체 B가 어떤 타입이 올 지 알 수 없기 때문에 <code>any</code> 라는 타입을 사용한다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">merge</span>(<span class="params">a: any, b: any</span>): <span class="title">any</span> </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    ...a,</span><br><span class="line">    ...b</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> merged = merge(&#123; <span class="attr">foo</span>: <span class="number">1</span> &#125;, &#123; <span class="attr">bar</span>: <span class="number">1</span> &#125;);</span><br></pre></td></tr></table></figure>
+
+<p><strong>문제는 위와 같은 코드를 작성할 경우, 타입추론이 모두 깨진 것이나 다름 없다.</strong></p>
+<p>결과가 <code>any</code> 라는 것은 즉 <code>merged</code> 안에 무엇이 있는지 알 수 없다는 뜻이기 때문이다.</p>
+<br>
+
+<p><strong>위와 같은 상황에서 제네릭을 사용한다.</strong></p>
+<p>제네릭을 사용 할 때는 이렇게 <code>&lt;T&gt;</code> 처럼 꺽쇠 안에 타입의 이름을 넣어서 사용하며, 이렇게 설정을 해주면 제네릭에 해당하는 타입에는 뭐든지 들어올 수 있게 되면서도, 사용 할 때 타입이 깨지지 않게 된다.</p>
+<p>이런식으로 제네릭을 사용하게 된다면 함수의 파라미터로 넣은 실제 값의 타입을 활용하게 된다.</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">merge</span>&lt;<span class="title">A</span>, <span class="title">B</span>&gt;(<span class="params">a: A, b: B</span>): <span class="title">A</span> &amp; <span class="title">B</span> </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    ...a,</span><br><span class="line">    ...b</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> merged = merge(&#123; foo: <span class="number">1</span> &#125;, &#123; bar: <span class="number">1</span> &#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 다른 예시</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">wrap</span>&lt;<span class="title">T</span>&gt;(<span class="params">param: T</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    param <span class="comment">// param: number;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> wrapped = wrap(<span class="number">10</span>);</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="interface-에서-Generics-사용하기"><a href="#interface-에서-Generics-사용하기" class="headerlink" title="interface 에서 Generics 사용하기  "></a>interface 에서 Generics 사용하기  <a id="a4"></a></h4><p>만약 <code>Items</code> 라는 타입을 사용하게 된다면, <code>Items</code> 타입을 지니고 있는 객체의 <code>list</code> 배열은 <code>string[]</code> 타입을 지니고 있게 된다. </p>
+<p>이렇게 함으로써, <code>list</code>가 숫자배열인 경우, 문자열배열인경우, 객체배열, 또는 그 어떤 배열인 경우에도 하나의 <code>interface</code> 만을 사용하여 타입을 설정 할 수 있다.</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> Items&lt;T&gt; &#123;</span><br><span class="line">  list: T[];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> items: Items&lt;<span class="built_in">string</span>&gt; = &#123;</span><br><span class="line">  list: [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="Type-Alias-에서-Generics-사용하기"><a href="#Type-Alias-에서-Generics-사용하기" class="headerlink" title="Type Alias 에서 Generics 사용하기  "></a>Type Alias 에서 Generics 사용하기  <a id="a5"></a></h4><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Items&lt;T&gt; = &#123;</span><br><span class="line">  list: T[];</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> items: Items&lt;<span class="built_in">string</span>&gt; = &#123;</span><br><span class="line">  list: [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="클래스에서-Generics-사용하기"><a href="#클래스에서-Generics-사용하기" class="headerlink" title="클래스에서 Generics 사용하기  "></a>클래스에서 Generics 사용하기  <a id="a6"></a></h4><p>제네릭을 이용하여 Queue 만들어보기.</p>
+<p>Queue는 선입선출(FIFO) 의 성질을 가지고 있는 자료구조이다.</p>
+<p>등록(<code>enqueue</code>) 한 항목을 먼저 출력(<code>dequeue</code>) 할 수 있다.</p>
+<p>제네릭을 이용한 Queue 에서는 다양한 원소 타입으로 이루어진 Queue의 타입을 설정할 수 있다.</p>
+<p>예를 들어서 <code>Queue</code> 이라고 하면 문자열로 이루어진 Queue의 타입이 된다.</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Queue&lt;T&gt; &#123;</span><br><span class="line">  list: T[] = [];</span><br><span class="line">  <span class="keyword">get</span> length() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.list.length;</span><br><span class="line">  &#125;</span><br><span class="line">  enqueue(item: T) &#123;</span><br><span class="line">    <span class="keyword">this</span>.list.push(item);</span><br><span class="line">  &#125;</span><br><span class="line">  dequeue() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.list.shift();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> queue = <span class="keyword">new</span> Queue&lt;<span class="built_in">number</span>&gt;();</span><br><span class="line">queue.enqueue(<span class="number">0</span>);</span><br><span class="line">queue.enqueue(<span class="number">1</span>);</span><br><span class="line">queue.enqueue(<span class="number">2</span>);</span><br><span class="line">queue.enqueue(<span class="number">3</span>);</span><br><span class="line">queue.enqueue(<span class="number">4</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'큐의 길이: '</span>, queue.length);</span><br><span class="line"><span class="built_in">console</span>.log(queue.dequeue());</span><br><span class="line"><span class="built_in">console</span>.log(queue.dequeue());</span><br><span class="line"><span class="built_in">console</span>.log(queue.dequeue());</span><br><span class="line"><span class="built_in">console</span>.log(queue.dequeue());</span><br><span class="line"><span class="built_in">console</span>.log(queue.dequeue());</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">큐의 길이: 5</span></span><br><span class="line"><span class="comment">0</span></span><br><span class="line"><span class="comment">1</span></span><br><span class="line"><span class="comment">2</span></span><br><span class="line"><span class="comment">3</span></span><br><span class="line"><span class="comment">4</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><ul>
+<li><a href="https://velog.io/@velopert/typescript-basics" rel="external nofollow noopener noreferrer" target="_blank">velopert.log : 타입스크립트 기초 연습</a></li>
+</ul>
+
         </div>
         <footer class="article-footer">
             
@@ -269,15 +337,31 @@ ga('send', 'pageview');
             "name": "Jun Hyeok Kim"
         },
         "headline": "타입스크립트 기초 연습하기 (타입 별명, 제네릭)",
-        "image": "https://hyeok999.github.io",
+        "image": "https://hyeok999.github.iohttps://user-images.githubusercontent.com/31315644/77824045-edd28b00-7142-11ea-83d8-b88e7cb6c97d.png",
         "keywords": "Web coding develop HTML CSS javascript React 자바스크립트 typescript 타입스크립트",
         "genre": "TIL TypeScript",
         "datePublished": "2020-03-31",
         "dateCreated": "2020-03-31",
         "dateModified": "2020-03-31",
         "url": "https://hyeok999.github.io/2020/03/31/TypeScript-03/",
-        "description": "",
-        "wordCount": 1
+        "description": "
+
+타입스크립트 기초 연습하기 (타입 별명, 제네릭)목차
+Type Alias 사용하기
+Generics
+함수에서 Generics 사용하기
+interface 에서 Generics 사용하기
+Type Alias 에서 Generics 사용하기
+클래스에서 Generics 사용하기
+
+
+
+
+
+
+Type Alias 사용하기 
+type은 특정 타입에 별칭을 붙이는 용도로 사",
+        "wordCount": 966
     }
 </script>
 
@@ -368,7 +452,7 @@ ga('send', 'pageview');
                             <a href="/2020/03/31/TypeScript-03/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/77824045-edd28b00-7142-11ea-83d8-b88e7cb6c97d.png)" alt="타입스크립트 기초 연습하기 (타입 별명, 제네릭)" class="thumbnail-image"></span>
     
     
 </a>
