@@ -12,18 +12,20 @@
     
         <meta name="keywords" content="git,Web,coding,develop,TIL,algorithm,HTML,CSS,javascript,React,Programmers">
     
-    <meta name="description" content="HYEOK999&apos;s IT Develop Blog">
+    <meta name="description" content="d.code 패션 피드 구현- 초기 셋팅 하기 -목차  프로젝트 생성 라이브러리 인스톨하기 nvm 설정파일 생성하기 package.json 설정 추가하기 prettier 설정파일 생성하기 라우터 설정하기 pages 폴더 만들고 컴포넌트 설정하기 Redux 셋팅하기 상위 컴포넌트에 Provider 셋팅 하기 redux 모듈 작성하기 create 함수 작">
 <meta name="keywords" content="git,Web,coding,develop,TIL,algorithm,HTML,CSS,javascript,React,Programmers">
 <meta property="og:type" content="article">
 <meta property="og:title" content="패션사이트 피드 클론 -셋팅-">
 <meta property="og:url" content="https://hyeok999.github.io/2020/03/18/feed-01/index.html">
 <meta property="og:site_name" content="HYEOK999&#39;s Blog">
-<meta property="og:description" content="HYEOK999&apos;s IT Develop Blog">
+<meta property="og:description" content="d.code 패션 피드 구현- 초기 셋팅 하기 -목차  프로젝트 생성 라이브러리 인스톨하기 nvm 설정파일 생성하기 package.json 설정 추가하기 prettier 설정파일 생성하기 라우터 설정하기 pages 폴더 만들고 컴포넌트 설정하기 Redux 셋팅하기 상위 컴포넌트에 Provider 셋팅 하기 redux 모듈 작성하기 create 함수 작">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-04-01T14:26:17.558Z">
+<meta property="og:image" content="https://user-images.githubusercontent.com/31315644/78148458-d90e3400-746f-11ea-9e00-b20cbc220316.png">
+<meta property="og:updated_time" content="2020-04-01T14:28:30.833Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="패션사이트 피드 클론 -셋팅-">
-<meta name="twitter:description" content="HYEOK999&apos;s IT Develop Blog">
+<meta name="twitter:description" content="d.code 패션 피드 구현- 초기 셋팅 하기 -목차  프로젝트 생성 라이브러리 인스톨하기 nvm 설정파일 생성하기 package.json 설정 추가하기 prettier 설정파일 생성하기 라우터 설정하기 pages 폴더 만들고 컴포넌트 설정하기 Redux 셋팅하기 상위 컴포넌트에 Provider 셋팅 하기 redux 모듈 작성하기 create 함수 작">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/31315644/78148458-d90e3400-746f-11ea-9e00-b20cbc220316.png">
     
     <link rel="canonical" href="https://hyeok999.github.io/2020/03/18/feed-01/">
     
@@ -191,14 +193,120 @@ ga('send', 'pageview');
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <img src="https://user-images.githubusercontent.com/31315644/78148458-d90e3400-746f-11ea-9e00-b20cbc220316.png" alt="Main Image" style="zoom:50%;">
+
+<hr>
+<h1 id="d-code-패션-피드-구현"><a href="#d-code-패션-피드-구현" class="headerlink" title="d.code 패션 피드 구현"></a>d.code 패션 피드 구현</h1><h2 id="초기-셋팅-하기"><a href="#초기-셋팅-하기" class="headerlink" title="- 초기 셋팅 하기 -"></a>- 초기 셋팅 하기 -</h2><p><strong>목차</strong></p>
+<ol>
+<li><a href="#a1">프로젝트 생성</a></li>
+<li><a href="#a2">라이브러리 인스톨하기</a></li>
+<li><a href="#a3">nvm 설정파일 생성하기</a></li>
+<li><a href="#a4">package.json 설정 추가하기</a></li>
+<li><a href="#a5">prettier 설정파일 생성하기</a></li>
+<li><a href="#a6">라우터 설정하기</a></li>
+<li><a href="#a7">pages 폴더 만들고 컴포넌트 설정하기</a></li>
+<li><a href="#a8">Redux 셋팅하기</a></li>
+<li><a href="#a9">상위 컴포넌트에 Provider 셋팅 하기</a><ul>
+<li><a href="#a10">redux 모듈 작성하기</a><ul>
+<li>create 함수 작성하기</li>
+<li>combineReducer 작성하기</li>
+<li>rootSaga 작성하기</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#a11">index.js Reset.css 적용하기</a></li>
+</ol>
+<hr>
+<h3 id="프로젝트-생성"><a href="#프로젝트-생성" class="headerlink" title="프로젝트 생성 "></a>프로젝트 생성 <a id="a1"></a></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx create-react-app d-code-feed</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="라이브러리-인스톨하기"><a href="#라이브러리-인스톨하기" class="headerlink" title="라이브러리 인스톨하기 "></a>라이브러리 인스톨하기 <a id="a2"></a></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> d-code-feed</span><br><span class="line">npm i react-error-boundary react-helmet</span><br><span class="line">npm i react-router-dom connected-react-router</span><br><span class="line">npm i redux react-redux redux-saga</span><br><span class="line">npm i uuid axios styled-components</span><br><span class="line">npm i prettier eslint-config-prettier husky lint-staged redux-devtools-extension -D</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="nvm-설정파일-생성하기"><a href="#nvm-설정파일-생성하기" class="headerlink" title="nvm 설정파일 생성하기 "></a>nvm 설정파일 생성하기 <a id="a3"></a></h3><p><strong>.nvmrc</strong> 파일 생성 (위치 : .gitignore 랑 같은 위치)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">12.11</span><span class="number">.1</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="package-json-설정-추가하기"><a href="#package-json-설정-추가하기" class="headerlink" title="package.json 설정 추가하기 "></a>package.json 설정 추가하기 <a id="a4"></a></h3><p><code>&quot;scripts&quot;: {...}</code> 아래에 삽입</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">"eslintConfig": &#123;</span><br><span class="line">  "extends": [</span><br><span class="line">    "react-app",</span><br><span class="line">    <span class="string">"prettier"</span></span><br><span class="line">  ]</span><br><span class="line">&#125;,</span><br><span class="line">"husky": &#123;</span><br><span class="line">  "hooks": &#123;</span><br><span class="line">    "pre-commit": "lint-staged"</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br><span class="line">"lint-staged": &#123;</span><br><span class="line">  "**/*.&#123;js,jsx&#125;": [</span><br><span class="line">    "eslint --fix",</span><br><span class="line">    "prettier --write",</span><br><span class="line">    <span class="string">"git add"</span></span><br><span class="line">  ]</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="prettier-설정파일-생성하기"><a href="#prettier-설정파일-생성하기" class="headerlink" title="prettier 설정파일 생성하기 "></a>prettier 설정파일 생성하기 <a id="a5"></a></h3><p><strong>.prettierrc</strong> 파일 생성 (위치 : .gitignore 랑 같은 위치)</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"printWidth"</span>: <span class="number">100</span>,</span><br><span class="line">  <span class="attr">"singleQuote"</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">"trailingComma"</span>: <span class="string">"es5"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="라우터-설정하기"><a href="#라우터-설정하기" class="headerlink" title="라우터 설정하기 "></a>라우터 설정하기 <a id="a6"></a></h3><ol>
+<li><p><code>path</code> 에러가 날 경우 특정 컴포넌트로 이동하도록 <code>&lt;ErrorBoundary FallbackComponent={ErrorFallbackComponent}&gt;</code>를 설정합니다. 추후 <code>Redux</code>를 사용할 것이고, <code>error</code>에 관한 <code>state</code>는 차후 반드시 필요하기에 미리 설정합니다.</p>
+</li>
+<li><p>지금은 상세보기(<code>FeedDatail</code>)에 관한 REST API가 주어져있기 때문에 상관없지만, 차후에는 선택된 <code>Feed</code>에 대하여 상세보기의 주소가 <code>feed/:feedId</code>형식으로 적용될 것으로 예상됩니다. 따라서 <code>ConnectedRouter</code>를 이용하여 현재 url의 <code>history</code>객체를 <code>Redux store</code>에 저장합니다.</p>
+</li>
+<li><p><code>exact</code> : 주어진 경로와 정확히 맞아 떨어져야만 설정한 컴포넌트를 보여줍니다.</p>
+</li>
+<li><p><code>Switch</code> 컴포넌트에 감싸면 매칭되는 첫번째 라우트만 보여주고 나머지는 보여주지 않습니다.</p>
+</li>
+</ol>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// App.js</span></span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; Switch, Route &#125; <span class="keyword">from</span> <span class="string">'react-router-dom'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; ConnectedRouter &#125; <span class="keyword">from</span> <span class="string">'connected-react-router'</span>;</span><br><span class="line"><span class="keyword">import</span> Feed <span class="keyword">from</span> <span class="string">'./pages/Feed'</span>;</span><br><span class="line"><span class="keyword">import</span> NotFound <span class="keyword">from</span> <span class="string">'./pages/NotFound'</span>;</span><br><span class="line"><span class="keyword">import</span> ErrorBoundary <span class="keyword">from</span> <span class="string">'react-error-boundary'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; history &#125; <span class="keyword">from</span> <span class="string">'./redux/create'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> ErrorFallbackComponent = <span class="function">(<span class="params">&#123; error &#125;</span>) =&gt;</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;error.message&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> App = <span class="function"><span class="params">()</span> =&gt;</span> (</span><br><span class="line">  &lt;ErrorBoundary FallbackComponent=&#123;ErrorFallbackComponent&#125;&gt;</span><br><span class="line">    &lt;ConnectedRouter history=&#123;history&#125;&gt;</span><br><span class="line">      &lt;Switch&gt;</span><br><span class="line">        &lt;Route exact path=<span class="string">"/feed"</span> component=&#123;Feed&#125; /&gt;</span><br><span class="line">        &lt;Route exact path=<span class="string">"/"</span> component=&#123;Feed&#125; /&gt;</span><br><span class="line">        &lt;Route component=&#123;NotFound&#125; /&gt;</span><br><span class="line">      &lt;<span class="regexp">/Switch&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>ConnectedRouter&gt;</span><br><span class="line">  &lt;<span class="regexp">/ErrorBoundary&gt;</span></span><br><span class="line"><span class="regexp">);</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">export default App;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="pages-폴더-만들고-컴포넌트-만들기"><a href="#pages-폴더-만들고-컴포넌트-만들기" class="headerlink" title="pages 폴더 만들고 컴포넌트 만들기 "></a>pages 폴더 만들고 컴포넌트 만들기 <a id="a7"></a></h3><p>pages<br>– Feed.jsx<br>– NotFound.jsx</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Feed.jsx</span></span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> Feed = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;&gt;</span>Feed 입니다.<span class="tag">&lt;/&gt;</span>;</span></span><br><span class="line"><span class="xml">&#125;;</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">export default Feed;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// NotFound.jsx</span></span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> NotFound = <span class="function"><span class="params">props</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>NotFound<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> NotFound;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="Redux-셋팅하기"><a href="#Redux-셋팅하기" class="headerlink" title="Redux 셋팅하기 "></a>Redux 셋팅하기 <a id="a8"></a></h3><h4 id="상위-컴포넌트에-Provider-셋팅-하기"><a href="#상위-컴포넌트에-Provider-셋팅-하기" class="headerlink" title="상위 컴포넌트에 Provider 셋팅 하기 "></a>상위 컴포넌트에 Provider 셋팅 하기 <a id="a9"></a></h4><ol>
+<li><code>Provider</code> 는 <code>react-redux</code> 라이브러리에 내장되어있는, 리액트 앱에 <code>store</code> 를 손쉽게 연동 할 수 있도록 도와주는 컴포넌트입니다.</li>
+<li><code>store</code> 선언 및 <code>create()</code> 함수 호출</li>
+</ol>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// src/index.js</span></span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> ReactDOM <span class="keyword">from</span> <span class="string">'react-dom'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'./index.css'</span>;</span><br><span class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">'./App'</span>;</span><br><span class="line"><span class="keyword">import</span> create <span class="keyword">from</span> <span class="string">'./redux/create'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; Provider &#125; <span class="keyword">from</span> <span class="string">'react-redux'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> store = create();</span><br><span class="line"></span><br><span class="line">ReactDOM.render(</span><br><span class="line">  &lt;Provider store=&#123;store&#125;&gt;</span><br><span class="line">    &lt;App /&gt;</span><br><span class="line">  &lt;<span class="regexp">/Provider&gt;,</span></span><br><span class="line"><span class="regexp">  document.getElementById('root')</span></span><br><span class="line"><span class="regexp">);</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="redux-모듈-작성하기"><a href="#redux-모듈-작성하기" class="headerlink" title="redux 모듈 작성하기 "></a>redux 모듈 작성하기 <a id="a10"></a></h4><h5 id="create-함수-작성하기"><a href="#create-함수-작성하기" class="headerlink" title="create 함수 작성하기"></a>create 함수 작성하기</h5><ol>
+<li>현재 url에 관한 <code>history</code> 객체를 <code>store</code>에 저장합니다.</li>
+<li>리덕스 개발자 도구를 사용하기 위한 코드를 추가합니다.</li>
+<li>비동기 처리는 <code>redux-saga</code>를 이용할 것이기 때문에 <code>createSagaMiddle</code>를 이용하여 <code>Redux Store</code>에 연결합니다.</li>
+</ol>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// src/redux/create.js</span></span><br><span class="line"><span class="keyword">import</span> &#123; composeWithDevTools &#125; <span class="keyword">from</span> <span class="string">'redux-devtools-extension'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; createStore, applyMiddleware &#125; <span class="keyword">from</span> <span class="string">'redux'</span>;</span><br><span class="line"><span class="keyword">import</span> reducer <span class="keyword">from</span> <span class="string">'./modules/reducer'</span>;</span><br><span class="line"><span class="keyword">import</span> createSagaMiddleware <span class="keyword">from</span> <span class="string">'redux-saga'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; createBrowserHistory &#125; <span class="keyword">from</span> <span class="string">'history'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; routerMiddleware &#125; <span class="keyword">from</span> <span class="string">'connected-react-router'</span>;</span><br><span class="line"><span class="keyword">import</span> rootSaga <span class="keyword">from</span> <span class="string">'./modules/rootSaga'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> history = createBrowserHistory();</span><br><span class="line"><span class="keyword">const</span> sagaMiddleware = createSagaMiddleware();</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> create = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> store = createStore(</span><br><span class="line">    reducer(history),</span><br><span class="line">    composeWithDevTools(applyMiddleware(routerMiddleware(history), sagaMiddleware))</span><br><span class="line">  );</span><br><span class="line"></span><br><span class="line">  sagaMiddleware.run(rootSaga);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> store;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> create;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h5 id="combineReducer-작성하기"><a href="#combineReducer-작성하기" class="headerlink" title="combineReducer 작성하기"></a>combineReducer 작성하기</h5><ul>
+<li>흩어진 리듀서를 모아 하나의 리듀서로 통합시키는 <code>combinerReducer</code>를 작성합니다.</li>
+<li>우선 틀만 작성해두었습니다.</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// src/redux/modules/reducer.js</span></span><br><span class="line"><span class="keyword">import</span> &#123; combineReducers &#125; <span class="keyword">from</span> <span class="string">'redux'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; connectRouter &#125; <span class="keyword">from</span> <span class="string">'connected-react-router'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> reducer = <span class="function"><span class="params">history</span> =&gt;</span></span><br><span class="line">  combineReducers(&#123;</span><br><span class="line">    router: connectRouter(history),</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> reducer;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h5 id="rootSaga-작성하기"><a href="#rootSaga-작성하기" class="headerlink" title="rootSaga 작성하기"></a>rootSaga 작성하기</h5><ul>
+<li><code>combineReducer</code> 와 같이 모든 Saga를 통합관리하기 위한 <code>rootSaga</code> 를 작성합니다.</li>
+<li>우선 틀만 작성해두었습니다.</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; all &#125; <span class="keyword">from</span> <span class="string">'redux-saga/effects'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span>* <span class="title">rootSaga</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">yield</span> all([]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="index-js-Reset-css-적용하기"><a href="#index-js-Reset-css-적용하기" class="headerlink" title="index.js Reset.css 적용하기 "></a>index.js Reset.css 적용하기 <a id="a11"></a></h3><ul>
+<li>개발하기 앞서 CSS를 초기화 하고 시작합니다.</li>
+<li><a href="https://gist.github.com/DavidWells/18e73022e723037a50d6" rel="external nofollow noopener noreferrer" target="_blank">reset.css</a> 를 참고 하였습니다.</li>
+</ul>
+
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="https://hyeok999.github.io/2020/03/18/feed-01/" data-id="ck8hfb9q900b2smz0llxkedop" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://hyeok999.github.io/2020/03/18/feed-01/" data-id="ck8hfeob200b8vqz09m4br0d6" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -269,15 +377,30 @@ ga('send', 'pageview');
             "name": "Jun Hyeok Kim"
         },
         "headline": "패션사이트 피드 클론 -셋팅-",
-        "image": "https://hyeok999.github.io",
+        "image": "https://hyeok999.github.iohttps://user-images.githubusercontent.com/31315644/78148458-d90e3400-746f-11ea-9e00-b20cbc220316.png",
         "keywords": "git Web coding develop TIL algorithm HTML CSS javascript React Programmers",
         "genre": "Develop Project",
         "datePublished": "2020-03-18",
         "dateCreated": "2020-03-18",
         "dateModified": "2020-04-01",
         "url": "https://hyeok999.github.io/2020/03/18/feed-01/",
-        "description": "",
-        "wordCount": 1
+        "description": "
+
+
+d.code 패션 피드 구현- 초기 셋팅 하기 -목차
+
+프로젝트 생성
+라이브러리 인스톨하기
+nvm 설정파일 생성하기
+package.json 설정 추가하기
+prettier 설정파일 생성하기
+라우터 설정하기
+pages 폴더 만들고 컴포넌트 설정하기
+Redux 셋팅하기
+상위 컴포넌트에 Provider 셋팅 하기
+redux 모듈 작성하기
+create 함수 작",
+        "wordCount": 1172
     }
 </script>
 
@@ -438,7 +561,7 @@ ga('send', 'pageview');
                             <a href="/2020/03/18/feed-01/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/78148458-d90e3400-746f-11ea-9e00-b20cbc220316.png)" alt="패션사이트 피드 클론 -셋팅-" class="thumbnail-image"></span>
     
     
 </a>
