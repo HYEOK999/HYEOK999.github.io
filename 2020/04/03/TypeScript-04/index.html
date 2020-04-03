@@ -12,18 +12,20 @@
     
         <meta name="keywords" content="Web,coding,develop,HTML,CSS,javascript,React,자바스크립트,typescript,타입스크립트">
     
-    <meta name="description" content="HYEOK999&apos;s IT Develop Blog">
+    <meta name="description" content="리액트 컴포넌트 타입스크립트로 작성하기목차 프로젝트 생성 Arrow vs Function 새로운 컴포넌트 만들기 interface vs type React.FC 의 장단점 props에 기본적으로 children 이 있어 사용하기 편하다 컴포넌트의 defaultProps, propTypes, contextTypes 를 설정 할 때 자동완성이 될 수 있다는">
 <meta name="keywords" content="Web,coding,develop,HTML,CSS,javascript,React,자바스크립트,typescript,타입스크립트">
 <meta property="og:type" content="article">
 <meta property="og:title" content="리액트 컴포넌트 타입스크립트로 작성하기">
 <meta property="og:url" content="https://hyeok999.github.io/2020/04/03/TypeScript-04/index.html">
 <meta property="og:site_name" content="HYEOK999&#39;s Blog">
-<meta property="og:description" content="HYEOK999&apos;s IT Develop Blog">
+<meta property="og:description" content="리액트 컴포넌트 타입스크립트로 작성하기목차 프로젝트 생성 Arrow vs Function 새로운 컴포넌트 만들기 interface vs type React.FC 의 장단점 props에 기본적으로 children 이 있어 사용하기 편하다 컴포넌트의 defaultProps, propTypes, contextTypes 를 설정 할 때 자동완성이 될 수 있다는">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-04-03T11:36:39.997Z">
+<meta property="og:image" content="https://user-images.githubusercontent.com/31315644/77824045-edd28b00-7142-11ea-83d8-b88e7cb6c97d.png">
+<meta property="og:updated_time" content="2020-04-03T11:39:49.760Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="리액트 컴포넌트 타입스크립트로 작성하기">
-<meta name="twitter:description" content="HYEOK999&apos;s IT Develop Blog">
+<meta name="twitter:description" content="리액트 컴포넌트 타입스크립트로 작성하기목차 프로젝트 생성 Arrow vs Function 새로운 컴포넌트 만들기 interface vs type React.FC 의 장단점 props에 기본적으로 children 이 있어 사용하기 편하다 컴포넌트의 defaultProps, propTypes, contextTypes 를 설정 할 때 자동완성이 될 수 있다는">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/31315644/77824045-edd28b00-7142-11ea-83d8-b88e7cb6c97d.png">
     
     <link rel="canonical" href="https://hyeok999.github.io/2020/04/03/typescript-04/">
     
@@ -191,7 +193,127 @@ ga('send', 'pageview');
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <p><img src="https://user-images.githubusercontent.com/31315644/77824045-edd28b00-7142-11ea-83d8-b88e7cb6c97d.png" alt="React with TypeScript"></p>
+<hr>
+<h1 id="리액트-컴포넌트-타입스크립트로-작성하기"><a href="#리액트-컴포넌트-타입스크립트로-작성하기" class="headerlink" title="리액트 컴포넌트 타입스크립트로 작성하기"></a>리액트 컴포넌트 타입스크립트로 작성하기</h1><h2 id="목차"><a href="#목차" class="headerlink" title="목차"></a>목차</h2><ul>
+<li><a href="#a1">프로젝트 생성</a></li>
+<li><a href="#a2">Arrow vs Function</a></li>
+<li><a href="#a3">새로운 컴포넌트 만들기</a><ul>
+<li><a href="#a4">interface vs type</a></li>
+<li><a href="#a5">React.FC 의 장단점</a><ul>
+<li><a href="#a6">props에 기본적으로 <code>children</code> 이 있어 사용하기 편하다</a></li>
+<li><a href="#a7">컴포넌트의 defaultProps, propTypes, contextTypes 를 설정 할 때 자동완성이 될 수 있다는 것</a></li>
+</ul>
+</li>
+<li><a href="#a8">React.FC를 생략할 경우</a></li>
+<li><a href="#a9">컴포넌트에 생략할 수 있는 props 설정하기</a></li>
+<li><a href="#a10">컴포넌트에서 함수 타입의 props 받아오기</a></li>
+</ul>
+</li>
+<li><a href="#a11">정리</a></li>
+</ul>
+<br>
+
+<hr>
+<h3 id="프로젝트-생성"><a href="#프로젝트-생성" class="headerlink" title="프로젝트 생성 "></a>프로젝트 생성 <a id="a1"></a></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npx create-react-app ts-react-tutorial --typescript</span><br></pre></td></tr></table></figure>
+
+<p><code>npx</code> 제일 뒤에 <code>--typescript</code> 가 있으면 타입스크립트 설정이 적용된 프로젝트가 생성된다.</p>
+<p>만약, 이미 진행 중인 프로젝트에 타입스크립트를 추가하려면 다음과 같은 명령어를 사용한다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install --save typescript @types/node @types/react @types/react-dom @types/jest</span><br></pre></td></tr></table></figure>
+
+<p>타입스크립트를 이용 시 특정 컴포넌트에 필요한 값이나 자동완성이 필요할 땐 <code>Ctrl + Space</code> 를 눌러보면 확인 할 수 있다.</p>
+<br>
+
+<h3 id="Arrow-vs-Function"><a href="#Arrow-vs-Function" class="headerlink" title="Arrow vs Function "></a>Arrow vs Function <a id="a2"></a></h3><p>프로젝트를 생성 후 <code>App.tsx</code> 를 확인해보면 다음과 같은 코드들을 확인할 수 있다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">import React from &apos;react&apos;;</span><br><span class="line">import logo from &apos;./logo.svg&apos;;</span><br><span class="line">import &apos;./App.css&apos;;</span><br><span class="line"></span><br><span class="line">function App() &#123;</span><br><span class="line">  return (</span><br><span class="line">    &lt;div className=&quot;App&quot;&gt;</span><br><span class="line">      &lt;header className=&quot;App-header&quot;&gt;</span><br><span class="line">        &lt;img src=&#123;logo&#125; className=&quot;App-logo&quot; alt=&quot;logo&quot; /&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">          Edit &lt;code&gt;src/App.tsx&lt;/code&gt; and save to reload.</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;a</span><br><span class="line">          className=&quot;App-link&quot;</span><br><span class="line">          href=&quot;https://reactjs.org&quot;</span><br><span class="line">          target=&quot;_blank&quot;</span><br><span class="line">          rel=&quot;noopener noreferrer&quot;</span><br><span class="line">        &gt;</span><br><span class="line">          Learn React</span><br><span class="line">        &lt;/a&gt;</span><br><span class="line">      &lt;/header&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">export default App;</span><br></pre></td></tr></table></figure>
+
+<p>여기서 함수의 정의 형태가 일반함수로서 화살표 함수가 아니다.</p>
+<p>예전엔 컴포넌트 생성 시, <code>const App: React.FC = () =&gt; { ... }</code> 와 같이 화살표함수를 사용하여 컴포넌트가 선언되었다. 그런데, 꼭 화살표 함수를 사용하여 선언 할 필요는 없다. 최근 해외의 유명 개발자들(<a href="https://overreacted.io/a-complete-guide-to-useeffect/" rel="external nofollow noopener noreferrer" target="_blank">링크1</a>, <a href="https://kentcdodds.com/blog/how-to-use-react-context-effectively" rel="external nofollow noopener noreferrer" target="_blank">링크2</a>)은 보통 <code>function</code> 키워드를 사용하여 함수형 컴포넌트를 선언하는 것으로 추세다. 리액트 공식 매뉴얼에서도 <code>function</code> 키워드를 사용하고 있기도 한다.</p>
+<p>반면 예전 프로젝트를 만들 때 자동 생성 된 App.tsx 의 경우 <code>React.FC</code> 라는 타입을 사용하여 화살표 함수를 사용하면서 컴포넌트를 선언했는데, 이렇게 타입하는 것이 좋을 수 도 있고 나쁠 수도 있다. </p>
+<p><strong>결론적으로, 함수형 컴포넌트를 작성 할 때는 화살표 함수(=&gt;)로 작성해도 되고, <code>function</code> 키워드를 사용해도 된다. 요즘은 <code>function</code> 키워드가 통일시 되고 있다.</strong><br><strong>단, React.FC 라는 타입은 사용을 자제하는 것이 좋다.</strong> </p>
+<br>
+
+<h3 id="새로운-컴포넌트-만들기"><a href="#새로운-컴포넌트-만들기" class="headerlink" title="새로운 컴포넌트 만들기 "></a>새로운 컴포넌트 만들기 <a id="a3"></a></h3><p>파일 위치 : <strong>src/Greetings.tsx</strong></p>
+<br>
+
+<h4 id="interface-vs-type"><a href="#interface-vs-type" class="headerlink" title="interface vs type "></a>interface vs type <a id="a4"></a></h4><p>컴포넌트의 props에 대한 타입을 선언 할 때에는 <code>type</code> 을 써도 되고, <code>interface</code> 를 사용해도 상관없다.</p>
+<p>단, 프로젝트에서 일관성만 유지하면 충분하다. (A에서는 <code>interface</code> 를 B에서는 <code>type</code> 쓰는 걸 자제)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// type</span><br><span class="line">import React from &apos;react&apos;;</span><br><span class="line"></span><br><span class="line">type GreetingsProps = &#123;</span><br><span class="line">  name: string;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">const Greetings: React.FC&lt;GreetingsProps&gt; = (&#123; name &#125;) =&gt; (</span><br><span class="line">  &lt;div&gt;Hello, &#123;name&#125;&lt;/div&gt;</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">export default Greetings;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// interface</span><br><span class="line">import React from &apos;react&apos;;</span><br><span class="line"></span><br><span class="line">interface GreetingsProps &#123;</span><br><span class="line">  name: string;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">const Greetings: React.FC&lt;GreetingsProps&gt; = (&#123; name &#125;) =&gt; (</span><br><span class="line">  &lt;div&gt;Hello, &#123;name&#125;&lt;/div&gt;</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">export default Greetings;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="React-FC-의-장단점"><a href="#React-FC-의-장단점" class="headerlink" title="React.FC 의 장단점 "></a>React.FC 의 장단점 <a id="a5"></a></h4><p><code>React.FC</code> 를 사용 할 때는 props 의 타입을 <code>&lt;Generics&gt;</code> 로 넣어서 사용한다. <code>React.FC</code>를 사용해서 얻을 수 있는 장단점은 두가지가 있다. 이 두가지는 장점이 될 수 도 단점이 될 수 도 있다.</p>
+<ol>
+<li>props에 기본적으로 <code>children</code> 이 있어 사용하기 편하다.</li>
+<li>컴포넌트의 defaultProps, propTypes, contextTypes 를 설정 할 때 자동완성이 될 수 있다는 것.</li>
+</ol>
+<br>
+
+<h5 id="props에-기본적으로-children-이-있어-사용하기-편하다"><a href="#props에-기본적으로-children-이-있어-사용하기-편하다" class="headerlink" title="props에 기본적으로 children 이 있어 사용하기 편하다. "></a>props에 기본적으로 <code>children</code> 이 있어 사용하기 편하다. <a id="a6"></a></h5><p>이 부분은 어찌보면 장점이 될 수도 있고, 단점이 될 수도 있다.</p>
+<p>이유는 특정 컴포넌트에서는 <code>children</code> 필요할수도 하지 않을 수도 있는데, <code>React.FC</code> 는 <code>children</code> 을  옵셔널 타입으로 지정해놨기에 이는 타입스크립트의 철학과는 모호한 관계를 띄게 된다.</p>
+<p>따라서 특정 컴포넌트에서 <code>children</code> 을 필요로 한다면 반드시 <code>children</code> 타입을 명시해야한다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">type GreetingsProps = &#123;</span><br><span class="line">  name: string;</span><br><span class="line">  children: React.ReactNode;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><strong>결과 적으로 차라리, <code>React.FC</code> 를 사용하지 않고 GreetingsProps 타입을 통해 <code>children</code>이 있다 없다를 명백하게 명시하는게 덜 헷갈린다.</strong></p>
+<br>
+
+<h5 id="컴포넌트의-defaultProps-propTypes-contextTypes-를-설정-할-때-자동완성이-될-수-있다는-것"><a href="#컴포넌트의-defaultProps-propTypes-contextTypes-를-설정-할-때-자동완성이-될-수-있다는-것" class="headerlink" title="컴포넌트의 defaultProps, propTypes, contextTypes 를 설정 할 때 자동완성이 될 수 있다는 것. "></a>컴포넌트의 defaultProps, propTypes, contextTypes 를 설정 할 때 자동완성이 될 수 있다는 것. <a id="a7"></a></h5><p>추후 개선의 여지가 있지만, 아직까진 React.FC를 이용할 때  <code>defaultProps</code>가 제대로 동작이 되고 있지 않다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">// src/Greetings.tsx</span><br><span class="line">import React from &apos;react&apos;;</span><br><span class="line"></span><br><span class="line">type GreetingsProps = &#123;</span><br><span class="line">  name: string;</span><br><span class="line">  mark: string;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">const Greetings: React.FC&lt;GreetingsProps&gt; = (&#123; name, mark &#125;) =&gt; (</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    Hello, &#123;name&#125; &#123;mark&#125;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">Greetings.defaultProps = &#123;</span><br><span class="line">  mark: &apos;!&apos;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">export default Greetings;</span><br></pre></td></tr></table></figure>
+
+<p>위와 같은 코드를 작성하고 <code>App.tsx</code>에서 해당 코드를 로드할 경우, 아래 부분에서 에러를 유발한다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// src/App.tsx</span><br><span class="line"></span><br><span class="line">import React from &apos;react&apos;;</span><br><span class="line">import Greetings from &apos;./Greetings&apos;;</span><br><span class="line"></span><br><span class="line">const App: React.FC = () =&gt; &#123;</span><br><span class="line">  return &lt;Greetings name=&quot;Hello&quot; /&gt;; // 이 부분에서 에러</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">export default App;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p>결국, <code>mark</code> 를 <code>defaultProps</code> 로 넣었음에도 불구하고 <code>mark</code>값이 없다면서 제대로 작동하지 않는다.</p>
+<p><code>React.FC</code>를 쓰면서 <code>defaultProps</code> 를 사용하려면 결국 코드를 다음과 같이 작성하는 수 밖에 없다.</p>
+<p>따라서, 아래처럼 비구조화 할당을 하는 과정에서 기본값을 설정해야만 한다. </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">// src/Greetings.tsx</span><br><span class="line"></span><br><span class="line">import React from &apos;react&apos;;</span><br><span class="line"></span><br><span class="line">type GreetingsProps = &#123;</span><br><span class="line">  name: string;</span><br><span class="line">  mark: string;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">const Greetings: React.FC&lt;GreetingsProps&gt; = (&#123; name, mark = &apos;!&apos; &#125;) =&gt; (</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    Hello, &#123;name&#125; &#123;mark&#125;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">// 결국 무의미해진 defaultProps?</span><br><span class="line">Greetings.defaultProps = &#123;</span><br><span class="line">  mark: &apos;!&apos; </span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">export default Greetings;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="React-FC를-생략할-경우"><a href="#React-FC를-생략할-경우" class="headerlink" title="React.FC를 생략할 경우 "></a>React.FC를 생략할 경우 <a id="a8"></a></h4><p>위와 같은 <code>React.FC</code>의 장점보다는 단점을 회피하고자 <code>React.FC</code> 를 생략할 경우, 다음과 같이 작성할 수 있다.</p>
+<p><strong>즉, <code>React.FC</code> 를 이용하지 않는 것이 좀 더 권장된다.</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">// src/Greetings.tsx</span><br><span class="line">import React from &apos;react&apos;;</span><br><span class="line"></span><br><span class="line">type GreetingsProps = &#123;</span><br><span class="line">  name: string;</span><br><span class="line">  mark: string;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line">function Greetings(&#123; name, mark &#125;: GreetingsProps) &#123;</span><br><span class="line">  return (</span><br><span class="line">*/</span><br><span class="line">const Greetings = (&#123; name, mark &#125;: GreetingsProps) =&gt; (</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    Hello, &#123;name&#125; &#123;mark&#125;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">Greetings.defaultProps = &#123;</span><br><span class="line">  mark: &apos;!&apos;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">export default Greetings;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="컴포넌트에-생략할-수-있는-props-설정하기"><a href="#컴포넌트에-생략할-수-있는-props-설정하기" class="headerlink" title="컴포넌트에 생략할 수 있는 props 설정하기 "></a>컴포넌트에 생략할 수 있는 props 설정하기 <a id="a9"></a></h4><blockquote>
+<p>컴포넌트의 props 중에서 생략해도 되는 값이 있다면 <code>?</code> 문자를 사용하면 된다.</p>
+</blockquote>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// src/Greetings.tsx</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line">type GreetingsProps = &#123;</span><br><span class="line">  name: string;</span><br><span class="line">  mark: string;</span><br><span class="line">  optional?: string;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Greetings</span>(<span class="params">&#123; name, mark, optional &#125;: GreetingsProps</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      Hello, &#123;name&#125; &#123;mark&#125;</span><br><span class="line">      &#123;optional &amp;&amp; <span class="xml"><span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;optional&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span>&#125;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">Greetings.defaultProps = &#123;</span></span><br><span class="line"><span class="regexp">  mark: '!'</span></span><br><span class="line"><span class="regexp">&#125;;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">export default Greetings;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="컴포넌트에서-함수-타입의-props-받아오기"><a href="#컴포넌트에서-함수-타입의-props-받아오기" class="headerlink" title="컴포넌트에서 함수 타입의 props 받아오기 "></a>컴포넌트에서 함수 타입의 props 받아오기 <a id="a10"></a></h4><blockquote>
+<p>컴포넌트에서 특정 함수를 props 로 받아와야 한다면 다음과 같이 타입을 지정 할 수 있다.</p>
+</blockquote>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// src/Greetings.tsx</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> GreetingsProps = &#123;</span><br><span class="line">  name: <span class="built_in">string</span>;</span><br><span class="line">  mark: <span class="built_in">string</span>;</span><br><span class="line">  optional?: <span class="built_in">string</span>;</span><br><span class="line">  onClick: <span class="function">(<span class="params">name: <span class="built_in">string</span></span>) =&gt;</span> <span class="built_in">void</span>; <span class="comment">// 아무것도 리턴하지 않는다는 함수를 의미합니다.</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Greetings</span>(<span class="params">&#123; name, mark, optional, onClick &#125;: GreetingsProps</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> handleClick = <span class="function"><span class="params">()</span> =&gt;</span> onClick(name);</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      Hello, &#123;name&#125; &#123;mark&#125;</span><br><span class="line">      &#123;optional &amp;&amp; &lt;p&gt;&#123;optional&#125;&lt;<span class="regexp">/p&gt;&#125;</span></span><br><span class="line"><span class="regexp">      &lt;div&gt;</span></span><br><span class="line"><span class="regexp">        &lt;button onClick=&#123;handleClick&#125;&gt;Click Me&lt;/</span>button&gt;</span><br><span class="line">      &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>div&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Greetings.defaultProps = &#123;</span><br><span class="line">  mark: <span class="string">'!'</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> Greetings;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p>그리고, src/App.tsx 에서 해당 컴포넌트를 사용해야 할 때 다음과 같이 작성한다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">// src/App.js</span><br><span class="line"></span><br><span class="line">import React from &apos;react&apos;;</span><br><span class="line">import Greetings from &apos;./Greetings&apos;;</span><br><span class="line"></span><br><span class="line">const App: React.FC = () =&gt; &#123;</span><br><span class="line">  const onClick = (name: string) =&gt; &#123;</span><br><span class="line">    console.log(`$&#123;name&#125; says hello`);</span><br><span class="line">  &#125;;</span><br><span class="line">  return &lt;Greetings name=&quot;Hello&quot; onClick=&#123;onClick&#125; /&gt;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">export default App;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<br>
+
+<h3 id="정리"><a href="#정리" class="headerlink" title="정리 "></a>정리 <a id="a11"></a></h3><p>이번 섹션에서 배웠던 것.</p>
+<ul>
+<li><code>React.FC</code> 는 별로 좋지 않다.</li>
+<li>함수형 컴포넌트를 작성 할 때는 화살표 함수로 작성해도 되고, <code>function</code> 키워드를 사용해도 된다.</li>
+<li>Props 에 대한 타입을 선언 할 땐 <code>interface</code> 또는 <code>type</code> 을 사용하면 되며, 프로젝트 내부에서 일관성만 지키면 된다.</li>
+</ul>
+<br>
+
+<hr>
+<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><ul>
+<li><a href="https://velog.io/@velopert/create-typescript-react-component" rel="external nofollow noopener noreferrer" target="_blank">velopert.log : 타입스크립트 기초 연습</a></li>
+</ul>
+
         </div>
         <footer class="article-footer">
             
@@ -269,15 +391,24 @@ ga('send', 'pageview');
             "name": "Jun Hyeok Kim"
         },
         "headline": "리액트 컴포넌트 타입스크립트로 작성하기",
-        "image": "https://hyeok999.github.io",
+        "image": "https://hyeok999.github.iohttps://user-images.githubusercontent.com/31315644/77824045-edd28b00-7142-11ea-83d8-b88e7cb6c97d.png",
         "keywords": "Web coding develop HTML CSS javascript React 자바스크립트 typescript 타입스크립트",
         "genre": "TIL TypeScript",
         "datePublished": "2020-04-03",
         "dateCreated": "2020-04-03",
         "dateModified": "2020-04-03",
         "url": "https://hyeok999.github.io/2020/04/03/TypeScript-04/",
-        "description": "",
-        "wordCount": 1
+        "description": "
+
+리액트 컴포넌트 타입스크립트로 작성하기목차
+프로젝트 생성
+Arrow vs Function
+새로운 컴포넌트 만들기
+interface vs type
+React.FC 의 장단점
+props에 기본적으로 children 이 있어 사용하기 편하다
+컴포넌트의 defaultProps, propTypes, contextTypes 를 설정 할 때 자동완성이 될 수 있다는",
+        "wordCount": 1764
     }
 </script>
 
@@ -368,7 +499,7 @@ ga('send', 'pageview');
                             <a href="/2020/04/03/TypeScript-04/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/77824045-edd28b00-7142-11ea-83d8-b88e7cb6c97d.png)" alt="리액트 컴포넌트 타입스크립트로 작성하기" class="thumbnail-image"></span>
     
     
 </a>
