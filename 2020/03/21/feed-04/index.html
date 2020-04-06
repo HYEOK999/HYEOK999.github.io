@@ -12,20 +12,20 @@
     
         <meta name="keywords" content="git,Web,coding,develop,TIL,algorithm,HTML,CSS,javascript,React,Programmers">
     
-    <meta name="description" content="d.code 패션 피드 구현- FeedList 일부 수정 및 FeedDetail 구현1 -목차  FeedList useEffect 수정 FeedList Link 태그 수정 HOC 작성 Detail 관련 Redux 추가하기 FeedDetailContainer 만들기 + 좋아요 로직 구성 Detail에서 사용할 Icon 추가하기 Detail에서 사용할 logo">
+    <meta name="description" content="d.code 패션 피드 구현- FeedList 일부 수정 및 FeedDetail 구현1 -목차  FeedList useEffect 수정 FeedList Link 태그 수정 HOC 작성 Detail 관련 Redux 추가하기 FeedDetailContainer 만들기 + 좋아요 로직 구성 Detail에서 사용할 Icon 추가하기 Detail에서 사용할 l">
 <meta name="keywords" content="git,Web,coding,develop,TIL,algorithm,HTML,CSS,javascript,React,Programmers">
 <meta property="og:type" content="article">
 <meta property="og:title" content="FeedList 일부 수정 및 FeedDetail 구현">
 <meta property="og:url" content="https://hyeok999.github.io/2020/03/21/feed-04/index.html">
 <meta property="og:site_name" content="HYEOK999&#39;s Blog">
-<meta property="og:description" content="d.code 패션 피드 구현- FeedList 일부 수정 및 FeedDetail 구현1 -목차  FeedList useEffect 수정 FeedList Link 태그 수정 HOC 작성 Detail 관련 Redux 추가하기 FeedDetailContainer 만들기 + 좋아요 로직 구성 Detail에서 사용할 Icon 추가하기 Detail에서 사용할 logo">
+<meta property="og:description" content="d.code 패션 피드 구현- FeedList 일부 수정 및 FeedDetail 구현1 -목차  FeedList useEffect 수정 FeedList Link 태그 수정 HOC 작성 Detail 관련 Redux 추가하기 FeedDetailContainer 만들기 + 좋아요 로직 구성 Detail에서 사용할 Icon 추가하기 Detail에서 사용할 l">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://user-images.githubusercontent.com/31315644/77395968-175b8180-6de6-11ea-8e28-66361164e588.png">
-<meta property="og:updated_time" content="2020-04-06T13:23:15.398Z">
+<meta property="og:image" content="https://user-images.githubusercontent.com/31315644/78148458-d90e3400-746f-11ea-9e00-b20cbc220316.png">
+<meta property="og:updated_time" content="2020-04-06T13:26:24.735Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="FeedList 일부 수정 및 FeedDetail 구현">
-<meta name="twitter:description" content="d.code 패션 피드 구현- FeedList 일부 수정 및 FeedDetail 구현1 -목차  FeedList useEffect 수정 FeedList Link 태그 수정 HOC 작성 Detail 관련 Redux 추가하기 FeedDetailContainer 만들기 + 좋아요 로직 구성 Detail에서 사용할 Icon 추가하기 Detail에서 사용할 logo">
-<meta name="twitter:image" content="https://user-images.githubusercontent.com/31315644/77395968-175b8180-6de6-11ea-8e28-66361164e588.png">
+<meta name="twitter:description" content="d.code 패션 피드 구현- FeedList 일부 수정 및 FeedDetail 구현1 -목차  FeedList useEffect 수정 FeedList Link 태그 수정 HOC 작성 Detail 관련 Redux 추가하기 FeedDetailContainer 만들기 + 좋아요 로직 구성 Detail에서 사용할 Icon 추가하기 Detail에서 사용할 l">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/31315644/78148458-d90e3400-746f-11ea-9e00-b20cbc220316.png">
     
     <link rel="canonical" href="https://hyeok999.github.io/2020/03/21/feed-04/">
     
@@ -193,7 +193,10 @@ ga('send', 'pageview');
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h1 id="d-code-패션-피드-구현"><a href="#d-code-패션-피드-구현" class="headerlink" title="d.code 패션 피드 구현"></a>d.code 패션 피드 구현</h1><h2 id="FeedList-일부-수정-및-FeedDetail-구현1"><a href="#FeedList-일부-수정-및-FeedDetail-구현1" class="headerlink" title="- FeedList 일부 수정 및 FeedDetail 구현1 -"></a>- FeedList 일부 수정 및 FeedDetail 구현1 -</h2><p><strong>목차</strong></p>
+            <img src="https://user-images.githubusercontent.com/31315644/78148458-d90e3400-746f-11ea-9e00-b20cbc220316.png" alt="Main Image" style="zoom:50%;">
+
+<hr>
+<h1 id="d-code-패션-피드-구현"><a href="#d-code-패션-피드-구현" class="headerlink" title="d.code 패션 피드 구현"></a>d.code 패션 피드 구현</h1><h2 id="FeedList-일부-수정-및-FeedDetail-구현1"><a href="#FeedList-일부-수정-및-FeedDetail-구현1" class="headerlink" title="- FeedList 일부 수정 및 FeedDetail 구현1 -"></a>- FeedList 일부 수정 및 FeedDetail 구현1 -</h2><p><strong>목차</strong></p>
 <ol>
 <li><a href="#a1">FeedList useEffect 수정</a></li>
 <li><a href="#a2">FeedList Link 태그 수정</a></li>
@@ -344,14 +347,17 @@ ga('send', 'pageview');
             "name": "Jun Hyeok Kim"
         },
         "headline": "FeedList 일부 수정 및 FeedDetail 구현",
-        "image": "https://hyeok999.github.iohttps://user-images.githubusercontent.com/31315644/77395968-175b8180-6de6-11ea-8e28-66361164e588.png",
+        "image": "https://hyeok999.github.iohttps://user-images.githubusercontent.com/31315644/78148458-d90e3400-746f-11ea-9e00-b20cbc220316.png",
         "keywords": "git Web coding develop TIL algorithm HTML CSS javascript React Programmers",
         "genre": "Develop Project",
         "datePublished": "2020-03-21",
         "dateCreated": "2020-03-21",
         "dateModified": "2020-04-06",
         "url": "https://hyeok999.github.io/2020/03/21/feed-04/",
-        "description": "d.code 패션 피드 구현- FeedList 일부 수정 및 FeedDetail 구현1 -목차
+        "description": "
+
+
+d.code 패션 피드 구현- FeedList 일부 수정 및 FeedDetail 구현1 -목차
 
 FeedList useEffect 수정
 FeedList Link 태그 수정
@@ -359,8 +365,8 @@ HOC 작성
 Detail 관련 Redux 추가하기
 FeedDetailContainer 만들기 + 좋아요 로직 구성
 Detail에서 사용할 Icon 추가하기
-Detail에서 사용할 logo",
-        "wordCount": 2520
+Detail에서 사용할 l",
+        "wordCount": 2524
     }
 </script>
 
@@ -541,7 +547,7 @@ Detail에서 사용할 logo",
                             <a href="/2020/03/21/feed-04/" class="thumbnail">
     
     
-        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/77395968-175b8180-6de6-11ea-8e28-66361164e588.png)" alt="FeedList 일부 수정 및 FeedDetail 구현" class="thumbnail-image"></span>
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/78148458-d90e3400-746f-11ea-9e00-b20cbc220316.png)" alt="FeedList 일부 수정 및 FeedDetail 구현" class="thumbnail-image"></span>
     
     
 </a>
