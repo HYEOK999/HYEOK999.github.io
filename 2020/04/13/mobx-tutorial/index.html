@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+
+    
+
+    
+    <title>Mobx 개념잡기 | HYEOK999&#39;s Blog</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="git,Web,coding,develop,TIL,algorithm,HTML,CSS,javascript,React,Mobx">
+    
+    <meta name="description" content="Mobx 개념 정리목차 Mobx 란? Redux VS Mobx   개념 정리 Observable / useObserver (Mobx ver 6.xxx 👆) Computed Value (연산된 값) Reactions (반응) Action (액션; 행동) useLocalStore (Mobx ver 6.xxx 👆)   리액트 없이 MobX 사용해보기 ob">
+<meta name="keywords" content="git,Web,coding,develop,TIL,algorithm,HTML,CSS,javascript,React,Mobx">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mobx 개념잡기">
+<meta property="og:url" content="https://hyeok999.github.io/2020/04/13/mobx-tutorial/index.html">
+<meta property="og:site_name" content="HYEOK999&#39;s Blog">
+<meta property="og:description" content="Mobx 개념 정리목차 Mobx 란? Redux VS Mobx   개념 정리 Observable / useObserver (Mobx ver 6.xxx 👆) Computed Value (연산된 값) Reactions (반응) Action (액션; 행동) useLocalStore (Mobx ver 6.xxx 👆)   리액트 없이 MobX 사용해보기 ob">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://user-images.githubusercontent.com/31315644/78734744-041ee900-7984-11ea-90ab-0bffac26b033.png">
+<meta property="og:updated_time" content="2020-04-17T09:45:46.610Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Mobx 개념잡기">
+<meta name="twitter:description" content="Mobx 개념 정리목차 Mobx 란? Redux VS Mobx   개념 정리 Observable / useObserver (Mobx ver 6.xxx 👆) Computed Value (연산된 값) Reactions (반응) Action (액션; 행동) useLocalStore (Mobx ver 6.xxx 👆)   리액트 없이 MobX 사용해보기 ob">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/31315644/78734744-041ee900-7984-11ea-90ab-0bffac26b033.png">
+    
+    <link rel="canonical" href="https://hyeok999.github.io/2020/04/13/mobx-tutorial/">
+    
+
+    
+        <link rel="icon" href="/images/favicon_io/favicon.ico">
+    
+
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Architects+Daughter&display=swap" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin+Sketch&display=swap">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.css">
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-153647512-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+
+    
+    
+
+
+<link rel="alternate" href="/feed.xml" title="HYEOK999's Blog" type="application/atom+xml">
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">HYEOK999&#39;s Daily Develop</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/">Develop</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/CSS/">CSS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/GIT/">GIT</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/GraphQL/">GraphQL</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/IT-Event/">IT Event</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Project/">Project</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/React/">React</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/Tips/">Tips</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/TypeScript/">TypeScript</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/">TIL</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Algorithm-Quiz/">Algorithm & Quiz</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/Mobx/">Mobx</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/React/">React</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/React-Preview/">React-Preview</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/TypeScript/">TypeScript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/TIL/linux/">linux</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/etc/">etc</a></li></ul>
+                                    
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="https://about.me/iasg2004" rel="external nofollow noopener noreferrer" target="_blank">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/TIL/Mobx/">Mobx</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-mobx-tutorial" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Mobx 개념잡기
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2020/04/13/mobx-tutorial/" class="article-date">
+            <time datetime="2020-04-13T09:41:45.000Z" itemprop="datePublished">2020-04-13</time>
+        </a>
+    </div>
+
+		
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/CSS/">CSS</a>, <a class="tag-link" href="/tags/HTML/">HTML</a>, <a class="tag-link" href="/tags/Mobx/">Mobx</a>, <a class="tag-link" href="/tags/React/">React</a>, <a class="tag-link" href="/tags/TIL/">TIL</a>, <a class="tag-link" href="/tags/Web/">Web</a>, <a class="tag-link" href="/tags/algorithm/">algorithm</a>, <a class="tag-link" href="/tags/coding/">coding</a>, <a class="tag-link" href="/tags/develop/">develop</a>, <a class="tag-link" href="/tags/git/">git</a>, <a class="tag-link" href="/tags/javascript/">javascript</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p><img src="https://user-images.githubusercontent.com/31315644/78734744-041ee900-7984-11ea-90ab-0bffac26b033.png" alt="mobx"></p>
+<hr>
+<h1 id="Mobx-개념-정리"><a href="#Mobx-개념-정리" class="headerlink" title="Mobx 개념 정리"></a>Mobx 개념 정리</h1><h2 id="목차"><a href="#목차" class="headerlink" title="목차"></a>목차</h2><ul>
+<li><a href="#a1">Mobx 란?</a><ul>
+<li><a href="#a2">Redux VS Mobx</a></li>
+</ul>
+</li>
+<li><a href="#a3">개념 정리</a><ol>
+<li><a href="#a4">Observable / useObserver (Mobx ver 6.xxx 👆)</a></li>
+<li><a href="#a5">Computed Value (연산된 값)</a></li>
+<li><a href="#a6">Reactions (반응)</a></li>
+<li><a href="#a7">Action (액션; 행동)</a></li>
+<li><a href="#a8">useLocalStore (Mobx ver 6.xxx 👆)</a></li>
+</ol>
+</li>
+<li><a href="#a9">리액트 없이 MobX 사용해보기</a><ul>
+<li><a href="#a10">observable</a></li>
+<li><a href="#a11">reaction</a></li>
+<li><a href="#a12">computed</a></li>
+<li><a href="#a13">autorun</a></li>
+</ul>
+</li>
+<li><a href="#a14">클래스 문법을 사용한 Mobx 실습</a><ul>
+<li><a href="#a15">class Mobx 에 action 적용</a></li>
+<li><a href="#a16">class Mobx 에 transaction 적용</a></li>
+<li><a href="#a17">decorator 문법으로 더 편하게</a></li>
+</ul>
+</li>
+<li><a href="#a18">클래스 Mobx vs 함수(hooks) Mobx</a><ul>
+<li><a href="#a19">store 부분은 동일</a></li>
+<li><a href="#a20">useStore - 커스텀훅 </a></li>
+<li><a href="#a21">클래스의 Mobx - 클래스에만 존재함</a></li>
+<li><a href="#a22">함수(hooks) Mobx - 함수형에만 존재함</a></li>
+</ul>
+</li>
+<li><a href="#a23">달라진 점</a></li>
+</ul>
+<hr>
+<h2 id="Mobx-란"><a href="#Mobx-란" class="headerlink" title="Mobx 란?"></a>Mobx 란?</h2><blockquote>
+<p>Redux와 다른 상태 관리 라이브러리.</p>
+<p>객체 지향적인 특징을 지고 있으며 Redux와 달리 번잡한 보일러 플레이트가 필요없다.</p>
+<p>액션 -(변경)-&gt; 상태 -(파생)-&gt; 반응</p>
+</blockquote>
+<p><img src="https://user-images.githubusercontent.com/31315644/78764169-208d4680-79c1-11ea-8fc9-4b25b87ff76f.jpeg" alt="Mobx-Graph"></p>
+<br>
+
+<h3 id="Redux-VS-Mobx"><a href="#Redux-VS-Mobx" class="headerlink" title="Redux VS Mobx"></a>Redux VS Mobx</h3><table>
+<thead>
+<tr>
+<th>Redux</th>
+<th>Mobx</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Immutable</td>
+<td>Mutable</td>
+</tr>
+<tr>
+<td>State 업데이트 문법이 불편 😞</td>
+<td>State 업데이트 편리함 😃</td>
+</tr>
+<tr>
+<td>Pure Object</td>
+<td>대부분 인스턴스 결합</td>
+</tr>
+<tr>
+<td>Serialize 비용이 낮음 😃</td>
+<td>데이터 변경 시 Serialize 비용이 큼 😞</td>
+</tr>
+<tr>
+<td>정규화된 트리 구조를 강제함</td>
+<td>정규화 강제 X</td>
+</tr>
+<tr>
+<td>Single Root Tree</td>
+<td>그래프 구조를 가질 가능성이 높음</td>
+</tr>
+<tr>
+<td>트리 순회 기능</td>
+<td>순회가 불가할 수도 있음</td>
+</tr>
+<tr>
+<td>모델링 / 타이핑 불편 😞</td>
+<td>모델링 / 타이핑 간편 😃</td>
+</tr>
+<tr>
+<td>Time Traveling 지원</td>
+<td>Time Traveling 미지원</td>
+</tr>
+</tbody></table>
+<br>
+
+<h2 id="개념-정리"><a href="#개념-정리" class="headerlink" title="개념 정리"></a>개념 정리</h2><br>
+
+<h3 id="1-Observable-useObserver-Mobx-ver-6-xxx-👆"><a href="#1-Observable-useObserver-Mobx-ver-6-xxx-👆" class="headerlink" title="1. Observable / useObserver (Mobx ver 6.xxx 👆)"></a>1. Observable / useObserver (Mobx ver 6.xxx 👆)</h3><p> Mobx에서 렌더링 대상이 되는 state(상태, 값)를 관찰 대상(observable value) 라고 칭한다.</p>
+<p><code>@observable</code> 데코레이터로 지정한 State는 관찰 대상으로 지정되고 그 State는 값이 변결될 때 마다 렌더링 된다.</p>
+<p><code>+</code> 추가</p>
+<p>클래스형태의 Mobx는 <code>@observable</code> 데코레이터를 이용하지만 최근의 리액트에서 hooks를 사용함에 따라 Mobx도 hooks를 이용한다. </p>
+<p>이전에는 React를 함수형(hooks)으로 사용하고 싶다면 <code>mobx-react-lite</code> 를 이용해야만 했었는데, 현재는 mobx 버전 6.xxx 이상으로 올라감에 따라 mobx-react만 이용해도 사용할 수 있게 되었다.</p>
+<br>
+
+<h3 id="2-Computed-Value-연산된-값"><a href="#2-Computed-Value-연산된-값" class="headerlink" title="2. Computed Value (연산된 값)"></a>2. Computed Value (연산된 값)</h3><p> 연산된 값(Computed Value)은, 기존의 상태값과 다른 연산된 값에 기반하여 만들어질 수 있는 값.</p>
+<p>주로 성능 최적화를 위하여 사용되며, 어떤 값을 연산해야 할 때, 연산에 기반되는 값이 바뀔때마 새로 연산하게 하고, 바뀌지 않았다면 기존의 값을 유지한다. (React.Memo, useMemo느낌)</p>
+<br>
+
+<h3 id="3-Reactions-반응"><a href="#3-Reactions-반응" class="headerlink" title="3. Reactions (반응)"></a>3. Reactions (반응)</h3><p>Reactions 는 Computed Value와 비슷하다. </p>
+<p>Computed Value의 경우는 특정 값을 연산해야 될 때에만 처리가 되는 반면에, Reactions는, 값이 바뀜에 따라 해야할 일으 정하는 것.(useCallback 느낌)</p>
+<p>예를 들어서 Observable State 의 내부의 값이 바뀔 때, 우리가 <code>console.log(&#39;ㅇㅇㅇ가 바뀌었어!&#39;)</code> 라고 호출할 수 있다.</p>
+<br>
+
+<h3 id="4-Action-액션-행동"><a href="#4-Action-액션-행동" class="headerlink" title="4. Action (액션; 행동)"></a>4. Action (액션; 행동)</h3><p>액션은, 상태에 변화를 일으키는것을 말한다. 만약에 Observable State 에 변화를 일으키는 코드를 호출한다? 이것은 하나의 액션이다. - 리덕스에서의 액션과 달리 따로 객체형태로 만들지는 않는다.</p>
+<br>
+
+<h3 id="5-useLocalStore-Mobx-ver-6-xxx-👆"><a href="#5-useLocalStore-Mobx-ver-6-xxx-👆" class="headerlink" title="5. useLocalStore (Mobx ver 6.xxx 👆)"></a>5. <a href="https://mobx-react.js.org/state-local" rel="external nofollow noopener noreferrer" target="_blank">useLocalStore</a> (Mobx ver 6.xxx 👆)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">useLocalStore(initializer: () =&gt; T, source?: S): T</span><br></pre></td></tr></table></figure>
+
+<p>로컬 observable state는 <code>useLocalStore</code> hook을 사용한다. <code>useLocalStore</code>는 initializer 함수를 한번 실행시키는데, observable store를 생성하고, 컴포넌트의 lifetime 동안 유지한다. return된 객체의 모든 property는 자동적으로 observable될 수 있다. getter는 computed property로 변할 것이고, method는 store에 bind될 것이며 mobx transaction을 자동적으로 적용할 것이다. 만약 새로운 인스턴스가 initializer에서 반환되면, 그 인스턴스는 그 상태로 유지될 것이다.</p>
+<br>
+
+<h2 id="리액트-없이-MobX-사용해보기"><a href="#리액트-없이-MobX-사용해보기" class="headerlink" title="리액트 없이 MobX 사용해보기"></a>리액트 없이 MobX 사용해보기</h2><h3 id="observable"><a href="#observable" class="headerlink" title="observable"></a>observable</h3><p>observable 함수는 Observable State를 만들어준다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; observable &#125; <span class="keyword">from</span> <span class="string">'mobx'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// **** Observable State 만들기</span></span><br><span class="line"><span class="keyword">const</span> calculator = observable(&#123;</span><br><span class="line">  a: <span class="number">1</span>,</span><br><span class="line">  b: <span class="number">2</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>Observable State 를 만들고나면 MobX 가 이 객체를 “관찰 할 수” 있어서 변화가 일어나면 바로 탐지해낼수있다.</p>
+<br>
+
+<h3 id="reaction"><a href="#reaction" class="headerlink" title="reaction"></a>reaction</h3><p>특정 값이 바뀔 때 어떤 작업을 하고 싶다면 <a href="https://mobx.js.org/refguide/reaction.html" rel="external nofollow noopener noreferrer" target="_blank">reaction</a> 함수를 사용한다.</p>
+<p>한번 a 나 b 가 바뀔 때 console.log 로 바뀌었다고 알려주도록 코드를 작성해보자.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; observable, reaction &#125; <span class="keyword">from</span> <span class="string">'mobx'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Observable State 만들기</span></span><br><span class="line"><span class="keyword">const</span> calculator = observable(&#123;</span><br><span class="line">  a: <span class="number">1</span>,</span><br><span class="line">  b: <span class="number">2</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// **** 특정 값이 바뀔 때 특정 작업 하기!</span></span><br><span class="line">reaction(</span><br><span class="line">  () =&gt; calculator.a,</span><br><span class="line">  (value, reaction) =&gt; &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">`a 값이 <span class="subst">$&#123;value&#125;</span> 로 바뀌었네요!`</span>);</span><br><span class="line">  &#125;</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">reaction(</span><br><span class="line">  () =&gt; calculator.b,</span><br><span class="line">  value =&gt; &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">`b 값이 <span class="subst">$&#123;value&#125;</span> 로 바뀌었네요!`</span>);</span><br><span class="line">  &#125;</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">calculator.a = <span class="number">10</span>;</span><br><span class="line">calculator.b = <span class="number">20</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">console </span></span><br><span class="line"><span class="comment">a 값이 10 로 바뀌었네요! </span></span><br><span class="line"><span class="comment">b 값이 20 로 바뀌었네요! </span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="computed"><a href="#computed" class="headerlink" title="computed"></a>computed</h3><p>computed 함수는 연산된 값을 사용해야 할 때 사용된다. </p>
+<p>특징 : 값을 조회할 때 마다 특정 작업을 처리하는것이 아니라, 이 값에서 의존하는 값이 바뀔 때 미리 값을 계산해놓고 조회 할 때는 캐싱된 데이터를 사용한다는 점.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">import &#123; observable, reaction, computed, autorun &#125; from &apos;mobx&apos;;</span><br><span class="line"></span><br><span class="line">// Observable State 만들기</span><br><span class="line">const calculator = observable(&#123;</span><br><span class="line">  a: 1,</span><br><span class="line">  b: 2</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">// **** 특정 값이 바뀔 때 특정 작업 하기!</span><br><span class="line">reaction(</span><br><span class="line">  () =&gt; calculator.a,</span><br><span class="line">  (value, reaction) =&gt; &#123;</span><br><span class="line">    console.log(`a 값이 $&#123;value&#125; 로 바뀌었네요!`);</span><br><span class="line">  &#125;</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">reaction(</span><br><span class="line">  () =&gt; calculator.b,</span><br><span class="line">  value =&gt; &#123;</span><br><span class="line">    console.log(`b 값이 $&#123;value&#125; 로 바뀌었네요!`);</span><br><span class="line">  &#125;</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">// **** computed 로 특정 값 캐싱</span><br><span class="line">const sum = computed(() =&gt; &#123;</span><br><span class="line">  console.log(&apos;계산중이예요!&apos;);</span><br><span class="line">  return calculator.a + calculator.b;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">sum.observe(() =&gt; calculator.a); // a 값을 주시</span><br><span class="line">sum.observe(() =&gt; calculator.b); // b 값을 주시</span><br><span class="line"></span><br><span class="line">calculator.a = 10;</span><br><span class="line">calculator.b = 20;</span><br><span class="line"></span><br><span class="line">//**** 여러번 조회해도 computed 안의 함수를 다시 호출하지 않지만..</span><br><span class="line">console.log(sum.value);</span><br><span class="line">console.log(sum.value);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// 내부의 값이 바뀌면 다시 호출 함</span><br><span class="line">calculator.a = 20;</span><br><span class="line">console.log(sum.value);</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line">console </span><br><span class="line">계산중이예요! </span><br><span class="line">a 값이 10 로 바뀌었네요! </span><br><span class="line">계산중이예요! </span><br><span class="line">b 값이 20 로 바뀌었네요! </span><br><span class="line">계산중이예요! </span><br><span class="line">30</span><br><span class="line">30</span><br><span class="line">a 값이 20 로 바뀌었네요! </span><br><span class="line">계산중이예요! </span><br><span class="line">40</span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="autorun"><a href="#autorun" class="headerlink" title="autorun"></a>autorun</h3><p><a href="https://mobx.js.org/refguide/autorun.html" rel="external nofollow noopener noreferrer" target="_blank">autorun</a> 은 reaction 이나 computed 의 observe 대신에 사용 될 수 있는데, autorun 으로 전달해주는 함수에서 사용되는 값이 있으면 자동으로 그 값을 주시하여 그 값이 바뀔 때 마다 함수가 주시되도록 해준다. 여기서 만약에 computed 로 만든 값의 .get() 함수를 호출해주면, 하나하나 observe 해주지 않아도 된다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">import &#123; observable, reaction, computed, autorun &#125; from &apos;mobx&apos;;</span><br><span class="line"></span><br><span class="line">// Observable State 만들기</span><br><span class="line">const calculator = observable(&#123;</span><br><span class="line">  a: 1,</span><br><span class="line">  b: 2</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">// computed 로 특정 값 캐싱</span><br><span class="line">const sum = computed(() =&gt; &#123;</span><br><span class="line">  console.log(&apos;계산중이예요!&apos;);</span><br><span class="line">  return calculator.a + calculator.b;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">// **** autorun 은 함수 내에서 조회하는 값을 자동으로 주시함</span><br><span class="line">autorun(() =&gt; console.log(`a 값이 $&#123;calculator.a&#125; 로 바뀌었네요!`));</span><br><span class="line">autorun(() =&gt; console.log(`b 값이 $&#123;calculator.b&#125; 로 바뀌었네요!`));</span><br><span class="line">autorun(() =&gt; sum.get()); // su</span><br><span class="line"></span><br><span class="line">calculator.a = 10;</span><br><span class="line">calculator.b = 20;</span><br><span class="line"></span><br><span class="line">// 여러번 조회해도 computed 안의 함수를 다시 호출하지 않지만..</span><br><span class="line">console.log(sum.value);</span><br><span class="line">console.log(sum.value);</span><br><span class="line"></span><br><span class="line">calculator.a = 20;</span><br><span class="line"></span><br><span class="line">// 내부의 값이 바뀌면 다시 호출 함</span><br><span class="line">console.log(sum.value);</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line">console </span><br><span class="line">a 값이 1 로 바뀌었네요! </span><br><span class="line">b 값이 2 로 바뀌었네요! </span><br><span class="line">계산중이예요! </span><br><span class="line">a 값이 10 로 바뀌었네요! </span><br><span class="line">계산중이예요! </span><br><span class="line">b 값이 20 로 바뀌었네요! </span><br><span class="line">계산중이예요! </span><br><span class="line">30</span><br><span class="line">30</span><br><span class="line">a 값이 20 로 바뀌었네요! </span><br><span class="line">계산중이예요! </span><br><span class="line">40</span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h2 id="클래스-문법을-사용한-Mobx-실습"><a href="#클래스-문법을-사용한-Mobx-실습" class="headerlink" title="클래스 문법을 사용한 Mobx 실습"></a>클래스 문법을 사용한 Mobx 실습</h2><p>ES6 의 class 문법을 사용하면 조금 더 깔끔하게 코드를 작성 할 수 있다. 기존의 코드를 날리고, 이번엔 편의점 장바구니를 만들어보자. class 로 장바구니를 구현 후, decorate 함수를 통하여 MobX 를 적용한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; decorate, observable, computed, autorun &#125; <span class="keyword">from</span> <span class="string">'mobx'</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">GS25</span> </span>&#123;</span><br><span class="line">  basket = [];</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">get</span> total() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'계산중입니다..!'</span>);</span><br><span class="line">    <span class="comment">// Reduce 함수로 배열 내부의 객체의 price 총합 계산</span></span><br><span class="line">    <span class="comment">// https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.basket.reduce(<span class="function">(<span class="params">prev, curr</span>) =&gt;</span> prev + curr.price, <span class="number">0</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  select(name, price) &#123;</span><br><span class="line">    <span class="keyword">this</span>.basket.push(&#123; name, price &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// decorate 를 통해서 각 값에 MobX 함수 적용</span></span><br><span class="line">decorate(GS25, &#123;</span><br><span class="line">  basket: observable,</span><br><span class="line">  total: computed,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> gs25 = <span class="keyword">new</span> GS25();</span><br><span class="line">autorun(<span class="function"><span class="params">()</span> =&gt;</span> gs25.total);</span><br><span class="line">gs25.select(<span class="string">'물'</span>, <span class="number">800</span>);</span><br><span class="line"><span class="built_in">console</span>.log(gs25.total);</span><br><span class="line">gs25.select(<span class="string">'물'</span>, <span class="number">800</span>);</span><br><span class="line"><span class="built_in">console</span>.log(gs25.total);</span><br><span class="line">gs25.select(<span class="string">'포카칩'</span>, <span class="number">1500</span>);</span><br><span class="line"><span class="built_in">console</span>.log(gs25.total);</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">console</span></span><br><span class="line"><span class="comment">계산중입니다..! </span></span><br><span class="line"><span class="comment">계산중입니다..! </span></span><br><span class="line"><span class="comment">800</span></span><br><span class="line"><span class="comment">계산중입니다..! </span></span><br><span class="line"><span class="comment">1600</span></span><br><span class="line"><span class="comment">계산중입니다..! </span></span><br><span class="line"><span class="comment">3100</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="class-Mobx-에-action-적용"><a href="#class-Mobx-에-action-적용" class="headerlink" title="class Mobx 에 action 적용"></a>class Mobx 에 action 적용</h3><p>상태에 변화를 일으키는 것은 action 이다. 만약, 변화를 일으키는 함수에 Mobx의 action을 적용하면 무엇을 할 수 있는지 알아보자.</p>
+<p>우선, 코드 상단에서 action 함수를 불러오고, decorate쪽에 select가 action이라는 것을 명시한다.</p>
+<p>action을 사용하면 개발자도구를 통해 변화에 대한 세부정보 확인, 변화가 일어날 때 마다 reaction들이 나타나는 것이 아니라, 모든 액션이 끝나고 난 다음에서야 reaction이 나타나게끔 설정이 가능하다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// **** 액션 불러옴</span></span><br><span class="line"><span class="keyword">import</span> &#123; decorate, observable, computed, autorun, action &#125; <span class="keyword">from</span> <span class="string">'mobx'</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">GS25</span> </span>&#123;</span><br><span class="line">  basket = [];</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">get</span> total() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'계산중입니다..!'</span>);</span><br><span class="line">    <span class="comment">// Reduce 함수로 배열 내부의 객체의 price 총합 계산</span></span><br><span class="line">    <span class="comment">// https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.basket.reduce(<span class="function">(<span class="params">prev, curr</span>) =&gt;</span> prev + curr.price, <span class="number">0</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  select(name, price) &#123;</span><br><span class="line">    <span class="keyword">this</span>.basket.push(&#123; name, price &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">decorate(GS25, &#123;</span><br><span class="line">  basket: observable,</span><br><span class="line">  total: computed,</span><br><span class="line">  select: action <span class="comment">// **** 액션 명시</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> gs25 = <span class="keyword">new</span> GS25();</span><br><span class="line">autorun(<span class="function"><span class="params">()</span> =&gt;</span> gs25.total);</span><br><span class="line">gs25.select(<span class="string">'물'</span>, <span class="number">800</span>);</span><br><span class="line"><span class="built_in">console</span>.log(gs25.total);</span><br><span class="line">gs25.select(<span class="string">'물'</span>, <span class="number">800</span>);</span><br><span class="line"><span class="built_in">console</span>.log(gs25.total);</span><br><span class="line">gs25.select(<span class="string">'포카칩'</span>, <span class="number">1500</span>);</span><br><span class="line"><span class="built_in">console</span>.log(gs25.total);</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="class-Mobx-에-transaction-적용"><a href="#class-Mobx-에-transaction-적용" class="headerlink" title="class Mobx 에 transaction 적용"></a>class Mobx 에 transaction 적용</h3><p>액션을 한꺼번에 일으킨다.</p>
+<p>transaction 을 통하여 계산 작업은 가장 처음 한번, 그리고 transaction 끝나고 한번 호출이 되었고, 새 데이터 추가 될 때마다 알리는 부분도 전부 다 추가하고 나서야 딱 한번 콘솔에 마지막 객체가 나타났다.</p>
+<p>액션을 사용하면, 이렇게 성능 개선도 이뤄낼 수 있고 나중에 MobX 개발자 도구를 사용하게 될 때 변화에 대한 더 자세한 정보를 알 수 있게 해준다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;</span><br><span class="line">  decorate,</span><br><span class="line">  observable,</span><br><span class="line">  computed,</span><br><span class="line">  autorun,</span><br><span class="line">  action,</span><br><span class="line">  transaction <span class="comment">// *** transaction 불러옴</span></span><br><span class="line">&#125; <span class="keyword">from</span> <span class="string">'mobx'</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">GS25</span> </span>&#123;</span><br><span class="line">  basket = [];</span><br><span class="line"></span><br><span class="line">  <span class="keyword">get</span> total() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'계산중임'</span>);</span><br><span class="line">    <span class="comment">// Reduce 함수로 배열 내부의 객체의 price 총합 계산</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.basket.reduce(<span class="function">(<span class="params">prev, curr</span>) =&gt;</span> prev + curr.price, <span class="number">0</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  select(name, price) &#123;</span><br><span class="line">    <span class="keyword">this</span>.basket.push(&#123; name, price &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">decorate(GS25, &#123;</span><br><span class="line">  basket: observable,</span><br><span class="line">  total: computed,</span><br><span class="line">  select: action</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> gs25 = <span class="keyword">new</span> GS25();</span><br><span class="line">autorun(<span class="function"><span class="params">()</span> =&gt;</span> gs25.total);</span><br><span class="line"><span class="comment">// *** 새 데이터 추가 될 때 알림</span></span><br><span class="line">autorun(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (gs25.basket.length &gt; <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(gs25.basket[gs25.basket.length - <span class="number">1</span>]);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">transaction(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  gs25.select(<span class="string">"물"</span>, <span class="number">800</span>);</span><br><span class="line">  gs25.select(<span class="string">"과자"</span>, <span class="number">800</span>);</span><br><span class="line">  gs25.select(<span class="string">"사과"</span>, <span class="number">800</span>);</span><br><span class="line">  gs25.select(<span class="string">"고기"</span>, <span class="number">800</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(gs25.total);</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">console</span></span><br><span class="line"><span class="comment">계산중임 </span></span><br><span class="line"><span class="comment">계산중임 </span></span><br><span class="line"><span class="comment">3200</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="decorator-문법으로-더-편하게"><a href="#decorator-문법으로-더-편하게" class="headerlink" title="decorator 문법으로 더 편하게"></a>decorator 문법으로 더 편하게</h3><p>정규 문법은 아니지만, babel 플러그인을 통하여 사용 할 수 있는 문법. 이 문법을 사용하면 decorate 함수가 더 이상 필요하지 않고, 다음과 같이 작성 해 줄 수 있다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; observable, computed, autorun, action, transaction &#125; <span class="keyword">from</span> <span class="string">'mobx'</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">GS25</span> </span>&#123;</span><br><span class="line">  @observable basket = [];</span><br><span class="line"></span><br><span class="line">  @computed </span><br><span class="line">  <span class="keyword">get</span> total() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"계산중임..."</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.basket.reduce(<span class="function">(<span class="params">prev, curr</span>) =&gt;</span> prev + curr.price, <span class="number">0</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  @action</span><br><span class="line">  select(name, price) &#123;</span><br><span class="line">    <span class="keyword">this</span>.basket.push(&#123; name, price &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> gs25 = <span class="keyword">new</span> GS25();</span><br><span class="line">autorun(<span class="function"><span class="params">()</span> =&gt;</span> gs25.total);</span><br><span class="line">autorun(<span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">if</span>(gs25.basket.length &gt; <span class="number">0</span>) <span class="built_in">console</span>.log(gs25.basket[gs25.basket.length - <span class="number">1</span>]));</span><br><span class="line"></span><br><span class="line">transaction(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  gs25.select(<span class="string">'물'</span>, <span class="number">800</span>);</span><br><span class="line">  gs25.select(<span class="string">'물'</span>, <span class="number">800</span>);</span><br><span class="line">  gs25.select(<span class="string">'포카칩'</span>, <span class="number">1500</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(gs25.total);</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h2 id="클래스-Mobx-vs-함수-hooks-Mobx"><a href="#클래스-Mobx-vs-함수-hooks-Mobx" class="headerlink" title="클래스 Mobx vs 함수(hooks) Mobx"></a>클래스 Mobx vs 함수(hooks) Mobx</h2><h3 id="store-부분은-동일"><a href="#store-부분은-동일" class="headerlink" title="store 부분은 동일"></a>store 부분은 동일</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123; observable &#125; = <span class="built_in">require</span>(<span class="string">'mobx'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> userStore = observable(&#123;</span><br><span class="line">  isLoggingIn: <span class="literal">false</span>,</span><br><span class="line">  data: <span class="literal">null</span>,</span><br><span class="line">  logIn(data) &#123;</span><br><span class="line">    <span class="keyword">this</span>.isLoggingIn = <span class="literal">true</span>;</span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">this</span>.data = data;</span><br><span class="line">      <span class="keyword">this</span>.isLoggingIn = <span class="literal">false</span>;</span><br><span class="line">      postStore.data.push(<span class="number">1</span>);</span><br><span class="line">    &#125;, <span class="number">2000</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">  logOut() &#123;</span><br><span class="line">    <span class="keyword">this</span>.data = <span class="literal">null</span>;</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> postStore = observable(&#123;</span><br><span class="line">  data: [],</span><br><span class="line">  addPost(data) &#123;</span><br><span class="line">    <span class="keyword">this</span>.data.push(data);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> &#123; userStore, postStore &#125;;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="useStore-커스텀훅"><a href="#useStore-커스텀훅" class="headerlink" title="useStore - 커스텀훅"></a>useStore - 커스텀훅</h3><p><code>combineStore</code> 느낌, mobx로 선언한 <code>store</code>들을 한 곳에 모아줌.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; userStore, postStore &#125; <span class="keyword">from</span> <span class="string">'./store'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">useStore</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123; userStore, postStore &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> useStore;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="클래스의-Mobx-클래스에만-존재함"><a href="#클래스의-Mobx-클래스에만-존재함" class="headerlink" title="클래스의 Mobx - 클래스에만 존재함"></a>클래스의 Mobx - 클래스에만 존재함</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">import React, &#123; Component &#125; from &apos;react&apos;;</span><br><span class="line">import &#123; observer &#125; from &apos;mobx-react&apos;;</span><br><span class="line">import &#123; observable &#125; from &apos;mobx&apos;;</span><br><span class="line"></span><br><span class="line">import &#123; userStore, postStore &#125; from &apos;./store&apos;;</span><br><span class="line"></span><br><span class="line">@observer</span><br><span class="line">class App extends Component &#123;</span><br><span class="line">  state = observable(&#123;</span><br><span class="line">    name: &apos;&apos;,</span><br><span class="line">    password: &apos;&apos;,</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  onClick = () =&gt; &#123;</span><br><span class="line">    userStore.logIn(&#123;</span><br><span class="line">      nickname: &apos;zerocho&apos;,</span><br><span class="line">      password: &apos;비밀번호&apos;,</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  onLogout = () =&gt; &#123;</span><br><span class="line">    userStore.logOut();</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    return (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &#123;userStore.isLoggingIn</span><br><span class="line">          ? &lt;div&gt;로그인 중&lt;/div&gt;</span><br><span class="line">          : userStore.data</span><br><span class="line">            ? &lt;div&gt;&#123;userStore.data.nickname&#125;&lt;/div&gt;</span><br><span class="line">            : &apos;로그인 해주세요.&apos;&#125;</span><br><span class="line">        &#123;!userStore.data</span><br><span class="line">          ? &lt;button onClick=&#123;this.onClick&#125;&gt;로그인&lt;/button&gt;</span><br><span class="line">          : &lt;button onClick=&#123;this.onLogout&#125;&gt;로그아웃&lt;/button&gt;&#125;</span><br><span class="line">        &lt;div&gt;&#123;postStore.data.length&#125;&lt;/div&gt;</span><br><span class="line">        &lt;input value=&#123;this.state.name&#125; onChange=&#123;(e) =&gt; &#123;</span><br><span class="line">          this.state.name = e.target.value;</span><br><span class="line">        &#125;&#125; /&gt;</span><br><span class="line">        &lt;input value=&#123;this.state.password&#125; type=&quot;password&quot; onChange=&#123;(e) =&gt; &#123;</span><br><span class="line">          this.state.password = e.target.value;</span><br><span class="line">        &#125;&#125;  /&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">export default App;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="함수-hooks-Mobx-함수형에만-존재함"><a href="#함수-hooks-Mobx-함수형에만-존재함" class="headerlink" title="함수(hooks) Mobx - 함수형에만 존재함"></a>함수(hooks) Mobx - 함수형에만 존재함</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">import React, &#123; useCallback &#125; from &apos;react&apos;;</span><br><span class="line">import &#123; useObserver, useLocalStore &#125; from &apos;mobx-react&apos;;</span><br><span class="line"></span><br><span class="line">import useStore from &apos;./useStore&apos;;</span><br><span class="line"></span><br><span class="line">const App = () =&gt; &#123;</span><br><span class="line">  const &#123; userStore &#125; = useStore();</span><br><span class="line">  console.log(userStore);</span><br><span class="line"></span><br><span class="line">  const state = useLocalStore(() =&gt; (&#123;</span><br><span class="line">    name: &apos;&apos;,</span><br><span class="line">    password: &apos;&apos;,</span><br><span class="line">    onChangeName(e) &#123;</span><br><span class="line">      this.name = e.target.value;</span><br><span class="line">    &#125;,</span><br><span class="line">    onChangePassword(e) &#123;</span><br><span class="line">      this.password = e.target.value;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;));</span><br><span class="line"></span><br><span class="line">  const onClick = useCallback(() =&gt; &#123;</span><br><span class="line">    userStore.logIn(&#123;</span><br><span class="line">      nickname: &apos;zerocho&apos;,</span><br><span class="line">      password: &apos;비밀번호&apos;,</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;, []);</span><br><span class="line"></span><br><span class="line">  const onLogout = useCallback(() =&gt; &#123;</span><br><span class="line">    userStore.logOut();</span><br><span class="line">  &#125;, []);</span><br><span class="line"></span><br><span class="line">  return useObserver(() =&gt; (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &#123;userStore.isLoggingIn</span><br><span class="line">        ? &lt;div&gt;로그인 중&lt;/div&gt;</span><br><span class="line">        : userStore.data</span><br><span class="line">          ? &lt;div&gt;&#123;userStore.data.nickname&#125;&lt;/div&gt;</span><br><span class="line">          : &apos;로그인 해주세요.&apos;&#125;</span><br><span class="line">      &#123;!userStore.data</span><br><span class="line">        ? &lt;button onClick=&#123;onClick&#125;&gt;로그인&lt;/button&gt;</span><br><span class="line">        : &lt;button onClick=&#123;onLogout&#125;&gt;로그아웃&lt;/button&gt;&#125;</span><br><span class="line">      &lt;input value=&#123;state.name&#125; onChange=&#123;state.onChangeName&#125; /&gt;</span><br><span class="line">      &lt;input value=&#123;state.password&#125; type=&quot;password&quot; onChange=&#123;state.onChangePassword&#125;  /&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  ));</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">export default App;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="달라진-점"><a href="#달라진-점" class="headerlink" title="달라진 점"></a>달라진 점</h3><ul>
+<li>클래스에서는 클래스 선언 상단에 <code>@observer</code> 데코레이터를 이용했지만 함수형에서는 반환(return) 할 때 <code>useObserver</code>를 사용했다는 것.</li>
+<li>지역상태를 <code>useState</code>로 만들 수 있으나 리액트는 불변성을 유지해야하는 점으로 인해 이를 극복하기 위해 Mobx의 <code>useLocalStore</code>를 이용하였음.</li>
+</ul>
+<hr>
+<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><ul>
+<li><a href="https://velog.io/@velopert/begin-mobx" rel="external nofollow noopener noreferrer" target="_blank">velopert.log : MobX (1) 시작하기</a></li>
+<li><a href="[https://www.inflearn.com/course/redux-mobx-%EC%83%81%ED%83%9C%EA%B4%80%EB%A6%AC-%EB%8F%84%EA%B5%AC](https://www.inflearn.com/course/redux-mobx-상태관리-도구)">ZeroCho : redux-vs-mobx</a></li>
+<li><a href="https://www.youtube.com/watch?v=4yUgM7SaYUU&t=1856s" rel="external nofollow noopener noreferrer" target="_blank">Naver d2 : MobX &amp; MST : 편안한 State Management</a></li>
+</ul>
+<br>
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://hyeok999.github.io/2020/04/13/mobx-tutorial/" data-id="ck940cc0600jjpfz0j5tqmva8" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Jun Hyeok Kim"
+        },
+        "headline": "Mobx 개념잡기",
+        "image": "https://hyeok999.github.iohttps://user-images.githubusercontent.com/31315644/78734744-041ee900-7984-11ea-90ab-0bffac26b033.png",
+        "keywords": "git Web coding develop TIL algorithm HTML CSS javascript React Mobx",
+        "genre": "TIL Mobx",
+        "datePublished": "2020-04-13",
+        "dateCreated": "2020-04-13",
+        "dateModified": "2020-04-17",
+        "url": "https://hyeok999.github.io/2020/04/13/mobx-tutorial/",
+        "description": "
+
+Mobx 개념 정리목차
+Mobx 란?
+Redux VS Mobx
+
+
+개념 정리
+Observable / useObserver (Mobx ver 6.xxx 👆)
+Computed Value (연산된 값)
+Reactions (반응)
+Action (액션; 행동)
+useLocalStore (Mobx ver 6.xxx 👆)
+
+
+리액트 없이 MobX 사용해보기
+ob",
+        "wordCount": 3426
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="https://www.facebook.com/profile.php?id=100003801986180" target="_blank" rel="external nofollow noopener noreferrer">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/HYEOK999" target="_blank" rel="external nofollow noopener noreferrer">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="instagram" href="https://www.instagram.com/hyeok999/?hl=ko" target="_blank" rel="external nofollow noopener noreferrer">
+                        <i class="icon fa fa-instagram"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2020/04/16/mobx-hooks-market/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            React Hooks + Mobx 예제 - 슈퍼마켓 구현하기 -
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2020/04/04/TypeScript-05/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">타입스크립트로 리액트 Hooks 사용하기 (useState, useReducer, useRef)</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/">Develop</a><span class="category-list-count">77</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/CSS/">CSS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/GIT/">GIT</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/GraphQL/">GraphQL</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/IT-Event/">IT Event</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Java/">Java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Javascript/">Javascript</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Project/">Project</a><span class="category-list-count">26</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/React/">React</a><span class="category-list-count">16</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/Tips/">Tips</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Develop/TypeScript/">TypeScript</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/">TIL</a><span class="category-list-count">205</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Algorithm-Quiz/">Algorithm & Quiz</a><span class="category-list-count">74</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/HTML-CSS/">HTML&CSS</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript/">Javascript</a><span class="category-list-count">30</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Javascript-Preview/">Javascript-Preview</a><span class="category-list-count">23</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/Mobx/">Mobx</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/React/">React</a><span class="category-list-count">31</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/React-Preview/">React-Preview</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/TypeScript/">TypeScript</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/linux/">linux</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/etc/">etc</a><span class="category-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/04/16/mobx-hooks-market/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/79090670-5ea1b600-7d85-11ea-81e0-93999c6c18e0.png)" alt="React Hooks + Mobx 예제 - 슈퍼마켓 구현하기 -" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Develop/">Develop</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Develop/Project/">Project</a></p>
+                            <p class="item-title"><a href="/2020/04/16/mobx-hooks-market/" class="title">React Hooks + Mobx 예제 - 슈퍼마켓 구현하기 -</a></p>
+                            <p class="item-date"><time datetime="2020-04-16T04:37:00.000Z" itemprop="datePublished">2020-04-16</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/04/13/mobx-tutorial/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/78734744-041ee900-7984-11ea-90ab-0bffac26b033.png)" alt="Mobx 개념잡기" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/Mobx/">Mobx</a></p>
+                            <p class="item-title"><a href="/2020/04/13/mobx-tutorial/" class="title">Mobx 개념잡기</a></p>
+                            <p class="item-date"><time datetime="2020-04-13T09:41:45.000Z" itemprop="datePublished">2020-04-13</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/04/04/TypeScript-05/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/77824045-edd28b00-7142-11ea-83d8-b88e7cb6c97d.png)" alt="타입스크립트로 리액트 Hooks 사용하기 (useState, useReducer, useRef)" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/TypeScript/">TypeScript</a></p>
+                            <p class="item-title"><a href="/2020/04/04/TypeScript-05/" class="title">타입스크립트로 리액트 Hooks 사용하기 (useState, useReducer, useRef)</a></p>
+                            <p class="item-date"><time datetime="2020-04-04T10:16:17.000Z" itemprop="datePublished">2020-04-04</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/04/03/TypeScript-04/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/77824045-edd28b00-7142-11ea-83d8-b88e7cb6c97d.png)" alt="리액트 컴포넌트 타입스크립트로 작성하기" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/TypeScript/">TypeScript</a></p>
+                            <p class="item-title"><a href="/2020/04/03/TypeScript-04/" class="title">리액트 컴포넌트 타입스크립트로 작성하기</a></p>
+                            <p class="item-date"><time datetime="2020-04-03T11:36:10.000Z" itemprop="datePublished">2020-04-03</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/03/31/TypeScript-03/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/77824045-edd28b00-7142-11ea-83d8-b88e7cb6c97d.png)" alt="타입스크립트 기초 연습하기 (타입 별명, 제네릭)" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL/">TIL</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/TIL/TypeScript/">TypeScript</a></p>
+                            <p class="item-title"><a href="/2020/03/31/TypeScript-03/" class="title">타입스크립트 기초 연습하기 (타입 별명, 제네릭)</a></p>
+                            <p class="item-date"><time datetime="2020-03-31T14:42:04.000Z" itemprop="datePublished">2020-03-31</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a><span class="archive-list-count">38</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a><span class="archive-list-count">47</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a><span class="archive-list-count">37</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a><span class="archive-list-count">86</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a><span class="archive-list-count">38</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Ajax/" style="font-size: 11px;">Ajax</a> <a href="/tags/Array/" style="font-size: 11.5px;">Array</a> <a href="/tags/Array-Method/" style="font-size: 10.5px;">Array Method</a> <a href="/tags/Arrow-Function/" style="font-size: 10px;">Arrow Function</a> <a href="/tags/Async/" style="font-size: 10px;">Async</a> <a href="/tags/Async-Await/" style="font-size: 10px;">Async Await</a> <a href="/tags/Axios/" style="font-size: 10px;">Axios</a> <a href="/tags/BAEKJOON/" style="font-size: 13px;">BAEKJOON</a> <a href="/tags/Browser/" style="font-size: 10px;">Browser</a> <a href="/tags/CSS/" style="font-size: 17.5px;">CSS</a> <a href="/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/tags/Class/" style="font-size: 10px;">Class</a> <a href="/tags/Class-Component/" style="font-size: 10px;">Class Component</a> <a href="/tags/Closer/" style="font-size: 10.5px;">Closer</a> <a href="/tags/Constructor/" style="font-size: 10px;">Constructor</a> <a href="/tags/Core-JavaScript/" style="font-size: 10px;">Core JavaScript</a> <a href="/tags/Custom-Hook/" style="font-size: 10px;">Custom Hook</a> <a href="/tags/DOM/" style="font-size: 10.5px;">DOM</a> <a href="/tags/Date/" style="font-size: 10px;">Date</a> <a href="/tags/Document-Object-Model/" style="font-size: 10.5px;">Document Object Model</a> <a href="/tags/ESLint/" style="font-size: 10px;">ESLint</a> <a href="/tags/Event/" style="font-size: 10.5px;">Event</a> <a href="/tags/Fetch/" style="font-size: 10px;">Fetch</a> <a href="/tags/Functional-Component/" style="font-size: 10.5px;">Functional Component</a> <a href="/tags/Git-GUI/" style="font-size: 10.5px;">Git GUI</a> <a href="/tags/GraphQL/" style="font-size: 10.5px;">GraphQL</a> <a href="/tags/HOF/" style="font-size: 12.5px;">HOF</a> <a href="/tags/HTML/" style="font-size: 18px;">HTML</a> <a href="/tags/Hook/" style="font-size: 10.5px;">Hook</a> <a href="/tags/HotKey/" style="font-size: 10px;">HotKey</a> <a href="/tags/JAVA/" style="font-size: 13.5px;">JAVA</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/MarkUP/" style="font-size: 10px;">MarkUP</a> <a href="/tags/Math/" style="font-size: 10px;">Math</a> <a href="/tags/Method/" style="font-size: 11.5px;">Method</a> <a href="/tags/Mobx/" style="font-size: 10.5px;">Mobx</a> <a href="/tags/Module/" style="font-size: 10px;">Module</a> <a href="/tags/Mutation/" style="font-size: 10px;">Mutation</a> <a href="/tags/Number/" style="font-size: 10px;">Number</a> <a href="/tags/OS/" style="font-size: 12px;">OS</a> <a href="/tags/Object/" style="font-size: 12px;">Object</a> <a href="/tags/Poiema/" style="font-size: 15px;">Poiema</a> <a href="/tags/Primary-value/" style="font-size: 10px;">Primary value</a> <a href="/tags/Programmers/" style="font-size: 15.5px;">Programmers</a> <a href="/tags/Project/" style="font-size: 10.5px;">Project</a> <a href="/tags/Promise/" style="font-size: 11.5px;">Promise</a> <a href="/tags/Property/" style="font-size: 11px;">Property</a> <a href="/tags/Prototype/" style="font-size: 10px;">Prototype</a> <a href="/tags/Query/" style="font-size: 10px;">Query</a> <a href="/tags/Quiz/" style="font-size: 12.5px;">Quiz</a> <a href="/tags/REST/" style="font-size: 10.5px;">REST</a> <a href="/tags/REST-API/" style="font-size: 10px;">REST API</a> <a href="/tags/Rapper/" style="font-size: 10px;">Rapper</a> <a href="/tags/Rapper-Object/" style="font-size: 10px;">Rapper Object</a> <a href="/tags/React/" style="font-size: 16.5px;">React</a> <a href="/tags/React-Hook/" style="font-size: 10px;">React Hook</a> <a href="/tags/React-Official-Document/" style="font-size: 14px;">React Official Document</a> <a href="/tags/Redux/" style="font-size: 14.5px;">Redux</a> <a href="/tags/RegExr/" style="font-size: 10.5px;">RegExr</a> <a href="/tags/Router/" style="font-size: 12px;">Router</a> <a href="/tags/Schema/" style="font-size: 10px;">Schema</a> <a href="/tags/Scope/" style="font-size: 10px;">Scope</a> <a href="/tags/Selector/" style="font-size: 10px;">Selector</a> <a href="/tags/SourceTree/" style="font-size: 10.5px;">SourceTree</a> <a href="/tags/Spread/" style="font-size: 10px;">Spread</a> <a href="/tags/Strict-Mode/" style="font-size: 10px;">Strict Mode</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Symbol/" style="font-size: 10px;">Symbol</a> <a href="/tags/TIL/" style="font-size: 17px;">TIL</a> <a href="/tags/Todo/" style="font-size: 14px;">Todo</a> <a href="/tags/Todo-List/" style="font-size: 10.5px;">Todo List</a> <a href="/tags/Type/" style="font-size: 10px;">Type</a> <a href="/tags/VSCode/" style="font-size: 11px;">VSCode</a> <a href="/tags/VScode/" style="font-size: 10px;">VScode</a> <a href="/tags/VisualStudio-Code/" style="font-size: 11px;">VisualStudio Code</a> <a href="/tags/Web/" style="font-size: 19px;">Web</a> <a href="/tags/Web-Clone/" style="font-size: 10px;">Web Clone</a> <a href="/tags/Web-clone/" style="font-size: 10px;">Web clone</a> <a href="/tags/algorithm/" style="font-size: 17px;">algorithm</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/browser-operation/" style="font-size: 10px;">browser operation</a> <a href="/tags/coding/" style="font-size: 20px;">coding</a> <a href="/tags/daily-test/" style="font-size: 11px;">daily test</a> <a href="/tags/develop/" style="font-size: 18.5px;">develop</a> <a href="/tags/first-class-Object/" style="font-size: 10px;">first-class Object</a> <a href="/tags/flow/" style="font-size: 10px;">flow</a> <a href="/tags/function/" style="font-size: 10.5px;">function</a> <a href="/tags/git/" style="font-size: 16px;">git</a> <a href="/tags/github-oAhut/" style="font-size: 10px;">github oAhut</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/inline-block/" style="font-size: 10px;">inline-block</a> <a href="/tags/interview/" style="font-size: 10px;">interview</a> <a href="/tags/iteration/" style="font-size: 10px;">iteration</a> <a href="/tags/javascript/" style="font-size: 19.5px;">javascript</a> <a href="/tags/linux/" style="font-size: 12px;">linux</a> <a href="/tags/linux-command/" style="font-size: 10px;">linux command</a> <a href="/tags/oAuth/" style="font-size: 10px;">oAuth</a> <a href="/tags/project/" style="font-size: 10px;">project</a> <a href="/tags/prototype/" style="font-size: 10px;">prototype</a> <a href="/tags/terminal/" style="font-size: 10px;">terminal</a> <a href="/tags/test/" style="font-size: 10.5px;">test</a> <a href="/tags/this/" style="font-size: 10px;">this</a> <a href="/tags/typescript/" style="font-size: 13px;">typescript</a> <a href="/tags/unix/" style="font-size: 11.5px;">unix</a> <a href="/tags/useCallback/" style="font-size: 10px;">useCallback</a> <a href="/tags/useReducer/" style="font-size: 10px;">useReducer</a> <a href="/tags/자바스크립트/" style="font-size: 12px;">자바스크립트</a> <a href="/tags/타입스크립트/" style="font-size: 12px;">타입스크립트</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://github.com" rel="external nofollow noopener noreferrer" target="_blank">github</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://hexo.io" rel="external nofollow noopener noreferrer" target="_blank">Hexo</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.naver.com" rel="external nofollow noopener noreferrer" target="_blank">Naver</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://google.com" rel="external nofollow noopener noreferrer" target="_blank">Google</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://www.youtube.com/" rel="external nofollow noopener noreferrer" target="_blank">Youtube</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2020 Jun Hyeok Kim</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'https://hyeok999.github.io/2020/04/13/mobx-tutorial/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+
