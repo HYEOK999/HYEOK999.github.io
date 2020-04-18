@@ -12,18 +12,20 @@
     
         <meta name="keywords" content="git,Web,coding,develop,TIL,algorithm,HTML,CSS,javascript,React,Mobx">
     
-    <meta name="description" content="HYEOK999&apos;s IT Develop Blog">
+    <meta name="description" content="리액트에서 Mobx 예제 - 카운터 -목차 카운터 만들기 Class Component’s Mobx 1 Class Component’s Mobx 2 : @데코레이터를 이용 함수형태(Hooks)를 이용한 Mobx 문제점   Mobx 스토어 분리시키기 Class Component Hooks 공통 Context API를 이용 X 🙅‍♂️ Context API">
 <meta name="keywords" content="git,Web,coding,develop,TIL,algorithm,HTML,CSS,javascript,React,Mobx">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Mobx 실습">
 <meta property="og:url" content="https://hyeok999.github.io/2020/04/14/mobx-study01/index.html">
 <meta property="og:site_name" content="HYEOK999&#39;s Blog">
-<meta property="og:description" content="HYEOK999&apos;s IT Develop Blog">
+<meta property="og:description" content="리액트에서 Mobx 예제 - 카운터 -목차 카운터 만들기 Class Component’s Mobx 1 Class Component’s Mobx 2 : @데코레이터를 이용 함수형태(Hooks)를 이용한 Mobx 문제점   Mobx 스토어 분리시키기 Class Component Hooks 공통 Context API를 이용 X 🙅‍♂️ Context API">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-04-18T14:16:27.980Z">
+<meta property="og:image" content="https://user-images.githubusercontent.com/31315644/78734744-041ee900-7984-11ea-90ab-0bffac26b033.png">
+<meta property="og:updated_time" content="2020-04-18T14:19:22.277Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mobx 실습">
-<meta name="twitter:description" content="HYEOK999&apos;s IT Develop Blog">
+<meta name="twitter:description" content="리액트에서 Mobx 예제 - 카운터 -목차 카운터 만들기 Class Component’s Mobx 1 Class Component’s Mobx 2 : @데코레이터를 이용 함수형태(Hooks)를 이용한 Mobx 문제점   Mobx 스토어 분리시키기 Class Component Hooks 공통 Context API를 이용 X 🙅‍♂️ Context API">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/31315644/78734744-041ee900-7984-11ea-90ab-0bffac26b033.png">
     
     <link rel="canonical" href="https://hyeok999.github.io/2020/04/14/mobx-study01/">
     
@@ -191,14 +193,156 @@ ga('send', 'pageview');
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <p><img src="https://user-images.githubusercontent.com/31315644/78734744-041ee900-7984-11ea-90ab-0bffac26b033.png" alt="mobx"></p>
+<hr>
+<h1 id="리액트에서-Mobx-예제-카운터"><a href="#리액트에서-Mobx-예제-카운터" class="headerlink" title="리액트에서 Mobx 예제 - 카운터 -"></a>리액트에서 Mobx 예제 - 카운터 -</h1><h2 id="목차"><a href="#목차" class="headerlink" title="목차"></a>목차</h2><ul>
+<li><a href="#a1">카운터 만들기</a><ul>
+<li><a href="#a2">Class Component’s Mobx 1</a></li>
+<li><a href="#a3">Class Component’s Mobx 2 : @데코레이터를 이용</a></li>
+<li><a href="#a4">함수형태(Hooks)를 이용한 Mobx</a></li>
+<li><a href="#a5">문제점</a></li>
+</ul>
+</li>
+<li><a href="#a6">Mobx 스토어 분리시키기</a><ul>
+<li><a href="#a7">Class Component</a></li>
+<li><a href="#a8">Hooks</a><ul>
+<li><a href="#a9">공통</a></li>
+<li><a href="#a10">Context API를 이용 X 🙅‍♂️</a></li>
+<li><a href="#a11">Context API를 이용 O 🙆‍♀️</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="카운터-만들기"><a href="#카운터-만들기" class="headerlink" title="카운터 만들기 "></a>카운터 만들기 <a id="a1"></a></h2><h3 id="Class-Component’s-Mobx-1"><a href="#Class-Component’s-Mobx-1" class="headerlink" title="Class Component’s Mobx 1 "></a>Class Component’s Mobx 1 <a id="a2"></a></h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; decorate, observable, action &#125; <span class="keyword">from</span> <span class="string">'mobx'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; observer &#125; <span class="keyword">from</span> <span class="string">'mobx-react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Counter</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  number = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">  increase = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">this</span>.number++;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  decrease = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">this</span>.number--;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;h1&gt;&#123;<span class="keyword">this</span>.number&#125;&lt;<span class="regexp">/h1&gt;</span></span><br><span class="line"><span class="regexp">        &lt;button onClick=&#123;this.increase&#125;&gt;+1&lt;/</span>button&gt;</span><br><span class="line">        &lt;button onClick=&#123;<span class="keyword">this</span>.decrease&#125;&gt;<span class="number">-1</span>&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">      &lt;/</span>div&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">decorate(Counter, &#123;</span><br><span class="line">  number: observable,</span><br><span class="line">  increase: action,</span><br><span class="line">  decrease: action</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> observer(Counter);</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="Class-Component’s-Mobx-2-데코레이터를-이용"><a href="#Class-Component’s-Mobx-2-데코레이터를-이용" class="headerlink" title="Class Component’s Mobx 2 : @데코레이터를 이용 "></a>Class Component’s Mobx 2 : @데코레이터를 이용 <a id="a3"></a></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm run eject</span><br><span class="line">$ npm i @babel/plugin-proposal-class-properties @babel/plugin-proposal-decorators</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p>VSC 환경설정 : <code>CMD + ,</code> 누르고 <code>TypeScript Decorators</code> 검색 (JS이용자도 이렇게 검색해야함)</p>
+<p><img src="https://user-images.githubusercontent.com/31315644/78847101-c89a2280-7a48-11ea-8f34-21dd11a80657.jpeg" alt="VSC환경설정"></p>
+<br>
+
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; observable, action &#125; <span class="keyword">from</span> <span class="string">'mobx'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; observer &#125; <span class="keyword">from</span> <span class="string">'mobx-react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// **** 최하단에 잇던 observer 가 이렇게 위로 올라온다.</span></span><br><span class="line">@observer</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Counter</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  @observable number = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">  @action</span><br><span class="line">  increase = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">this</span>.number++;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  @action</span><br><span class="line">  decrease = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">this</span>.number--;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;h1&gt;&#123;<span class="keyword">this</span>.number&#125;&lt;<span class="regexp">/h1&gt;</span></span><br><span class="line"><span class="regexp">        &lt;button onClick=&#123;this.increase&#125;&gt;+1&lt;/</span>button&gt;</span><br><span class="line">        &lt;button onClick=&#123;<span class="keyword">this</span>.decrease&#125;&gt;<span class="number">-1</span>&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">      &lt;/</span>div&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="함수형태-Hooks-를-이용한-Mobx"><a href="#함수형태-Hooks-를-이용한-Mobx" class="headerlink" title="함수형태(Hooks)를 이용한 Mobx "></a>함수형태(Hooks)를 이용한 Mobx <a id="a4"></a></h3><ul>
+<li>useLocalStore </li>
+<li>useObserver</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">import React from &apos;react&apos;;</span><br><span class="line">import &#123; useObserver, useLocalStore &#125; from &apos;mobx-react&apos;;</span><br><span class="line"></span><br><span class="line">const Counter2 = (props) =&gt; &#123;</span><br><span class="line">  const state = useLocalStore(() =&gt; (&#123;</span><br><span class="line">    number: 0,</span><br><span class="line">    increase() &#123;</span><br><span class="line">      this.number++;</span><br><span class="line">    &#125;,</span><br><span class="line">    decrease(e) &#123;</span><br><span class="line">      console.log(e.target);</span><br><span class="line">      this.number--;</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;));</span><br><span class="line"></span><br><span class="line">  return useObserver(() =&gt; (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;h1&gt;&#123;state.number&#125;&lt;/h1&gt;</span><br><span class="line">      &lt;button onClick=&#123;state.increase&#125;&gt;+1&lt;/button&gt;</span><br><span class="line">      &lt;button onClick=&#123;state.decrease&#125;&gt;-1&lt;/button&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  ));</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">export default Counter2;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="문제점"><a href="#문제점" class="headerlink" title="문제점 "></a>문제점 <a id="a5"></a></h3><p><code>Mobx-developer-tools</code>에서 확인을 해보면 Hooks를 사용할 경우 아래 그림처럼 문제가 생긴다.<br>여기서 선택을 해야한다. </p>
+<ul>
+<li>Class Component를 유지할 것인가?</li>
+<li>Hooks를 이용하면 <code>Mobx-developer-tools</code>에 문제가 있음을 알고도 사용할 것인가?</li>
+</ul>
+<p>정답은 없지만, 우선 React Hooks를 게속 이용하도록 하겠다.</p>
+<p>React측에서도 Hooks 사용을 권장하고 있기 때문 Mobx는 단지 상태 관리 라이브러리 그 이상 이하도 아니다. 더군다나 데이터를 아예 안보여주는 것이 아니라 그저 보기 어렵게 보여주는 것이기 때문에 이정도는 감수해도 된다고 생각했다.</p>
+<p><img src="https://user-images.githubusercontent.com/31315644/78847332-7279af00-7a49-11ea-9d30-a9993e25291d.png" alt="Mobx-Developer-tools"></p>
+<br>
+
+<h2 id="Mobx-스토어-분리시키기"><a href="#Mobx-스토어-분리시키기" class="headerlink" title="Mobx 스토어 분리시키기 "></a>Mobx 스토어 분리시키기 <a id="a6"></a></h2><p><code>src/stores/counter.js</code> 파일을 만들고 스토어를 분리시킨다.</p>
+<br>
+
+<h3 id="Class-Component"><a href="#Class-Component" class="headerlink" title="Class Component "></a>Class Component <a id="a7"></a></h3><p>구조</p>
+<ul>
+<li>stores/counter.js</li>
+<li>App.js</li>
+<li>index.js</li>
+</ul>
+<p>기존의 counter 코드를 다음과 같이 불리한다. 데코레이터를 사용한다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// src/stores/counter.js</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; observable, action &#125; <span class="keyword">from</span> <span class="string">'mobx'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">CounterStore</span> </span>&#123;</span><br><span class="line">  @observable number = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">  @action increase = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">this</span>.number++;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  @action decrease = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">this</span>.number--;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p>@inject 를 이용하여 <code>counter</code>를 주입한다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// src/App.js</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; observer, inject &#125; <span class="keyword">from</span> <span class="string">'mobx-react'</span>;</span><br><span class="line"></span><br><span class="line">@inject(<span class="string">'counter'</span>)</span><br><span class="line">@observer</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; counter &#125; = <span class="keyword">this</span>.props;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;h1&gt;&#123;counter.number&#125;&lt;<span class="regexp">/h1&gt;</span></span><br><span class="line"><span class="regexp">        &lt;button onClick=&#123;counter.increase&#125;&gt;+1&lt;/</span>button&gt;</span><br><span class="line">        &lt;button onClick=&#123;counter.decrease&#125;&gt;<span class="number">-1</span>&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">      &lt;/</span>div&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> observer(App);</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p>Provider 를 이용한다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// index.js</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> ReactDOM <span class="keyword">from</span> <span class="string">'react-dom'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; Provider &#125; <span class="keyword">from</span> <span class="string">'mobx-react'</span>;</span><br><span class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">'./App'</span>;</span><br><span class="line"><span class="keyword">import</span> CounterStore <span class="keyword">from</span> <span class="string">'./stores/counter'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> counter = <span class="keyword">new</span> CounterStore();</span><br><span class="line"></span><br><span class="line">ReactDOM.render(</span><br><span class="line">  &lt;Provider counter=&#123;counter&#125;&gt;</span><br><span class="line">    &lt;App /&gt;</span><br><span class="line">  &lt;<span class="regexp">/Provider&gt;,</span></span><br><span class="line"><span class="regexp">  document.getElementById('root'),</span></span><br><span class="line"><span class="regexp">);</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="Hooks"><a href="#Hooks" class="headerlink" title="Hooks  "></a>Hooks  <a id="a8"></a></h3><p>Hooks를 이용한 방법은 크게 2가지가 있다.</p>
+<ol>
+<li><p><strong>Context API를 이용하지 않는 방법</strong></p>
+<p>구조</p>
+<ul>
+<li>stores/counterStore.jsx</li>
+<li>App.jsx</li>
+<li>index.jsx</li>
+<li>useStore.jsx</li>
+</ul>
+<br>
+</li>
+<li><p><strong>Context API를 이용하여 틀을 만들어 사용하는 방법</strong></p>
+<p>구조</p>
+<ul>
+<li>store/counterStore.jsx</li>
+<li>App.jsx</li>
+<li>index.jsx</li>
+<li>useStore.jsx</li>
+<li>Context.jsx</li>
+</ul>
+</li>
+</ol>
+<p>둘 다 구현해보도록 한다.</p>
+<br>
+
+<h4 id="공통"><a href="#공통" class="headerlink" title="공통 "></a>공통 <a id="a9"></a></h4><p>우선 <code>useLocalStore</code>로 작성된 부분을 스토어로 분리해야한다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// src/store/counterStore.jsx</span></span><br><span class="line"><span class="keyword">import</span> &#123; observable &#125; <span class="keyword">from</span> <span class="string">'mobx'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> counterStore = observable(&#123;</span><br><span class="line">  number: <span class="number">0</span>,</span><br><span class="line">  increase() &#123;</span><br><span class="line">    counterStore.number++;</span><br><span class="line">  &#125;,</span><br><span class="line">  decrease() &#123;</span><br><span class="line">    counterStore.number--;</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> &#123; counterStore &#125;;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// src/App.jsx</span></span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; useObserver &#125; <span class="keyword">from</span> <span class="string">'mobx-react'</span>;</span><br><span class="line"><span class="keyword">import</span> useStore <span class="keyword">from</span> <span class="string">'./useStore'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">App</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> &#123; counterStore &#125; = useStore();</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> useObserver(<span class="function"><span class="params">()</span> =&gt;</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;h1&gt;&#123;counterStore.number&#125;&lt;<span class="regexp">/h1&gt;</span></span><br><span class="line"><span class="regexp">      &lt;button onClick=&#123;counterStore.increase&#125;&gt;+1&lt;/</span>button&gt;</span><br><span class="line">      &lt;button onClick=&#123;counterStore.decrease&#125;&gt;<span class="number">-1</span>&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>div&gt;</span><br><span class="line">  ));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> App;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="Context-API를-이용-X-🙅‍♂️"><a href="#Context-API를-이용-X-🙅‍♂️" class="headerlink" title="Context API를 이용 X 🙅‍♂️ "></a>Context API를 이용 X 🙅‍♂️ <a id="a10"></a></h4><p>store가 추가될 때 마다 통합적으로 관리해줄 combineStore를 하나 만들어 놓는다. </p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// src/useStore.jsx</span></span><br><span class="line"><span class="keyword">import</span> &#123; counterStore &#125; <span class="keyword">from</span> <span class="string">'./store/counterStore'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> useStore = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123; counterStore &#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> useStore;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="Context-API를-이용-O-🙆‍♀️"><a href="#Context-API를-이용-O-🙆‍♀️" class="headerlink" title="Context API를 이용 O 🙆‍♀️ "></a>Context API를 이용 O 🙆‍♀️ <a id="a11"></a></h4><p>Context API를 이용하게 될 경우 과정이 복잡해진다.<br>큰 틀은 다음과 같다.</p>
+<p><code>countStore -&gt; Context -&gt; useStore</code></p>
+<p><code>countStore</code> 부분은 동일하다. Context부터 작성한다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// src/Context.jsx</span></span><br><span class="line"><span class="keyword">import</span> React, &#123; createContext &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; counterStore &#125; <span class="keyword">from</span> <span class="string">'./store/counterStore'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; useLocalStore &#125; <span class="keyword">from</span> <span class="string">'mobx-react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> storeContext = createContext(<span class="literal">null</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> StoreProvider = <span class="function">(<span class="params">&#123; children &#125;</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> store = useLocalStore(<span class="function"><span class="params">()</span> =&gt;</span> counterStore);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">storeContext.Provider</span> <span class="attr">value</span>=<span class="string">&#123;store&#125;</span>&gt;</span>&#123;children&#125;<span class="tag">&lt;/<span class="name">storeContext.Provider</span>&gt;</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> &#123; StoreProvider, storeContext &#125;;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p><code>useStore</code>를 변경한다.</p>
+<p>useStore를 커스텀 훅 형태로 변경한다. 내부적으로는 <code>useContext</code>를 사용함으로써 Consumer를 대신한다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// src/useStore.jsx</span></span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; storeContext &#125; <span class="keyword">from</span> <span class="string">'./Context'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> useStore = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> store = React.useContext(storeContext);</span><br><span class="line">  <span class="keyword">if</span> (!store) &#123;</span><br><span class="line"><span class="comment">// this is especially useful in TypeScript so you don't need to be checking for null all the time</span></span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'useStore must be used within a StoreProvider.'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> &#123; store &#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> useStore;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p><code>index.jsx</code> 에서 <code>Components</code> 들을 <code>StoreProvider</code>로 감싸준다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// src/index.jsx</span></span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> ReactDOM <span class="keyword">from</span> <span class="string">'react-dom'</span>;</span><br><span class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">'./App'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; StoreProvider &#125; <span class="keyword">from</span> <span class="string">'./Context'</span>;</span><br><span class="line"></span><br><span class="line">ReactDOM.render(</span><br><span class="line">  &lt;StoreProvider&gt;</span><br><span class="line">    &lt;App /&gt;</span><br><span class="line">  &lt;<span class="regexp">/StoreProvider&gt;,</span></span><br><span class="line"><span class="regexp">  document.getElementById('root'),</span></span><br><span class="line"><span class="regexp">);</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><ul>
+<li><a href="https://velog.io/@velopert/MobX-2-리액트-프로젝트에서-MobX-사용하기-oejltas52z" rel="external nofollow noopener noreferrer" target="_blank">velopert.log : MobX (2) 시작하기</a></li>
+<li><a href="[https://www.inflearn.com/course/redux-mobx-%EC%83%81%ED%83%9C%EA%B4%80%EB%A6%AC-%EB%8F%84%EA%B5%AC](https://www.inflearn.com/course/redux-mobx-상태관리-도구)">ZeroCho : redux-vs-mobx</a></li>
+<li>내 머릿 속 🤩</li>
+</ul>
+<br>
+
+
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="https://hyeok999.github.io/2020/04/14/mobx-study01/" data-id="ck95pg32s00j6ylz0mkwmatoe" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://hyeok999.github.io/2020/04/14/mobx-study01/" data-id="ck95pk87y00jm25z0b4d10dld" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -269,15 +413,30 @@ ga('send', 'pageview');
             "name": "Jun Hyeok Kim"
         },
         "headline": "Mobx 실습",
-        "image": "https://hyeok999.github.io",
+        "image": "https://hyeok999.github.iohttps://user-images.githubusercontent.com/31315644/78734744-041ee900-7984-11ea-90ab-0bffac26b033.png",
         "keywords": "git Web coding develop TIL algorithm HTML CSS javascript React Mobx",
         "genre": "TIL Mobx",
         "datePublished": "2020-04-14",
         "dateCreated": "2020-04-14",
         "dateModified": "2020-04-18",
         "url": "https://hyeok999.github.io/2020/04/14/mobx-study01/",
-        "description": "",
-        "wordCount": 1
+        "description": "
+
+리액트에서 Mobx 예제 - 카운터 -목차
+카운터 만들기
+Class Component’s Mobx 1
+Class Component’s Mobx 2 : @데코레이터를 이용
+함수형태(Hooks)를 이용한 Mobx
+문제점
+
+
+Mobx 스토어 분리시키기
+Class Component
+Hooks
+공통
+Context API를 이용 X 🙅‍♂️
+Context API",
+        "wordCount": 1809
     }
 </script>
 
@@ -398,7 +557,7 @@ ga('send', 'pageview');
                             <a href="/2020/04/14/mobx-study01/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(https://user-images.githubusercontent.com/31315644/78734744-041ee900-7984-11ea-90ab-0bffac26b033.png)" alt="Mobx 실습" class="thumbnail-image"></span>
     
     
 </a>
