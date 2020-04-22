@@ -8,6 +8,14 @@
     </url>
 
     <url>
+        <loc>https://hyeok999.github.io/2020/04/16/mobx-study-ts/</loc>
+        <lastmod>2020-04-22T05:08:55.396Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://hyeok999.github.io/2020/04/14/mobx-study01/</loc>
         <lastmod>2020-04-18T14:19:22.277Z</lastmod>
         <changefreq>weekly</changefreq>
