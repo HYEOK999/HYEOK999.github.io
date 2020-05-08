@@ -8,6 +8,14 @@
     </url>
 
     <url>
+        <loc>https://hyeok999.github.io/2019/09/04/ETC-test/</loc>
+        <lastmod>2020-05-08T01:44:33.305Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://hyeok999.github.io/2020/04/17/mobx-study-ts/</loc>
         <lastmod>2020-04-22T05:17:40.737Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -802,14 +810,6 @@
     <url>
         <loc>https://hyeok999.github.io/2019/12/20/daily-algorithm60/</loc>
         <lastmod>2019-12-20T08:43:41.224Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://hyeok999.github.io/2019/09/04/ETC-test/</loc>
-        <lastmod>2019-12-19T12:10:17.861Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

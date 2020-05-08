@@ -8,6 +8,20 @@
     </url>
 
     <url>
+        <loc>https://hyeok999.github.io/categories/TIL/etc/</loc>
+        <lastmod>2020-05-08T01:44:33.305Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://hyeok999.github.io/categories/TIL/</loc>
+        <lastmod>2020-05-08T01:44:33.305Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://hyeok999.github.io/categories/Develop/Project/</loc>
         <lastmod>2020-04-22T05:17:40.737Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -23,13 +37,6 @@
 
     <url>
         <loc>https://hyeok999.github.io/categories/TIL/Mobx/</loc>
-        <lastmod>2020-04-18T14:19:22.277Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://hyeok999.github.io/categories/TIL/</loc>
         <lastmod>2020-04-18T14:19:22.277Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -80,13 +87,6 @@
     <url>
         <loc>https://hyeok999.github.io/categories/TIL/Algorithm-Quiz/</loc>
         <lastmod>2019-12-31T07:38:36.088Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://hyeok999.github.io/categories/etc/</loc>
-        <lastmod>2019-12-19T12:10:17.861Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
