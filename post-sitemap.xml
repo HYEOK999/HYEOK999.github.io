@@ -8,6 +8,14 @@
     </url>
 
     <url>
+        <loc>https://hyeok999.github.io/2020/06/02/NVM/</loc>
+        <lastmod>2020-06-02T05:41:12.708Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://hyeok999.github.io/2019/09/04/ETC-test/</loc>
         <lastmod>2020-05-08T01:44:33.305Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -2282,14 +2290,6 @@
     <url>
         <loc>https://hyeok999.github.io/2019/09/30/VSCode-hotkey/</loc>
         <lastmod>2019-11-30T15:41:17.569Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://hyeok999.github.io/2019/09/03/hello-world/</loc>
-        <lastmod>2019-09-03T13:08:10.424Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
