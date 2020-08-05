@@ -8,6 +8,22 @@
     </url>
 
     <url>
+        <loc>https://hyeok999.github.io/2019/10/05/VSCode-Settings/</loc>
+        <lastmod>2020-08-05T06:14:16.679Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeok999.github.io/2020/08/05/webStorm-config/</loc>
+        <lastmod>2020-08-05T06:14:16.679Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://hyeok999.github.io/2020/06/02/NVM/</loc>
         <lastmod>2020-06-02T05:41:12.708Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -2018,14 +2034,6 @@
     <url>
         <loc>https://hyeok999.github.io/2019/10/23/math-method/</loc>
         <lastmod>2019-11-30T16:27:24.282Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://hyeok999.github.io/2019/10/05/VSCode-Settings/</loc>
-        <lastmod>2019-11-30T16:25:04.015Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
